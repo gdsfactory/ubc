@@ -1,6 +1,6 @@
 import pp
 from phidl import device_layout as pd
-from pp.ports.add_port_markers import get_input_label
+from pp.add_labels import get_input_label
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
 from ubc.bend_circular import bend_circular
