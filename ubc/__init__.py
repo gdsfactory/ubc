@@ -17,4 +17,4 @@ component_type2factory = dict(
 
 
 __all__ = list(component_type2factory.keys())
-__version__ = "0.0.1"
+__version__ = "0.0.2"
