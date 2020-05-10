@@ -1,5 +1,4 @@
 import pp
-from pp.ports import add_port_markers
 from ubc.bend_circular import bend_circular
 from ubc.waveguide import waveguide
 from ubc.y_splitter import y_splitter
@@ -13,10 +12,10 @@ def mzi(delta_length=100):
         bend90_factory=bend_circular,
         coupler_factory=y_splitter,
     )
-    add_port_markers(c)
     return c
 
 
 if __name__ == "__main__":
     c = mzi(delta_length=100)
     pp.show(c)
+    pp.write_gds(c, "mzi.gds")

@@ -63,10 +63,10 @@ def get_optical_text(port, gc, gc_index=None, component_name=None):
     polarization = gc.get_property("polarization")
     wavelength_nm = gc.get_property("wavelength")
 
-    assert polarization in [
-        "te",
-        "tm",
-    ], f"Not valid polarization {polarization} in [te, tm]"
+    assert polarization.upper() in [
+        "TE",
+        "TM",
+    ], f"Not valid polarization {polarization.upper()} in [TE, TM]"
     assert (
         isinstance(wavelength_nm, (int, float)) and 1000 < wavelength_nm < 2000
     ), f"{wavelength_nm} is Not valid 1000 < wavelength < 2000"
@@ -79,12 +79,7 @@ def get_optical_text(port, gc, gc_index=None, component_name=None):
     else:
         name = port.parent.ref_cell.name
 
-    if isinstance(gc_index, int):
-        text = f"opt_in_{polarization}_{int(wavelength_nm)}_({name})_{gc_index}_{port.name}"
-    else:
-        text = f"opt_in_{polarization}_{int(wavelength_nm)}_({name})_{port.name}"
-
-    return text
+    return f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{name}_{gc_index}_{port.name}"
 
 
 gc_port_name = "W0"
@@ -132,7 +127,9 @@ def get_input_labels(
     gc = io_gratings[port_index]
     port = ordered_ports[1]
 
-    text = get_optical_text(port=port, gc=gc, component_name=component_name)
+    text = get_optical_text(
+        port=port, gc=gc, gc_index=port_index, component_name=component_name
+    )
     layer, texttype = pd._parse_layer(layer_label)
     label = pd.Label(
         text=text,
@@ -145,7 +142,7 @@ def get_input_labels(
 
 
 def add_gc(
-    component,
+    component=waveguide,
     layer_label=LAYER.LABEL,
     grating_coupler=gc_te1550,
     bend_factory=bend_circular,
@@ -171,7 +168,11 @@ def add_gc(
 
 
 if __name__ == "__main__":
-    c = gc_te1550()
+    import ubc
+
+    # c = gc_te1550()
     # print(c.ports)
-    c = add_gc(component=waveguide())
+    c = add_gc(component=ubc.mzi())
+    # c = add_gc(component=waveguide())
     pp.show(c)
+    pp.write_gds(c, "mzi.gds")
