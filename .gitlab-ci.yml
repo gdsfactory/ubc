@@ -1,0 +1,31 @@
+image: python:3.7
+
+before_script:
+  - pip list
+  - python -V # Print out python version for debugging
+  - which python # Print out which python for debugging
+  - pip install -r requirements.txt --upgrade
+  - python setup.py develop
+
+stages:
+  - test
+  - release
+  - linter
+
+test:
+  stage: test
+  script:
+    - pytest
+
+docs:
+  stage: release
+  script:
+    - cd docs
+    - make install clean html upload
+  only:
+    - release
+
+linter:
+  stage: linter
+  script:
+    - make lint
