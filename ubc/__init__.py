@@ -1,9 +1,9 @@
 """ubc - UBC Siepic Ebeam PDK from edx course"""
 
-from bend_circular import bend_circular
-from mzi import mzi
-from waveguide import waveguide
-from y_splitter import y_splitter
+from ubc.bend_circular import bend_circular
+from ubc.mzi import mzi
+from ubc.waveguide import waveguide
+from ubc.y_splitter import y_splitter
 
 component_type2factory = dict(
     waveguide=waveguide, bend_circular=bend_circular, y_splitter=y_splitter, mzi=mzi

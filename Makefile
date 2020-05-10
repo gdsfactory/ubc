@@ -1,4 +1,3 @@
-
 install:
 	pip install -r requirements.txt --upgrade
 	pip install -e .
@@ -6,4 +5,10 @@ install:
 	pre-commit install
 
 lint:
-	pyflakes ubc
+	flake8 .
+
+test:
+	pytest
+
+test-force:
+	pytest --force-regen

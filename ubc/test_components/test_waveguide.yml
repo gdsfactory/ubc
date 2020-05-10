@@ -1,0 +1,11 @@
+cladding_offset: 3
+class: waveguide
+kwargs: _empty
+layer:
+- 1
+- 0
+layers_cladding: ''
+length: 10
+module: ubc.waveguide
+name: waveguide
+width: 0.5

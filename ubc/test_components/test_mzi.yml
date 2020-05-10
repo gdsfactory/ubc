@@ -1,0 +1,12 @@
+L0: 1
+L1: 100
+L2: 10
+bend90_factory: bend_circular
+bend_radius: 10.0
+class: mzi
+combiner_factory: None
+coupler_factory: y_splitter
+delta_length: 100
+module: ubc.mzi
+name: mzi
+straight_factory: waveguide

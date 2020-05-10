@@ -1,0 +1,14 @@
+angle_resolution: 2.5
+cladding_offset: 3
+class: bend_circular
+kwargs: _empty
+layer:
+- 1
+- 0
+layers_cladding: ''
+module: ubc.bend_circular
+name: bend_circular
+radius: 10.0
+start_angle: 0
+theta: -90
+width: 0.5

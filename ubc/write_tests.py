@@ -2,7 +2,7 @@
 write regression tests for component ports and properties
 """
 
-from pp.samples.pdk import component_type2factory
+from ubc import component_type2factory
 
 _skip_test = set()
 _skip_test_ports = set()
@@ -40,7 +40,6 @@ def write_test_ports():
         ):
             c = component_function.__name__
             if component_function().ports:
-
                 f.write(
                     f"""
 def test_{c}(num_regression):
