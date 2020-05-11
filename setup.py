@@ -12,11 +12,6 @@ def read(filename):
         return re.sub(text_type(r":[a-z]+:`~?(.*?)`"), text_type(r"``\1``"), fd.read())
 
 
-def get_install_requires():
-    with open("requirements.txt", "r") as f:
-        return [line.strip() for line in f.readlines() if not line.startswith("-")]
-
-
 setup(
     name="ubc",
     version="0.0.2",
@@ -27,7 +22,6 @@ setup(
     description="UBC Siepic Ebeam PDK from edx course",
     long_description=read("README.md"),
     packages=find_packages(exclude=("tests",)),
-    install_requires=get_install_requires(),
     python_requires=">=3.6",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
