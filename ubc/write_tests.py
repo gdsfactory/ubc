@@ -12,7 +12,7 @@ def write_test_properties():
     """ writes a regression test for all the component properties dict"""
     with open("test_components.py", "w") as f:
         f.write(
-            "# this code has been automatically generated from pp/samples/pdk/write_tests.py\n"
+            "# this code has been automatically generated from ubc/write_tests.py\n"
         )
         f.write("import ubc\n\n")
 
@@ -31,7 +31,7 @@ def write_test_ports():
     """ writes a regression test for all the ports """
     with open("test_ports.py", "w") as f:
         f.write(
-            "# this code has been automatically generated from pp/samples/pdk/write_tests.py\n"
+            "# this code has been automatically generated from ubc/write_tests.py\n"
         )
         f.write("import ubc\n\n")
 
