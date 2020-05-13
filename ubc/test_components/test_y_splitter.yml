@@ -1,1 +1,3 @@
-name: ebeam_y_1550
+class: y_splitter
+module: ubc.y_splitter
+name: y_splitter

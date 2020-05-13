@@ -5,11 +5,10 @@ kwargs: _empty
 layer:
 - 1
 - 0
-layers_cladding: ''
+layers_cladding: []
 module: ubc.bend_circular
 name: bend_circular
 radius: 10.0
 start_angle: 0
 theta: -90
 width: 0.5
-with_pins: 'True'
