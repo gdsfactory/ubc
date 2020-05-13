@@ -151,6 +151,7 @@ def add_gc(
     route_filter=connect_strip,
     gc_port_name="W0",
     get_input_labels_function=get_input_labels,
+    with_align_ports=False,
 ):
     c = pp.routing.add_io_optical(
         component,
@@ -162,6 +163,7 @@ def add_gc(
         taper_factory=taper_factory,
         gc_port_name=gc_port_name,
         get_input_labels_function=get_input_labels_function,
+        with_align_ports=with_align_ports,
     )
     c = rotate(c, -90)
     return c
