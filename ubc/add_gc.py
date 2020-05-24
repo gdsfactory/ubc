@@ -4,6 +4,7 @@ from pp.add_labels import get_input_label
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
 from ubc.bend_circular import bend_circular
+from ubc.config import CONFIG
 from ubc.import_gds import import_gds
 from ubc.layers import LAYER
 from ubc.waveguide import waveguide
@@ -79,7 +80,10 @@ def get_optical_text(port, gc, gc_index=None, component_name=None):
     else:
         name = port.parent.ref_cell.name
 
-    return f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{name}_{gc_index}_{port.name}"
+    name += f"_{port.name}"
+    name = name.replace("_", " ")
+    print(name)
+    return f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{CONFIG['username']}_{name}"
 
 
 gc_port_name = "W0"
@@ -93,6 +97,7 @@ def get_input_labels_all(
     layer_label=layer_label,
     gc_port_name=gc_port_name,
 ):
+    """ get labels for all component ports """
     elements = []
     for i, g in enumerate(io_gratings):
         label = get_input_label(
@@ -116,6 +121,7 @@ def get_input_labels(
     gc_port_name=gc_port_name,
     port_index=1,
 ):
+    """ get labels for all component ports """
     if port_index == -1:
         return get_input_labels_all(
             io_gratings=io_gratings,
@@ -154,7 +160,7 @@ def add_gc(
     with_align_ports=False,
 ):
     c = pp.routing.add_io_optical(
-        component,
+        component=component,
         bend_factory=bend_factory,
         straight_factory=straight_factory,
         route_filter=route_filter,
@@ -174,7 +180,7 @@ if __name__ == "__main__":
 
     # c = gc_te1550()
     # print(c.ports)
-    c = add_gc(component=ubc.mzi())
+    c = add_gc(component=ubc.mzi(delta_length=100))
     # c = add_gc(component=waveguide())
     pp.show(c)
     pp.write_gds(c, "mzi.gds")

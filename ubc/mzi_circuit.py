@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
 from simphony.simulation import MonteCarloSweepSimulation, SweepSimulation
@@ -16,16 +15,16 @@ def mzi_circuit(L0=1, L1=100, L2=10):
     .. code::
 
                __L2__
-              |      |
-              L0     L0r
-              |      |
-     coupler==|      |==combiner
-              |      |
-              L0     L0r
-              |      |
-              L1     L1
-              |      |
-              |__L2__|
+               |      |
+               L0     L0r
+               |      |
+     splitter==|      |==recombiner
+               |      |
+               L0     L0r
+               |      |
+               L1     L1
+               |      |
+               |__L2__|
 
 
     .. plot::

@@ -15,7 +15,7 @@ import pathlib
 import hiyapyco
 
 default_config = """
-keySample: valueSample
+username: JoaquinMatres
 """
 
 home = pathlib.Path.home()

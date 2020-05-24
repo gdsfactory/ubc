@@ -1,6 +1,8 @@
 from collections import namedtuple
 
-layermap = dict(WG=(1, 0), DEVREC=(68, 0), LABEL=(10, 0), PORT=(1, 10))
+layermap = dict(
+    WG=(1, 0), DEVREC=(68, 0), LABEL=(10, 0), PORT=(1, 10), FLOORPLAN=(99, 0)
+)
 
 LAYER = namedtuple("layer", layermap.keys())(*layermap.values())
 
