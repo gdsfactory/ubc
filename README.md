@@ -8,7 +8,7 @@ see the notebooks folder
 
 ## Installation
 
-run `make install`
+run `make install` in a terminal
 
 
 ## Acks
