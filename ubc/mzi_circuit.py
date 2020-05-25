@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import pp
+from scipy.constants import speed_of_light
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
 from simphony.simulation import MonteCarloSweepSimulation, SweepSimulation
@@ -84,8 +86,10 @@ def mzi_simulation(**kwargs):
     result = simulation.simulate()
 
     f, s = result.data("input", "output")
-    plt.plot(f, s)
+    w = speed_of_light / f
+    plt.plot(w * 1e9, s)
     plt.title("MZI")
+    plt.xlabel("wavelength (nm)")
     plt.tight_layout()
     plt.show()
 
