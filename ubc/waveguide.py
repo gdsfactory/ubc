@@ -15,9 +15,9 @@ def waveguide(
         **kwargs,
     )
     labels = [
-        f"Lumerical_INTERCONNECT_library=Design kits/Ebeam",
+        f"Lumerical_INTERCONNECT_library=Design kits/EBeam",
         f"Lumerical_INTERCONNECT_component=ebeam_wg_integral_1550",
-        f"Spice_param:wg_length={length:.3f}u wg_width={width:.3f}u",
+        f"Spice_param:wg_width={width:.3f}u wg_length={length:.3f}u",
     ]
 
     for i, text in enumerate(labels):
