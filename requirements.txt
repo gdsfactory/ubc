@@ -1,4 +1,5 @@
 hiyapyco
 pytest-regressions
+klayout
 git+git://github.com/joamatab/simphony
 git+git://github.com/gdsfactory/gdsfactory
