@@ -1,0 +1,8 @@
+OUTFILE_PREFIX        ?= JoaquinMatres
+ARTICLE_FILE        = report.md
+PANDOC_SCHOLAR_PATH = $(HOME)/Documents/pandoc-scholar
+DEFAULT_EXTENSIONS    ?= pdf
+include $(PANDOC_SCHOLAR_PATH)/Makefile
+
+
+.PHONY: all clean paper
