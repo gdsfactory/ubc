@@ -117,5 +117,20 @@
   <name>733/0 - LUMERICAL</name>
   <source>733/0@1</source>
  </properties>
+ <properties>
+  <frame-color>#004080</frame-color>
+  <fill-color>#004080</fill-color>
+  <frame-brightness>0</frame-brightness>
+  <fill-brightness>0</fill-brightness>
+  <dither-pattern>I9</dither-pattern>
+  <valid>true</valid>
+  <visible>true</visible>
+  <transparent>false</transparent>
+  <width>2</width>
+  <marked>false</marked>
+  <animation>0</animation>
+  <name>FbrTgt</name>
+  <source>81/0@1</source>
+ </properties>
  <name>all</name>
 </layer-properties>
