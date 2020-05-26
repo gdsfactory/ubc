@@ -41,10 +41,10 @@ else:
         sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
         sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-        from ubc import waveguide
+        from ubc import _components
         class UbcLib(lygadgets.WrappedLibrary):
             tech_name = "ubc"
-            all_funcs_to_wrap = [waveguide]
+            all_funcs_to_wrap = _components
             description = "ubc pdk"
 
         UbcLib()
