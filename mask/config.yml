@@ -19,7 +19,7 @@ test_protocols:
       wavelength_nm_min: 1500
       wavelength_nm_max: 1600
       wavelength_nm_step: 0.1
-      fiber_angle: 15
+      fiber_angle: -31
 
   passive_optical_tm_coarse:
     function_name: passive_optical_tm
