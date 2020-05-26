@@ -182,4 +182,4 @@ if __name__ == "__main__":
     c = add_gc(component=ubc.mzi(delta_length=100))
     # c = add_gc(component=waveguide())
     pp.show(c)
-    # pp.write_gds(c, "mzi.gds")
+    pp.write_gds(c, "mzi.gds")
