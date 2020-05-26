@@ -19,7 +19,7 @@ def ring_single_te(**kwargs):
     return add_gc(component=component)
 
 
-_components = [
+_component_functions = [
     waveguide,
     bend_circular,
     y_splitter,
