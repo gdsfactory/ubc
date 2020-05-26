@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<klayout-macro>
+ <description/>
+ <version/>
+ <category>pymacros</category>
+ <prolog/>
+ <epilog/>
+ <doc/>
+ <autorun>true</autorun>
+ <autorun-early>false</autorun-early>
+ <shortcut/>
+ <show-in-menu>false</show-in-menu>
+ <group-name/>
+ <menu-path/>
+ <interpreter>python</interpreter>
+ <dsl-interpreter-name/>
+ <text>
+
+# check if lygadgets exists
+try:
+    import lygadgets
+except ImportError:
+    import pya
+    pya.MessageBox.info('lygadgets message',
+                        ('lygadgets has not been linked. So ubc pcells will not be available.\n' +
+                         'To use these, go into terminal/command line anywhere and type\n\n' +
+                         'pip install lygadgets\nlygadgets_link lygadgets'),
+                        pya.MessageBox.Ok)
+else:
+    # check if lygadgets has the right version
+    try:
+        lygadgets.WrappedLibrary
+    except AttributeError:
+        pass
+    else:
+        # add a PCell library
+
+        # As of yet, we are not putting pcells in klayout's GSI namespace. This might change.
+        # For now, just get the files explicitly and make a WrappedLibrary.
+        import sys, os
+        sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
+        sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
+
+        from ubc import waveguide
+        class UbcLib(lygadgets.WrappedLibrary):
+            tech_name = "ubc"
+            all_funcs_to_wrap = [waveguide]
+            description = "ubc pdk"
+
+        UbcLib()
+
+</text>
+</klayout-macro>

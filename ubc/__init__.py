@@ -19,13 +19,23 @@ def ring_single_te(**kwargs):
     return add_gc(component=component)
 
 
+# components = [
+#     waveguide,
+#     bend_circular,
+#     y_splitter,
+#     mzi,
+#     gc_te1550,
+#     mzi_te,
+#     ring_single_te,
+# ]
+
+
 component_type2factory = dict(
     waveguide=waveguide,
     bend_circular=bend_circular,
     y_splitter=y_splitter,
     mzi=mzi,
     gc_te1550=gc_te1550,
-    add_gc=add_gc,
     mzi_te=mzi_te,
     ring_single_te=ring_single_te,
 )
