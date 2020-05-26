@@ -1,6 +1,7 @@
 import pathlib
 
 import pp
+from pp.add_pins import add_pins
 from ubc.layers import LAYER
 
 cwd = pathlib.Path(__file__).parent.absolute()
@@ -37,6 +38,7 @@ def import_gds(gdsname):
             )
             c.add_port(port)
 
+    add_pins(c)
     return c
 
 

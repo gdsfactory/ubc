@@ -9,6 +9,9 @@ from ubc.import_gds import import_gds
 from ubc.layers import LAYER
 from ubc.waveguide import waveguide
 
+gc_port_name = "W0"
+layer_label = LAYER.LABEL
+
 
 def gc_te1550():
     c = import_gds("ebeam_gc_te1550")
@@ -81,13 +84,9 @@ def get_optical_text(port, gc, gc_index=None, component_name=None):
         name = port.parent.ref_cell.name
 
     name += f"_{port.name}"
-    name = name.replace("_", " ")
-    print(name)
-    return f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{CONFIG['username']}_{name}"
-
-
-gc_port_name = "W0"
-layer_label = LAYER.LABEL
+    name = name.replace("_", "-")
+    label = f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{CONFIG['username']}_{name}"
+    return label
 
 
 def get_input_labels_all(
@@ -183,4 +182,4 @@ if __name__ == "__main__":
     c = add_gc(component=ubc.mzi(delta_length=100))
     # c = add_gc(component=waveguide())
     pp.show(c)
-    pp.write_gds(c, "mzi.gds")
+    # pp.write_gds(c, "mzi.gds")
