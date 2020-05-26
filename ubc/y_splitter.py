@@ -2,9 +2,9 @@ import pp
 from ubc.import_gds import import_gds
 
 
-@pp.autoname
 def y_splitter():
     c = import_gds("ebeam_y_1550")
+    c.name = "Ebeam.ebeam_y_1550"
     return c
 
 

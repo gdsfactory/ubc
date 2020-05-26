@@ -24,4 +24,4 @@ def waveguide(length=10, width=0.5):
 
 if __name__ == "__main__":
     c = waveguide()
-    # pp.show(c)
+    pp.show(c)

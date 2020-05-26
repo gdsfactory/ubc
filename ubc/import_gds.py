@@ -28,7 +28,7 @@ def import_gds(gdsname):
     c = pp.import_gds(gds / f"{gdsname}.gds")
 
     for label in c.get_labels():
-        if label.text.startswith("pin"):
+        if label.text.startswith("opt"):
             port = pp.Port(
                 name=label.text,
                 midpoint=label.position,
@@ -38,11 +38,11 @@ def import_gds(gdsname):
             )
             c.add_port(port)
 
-    add_pins(c)
     return c
 
 
 if __name__ == "__main__":
     gdsname = "ebeam_y_1550"
     c = import_gds(gdsname)
+    print(c.ports)
     pp.show(c)
