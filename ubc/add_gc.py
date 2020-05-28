@@ -136,6 +136,7 @@ def get_input_labels(
     text = get_optical_text(
         port=port, gc=gc, gc_index=port_index, component_name=component_name
     )
+    print(text)
     layer, texttype = pd._parse_layer(layer_label)
     label = pd.Label(
         text=text,
@@ -147,9 +148,9 @@ def get_input_labels(
     return [label]
 
 
-@container
 def add_gc(
     component=waveguide,
+    component_name=None,
     layer_label=LAYER.LABEL,
     grating_coupler=gc_te1550,
     bend_factory=bend_circular,
@@ -162,6 +163,7 @@ def add_gc(
 ):
     c = pp.routing.add_io_optical(
         component=component,
+        component_name=component_name,
         bend_factory=bend_factory,
         straight_factory=straight_factory,
         route_filter=route_filter,
