@@ -1,0 +1,5 @@
+*.aux
+*.out
+*.tex
+*.bib
+report_files/

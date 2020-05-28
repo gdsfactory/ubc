@@ -1,6 +1,7 @@
 import pp
 from phidl import device_layout as pd
 from pp.add_labels import get_input_label
+from pp.container import container
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
 from ubc.bend_circular import bend_circular
@@ -146,6 +147,7 @@ def get_input_labels(
     return [label]
 
 
+@container
 def add_gc(
     component=waveguide,
     layer_label=LAYER.LABEL,

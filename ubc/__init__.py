@@ -14,6 +14,11 @@ def mzi_te(**kwargs):
     return add_gc(component=component)
 
 
+def spiral_te(**kwargs):
+    c = pp.c.spiral_external_io(**kwargs)
+    return add_gc(component=c)
+
+
 def ring_single_te(**kwargs):
     component = pp.c.ring_single(**kwargs)
     return add_gc(component=component)
@@ -44,5 +49,19 @@ __version__ = "0.0.2"
 
 if __name__ == "__main__":
     # c = mzi_te(delta_length=100)
-    c = ring_single_te()
+    # c = ring_single_te()
+    # c = spiral_te(
+    #     N=10, x_inner_length_cutback=1, bend_radius=10, y_straight_inner_top=600
+    # )
+
+    N = 15
+    bend_radius = 20
+    c = spiral_te(
+        N=N,
+        x_inner_length_cutback=0,
+        bend_radius=bend_radius,
+        y_straight_inner_top=0,
+        x_inner_offset=100,
+    )
+
     pp.show(c)

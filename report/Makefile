@@ -2,10 +2,20 @@ md:
 	jupyter nbconvert --to markdown report.ipynb
 
 pdf:
-	pandoc --filter pandoc-citeproc --csl ieee.csl report.md -o JoaquinMatres.pdf
+	pandoc --highlight=tango --filter pandoc-crossref --filter pandoc-citeproc --csl ieee.csl  --bibliography=library.bib JoaquinMatres.md -o JoaquinMatres.pdf
+
+open:
+	zathura report.pdf
+
+pdfc:
+	jupyter nbconvert --to pdf report.ipynb
 
 bib:
 	cp $(HOME)/wikis/library.bib .
+
+
+execute:
+	jupyter nbconvert --to notebook --execute my_notebook.ipynb
 
 
 clean:

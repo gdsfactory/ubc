@@ -37,12 +37,12 @@ def add_floorplan(c, size=(605, 410), layer=ubc.LAYER.FLOORPLAN):
     c << pp.c.rectangle(size=size, layer=layer)
 
 
-if __name__ == "__main__":
-    e = [ubc.mzi_te(delta_length=dl) for dl in [10, 100]]
+def mask1():
+    e = [ubc.mzi_te(delta_length=dl) for dl in [9.32, 93.19]]
     e += [
-        ubc.ring_single_te(bend_radius=10, gap=gap, length_x=coupling_length)
+        ubc.ring_single_te(bend_radius=12, gap=gap, length_x=coupling_length)
         for gap in [0.2]
-        for coupling_length in [1e-3, 1, 2]
+        for coupling_length in [2.5, 4.5, 6.5]
     ]
     c = pack(e)
     m = c[0]
@@ -51,3 +51,37 @@ if __name__ == "__main__":
     gdspath = pp.write_gds(m, precision=1e-9)
     change_grid_klayout(gdspath)
     pp.show(m)
+
+
+def mask2():
+    N = 15
+    bend_radius = 15
+
+    e = []
+    e.append(
+        ubc.spiral_te(
+            N=N,
+            bend_radius=bend_radius,
+            y_straight_inner_top=0,
+            x_inner_length_cutback=0,
+        )
+    )
+    e.append(
+        ubc.spiral_te(
+            N=N,
+            bend_radius=bend_radius,
+            y_straight_inner_top=30,
+            x_inner_length_cutback=85,
+        )
+    )
+    c = pack(e)
+    m = c[0]
+    m.name = "EBeam_JoaquinMatres_2"
+    add_floorplan(m)
+    gdspath = pp.write_gds(m, precision=1e-9)
+    change_grid_klayout(gdspath)
+    pp.show(m)
+
+
+if __name__ == "__main__":
+    mask2()

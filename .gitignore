@@ -57,6 +57,7 @@ cover/
 *.mo
 *.pot
 *.pdf
+*.bib
 report/report.md
 
 # Django stuff:
