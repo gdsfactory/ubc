@@ -1,7 +1,6 @@
 import pathlib
 
 import pp
-from pp.add_pins import add_pins
 from ubc.layers import LAYER
 
 cwd = pathlib.Path(__file__).parent.absolute()

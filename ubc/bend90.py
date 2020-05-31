@@ -4,7 +4,7 @@ from ubc.layers import LAYER
 
 
 @pp.autoname
-def bend_circular(radius=10, width=0.5):
+def bend90(radius=10, width=0.5):
     c = pp.c.bend_circular(
         radius=radius, width=width, layer=LAYER.WG, layers_cladding=[]
     )
@@ -16,11 +16,11 @@ def bend_circular(radius=10, width=0.5):
 
     for i, text in enumerate(labels):
         c.add(pp.c.label(text=text, position=(c.x, c.y + i * 0.1), layer=LAYER.DEVREC))
-    add_outline(c)
-    add_pins(c)
+    add_outline(c, layer=LAYER.DEVREC)
+    add_pins(c, layer=LAYER.PORT)
     return c
 
 
 if __name__ == "__main__":
-    c = bend_circular()
+    c = bend90()
     pp.show(c)

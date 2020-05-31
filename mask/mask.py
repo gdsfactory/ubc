@@ -37,8 +37,9 @@ def add_floorplan(c, size=(605, 410), layer=ubc.LAYER.FLOORPLAN):
     c << pp.c.rectangle(size=size, layer=layer)
 
 
-def mask1():
-    e = [ubc.mzi_te(delta_length=dl) for dl in [9.32, 93.19]]
+def test_mask1():
+    e = [ubc.add_gc(ubc.waveguide())]
+    e += [ubc.mzi_te(delta_length=dl) for dl in [9.32, 93.19]]
     e += [
         ubc.ring_single_te(bend_radius=12, gap=gap, length_x=coupling_length)
         for gap in [0.2]
@@ -53,11 +54,12 @@ def mask1():
     pp.show(m)
 
 
-def mask2():
+def test_mask2():
     N = 15
     bend_radius = 15
 
     e = []
+    e = [ubc.add_gc(ubc.waveguide())]
     e.append(
         ubc.spiral_te(
             N=N,
@@ -83,5 +85,19 @@ def mask2():
     pp.show(m)
 
 
+def test_mask3():
+    """ contains mirror cavities and structures inside a resonator
+    """
+    e = [ubc.mzi_te(delta_length=dl) for dl in [9.32, 93.19]]
+    c = pack(e)
+    m = c[0]
+    m.name = "EBeam_JoaquinMatres_3"
+    add_floorplan(m)
+    gdspath = pp.write_gds(m, precision=1e-9)
+    change_grid_klayout(gdspath)
+    pp.show(m)
+
+
 if __name__ == "__main__":
-    mask2()
+    test_mask1()
+    # test_mask2()

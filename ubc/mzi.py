@@ -1,5 +1,5 @@
 import pp
-from ubc.bend_circular import bend_circular
+from ubc.bend90 import bend90
 from ubc.waveguide import waveguide
 from ubc.y_splitter import y_splitter
 
@@ -9,7 +9,7 @@ def mzi(delta_length=100):
     c = pp.c.mzi(
         L1=delta_length,
         straight_factory=waveguide,
-        bend90_factory=bend_circular,
+        bend90_factory=bend90,
         coupler_factory=y_splitter,
     )
     return c

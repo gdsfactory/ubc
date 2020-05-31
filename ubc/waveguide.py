@@ -5,11 +5,7 @@ from ubc.layers import LAYER
 @pp.autoname
 def waveguide(length=10, width=0.5):
     c = pp.c.waveguide(
-        length=length,
-        width=width,
-        layer=LAYER.WG,
-        layers_cladding=[LAYER.DEVREC],
-        with_pins=True,
+        length=length, width=width, layer=LAYER.WG, layers_cladding=[], pins=True,
     )
     labels = [
         f"Lumerical_INTERCONNECT_library=Design kits/EBeam",

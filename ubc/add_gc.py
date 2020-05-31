@@ -1,10 +1,9 @@
 import pp
 from phidl import device_layout as pd
 from pp.add_labels import get_input_label
-from pp.container import container
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
-from ubc.bend_circular import bend_circular
+from ubc.bend90 import bend90
 from ubc.config import CONFIG
 from ubc.import_gds import import_gds
 from ubc.layers import LAYER
@@ -43,7 +42,7 @@ def gc_tm1550():
 
 def connect_strip(
     way_points=[],
-    bend_factory=bend_circular,
+    bend_factory=bend90(),
     straight_factory=waveguide,
     bend_radius=10.0,
     wg_width=0.5,
@@ -53,7 +52,7 @@ def connect_strip(
     Returns a deep-etched route formed by the given way_points with
     bends instead of corners and optionally tapers in straight sections.
     """
-    bend90 = bend_factory(radius=bend_radius, width=wg_width)
+    bend90 = pp.call_if_func(bend_factory, radius=bend_radius, width=wg_width)
     connector = round_corners(way_points, bend90, straight_factory)
     return connector
 
@@ -153,7 +152,7 @@ def add_gc(
     component_name=None,
     layer_label=LAYER.LABEL,
     grating_coupler=gc_te1550,
-    bend_factory=bend_circular,
+    bend_factory=bend90,
     straight_factory=waveguide,
     taper_factory=taper_factory,
     route_filter=connect_strip,

@@ -1,8 +1,9 @@
 """ubc - UBC Siepic Ebeam PDK from edx course"""
 
 import pp
+from pp.add_pins import add_outline, add_pins
 from ubc.add_gc import add_gc, gc_te1550
-from ubc.bend_circular import bend_circular
+from ubc.bend90 import bend90
 from ubc.layers import LAYER
 from ubc.mzi import mzi
 from ubc.waveguide import waveguide
@@ -21,13 +22,22 @@ def spiral_te(**kwargs):
 
 
 def ring_single_te(**kwargs):
-    component = pp.c.ring_single(**kwargs)
+    # component = pp.c.ring_single(**kwargs)
+    coupler_ring = pp.c.coupler_ring()
+    add_pins(coupler_ring)
+    add_outline(coupler_ring)
+    component = pp.c.ring_single(coupler=coupler_ring)
+    return add_gc(component=component)
+
+
+def cavity_te(**kwargs):
+    component = pp.c.cavity(**kwargs)
     return add_gc(component=component)
 
 
 _component_functions = [
     waveguide,
-    bend_circular,
+    bend90,
     y_splitter,
     gc_te1550,
 ]
@@ -35,7 +45,7 @@ _component_functions = [
 
 component_type2factory = dict(
     waveguide=waveguide,
-    bend_circular=bend_circular,
+    bend90=bend90,
     y_splitter=y_splitter,
     mzi=mzi,
     gc_te1550=gc_te1550,
@@ -54,15 +64,16 @@ if __name__ == "__main__":
     #     N=10, x_inner_length_cutback=1, bend_radius=10, y_straight_inner_top=600
     # )
 
-    N = 15
-    bend_radius = 20
-    c = spiral_te(
-        N=N,
-        x_inner_length_cutback=0,
-        bend_radius=bend_radius,
-        y_straight_inner_top=0,
-        x_inner_offset=100,
-    )
+    # N = 15
+    # bend_radius = 20
+    # c = spiral_te(
+    #     N=N,
+    #     x_inner_length_cutback=0,
+    #     bend_radius=bend_radius,
+    #     y_straight_inner_top=0,
+    #     x_inner_offset=100,
+    # )
+    # c = cavity_te(mirror=pp.c.dbr())
     # print(c.settings['component'])
-    # c = ring_single_te()
+    c = ring_single_te()
     pp.show(c)
