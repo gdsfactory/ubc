@@ -1,6 +1,5 @@
 cladding_offset: 3
 class: waveguide
-kwargs: _empty
 layer:
 - 1
 - 0

@@ -1,0 +1,16 @@
+angle: 90
+class: null
+component: component_grating_coupler_gc_port_name_component_name_taper_factory_get_route_factory_get_input_labels_function_kwargs
+component_name: mzi_te
+name: mzi_te_r
+settings:
+  class: add_io_optical
+  component: L0_L1_L2_bend_radius_bend90_factory_straight_factory_coupler_factory_combiner_factory_delta_length
+  component_name: mzi
+  gc_port_name: W0
+  get_input_labels_function: get_input_labels
+  get_route_factory: route_fiber_array
+  grating_coupler: grating_coupler_te
+  kwargs: _empty
+  name: mzi_te
+  taper_factory: taper
