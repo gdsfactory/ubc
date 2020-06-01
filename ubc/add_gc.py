@@ -13,6 +13,7 @@ gc_port_name = "W0"
 layer_label = LAYER.LABEL
 
 
+@pp.autoname
 def gc_te1550():
     c = import_gds("ebeam_gc_te1550")
     c = rotate(c, 180)
@@ -159,6 +160,9 @@ def add_gc(
     gc_port_name="W0",
     get_input_labels_function=get_input_labels,
     with_align_ports=False,
+    optical_routing_type=0,
+    fanout_length=0,
+    **kwargs,
 ):
     c = pp.routing.add_io_optical(
         component=component,
@@ -172,6 +176,9 @@ def add_gc(
         gc_port_name=gc_port_name,
         get_input_labels_function=get_input_labels_function,
         with_align_ports=with_align_ports,
+        optical_routing_type=optical_routing_type,
+        fanout_length=fanout_length,
+        **kwargs,
     )
     c = rotate(c, -90)
     return c

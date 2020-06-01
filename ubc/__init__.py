@@ -4,9 +4,14 @@ import pp
 from pp.add_pins import add_outline, add_pins
 from ubc.add_gc import add_gc, gc_te1550
 from ubc.bend90 import bend90
+from ubc.crossing import crossing_te, crossing_te_ring
+from ubc.dbr import dbr_te
+from ubc.dcate import dcate
+from ubc.dcbte import dcbte
 from ubc.layers import LAYER
 from ubc.mzi import mzi
 from ubc.waveguide import waveguide
+from ubc.y_adiabatic import y_adiabatic
 from ubc.y_splitter import y_splitter
 
 
@@ -22,11 +27,7 @@ def spiral_te(**kwargs):
 
 
 def ring_single_te(**kwargs):
-    # component = pp.c.ring_single(**kwargs)
-    coupler_ring = pp.c.coupler_ring()
-    add_pins(coupler_ring)
-    add_outline(coupler_ring)
-    component = pp.c.ring_single(coupler=coupler_ring)
+    component = pp.c.ring_single(**kwargs)
     return add_gc(component=component)
 
 
@@ -40,7 +41,8 @@ _component_functions = [
     bend90,
     y_splitter,
     gc_te1550,
-]
+    crossing_te,
+]  # for the klayout library
 
 
 component_type2factory = dict(
@@ -51,6 +53,12 @@ component_type2factory = dict(
     gc_te1550=gc_te1550,
     mzi_te=mzi_te,
     ring_single_te=ring_single_te,
+    dbr_te=dbr_te,
+    crossing_te=crossing_te,
+    crossing_te_ring=crossing_te_ring,
+    dcate=dcate,
+    dcbte=dcbte,
+    y_adiabatic=y_adiabatic,
 )
 
 
