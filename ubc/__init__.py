@@ -10,6 +10,7 @@ from ubc.dcate import dcate
 from ubc.dcbte import dcbte
 from ubc.layers import LAYER
 from ubc.mzi import mzi
+from ubc.ring import ring
 from ubc.waveguide import waveguide
 from ubc.y_adiabatic import y_adiabatic
 from ubc.y_splitter import y_splitter
@@ -42,6 +43,7 @@ _component_functions = [
     y_splitter,
     gc_te1550,
     crossing_te,
+    ring,
 ]  # for the klayout library
 
 
@@ -59,6 +61,7 @@ component_type2factory = dict(
     dcate=dcate,
     dcbte=dcbte,
     y_adiabatic=y_adiabatic,
+    ring=ring,
 )
 
 

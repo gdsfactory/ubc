@@ -45,7 +45,6 @@ def test_mask2():
     bend_radius = 15
 
     e = []
-    e = [ubc.add_gc(ubc.waveguide())]
     e.append(
         ubc.spiral_te(
             N=N,
@@ -62,9 +61,7 @@ def test_mask2():
             x_inner_length_cutback=85,
         )
     )
-    e += [ubc.add_gc(ubc.crossing_te_ring())]
-    e += [ubc.add_gc(ubc.crossing_te_ring(with_dut=False))]
-    c = pack(e, max_size=size)
+    c = pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_2"
     add_floorplan(m)
@@ -87,6 +84,8 @@ def test_mask1():
         for w0 in [0.5]
         for dw in [50e-3, 100e-3, 150e-3, 200e-3]
     ]
+    e += [ubc.add_gc(ubc.crossing_te_ring())]
+    e += [ubc.add_gc(ubc.crossing_te_ring(with_dut=False))]
 
     c = pack(e, max_size=size)
     m = c[0]
@@ -115,6 +114,6 @@ def test_mask3():
 
 
 if __name__ == "__main__":
-    test_mask1()
+    # test_mask1()
     # test_mask2()
-    # test_mask3()
+    test_mask3()
