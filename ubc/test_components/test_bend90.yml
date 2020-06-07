@@ -1,10 +1,12 @@
 angle_resolution: 2.5
-cladding_offset: 3
+cladding_offset: 1
 class: bend90
 layer:
 - 1
 - 0
-layers_cladding: []
+layers_cladding:
+- - 68
+  - 0
 module: ubc.bend90
 name: bend90
 radius: 10
