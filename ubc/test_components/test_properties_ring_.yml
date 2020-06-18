@@ -1,0 +1,11 @@
+bend: bend90
+bend_radius: 5
+class: ring
+coupler: coupler_ring_BR5_LX4_WW500m
+gap: 0.2
+length_x: 4
+length_y: 2
+module: ubc.ring
+name: ring
+waveguide: waveguide
+wg_width: 0.5

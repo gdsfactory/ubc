@@ -1,0 +1,13 @@
+bend: bend_circular
+bend_radius: 5
+class: ring_single_dut
+component: crossing_te
+coupler: coupler_ring
+gap: 0.2
+length_x: 4
+length_y: 0
+module: pp.components.ring_single_dut
+name: ring_single_dut_Ccrossing_te
+waveguide: waveguide
+wg_width: 0.5
+with_dut: 'True'

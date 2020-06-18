@@ -67,6 +67,7 @@ component_type2factory = dict(
 
 __all__ = list(component_type2factory.keys()) + ["LAYER"]
 __version__ = "0.0.2"
+_components = list(component_type2factory.keys())
 
 
 if __name__ == "__main__":
