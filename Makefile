@@ -3,7 +3,9 @@ install:
 	pip install -e .
 	pip install pre-commit
 	pre-commit install
-	lygadgets link tech/ubc
+	pip install lygadgets
+	lygadgets_link lygadgets
+	lygadgets_link tech/ubc
 
 link:
 	lygadgets link tech/ubc
