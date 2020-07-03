@@ -1,10 +1,12 @@
 import pp
 from pp.add_pins import add_pins
+from pp.component import Component
 from ubc.layers import LAYER
 
 
 @pp.autoname
-def waveguide(length=10, width=0.5):
+def waveguide(length: float = 10, width: float = 0.5) -> Component:
+    """ straight waveguide """
     c = pp.c.waveguide(
         length=length,
         width=width,
@@ -13,8 +15,8 @@ def waveguide(length=10, width=0.5):
         cladding_offset=1,
     )
     labels = [
-        f"Lumerical_INTERCONNECT_library=Design kits/EBeam",
-        f"Lumerical_INTERCONNECT_component=ebeam_wg_integral_1550",
+        "Lumerical_INTERCONNECT_library=Design kits/EBeam",
+        "Lumerical_INTERCONNECT_component=ebeam_wg_integral_1550",
         f"Spice_param:wg_width={width:.3f}u wg_length={length:.3f}u",
     ]
 
