@@ -1,6 +1,6 @@
 import pp
 from pp.components.ring_single_dut import ring_single_dut
-from pp.ports import deco_rename_ports
+from pp.port import deco_rename_ports
 from ubc.import_gds import import_gds
 
 

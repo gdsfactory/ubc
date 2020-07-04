@@ -1,10 +1,11 @@
 import pp
 from pp.add_pins import add_pins
+from pp.component import Component
 from ubc.layers import LAYER
 
 
 @pp.autoname
-def bend90(radius=10, width=0.5):
+def bend90(radius: int = 10, width: float = 0.5) -> Component:
     c = pp.c.bend_circular(
         radius=radius,
         width=width,
@@ -13,8 +14,8 @@ def bend90(radius=10, width=0.5):
         cladding_offset=1,
     )
     labels = [
-        f"Lumerical_INTERCONNECT_library=Design kits/EBeam",
-        f"Lumerical_INTERCONNECT_component=ebeam_bend_1550",
+        "Lumerical_INTERCONNECT_library=Design kits/EBeam",
+        "Lumerical_INTERCONNECT_component=ebeam_bend_1550",
         f"Spice_param:radius={radius:.3f}u wg_width={width:.3f}u",
     ]
 

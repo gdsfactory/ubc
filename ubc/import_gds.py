@@ -1,6 +1,8 @@
 import pathlib
 
 import pp
+from numpy import ndarray
+from pp.component import Component
 from ubc.layers import LAYER
 
 cwd = pathlib.Path(__file__).parent.absolute()
@@ -11,7 +13,7 @@ layer = LAYER.WG
 port_width = 0.5
 
 
-def guess_port_orientaton(position, name, label, n):
+def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> int:
     """ we assume that ports with x<0 are inputs (orientation=180deg)
     and ports with x>0 are outputs
     """
@@ -33,7 +35,7 @@ def guess_port_orientaton(position, name, label, n):
     return 0
 
 
-def import_gds(gdsname):
+def import_gds(gdsname: str) -> Component:
     """ import gds from SIEPIC PDK
     """
     c = pp.import_gds(gds / f"{gdsname}.gds")

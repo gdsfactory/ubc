@@ -1,6 +1,12 @@
+from typing import Callable, List, Optional, Tuple
+
 import pp
+from numpy import ndarray
 from phidl import device_layout as pd
+from phidl.device_layout import Label
 from pp.add_labels import get_input_label
+from pp.component import Component, ComponentReference
+from pp.port import Port
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
 from ubc.bend90 import bend90
@@ -14,7 +20,7 @@ layer_label = LAYER.LABEL
 
 
 @pp.autoname
-def gc_te1550():
+def gc_te1550() -> Component:
     c = import_gds("ebeam_gc_te1550")
     c = rotate(c, 180)
     c.polarization = "te"
@@ -42,13 +48,13 @@ def gc_tm1550():
 
 
 def connect_strip(
-    way_points=[],
-    bend_factory=bend90(),
-    straight_factory=waveguide,
-    bend_radius=10.0,
-    wg_width=0.5,
+    way_points: ndarray = [],
+    bend_factory: Component = bend90(),
+    straight_factory: Callable = waveguide,
+    bend_radius: float = 10.0,
+    wg_width: float = 0.5,
     **kwargs,
-):
+) -> ComponentReference:
     """
     Returns a deep-etched route formed by the given way_points with
     bends instead of corners and optionally tapers in straight sections.
@@ -64,7 +70,12 @@ def taper_factory(layer=LAYER.WG, layers_cladding=[], **kwargs):
     return c
 
 
-def get_optical_text(port, gc, gc_index=None, component_name=None):
+def get_optical_text(
+    port: Port,
+    gc: ComponentReference,
+    gc_index: Optional[int] = None,
+    component_name: Optional[str] = None,
+) -> str:
     polarization = gc.get_property("polarization")
     wavelength_nm = gc.get_property("wavelength")
 
@@ -114,13 +125,13 @@ def get_input_labels_all(
 
 
 def get_input_labels(
-    io_gratings,
-    ordered_ports,
-    component_name,
-    layer_label=layer_label,
-    gc_port_name=gc_port_name,
-    port_index=1,
-):
+    io_gratings: List[ComponentReference],
+    ordered_ports: List[Port],
+    component_name: str,
+    layer_label: Tuple[int, int] = layer_label,
+    gc_port_name: str = gc_port_name,
+    port_index: int = 1,
+) -> List[Label]:
     """ get labels for all component ports """
     if port_index == -1:
         return get_input_labels_all(
@@ -149,21 +160,21 @@ def get_input_labels(
 
 
 def add_gc(
-    component=waveguide,
-    component_name=None,
-    layer_label=LAYER.LABEL,
-    grating_coupler=gc_te1550,
-    bend_factory=bend90,
-    straight_factory=waveguide,
-    taper_factory=taper_factory,
-    route_filter=connect_strip,
-    gc_port_name="W0",
-    get_input_labels_function=get_input_labels,
-    with_align_ports=False,
-    optical_routing_type=0,
-    fanout_length=0,
+    component: Component = waveguide,
+    component_name: None = None,
+    layer_label: Tuple[int, int] = LAYER.LABEL,
+    grating_coupler: Callable = gc_te1550,
+    bend_factory: Callable = bend90,
+    straight_factory: Callable = waveguide,
+    taper_factory: Callable = taper_factory,
+    route_filter: Callable = connect_strip,
+    gc_port_name: str = "W0",
+    get_input_labels_function: Callable = get_input_labels,
+    with_align_ports: bool = False,
+    optical_routing_type: int = 0,
+    fanout_length: int = 0,
     **kwargs,
-):
+) -> Component:
     c = pp.routing.add_io_optical(
         component=component,
         component_name=component_name,
