@@ -10,7 +10,7 @@ from pp.port import Port
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
 from ubc.bend90 import bend90
-from ubc.config import CONFIG
+from ubc.config import conf
 from ubc.import_gds import import_gds
 from ubc.layers import LAYER
 from ubc.waveguide import waveguide
@@ -97,7 +97,7 @@ def get_optical_text(
 
     name += f"_{port.name}"
     name = name.replace("_", "-")
-    label = f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{CONFIG['username']}_{name}"
+    label = f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{conf.username}_{name}"
     return label
 
 

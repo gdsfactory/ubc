@@ -5,7 +5,7 @@ component_name: mzi_te
 name: mzi_te_r
 settings:
   class: add_io_optical
-  component: L0_L1_L2_bend_radius_bend90_factory_straight_factory_coupler_factory_combiner_factory_delta_length
+  component: L0_DL_L2_bend_radius_bend90_factory_straight_factory_coupler_factory_combiner_factory_delta_length
   component_name: mzi
   gc_port_name: W0
   get_input_labels_function: get_input_labels

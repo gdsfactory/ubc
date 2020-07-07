@@ -12,7 +12,7 @@ def mzi(
     bend90_factory=bend90,
 ):
     c = pp.c.mzi(
-        L1=delta_length,
+        DL=delta_length,
         straight_factory=straight_factory,
         bend90_factory=bend90_factory,
         coupler_factory=coupler_factory,
