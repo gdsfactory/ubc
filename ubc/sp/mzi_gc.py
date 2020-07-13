@@ -7,7 +7,7 @@ from simphony.netlist import Subcircuit
 from simphony.simulation import MonteCarloSweepSimulation, SweepSimulation
 
 
-def mzi_circuit(
+def mzi_gc(
     L0=1,
     L1=100,
     L2=10,
@@ -15,7 +15,7 @@ def mzi_circuit(
     y=siepic.ebeam_y_1550,
     wg=siepic.ebeam_wg_integral_1550,
 ):
-    """ Mzi
+    """ Mzi with grating couplers
 
     Args:
         L0: vertical length for both and top arms
@@ -86,11 +86,11 @@ def mzi_circuit(
     return circuit
 
 
-def mzi_simulation(**kwargs):
+def mzi_simulation(circuit=mzi_gc, **kwargs):
     """ Run a simulation on the netlist """
-    circuit = mzi_circuit(**kwargs)
+    c = circuit(**kwargs)
 
-    simulation = SweepSimulation(circuit, 1500e-9, 1600e-9)
+    simulation = SweepSimulation(c, 1500e-9, 1600e-9)
     result = simulation.simulate()
 
     f, s = result.data("input", "output")
@@ -102,11 +102,11 @@ def mzi_simulation(**kwargs):
     plt.show()
 
 
-def mzi_variation(**kwargs):
+def mzi_variation(circuit=mzi_gc, **kwargs):
     """ Run a montercarlo simulation on the netlist """
-    circuit = mzi_circuit(**kwargs)
+    c = circuit(**kwargs)
 
-    simulation = MonteCarloSweepSimulation(circuit, 1500e-9, 1600e-9)
+    simulation = MonteCarloSweepSimulation(c, 1500e-9, 1600e-9)
     runs = 10
     result = simulation.simulate(runs=runs)
     for i in range(1, runs + 1):

@@ -1,0 +1,10 @@
+%<X-coord>,<Y-coord>,<Polarization>,<wavelength>,<type>,<deviceID>,<comment=waveguide length difference>
+223.85,29.15,TE,1550,device,LukasChrostowski_MZI2, 1394.5
+892.6,145.4,TE,1550,device,ZiheGao_MZI17,219.366
+772.6,145.4,TE,1550,device,ZiheGao_MZI8, 217.649
+652.6,145.4,TE,1550,device,ZiheGao_MZI6, 215.932
+532.6,145.4,TE,1550,device,ZiheGao_MZI5, 206.703125
+412.6,145.4,TE,1550,device,ZiheGao_MZI4, 207.08945
+292.6,145.4,TE,1550,device,ZiheGao_MZI3, 214.215
+172.6,145.4,TE,1550,device,ZiheGao_MZI2, 111.915
+33.85,29.15,TE,1550,device,LukasChrostowski_MZI1, 26.8

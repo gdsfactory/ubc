@@ -1,8 +1,7 @@
 -e .
-hiyapyco
-pytest-regressions
 klayout
+omegaconf
+scipy
 git+git://github.com/joamatab/simphony
 git+git://github.com/gdsfactory/gdsfactory
 git+git://github.com/gdsfactory/gdslib
-lygadgets

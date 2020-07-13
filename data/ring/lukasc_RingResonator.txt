@@ -1,0 +1,13 @@
+Double-bus ring resonators
+symmetrically coupled
+
+TE:
+R = [3]
+g = [ 50, 100, 150]
+
+R = [10]
+g = [ 50, 100, 150, 200 ]
+
+TM:
+R = [30]
+g = [150, 200, 250]

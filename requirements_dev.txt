@@ -3,3 +3,6 @@ sphinx-rtd-theme
 recommonmark
 sphinx-markdown-tables
 matplotlib
+pytest
+pytest-regressions
+lygadgets
