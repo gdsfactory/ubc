@@ -24,15 +24,15 @@ def neff(wavelength_um=wavelength_um, n1=2.4, n2=-1.0, n3=0.0, wavelength0_um=1.
     return n1 + n2 * (w - w0) + n3 * (w - w0) ** 2
 
 
-def beta(wavelength_um=wavelength_um, alpha=1e-3, neff=neff):
+def beta(wavelength_um=wavelength_um, alpha=1e-3, neff=neff, n1=2.4, n2=-1, n3=0):
     """propagation constant
 
     Args:
         wavelength_um (m):
-        alpha: propagation loss [micron^-1]; constant
+        alpha: propagation loss [micron^-1] constant
     """
     if callable(neff):
-        neff = neff(wavelength_um)
+        neff = neff(wavelength_um, n1=n1, n2=n2, n3=n3)
 
     return 2 * np.pi * neff / wavelength_um - 1j * alpha / 2 * np.ones(
         np.size(wavelength_um)
