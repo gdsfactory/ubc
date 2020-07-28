@@ -1,9 +1,9 @@
 angle: 90
-class: gc_te1550
 component: {}
 component_name: ebeam_gc_te1550
+function_name: gc_te1550
 module: ubc.add_gc
 name: gc_te1550
 settings:
-  class: null
+  function_name: null
   name: ebeam_gc_te1550

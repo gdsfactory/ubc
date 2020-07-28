@@ -1,5 +1,5 @@
 import pp
-from gdslib import sweep_simulation
+from gdslib import plot_circuit
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
 
@@ -32,5 +32,5 @@ if __name__ == "__main__":
 
     c1 = mzi()
     c2 = add_gc_te(c1)
-    sweep_simulation(c2)
+    plot_circuit(c2)
     plt.show()

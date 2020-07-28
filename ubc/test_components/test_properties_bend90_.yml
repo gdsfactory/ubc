@@ -1,6 +1,6 @@
 angle_resolution: 2.5
 cladding_offset: 1
-class: bend90
+function_name: bend90
 layer:
 - 1
 - 0

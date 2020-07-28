@@ -1,3 +1,5 @@
+""" circuit models """
+
 from .mzi import mzi
 from .waveguide import beta, neff, wavelength_um
 

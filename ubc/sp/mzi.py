@@ -1,6 +1,5 @@
+import gdslib as gl
 import pp
-from gdslib import sweep_simulation
-from gdslib.mmi1x2 import mmi1x2
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
 
@@ -48,10 +47,10 @@ def mzi(
         :include-source:
 
         import ubc
+        import gdslib as gl
 
-        c = ubc.cm.mzi()
-        gl.sweep_simulation(c)
-
+        c = ubc.sp.mzi()
+        gl.plot_circuit(c)
 
     """
     y = pp.call_if_func(y_model_factory)
@@ -88,6 +87,6 @@ def mzi(
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
-    c = mzi()
-    sweep_simulation(c)
+    m = mzi()
+    gl.plot_circuit(m)
     plt.show()
