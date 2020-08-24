@@ -1,9 +1,7 @@
 """ubc - UBC Siepic Ebeam PDK from edx course"""
 
 import pp
-import ubc.cm as cm
 import ubc.da as da
-import ubc.sp as sp
 from pp.add_pins import add_outline, add_pins
 from ubc.add_gc import add_gc, gc_te1550
 from ubc.bend90 import bend90
@@ -74,8 +72,6 @@ __all__ = list(component_type2factory.keys()) + [
     "conf",
     "path",
     "da",
-    "cm",
-    "sp",
 ]
 __version__ = "0.0.2"
 _components = list(component_type2factory.keys())

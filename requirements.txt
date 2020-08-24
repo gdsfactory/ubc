@@ -2,6 +2,7 @@
 klayout
 omegaconf
 scipy
+lygadgets
 git+git://github.com/joamatab/simphony
 git+git://github.com/gdsfactory/gdsfactory
 git+git://github.com/gdsfactory/gdslib

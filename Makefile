@@ -3,12 +3,10 @@ install:
 	pip install -e .
 	pip install pre-commit
 	pre-commit install
-	pip install lygadgets
-	lygadgets_link lygadgets
-	lygadgets_link tech/ubc
 
 link:
-	lygadgets link tech/ubc
+	lygadgets_link lygadgets
+	lygadgets_link tech/ubc
 
 lint:
 	flake8 .
