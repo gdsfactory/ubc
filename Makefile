@@ -16,3 +16,8 @@ test:
 
 test-force:
 	pytest --force-regen
+
+annotations:
+	pip install pytest-monkeytype
+	py.test --monkeytype-output=./monkeytype.sqlite3
+	fish add_types.fish

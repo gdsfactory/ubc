@@ -1,6 +1,6 @@
 DL: 100
 L0: 1.0
-L2: 10.0
+L2: 0.1
 bend90_factory: bend90
 bend_radius: 10.0
 combiner_factory: None
