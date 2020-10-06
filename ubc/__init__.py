@@ -2,8 +2,14 @@
 
 import pp
 import ubc.da as da
-from pp.add_pins import add_outline, add_pins
-from ubc.add_gc import add_gc, gc_te1550
+from ubc.add_gc import (
+    add_gc,
+    gc_te1310,
+    gc_te1550,
+    gc_te1550_broadband,
+    gc_tm1550,
+    taper_factory,
+)
 from ubc.bend90 import bend90
 from ubc.config import conf, path
 from ubc.crossing import crossing_te, crossing_te_ring
@@ -40,30 +46,34 @@ def cavity_te(**kwargs):
 
 
 _component_functions = [
-    waveguide,
     bend90,
-    y_splitter,
-    gc_te1550,
     crossing_te,
+    gc_te1550,
     ring,
+    waveguide,
+    y_splitter,
 ]  # for the klayout library
 
 
 component_type2factory = dict(
-    waveguide=waveguide,
     bend90=bend90,
-    y_splitter=y_splitter,
-    mzi=mzi,
-    gc_te1550=gc_te1550,
-    mzi_te=mzi_te,
-    ring_single_te=ring_single_te,
-    dbr_te=dbr_te,
     crossing_te=crossing_te,
     crossing_te_ring=crossing_te_ring,
+    dbr_te=dbr_te,
     dcate=dcate,
     dcbte=dcbte,
-    y_adiabatic=y_adiabatic,
+    gc_te1550=gc_te1550,
+    gc_te1550_broadband=gc_te1550_broadband,
+    gc_te1310=gc_te1310,
+    gc_tm1550=gc_tm1550,
+    mzi=mzi,
+    mzi_te=mzi_te,
     ring=ring,
+    ring_single_te=ring_single_te,
+    taper_factory=taper_factory,
+    waveguide=waveguide,
+    y_adiabatic=y_adiabatic,
+    y_splitter=y_splitter,
 )
 
 

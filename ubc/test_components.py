@@ -1,5 +1,18 @@
 import pytest
 from ubc import _components, component_type2factory
+from ubc.add_gc import add_gc
+from ubc.waveguide import waveguide
+
+_containers = [
+    add_gc,
+]
+
+
+@pytest.mark.parametrize("function", _containers)
+def test_properties_containers(function, data_regression):
+    component = waveguide()
+    c = function(component=component)
+    data_regression.check(c.get_settings())
 
 
 @pytest.mark.parametrize("component_type", _components)

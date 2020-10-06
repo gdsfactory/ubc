@@ -17,6 +17,9 @@ test:
 test-force:
 	pytest --force-regen
 
+cov:
+	pytest --cov=ubc
+
 annotations:
 	pip install pytest-monkeytype
 	py.test --monkeytype-output=./monkeytype.sqlite3

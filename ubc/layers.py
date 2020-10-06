@@ -11,6 +11,8 @@ class Layer:
 
 
 LAYER = Layer()
+port_layer2type = {LAYER.PORT: "optical"}
+port_type2layer = {v: k for k, v in port_layer2type.items()}
 
 
 if __name__ == "__main__":

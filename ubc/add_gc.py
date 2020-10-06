@@ -175,7 +175,7 @@ def add_gc(
     fanout_length: int = 0,
     **kwargs,
 ) -> Component:
-    c = pp.routing.add_io_optical(
+    c = pp.routing.add_fiber_array(
         component=component,
         component_name=component_name,
         bend_factory=bend_factory,

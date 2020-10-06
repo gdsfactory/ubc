@@ -1,22 +1,31 @@
 angle: 90
-component: component_grating_coupler_gc_port_name_component_name_taper_factory_get_route_factory_get_input_labels_function_kwargs
+component: component_grating_coupler_gc_port_name_component_name_taper_factory_taper_length_get_route_factory_get_input_labels_function_bend_factory_straight_factory_route_filter_layer_label_with_align_ports_optical_routing_type_fanout_length_function_name
 component_name: dbr-100-500_te
 dw: 0.1
-function_name: dbr_te
+function_name: rotate
 l1: 0.07940573770491803
 l2: 0.07940573770491803
 module: ubc.dbr
 n: 600
 name: dbr_te
 settings:
-  component: length_gap_wg_width_component_coupler_component_name
+  bend_factory: bend90
+  component: length_gap_wg_width_component_coupler_component_name_function_name
   component_name: cavity_d24408f6
-  function_name: add_io_optical
+  fanout_length: 0
+  function_name: add_fiber_array
   gc_port_name: W0
   get_input_labels_function: get_input_labels
   get_route_factory: route_fiber_array
-  grating_coupler: grating_coupler_te
-  kwargs: _empty
+  grating_coupler: gc_te1550
+  layer_label:
+  - 10
+  - 0
   name: dbr-100-500_te
-  taper_factory: taper
+  optical_routing_type: 0
+  route_filter: connect_strip
+  straight_factory: waveguide
+  taper_factory: taper_factory
+  taper_length: 10.0
+  with_align_ports: 'False'
 w0: 0.5
