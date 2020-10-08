@@ -7,4 +7,4 @@ length_y: 0
 module: pp.components.ring_single_dut
 name: ring_single_dut_Ccrossing_te
 wg_width: 0.5
-with_dut: 'True'
+with_dut: true
