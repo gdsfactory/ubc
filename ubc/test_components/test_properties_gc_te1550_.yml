@@ -5,5 +5,4 @@ function_name: rotate
 module: ubc.add_gc
 name: gc_te1550
 settings:
-  function_name: null
   name: ebeam_gc_te1550
