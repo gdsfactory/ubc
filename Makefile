@@ -1,8 +1,5 @@
 install:
-	pip install -r requirements.txt --upgrade
-	pip install -e .
-	pip install pre-commit
-	pre-commit install
+	bash install.sh
 
 link:
 	lygadgets_link lygadgets
