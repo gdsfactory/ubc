@@ -5,4 +5,5 @@ sphinx-markdown-tables
 matplotlib
 pytest
 pytest-regressions
+pytest-cov
 lygadgets

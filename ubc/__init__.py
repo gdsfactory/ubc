@@ -55,7 +55,7 @@ _component_functions = [
 ]  # for the klayout library
 
 
-component_type2factory = dict(
+component_factory = dict(
     bend90=bend90,
     crossing_te=crossing_te,
     crossing_te_ring=crossing_te_ring,
@@ -77,14 +77,14 @@ component_type2factory = dict(
 )
 
 
-__all__ = list(component_type2factory.keys()) + [
+__all__ = list(component_factory.keys()) + [
     "LAYER",
     "conf",
     "path",
     "da",
 ]
 __version__ = "0.0.2"
-_components = list(component_type2factory.keys())
+_components = list(component_factory.keys())
 
 
 if __name__ == "__main__":
