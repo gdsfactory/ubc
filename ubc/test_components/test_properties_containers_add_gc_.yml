@@ -3,6 +3,7 @@ component:
   bend_factory: bend90
   component:
     cladding_offset: 1
+    function_name: waveguide
     layer:
     - 1
     - 0
@@ -10,37 +11,8 @@ component:
     - - 68
       - 0
     length: 10
-    width: 0.5
-  component_name: waveguide
-  fanout_length: 0
-  function_name: add_fiber_array
-  gc_port_name: W0
-  get_input_labels_function: get_input_labels
-  get_route_factory: route_fiber_array
-  grating_coupler: gc_te1550
-  layer_label:
-  - 10
-  - 0
-  optical_routing_type: 0
-  route_filter: connect_strip
-  straight_factory: waveguide
-  taper_factory: taper_factory
-  taper_length: 10.0
-  with_align_ports: false
-component_name: waveguide_te
-function_name: rotate
-name: waveguide_te_r
-settings:
-  bend_factory: bend90
-  component:
-    cladding_offset: 1
-    layer:
-    - 1
-    - 0
-    layers_cladding:
-    - - 68
-      - 0
-    length: 10
+    module: ubc.waveguide
+    name: waveguide
     width: 0.5
   component_name: waveguide
   fanout_length: 0
@@ -59,3 +31,6 @@ settings:
   taper_factory: taper_factory
   taper_length: 10.0
   with_align_ports: false
+component_name: waveguide_te
+function_name: rotate
+name: waveguide_te_r

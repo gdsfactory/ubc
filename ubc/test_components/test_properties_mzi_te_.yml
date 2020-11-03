@@ -10,39 +10,9 @@ component:
     combiner: None
     coupler: y_splitter
     delta_length: 100
-    waveguide: waveguide
-    waveguide_horizontal: None
-    waveguide_vertical: None
-  component_name: mzi
-  fanout_length: 0
-  function_name: add_fiber_array
-  gc_port_name: W0
-  get_input_labels_function: get_input_labels
-  get_route_factory: route_fiber_array
-  grating_coupler: gc_te1550
-  layer_label:
-  - 10
-  - 0
-  optical_routing_type: 0
-  route_filter: connect_strip
-  straight_factory: waveguide
-  taper_factory: taper_factory
-  taper_length: 10.0
-  with_align_ports: false
-component_name: mzi_te
-function_name: rotate
-name: mzi_te_r
-settings:
-  bend_factory: bend90
-  component:
-    DL: 100
-    L0: 0.01
-    L2: 0.01
-    bend90: bend90
-    bend_radius: 10.0
-    combiner: None
-    coupler: y_splitter
-    delta_length: 100
+    function_name: mzi
+    module: ubc.mzi
+    name: mzi
     waveguide: waveguide
     waveguide_horizontal: None
     waveguide_vertical: None
@@ -63,3 +33,6 @@ settings:
   taper_factory: taper_factory
   taper_length: 10.0
   with_align_ports: false
+component_name: mzi_te
+function_name: rotate
+name: mzi_te_r

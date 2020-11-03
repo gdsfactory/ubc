@@ -1,8 +1,7 @@
 angle: 90
-component: {}
+component:
+  name: ebeam_gc_te1550
 component_name: ebeam_gc_te1550
 function_name: rotate
 module: ubc.add_gc
 name: gc_te1550
-settings:
-  name: ebeam_gc_te1550
