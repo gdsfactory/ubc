@@ -1,3 +1,4 @@
 function_name: crossing_te
 module: ubc.crossing
 name: crossing_te
+settings: {}

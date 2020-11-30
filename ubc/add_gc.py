@@ -16,10 +16,9 @@ from ubc.layers import LAYER
 from ubc.waveguide import waveguide
 
 gc_port_name = "W0"
-layer_label = LAYER.LABEL
 
 
-@pp.autoname
+@pp.cell
 def gc_te1550() -> Component:
     c = import_gds("ebeam_gc_te1550")
     c = rotate(c, 180)
@@ -30,6 +29,8 @@ def gc_te1550() -> Component:
 
 def gc_te1550_broadband():
     c = import_gds("ebeam_gc_te1550_broadband")
+    c.polarization = "te"
+    c.wavelength = 1550
     return c
 
 
@@ -64,7 +65,7 @@ def connect_strip(
     return connector
 
 
-@pp.autoname
+@pp.cell
 def taper_factory(layer=LAYER.WG, layers_cladding=[], **kwargs):
     c = pp.c.taper(layer=layer, layers_cladding=layers_cladding, **kwargs)
     return c
@@ -76,6 +77,13 @@ def get_optical_text(
     gc_index: Optional[int] = None,
     component_name: Optional[str] = None,
 ) -> str:
+    """Returns label for a component port and a grating coupler.
+
+    Args:
+        port: component port.
+        gc: grating coupler reference.
+        component_name: optional component name.
+    """
     polarization = gc.get_property("polarization")
     wavelength_nm = gc.get_property("wavelength")
 
@@ -89,15 +97,13 @@ def get_optical_text(
 
     if component_name:
         name = component_name
-
     elif type(port.parent) == pp.Component:
         name = port.parent.name
     else:
         name = port.parent.ref_cell.name
 
-    name += f"_{port.name}"
     name = name.replace("_", "-")
-    label = f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{conf.username}_{name}"
+    label = f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{conf.username}_({name})-{gc_index}-{port.name}"
     return label
 
 
@@ -105,7 +111,7 @@ def get_input_labels_all(
     io_gratings,
     ordered_ports,
     component_name,
-    layer_label=layer_label,
+    layer_label=LAYER.LABEL,
     gc_port_name=gc_port_name,
 ):
     """ get labels for all component ports """
@@ -128,7 +134,7 @@ def get_input_labels(
     io_gratings: List[ComponentReference],
     ordered_ports: List[Port],
     component_name: str,
-    layer_label: Tuple[int, int] = layer_label,
+    layer_label: Tuple[int, int] = LAYER.LABEL,
     gc_port_name: str = gc_port_name,
     port_index: int = 1,
 ) -> List[Label]:

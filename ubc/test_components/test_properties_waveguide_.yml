@@ -1,12 +1,15 @@
-cladding_offset: 1
 function_name: waveguide
-layer:
-- 1
-- 0
-layers_cladding:
-- - 68
-  - 0
 length: 10
 module: ubc.waveguide
 name: waveguide
+settings:
+  cladding_offset: 1
+  layer:
+  - 1
+  - 0
+  layers_cladding:
+  - - 68
+    - 0
+  length: 10
+  width: 0.5
 width: 0.5

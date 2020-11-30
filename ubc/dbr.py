@@ -4,7 +4,7 @@ import ubc
 L = 1.55 / 4 / 2 / 2.44
 
 
-@pp.autoname
+@pp.cell
 def dbr_te(w0=0.5, dw=0.1, n=600, l1=L, l2=L, **kwargs):
     """ cavity with a DBR
     """

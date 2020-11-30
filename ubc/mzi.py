@@ -7,7 +7,7 @@ L2 = 0.01
 L0 = 0.01
 
 
-@pp.autoname
+@pp.cell
 def mzi(
     delta_length=100,
     coupler=y_splitter,

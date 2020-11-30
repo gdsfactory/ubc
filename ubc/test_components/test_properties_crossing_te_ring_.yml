@@ -1,10 +1,11 @@
-bend_radius: 5
-component: crossing_te
 function_name: ring_single_dut
-gap: 0.2
-length_x: 4
-length_y: 0
 module: pp.components.ring_single_dut
 name: ring_single_dut_Ccrossing_te
-wg_width: 0.5
-with_dut: true
+settings:
+  bend_radius: 5
+  component: crossing_te
+  gap: 0.2
+  length_x: 4
+  length_y: 0
+  wg_width: 0.5
+  with_dut: true

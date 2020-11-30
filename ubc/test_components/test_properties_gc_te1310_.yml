@@ -1,1 +1,4 @@
 name: ebeam_gc_te1310
+polarization: te
+settings: {}
+wavelength: 1310

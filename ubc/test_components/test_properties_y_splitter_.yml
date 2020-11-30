@@ -1,3 +1,4 @@
 function_name: y_splitter
 module: ubc.y_splitter
 name: y_splitter
+settings: {}

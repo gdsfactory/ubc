@@ -1,7 +1,12 @@
-angle: 90
-component:
-  name: ebeam_gc_te1550
-component_name: ebeam_gc_te1550
-function_name: rotate
+function_name: gc_te1550
 module: ubc.add_gc
 name: gc_te1550
+polarization: te
+settings:
+  angle: 90
+  component:
+    name: ebeam_gc_te1550
+    settings: {}
+  component_name: ebeam_gc_te1550
+  function_name: rotate
+wavelength: 1550

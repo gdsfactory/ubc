@@ -5,7 +5,7 @@ from ubc.import_gds import import_gds
 
 
 @deco_rename_ports
-@pp.autoname
+@pp.cell
 def crossing_te():
     c = import_gds("ebeam_crossing4")
     return c

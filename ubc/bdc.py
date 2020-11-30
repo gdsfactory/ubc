@@ -2,7 +2,7 @@ import pp
 from ubc.import_gds import import_gds
 
 
-@pp.autoname
+@pp.cell
 def bdc():
     c = import_gds("ebeam_bdc_te1550")
     return c

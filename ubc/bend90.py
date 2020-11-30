@@ -4,7 +4,7 @@ from ubc.add_pins import add_pins
 from ubc.layers import LAYER
 
 
-@pp.autoname
+@pp.cell
 def bend90(radius: int = 10, width: float = 0.5) -> Component:
     c = pp.c.bend_circular(
         radius=radius,

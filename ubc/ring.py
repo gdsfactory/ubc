@@ -3,7 +3,7 @@ from ubc.bend90 import bend90
 from ubc.waveguide import waveguide
 
 
-@pp.autoname
+@pp.cell
 def ring(
     wg_width=0.5, gap=0.2, length_x=4, bend_radius=5, length_y=2,
 ):
