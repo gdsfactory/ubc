@@ -21,7 +21,7 @@ def ring(
           length_x
     """
     coupler = pp.c.coupler_ring(
-        length_x=length_x, wg_width=wg_width, bend_radius=bend_radius, pins=True,
+        length_x=length_x, wg_width=wg_width, bend_radius=bend_radius
     )
 
     return pp.c.ring_single(

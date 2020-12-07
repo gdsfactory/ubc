@@ -1,7 +1,9 @@
+function_name: rotate
 name: ring_single_te_r
 settings:
   angle: 90
   component:
+    function_name: add_fiber_array
     name: ring_single_te
     settings:
       bend_factory: bend90
@@ -10,14 +12,14 @@ settings:
         module: pp.components.ring_single
         name: ring_single
         settings:
-          bend_radius: 5.0
+          bend_radius: 10.0
           gap: 0.2
           length_x: 4.0
-          length_y: 2.0
+          length_y: 0.001
+          pins: false
           wg_width: 0.5
-      component_name: ring_single
+      component_name: None
       fanout_length: 0
-      function_name: add_fiber_array
       gc_port_name: W0
       get_input_labels_function: get_input_labels
       get_route_factory: route_fiber_array
@@ -31,5 +33,3 @@ settings:
       taper_factory: taper_factory
       taper_length: 10.0
       with_align_ports: false
-  component_name: ring_single_te
-  function_name: rotate

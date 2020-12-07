@@ -4,33 +4,31 @@ name: dbr_te
 settings:
   angle: 90
   component:
+    function_name: add_fiber_array
     name: dbr-100-500_te
     settings:
       bend_factory: bend90
       component:
         function_name: cavity
         module: pp.components.cavity
-        name: cavity_d24408f6
+        name: cavity_f5a5c654
         settings:
           component:
             function_name: dbr
             module: pp.components.dbr
-            name: dbr_L79m_L79m_N600_W450m_W550m
+            name: dbr_L79n_L79n_N600_W450n_W550n
             settings:
               l1: 0.07940573770491803
               l2: 0.07940573770491803
               n: 600
               w1: 0.45
               w2: 0.55
-          component_name: dbr_L79m_L79m_N600_W450m_W550m
           coupler: coupler
-          function_name: cavity
           gap: 0.2
           length: 0.1
           wg_width: 0.5
-      component_name: cavity_d24408f6
+      component_name: dbr-100-500
       fanout_length: 0
-      function_name: add_fiber_array
       gc_port_name: W0
       get_input_labels_function: get_input_labels
       get_route_factory: route_fiber_array
@@ -44,9 +42,7 @@ settings:
       taper_factory: taper_factory
       taper_length: 10.0
       with_align_ports: false
-  component_name: dbr-100-500_te
   dw: 0.1
-  function_name: rotate
   l1: 0.07940573770491803
   l2: 0.07940573770491803
   n: 600

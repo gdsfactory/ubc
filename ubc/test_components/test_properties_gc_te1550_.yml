@@ -7,6 +7,4 @@ settings:
   component:
     name: ebeam_gc_te1550
     settings: {}
-  component_name: ebeam_gc_te1550
-  function_name: rotate
 wavelength: 1550

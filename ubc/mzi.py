@@ -3,9 +3,6 @@ from ubc.bend90 import bend90
 from ubc.waveguide import waveguide
 from ubc.y_splitter import y_splitter
 
-L2 = 0.01
-L0 = 0.01
-
 
 @pp.cell
 def mzi(
@@ -13,8 +10,8 @@ def mzi(
     coupler=y_splitter,
     waveguide=waveguide,
     bend90=bend90,
-    L2=L2,
-    L0=L0,
+    L2=0.01,
+    L0=0.01,
 ):
     c = pp.c.mzi(
         DL=delta_length,

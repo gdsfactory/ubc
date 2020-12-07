@@ -8,8 +8,11 @@ settings:
   bend90: bend90
   bend_radius: 10.0
   combiner: None
+  combiner_settings: None
   coupler: y_splitter
+  coupler_settings: None
   delta_length: 100
+  pins: false
   waveguide: waveguide
   waveguide_horizontal: None
   waveguide_vertical: None

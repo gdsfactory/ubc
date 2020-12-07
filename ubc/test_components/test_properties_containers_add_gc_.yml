@@ -1,7 +1,9 @@
+function_name: rotate
 name: waveguide_te_r
 settings:
   angle: 90
   component:
+    function_name: add_fiber_array
     name: waveguide_te
     settings:
       bend_factory: bend90
@@ -21,9 +23,8 @@ settings:
           length: 10
           width: 0.5
         width: 0.5
-      component_name: waveguide
+      component_name: None
       fanout_length: 0
-      function_name: add_fiber_array
       gc_port_name: W0
       get_input_labels_function: get_input_labels
       get_route_factory: route_fiber_array
@@ -37,5 +38,3 @@ settings:
       taper_factory: taper_factory
       taper_length: 10.0
       with_align_ports: false
-  component_name: waveguide_te
-  function_name: rotate
