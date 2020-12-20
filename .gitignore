@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+run_layouts/
+ref_layouts/
 
 # C extensions
 *.so

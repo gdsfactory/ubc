@@ -5,7 +5,7 @@ from ubc.layers import LAYER
 
 
 @pp.cell
-def waveguide(length: float = 10, width: float = 0.5) -> Component:
+def waveguide(length: float = 10.0, width: float = 0.5) -> Component:
     """Straight waveguide """
     c = pp.c.waveguide(
         length=length,
