@@ -56,8 +56,7 @@ def connect_strip(
     wg_width: float = 0.5,
     **kwargs,
 ) -> ComponentReference:
-    """
-    Returns a deep-etched route formed by the given way_points with
+    """Return a deep-etched route formed by the given way_points with
     bends instead of corners and optionally tapers in straight sections.
     """
     bend90 = pp.call_if_func(bend_factory, radius=bend_radius, width=wg_width)
@@ -77,7 +76,7 @@ def get_optical_text(
     gc_index: Optional[int] = None,
     component_name: Optional[str] = None,
 ) -> str:
-    """Returns label for a component port and a grating coupler.
+    """Return label for a component port and a grating coupler.
 
     Args:
         port: component port.
@@ -114,7 +113,7 @@ def get_input_labels_all(
     layer_label=LAYER.LABEL,
     gc_port_name=gc_port_name,
 ):
-    """ get labels for all component ports """
+    """Return labels (elements list) for all component ports."""
     elements = []
     for i, g in enumerate(io_gratings):
         label = get_input_label(
@@ -138,7 +137,7 @@ def get_input_labels(
     gc_port_name: str = gc_port_name,
     port_index: int = 1,
 ) -> List[Label]:
-    """ get labels for all component ports """
+    """Return labels (elements list) for all component ports."""
     if port_index == -1:
         return get_input_labels_all(
             io_gratings=io_gratings,

@@ -1,14 +1,17 @@
 function_name: rotate
+info: {}
 name: ring_single_te_r
 settings:
   angle: 90
   component:
     function_name: add_fiber_array
+    info: {}
     name: ring_single_te
     settings:
       bend_factory: bend90
       component:
         function_name: ring_single
+        info: {}
         module: pp.components.ring_single
         name: ring_single
         settings:

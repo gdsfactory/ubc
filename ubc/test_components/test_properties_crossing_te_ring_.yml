@@ -1,4 +1,5 @@
 function_name: ring_single_dut
+info: {}
 module: pp.components.ring_single_dut
 name: ring_single_dut_Ccrossing_te
 settings:

@@ -1,10 +1,12 @@
 function_name: gc_te1550
+info:
+  polarization: te
+  wavelength: 1550
 module: ubc.add_gc
 name: gc_te1550
-polarization: te
 settings:
   angle: 90
   component:
+    info: {}
     name: ebeam_gc_te1550
     settings: {}
-wavelength: 1550

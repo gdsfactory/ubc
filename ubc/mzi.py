@@ -7,19 +7,19 @@ from ubc.y_splitter import y_splitter
 @pp.cell
 def mzi(
     delta_length=100,
-    coupler=y_splitter,
+    splitter=y_splitter,
     waveguide=waveguide,
     bend90=bend90,
-    L2=0.01,
-    L0=0.01,
+    length_y: float = 4.0,
+    length_x: float = 0.1,
 ):
     c = pp.c.mzi(
-        DL=delta_length,
+        delta_length=delta_length,
         waveguide=waveguide,
         bend90=bend90,
-        coupler=coupler,
-        L2=L2,
-        L0=L0,
+        splitter=splitter,
+        length_x=length_x,
+        length_y=length_y,
     )
     return c
 
@@ -27,4 +27,3 @@ def mzi(
 if __name__ == "__main__":
     c = mzi(delta_length=100)
     pp.show(c)
-    pp.write_gds(c, "mzi.gds")

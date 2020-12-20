@@ -21,7 +21,7 @@ def bend90(radius: int = 10, width: float = 0.5) -> Component:
 
     for i, text in enumerate(labels):
         c.add(pp.c.label(text=text, position=(c.x, c.y + i * 0.1), layer=LAYER.DEVREC))
-    add_pins(c)
+    c = add_pins(c)
     return c
 
 

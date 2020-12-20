@@ -1,4 +1,5 @@
+info:
+  polarization: te
+  wavelength: 1550
 name: ebeam_gc_te1550_broadband
-polarization: te
 settings: {}
-wavelength: 1550

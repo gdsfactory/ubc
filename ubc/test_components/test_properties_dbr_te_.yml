@@ -1,20 +1,24 @@
 function_name: dbr_te
+info: {}
 module: ubc.dbr
 name: dbr_te
 settings:
   angle: 90
   component:
     function_name: add_fiber_array
+    info: {}
     name: dbr-100-500_te
     settings:
       bend_factory: bend90
       component:
         function_name: cavity
+        info: {}
         module: pp.components.cavity
         name: cavity_f5a5c654
         settings:
           component:
             function_name: dbr
+            info: {}
             module: pp.components.dbr
             name: dbr_L79n_L79n_N600_W450n_W550n
             settings:

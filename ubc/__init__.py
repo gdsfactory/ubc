@@ -31,7 +31,7 @@ def mzi_te(**kwargs):
 
 def spiral_te(**kwargs):
     c = pp.c.spiral_external_io(**kwargs)
-    length = c.settings["total_length"]
+    length = c.length
     return add_gc(component=c, component_name=f"spiral_te_{int(length)}")
 
 
@@ -104,5 +104,6 @@ if __name__ == "__main__":
     # )
     # c = cavity_te(mirror=pp.c.dbr())
     # print(c.settings['component'])
-    c = ring_single_te()
+    # c = ring_single_te()
+    c = spiral_te()
     pp.show(c)

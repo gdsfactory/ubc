@@ -14,3 +14,11 @@ def add_pins(*args, **kwargs):
     from pp.add_pins import add_pins
 
     return add_pins(*args, **kwargs, function=_add_pins_labels_and_outline_ubc)
+
+
+if __name__ == "__main__":
+    import pp
+
+    c = pp.c.waveguide()
+    cc = add_pins(c)
+    pp.show(cc)

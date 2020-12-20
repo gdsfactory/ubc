@@ -1,19 +1,19 @@
 function_name: mzi
+info: {}
 module: ubc.mzi
 name: mzi
 settings:
-  DL: 100
-  L0: 0.01
-  L2: 0.01
   bend90: bend90
   bend_radius: 10.0
   combiner: None
   combiner_settings: None
-  coupler: y_splitter
-  coupler_settings: None
   delta_length: 100
+  length_x: 0.1
+  length_y: 4.0
   pins: false
+  splitter: y_splitter
+  splitter_settings: None
   waveguide: waveguide
   waveguide_horizontal: None
   waveguide_vertical: None
-  with_coupler: true
+  with_splitter: true

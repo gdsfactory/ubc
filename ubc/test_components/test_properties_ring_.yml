@@ -1,4 +1,5 @@
 function_name: ring
+info: {}
 module: ubc.ring
 name: ring
 settings:
