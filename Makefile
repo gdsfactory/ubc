@@ -26,13 +26,13 @@ lint:
 	flake8 .
 
 pylint:
-	pylint .
-
-lintd2:
-	flake8 --select RST
+	pylint ubc
 
 lintd:
-	pydocstyle .
+	flake8 --select RST
+
+pydocstyle:
+	pydocstyle ubc
 
 doc8:
 	doc8 docs/

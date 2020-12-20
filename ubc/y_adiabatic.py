@@ -3,6 +3,7 @@ from ubc.import_gds import import_gds
 
 
 def y_adiabatic():
+    """Y junction adiabatic."""
     c = import_gds("ebeam_y_adiabatic")
     return c
 

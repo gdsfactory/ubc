@@ -4,6 +4,7 @@ from ubc.import_gds import import_gds
 
 @pp.cell
 def bdc():
+    """Broadband directional coupler."""
     c = import_gds("ebeam_bdc_te1550")
     return c
 
