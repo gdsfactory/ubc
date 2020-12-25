@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
 @contained_phidlDevice
 def {component_type}(top):
+    \"""Write cell\"""
     top.add_ref(ubc.{component_type}())
 
 

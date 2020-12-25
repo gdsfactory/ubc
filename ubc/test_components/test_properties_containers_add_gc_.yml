@@ -18,7 +18,7 @@ settings:
           component:
             function_name: waveguide
             info:
-              length: 10
+              length: 10.0
               width: 0.5
             module: pp.components.waveguide
             name: waveguide_d463d68a
@@ -30,13 +30,13 @@ settings:
               layers_cladding:
               - - 68
                 - 0
-              length: 10
+              length: 10.0
               width: 0.5
           function: _add_pins_labels_and_outline_ubc
-          length: 10
+          length: 10.0
           recursive: false
           width: 0.5
-      component_name: None
+      component_name: null
       fanout_length: 0
       gc_port_name: W0
       get_input_labels_function: get_input_labels

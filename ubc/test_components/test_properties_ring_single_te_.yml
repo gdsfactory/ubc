@@ -21,7 +21,7 @@ settings:
           length_y: 0.001
           pins: false
           wg_width: 0.5
-      component_name: None
+      component_name: null
       fanout_length: 0
       gc_port_name: W0
       get_input_labels_function: get_input_labels
