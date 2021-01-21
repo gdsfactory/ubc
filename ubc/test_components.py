@@ -1,32 +1,27 @@
 import pytest
-from ubc import _components, component_factory
+from pp.testing import difftest
+from ubc import component_factory, component_names, container_factory
 from ubc.add_gc import add_gc
 from ubc.waveguide import waveguide
 
-_containers = [
-    add_gc,
-]
 
-
-@pytest.mark.parametrize("function", _containers)
-def test_properties_containers(function, data_regression):
-    component = waveguide()
-    c = function(component=component)
-    data_regression.check(c.get_settings())
-
-
-@pytest.mark.parametrize("component_type", _components)
-def test_properties(component_type, data_regression):
+@pytest.mark.parametrize("component_type", component_names)
+def test_settings(component_type, data_regression):
+    """Avoid regressions when exporting settings."""
     c = component_factory[component_type]()
     data_regression.check(c.get_settings())
 
 
-@pytest.mark.parametrize("component_type", _components)
+@pytest.mark.parametrize("component_type", component_names)
 def test_ports(component_type, num_regression):
+    """Avoid regressions in port names and locations."""
     c = component_factory[component_type]()
     if c.ports:
         num_regression.check(c.get_ports_array())
 
 
-if __name__ == "__main__":
-    test_properties()
+@pytest.mark.parametrize("component_type", component_names)
+def test_gds(component_type):
+    """Avoid regressions in GDS geometry shapes and layers."""
+    c = component_factory[component_type]()
+    difftest(c)

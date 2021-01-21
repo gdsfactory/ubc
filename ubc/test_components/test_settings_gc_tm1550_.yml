@@ -1,0 +1,5 @@
+info:
+  polarization: tm
+  wavelength: 1550
+name: ebeam_gc_tm1550
+settings: {}

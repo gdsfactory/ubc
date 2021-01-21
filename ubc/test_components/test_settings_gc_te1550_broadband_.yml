@@ -1,0 +1,11 @@
+function_name: rotate
+info:
+  polarization: te
+  wavelength: 1550
+name: ebeam_gc_te1550_broadband_r
+settings:
+  angle: 90
+  component:
+    info: {}
+    name: ebeam_gc_te1550_broadband
+    settings: {}

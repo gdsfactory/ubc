@@ -1,0 +1,26 @@
+function_name: waveguide
+info: {}
+module: ubc.waveguide
+name: waveguide
+settings:
+  component:
+    function_name: waveguide
+    info:
+      length: 10.0
+      width: 0.5
+    module: pp.components.waveguide
+    name: waveguide_d463d68a
+    settings:
+      cladding_offset: 1
+      layer:
+      - 1
+      - 0
+      layers_cladding:
+      - - 68
+        - 0
+      length: 10.0
+      width: 0.5
+  function: _add_pins_labels_and_outline_ubc
+  length: 10.0
+  recursive: false
+  width: 0.5

@@ -6,7 +6,7 @@ from phidl import device_layout as pd
 from phidl.device_layout import Label
 from pp.add_labels import get_input_label
 from pp.component import Component, ComponentReference
-from pp.port import Port
+from pp.port import Port, deco_rename_ports
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
 from ubc.bend90 import bend90
@@ -27,8 +27,10 @@ def gc_te1550() -> Component:
     return c
 
 
+@deco_rename_ports
 def gc_te1550_broadband():
     c = import_gds("ebeam_gc_te1550_broadband")
+    c = rotate(c, 180)
     c.polarization = "te"
     c.wavelength = 1550
     return c
@@ -36,6 +38,7 @@ def gc_te1550_broadband():
 
 def gc_te1310():
     c = import_gds("ebeam_gc_te1310")
+    c = rotate(c, 180)
     c.polarization = "te"
     c.wavelength = 1310
     return c
@@ -152,7 +155,6 @@ def get_input_labels(
     text = get_optical_text(
         port=port, gc=gc, gc_index=port_index, component_name=component_name
     )
-    print(text)
     layer, texttype = pd._parse_layer(layer_label)
     label = pd.Label(
         text=text,
@@ -203,9 +205,13 @@ def add_gc(
 if __name__ == "__main__":
     import ubc
 
+    c = gc_te1310()
+
+    # c = gc_te1550_broadband()
     # c = gc_te1550()
+    # c = gc_tm1550()
     # print(c.ports)
-    c = add_gc(component=ubc.mzi(delta_length=100))
+    # c = add_gc(component=ubc.mzi(delta_length=100))
     # c = add_gc(component=waveguide())
-    pp.show(c)
-    pp.write_gds(c, "mzi.gds")
+    # pp.show(c)
+    # pp.write_gds(c, "mzi.gds")

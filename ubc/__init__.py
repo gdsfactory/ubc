@@ -1,4 +1,4 @@
-"""ubc - UBC Siepic Ebeam PDK from edx course"""
+"""UBC Siepic Ebeam PDK from edx course"""
 
 import pp
 import ubc.da as da
@@ -76,15 +76,13 @@ component_factory = dict(
     y_splitter=y_splitter,
 )
 
+container_factory = dict(add_gc=add_gc, cavity_te=cavity_te)
 
-__all__ = list(component_factory.keys()) + [
-    "LAYER",
-    "conf",
-    "path",
-    "da",
-]
+
+component_names = list(component_factory.keys())
+container_names = list(container_factory.keys())
+__all__ = component_names + container_names + ["LAYER", "conf", "path", "da"]
 __version__ = "0.0.2"
-_components = list(component_factory.keys())
 
 
 if __name__ == "__main__":
