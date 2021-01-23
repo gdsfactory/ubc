@@ -6,4 +6,3 @@ matplotlib
 pytest
 pytest-regressions
 pytest-cov
-lygadgets
