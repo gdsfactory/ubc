@@ -1,5 +1,5 @@
 import pytest
-from pp.testing import difftest
+from pp.difftest import difftest
 from ubc import component_factory, component_names, container_factory
 from ubc.add_gc import add_gc
 from ubc.waveguide import waveguide
