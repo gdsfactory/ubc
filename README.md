@@ -8,7 +8,7 @@ see the notebooks folder
 
 ## Installation
 
-run `make install` in a terminal
+run `make install` in a terminal. For windows you can also install `install.bat`
 
 
 ## Acks
