@@ -10,3 +10,4 @@ settings:
     info: {}
     name: ebeam_gc_te1550
     settings: {}
+  rename_ports: true

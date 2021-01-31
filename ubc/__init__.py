@@ -8,7 +8,7 @@ from ubc.add_gc import (
     gc_te1550,
     gc_te1550_broadband,
     gc_tm1550,
-    taper_factory,
+    taper,
 )
 from ubc.bend90 import bend90
 from ubc.config import conf, path
@@ -54,29 +54,50 @@ _component_functions = [
     y_splitter,
 ]  # for the klayout library
 
-
-component_factory = dict(
-    bend90=bend90,
-    crossing_te=crossing_te,
-    crossing_te_ring=crossing_te_ring,
-    dbr_te=dbr_te,
-    dcate=dcate,
-    dcbte=dcbte,
-    gc_te1550=gc_te1550,
-    gc_te1550_broadband=gc_te1550_broadband,
-    gc_te1310=gc_te1310,
-    gc_tm1550=gc_tm1550,
-    mzi=mzi,
-    mzi_te=mzi_te,
-    ring=ring,
-    ring_single_te=ring_single_te,
-    taper_factory=taper_factory,
-    waveguide=waveguide,
-    y_adiabatic=y_adiabatic,
-    y_splitter=y_splitter,
+component_factory = pp.get_name_to_function_dict(
+    bend90,
+    crossing_te,
+    crossing_te_ring,
+    dbr_te,
+    dcate,
+    dcbte,
+    gc_te1550,
+    gc_te1550_broadband,
+    gc_te1310,
+    gc_tm1550,
+    mzi,
+    mzi_te,
+    ring,
+    ring_single_te,
+    taper,
+    waveguide,
+    y_adiabatic,
+    y_splitter,
 )
+container_factory = pp.get_name_to_function_dict(add_gc, cavity_te)
 
-container_factory = dict(add_gc=add_gc, cavity_te=cavity_te)
+# The following two definitions above are equivalent to
+# component_factory = dict(
+#     bend90=bend90,
+#     crossing_te=crossing_te,
+#     crossing_te_ring=crossing_te_ring,
+#     dbr_te=dbr_te,
+#     dcate=dcate,
+#     dcbte=dcbte,
+#     gc_te1550=gc_te1550,
+#     gc_te1550_broadband=gc_te1550_broadband,
+#     gc_te1310=gc_te1310,
+#     gc_tm1550=gc_tm1550,
+#     mzi=mzi,
+#     mzi_te=mzi_te,
+#     ring=ring,
+#     ring_single_te=ring_single_te,
+#     taper=taper,
+#     waveguide=waveguide,
+#     y_adiabatic=y_adiabatic,
+#     y_splitter=y_splitter,
+# )
+# container_factory = dict(add_gc=add_gc, cavity_te=cavity_te)
 
 
 component_names = list(component_factory.keys())

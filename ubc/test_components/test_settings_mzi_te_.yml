@@ -41,6 +41,7 @@ settings:
       optical_routing_type: 0
       route_filter: connect_strip
       straight_factory: waveguide
-      taper_factory: taper_factory
+      taper_factory: taper
       taper_length: 10.0
       with_align_ports: false
+  rename_ports: true

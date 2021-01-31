@@ -1,0 +1,17 @@
+function_name: taper
+info:
+  length: 35.0
+  width1: 0.5
+  width2: 0.5
+module: ubc.add_gc
+name: taper
+settings:
+  cladding_offset: 3.0
+  layer:
+  - 1
+  - 0
+  layers_cladding: []
+  length: 35.0
+  port: null
+  width1: 0.5
+  width2: null

@@ -9,3 +9,4 @@ settings:
     info: {}
     name: ebeam_gc_te1550_broadband
     settings: {}
+  rename_ports: true

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass(frozen=True)
 class Layer:
     WG = (1, 0)
     DEVREC = (68, 0)

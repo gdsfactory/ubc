@@ -9,13 +9,12 @@ from pp.component import Component, ComponentReference
 from pp.port import Port, deco_rename_ports
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
+from pp.types import Route
 from ubc.bend90 import bend90
 from ubc.config import conf
 from ubc.import_gds import import_gds
 from ubc.layers import LAYER
 from ubc.waveguide import waveguide
-
-gc_port_name = "W0"
 
 
 @pp.cell
@@ -58,17 +57,16 @@ def connect_strip(
     bend_radius: float = 10.0,
     wg_width: float = 0.5,
     **kwargs,
-) -> ComponentReference:
+) -> Route:
     """Return a deep-etched route formed by the given way_points with
     bends instead of corners and optionally tapers in straight sections.
     """
     bend90 = pp.call_if_func(bend_factory, radius=bend_radius, width=wg_width)
-    connector = round_corners(way_points, bend90, straight_factory)
-    return connector
+    return round_corners(way_points, bend90, straight_factory)
 
 
 @pp.cell
-def taper_factory(layer=LAYER.WG, layers_cladding=[], **kwargs):
+def taper(layer=LAYER.WG, layers_cladding=[], **kwargs):
     c = pp.c.taper(layer=layer, layers_cladding=layers_cladding, **kwargs)
     return c
 
@@ -114,7 +112,7 @@ def get_input_labels_all(
     ordered_ports,
     component_name,
     layer_label=LAYER.LABEL,
-    gc_port_name=gc_port_name,
+    gc_port_name: str = "W0",
 ):
     """Return labels (elements list) for all component ports."""
     elements = []
@@ -137,7 +135,7 @@ def get_input_labels(
     ordered_ports: List[Port],
     component_name: str,
     layer_label: Tuple[int, int] = LAYER.LABEL,
-    gc_port_name: str = gc_port_name,
+    gc_port_name: str = "W0",
     port_index: int = 1,
 ) -> List[Label]:
     """Return labels (elements list) for all component ports."""
@@ -146,8 +144,8 @@ def get_input_labels(
             io_gratings=io_gratings,
             ordered_ports=ordered_ports,
             component_name=component_name,
+            layer_label=layer_label,
             gc_port_name=gc_port_name,
-            port_index=port_index,
         )
     gc = io_gratings[port_index]
     port = ordered_ports[1]
@@ -173,7 +171,7 @@ def add_gc(
     grating_coupler: Callable = gc_te1550,
     bend_factory: Callable = bend90,
     straight_factory: Callable = waveguide,
-    taper_factory: Callable = taper_factory,
+    taper_factory: Callable = taper,
     route_filter: Callable = connect_strip,
     gc_port_name: str = "W0",
     get_input_labels_function: Callable = get_input_labels,

@@ -1,27 +1,29 @@
 import pytest
+from pp.component import Component
 from pp.difftest import difftest
+from pytest_regressions.data_regression import DataRegressionFixture
+from pytest_regressions.num_regression import NumericRegressionFixture
 from ubc import component_factory, component_names, container_factory
 from ubc.add_gc import add_gc
 from ubc.waveguide import waveguide
 
 
-@pytest.mark.parametrize("component_type", component_names)
-def test_settings(component_type, data_regression):
-    """Avoid regressions when exporting settings."""
-    c = component_factory[component_type]()
-    data_regression.check(c.get_settings())
+@pytest.fixture(params=component_names, scope="function")
+def component(request) -> Component:
+    return component_factory[request.param]()
 
 
-@pytest.mark.parametrize("component_type", component_names)
-def test_ports(component_type, num_regression):
-    """Avoid regressions in port names and locations."""
-    c = component_factory[component_type]()
-    if c.ports:
-        num_regression.check(c.get_ports_array())
-
-
-@pytest.mark.parametrize("component_type", component_names)
-def test_gds(component_type):
+def test_gds(component: Component) -> None:
     """Avoid regressions in GDS geometry shapes and layers."""
-    c = component_factory[component_type]()
-    difftest(c)
+    difftest(component)
+
+
+def test_settings(component: Component, data_regression: DataRegressionFixture) -> None:
+    """Avoid regressions when exporting settings."""
+    data_regression.check(component.get_settings())
+
+
+def test_ports(component: Component, num_regression: NumericRegressionFixture) -> None:
+    """Avoid regressions in port names and locations."""
+    if component.ports:
+        num_regression.check(component.get_ports_array())
