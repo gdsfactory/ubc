@@ -1,3 +1,37 @@
+# Bragg Gratings
+
+Design objective:
+
+- Determine the grating strength coupling parameter (kappa, ∆n, or bandwidth) versus the corrugation width (∆w), and compare rectangular versus sinusoidal gratings.
+- Compare experimental data with the simulation data (3D-FDTD Bloch approach).
+- Update the CML model based on this data.
+
+Design:
+
+- Measure the reflectivity spectrum (only).  This only requires two grating couplers.  Removing the 3rd grating coupler that was previously used to measure the transmission eliminates a source of back-reflection (-20 dB).  Instead of the 3rd grating coupler, we use a terminator (-30 dB back reflection).
+- Make the layout very compact, particularly the gratings themselves, so that we minimize the manufacturing variability. Namely, we want the central wavelength to be as similar as possible.
+- For each layout block, we have 24 gratings, connected to 24 pairs of grating couplers.  The grating couplers are interlaced to minimize space.
+- Check for a wide range of ∆W to look for saturation and nonlinearity (as shown by James Pond’s simulations).  Also check a narrow range to look for mask quantization errors.
+- Parameter range, set 1-2:
+-     ∆W = [5, 10, 20:20:200 nm] (total 12)
+-     type = [rectangular, sinusoidal]
+-     N = [200, 400] (number of gratings)
+- Parameter range, set 4:
+-     ∆W = [20:1:31] (total 12)
+-     type = [rectangular, sinusoidal]
+-     N = [200] (number of gratings)
+
+The three layouts are as follows:
+
+- ELEC413_lukasc_A.gds
+-     N = 200, set 1
+- ELEC413_lukasc_B.gds
+-     N = 400, set 2
+- ELEC413_lukasc_D.gds
+-     N = 200, set 4
+
+Each contains 24 gratings, connected in reflection mode using a 2x2 splitter.
+Sets 1, 2:
 
 # Set 1
 

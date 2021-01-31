@@ -45,7 +45,7 @@ def ring(
 
 
 if __name__ == "__main__":
-    from ubc import add_gc
+    from ubc.add_gc import add_gc
 
     c = ring()
     cc = add_gc(c, optical_routing_type=1)

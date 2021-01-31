@@ -3,12 +3,13 @@ import numpy as np
 
 
 def find_bandwidth(x, y, threshold=3):
-    """finds the x bandwidth above for a threshold around the y maximum
+    """Finds the x bandwidth above a threshold around max(y)
 
     Args:
         x:
         y:
-        threshold: default bandwidth point (in y scale units): 3 for dB, 0.5 if Y is in linear scale from 0 to 1
+        threshold: default bandwidth point (in y scale units):
+            3 for dB, 0.5 if Y is in linear scale from 0 to 1
     """
     index_max = np.argmax(y)
     ymax = y[index_max]

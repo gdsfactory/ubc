@@ -7,7 +7,7 @@ def read_mat(filename, port=0):
     outputs parsed data array [wavelength (m), power (dBm)]
     data is assumed to be from automated measurement scanResults or scandata format
 
-    based on https://github.com/mustafacc/SiEPIC_Photonics_Package/blob/master/SiEPIC_Photonics_Package/core.py
+    based on SiEPIC_Photonics_Package/core.py
     """
     data = loadmat(filename)
 

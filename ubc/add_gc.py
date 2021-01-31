@@ -51,22 +51,22 @@ def gc_tm1550():
 
 
 def connect_strip(
-    way_points: ndarray = [],
-    bend_factory: Component = bend90(),
+    waypoints: ndarray,
+    bend_factory: Component = bend90,
     straight_factory: Callable = waveguide,
     bend_radius: float = 10.0,
     wg_width: float = 0.5,
     **kwargs,
 ) -> Route:
-    """Return a deep-etched route formed by the given way_points with
+    """Return a deep-etched route formed by the given waypoints with
     bends instead of corners and optionally tapers in straight sections.
     """
     bend90 = pp.call_if_func(bend_factory, radius=bend_radius, width=wg_width)
-    return round_corners(way_points, bend90, straight_factory)
+    return round_corners(waypoints, bend90, straight_factory)
 
 
 @pp.cell
-def taper(layer=LAYER.WG, layers_cladding=[], **kwargs):
+def taper(layer=LAYER.WG, layers_cladding=None, **kwargs):
     c = pp.c.taper(layer=layer, layers_cladding=layers_cladding, **kwargs)
     return c
 
@@ -103,7 +103,10 @@ def get_optical_text(
         name = port.parent.ref_cell.name
 
     name = name.replace("_", "-")
-    label = f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_{conf.username}_({name})-{gc_index}-{port.name}"
+    label = (
+        f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_"
+        + f"{conf.username}_({name})-{gc_index}-{port.name}"
+    )
     return label
 
 

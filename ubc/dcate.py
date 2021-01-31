@@ -10,7 +10,9 @@ def dcate():
 
 
 if __name__ == "__main__":
+    from ubc.add_gc import add_gc
+
     c = dcate()
-    cc = ubc.add_gc(c, optical_routing_type=1)
+    cc = add_gc(c, optical_routing_type=1)
     print(c.ports)
     pp.show(cc)
