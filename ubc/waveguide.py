@@ -28,4 +28,4 @@ def waveguide(length: float = 10.0, width: float = 0.5) -> Component:
 
 if __name__ == "__main__":
     c = waveguide()
-    pp.show(c)
+    c.show()

@@ -20,4 +20,4 @@ def dbr_te(w0=0.5, dw=0.1, n=600, l1=L, l2=L, **kwargs):
 
 if __name__ == "__main__":
     c = dbr_te()
-    pp.show(c)
+    c.show()

@@ -11,4 +11,4 @@ def bdc():
 
 if __name__ == "__main__":
     c = bdc()
-    pp.show(c)
+    c.show()

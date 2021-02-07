@@ -13,4 +13,4 @@ def y_splitter():
 if __name__ == "__main__":
     c = y_splitter()
     print(c.ports)
-    pp.show(c)
+    c.show()

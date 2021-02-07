@@ -62,4 +62,4 @@ def mzi(
 
 if __name__ == "__main__":
     c = mzi(delta_length=100)
-    pp.show(c)
+    c.show()

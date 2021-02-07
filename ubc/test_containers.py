@@ -1,7 +1,6 @@
 import pytest
 from pp.difftest import difftest
 from ubc import container_factory
-from ubc.add_gc import add_gc
 from ubc.waveguide import waveguide
 
 container_names = container_factory.keys()

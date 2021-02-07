@@ -27,4 +27,4 @@ def bend90(radius: int = 10, width: float = 0.5) -> Component:
 
 if __name__ == "__main__":
     c = bend90()
-    pp.show(c)
+    c.show()

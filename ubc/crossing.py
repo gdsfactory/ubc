@@ -19,4 +19,4 @@ if __name__ == "__main__":
     # c = crossing_te()
     c = crossing_te_ring(with_dut=False)
     print(c.ports)
-    pp.show(c)
+    c.show()

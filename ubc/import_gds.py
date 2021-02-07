@@ -65,4 +65,4 @@ if __name__ == "__main__":
     gdsname = "ebeam_y_1550"
     c = import_gds(gdsname)
     print(c.ports)
-    pp.show(c)
+    c.show()

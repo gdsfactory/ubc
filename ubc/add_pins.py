@@ -21,4 +21,4 @@ if __name__ == "__main__":
 
     c = pp.c.waveguide()
     cc = add_pins(c)
-    pp.show(cc)
+    cc.show()

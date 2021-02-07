@@ -14,4 +14,4 @@ if __name__ == "__main__":
     c = y_adiabatic()
     cc = add_gc(c, optical_routing_type=1)
     print(c.ports)
-    pp.show(cc)
+    cc.show()

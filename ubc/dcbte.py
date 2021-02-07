@@ -10,4 +10,4 @@ def dcbte():
 
 if __name__ == "__main__":
     c = dcbte()
-    pp.show(c)
+    c.show()

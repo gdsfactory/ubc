@@ -3,9 +3,7 @@ from pp.component import Component
 from pp.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.num_regression import NumericRegressionFixture
-from ubc import component_factory, component_names, container_factory
-from ubc.add_gc import add_gc
-from ubc.waveguide import waveguide
+from ubc import component_factory, component_names
 
 
 @pytest.fixture(params=component_names, scope="function")

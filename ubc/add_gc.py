@@ -214,5 +214,5 @@ if __name__ == "__main__":
     # print(c.ports)
     # c = add_gc(component=ubc.mzi(delta_length=100))
     # c = add_gc(component=waveguide())
-    # pp.show(c)
+    # c.show()
     # pp.write_gds(c, "mzi.gds")

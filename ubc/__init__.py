@@ -125,4 +125,4 @@ if __name__ == "__main__":
     # print(c.settings['component'])
     # c = ring_single_te()
     c = spiral_te()
-    pp.show(c)
+    c.show()

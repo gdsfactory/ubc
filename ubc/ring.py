@@ -50,4 +50,4 @@ if __name__ == "__main__":
     c = ring()
     cc = add_gc(c, optical_routing_type=1)
     print(c.ports)
-    pp.show(cc)
+    cc.show()
