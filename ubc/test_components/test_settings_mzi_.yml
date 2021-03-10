@@ -4,7 +4,7 @@ module: ubc.mzi
 name: mzi
 settings:
   bend90: bend90
-  bend_radius: 10.0
+  bend_radius: null
   combiner: null
   combiner_settings: null
   delta_length: 100
@@ -13,6 +13,7 @@ settings:
   pins: false
   splitter: y_splitter
   splitter_settings: null
+  tech: null
   waveguide: waveguide
   waveguide_horizontal: null
   waveguide_vertical: null

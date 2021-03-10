@@ -9,11 +9,12 @@ from pp.component import Component, ComponentReference
 from pp.port import Port, deco_rename_ports
 from pp.rotate import rotate
 from pp.routing.manhattan import round_corners
-from pp.types import Route
+from pp.types import ComponentFactory, Route, RouteFactory
 from ubc.bend90 import bend90
 from ubc.config import conf
 from ubc.import_gds import import_gds
 from ubc.layers import LAYER
+from ubc.tech import TECH_SILICON_C
 from ubc.waveguide import waveguide
 
 
@@ -53,7 +54,7 @@ def gc_tm1550():
 def connect_strip(
     waypoints: ndarray,
     bend_factory: Component = bend90,
-    straight_factory: Callable = waveguide,
+    straight_factory: ComponentFactory = waveguide,
     bend_radius: float = 10.0,
     wg_width: float = 0.5,
     **kwargs,
@@ -62,12 +63,14 @@ def connect_strip(
     bends instead of corners and optionally tapers in straight sections.
     """
     bend90 = pp.call_if_func(bend_factory, radius=bend_radius, width=wg_width)
-    return round_corners(waypoints, bend90, straight_factory)
+    return round_corners(
+        points=waypoints, bend_factory=bend90, straight_factory=straight_factory
+    )
 
 
 @pp.cell
-def taper(layer=LAYER.WG, layers_cladding=None, **kwargs):
-    c = pp.c.taper(layer=layer, layers_cladding=layers_cladding, **kwargs)
+def taper(layer=LAYER.WG, layers_cladding=None, tech=TECH_SILICON_C, **kwargs):
+    c = pp.c.taper(layer=layer, layers_cladding=layers_cladding, tech=tech, **kwargs)
     return c
 
 
@@ -171,11 +174,11 @@ def add_gc(
     component: Component = waveguide,
     component_name: None = None,
     layer_label: Tuple[int, int] = LAYER.LABEL,
-    grating_coupler: Callable = gc_te1550,
-    bend_factory: Callable = bend90,
-    straight_factory: Callable = waveguide,
-    taper_factory: Callable = taper,
-    route_filter: Callable = connect_strip,
+    grating_coupler: ComponentFactory = gc_te1550,
+    bend_factory: ComponentFactory = bend90,
+    straight_factory: ComponentFactory = waveguide,
+    taper_factory: ComponentFactory = taper,
+    route_filter: RouteFactory = connect_strip,
     gc_port_name: str = "W0",
     get_input_labels_function: Callable = get_input_labels,
     with_align_ports: bool = False,
@@ -206,7 +209,8 @@ def add_gc(
 if __name__ == "__main__":
     import ubc
 
-    c = gc_te1310()
+    c = taper(width2=2)
+    # c = gc_te1310()
 
     # c = gc_te1550_broadband()
     # c = gc_te1550()
@@ -214,5 +218,6 @@ if __name__ == "__main__":
     # print(c.ports)
     # c = add_gc(component=ubc.mzi(delta_length=100))
     # c = add_gc(component=waveguide())
-    # c.show()
+
+    c.show()
     # pp.write_gds(c, "mzi.gds")

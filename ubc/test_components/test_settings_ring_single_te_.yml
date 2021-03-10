@@ -8,6 +8,7 @@ settings:
     info: {}
     name: ring_single_te
     settings:
+      auto_taper_to_wide_waveguides: true
       bend_factory: bend90
       component:
         function_name: ring_single
@@ -15,17 +16,22 @@ settings:
         module: pp.components.ring_single
         name: ring_single
         settings:
-          bend_radius: 10.0
+          bend: null
+          cross_section_factory: null
           gap: 0.2
+          layer:
+          - 1
+          - 0
           length_x: 4.0
-          length_y: 0.001
+          length_y: 0.01
           pins: false
-          wg_width: 0.5
+          radius: 10.0
+          tech: null
+          width: 0.5
       component_name: null
       fanout_length: 0
       gc_port_name: W0
       get_input_labels_function: get_input_labels
-      get_route_factory: route_fiber_array
       grating_coupler: gc_te1550
       layer_label:
       - 10
@@ -34,6 +40,7 @@ settings:
       route_filter: connect_strip
       straight_factory: waveguide
       taper_factory: taper
-      taper_length: 10.0
+      taper_length: null
+      tech: silicon_cband
       with_align_ports: false
   rename_ports: true

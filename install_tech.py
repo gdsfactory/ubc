@@ -11,8 +11,10 @@ else:
 
 cwd = pathlib.Path(__file__).resolve().parent
 home = pathlib.Path.home()
+src = cwd / "klayout" / "tech"
 dest_folder = home / klayout_folder / "tech"
 dest_folder.mkdir(exist_ok=True, parents=True)
+dest = dest_folder / "ubc"
 
 
 def install_tech(src, dest):
@@ -47,8 +49,6 @@ def install_drc(src, dest):
 
 if __name__ == "__main__":
 
-    src = cwd / "klayout" / "tech"
-    dest = home / klayout_folder / "tech" / "ubc"
     install_tech(src=src, dest=dest)
 
     # src = cwd / "klayout" / "tech" / "drc.lydrc"

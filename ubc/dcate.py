@@ -4,7 +4,7 @@ from ubc.import_gds import import_gds
 
 
 def dcate():
-    """ directional coupler adiabatic 1550 te """
+    """Directional coupler adiabatic 1550 TE."""
     c = import_gds("ebeam_adiabatic_te1550")
     return c
 

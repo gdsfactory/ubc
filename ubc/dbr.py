@@ -6,7 +6,7 @@ L = 1.55 / 4 / 2 / 2.44
 
 @pp.cell
 def dbr_te(w0=0.5, dw=0.1, n=600, l1=L, l2=L, **kwargs):
-    """ cavity with a DBR
+    """Cavity with a DBR
     """
     mirror = pp.c.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, **kwargs)
     cavity = pp.c.cavity(component=mirror)

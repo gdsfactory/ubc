@@ -9,6 +9,7 @@ settings:
     info: {}
     name: dbr-100-500_te
     settings:
+      auto_taper_to_wide_waveguides: true
       bend_factory: bend90
       component:
         function_name: cavity
@@ -30,12 +31,11 @@ settings:
           coupler: coupler
           gap: 0.2
           length: 0.1
-          wg_width: 0.5
+          tech: silicon_cband
       component_name: dbr-100-500
       fanout_length: 0
       gc_port_name: W0
       get_input_labels_function: get_input_labels
-      get_route_factory: route_fiber_array
       grating_coupler: gc_te1550
       layer_label:
       - 10
@@ -44,7 +44,8 @@ settings:
       route_filter: connect_strip
       straight_factory: waveguide
       taper_factory: taper
-      taper_length: 10.0
+      taper_length: null
+      tech: silicon_cband
       with_align_ports: false
   dw: 0.1
   l1: 0.07940573770491803

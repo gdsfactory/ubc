@@ -11,13 +11,11 @@ test:
 test-force:
 	pytest --force-regen
 
+diff:
+	pf merge-cells gds_diff
+
 cov:
 	pytest --cov=ubc
-
-annotations:
-	pip install pytest-monkeytype
-	py.test --monkeytype-output=./monkeytype.sqlite3
-	fish add_types.fish
 
 mypy:
 	mypy . --ignore-missing-imports

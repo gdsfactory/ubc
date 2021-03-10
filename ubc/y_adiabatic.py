@@ -10,8 +10,10 @@ def y_adiabatic():
 
 if __name__ == "__main__":
     from ubc.add_gc import add_gc
+    from ubc.pdk import PDK
 
     c = y_adiabatic()
-    cc = add_gc(c, optical_routing_type=1)
+    # cc = add_gc(c, optical_routing_type=1)
+    cc = PDK.add_fiber_array(c)
     print(c.ports)
     cc.show()

@@ -38,13 +38,14 @@ def test_mask2():
     add_floorplan(m)
     pp.write_gds(m, precision=1e-9)
     m.show()
+    return m
 
 
 def test_mask1():
     e = [ubc.add_gc(ubc.waveguide())]
     e += [ubc.mzi_te(delta_length=dl) for dl in [9.32, 93.19]]
     e += [
-        ubc.ring_single_te(bend_radius=12, gap=gap, length_x=coupling_length)
+        ubc.ring_single_te(radius=12, gap=gap, length_x=coupling_length)
         for gap in [0.2]
         for coupling_length in [2.5, 4.5, 6.5]
     ]
@@ -63,6 +64,7 @@ def test_mask1():
     add_floorplan(m)
     pp.write_gds(m, precision=1e-9)
     m.show()
+    return m
 
 
 def test_mask3():
@@ -78,9 +80,10 @@ def test_mask3():
     add_floorplan(m)
     pp.write_gds(m, precision=1e-9)
     m.show()
+    return m
 
 
 if __name__ == "__main__":
-    # test_mask1()
-    # test_mask2()
-    test_mask3()
+    m1 = test_mask1()
+    m2 = test_mask2()
+    m3 = test_mask3()
