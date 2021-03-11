@@ -1,5 +1,6 @@
 import pp
 import ubc
+from ubc.pdk import PDK
 
 L = 1.55 / 4 / 2 / 2.44
 
@@ -8,7 +9,15 @@ L = 1.55 / 4 / 2 / 2.44
 def dbr_te(w0=0.5, dw=0.1, n=600, l1=L, l2=L, **kwargs):
     """Cavity with a DBR
     """
-    mirror = pp.c.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, **kwargs)
+    mirror = pp.c.dbr(
+        w1=w0 - dw / 2,
+        w2=w0 + dw / 2,
+        n=n,
+        l1=l1,
+        l2=l2,
+        waveguide_function=PDK.waveguide,
+        **kwargs,
+    )
     cavity = pp.c.cavity(component=mirror)
     return ubc.add_gc(
         component=cavity,
