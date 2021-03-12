@@ -1,0 +1,17 @@
+function_name: bend_circular
+info:
+  dy: 5.0
+  length: 7.854
+  radius_min: 5.0
+module: pp.components.bend_circular
+name: bend_circular_9eca12fc
+settings:
+  angle: 90
+  cross_section_factory: null
+  layer:
+  - 1
+  - 0
+  npoints: 720
+  radius: 5.0
+  tech: silicon_cband
+  width: 0.5

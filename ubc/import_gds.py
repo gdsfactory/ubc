@@ -3,7 +3,8 @@ import pathlib
 import pp
 from numpy import ndarray
 from pp.component import Component
-from ubc.layers import LAYER
+from pp.port import auto_rename_ports
+from ubc.tech import LAYER
 
 cwd = pathlib.Path(__file__).parent.absolute()
 gds = cwd / "gds"
@@ -35,7 +36,7 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
     return 0
 
 
-def import_gds(gdsname: str) -> Component:
+def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
     """ import gds from SIEPIC PDK
     """
     c = pp.import_gds(gds / f"{gdsname}.gds")
@@ -57,6 +58,9 @@ def import_gds(gdsname: str) -> Component:
                 layer=layer,
             )
             c.add_port(port)
+
+    if rename_ports:
+        auto_rename_ports(c)
 
     return c
 

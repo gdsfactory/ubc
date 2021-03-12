@@ -1,0 +1,15 @@
+function_name: waveguide
+info:
+  length: 10.0
+  width: 0.5
+module: pp.components.waveguide
+name: waveguide_6011b85e
+settings:
+  cross_section_factory: null
+  layer:
+  - 1
+  - 0
+  length: 10.0
+  npoints: 2
+  tech: silicon_cband
+  width: 0.5

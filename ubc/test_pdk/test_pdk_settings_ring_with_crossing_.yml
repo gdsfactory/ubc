@@ -1,0 +1,16 @@
+function_name: ring_single_dut
+info: {}
+module: pp.components.ring_single_dut
+name: ring_single_dut_Cebeam_crossing4
+settings:
+  component:
+    info: {}
+    name: ebeam_crossing4
+    settings: {}
+  gap: 0.2
+  length_x: 4
+  length_y: 0
+  radius: 5
+  tech: silicon_cband
+  wg_width: 0.5
+  with_dut: true

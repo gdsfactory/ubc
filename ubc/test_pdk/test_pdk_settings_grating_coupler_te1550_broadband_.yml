@@ -1,0 +1,13 @@
+function_name: gc_te1550_broadband
+info:
+  polarization: te
+  wavelength: 1550
+module: ubc.pdk
+name: gc_te1550_broadband
+settings:
+  angle: 180
+  component:
+    info: {}
+    name: ebeam_gc_te1550_broadband
+    settings: {}
+  rename_ports: true

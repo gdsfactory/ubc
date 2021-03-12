@@ -2,7 +2,7 @@ from typing import Callable, Dict, Tuple
 
 from pp.add_pins import add_pin_square
 from pp.component import Component
-from ubc.layers import port_type2layer
+from ubc.tech import port_type2layer
 
 
 def add_pins(

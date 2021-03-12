@@ -1,0 +1,7 @@
+function_name: gc_tm1550
+info:
+  polarization: tm
+  wavelength: 1550
+module: ubc.pdk
+name: gc_tm1550
+settings: {}
