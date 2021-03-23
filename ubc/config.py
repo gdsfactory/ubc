@@ -1,6 +1,5 @@
-"""
-loads a configuration from `default_config` in this file (low priority)
-which can be overwritten with config.yml found in the current working directory (high priority)
+"""Loads a default_config from this file.
+Overwrites config with a `config.yml` in the current working directory (if any).
 """
 
 __all__ = ["path", "conf"]

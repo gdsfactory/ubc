@@ -1,9 +1,5 @@
 def chop(x, y, ymax=None, ymin=None, xmin=None, xmax=None):
-    """chops x, y
-
-    Args:
-        ymax
-    """
+    """Chops x, y."""
 
     if xmax:
         y = y[x < xmax]
