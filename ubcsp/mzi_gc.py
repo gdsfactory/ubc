@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import pp
 from scipy.constants import speed_of_light
 from simphony.library import siepic
@@ -15,7 +14,7 @@ def mzi_gc(
     y=siepic.ebeam_y_1550,
     wg=siepic.ebeam_wg_integral_1550,
 ):
-    """ Mzi with grating couplers
+    """Mzi with grating couplers
 
     Args:
         L0: vertical length for both and top arms

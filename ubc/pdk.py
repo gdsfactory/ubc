@@ -9,11 +9,11 @@ from pp.cell import cell
 from pp.component import Component
 from pp.components.ring_single_dut import ring_single_dut
 from pp.pdk import Pdk
-from pp.port import Port, auto_rename_ports, deco_rename_ports
+from pp.port import Port, auto_rename_ports
 from pp.rotate import rotate
 from pp.routing.add_fiber_array import add_fiber_array
 from pp.tech import Tech
-from pp.types import ComponentFactory, ComponentReference, Route, RouteFactory
+from pp.types import ComponentFactory, ComponentReference
 from ubc.config import conf
 from ubc.import_gds import import_gds
 from ubc.tech import LAYER, TECH_SILICON_C

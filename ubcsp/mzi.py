@@ -12,7 +12,7 @@ def mzi(
     y_model_factory=siepic.ebeam_y_1550,
     wg=siepic.ebeam_wg_integral_1550,
 ):
-    """ Mzi circuit model
+    """Mzi circuit model
 
     Args:
         L0 (um): vertical length for both and top arms

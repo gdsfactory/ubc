@@ -1,6 +1,9 @@
 install:
 	bash install.sh
 
+update:
+	pre-commit autoupdate --bleeding-edge
+
 link:
 	lygadgets_link lygadgets
 	lygadgets_link tech/ubc

@@ -3,7 +3,7 @@ import scipy.signal as sig
 
 
 def windowed_mean(data: np.array, n: int = 60) -> np.array:
-    """ from a data1d array returns the smoothen data using a window averaging
+    """from a data1d array returns the smoothen data using a window averaging
 
     Args:
         data: data array

@@ -15,7 +15,7 @@ port_width = 0.5
 
 
 def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> int:
-    """ we assume that ports with x<0 are inputs (orientation=180deg)
+    """we assume that ports with x<0 are inputs (orientation=180deg)
     and ports with x>0 are outputs
     """
     p = position
@@ -37,8 +37,7 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
 
 
 def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
-    """ import gds from SIEPIC PDK
-    """
+    """import gds from SIEPIC PDK"""
     c = pp.import_gds(gds / f"{gdsname}.gds")
 
     n = 0
@@ -53,7 +52,10 @@ def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
                 midpoint=label.position,
                 width=port_width,
                 orientation=guess_port_orientaton(
-                    position=label.position, name=gdsname, label=label.text, n=n,
+                    position=label.position,
+                    name=gdsname,
+                    label=label.text,
+                    n=n,
                 ),
                 layer=layer,
             )

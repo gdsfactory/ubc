@@ -1,5 +1,5 @@
 def chop(x, y, ymax=None, ymin=None, xmin=None, xmax=None):
-    """ chops x, y
+    """chops x, y
 
     Args:
         ymax

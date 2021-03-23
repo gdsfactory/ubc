@@ -5,7 +5,7 @@ from simphony.netlist import Subcircuit
 
 
 def add_gc_te(circuit, gc=siepic.ebeam_gc_te1550):
-    """ add input and output gratings
+    """add input and output gratings
 
     Args:
         circuit: needs to have `input` and `output` pins

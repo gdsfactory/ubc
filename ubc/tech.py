@@ -1,5 +1,5 @@
 import dataclasses
-from typing import Optional, Tuple
+from typing import Tuple
 
 from pp.tech import Tech
 from pp.types import Layer

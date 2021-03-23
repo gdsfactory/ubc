@@ -17,8 +17,7 @@ def mzi(
     n2=-1,
     n3=0,
 ):
-    """
-    """
+    """"""
     if callable(beta):
         beta = beta(wavelength_um, neff=neff, alpha=alpha, n1=n1, n2=n2, n3=n3)
 
