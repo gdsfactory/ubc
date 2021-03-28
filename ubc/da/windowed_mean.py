@@ -21,10 +21,10 @@ def windowed_mean(data: np.array, n: int = 60) -> np.array:
 
 if __name__ == "__main__":
     from ubc.da.read_mat import read_mat
-    from ubc.config import path
+    from ubc.config import PATH
     import matplotlib.pyplot as plt
 
-    wavelength, power = read_mat(path.ring_te_r3_g100)
+    wavelength, power = read_mat(PATH.ring_te_r3_g100)
     power_envelope = windowed_mean(power, 60)
     plt.plot(wavelength, power, label="power")
     plt.plot(wavelength, power_envelope, label="envelope")

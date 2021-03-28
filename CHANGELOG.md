@@ -1,5 +1,9 @@
+## Next version
 
-0.0.2 2020-05-10
+- LayerStack
+
+
+## 0.0.2
 
 - added pins to components
 - added notebooks

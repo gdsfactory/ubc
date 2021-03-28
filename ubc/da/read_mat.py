@@ -28,6 +28,6 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     import ubc
 
-    w, p = read_mat(ubc.path.mzi1)
+    w, p = read_mat(ubc.PATH.mzi1)
     plt.plot(w, p)
     plt.show()

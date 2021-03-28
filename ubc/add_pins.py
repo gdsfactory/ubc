@@ -2,13 +2,13 @@ from typing import Callable, Dict, Tuple
 
 from pp.add_pins import add_pin_square
 from pp.component import Component
-from ubc.tech import port_type2layer
+from ubc.tech import PORT_TYPE_TO_LAYER
 
 
 def add_pins(
     component: Component,
     function: Callable = add_pin_square,
-    port_type2layer: Dict[str, Tuple[int, int]] = port_type2layer,
+    port_type2layer: Dict[str, Tuple[int, int]] = PORT_TYPE_TO_LAYER,
 ):
 
     for p in component.ports.values():

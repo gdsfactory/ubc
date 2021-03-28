@@ -14,7 +14,7 @@ from pp.rotate import rotate
 from pp.routing.add_fiber_array import add_fiber_array
 from pp.tech import Tech
 from pp.types import ComponentFactory, ComponentReference
-from ubc.config import conf
+from ubc.config import CONFIG
 from ubc.import_gds import import_gds
 from ubc.tech import LAYER, TECH_SILICON_C
 
@@ -55,7 +55,7 @@ def get_optical_text(
     name = name.replace("_", "-")
     label = (
         f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_"
-        + f"{conf.username}_({name})-{gc_index}-{port.name}"
+        + f"{CONFIG.username}_({name})-{gc_index}-{port.name}"
     )
     return label
 
@@ -173,9 +173,13 @@ class PdkSiliconCband(Pdk):
         """TE waveguide crossing."""
         return import_gds("ebeam_crossing4", rename_ports=True)
 
-    def dc_broadband(self) -> Component:
+    def dc_broadband_te(self) -> Component:
         """Broadband directional coupler TE1550 50/50 power."""
         return import_gds("ebeam_bdc_te1550")
+
+    def dc_broadband_tm(self) -> Component:
+        """Broadband directional coupler TM1550 50/50 power."""
+        return import_gds("ebeam_bdc_tm1550")
 
     def dc_adiabatic(self) -> Component:
         """Adiabatic directional coupler TE1550 50/50 power."""
@@ -277,10 +281,10 @@ PDK = PdkSiliconCband()
 if __name__ == "__main__":
     p = PDK
     # c = p.ring_single(length_x=6)
-    # c = p.dc_broadband()
 
     c = p.ring_with_crossing()
     c = p.dbr()  # needs fixing
     c = p.dbr_cavity()
+    c = p.dc_broadband_te()
     cc = p.add_fiber_array(c)
     cc.show()

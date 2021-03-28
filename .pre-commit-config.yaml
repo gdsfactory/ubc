@@ -36,11 +36,11 @@ repos:
     #   hooks:
     #       - id: darglint
     #
-    - repo: https://github.com/pre-commit/mirrors-mypy
-      rev: ""
-      hooks:
-          - id: mypy
-            exclude: ^(docs/|example-plugin/|tests/fixtures)
+    # - repo: https://github.com/pre-commit/mirrors-mypy
+    #   rev: ""
+    #   hooks:
+    #       - id: mypy
+    #         exclude: ^(docs/|example-plugin/|tests/fixtures)
     # - repo: https://github.com/pycqa/pydocstyle
     #   rev: ""
     #   hooks:

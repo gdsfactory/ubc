@@ -82,7 +82,7 @@ def test_mask3():
     """contains mirror cavities and structures inside a resonator"""
     e = [add_gc(PDK.crossing())]
     e += [add_gc(PDK.dc_adiabatic(), optical_routing_type=1)]
-    e += [add_gc(PDK.dc_broadband())]
+    e += [add_gc(PDK.dc_broadband_te())]
     e += [add_gc(PDK.y_splitter(), optical_routing_type=1)]
     e += [add_gc(PDK.y_adiabatic(), optical_routing_type=1)]
     c = pack(e)

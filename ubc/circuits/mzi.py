@@ -1,37 +1,41 @@
 import gdslib as gl
+from gdslib import autoname
+from gdslib.types import ModelFactory
 import pp
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
 
 
-@pp.autoname
+@autoname
 def mzi(
-    L0=1,
-    L1=100,
-    L2=10,
-    y_model_factory=siepic.ebeam_y_1550,
-    wg=siepic.ebeam_wg_integral_1550,
-):
+    length_y: float = 1.0,
+    delta_length: float = 100.0,
+    length_x: float = 10.0,
+    y_model_factory: ModelFactory = siepic.ebeam_y_1550,
+    waveguide: ModelFactory = siepic.ebeam_wg_integral_1550,
+) -> Subcircuit:
     """Mzi circuit model
 
     Args:
-        L0 (um): vertical length for both and top arms
-        L1 (um): bottom arm extra length, delta_length = 2*L1
-        L2 (um): L_top horizontal length
+        length_y: vertical length for both and top arms (um)
+        delta_length: bottom arm extra length
+        length_x: horizontal length for both and top arms (um)
+        waveguide: waveguide_model
 
     .. code::
 
-               __L2__
-               |      |
-               L0     L0r
-               |      |
-     splitter==|      |==recombiner
-               |      |
-               L0     L0r
-               |      |
-               L1     L1
-               |      |
-               |__L2__|
+                   __Lx__
+                  |      |
+                  Ly     Lyr (not a parameter)
+                  |      |
+        splitter==|      |==combiner
+                  |      |
+                  Ly     Lyr (not a parameter)
+                  |      |
+                  | delta_length/2
+                  |      |
+                  |__Lx__|
+
 
 
     .. plot::
@@ -39,7 +43,7 @@ def mzi(
 
       import pp
 
-      c = pp.c.mzi(L0=0.1, L1=0, L2=10)
+      c = pp.c.mzi(length_y=0.1, delta_length=0, length_x=10)
       pp.plotgds(c)
 
 
@@ -49,13 +53,13 @@ def mzi(
         import ubc
         import gdslib as gl
 
-        c = ubc.sp.mzi()
+        c = ubc.circuits.mzi()
         gl.plot_circuit(c)
 
     """
     y = pp.call_if_func(y_model_factory)
-    wg_long = wg(length=(2 * L0 + 2 * L1 + L2) * 1e-6)
-    wg_short = wg(length=(2 * L0 + L2) * 1e-6)
+    wg_long = waveguide(length=(2 * length_y + delta_length + length_x) * 1e-6)
+    wg_short = waveguide(length=(2 * length_y + length_x) * 1e-6)
 
     # Create the circuit, add all individual instances
     circuit = Subcircuit("mzi")

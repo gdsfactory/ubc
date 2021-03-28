@@ -3,10 +3,10 @@ based on https://github.com/SiEPIC-Kits/SiEPIC_Photonics_Package
 """
 
 import numpy as np
-from ubcm.waveguide import beta, neff, wavelength_um
+from ubc.circuits.waveguide import beta, neff, wavelength_um
 
 
-def mzi(
+def mzi_spectrum(
     L1_um,
     L2_um,
     wavelength_um=wavelength_um,
@@ -17,7 +17,14 @@ def mzi(
     n2=-1,
     n3=0,
 ):
-    """"""
+    """Returns MZI spectrum:
+
+    Args:
+        L1_um
+        L2_um
+        wavelength_um
+        beta: propagation constant
+    """
     if callable(beta):
         beta = beta(wavelength_um, neff=neff, alpha=alpha, n1=n1, n2=n2, n3=n3)
 
@@ -27,6 +34,6 @@ def mzi(
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
-    # plt.plot(wavelength_um, mzi(100, 110))
-    plt.plot(wavelength_um, 10 * np.log10(mzi(L1_um=40, L2_um=255)))
+    # plt.plot(wavelength_um, mzi_spectrum(100, 110))
+    plt.plot(wavelength_um, 10 * np.log10(mzi_spectrum(L1_um=40, L2_um=255)))
     plt.show()

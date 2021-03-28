@@ -6,16 +6,7 @@ from pytest_regressions.num_regression import NumericRegressionFixture
 from ubc.pdk import PDK
 
 pdk = PDK
-
-# All functions that do not start with (get, _, add) are a component_factory
-component_names = [
-    function_name
-    for function_name in dir(pdk)
-    if not function_name.startswith("get_")
-    and not function_name.startswith("_")
-    and not function_name.startswith("add_")
-    and not function_name.startswith("tech")
-]
+component_names = pdk.get_factory_names()
 
 
 @pytest.fixture(params=component_names, scope="function")

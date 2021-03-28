@@ -2,7 +2,7 @@
 Overwrites config with a `config.yml` in the current working directory (if any).
 """
 
-__all__ = ["path", "conf"]
+__all__ = ["PATH", "CONFIG"]
 
 import io
 import pathlib
@@ -25,13 +25,14 @@ try:
     config_cwd = OmegaConf.load(cwd_config)
 except Exception:
     config_cwd = OmegaConf.create()
-conf = OmegaConf.merge(config_base, config_cwd)
+CONFIG = OmegaConf.merge(config_base, config_cwd)
 
 
 class Path:
     module = module_path
     repo = repo_path
     data = repo_path / "data"
+    sparameters = module / "sparameters"
     mzi = data / "mzi"
     mzi1 = mzi / "ZiheGao_MZI1_272_Scan1.mat"
     mzi3 = mzi / "ZiheGao_MZI2_271_Scan1.mat"
@@ -55,8 +56,8 @@ class Path:
     dbr = data / "bragg"
 
 
-path = Path()
+PATH = Path()
 
 
 if __name__ == "__main__":
-    print(path.data)
+    print(PATH.data)

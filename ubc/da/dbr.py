@@ -1,7 +1,7 @@
-from ubc.config import path
+from ubc.config import PATH
 
 dbrs = {
-    filename.split("_")[3][8:].replace("Num", "_"): path.dbr / filename
+    filename.split("_")[3][8:].replace("Num", "_"): PATH.dbr / filename
     for filename in [
         "ELEC_413_lukasc_BraggSet1Num10_1272.mat",
         "ELEC_413_lukasc_BraggSet1Num11_1273.mat",
