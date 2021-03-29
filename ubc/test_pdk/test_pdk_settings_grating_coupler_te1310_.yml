@@ -7,6 +7,7 @@ name: gc_te1310
 settings:
   angle: 180
   component:
+    function_name: ebeam_gc_te1310
     info: {}
     name: ebeam_gc_te1310
     settings: {}

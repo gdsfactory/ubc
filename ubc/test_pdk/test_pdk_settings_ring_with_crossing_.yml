@@ -4,6 +4,7 @@ module: pp.components.ring_single_dut
 name: ring_single_dut_Cebeam_crossing4
 settings:
   component:
+    function_name: ebeam_crossing4
     info: {}
     name: ebeam_crossing4
     settings: {}
