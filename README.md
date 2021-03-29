@@ -4,11 +4,11 @@ UBC Siepic Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photon
 
 ## Usage
 
-see the notebooks folder
+See the docs/notebooks folder
 
 ## Installation
 
-run `make install` in a terminal. For windows you can also install `install.bat`
+Run `make install` in a terminal. For windows you can also install `install.bat`
 
 
 ## Acks

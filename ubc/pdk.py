@@ -169,6 +169,9 @@ class PdkSiliconCband(Pdk):
     def grating_coupler_tm1550(self) -> Component:
         return gc_tm1550()
 
+    def grating_coupler_te1550(self) -> Component:
+        return gc_te1550()
+
     def crossing(self) -> Component:
         """TE waveguide crossing."""
         return import_gds("ebeam_crossing4", rename_ports=True)
@@ -277,6 +280,16 @@ class PdkSiliconCband(Pdk):
 
 
 PDK = PdkSiliconCband()
+
+component_factories_leaf_te = [
+    PDK.crossing,
+    PDK.dc_broadband_te,
+    PDK.dc_adiabatic,
+    PDK.y_adiabatic,
+    PDK.y_splitter,
+]
+
+component_factories_leaf_tm = [PDK.dc_broadband_tm]
 
 if __name__ == "__main__":
     p = PDK

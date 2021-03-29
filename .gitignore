@@ -9,6 +9,7 @@ ref_layouts/
 *.so
 *.gds
 *.sqlite3
+*.png
 
 # Distribution / packaging
 .Python

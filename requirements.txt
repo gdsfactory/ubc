@@ -6,3 +6,4 @@ lygadgets
 simphony
 gdsfactory
 gdslib
+modes

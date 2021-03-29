@@ -7,3 +7,4 @@ Ubc
 
     README
     ubc
+    notebooks
