@@ -1,21 +1,20 @@
 function_name: mzi
 info: {}
 module: pp.components.mzi
-name: mzi_30e2838a
+name: mzi_17539f76
 settings:
   bend: bend_euler
-  bend_radius: 5.0
+  bend_radius: 5
   combiner: mmi1x2
   combiner_settings: null
-  delta_length: 10.0
+  delta_length: 10
   length_x: 0.1
   length_y: 0.1
   pins: false
   splitter: mmi1x2
   splitter_settings: null
-  tech: null
-  waveguide: waveguide
-  waveguide_delta_length: null
-  waveguide_horizontal: waveguide
-  waveguide_vertical: waveguide
+  straight: straight
+  straight_delta_length: null
+  straight_horizontal: straight
+  straight_vertical: straight
   with_splitter: true

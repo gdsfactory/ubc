@@ -13,10 +13,12 @@ from pp.port import Port, auto_rename_ports
 from pp.rotate import rotate
 from pp.routing.add_fiber_array import add_fiber_array
 from pp.tech import Tech
+from pp.types import Layer
 from pp.types import ComponentFactory, ComponentReference
 from ubc.config import CONFIG
 from ubc.import_gds import import_gds
 from ubc.tech import LAYER, TECH_SILICON_C
+from ubc.add_pins import add_pins
 
 L = 1.55 / 4 / 2 / 2.44
 
@@ -153,9 +155,41 @@ def gc_tm1550():
     return c
 
 
+@cell
+def straight(
+    length: float = 10.0,
+    width: float = 0.5,
+    layer: Layer = TECH_SILICON_C.layer_wg,
+    with_pins: bool = True,
+    **kwargs,
+) -> Component:
+    """Straight waveguide."""
+    c = pp.components.straight(length=length, width=width, layer=layer, **kwargs)
+
+    if with_pins:
+        labels = [
+            "Lumerical_INTERCONNECT_library=Design kits/EBeam",
+            "Lumerical_INTERCONNECT_component=ebeam_wg_integral_1550",
+            f"Spice_param:wg_width={width:.3f}u wg_length={length:.3f}u",
+        ]
+
+        for i, text in enumerate(labels):
+            c.label(text=text, position=(length / 2, i * 0.1), layer=LAYER.DEVREC)
+        add_pins(c)
+    return c
+
+
+@cell
+def straight_no_pins(**kwargs):
+    return straight(with_pins=False, **kwargs)
+
+
 @dataclasses.dataclass
 class PdkSiliconCband(Pdk):
     tech: Tech = TECH_SILICON_C
+
+    def add_pins(self, component: Component) -> None:
+        add_pins(component=component)
 
     def grating_coupler(self) -> Component:
         return gc_te1550()
@@ -200,13 +234,13 @@ class PdkSiliconCband(Pdk):
         return ring_single_dut(component=self.crossing(), **kwargs)
 
     def dbr(self, w0=0.5, dw=0.1, n=600, l1=L, l2=L) -> Component:
-        return pp.c.dbr(
+        return pp.components.dbr(
             w1=w0 - dw / 2,
             w2=w0 + dw / 2,
             n=n,
             l1=l1,
             l2=l2,
-            waveguide_function=self.waveguide,
+            straight=straight_no_pins,
         )
 
     def dbr_cavity(self, **kwargs) -> Component:
@@ -230,7 +264,7 @@ class PdkSiliconCband(Pdk):
         taper_factory: Optional[ComponentFactory] = None,
         route_filter: Optional[ComponentFactory] = None,
         bend_radius: Optional[float] = None,
-        auto_taper_to_wide_waveguides: bool = False,
+        auto_widen: bool = False,
         **kwargs,
     ) -> Component:
         """Returns component with grating couplers and labels on each port.
@@ -250,10 +284,11 @@ class PdkSiliconCband(Pdk):
             grating_coupler: grating coupler instance, function or list of functions
             bend_factory: function for bends
             optical_io_spacing: SPACING_GC
-            straight_factory: waveguide
+            straight_factory: for straigths
             taper_factory: taper function
             route_filter: for waveguides and bends
             bend_radius: for bends
+            auto_widen: widen straight waveguides for lower loss in long routes
         """
 
         c = add_fiber_array(
@@ -262,7 +297,7 @@ class PdkSiliconCband(Pdk):
             route_filter=route_filter or self.get_route_euler,
             grating_coupler=grating_coupler or self.grating_coupler,
             bend_factory=bend_factory or self.bend_euler,
-            straight_factory=straight_factory or self.waveguide,
+            straight_factory=straight_factory or self.straight,
             taper_factory=taper_factory or self.taper,
             gc_port_name=gc_port_name,
             get_input_labels_function=get_input_labels_function,
@@ -272,7 +307,7 @@ class PdkSiliconCband(Pdk):
             fanout_length=fanout_length,
             bend_radius=bend_radius or self.tech.bend_radius,
             tech=self.tech,
-            auto_taper_to_wide_waveguides=auto_taper_to_wide_waveguides,
+            auto_widen=auto_widen,
             **kwargs,
         )
         c.rotate(-90)
@@ -296,8 +331,10 @@ if __name__ == "__main__":
     # c = p.ring_single(length_x=6)
 
     c = p.ring_with_crossing()
-    c = p.dbr()  # needs fixing
-    c = p.dbr_cavity()
+    # c = p.dbr_cavity()
     c = p.dc_broadband_te()
+    c = p.dbr()  # needs fixing
     cc = p.add_fiber_array(c)
+
+    # cc = straight_no_pins()
     cc.show()

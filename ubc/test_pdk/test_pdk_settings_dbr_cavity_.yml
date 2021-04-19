@@ -1,20 +1,19 @@
 function_name: cavity
 info: {}
 module: pp.components.cavity
-name: cavity_Cdbr_551bbae9
+name: cavity_Cdbr_78212e90
 settings:
   component:
     function_name: dbr
     info: {}
     module: pp.components.dbr
-    name: dbr_551bbae9
+    name: dbr_78212e90
     settings:
       l1: 0.07940573770491803
       l2: 0.07940573770491803
       n: 600
+      straight: straight_no_pins
       w1: 0.45
       w2: 0.55
-      waveguide_function: waveguide
   gap: 0.2
   length: 0.1
-  tech: silicon_cband

@@ -17,7 +17,7 @@ def add_gc(component, **kwargs):
 
 
 def test_mask2():
-    """ spirals for extracting waveguide loss """
+    """ spirals for extractin straight waveguide loss """
     N = 15
     bend_radius = 15
 
@@ -47,13 +47,13 @@ def test_mask2():
     m = c[0]
     m.name = "EBeam_JoaquinMatres_2"
     add_floorplan(m)
-    pp.write_gds(m, precision=1e-9)
+    m.write_gds(precision=1e-9)
     m.show()
     return m
 
 
 def test_mask1():
-    e = [add_gc(PDK.waveguide())]
+    e = [add_gc(PDK.straight())]
     e += [add_gc(PDK.mzi(delta_length=dl)) for dl in [9.32, 93.19]]
     e += [
         add_gc(PDK.ring_single(radius=12, gap=gap, length_x=coupling_length))
@@ -73,7 +73,7 @@ def test_mask1():
     m = c[0]
     m.name = "EBeam_JoaquinMatres_1"
     add_floorplan(m)
-    pp.write_gds(m, precision=1e-9)
+    m.write_gds(precision=1e-9)
     m.show()
     return m
 
@@ -89,7 +89,7 @@ def test_mask3():
     m = c[0]
     m.name = "EBeam_JoaquinMatres_3"
     add_floorplan(m)
-    pp.write_gds(m, precision=1e-9)
+    m.write_gds(precision=1e-9)
     m.show()
     return m
 

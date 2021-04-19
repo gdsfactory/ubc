@@ -9,12 +9,11 @@ def add_pins(
     component: Component,
     function: Callable = add_pin_square,
     port_type2layer: Dict[str, Tuple[int, int]] = PORT_TYPE_TO_LAYER,
-):
+) -> None:
 
     for p in component.ports.values():
         layer = port_type2layer[p.port_type]
         function(component=component, port=p, layer=layer, label_layer=layer)
-    return component
 
 
 if __name__ == "__main__":

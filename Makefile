@@ -9,9 +9,10 @@ link:
 	lygadgets_link tech/ubc
 
 test:
-	pytest
+	pytest -s
 
 test-force:
+	rm -r gds_ref
 	pytest --force-regen
 
 diff:
