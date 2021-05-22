@@ -1,0 +1,16 @@
+function_name: straight_no_pins
+info:
+  length: 10
+  width: 0.5
+module: ubc.components
+name: straight_no_pins
+settings:
+  layer:
+  - 1
+  - 0
+  length: 10
+  npoints: 2
+  waveguide: strip
+  width: 0.5
+  with_cladding_box: true
+  with_pins: false

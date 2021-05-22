@@ -2,7 +2,7 @@ function_name: gc_te1550
 info:
   polarization: te
   wavelength: 1550
-module: ubc.pdk
+module: ubc.components
 name: gc_te1550
 settings:
   angle: 180

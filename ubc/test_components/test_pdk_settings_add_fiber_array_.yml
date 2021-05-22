@@ -1,0 +1,33 @@
+function_name: add_fiber_array
+info: {}
+module: ubc.components
+name: add_fiber_array
+settings:
+  component:
+    function_name: straight
+    info:
+      length: 10
+      width: 0.5
+    module: ubc.components
+    name: straight
+    settings:
+      layer:
+      - 1
+      - 0
+      length: 10
+      npoints: 2
+      waveguide: strip
+      width: 0.5
+      with_cladding_box: true
+      with_pins: true
+  component_name: null
+  fanout_length: 0
+  gc_port_name: W0
+  get_input_labels_function: get_input_labels
+  grating_coupler: gc_tm1550
+  layer_label:
+  - 10
+  - 0
+  optical_routing_type: 0
+  taper_length: 10
+  with_align_ports: false

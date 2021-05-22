@@ -313,8 +313,9 @@ __all__ = list(COMPONENT_FACTORY.factory.keys())
 
 
 if __name__ == "__main__":
-    c = straight_no_pins()
-    c = add_fiber_array(component=c)
+    # c = straight_no_pins()
+    # c = add_fiber_array(component=c)
     # c = gc_tm1550()
     # print(c.ports.keys())
+    c = add_fiber_array()
     c.show(show_ports=True)

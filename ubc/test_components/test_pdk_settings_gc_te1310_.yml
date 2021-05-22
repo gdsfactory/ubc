@@ -2,7 +2,7 @@ function_name: gc_te1310
 info:
   polarization: te
   wavelength: 1310
-module: ubc.pdk
+module: ubc.components
 name: gc_te1310
 settings:
   angle: 180

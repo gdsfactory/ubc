@@ -3,7 +3,7 @@ from pp.component import Component
 from pp.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.num_regression import NumericRegressionFixture
-from ubc.pdk import COMPONENT_FACTORY
+from ubc.components import COMPONENT_FACTORY
 
 
 component_factory = COMPONENT_FACTORY.factory
@@ -12,7 +12,7 @@ component_names = component_factory.keys()
 
 @pytest.fixture(params=component_names, scope="function")
 def component(request) -> Component:
-    return component_factory[request.param](cache=False)
+    return component_factory[request.param]()
 
 
 def test_pdk_gds(component: Component) -> None:
