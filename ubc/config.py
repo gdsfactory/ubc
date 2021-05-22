@@ -15,6 +15,7 @@ username: JoaquinMatres
 """
 )
 
+
 cwd = pathlib.Path.cwd()
 cwd_config = cwd / "config.yml"
 config_base = OmegaConf.load(default_config)
@@ -60,4 +61,5 @@ PATH = Path()
 
 
 if __name__ == "__main__":
+    print(CONFIG.tech.layers_cladding.clad)
     print(PATH.data)

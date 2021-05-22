@@ -1,9 +1,11 @@
 import pp
 from pp.pack import pack
-from ubc import PDK
+import ubc
 from ubc.tech import LAYER
 
 size = (605, 410)
+
+PDK = ubc.pdk
 
 
 def add_floorplan(c, size=(605, 410), layer=LAYER.FLOORPLAN):
@@ -11,7 +13,7 @@ def add_floorplan(c, size=(605, 410), layer=LAYER.FLOORPLAN):
 
 
 def add_gc(component, **kwargs):
-    c = PDK.add_fiber_array(component, **kwargs)
+    c = PDK.add_fiber_array(component=component, **kwargs)
     c.name = f"{component.name}_te"
     return c
 

@@ -2,6 +2,6 @@
 
 import ubc.da as da
 from ubc.config import CONFIG, PATH
-from ubc.pdk import PDK
+import ubc.pdk as pdk
 
-__all__ = ["PDK", "CONFIG", "da", "PATH"]
+__all__ = ["CONFIG", "da", "PATH", "pdk"]

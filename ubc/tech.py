@@ -1,16 +1,15 @@
-import dataclasses
-import pathlib
-from typing import Tuple
+from typing import Tuple, Optional, List
+import pydantic.dataclasses as dataclasses
 
-from pp.tech import Tech
+from pp.tech import Waveguide, TECH
+from pp.tech import LayerStack, LayerLevel
 from pp.types import Layer
-from pp.layers import LayerStack, LayerLevel
 from ubc.config import PATH
 
 
 @dataclasses.dataclass(frozen=True)
 class LayerMap:
-    WG = (1, 0)
+    WG: Layer = (1, 0)
     DEVREC = (68, 0)
     LABEL = (10, 0)
     PORT = (1, 10)
@@ -31,19 +30,46 @@ class LayerStackUbc(LayerStack):
 LAYER_STACK = LayerStackUbc()
 
 
-@dataclasses.dataclass(frozen=True)
-class TechSiliconCband(Tech):
-    name: str = "silicon_cband"
-    wg_width: float = 0.5
-    bend_radius: float = 5.0
-    cladding_offset: float = 1.0
-    layer_wg: Layer = LAYER.WG
-    layers_cladding: Tuple[Layer, ...] = (LAYER.DEVREC,)
-    layer_label: Layer = LAYER.LABEL
-    taper_length: float = 15.0
-    taper_width: float = 2.0  # taper to wider waveguides for lower loss
-    layer_stack: LayerStack = LAYER_STACK
-    sparameters_path: pathlib.Path = PATH.sparameters
+@dataclasses.dataclass
+class Strip(Waveguide):
+    width: float = 0.5
+    width_wide: float = 2.0
+    auto_widen: bool = True
+    auto_widen_minimum_length: float = 200
+    taper_length: float = 10.0
+    layer: Layer = LAYER.WG
+    radius: float = 10.0
+    cladding_offset: float = 3.0
+    layer_cladding: Optional[Layer] = LAYER.DEVREC
+    layers_cladding: Optional[List[Layer]] = (LAYER.DEVREC,)
 
 
-TECH_SILICON_C = TechSiliconCband()
+@dataclasses.dataclass
+class Waveguides:
+    strip: Waveguide = Strip()
+
+
+@dataclasses.dataclass
+class SimulationSettings:
+    remove_layers: Tuple[Layer, ...] = (LAYER.DEVREC,)
+    background_material: str = "sio2"
+    port_width: float = 3e-6
+    port_height: float = 1.5e-6
+    port_extension_um: float = 1.0
+    mesh_accuracy: int = 2
+    zmargin: float = 1e-6
+    ymargin: float = 2e-6
+    wavelength_start: float = 1.2e-6
+    wavelength_stop: float = 1.6e-6
+    wavelength_points: int = 500
+
+
+WAVEGUIDES = Waveguides()
+SIMULATION_SETTINGS = SimulationSettings()
+
+
+TECH.name = "ubc"
+TECH.layer_label = LAYER.LABEL
+TECH.layer_stack = LAYER_STACK
+TECH.sparameters_path = str(PATH.sparameters)
+TECH.waveguide.strip = Strip()
