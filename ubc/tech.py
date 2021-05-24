@@ -23,8 +23,8 @@ PORT_TYPE_TO_LAYER = {v: k for k, v in PORT_LAYER_TO_TYPE.items()}
 
 @dataclasses.dataclass
 class LayerStackUbc(LayerStack):
-    WG = LayerLevel((1, 0), thickness_nm=220.0, z_nm=0.0, material="si")
-    WG2 = LayerLevel((31, 0), thickness_nm=220.0, z_nm=0.0, material="si")
+    WG = LayerLevel((1, 0), thickness_nm=220.0, zmin_nm=0.0, material="si")
+    WG2 = LayerLevel((31, 0), thickness_nm=220.0, zmin_nm=0.0, material="si")
 
 
 LAYER_STACK = LayerStackUbc()
