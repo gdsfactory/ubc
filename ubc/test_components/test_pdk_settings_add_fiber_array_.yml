@@ -30,4 +30,5 @@ settings:
   - 0
   optical_routing_type: 0
   taper_length: 10
+  waveguide: strip
   with_align_ports: false

@@ -285,8 +285,8 @@ def add_fiber_array(
     return c
 
 
-COMPONENT_FACTORY = Factory()
-COMPONENT_FACTORY.register(
+FACTORY = Factory()
+FACTORY.register(
     [
         add_fiber_array,
         crossing,
@@ -309,7 +309,7 @@ COMPONENT_FACTORY.register(
 )
 
 
-__all__ = list(COMPONENT_FACTORY.factory.keys())
+__all__ = list(FACTORY.factory.keys())
 
 
 if __name__ == "__main__":
