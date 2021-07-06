@@ -285,7 +285,7 @@ def add_fiber_array(
     return c
 
 
-FACTORY = Factory()
+FACTORY = Factory(name="ubc")
 FACTORY.register(
     [
         add_fiber_array,
@@ -316,6 +316,9 @@ if __name__ == "__main__":
     # c = straight_no_pins()
     # c = add_fiber_array(component=c)
     # c = gc_tm1550()
+    # print(c.get_ports_array())
     # print(c.ports.keys())
-    c = add_fiber_array()
-    c.show(show_ports=True)
+    c = straight()
+    c = add_fiber_array(component=c)
+    c.pprint()
+    c.show()

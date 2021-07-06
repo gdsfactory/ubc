@@ -1,7 +1,9 @@
 """UBC Siepic Ebeam PDK from edx course"""
 
-import ubc.da as da
 from ubc.config import CONFIG, PATH
+from ubc.components import FACTORY
+
+import ubc.da as da
 import ubc.components as components
 
-__all__ = ["CONFIG", "da", "PATH", "components"]
+__all__ = ["CONFIG", "da", "PATH", "components", "FACTORY"]

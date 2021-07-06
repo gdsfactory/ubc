@@ -1,5 +1,5 @@
 import pp
-from gdslib import plot_circuit
+from gdslib.simphony import plot_circuit
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
 
@@ -9,7 +9,7 @@ def add_grating_coupler(circuit, grating_coupler=siepic.ebeam_gc_te1550):
 
     Args:
         circuit: needs to have `input` and `output` pins
-        gc: grating coupler
+        gc: grating coupler model function
     """
     c = Subcircuit(f"{circuit}_gc")
     gc = pp.call_if_func(grating_coupler)
@@ -28,7 +28,7 @@ def add_grating_coupler(circuit, grating_coupler=siepic.ebeam_gc_te1550):
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
-    from ubc.circuits.mzi import mzi
+    from mzi import mzi
 
     c1 = mzi()
     c2 = add_grating_coupler(c1)

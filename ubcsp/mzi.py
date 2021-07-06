@@ -92,5 +92,5 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     m = mzi()
-    gl.plot_circuit(m)
+    gl.simphony.plot_circuit(m)
     plt.show()

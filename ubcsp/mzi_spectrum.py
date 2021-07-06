@@ -3,7 +3,7 @@ based on https://github.com/SiEPIC-Kits/SiEPIC_Photonics_Package
 """
 
 import numpy as np
-from ubc.circuits.waveguide import beta, neff, wavelength_um
+from ubcsp.waveguide import beta, neff, wavelength_um
 
 
 def mzi_spectrum(

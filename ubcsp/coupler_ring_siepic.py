@@ -9,7 +9,7 @@
 """
 
 
-import gdslib as gl
+import gdslib.simphony as gs
 from simphony.library import siepic
 
 if __name__ == "__main__":
@@ -18,6 +18,6 @@ if __name__ == "__main__":
     c = siepic.ebeam_dc_halfring_straight(
         gap=200e-9, radius=12e-6, width=500e-9, thickness=220e-9, couple_length=0.0
     )
-    gl.plot_model(c)
+    gs.plot_model(c)
     print(c)
     plt.show()
