@@ -3,10 +3,10 @@ from pp.component import Component
 from pp.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.num_regression import NumericRegressionFixture
-from ubc.components import FACTORY
+from ubc.components import LIBRARY
 
 
-component_factory = FACTORY.factory
+component_factory = LIBRARY.factory
 component_names = component_factory.keys()
 
 

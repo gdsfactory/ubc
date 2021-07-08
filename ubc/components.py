@@ -9,7 +9,7 @@ from pp.component import Component
 from pp.components.ring_single_dut import ring_single_dut
 from pp.port import Port, auto_rename_ports
 from pp.rotate import rotate
-from pp.tech import Factory
+from pp.tech import Library
 from pp.types import Layer
 from pp.types import ComponentFactory, ComponentReference
 
@@ -285,8 +285,8 @@ def add_fiber_array(
     return c
 
 
-FACTORY = Factory(name="ubc")
-FACTORY.register(
+LIBRARY = Library(name="ubc")
+LIBRARY.register(
     [
         add_fiber_array,
         crossing,
@@ -309,7 +309,7 @@ FACTORY.register(
 )
 
 
-__all__ = list(FACTORY.factory.keys())
+__all__ = list(LIBRARY.factory.keys())
 
 
 if __name__ == "__main__":
