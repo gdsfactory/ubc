@@ -4,7 +4,7 @@ from ubc.tech import LAYER
 from ubc.add_pins import add_pins
 
 
-@pp.cell_with_validator
+@pp.cell
 def straight(
     length: float = 10.0,
     width: float = 0.5,

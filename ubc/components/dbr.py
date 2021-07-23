@@ -9,7 +9,7 @@ def straight(waveguide: pp.types.StrOrDict = "strip", **kwargs):
     return pp.c.straight(waveguide=waveguide, **kwargs)
 
 
-@pp.cell_with_validator
+@pp.cell
 def dbr(
     w0: float = 0.5, dw: float = 0.1, n: int = 600, l1: float = L, l2: float = L
 ) -> Component:
