@@ -73,3 +73,4 @@ TECH.layer_label = LAYER.LABEL
 TECH.layer_stack = LAYER_STACK
 TECH.sparameters_path = str(PATH.sparameters)
 TECH.waveguide.strip = Strip()
+TECH.simulation_settings = SIMULATION_SETTINGS
