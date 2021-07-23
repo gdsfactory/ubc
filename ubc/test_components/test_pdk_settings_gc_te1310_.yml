@@ -2,7 +2,7 @@ function_name: gc_te1310
 info:
   polarization: te
   wavelength: 1310
-module: ubc.components
+module: ubc.components.grating_couplers
 name: gc_te1310
 settings:
   angle: 180

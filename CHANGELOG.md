@@ -1,6 +1,9 @@
 ## Next version
 
-- LayerStack
+
+## 0.0.3
+
+- components in different folders
 
 
 ## 0.0.2
