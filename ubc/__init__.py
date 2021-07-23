@@ -9,4 +9,4 @@ import ubc.components as components
 
 
 __all__ = ["CONFIG", "da", "PATH", "components", "LIBRARY", "write_sparameters"]
-__version__ = "0.0.2"
+__version__ = "0.0.3"
