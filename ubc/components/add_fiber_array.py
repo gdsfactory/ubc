@@ -18,7 +18,7 @@ from ubc.components.straight import straight
 L = 1.55 / 4 / 2 / 2.44
 
 
-def get_optical_text(
+def get_input_label_text(
     port: Port,
     gc: ComponentReference,
     gc_index: Optional[int] = None,
@@ -87,6 +87,7 @@ def get_input_labels(
     layer_label: Tuple[int, int] = LAYER.LABEL,
     gc_port_name: str = "W0",
     port_index: int = 1,
+    get_input_label_text_function: Callable = get_input_label_text,
 ) -> List[Label]:
     """Return labels (elements list) for all component ports."""
     if port_index == -1:
@@ -100,7 +101,7 @@ def get_input_labels(
     gc = io_gratings[port_index]
     port = ordered_ports[1]
 
-    text = get_optical_text(
+    text = get_input_label_text(
         port=port, gc=gc, gc_index=port_index, component_name=component_name
     )
     layer, texttype = pd._parse_layer(layer_label)
