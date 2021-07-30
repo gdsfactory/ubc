@@ -13,6 +13,6 @@ settings:
   - 10
   - 0
   optical_routing_type: 0
-  taper: taper
+  taper_length: 10
   waveguide: strip
   with_loopback: false
