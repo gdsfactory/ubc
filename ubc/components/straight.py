@@ -1,19 +1,19 @@
-import pp
+import gdsfactory as gf
 
 from ubc.tech import LAYER
 from ubc.add_pins import add_pins
 
 
-@pp.cell
+@gf.cell
 def straight(
     length: float = 10.0,
     width: float = 0.5,
-    layer: pp.types.Layer = LAYER.WG,
+    layer: gf.types.Layer = LAYER.WG,
     with_pins: bool = True,
     **kwargs,
-) -> pp.Component:
+) -> gf.Component:
     """Straight waveguide."""
-    c = pp.components.straight(length=length, width=width, layer=layer, **kwargs)
+    c = gf.components.straight(length=length, width=width, layer=layer, **kwargs)
 
     if with_pins:
         labels = [

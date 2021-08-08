@@ -1,9 +1,9 @@
 from typing import Tuple, Optional, List
 import pydantic.dataclasses as dataclasses
 
-from pp.tech import Waveguide, TECH
-from pp.tech import LayerStack, LayerLevel
-from pp.types import Layer
+from gdsfactory.tech import Waveguide, TECH
+from gdsfactory.tech import LayerStack, LayerLevel
+from gdsfactory.types import Layer
 from ubc.config import PATH
 
 
@@ -21,13 +21,29 @@ PORT_LAYER_TO_TYPE = {LAYER.PORT: "optical"}
 PORT_TYPE_TO_LAYER = {v: k for k, v in PORT_LAYER_TO_TYPE.items()}
 
 
-@dataclasses.dataclass
-class LayerStackUbc(LayerStack):
-    WG = LayerLevel((1, 0), thickness_nm=220.0, zmin_nm=0.0, material="si")
-    WG2 = LayerLevel((31, 0), thickness_nm=220.0, zmin_nm=0.0, material="si")
+def get_layer_stack_ubc(thickness_nm: float = 220.0) -> LayerStack:
+    """Returns generic LayerStack"""
+    return LayerStack(
+        layers=[
+            LayerLevel(
+                name="core",
+                gds_layer=1,
+                thickness_nm=thickness_nm,
+                zmin_nm=0.0,
+                material="si",
+            ),
+            LayerLevel(
+                name="core2",
+                gds_layer=31,
+                thickness_nm=thickness_nm,
+                zmin_nm=0.0,
+                material="si",
+            ),
+        ]
+    )
 
 
-LAYER_STACK = LayerStackUbc()
+LAYER_STACK = get_layer_stack_ubc()
 
 
 @dataclasses.dataclass

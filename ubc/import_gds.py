@@ -1,9 +1,9 @@
 import pathlib
 
-import pp
+import gdsfactory as gf
 from numpy import ndarray
-from pp.component import Component
-from pp.port import auto_rename_ports
+from gdsfactory.component import Component
+from gdsfactory.port import auto_rename_ports
 from ubc.tech import LAYER
 
 cwd = pathlib.Path(__file__).parent.absolute()
@@ -38,7 +38,7 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
 
 def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
     """import gds from SIEPIC PDK"""
-    c = pp.import_gds(gds / f"{gdsname}.gds")
+    c = gf.import_gds(gds / f"{gdsname}.gds")
     c.function_name = gdsname
 
     n = 0
@@ -48,7 +48,7 @@ def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
 
     for label in c.get_labels():
         if label.text.startswith("opt"):
-            port = pp.Port(
+            port = gf.Port(
                 name=label.text,
                 midpoint=label.position,
                 width=port_width,

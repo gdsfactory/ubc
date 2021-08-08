@@ -1,6 +1,7 @@
+from gdsfactory.component import Component
+from gdsfactory.components.ring_single_dut import ring_single_dut
+
 from ubc.import_gds import import_gds
-from pp.component import Component
-from pp.components.ring_single_dut import ring_single_dut
 
 
 def crossing() -> Component:

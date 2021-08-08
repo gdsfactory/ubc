@@ -1,6 +1,6 @@
-import pp
-from pp.component import Component
-from pp.tech import Library
+import gdsfactory as gf
+from gdsfactory.component import Component
+from gdsfactory.tech import Library
 from ubc.import_gds import import_gds
 
 from ubc.components.add_fiber_array import add_fiber_array
@@ -40,8 +40,7 @@ def y_splitter() -> Component:
     return import_gds("ebeam_y_1550")
 
 
-def spiral(**kwargs):
-    return pp.c.spiral_external_io(**kwargs)
+spiral = gf.partial(gf.components.spiral_external_io)
 
 
 LIBRARY = Library(name="ubc")
@@ -78,5 +77,4 @@ if __name__ == "__main__":
     # print(c.ports.keys())
     c = straight()
     c = add_fiber_array(component=c)
-    c.pprint()
     c.show()

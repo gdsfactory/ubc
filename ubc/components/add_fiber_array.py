@@ -1,13 +1,13 @@
 from typing import Callable, List, Optional, Tuple
 
-import pp
 from phidl import device_layout as pd
 from phidl.device_layout import Label
-from pp.add_labels import get_input_label
-from pp.cell import cell
-from pp.component import Component
-from pp.port import Port
-from pp.types import ComponentFactory, ComponentReference
+import gdsfactory as gf
+from gdsfactory.add_labels import get_input_label
+from gdsfactory.cell import cell
+from gdsfactory.component import Component
+from gdsfactory.port import Port
+from gdsfactory.types import ComponentFactory, ComponentReference
 
 from ubc.config import CONFIG
 from ubc.tech import LAYER
@@ -44,7 +44,7 @@ def get_input_label_text(
 
     if component_name:
         name = component_name
-    elif type(port.parent) == pp.Component:
+    elif type(port.parent) == Component:
         name = port.parent.name
     else:
         name = port.parent.ref_cell.name
@@ -145,7 +145,7 @@ def add_fiber_array(
         optical_io_spacing: SPACING_GC
     """
 
-    c = pp.routing.add_fiber_array(
+    c = gf.routing.add_fiber_array(
         component=component,
         component_name=component_name,
         grating_coupler=grating_coupler,
@@ -171,5 +171,4 @@ if __name__ == "__main__":
     # print(c.ports.keys())
     c = pdk.straight()
     c = add_fiber_array(component=c)
-    c.pprint()
     c.show()

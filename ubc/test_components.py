@@ -1,6 +1,6 @@
 import pytest
-from pp.component import Component
-from pp.difftest import difftest
+from gdsfactory.component import Component
+from gdsfactory.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
 from pytest_regressions.num_regression import NumericRegressionFixture
 from ubc.components import LIBRARY

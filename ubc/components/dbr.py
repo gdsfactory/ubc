@@ -1,19 +1,18 @@
-import pp
-from pp import Component
+import gdsfactory as gf
 
 
 L = 1.55 / 4 / 2 / 2.44
 
 
-def straight(waveguide: pp.types.StrOrDict = "strip", **kwargs):
-    return pp.c.straight(waveguide=waveguide, **kwargs)
+def straight(waveguide: gf.types.StrOrDict = "strip", **kwargs):
+    return gf.c.straight(waveguide=waveguide, **kwargs)
 
 
-@pp.cell
+@gf.cell
 def dbr(
     w0: float = 0.5, dw: float = 0.1, n: int = 600, l1: float = L, l2: float = L
-) -> Component:
-    return pp.components.dbr(
+) -> gf.Component:
+    return gf.components.dbr(
         w1=w0 - dw / 2,
         w2=w0 + dw / 2,
         n=n,
@@ -23,8 +22,8 @@ def dbr(
     )
 
 
-def dbr_cavity(**kwargs) -> Component:
-    return pp.c.cavity(component=dbr(**kwargs))
+def dbr_cavity(**kwargs) -> gf.Component:
+    return gf.c.cavity(component=dbr(**kwargs))
 
 
 if __name__ == "__main__":

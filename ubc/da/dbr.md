@@ -2,8 +2,8 @@
 
 Design objective:
 
-- Determine the grating strength coupling parameter (kappa, ∆n, or bandwidth) versus the corrugation width (∆w), and compare rectangular versus sinusoidal gratings.
-- Compare experimental data with the simulation data (3D-FDTD Bloch approach).
+- Determine the grating strength coupling parameter (kagdsfactory., ∆n, or bandwidth) versus the corrugation width (∆w), and compare rectangular versus sinusoidal gratings.
+- Compare experimental data with the simulation data (3D-FDTD Bloch agdsfactory.oach).
 - Update the CML model based on this data.
 
 Design:

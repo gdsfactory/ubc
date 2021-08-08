@@ -1,7 +1,7 @@
 import gdslib as gl
 from gdslib import autoname
 from gdslib.types import ModelFactory
-import pp
+import gdsfactory as gf
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
 
@@ -41,10 +41,10 @@ def mzi(
     .. plot::
       :include-source:
 
-      import pp
+      import gdsfactory as gf
 
-      c = pp.c.mzi(length_y=0.1, delta_length=0, length_x=10)
-      pp.plotgds(c)
+      c = gf.c.mzi(length_y=0.1, delta_length=0, length_x=10)
+      gf.plotgds(c)
 
 
     .. plot::
@@ -57,7 +57,7 @@ def mzi(
         gl.plot_circuit(c)
 
     """
-    y = pp.call_if_func(y_model_factory)
+    y = gf.call_if_func(y_model_factory)
     wg_long = waveguide(length=(2 * length_y + delta_length + length_x) * 1e-6)
     wg_short = waveguide(length=(2 * length_y + length_x) * 1e-6)
 

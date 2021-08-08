@@ -1,6 +1,6 @@
 function_name: ring_single_dut
 info: {}
-module: pp.components.ring_single_dut
+module: gdsfactory.components.ring_single_dut
 name: ring_single_dut_Cebeam_crossing4
 settings:
   component:

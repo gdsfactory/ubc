@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import pp
+import gdsfactory as gf
 from scipy.constants import speed_of_light
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
@@ -39,14 +39,14 @@ def mzi_gc(
     .. plot::
       :include-source:
 
-      import pp
+      import gdsfactory as gf
 
-      c = pp.c.mzi(L0=0.1, L1=0, L2=10)
-      pp.plotgds(c)
+      c = gf.c.mzi(L0=0.1, L1=0, L2=10)
+      gf.plotgds(c)
 
     """
-    gc = pp.call_if_func(gc)
-    y = pp.call_if_func(y)
+    gc = gf.call_if_func(gc)
+    y = gf.call_if_func(y)
     wg_long = wg(length=(2 * L0 + +L1 + L2) * 1e-6)
     wg_short = wg(length=(2 * L0 + L2) * 1e-6)
 

@@ -1,7 +1,7 @@
 from typing import Callable, Dict, Tuple
 
-from pp.add_pins import add_pin_square
-from pp.component import Component
+from gdsfactory.add_pins import add_pin_square
+from gdsfactory.component import Component
 from ubc.tech import PORT_TYPE_TO_LAYER
 
 
@@ -17,8 +17,8 @@ def add_pins(
 
 
 if __name__ == "__main__":
-    import pp
+    import gdsfactory as gf
 
-    c = pp.c.waveguide()
-    cc = add_pins(c)
-    cc.show()
+    c = gf.c.straight()
+    add_pins(c)
+    c.show()

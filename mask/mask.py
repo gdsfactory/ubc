@@ -1,5 +1,5 @@
-import pp
-from pp.pack import pack
+import gdsfactory as gf
+from gdsfactory.pack import pack
 import ubc
 from ubc.tech import LAYER
 
@@ -7,7 +7,7 @@ size = (605, 410)
 
 
 def add_floorplan(c, size=(605, 410), layer=LAYER.FLOORPLAN):
-    c << pp.c.rectangle(size=size, layer=layer)
+    c << gf.c.rectangle(size=size, layer=layer)
 
 
 def add_gc(component, **kwargs):
@@ -54,9 +54,9 @@ def test_mask2():
 
 def test_mask1():
     e = [add_gc(ubc.components.straight())]
-    e += [add_gc(pp.components.mzi(delta_length=dl)) for dl in [9.32, 93.19]]
+    e += [add_gc(gf.components.mzi(delta_length=dl)) for dl in [9.32, 93.19]]
     e += [
-        add_gc(pp.components.ring_single(radius=12, gap=gap, length_x=coupling_length))
+        add_gc(gf.components.ring_single(radius=12, gap=gap, length_x=coupling_length))
         for gap in [0.2]
         for coupling_length in [2.5, 4.5, 6.5]
     ]

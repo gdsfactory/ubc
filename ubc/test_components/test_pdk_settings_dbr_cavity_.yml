@@ -1,6 +1,6 @@
 function_name: cavity
 info: {}
-module: pp.components.cavity
+module: gdsfactory.components.cavity
 name: cavity_Cdbr
 settings:
   component:

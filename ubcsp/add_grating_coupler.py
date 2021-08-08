@@ -1,4 +1,4 @@
-import pp
+import gdsfactory as gf
 from gdslib.simphony import plot_circuit
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
@@ -12,7 +12,7 @@ def add_grating_coupler(circuit, grating_coupler=siepic.ebeam_gc_te1550):
         gc: grating coupler model function
     """
     c = Subcircuit(f"{circuit}_gc")
-    gc = pp.call_if_func(grating_coupler)
+    gc = gf.call_if_func(grating_coupler)
     c.add([(gc, "gci"), (gc, "gco"), (circuit, "circuit")])
     c.connect_many(
         [("gci", "n1", "circuit", "input"), ("gco", "n1", "circuit", "output")]
