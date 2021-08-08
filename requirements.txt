@@ -5,7 +5,7 @@ scipy
 lygadgets
 simphony
 gdsfactory>=3.0.0
-gdslib==0.3.0
+gdslib==0.3.1
 modes
 matplotlib
 numpy
