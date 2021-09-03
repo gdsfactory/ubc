@@ -1,11 +1,12 @@
 import gdsfactory as gf
+from ubc.tech import strip
 
 
 L = 1.55 / 4 / 2 / 2.44
 
 
-def straight(waveguide: gf.types.StrOrDict = "strip", **kwargs):
-    return gf.c.straight(waveguide=waveguide, **kwargs)
+def straight(cross_section: gf.types.CrossSectionFactory = strip, **kwargs):
+    return gf.c.straight(cross_section=cross_section, **kwargs)
 
 
 @gf.cell

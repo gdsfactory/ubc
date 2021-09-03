@@ -1,9 +1,9 @@
 function_name: cavity
 info: {}
 module: gdsfactory.components.cavity
-name: cavity_Cdbr
+name: cavity_componentdbr
 settings:
-  component:
+  contains:
     function_name: dbr
     info: {}
     module: ubc.components.dbr

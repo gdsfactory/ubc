@@ -62,7 +62,7 @@ def get_input_labels_all(
     ordered_ports,
     component_name,
     layer_label=LAYER.LABEL,
-    gc_port_name: str = "W0",
+    gc_port_name: str = "o1",
 ):
     """Return labels (elements list) for all component ports."""
     elements = []
@@ -85,7 +85,7 @@ def get_input_labels(
     ordered_ports: List[Port],
     component_name: str,
     layer_label: Tuple[int, int] = LAYER.LABEL,
-    gc_port_name: str = "W0",
+    gc_port_name: str = "o1",
     port_index: int = 1,
     get_input_label_text_function: Callable = get_input_label_text,
 ) -> List[Label]:
@@ -119,7 +119,7 @@ def get_input_labels(
 def add_fiber_array(
     component: Component = straight,
     component_name: None = None,
-    gc_port_name: str = "W0",
+    gc_port_name: str = "o1",
     get_input_labels_function: Callable = get_input_labels,
     with_loopback: bool = False,
     optical_routing_type: int = 0,
@@ -135,7 +135,7 @@ def add_fiber_array(
     Args:
         component: to connect
         component_name: for the label
-        gc_port_name: grating coupler input port name 'W0'
+        gc_port_name: grating coupler input port name 'o1'
         get_input_labels_function: function to get input labels for grating couplers
         with_loopback: True, adds loopback structures
         optical_routing_type: None: autoselection, 0: no extension

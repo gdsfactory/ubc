@@ -1,9 +1,9 @@
 function_name: ring_single_dut
 info: {}
 module: gdsfactory.components.ring_single_dut
-name: ring_single_dut_Cebeam_crossing4
+name: ring_single_dut_compone_600effe2
 settings:
-  component:
+  contains:
     function_name: ebeam_crossing4
     info: {}
     name: ebeam_crossing4
@@ -13,4 +13,4 @@ settings:
   length_y: 0
   radius: 5
   wg_width: 0.5
-  with_dut: true
+  with_component: true

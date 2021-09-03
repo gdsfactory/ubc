@@ -1,19 +1,21 @@
-from typing import Callable, Dict, Tuple
+from typing import Callable
 
 from gdsfactory.add_pins import add_pin_square
 from gdsfactory.component import Component
-from ubc.tech import PORT_TYPE_TO_LAYER
+from gdsfactory.types import Layer
+from ubc.tech import LAYER
 
 
 def add_pins(
     component: Component,
     function: Callable = add_pin_square,
-    port_type2layer: Dict[str, Tuple[int, int]] = PORT_TYPE_TO_LAYER,
+    layer_port: Layer = LAYER.WG,
+    layer_pin: Layer = LAYER.PORT,
+    layer_label: Layer = LAYER.LABEL,
 ) -> None:
 
-    for p in component.ports.values():
-        layer = port_type2layer[p.port_type]
-        function(component=component, port=p, layer=layer, label_layer=layer)
+    for p in component.get_ports_list(layer=layer_port):
+        function(component=component, port=p, layer=layer_pin, label_layer=layer_label)
 
 
 if __name__ == "__main__":
@@ -21,4 +23,4 @@ if __name__ == "__main__":
 
     c = gf.c.straight()
     add_pins(c)
-    c.show()
+    c.show(show_ports=False)

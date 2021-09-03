@@ -6,9 +6,8 @@ module: ubc.components.grating_couplers
 name: gc_tm1550
 settings:
   angle: 180
-  component:
+  contains:
     function_name: ebeam_gc_tm1550
     info: {}
     name: ebeam_gc_tm1550
     settings: {}
-  rename_ports: true

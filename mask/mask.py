@@ -19,14 +19,14 @@ def add_gc(component, **kwargs):
 def test_mask2():
     """spirals for extractin straight waveguide loss"""
     N = 15
-    bend_radius = 15
+    radius = 15
 
     e = []
     e.append(
         ubc.components.add_fiber_array(
             component=ubc.components.spiral(
                 N=N,
-                bend_radius=bend_radius,
+                radius=radius,
                 y_straight_inner_top=0,
                 x_inner_length_cutback=0,
             )
@@ -36,7 +36,7 @@ def test_mask2():
         ubc.components.add_fiber_array(
             component=ubc.components.spiral(
                 N=N,
-                bend_radius=bend_radius,
+                radius=radius,
                 y_straight_inner_top=30,
                 x_inner_length_cutback=85,
             )
@@ -67,7 +67,7 @@ def test_mask1():
         for dw in [50e-3, 100e-3, 150e-3, 200e-3]
     ]
     e += [add_gc(ubc.components.ring_with_crossing())]
-    e += [add_gc(ubc.components.ring_with_crossing(with_dut=False))]
+    e += [add_gc(ubc.components.ring_with_crossing(with_component=False))]
 
     c = pack(e, max_size=size)
     m = c[0]
