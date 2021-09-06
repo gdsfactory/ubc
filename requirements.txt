@@ -4,7 +4,7 @@ omegaconf
 scipy
 lygadgets
 simphony
-gdsfactory>=3.0.0
+gdsfactory==3.1.5
 gdslib==0.3.1
 modes
 matplotlib

@@ -144,8 +144,9 @@ def add_fiber_array(
         grating_coupler: grating coupler instance, function or list of functions
         optical_io_spacing: SPACING_GC
     """
+    c = gf.Component()
 
-    c = gf.routing.add_fiber_array(
+    component = gf.routing.add_fiber_array(
         component=component,
         component_name=component_name,
         grating_coupler=grating_coupler,
@@ -157,7 +158,10 @@ def add_fiber_array(
         fanout_length=fanout_length,
         **kwargs,
     )
-    c.rotate(-90)
+    ref = c << component
+    ref.rotate(-90)
+    c.add_ports(ref.ports)
+    c.component = component
     return c
 
 
@@ -172,3 +176,4 @@ if __name__ == "__main__":
     c = pdk.straight()
     c = add_fiber_array(component=c)
     c.show()
+    c.pprint()

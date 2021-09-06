@@ -1,5 +1,8 @@
 ## Next version
 
+## 0.0.4
+
+- compatible with latest gdsfactory 3.1.5
 
 ## 0.0.3
 

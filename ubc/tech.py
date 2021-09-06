@@ -44,9 +44,7 @@ def get_layer_stack_ubc(thickness_nm: float = 220.0) -> LayerStack:
 LAYER_STACK = get_layer_stack_ubc()
 
 
-strip = gf.partial(
-    gf.cross_section.strip, layer_cladding=LAYER.DEVREC, layers_cladding=(LAYER.DEVREC,)
-)
+strip = gf.partial(gf.cross_section.strip, layers_cladding=(LAYER.DEVREC,))
 
 
 @pydantic.dataclasses.dataclass
