@@ -1,6 +1,19 @@
 cells:
-  ebeam_y_adiabatic: {}
+  ebeam_y_adiabatic:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_y_adiabatic
 info:
+  changed: {}
+  default: {}
+  full: {}
+  function_name: <lambda>
+  info_version: 1
+  module: gdsfactory.import_gds
   name: ebeam_y_adiabatic
 ports:
   opt1:

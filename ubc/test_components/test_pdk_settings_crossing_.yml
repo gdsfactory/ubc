@@ -1,6 +1,19 @@
 cells:
-  ebeam_crossing4: {}
+  ebeam_crossing4:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_crossing4
 info:
+  changed: {}
+  default: {}
+  full: {}
+  function_name: <lambda>
+  info_version: 1
+  module: gdsfactory.import_gds
   name: ebeam_crossing4
 ports:
   o1:

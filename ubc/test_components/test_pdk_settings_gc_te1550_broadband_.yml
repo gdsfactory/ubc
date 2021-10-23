@@ -1,8 +1,22 @@
 cells:
-  ebeam_gc_te1550_broadband: {}
+  ebeam_gc_te1550_broadband:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_gc_te1550_broadband
   gc_te1550_broadband:
     changed: {}
-    child: {}
+    child:
+      changed: {}
+      default: {}
+      full: {}
+      function_name: <lambda>
+      info_version: 1
+      module: gdsfactory.import_gds
+      name: ebeam_gc_te1550_broadband
     default: {}
     full: {}
     function_name: gc_te1550_broadband
@@ -10,10 +24,17 @@ cells:
     module: ubc.components.grating_couplers
     name: gc_te1550_broadband
     polarization: te
-    wavelength: 1550
+    wavelength: 1.55
 info:
   changed: {}
-  child: {}
+  child:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_gc_te1550_broadband
   default: {}
   full: {}
   function_name: gc_te1550_broadband
@@ -21,7 +42,7 @@ info:
   module: ubc.components.grating_couplers
   name: gc_te1550_broadband
   polarization: te
-  wavelength: 1550
+  wavelength: 1.55
 ports:
   o1:
     layer:

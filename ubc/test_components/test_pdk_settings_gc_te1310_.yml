@@ -1,8 +1,22 @@
 cells:
-  ebeam_gc_te1310: {}
+  ebeam_gc_te1310:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_gc_te1310
   gc_te1310:
     changed: {}
-    child: {}
+    child:
+      changed: {}
+      default: {}
+      full: {}
+      function_name: <lambda>
+      info_version: 1
+      module: gdsfactory.import_gds
+      name: ebeam_gc_te1310
     default: {}
     full: {}
     function_name: gc_te1310
@@ -10,10 +24,17 @@ cells:
     module: ubc.components.grating_couplers
     name: gc_te1310
     polarization: te
-    wavelength: 1310
+    wavelength: 1.31
 info:
   changed: {}
-  child: {}
+  child:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_gc_te1310
   default: {}
   full: {}
   function_name: gc_te1310
@@ -21,7 +42,7 @@ info:
   module: ubc.components.grating_couplers
   name: gc_te1310
   polarization: te
-  wavelength: 1310
+  wavelength: 1.31
 ports:
   o1:
     layer:

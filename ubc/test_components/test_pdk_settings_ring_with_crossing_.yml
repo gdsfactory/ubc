@@ -18,11 +18,25 @@ cells:
     info_version: 1
     module: gdsfactory.components.coupler_ring
     name: coupler_ring_6a2f750e
-  ebeam_crossing4: {}
+  ebeam_crossing4:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_crossing4
   ring_single_dut_e9a62fce:
     changed:
       component: ebeam_crossing4
-    child: {}
+    child:
+      changed: {}
+      default: {}
+      full: {}
+      function_name: <lambda>
+      info_version: 1
+      module: gdsfactory.import_gds
+      name: ebeam_crossing4
     default:
       gap: 0.2
       length_x: 4
@@ -45,7 +59,14 @@ cells:
 info:
   changed:
     component: ebeam_crossing4
-  child: {}
+  child:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_crossing4
   default:
     gap: 0.2
     length_x: 4

@@ -1,6 +1,19 @@
 cells:
-  ebeam_y_1550: {}
+  ebeam_y_1550:
+    changed: {}
+    default: {}
+    full: {}
+    function_name: <lambda>
+    info_version: 1
+    module: gdsfactory.import_gds
+    name: ebeam_y_1550
 info:
+  changed: {}
+  default: {}
+  full: {}
+  function_name: <lambda>
+  info_version: 1
+  module: gdsfactory.import_gds
   name: ebeam_y_1550
 ports:
   opt1:
