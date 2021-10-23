@@ -1,12 +1,12 @@
 import gdsfactory as gf
-import gdsfactory.sp as sp
+import gdsfactory.simulation as sim
 
 from ubc.tech import LAYER_STACK
 from ubc.config import PATH
 
 
 write_sparameters = gf.partial(
-    sp.write, dirpath=PATH.sparameters, layer_stack=LAYER_STACK
+    sim.write_sparameters_lumerical, dirpath=PATH.sparameters, layer_stack=LAYER_STACK
 )
 
 

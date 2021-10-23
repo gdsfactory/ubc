@@ -5,19 +5,20 @@ from ubc.import_gds import import_gds
 @gf.cell
 def gc_te1550() -> gf.Component:
     c = import_gds("ebeam_gc_te1550")
-    c = gf.containers.rotate(component=c, angle=180)
-    c.polarization = "te"
-    c.wavelength = 1550
-    gf.port.auto_rename_ports(c)
+    c = c.rotate(angle=180)
+    c.info.polarization = "te"
+    c.info.wavelength = 1.550
+    c.auto_rename_ports()
     return c
 
 
 @gf.cell
 def gc_te1550_broadband() -> gf.Component:
     c = import_gds("ebeam_gc_te1550_broadband")
-    c = gf.containers.rotate(component=c, angle=180)
-    c.polarization = "te"
-    c.wavelength = 1550
+    c = c.rotate(angle=180)
+    c.info.polarization = "te"
+    c.info.wavelength = 1.550
+    c.auto_rename_ports()
     gf.port.auto_rename_ports(c)
     return c
 
@@ -25,20 +26,20 @@ def gc_te1550_broadband() -> gf.Component:
 @gf.cell
 def gc_te1310() -> gf.Component:
     c = import_gds("ebeam_gc_te1310")
-    c = gf.containers.rotate(component=c, angle=180)
-    c.polarization = "te"
-    c.wavelength = 1310
-    gf.port.auto_rename_ports(c)
+    c = c.rotate(angle=180)
+    c.info.polarization = "te"
+    c.info.wavelength = 1.310
+    c.auto_rename_ports()
     return c
 
 
 @gf.cell
 def gc_tm1550() -> gf.Component:
     c = import_gds("ebeam_gc_tm1550")
-    c = gf.containers.rotate(component=c, angle=180)
-    c.polarization = "tm"
-    c.wavelength = 1550
-    gf.port.auto_rename_ports(c)
+    c = c.rotate(angle=180)
+    c.info.polarization = "tm"
+    c.info.wavelength = 1.550
+    c.auto_rename_ports()
     return c
 
 

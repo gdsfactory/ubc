@@ -1,4 +1,39 @@
-function_name: ebeam_y_1550
-info: {}
-name: ebeam_y_1550
-settings: {}
+cells:
+  ebeam_y_1550: {}
+info:
+  name: ebeam_y_1550
+ports:
+  opt1:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - -7.4
+    - 0
+    name: opt1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  opt2:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 7.4
+    - 2.75
+    name: opt2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  opt3:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 7.4
+    - -2.75
+    name: opt3
+    orientation: 0
+    port_type: optical
+    width: 0.5
+version: 1

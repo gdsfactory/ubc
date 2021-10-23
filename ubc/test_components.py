@@ -2,7 +2,6 @@ import pytest
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
-from pytest_regressions.num_regression import NumericRegressionFixture
 from ubc.components import LIBRARY
 
 
@@ -24,15 +23,7 @@ def test_pdk_settings(
     component: Component, data_regression: DataRegressionFixture
 ) -> None:
     """Avoid regressions when exporting settings."""
-    data_regression.check(component.get_settings())
-
-
-def test_pdk_ports(
-    component: Component, num_regression: NumericRegressionFixture
-) -> None:
-    """Avoid regressions in port names and locations."""
-    if component.ports:
-        num_regression.check(component.get_ports_array())
+    data_regression.check(component.to_dict)
 
 
 def test_assert_ports_on_grid(component: Component):

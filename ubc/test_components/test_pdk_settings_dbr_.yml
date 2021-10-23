@@ -1,13 +1,61 @@
-function_name: dbr
-info: {}
-module: ubc.components.dbr
-name: dbr
-settings:
-  dw: 0.1
-  l1: 0.07940573770491803
-  l2: 0.07940573770491803
-  n: 600
-  straight: straight
-  w0: 0.5
-  w1: 0.45
-  w2: 0.55
+cells:
+  dbr:
+    changed: {}
+    default:
+      dw: 0.1
+      l1: 0.07940573770491803
+      l2: 0.07940573770491803
+      n: 600
+      w0: 0.5
+    full:
+      dw: 0.1
+      l1: 0.07940573770491803
+      l2: 0.07940573770491803
+      n: 600
+      w0: 0.5
+    function_name: dbr
+    info_version: 1
+    module: ubc.components.dbr
+    name: dbr
+info:
+  changed: {}
+  default:
+    dw: 0.1
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+    n: 600
+    w0: 0.5
+  full:
+    dw: 0.1
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+    n: 600
+    w0: 0.5
+  function_name: dbr
+  info_version: 1
+  module: ubc.components.dbr
+  name: dbr
+ports:
+  o1:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 0
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.45
+  o2:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 94.8
+    - 0
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.55
+version: 1

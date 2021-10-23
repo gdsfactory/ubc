@@ -1,4 +1,50 @@
-function_name: ebeam_crossing4
-info: {}
-name: ebeam_crossing4
-settings: {}
+cells:
+  ebeam_crossing4: {}
+info:
+  name: ebeam_crossing4
+ports:
+  o1:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - -4.8
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 0
+    - 4.8
+    name: o2
+    orientation: 90
+    port_type: optical
+    width: 0.5
+  o3:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 4.8
+    - 0
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  o4:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 0
+    - -4.8
+    name: o4
+    orientation: 270
+    port_type: optical
+    width: 0.5
+version: 1

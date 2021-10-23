@@ -31,27 +31,27 @@ def get_input_label_text(
         gc: grating coupler reference.
         component_name: optional component name.
     """
-    polarization = gc.get_property("polarization")
-    wavelength_nm = gc.get_property("wavelength")
+    polarization = gc.info.polarization
+    wavelength = gc.info.wavelength
 
     assert polarization.upper() in [
         "TE",
         "TM",
     ], f"Not valid polarization {polarization.upper()} in [TE, TM]"
     assert (
-        isinstance(wavelength_nm, (int, float)) and 1000 < wavelength_nm < 2000
-    ), f"{wavelength_nm} is Not valid 1000 < wavelength < 2000"
+        isinstance(wavelength, (int, float)) and 1.0 < wavelength < 2.0
+    ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
 
-    if component_name:
-        name = component_name
-    elif type(port.parent) == Component:
-        name = port.parent.name
-    else:
-        name = port.parent.ref_cell.name
+    name = component_name or port.parent.info_child.name
+    # name = component_name
+    # elif type(port.parent) == Component:
+    # name = port.parent.name
+    # else:
+    # name = port.parent.ref_cell.name
 
     name = name.replace("_", "-")
     label = (
-        f"opt_in_{polarization.upper()}_{int(wavelength_nm)}_device_"
+        f"opt_in_{polarization.upper()}_{int(wavelength*1e3)}_device_"
         + f"{CONFIG.username}_({name})-{gc_index}-{port.name}"
     )
     return label
@@ -176,4 +176,4 @@ if __name__ == "__main__":
     c = pdk.straight()
     c = add_fiber_array(component=c)
     c.show()
-    c.pprint()
+    c.pprint

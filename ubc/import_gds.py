@@ -36,6 +36,7 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
     return 0
 
 
+@gf.functions.cache
 def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
     """import gds from SIEPIC PDK"""
     c = gf.import_gds(gds / f"{gdsname}.gds")
@@ -48,8 +49,9 @@ def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
 
     for label in c.get_labels():
         if label.text.startswith("opt"):
+            port_name = label.text
             port = gf.Port(
-                name=label.text,
+                name=port_name,
                 midpoint=label.position,
                 width=port_width,
                 orientation=guess_port_orientaton(
@@ -60,7 +62,8 @@ def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
                 ),
                 layer=layer,
             )
-            c.add_port(port)
+            if port_name not in c.ports:
+                c.add_port(port)
 
     if rename_ports:
         auto_rename_ports(c)

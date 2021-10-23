@@ -1,32 +1,92 @@
-function_name: add_fiber_array
-info: {}
-module: ubc.components.add_fiber_array
-name: add_fiber_array
-settings:
-  component_name: null
-  contains:
-    function_name: add_fiber_array
-    info: {}
-    module: gdsfactory.routing.add_fiber_array
-    name: add_fiber_array_compone_f9939953
-    settings:
+cells:
+  add_fiber_array:
+    changed: {}
+    default:
       component_name: null
-      contains:
-        function_name: straight
-        info:
-          length: 10
-          width: 0.5
-        module: ubc.components.straight
-        name: straight
-        settings:
-          layer:
-          - 1
-          - 0
-          length: 10
-          npoints: 2
-          width: 0.5
-          with_cladding_box: true
-          with_pins: true
+      fanout_length: 0
+      gc_port_name: o1
+      optical_routing_type: 0
+      with_loopback: false
+    full:
+      component_name: null
+      fanout_length: 0
+      gc_port_name: o1
+      optical_routing_type: 0
+      with_loopback: false
+    function_name: add_fiber_array
+    info_version: 1
+    module: ubc.components.add_fiber_array
+    name: add_fiber_array
+  add_fiber_array_e93a2dc7:
+    changed:
+      component: straight
+      component_name: null
+      fanout_length: 0
+      gc_port_name: o1
+      get_input_labels_function: get_input_labels
+      grating_coupler: gc_te1550
+      layer_label:
+      - 10
+      - 0
+      optical_routing_type: 0
+      with_loopback: false
+    child:
+      changed: {}
+      cross_section:
+        auto_widen: false
+        auto_widen_minimum_length: 200
+        cladding_offset: 3
+        end_straight_offset: 0.01
+        layer:
+        - 1
+        - 0
+        layers_cladding: null
+        min_length: 0.01
+        port_names:
+        - o1
+        - o2
+        port_types:
+        - optical
+        - optical
+        radius: 10
+        sections: []
+        snap_to_grid: null
+        start_straight: 0.01
+        taper_length: 10
+        width: 0.5
+        width_wide: null
+      default:
+        layer:
+        - 1
+        - 0
+        length: 10
+        width: 0.5
+        with_pins: true
+      full:
+        layer:
+        - 1
+        - 0
+        length: 10
+        width: 0.5
+        with_pins: true
+      function_name: straight
+      info_version: 1
+      length: 10
+      module: ubc.components.straight
+      name: straight
+      path: {}
+      points_hash: a64455692a75ddb2f781cd47f8
+      width: 0.5
+    default:
+      component_name: null
+      gc_port_labels: null
+      gc_port_name: o1
+      layer_label:
+      - 66
+      - 0
+    full:
+      component: straight
+      component_name: null
       fanout_length: 0
       gc_port_labels: null
       gc_port_name: o1
@@ -37,7 +97,86 @@ settings:
       - 0
       optical_routing_type: 0
       with_loopback: false
-  fanout_length: 0
-  gc_port_name: o1
-  optical_routing_type: 0
-  with_loopback: false
+    function_name: add_fiber_array
+    info_version: 1
+    module: gdsfactory.routing.add_fiber_array
+    name: add_fiber_array_e93a2dc7
+  ebeam_gc_te1550: {}
+  gc_te1550:
+    changed: {}
+    child: {}
+    default: {}
+    full: {}
+    function_name: gc_te1550
+    info_version: 1
+    module: ubc.components.grating_couplers
+    name: gc_te1550
+    polarization: te
+    wavelength: 1550
+  straight:
+    changed: {}
+    cross_section:
+      auto_widen: false
+      auto_widen_minimum_length: 200
+      cladding_offset: 3
+      end_straight_offset: 0.01
+      layer:
+      - 1
+      - 0
+      layers_cladding: null
+      min_length: 0.01
+      port_names:
+      - o1
+      - o2
+      port_types:
+      - optical
+      - optical
+      radius: 10
+      sections: []
+      snap_to_grid: null
+      start_straight: 0.01
+      taper_length: 10
+      width: 0.5
+      width_wide: null
+    default:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+      with_pins: true
+    full:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+      with_pins: true
+    function_name: straight
+    info_version: 1
+    length: 10
+    module: ubc.components.straight
+    name: straight
+    path: {}
+    points_hash: a64455692a75ddb2f781cd47f8
+    width: 0.5
+info:
+  changed: {}
+  default:
+    component_name: null
+    fanout_length: 0
+    gc_port_name: o1
+    optical_routing_type: 0
+    with_loopback: false
+  full:
+    component_name: null
+    fanout_length: 0
+    gc_port_name: o1
+    optical_routing_type: 0
+    with_loopback: false
+  function_name: add_fiber_array
+  info_version: 1
+  module: ubc.components.add_fiber_array
+  name: add_fiber_array
+ports: {}
+version: 1

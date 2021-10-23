@@ -3,7 +3,7 @@
 import gdsfactory as gf
 from ubc.config import CONFIG, PATH
 from ubc.write_sparameters import write_sparameters
-from ubc.tech import LAYER, strip, TECH
+from ubc.tech import LAYER, strip
 
 from ubc import da
 from ubc import components
@@ -17,9 +17,7 @@ __all__ = [
     "da",
     "PATH",
     "components",
-    "LIBRARY",
     "write_sparameters",
-    "TECH",
     "strip",
     "LAYER",
 ]

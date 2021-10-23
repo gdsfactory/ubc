@@ -1,5 +1,7 @@
 ## Next version
 
+- compatible with latest gdsfactory 3.4.2
+
 ## 0.0.4
 
 - compatible with latest gdsfactory 3.1.5

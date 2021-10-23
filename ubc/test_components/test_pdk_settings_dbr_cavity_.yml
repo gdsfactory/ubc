@@ -1,21 +1,127 @@
-function_name: cavity
-info: {}
-module: gdsfactory.components.cavity
-name: cavity_componentdbr
-settings:
-  contains:
-    function_name: dbr
-    info: {}
-    module: ubc.components.dbr
-    name: dbr
-    settings:
+cells:
+  cavity_33f0cb89:
+    changed:
+      component: dbr
+    child:
+      changed: {}
+      default:
+        dw: 0.1
+        l1: 0.07940573770491803
+        l2: 0.07940573770491803
+        n: 600
+        w0: 0.5
+      full:
+        dw: 0.1
+        l1: 0.07940573770491803
+        l2: 0.07940573770491803
+        n: 600
+        w0: 0.5
+      function_name: dbr
+      info_version: 1
+      module: ubc.components.dbr
+      name: dbr
+    default:
+      gap: 0.2
+      length: 0.1
+    full:
+      component: dbr
+      gap: 0.2
+      length: 0.1
+    function_name: cavity
+    info_version: 1
+    module: gdsfactory.components.cavity
+    name: cavity_33f0cb89
+  coupler_3e9f9e6a:
+    changed:
+      gap: 0.2
+      length: 0.1
+    default:
+      dx: 10
+      dy: 5
+      gap: 0.236
+      length: 20
+    full:
+      dx: 10
+      dy: 5
+      gap: 0.2
+      length: 0.1
+    function_name: coupler
+    info_version: 1
+    length: 10.319
+    min_bend_radius: 9.387
+    module: gdsfactory.components.coupler
+    name: coupler_3e9f9e6a
+  dbr:
+    changed: {}
+    default:
       dw: 0.1
       l1: 0.07940573770491803
       l2: 0.07940573770491803
       n: 600
-      straight: straight
       w0: 0.5
-      w1: 0.45
-      w2: 0.55
-  gap: 0.2
-  length: 0.1
+    full:
+      dw: 0.1
+      l1: 0.07940573770491803
+      l2: 0.07940573770491803
+      n: 600
+      w0: 0.5
+    function_name: dbr
+    info_version: 1
+    module: ubc.components.dbr
+    name: dbr
+info:
+  changed:
+    component: dbr
+  child:
+    changed: {}
+    default:
+      dw: 0.1
+      l1: 0.07940573770491803
+      l2: 0.07940573770491803
+      n: 600
+      w0: 0.5
+    full:
+      dw: 0.1
+      l1: 0.07940573770491803
+      l2: 0.07940573770491803
+      n: 600
+      w0: 0.5
+    function_name: dbr
+    info_version: 1
+    module: ubc.components.dbr
+    name: dbr
+  default:
+    gap: 0.2
+    length: 0.1
+  full:
+    component: dbr
+    gap: 0.2
+    length: 0.1
+  function_name: cavity
+  info_version: 1
+  module: gdsfactory.components.cavity
+  name: cavity_33f0cb89
+ports:
+  o1:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - -10
+    - -2.15
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 10.1
+    - -2.1500000000000004
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+version: 1
