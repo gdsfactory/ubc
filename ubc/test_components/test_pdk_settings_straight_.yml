@@ -1,97 +1,47 @@
 cells:
   straight:
     changed: {}
-    cross_section:
-      auto_widen: false
-      auto_widen_minimum_length: 200
-      cladding_offset: 3
-      end_straight_offset: 0.01
-      layer:
-      - 1
-      - 0
-      layers_cladding: null
-      min_length: 0.01
-      port_names:
-      - o1
-      - o2
-      port_types:
-      - optical
-      - optical
-      radius: 10
-      sections: []
-      snap_to_grid: null
-      start_straight: 0.01
-      taper_length: 10
-      width: 0.5
-      width_wide: null
     default:
       layer:
       - 1
       - 0
-      length: 10
+      length: 10.0
       width: 0.5
       with_pins: true
     full:
       layer:
       - 1
       - 0
-      length: 10
+      length: 10.0
       width: 0.5
       with_pins: true
     function_name: straight
     info_version: 1
-    length: 10
+    length: 10.0
     module: ubc.components.straight
     name: straight
-    path: {}
-    points_hash: a64455692a75ddb2f781cd47f8
     width: 0.5
 info:
   changed: {}
-  cross_section:
-    auto_widen: false
-    auto_widen_minimum_length: 200
-    cladding_offset: 3
-    end_straight_offset: 0.01
-    layer:
-    - 1
-    - 0
-    layers_cladding: null
-    min_length: 0.01
-    port_names:
-    - o1
-    - o2
-    port_types:
-    - optical
-    - optical
-    radius: 10
-    sections: []
-    snap_to_grid: null
-    start_straight: 0.01
-    taper_length: 10
-    width: 0.5
-    width_wide: null
   default:
     layer:
     - 1
     - 0
-    length: 10
+    length: 10.0
     width: 0.5
     with_pins: true
   full:
     layer:
     - 1
     - 0
-    length: 10
+    length: 10.0
     width: 0.5
     with_pins: true
   function_name: straight
   info_version: 1
-  length: 10
+  length: 10.0
   module: ubc.components.straight
   name: straight
-  path: {}
-  points_hash: a64455692a75ddb2f781cd47f8
   width: 0.5
 ports:
   o1:
@@ -99,10 +49,10 @@ ports:
     - 1
     - 0
     midpoint:
-    - 0
-    - 0
+    - 0.0
+    - 0.0
     name: o1
-    orientation: 180
+    orientation: 180.0
     port_type: optical
     width: 0.5
   o2:
@@ -110,10 +60,10 @@ ports:
     - 1
     - 0
     midpoint:
-    - 10
-    - 0
+    - 10.0
+    - 0.0
     name: o2
-    orientation: 0
+    orientation: 0.0
     port_type: optical
     width: 0.5
 version: 1

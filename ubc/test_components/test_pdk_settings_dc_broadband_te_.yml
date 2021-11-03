@@ -24,7 +24,7 @@ ports:
     - -35.45
     - 2.35
     name: opt1
-    orientation: 180
+    orientation: 180.0
     port_type: optical
     width: 0.5
   opt2:
@@ -35,7 +35,7 @@ ports:
     - -35.45
     - -2.35
     name: opt2
-    orientation: 180
+    orientation: 180.0
     port_type: optical
     width: 0.5
   opt3:
@@ -46,7 +46,7 @@ ports:
     - 35.300000000000004
     - 2.35
     name: opt3
-    orientation: 0
+    orientation: 0.0
     port_type: optical
     width: 0.5
   opt4:
@@ -57,7 +57,7 @@ ports:
     - 35.300000000000004
     - -2.35
     name: opt4
-    orientation: 0
+    orientation: 0.0
     port_type: optical
     width: 0.5
 version: 1
