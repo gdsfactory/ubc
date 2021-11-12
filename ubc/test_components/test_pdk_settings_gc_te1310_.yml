@@ -1,22 +1,18 @@
 cells:
-  ebeam_gc_te1310:
-    changed: {}
-    default: {}
-    full: {}
-    function_name: <lambda>
-    info_version: 1
-    module: gdsfactory.import_gds
-    name: ebeam_gc_te1310
   gc_te1310:
     changed: {}
     child:
-      changed: {}
-      default: {}
-      full: {}
-      function_name: <lambda>
+      changed:
+        gdsname: ebeam_gc_te1310
+      default:
+        rename_ports: false
+      full:
+        gdsname: ebeam_gc_te1310
+        rename_ports: false
+      function_name: import_gds
       info_version: 1
-      module: gdsfactory.import_gds
-      name: ebeam_gc_te1310
+      module: ubc.import_gds
+      name: import_gds_dcd53d19
     default: {}
     full: {}
     function_name: gc_te1310
@@ -25,16 +21,32 @@ cells:
     name: gc_te1310
     polarization: te
     wavelength: 1.31
+  import_gds_dcd53d19:
+    changed:
+      gdsname: ebeam_gc_te1310
+    default:
+      rename_ports: false
+    full:
+      gdsname: ebeam_gc_te1310
+      rename_ports: false
+    function_name: import_gds
+    info_version: 1
+    module: ubc.import_gds
+    name: import_gds_dcd53d19
 info:
   changed: {}
   child:
-    changed: {}
-    default: {}
-    full: {}
-    function_name: <lambda>
+    changed:
+      gdsname: ebeam_gc_te1310
+    default:
+      rename_ports: false
+    full:
+      gdsname: ebeam_gc_te1310
+      rename_ports: false
+    function_name: import_gds
     info_version: 1
-    module: gdsfactory.import_gds
-    name: ebeam_gc_te1310
+    module: ubc.import_gds
+    name: import_gds_dcd53d19
   default: {}
   full: {}
   function_name: gc_te1310

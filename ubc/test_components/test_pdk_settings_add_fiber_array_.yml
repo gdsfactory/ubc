@@ -76,24 +76,20 @@ cells:
     info_version: 1
     module: gdsfactory.routing.add_fiber_array
     name: add_fiber_array_ad9ec9b5
-  ebeam_gc_te1550:
-    changed: {}
-    default: {}
-    full: {}
-    function_name: <lambda>
-    info_version: 1
-    module: gdsfactory.import_gds
-    name: ebeam_gc_te1550
   gc_te1550:
     changed: {}
     child:
-      changed: {}
-      default: {}
-      full: {}
-      function_name: <lambda>
+      changed:
+        gdsname: ebeam_gc_te1550
+      default:
+        rename_ports: false
+      full:
+        gdsname: ebeam_gc_te1550
+        rename_ports: false
+      function_name: import_gds
       info_version: 1
-      module: gdsfactory.import_gds
-      name: ebeam_gc_te1550
+      module: ubc.import_gds
+      name: import_gds_7ae1afa5
     default: {}
     full: {}
     function_name: gc_te1550
@@ -102,6 +98,18 @@ cells:
     name: gc_te1550
     polarization: te
     wavelength: 1.55
+  import_gds_7ae1afa5:
+    changed:
+      gdsname: ebeam_gc_te1550
+    default:
+      rename_ports: false
+    full:
+      gdsname: ebeam_gc_te1550
+      rename_ports: false
+    function_name: import_gds
+    info_version: 1
+    module: ubc.import_gds
+    name: import_gds_7ae1afa5
   straight:
     changed: {}
     default:

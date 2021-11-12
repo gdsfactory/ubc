@@ -1,20 +1,28 @@
 cells:
-  ebeam_bdc_tm1550:
-    changed: {}
-    default: {}
-    full: {}
-    function_name: <lambda>
+  import_gds_1e1d995c:
+    changed:
+      gdsname: ebeam_bdc_tm1550
+    default:
+      rename_ports: false
+    full:
+      gdsname: ebeam_bdc_tm1550
+      rename_ports: false
+    function_name: import_gds
     info_version: 1
-    module: gdsfactory.import_gds
-    name: ebeam_bdc_tm1550
+    module: ubc.import_gds
+    name: import_gds_1e1d995c
 info:
-  changed: {}
-  default: {}
-  full: {}
-  function_name: <lambda>
+  changed:
+    gdsname: ebeam_bdc_tm1550
+  default:
+    rename_ports: false
+  full:
+    gdsname: ebeam_bdc_tm1550
+    rename_ports: false
+  function_name: import_gds
   info_version: 1
-  module: gdsfactory.import_gds
-  name: ebeam_bdc_tm1550
+  module: ubc.import_gds
+  name: import_gds_1e1d995c
 ports:
   opt1:
     layer:

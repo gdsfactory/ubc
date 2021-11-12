@@ -18,25 +18,35 @@ cells:
     info_version: 1
     module: gdsfactory.components.coupler_ring
     name: coupler_ring_6a2f750e
-  ebeam_crossing4:
-    changed: {}
-    default: {}
-    full: {}
-    function_name: <lambda>
-    info_version: 1
-    module: gdsfactory.import_gds
-    name: ebeam_crossing4
-  ring_single_dut_e9a62fce:
+  import_gds_dd40f153:
     changed:
-      component: ebeam_crossing4
+      gdsname: ebeam_crossing4
+      rename_ports: true
+    default:
+      rename_ports: false
+    full:
+      gdsname: ebeam_crossing4
+      rename_ports: true
+    function_name: import_gds
+    info_version: 1
+    module: ubc.import_gds
+    name: import_gds_dd40f153
+  ring_single_dut_60d4a677:
+    changed:
+      component: import_gds_dd40f153
     child:
-      changed: {}
-      default: {}
-      full: {}
-      function_name: <lambda>
+      changed:
+        gdsname: ebeam_crossing4
+        rename_ports: true
+      default:
+        rename_ports: false
+      full:
+        gdsname: ebeam_crossing4
+        rename_ports: true
+      function_name: import_gds
       info_version: 1
-      module: gdsfactory.import_gds
-      name: ebeam_crossing4
+      module: ubc.import_gds
+      name: import_gds_dd40f153
     default:
       gap: 0.2
       length_x: 4
@@ -45,7 +55,7 @@ cells:
       wg_width: 0.5
       with_component: true
     full:
-      component: ebeam_crossing4
+      component: import_gds_dd40f153
       gap: 0.2
       length_x: 4
       length_y: 0
@@ -55,18 +65,23 @@ cells:
     function_name: ring_single_dut
     info_version: 1
     module: gdsfactory.components.ring_single_dut
-    name: ring_single_dut_e9a62fce
+    name: ring_single_dut_60d4a677
 info:
   changed:
-    component: ebeam_crossing4
+    component: import_gds_dd40f153
   child:
-    changed: {}
-    default: {}
-    full: {}
-    function_name: <lambda>
+    changed:
+      gdsname: ebeam_crossing4
+      rename_ports: true
+    default:
+      rename_ports: false
+    full:
+      gdsname: ebeam_crossing4
+      rename_ports: true
+    function_name: import_gds
     info_version: 1
-    module: gdsfactory.import_gds
-    name: ebeam_crossing4
+    module: ubc.import_gds
+    name: import_gds_dd40f153
   default:
     gap: 0.2
     length_x: 4
@@ -75,7 +90,7 @@ info:
     wg_width: 0.5
     with_component: true
   full:
-    component: ebeam_crossing4
+    component: import_gds_dd40f153
     gap: 0.2
     length_x: 4
     length_y: 0
@@ -85,7 +100,7 @@ info:
   function_name: ring_single_dut
   info_version: 1
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_e9a62fce
+  name: ring_single_dut_60d4a677
 ports:
   o1:
     layer:
