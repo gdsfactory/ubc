@@ -1,58 +1,104 @@
 cells:
   straight:
     changed: {}
+    child:
+      changed:
+        layer:
+        - 1
+        - 0
+        length: 10
+        width: 0.5
+      default:
+        length: 10
+        npoints: 2
+        with_cladding_box: true
+      full:
+        layer:
+        - 1
+        - 0
+        length: 10
+        npoints: 2
+        width: 0.5
+        with_cladding_box: true
+      function_name: straight
+      info_version: 1
+      length: 10
+      module: gdsfactory.components.straight
+      name: straight_808ab8f9
+      width: 0.5
     default:
       layer:
       - 1
       - 0
-      length: 10.0
+      length: 10
       width: 0.5
       with_pins: true
     full:
       layer:
       - 1
       - 0
-      length: 10.0
+      length: 10
       width: 0.5
       with_pins: true
     function_name: straight
     info_version: 1
-    length: 10.0
     module: ubc.components.straight
     name: straight
-    width: 0.5
 info:
   changed: {}
+  child:
+    changed:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+    default:
+      length: 10
+      npoints: 2
+      with_cladding_box: true
+    full:
+      layer:
+      - 1
+      - 0
+      length: 10
+      npoints: 2
+      width: 0.5
+      with_cladding_box: true
+    function_name: straight
+    info_version: 1
+    length: 10
+    module: gdsfactory.components.straight
+    name: straight_808ab8f9
+    width: 0.5
   default:
     layer:
     - 1
     - 0
-    length: 10.0
+    length: 10
     width: 0.5
     with_pins: true
   full:
     layer:
     - 1
     - 0
-    length: 10.0
+    length: 10
     width: 0.5
     with_pins: true
   function_name: straight
   info_version: 1
-  length: 10.0
   module: ubc.components.straight
   name: straight
-  width: 0.5
 ports:
   o1:
     layer:
     - 1
     - 0
     midpoint:
-    - 0.0
-    - 0.0
+    - 0
+    - 0
     name: o1
-    orientation: 180.0
+    orientation: 180
     port_type: optical
     width: 0.5
   o2:
@@ -60,10 +106,10 @@ ports:
     - 1
     - 0
     midpoint:
-    - 10.0
-    - 0.0
+    - 10
+    - 0
     name: o2
-    orientation: 0.0
+    orientation: 0
     port_type: optical
     width: 0.5
 version: 1

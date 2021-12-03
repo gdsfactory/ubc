@@ -7,8 +7,8 @@ cells:
     default:
       bend: null
       gap: 0.2
-      length_x: 4.0
-      radius: 5.0
+      length_x: 4
+      radius: 5
     full:
       bend: null
       gap: 0.2
@@ -107,10 +107,10 @@ ports:
     - 1
     - 0
     midpoint:
-    - -9.0
-    - 0.0
+    - -9
+    - 0
     name: o1
-    orientation: 180.0
+    orientation: 180
     port_type: optical
     width: 0.5
   o2:
@@ -118,10 +118,10 @@ ports:
     - 1
     - 0
     midpoint:
-    - 5.0
-    - 0.0
+    - 5
+    - 0
     name: o2
-    orientation: 0.0
+    orientation: 0
     port_type: optical
     width: 0.5
 version: 1

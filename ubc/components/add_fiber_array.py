@@ -7,7 +7,7 @@ from gdsfactory.add_labels import get_input_label
 from gdsfactory.cell import cell
 from gdsfactory.component import Component
 from gdsfactory.port import Port
-from gdsfactory.types import ComponentFactory, ComponentReference
+from gdsfactory.types import ComponentReference, ComponentOrFactory
 
 from ubc.config import CONFIG
 from ubc.tech import LAYER
@@ -117,14 +117,14 @@ def get_input_labels(
 
 @cell
 def add_fiber_array(
-    component: Component = straight,
-    component_name: None = None,
+    component: ComponentOrFactory = straight,
+    component_name: Optional[str] = None,
     gc_port_name: str = "o1",
     get_input_labels_function: Callable = get_input_labels,
     with_loopback: bool = False,
     optical_routing_type: int = 0,
     fanout_length: float = 0.0,
-    grating_coupler: ComponentFactory = gc_te1550,
+    grating_coupler: ComponentOrFactory = gc_te1550,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.

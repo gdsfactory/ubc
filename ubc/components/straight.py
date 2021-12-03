@@ -12,8 +12,20 @@ def straight(
     with_pins: bool = True,
     **kwargs,
 ) -> gf.Component:
-    """Straight waveguide."""
-    c = gf.components.straight(length=length, width=width, layer=layer, **kwargs)
+    """Straight waveguide.
+
+    Args:
+        length:
+        width:
+        layer:
+        with_pins:
+    """
+    c = gf.Component()
+
+    s = gf.components.straight(length=length, width=width, layer=layer, **kwargs)
+    ref = c << s
+    c.add_ports(ref.ports)
+    c.copy_child_info(s)
 
     if with_pins:
         labels = [

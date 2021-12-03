@@ -30,9 +30,9 @@ ports:
     - 0
     midpoint:
     - 0.05
-    - 0.0
+    - 0
     name: opt1
-    orientation: 180.0
+    orientation: 180
     port_type: optical
     width: 0.5
   opt2:
@@ -43,7 +43,7 @@ ports:
     - 50.050000000000004
     - 1.25
     name: opt2
-    orientation: 0.0
+    orientation: 0
     port_type: optical
     width: 0.5
   opt3:
@@ -54,7 +54,7 @@ ports:
     - 50.050000000000004
     - -1.25
     name: opt3
-    orientation: 0.0
+    orientation: 0
     port_type: optical
     width: 0.5
 version: 1
