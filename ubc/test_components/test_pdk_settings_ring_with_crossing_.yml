@@ -6,11 +6,23 @@ cells:
       radius: 5
     default:
       bend: null
+      coupler90:
+        function: coupler90
+      coupler_straight:
+        function: coupler_straight
+      cross_section:
+        function: cross_section
       gap: 0.2
       length_x: 4
       radius: 5
     full:
       bend: null
+      coupler90:
+        function: coupler90
+      coupler_straight:
+        function: coupler_straight
+      cross_section:
+        function: cross_section
       gap: 0.2
       length_x: 4
       radius: 5
@@ -31,7 +43,7 @@ cells:
     info_version: 1
     module: ubc.import_gds
     name: import_gds_dd40f153
-  ring_single_dut_60d4a677:
+  import_gds_dd40f153_rin_bab9dea1:
     changed:
       component: import_gds_dd40f153
     child:
@@ -48,24 +60,39 @@ cells:
       module: ubc.import_gds
       name: import_gds_dd40f153
     default:
+      bend:
+        function: bend_euler
+      component:
+        function: taper
+        width2: 3
+      coupler:
+        function: coupler_ring
       gap: 0.2
       length_x: 4
       length_y: 0
       radius: 5
+      straight:
+        function: straight
       wg_width: 0.5
       with_component: true
     full:
+      bend:
+        function: bend_euler
       component: import_gds_dd40f153
+      coupler:
+        function: coupler_ring
       gap: 0.2
       length_x: 4
       length_y: 0
       radius: 5
+      straight:
+        function: straight
       wg_width: 0.5
       with_component: true
     function_name: ring_single_dut
     info_version: 1
     module: gdsfactory.components.ring_single_dut
-    name: ring_single_dut_60d4a677
+    name: import_gds_dd40f153_rin_bab9dea1
 info:
   changed:
     component: import_gds_dd40f153
@@ -83,24 +110,39 @@ info:
     module: ubc.import_gds
     name: import_gds_dd40f153
   default:
+    bend:
+      function: bend_euler
+    component:
+      function: taper
+      width2: 3
+    coupler:
+      function: coupler_ring
     gap: 0.2
     length_x: 4
     length_y: 0
     radius: 5
+    straight:
+      function: straight
     wg_width: 0.5
     with_component: true
   full:
+    bend:
+      function: bend_euler
     component: import_gds_dd40f153
+    coupler:
+      function: coupler_ring
     gap: 0.2
     length_x: 4
     length_y: 0
     radius: 5
+    straight:
+      function: straight
     wg_width: 0.5
     with_component: true
   function_name: ring_single_dut
   info_version: 1
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_60d4a677
+  name: import_gds_dd40f153_rin_bab9dea1
 ports:
   o1:
     layer:

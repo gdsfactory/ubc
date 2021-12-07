@@ -1,5 +1,17 @@
 cells:
-  gc_tm1550:
+  import_gds_fecb0a11:
+    changed:
+      gdsname: ebeam_gc_tm1550
+    default:
+      rename_ports: false
+    full:
+      gdsname: ebeam_gc_tm1550
+      rename_ports: false
+    function_name: import_gds
+    info_version: 1
+    module: ubc.import_gds
+    name: import_gds_fecb0a11
+  import_gds_fecb0a11_gc_tm1550:
     changed: {}
     child:
       changed:
@@ -18,21 +30,9 @@ cells:
     function_name: gc_tm1550
     info_version: 1
     module: ubc.components.grating_couplers
-    name: gc_tm1550
+    name: import_gds_fecb0a11_gc_tm1550
     polarization: tm
     wavelength: 1.55
-  import_gds_fecb0a11:
-    changed:
-      gdsname: ebeam_gc_tm1550
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_gc_tm1550
-      rename_ports: false
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_fecb0a11
 info:
   changed: {}
   child:
@@ -52,7 +52,7 @@ info:
   function_name: gc_tm1550
   info_version: 1
   module: ubc.components.grating_couplers
-  name: gc_tm1550
+  name: import_gds_fecb0a11_gc_tm1550
   polarization: tm
   wavelength: 1.55
 ports:
