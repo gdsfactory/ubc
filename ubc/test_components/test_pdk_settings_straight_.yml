@@ -1,4 +1,82 @@
-cells: {}
+cells:
+  straight_808ab8f9:
+    changed:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+    default:
+      cross_section:
+        function: cross_section
+      length: 10
+      npoints: 2
+      with_cladding_box: true
+    full:
+      cross_section:
+        function: cross_section
+      layer:
+      - 1
+      - 0
+      length: 10
+      npoints: 2
+      width: 0.5
+      with_cladding_box: true
+    function_name: straight
+    info_version: 1
+    length: 10
+    module: gdsfactory.components.straight
+    name: straight_808ab8f9
+    width: 0.5
+  straight_808ab8f9_straight:
+    changed: {}
+    child:
+      changed:
+        layer:
+        - 1
+        - 0
+        length: 10
+        width: 0.5
+      default:
+        cross_section:
+          function: cross_section
+        length: 10
+        npoints: 2
+        with_cladding_box: true
+      full:
+        cross_section:
+          function: cross_section
+        layer:
+        - 1
+        - 0
+        length: 10
+        npoints: 2
+        width: 0.5
+        with_cladding_box: true
+      function_name: straight
+      info_version: 1
+      length: 10
+      module: gdsfactory.components.straight
+      name: straight_808ab8f9
+      width: 0.5
+    default:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+      with_pins: true
+    full:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+      with_pins: true
+    function_name: straight
+    info_version: 1
+    module: ubc.components.straight
+    name: straight_808ab8f9_straight
 info:
   changed: {}
   child:
@@ -26,7 +104,7 @@ info:
       with_cladding_box: true
     function_name: straight
     info_version: 1
-    length: 10.0
+    length: 10
     module: gdsfactory.components.straight
     name: straight_808ab8f9
     width: 0.5
