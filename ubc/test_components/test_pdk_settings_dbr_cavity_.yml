@@ -31,7 +31,7 @@ cells:
     min_bend_radius: 9.387
     module: gdsfactory.components.coupler
     name: coupler_3e9f9e6a
-  dbr:
+  dbr_d41d8cd9:
     changed: {}
     default:
       dw: 0.1
@@ -48,10 +48,10 @@ cells:
     function_name: dbr
     info_version: 1
     module: ubc.components.dbr
-    name: dbr
-  dbr_cavity_33f0cb89:
+    name: dbr_d41d8cd9
+  dbr_d41d8cd9_cavity_875dd717:
     changed:
-      component: dbr
+      component: dbr_d41d8cd9
     child:
       changed: {}
       default:
@@ -69,7 +69,7 @@ cells:
       function_name: dbr
       info_version: 1
       module: ubc.components.dbr
-      name: dbr
+      name: dbr_d41d8cd9
     default:
       component:
         function: dbr
@@ -78,7 +78,7 @@ cells:
       gap: 0.2
       length: 0.1
     full:
-      component: dbr
+      component: dbr_d41d8cd9
       coupler:
         function: coupler
       gap: 0.2
@@ -86,10 +86,10 @@ cells:
     function_name: cavity
     info_version: 1
     module: gdsfactory.components.cavity
-    name: dbr_cavity_33f0cb89
+    name: dbr_d41d8cd9_cavity_875dd717
 info:
   changed:
-    component: dbr
+    component: dbr_d41d8cd9
   child:
     changed: {}
     default:
@@ -107,7 +107,7 @@ info:
     function_name: dbr
     info_version: 1
     module: ubc.components.dbr
-    name: dbr
+    name: dbr_d41d8cd9
   default:
     component:
       function: dbr
@@ -116,7 +116,7 @@ info:
     gap: 0.2
     length: 0.1
   full:
-    component: dbr
+    component: dbr_d41d8cd9
     coupler:
       function: coupler
     gap: 0.2
@@ -124,7 +124,7 @@ info:
   function_name: cavity
   info_version: 1
   module: gdsfactory.components.cavity
-  name: dbr_cavity_33f0cb89
+  name: dbr_d41d8cd9_cavity_875dd717
 ports:
   o1:
     layer:

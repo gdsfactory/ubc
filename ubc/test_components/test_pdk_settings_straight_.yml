@@ -28,7 +28,7 @@ cells:
     module: gdsfactory.components.straight
     name: straight_808ab8f9
     width: 0.5
-  straight_808ab8f9_straight:
+  straight_808ab8f9_strai_88fdfcca:
     changed: {}
     child:
       changed:
@@ -76,7 +76,7 @@ cells:
     function_name: straight
     info_version: 1
     module: ubc.components.straight
-    name: straight_808ab8f9_straight
+    name: straight_808ab8f9_strai_88fdfcca
 info:
   changed: {}
   child:
@@ -125,7 +125,7 @@ info:
   function_name: straight
   info_version: 1
   module: ubc.components.straight
-  name: straight_808ab8f9_straight
+  name: straight_808ab8f9_strai_88fdfcca
 ports:
   o1:
     layer:

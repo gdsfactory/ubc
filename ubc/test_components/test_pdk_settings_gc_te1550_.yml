@@ -11,7 +11,7 @@ cells:
     info_version: 1
     module: ubc.import_gds
     name: import_gds_7ae1afa5
-  import_gds_7ae1afa5_gc_te1550:
+  import_gds_7ae1afa5_gc__2d807405:
     changed: {}
     child:
       changed:
@@ -30,7 +30,7 @@ cells:
     function_name: gc_te1550
     info_version: 1
     module: ubc.components.grating_couplers
-    name: import_gds_7ae1afa5_gc_te1550
+    name: import_gds_7ae1afa5_gc__2d807405
     polarization: te
     wavelength: 1.55
 info:
@@ -52,7 +52,7 @@ info:
   function_name: gc_te1550
   info_version: 1
   module: ubc.components.grating_couplers
-  name: import_gds_7ae1afa5_gc_te1550
+  name: import_gds_7ae1afa5_gc__2d807405
   polarization: te
   wavelength: 1.55
 ports:

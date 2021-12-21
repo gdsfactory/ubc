@@ -1,5 +1,5 @@
 cells:
-  add_fiber_array:
+  add_fiber_array_d41d8cd9:
     changed: {}
     default:
       component:
@@ -28,7 +28,7 @@ cells:
     function_name: add_fiber_array
     info_version: 1
     module: ubc.components.add_fiber_array
-    name: add_fiber_array
+    name: add_fiber_array_d41d8cd9
   bend_euler_1da190e0:
     changed:
       cross_section:
@@ -71,7 +71,7 @@ cells:
     info_version: 1
     module: ubc.import_gds
     name: import_gds_7ae1afa5
-  import_gds_7ae1afa5_gc_te1550:
+  import_gds_7ae1afa5_gc__2d807405:
     changed: {}
     child:
       changed:
@@ -90,7 +90,7 @@ cells:
     function_name: gc_te1550
     info_version: 1
     module: ubc.components.grating_couplers
-    name: import_gds_7ae1afa5_gc_te1550
+    name: import_gds_7ae1afa5_gc__2d807405
     polarization: te
     wavelength: 1.55
   straight_14538343:
@@ -209,7 +209,7 @@ cells:
       function_name: straight
       info_version: 1
       module: ubc.components.straight
-      name: straight_808ab8f9_straight
+      name: straight_808ab8f9_strai_88fdfcca
     default:
       bend:
         function: bend_euler
@@ -261,7 +261,7 @@ cells:
     info_version: 1
     module: gdsfactory.routing.add_fiber_array
     name: straight_808ab8f9_add_f_c90b2f78
-  straight_808ab8f9_straight:
+  straight_808ab8f9_strai_88fdfcca:
     changed: {}
     child:
       changed:
@@ -309,7 +309,7 @@ cells:
     function_name: straight
     info_version: 1
     module: ubc.components.straight
-    name: straight_808ab8f9_straight
+    name: straight_808ab8f9_strai_88fdfcca
   straight_8535e376:
     changed:
       cross_section:
@@ -362,6 +362,6 @@ info:
   function_name: add_fiber_array
   info_version: 1
   module: ubc.components.add_fiber_array
-  name: add_fiber_array
+  name: add_fiber_array_d41d8cd9
 ports: {}
 version: 1

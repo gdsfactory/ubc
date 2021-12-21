@@ -11,7 +11,7 @@ cells:
     info_version: 1
     module: ubc.import_gds
     name: import_gds_dcd53d19
-  import_gds_dcd53d19_gc_te1310:
+  import_gds_dcd53d19_gc__6544ae35:
     changed: {}
     child:
       changed:
@@ -30,7 +30,7 @@ cells:
     function_name: gc_te1310
     info_version: 1
     module: ubc.components.grating_couplers
-    name: import_gds_dcd53d19_gc_te1310
+    name: import_gds_dcd53d19_gc__6544ae35
     polarization: te
     wavelength: 1.31
 info:
@@ -52,7 +52,7 @@ info:
   function_name: gc_te1310
   info_version: 1
   module: ubc.components.grating_couplers
-  name: import_gds_dcd53d19_gc_te1310
+  name: import_gds_dcd53d19_gc__6544ae35
   polarization: te
   wavelength: 1.31
 ports:
