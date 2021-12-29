@@ -76,5 +76,5 @@ if __name__ == "__main__":
     # print(c.get_ports_array())
     # print(c.ports.keys())
     c = straight()
-    c = add_fiber_array(component=c)
+    # c = add_fiber_array(component=c)
     c.show()

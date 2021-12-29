@@ -15,7 +15,7 @@ def add_pins(
 ) -> None:
 
     for p in component.get_ports_list(layer=layer_port):
-        function(component=component, port=p, layer=layer_pin, label_layer=layer_label)
+        function(component=component, port=p, layer=layer_pin, layer_label=layer_label)
 
 
 if __name__ == "__main__":

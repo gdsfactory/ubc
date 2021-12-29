@@ -8,16 +8,16 @@ nm = 1e-3
 
 
 @pydantic.dataclasses.dataclass(frozen=True)
-class LayerMap:
+class LayerMapUbc:
     WG: Layer = (1, 0)
     WG2: Layer = (31, 0)
-    DEVREC = (68, 0)
-    LABEL = (10, 0)
-    PORT = (1, 10)
-    FLOORPLAN = (99, 0)
+    DEVREC: Layer = (68, 0)
+    LABEL: Layer = (10, 0)
+    PORT: Layer = (1, 10)
+    FLOORPLAN: Layer = (99, 0)
 
 
-LAYER = LayerMap()
+LAYER = LayerMapUbc()
 
 
 def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
