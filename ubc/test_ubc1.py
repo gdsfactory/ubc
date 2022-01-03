@@ -1,10 +1,31 @@
+from typing import Tuple
+from omegaconf import OmegaConf
+from pathlib import Path
 import gdsfactory as gf
 
 import ubc
 from ubc.tech import LAYER
+from ubc.config import PATH
 
 floorplan_size = (605, 410)
 add_gc = ubc.components.add_fiber_array
+
+
+def write_mask_gds_with_metadata(m) -> Tuple[Path, Path]:
+    """Returns"""
+    gdspath = PATH.mask / f"{m.name}.gds"
+    m.write_gds_with_metadata(gdspath=gdspath)
+
+    labels_path = gf.mask.write_labels(gdspath=gdspath, layer_label=LAYER.LABEL)
+    metadata_path = gdspath.with_suffix(".yml")
+    test_metadata_path = gdspath.with_suffix(".tp.yml")
+    mask_metadata = OmegaConf.load(metadata_path)
+
+    tm = gf.mask.merge_test_metadata(
+        labels_path=labels_path, mask_metadata=mask_metadata
+    )
+    test_metadata_path.write_text(OmegaConf.to_yaml(tm))
+    return m, tm
 
 
 def test_mask2():
@@ -20,6 +41,7 @@ def test_mask2():
                 radius=radius,
                 y_straight_inner_top=0,
                 x_inner_length_cutback=0,
+                info=dict(does=["spiral", "te1550"]),
             )
         )
     )
@@ -35,11 +57,11 @@ def test_mask2():
     )
 
     c = gf.pack(e)
+
     m = c[0]
     m.name = "EBeam_JoaquinMatres_2"
     m << gf.c.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
-    m.write_gds(precision=1e-9)
-    return m
+    return write_mask_gds_with_metadata(m)
 
 
 def test_mask1():
@@ -63,8 +85,7 @@ def test_mask1():
     m = c[0]
     m.name = "EBeam_JoaquinMatres_1"
     m << gf.c.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
-    m.write_gds(precision=1e-9)
-    return m
+    return write_mask_gds_with_metadata(m)
 
 
 def test_mask3():
@@ -78,12 +99,11 @@ def test_mask3():
     m = c[0]
     m.name = "EBeam_JoaquinMatres_3"
     m << gf.c.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
-    m.write_gds(precision=1e-9)
-    return m
+    return write_mask_gds_with_metadata(m)
 
 
 if __name__ == "__main__":
-    # m = test_mask1()
-    # m = test_mask2()
-    m = test_mask3()
+    m, tm = test_mask1()
+    m, tm = test_mask2()
+    m, tm = test_mask3()
     m.show()

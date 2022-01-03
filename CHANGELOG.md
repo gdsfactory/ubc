@@ -1,10 +1,10 @@
 ## Next version
 
-- compatible with latest gdsfactory 3.4.2
+- compatible with gdsfactory 3.9.12
 
 ## 0.0.4
 
-- compatible with latest gdsfactory 3.1.5
+- compatible with gdsfactory 3.1.5
 
 ## 0.0.3
 

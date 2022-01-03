@@ -1,28 +1,8 @@
 cells:
-  import_gds_6ba7736b:
-    changed:
-      gdsname: ebeam_y_1550
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_y_1550
-      rename_ports: false
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_6ba7736b
+  ebeam_y_1550:
+    name: ebeam_y_1550
 info:
-  changed:
-    gdsname: ebeam_y_1550
-  default:
-    rename_ports: false
-  full:
-    gdsname: ebeam_y_1550
-    rename_ports: false
-  function_name: import_gds
-  info_version: 1
-  module: ubc.import_gds
-  name: import_gds_6ba7736b
+  name: ebeam_y_1550
 ports:
   opt1:
     layer:

@@ -48,8 +48,8 @@ def get_input_label_text(
     # name = port.parent.name
     # else:
     # name = port.parent.ref_cell.name
+    # name = name.replace("_", "-")
 
-    name = name.replace("_", "-")
     label = (
         f"opt_in_{polarization.upper()}_{int(wavelength*1e3)}_device_"
         + f"{CONFIG.username}_({name})-{gc_index}-{port.name}"

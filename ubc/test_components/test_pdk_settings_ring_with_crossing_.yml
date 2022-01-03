@@ -62,35 +62,13 @@ cells:
     info_version: 1
     module: gdsfactory.components.coupler_ring
     name: coupler_ring_6a2f750e
-  import_gds_dd40f153:
+  ebeam_crossing4:
+    name: ebeam_crossing4
+  ebeam_crossing4_ring_si_4a59a99d:
     changed:
-      gdsname: ebeam_crossing4
-      rename_ports: true
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_crossing4
-      rename_ports: true
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_dd40f153
-  import_gds_dd40f153_rin_bab9dea1:
-    changed:
-      component: import_gds_dd40f153
+      component: ebeam_crossing4
     child:
-      changed:
-        gdsname: ebeam_crossing4
-        rename_ports: true
-      default:
-        rename_ports: false
-      full:
-        gdsname: ebeam_crossing4
-        rename_ports: true
-      function_name: import_gds
-      info_version: 1
-      module: ubc.import_gds
-      name: import_gds_dd40f153
+      name: ebeam_crossing4
     default:
       bend:
         function: bend_euler
@@ -110,7 +88,7 @@ cells:
     full:
       bend:
         function: bend_euler
-      component: import_gds_dd40f153
+      component: ebeam_crossing4
       coupler:
         function: coupler_ring
       gap: 0.2
@@ -124,7 +102,7 @@ cells:
     function_name: ring_single_dut
     info_version: 1
     module: gdsfactory.components.ring_single_dut
-    name: import_gds_dd40f153_rin_bab9dea1
+    name: ebeam_crossing4_ring_si_4a59a99d
   straight_69588c85:
     changed:
       length: 9.6
@@ -173,20 +151,9 @@ cells:
     width: 0.5
 info:
   changed:
-    component: import_gds_dd40f153
+    component: ebeam_crossing4
   child:
-    changed:
-      gdsname: ebeam_crossing4
-      rename_ports: true
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_crossing4
-      rename_ports: true
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_dd40f153
+    name: ebeam_crossing4
   default:
     bend:
       function: bend_euler
@@ -206,7 +173,7 @@ info:
   full:
     bend:
       function: bend_euler
-    component: import_gds_dd40f153
+    component: ebeam_crossing4
     coupler:
       function: coupler_ring
     gap: 0.2
@@ -220,7 +187,7 @@ info:
   function_name: ring_single_dut
   info_version: 1
   module: gdsfactory.components.ring_single_dut
-  name: import_gds_dd40f153_rin_bab9dea1
+  name: ebeam_crossing4_ring_si_4a59a99d
 ports:
   o1:
     layer:

@@ -1,30 +1,8 @@
 cells:
-  import_gds_dd40f153:
-    changed:
-      gdsname: ebeam_crossing4
-      rename_ports: true
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_crossing4
-      rename_ports: true
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_dd40f153
+  ebeam_crossing4:
+    name: ebeam_crossing4
 info:
-  changed:
-    gdsname: ebeam_crossing4
-    rename_ports: true
-  default:
-    rename_ports: false
-  full:
-    gdsname: ebeam_crossing4
-    rename_ports: true
-  function_name: import_gds
-  info_version: 1
-  module: ubc.import_gds
-  name: import_gds_dd40f153
+  name: ebeam_crossing4
 ports:
   o1:
     layer:

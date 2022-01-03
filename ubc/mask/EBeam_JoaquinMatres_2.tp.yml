@@ -1,0 +1,83 @@
+spiral_external_io_39c769e7:
+  length: 22162.69
+  name: spiral_external_io_39c769e7
+  module: gdsfactory.components.spiral_external_io
+  function_name: spiral_external_io
+  info_version: 1
+  changed:
+    'N': 15
+    radius: 15
+    y_straight_inner_top: 30
+    x_inner_length_cutback: 85
+  default:
+    'N': 6
+    x_inner_length_cutback: 300
+    x_inner_offset: 0
+    y_straight_inner_top: 0
+    xspacing: 3
+    yspacing: 3
+    bend:
+      function: bend_euler
+    length: null
+    cross_section:
+      function: cross_section
+  full:
+    'N': 15
+    x_inner_length_cutback: 85
+    x_inner_offset: 0
+    y_straight_inner_top: 30
+    xspacing: 3
+    yspacing: 3
+    bend:
+      function: bend_euler
+    length: null
+    cross_section:
+      function: cross_section
+    radius: 15
+  label:
+    x: 38.050000000000004
+    'y': 15.75
+    text: opt_in_TE_1550_device_JoaquinMatres_(spiral_external_io_39c769e7)-1-o2
+spiral_external_io_1aa1d790:
+  length: 15662.69
+  name: spiral_external_io_1aa1d790
+  module: gdsfactory.components.spiral_external_io
+  function_name: spiral_external_io
+  info_version: 1
+  changed:
+    'N': 15
+    radius: 15
+    y_straight_inner_top: 0
+    x_inner_length_cutback: 0
+  default:
+    'N': 6
+    x_inner_length_cutback: 300
+    x_inner_offset: 0
+    y_straight_inner_top: 0
+    xspacing: 3
+    yspacing: 3
+    bend:
+      function: bend_euler
+    length: null
+    cross_section:
+      function: cross_section
+  full:
+    'N': 15
+    x_inner_length_cutback: 0
+    x_inner_offset: 0
+    y_straight_inner_top: 0
+    xspacing: 3
+    yspacing: 3
+    bend:
+      function: bend_euler
+    length: null
+    cross_section:
+      function: cross_section
+    radius: 15
+  does:
+  - spiral
+  - te1550
+  label:
+    x: 339.3
+    'y': 15.75
+    text: opt_in_TE_1550_device_JoaquinMatres_(spiral_external_io_1aa1d790)-1-o2

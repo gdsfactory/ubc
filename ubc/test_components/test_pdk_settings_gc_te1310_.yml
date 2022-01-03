@@ -1,58 +1,28 @@
 cells:
-  import_gds_dcd53d19:
-    changed:
-      gdsname: ebeam_gc_te1310
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_gc_te1310
-      rename_ports: false
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_dcd53d19
-  import_gds_dcd53d19_gc__6544ae35:
+  ebeam_gc_te1310:
+    name: ebeam_gc_te1310
+  ebeam_gc_te1310_gc_te13_3fc4cfae:
     changed: {}
     child:
-      changed:
-        gdsname: ebeam_gc_te1310
-      default:
-        rename_ports: false
-      full:
-        gdsname: ebeam_gc_te1310
-        rename_ports: false
-      function_name: import_gds
-      info_version: 1
-      module: ubc.import_gds
-      name: import_gds_dcd53d19
+      name: ebeam_gc_te1310
     default: {}
     full: {}
     function_name: gc_te1310
     info_version: 1
     module: ubc.components.grating_couplers
-    name: import_gds_dcd53d19_gc__6544ae35
+    name: ebeam_gc_te1310_gc_te13_3fc4cfae
     polarization: te
     wavelength: 1.31
 info:
   changed: {}
   child:
-    changed:
-      gdsname: ebeam_gc_te1310
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_gc_te1310
-      rename_ports: false
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_dcd53d19
+    name: ebeam_gc_te1310
   default: {}
   full: {}
   function_name: gc_te1310
   info_version: 1
   module: ubc.components.grating_couplers
-  name: import_gds_dcd53d19_gc__6544ae35
+  name: ebeam_gc_te1310_gc_te13_3fc4cfae
   polarization: te
   wavelength: 1.31
 ports:

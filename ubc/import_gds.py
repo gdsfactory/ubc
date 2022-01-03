@@ -36,7 +36,7 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
     return 0
 
 
-@gf.cell
+@gf.functions.cache
 def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
     """import gds from SIEPIC PDK"""
     c = gf.import_gds(gds / f"{gdsname}.gds")

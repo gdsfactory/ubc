@@ -1,0 +1,362 @@
+mzi_885e5a5a:
+  name: mzi_885e5a5a
+  module: gdsfactory.components.mzi
+  function_name: mzi
+  info_version: 1
+  changed:
+    delta_length: 93.19
+  default:
+    delta_length: 10
+    length_y: 2
+    length_x: 0.1
+    bend:
+      function: bend_euler
+    straight:
+      function: straight
+    straight_y: null
+    straight_x_top: null
+    straight_x_bot: null
+    splitter:
+      function: mmi1x2
+    combiner: null
+    with_splitter: true
+    port_e1_splitter: o2
+    port_e0_splitter: o3
+    port_e1_combiner: o2
+    port_e0_combiner: o3
+    nbends: 2
+    cross_section:
+      function: cross_section
+  full:
+    delta_length: 93.19
+    length_y: 2
+    length_x: 0.1
+    bend:
+      function: bend_euler
+    straight:
+      function: straight
+    straight_y: null
+    straight_x_top: null
+    straight_x_bot: null
+    splitter:
+      function: mmi1x2
+    combiner: null
+    with_splitter: true
+    port_e1_splitter: o2
+    port_e0_splitter: o3
+    port_e1_combiner: o2
+    port_e0_combiner: o3
+    nbends: 2
+    cross_section:
+      function: cross_section
+  label:
+    x: 38.047000000000004
+    'y': 15.75
+    text: opt_in_TE_1550_device_JoaquinMatres_(mzi_885e5a5a)-1-o2
+mzi_95a2d727:
+  name: mzi_95a2d727
+  module: gdsfactory.components.mzi
+  function_name: mzi
+  info_version: 1
+  changed:
+    delta_length: 9.32
+  default:
+    delta_length: 10
+    length_y: 2
+    length_x: 0.1
+    bend:
+      function: bend_euler
+    straight:
+      function: straight
+    straight_y: null
+    straight_x_top: null
+    straight_x_bot: null
+    splitter:
+      function: mmi1x2
+    combiner: null
+    with_splitter: true
+    port_e1_splitter: o2
+    port_e0_splitter: o3
+    port_e1_combiner: o2
+    port_e0_combiner: o3
+    nbends: 2
+    cross_section:
+      function: cross_section
+  full:
+    delta_length: 9.32
+    length_y: 2
+    length_x: 0.1
+    bend:
+      function: bend_euler
+    straight:
+      function: straight
+    straight_y: null
+    straight_x_top: null
+    straight_x_bot: null
+    splitter:
+      function: mmi1x2
+    combiner: null
+    with_splitter: true
+    port_e1_splitter: o2
+    port_e0_splitter: o3
+    port_e1_combiner: o2
+    port_e0_combiner: o3
+    nbends: 2
+    cross_section:
+      function: cross_section
+  label:
+    x: 189.418
+    'y': 15.75
+    text: opt_in_TE_1550_device_JoaquinMatres_(mzi_95a2d727)-1-o2
+dbr_605c8965:
+  name: dbr_605c8965
+  module: ubc.components.dbr
+  function_name: dbr
+  info_version: 1
+  changed:
+    w0: 0.5
+    dw: 0.2
+  default:
+    w0: 0.5
+    dw: 0.1
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  full:
+    w0: 0.5
+    dw: 0.2
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  label:
+    x: 298.79
+    'y': 46.45
+    text: opt_in_TE_1550_device_JoaquinMatres_(dbr_605c8965)-1-o2
+dbr_4620470f:
+  name: dbr_4620470f
+  module: ubc.components.dbr
+  function_name: dbr
+  info_version: 1
+  changed:
+    w0: 0.5
+    dw: 0.15
+  default:
+    w0: 0.5
+    dw: 0.1
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  full:
+    w0: 0.5
+    dw: 0.15
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  label:
+    x: 366.336
+    'y': 46.45
+    text: opt_in_TE_1550_device_JoaquinMatres_(dbr_4620470f)-1-o2
+dbr_2420b9e7:
+  name: dbr_2420b9e7
+  module: ubc.components.dbr
+  function_name: dbr
+  info_version: 1
+  changed:
+    w0: 0.5
+    dw: 0.1
+  default:
+    w0: 0.5
+    dw: 0.1
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  full:
+    w0: 0.5
+    dw: 0.1
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  label:
+    x: 433.867
+    'y': 46.45
+    text: opt_in_TE_1550_device_JoaquinMatres_(dbr_2420b9e7)-1-o2
+dbr_ee42f898:
+  name: dbr_ee42f898
+  module: ubc.components.dbr
+  function_name: dbr
+  info_version: 1
+  changed:
+    w0: 0.5
+    dw: 0.05
+  default:
+    w0: 0.5
+    dw: 0.1
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  full:
+    w0: 0.5
+    dw: 0.05
+    'n': 600
+    l1: 0.07940573770491803
+    l2: 0.07940573770491803
+  label:
+    x: 38.049
+    'y': 204.85
+    text: opt_in_TE_1550_device_JoaquinMatres_(dbr_ee42f898)-1-o2
+ring_single_25124908:
+  name: ring_single_25124908
+  module: gdsfactory.components.ring_single
+  function_name: ring_single
+  info_version: 1
+  changed:
+    radius: 12
+    gap: 0.2
+    length_x: 2.5
+  default:
+    gap: 0.2
+    radius: 10
+    length_x: 4
+    length_y: 0.6
+    coupler_ring:
+      function: coupler_ring
+    straight:
+      function: straight
+    bend:
+      function: bend_euler
+    cross_section:
+      function: cross_section
+  full:
+    gap: 0.2
+    radius: 12
+    length_x: 2.5
+    length_y: 0.6
+    coupler_ring:
+      function: coupler_ring
+    straight:
+      function: straight
+    bend:
+      function: bend_euler
+    cross_section:
+      function: cross_section
+  label:
+    x: 105.56
+    'y': 174.15
+    text: opt_in_TE_1550_device_JoaquinMatres_(ring_single_25124908)-1-o2
+ring_single_5bb67259:
+  name: ring_single_5bb67259
+  module: gdsfactory.components.ring_single
+  function_name: ring_single
+  info_version: 1
+  changed:
+    radius: 12
+    gap: 0.2
+    length_x: 4.5
+  default:
+    gap: 0.2
+    radius: 10
+    length_x: 4
+    length_y: 0.6
+    coupler_ring:
+      function: coupler_ring
+    straight:
+      function: straight
+    bend:
+      function: bend_euler
+    cross_section:
+      function: cross_section
+  full:
+    gap: 0.2
+    radius: 12
+    length_x: 4.5
+    length_y: 0.6
+    coupler_ring:
+      function: coupler_ring
+    straight:
+      function: straight
+    bend:
+      function: bend_euler
+    cross_section:
+      function: cross_section
+  label:
+    x: 190.31
+    'y': 174.15
+    text: opt_in_TE_1550_device_JoaquinMatres_(ring_single_5bb67259)-1-o2
+ring_single_d965a06d:
+  name: ring_single_d965a06d
+  module: gdsfactory.components.ring_single
+  function_name: ring_single
+  info_version: 1
+  changed:
+    radius: 12
+    gap: 0.2
+    length_x: 6.5
+  default:
+    gap: 0.2
+    radius: 10
+    length_x: 4
+    length_y: 0.6
+    coupler_ring:
+      function: coupler_ring
+    straight:
+      function: straight
+    bend:
+      function: bend_euler
+    cross_section:
+      function: cross_section
+  full:
+    gap: 0.2
+    radius: 12
+    length_x: 6.5
+    length_y: 0.6
+    coupler_ring:
+      function: coupler_ring
+    straight:
+      function: straight
+    bend:
+      function: bend_euler
+    cross_section:
+      function: cross_section
+  label:
+    x: 275.06
+    'y': 235.45000000000002
+    text: opt_in_TE_1550_device_JoaquinMatres_(ring_single_d965a06d)-1-o2
+ebeam_crossing4:
+  name: ebeam_crossing4
+  label:
+    x: 439.56
+    'y': 235.45000000000002
+    text: opt_in_TE_1550_device_JoaquinMatres_(ebeam_crossing4)-1-o2
+straight_808ab8f9:
+  length: 10
+  width: 0.5
+  name: straight_808ab8f9
+  module: gdsfactory.components.straight
+  function_name: straight
+  info_version: 1
+  changed:
+    length: 10
+    width: 0.5
+    layer:
+    - 1
+    - 0
+  default:
+    length: 10
+    npoints: 2
+    with_cladding_box: true
+    cross_section:
+      function: cross_section
+  full:
+    length: 10
+    npoints: 2
+    with_cladding_box: true
+    cross_section:
+      function: cross_section
+    width: 0.5
+    layer:
+    - 1
+    - 0
+  label:
+    x: 501.39
+    'y': 15.75
+    text: opt_in_TE_1550_device_JoaquinMatres_(straight_808ab8f9)-1-o2

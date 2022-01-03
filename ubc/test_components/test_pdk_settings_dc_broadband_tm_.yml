@@ -1,28 +1,8 @@
 cells:
-  import_gds_1e1d995c:
-    changed:
-      gdsname: ebeam_bdc_tm1550
-    default:
-      rename_ports: false
-    full:
-      gdsname: ebeam_bdc_tm1550
-      rename_ports: false
-    function_name: import_gds
-    info_version: 1
-    module: ubc.import_gds
-    name: import_gds_1e1d995c
+  ebeam_bdc_tm1550:
+    name: ebeam_bdc_tm1550
 info:
-  changed:
-    gdsname: ebeam_bdc_tm1550
-  default:
-    rename_ports: false
-  full:
-    gdsname: ebeam_bdc_tm1550
-    rename_ports: false
-  function_name: import_gds
-  info_version: 1
-  module: ubc.import_gds
-  name: import_gds_1e1d995c
+  name: ebeam_bdc_tm1550
 ports:
   opt1:
     layer:
