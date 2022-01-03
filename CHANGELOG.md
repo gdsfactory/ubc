@@ -1,6 +1,9 @@
-## Next version
+## 0.0.6
 
 - compatible with gdsfactory 3.9.12
+- add database
+- merge mask metadata
+- replace `-` with `_` in measurement names
 
 ## 0.0.4
 
