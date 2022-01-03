@@ -1,7 +1,7 @@
 from recommonmark.transform import AutoStructify
 
 project = "ubc"
-version = "0.0.5"
+version = "0.0.6"
 copyright = "2019, Joaquin"
 author = "Joaquin"
 

@@ -14,7 +14,7 @@ def read(filename):
 
 setup(
     name="ubc",
-    version="0.0.5",
+    version="0.0.6",
     url="https://github.com/gdsfactory/ubc",
     license="MIT",
     author="Joaquin",
