@@ -1,12 +1,10 @@
-from recommonmark.transform import AutoStructify
-
 project = "ubc"
 version = "0.0.6"
-copyright = "2019, Joaquin"
-author = "Joaquin"
+copyright = "2019, gdsfactory"
+author = "gdsfactory"
 
-master_doc = "index"
-html_theme = "sphinx_rtd_theme"
+master_doc = "furo"
+# html_theme = "sphinx_rtd_theme"
 
 source_suffix = {
     ".rst": "restructuredtext",
@@ -15,42 +13,48 @@ source_suffix = {
 }
 
 html_static_path = ["_static"]
-htmlhelp_basename = project
 
 extensions = [
+    "matplotlib.sphinxext.plot_directive",
+    "myst_parser",
     "nbsphinx",
     "sphinx.ext.autodoc",
+    "sphinx.ext.doctest",
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
-    "matplotlib.sphinxext.plot_directive",
-    "sphinx_markdown_tables",
-    "sphinx.ext.doctest",
-    "recommonmark",
     "sphinx_autodoc_typehints",
+    "sphinx_click",
+    "sphinx_markdown_tables",
 ]
 
-# Order members by source
 autodoc_member_order = "bysource"
 
+templates_path = ["_templates"]
 exclude_patterns = [
     "_build",
     "Thumbs.db",
     ".DS_Store",
     "**.ipynb_checkpoints",
     "build",
-    "extra/**",
-    "report/**",
+    "extra",
+    "notebooks/plugins/tidy3d/01_tidy3d.ipynb",
+    "notebooks/plugins/*",
 ]
 
 napoleon_use_param = True
 
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".txt": "markdown",
+    ".md": "markdown",
+}
 
-def setup(app):
-    app.add_config_value(
-        "recommonmark_config",
-        {"auto_toc_tree_section": "Contents", "enable_eval_rst": True},
-        True,
-    )
-    app.add_transform(AutoStructify)
+language = "en"
+myst_html_meta = {
+    "description lang=en": "metadata description",
+    "description lang=fr": "description des métadonnées",
+    "keywords": "Sphinx, MyST",
+    "property=og:locale": "en_US",
+}
