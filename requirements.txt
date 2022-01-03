@@ -1,14 +1,12 @@
 -e .
-klayout
 omegaconf
 scipy
 lygadgets
-simphony
 gdsfactory[full]==3.9.12
 gdslib==0.3.3
 modes
 matplotlib
-numpy
 opticalmaterialspy
 pytest
 tqdm
+pydbantic==0.0.18
