@@ -1,6 +1,5 @@
 import gdsfactory as gf
 from gdsfactory.component import Component
-from gdsfactory.tech import Library
 from ubc.import_gds import import_gds
 
 from ubc.components.add_fiber_array import add_fiber_array
@@ -43,30 +42,27 @@ def y_splitter() -> Component:
 spiral = gf.partial(gf.components.spiral_external_io)
 
 
-LIBRARY = Library(name="ubc")
-LIBRARY.register(
-    [
-        add_fiber_array,
-        crossing,
-        dbr,
-        dbr_cavity,
-        dc_adiabatic,
-        dc_broadband_te,
-        dc_broadband_tm,
-        gc_te1310,
-        gc_te1550,
-        gc_te1550_broadband,
-        gc_tm1550,
-        ring_with_crossing,
-        spiral,
-        straight,
-        y_adiabatic,
-        y_splitter,
-    ]
+factory = dict(
+    add_fiber_array=add_fiber_array,
+    crossing=crossing,
+    dbr=dbr,
+    dbr_cavity=dbr_cavity,
+    dc_adiabatic=dc_adiabatic,
+    dc_broadband_te=dc_broadband_te,
+    dc_broadband_tm=dc_broadband_tm,
+    gc_te1310=gc_te1310,
+    gc_te1550=gc_te1550,
+    gc_te1550_broadband=gc_te1550_broadband,
+    gc_tm1550=gc_tm1550,
+    ring_with_crossing=ring_with_crossing,
+    spiral=spiral,
+    straight=straight,
+    y_adiabatic=y_adiabatic,
+    y_splitter=y_splitter,
 )
 
 
-__all__ = list(LIBRARY.factory.keys())
+__all__ = list(factory.keys())
 
 
 if __name__ == "__main__":

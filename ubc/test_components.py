@@ -2,16 +2,15 @@ import pytest
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
-from ubc.components import LIBRARY
+from ubc.components import factory
 
 
-component_factory = LIBRARY.factory
-component_names = component_factory.keys()
+component_names = factory.keys()
 
 
 @pytest.fixture(params=component_names, scope="function")
 def component(request) -> Component:
-    return component_factory[request.param]()
+    return factory[request.param]()
 
 
 def test_pdk_gds(component: Component) -> None:
