@@ -1,15 +1,13 @@
 import asyncio
 from omegaconf import OmegaConf
-from pydbantic import Database
 
 from ubc import db
 from ubc.config import PATH
 
 
 async def db_write():
-    await Database.create(
-        "sqlite:///test.db", tables=[db.Measurement, db.Simulation, db.Instance]
-    )
+    await db.setup_database()
+
     for mask_number in range(1, 4):
         mask = PATH.mask / f"EBeam_JoaquinMatres_{mask_number}.tp.yml"
         components = OmegaConf.load(mask)
@@ -21,12 +19,12 @@ async def db_write():
         wafer = db.Wafer(name="wafer1", lot=lot)
         die = db.Die(name="die1", wafer=wafer)
 
-        await reticle.insert()
-        await foundry.insert()
-        await foundry_process.insert()
-        await lot.insert()
-        await wafer.insert()
-        await die.insert()
+        await reticle.save()
+        await foundry.save()
+        await foundry_process.save()
+        await lot.save()
+        await wafer.save()
+        await die.save()
 
         for component in components.values():
             settings = str(component.full) if hasattr(component, "full") else ""
@@ -43,7 +41,7 @@ async def db_write():
                 x=component.label.x,
                 y=component.label.y,
             )
-            await instance.insert()
+            await instance.save()
 
 
 if __name__ == "__main__":

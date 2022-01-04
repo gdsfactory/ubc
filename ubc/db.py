@@ -97,15 +97,24 @@ class Simulation(DataBaseModel):
     id: str = PrimaryKey(default=uuid.uuid4())
 
 
-async def main():
+async def setup_database():
     await Database.create(
-        "sqlite:///test.db", tables=[Measurement, Simulation, Instance]
+        "sqlite:///test.db",
+        tables=[
+            Reticle,
+            DOE,
+            Foundry,
+            FoundryProcess,
+            Lot,
+            Wafer,
+            Die,
+            Component,
+            Instance,
+            Measurement,
+            Simulation,
+        ],
     )
 
 
-def get_database():
-    return Database
-
-
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(setup_database())
