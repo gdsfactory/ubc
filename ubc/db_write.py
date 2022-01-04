@@ -1,14 +1,15 @@
 import asyncio
 from omegaconf import OmegaConf
 
-from ubc import db
+from ubc import db_models as db
+from ubc import db as database
 from ubc.config import PATH
 
 
 async def db_write():
-    await db.setup_database()
+    await database.setup_database()
 
-    for mask_number in range(1, 4):
+    for mask_number in range(1, 1):
         mask = PATH.mask / f"EBeam_JoaquinMatres_{mask_number}.tp.yml"
         components = OmegaConf.load(mask)
 
@@ -19,13 +20,6 @@ async def db_write():
         wafer = db.Wafer(name="wafer1", lot=lot)
         die = db.Die(name="die1", wafer=wafer)
 
-        await reticle.save()
-        await foundry.save()
-        await foundry_process.save()
-        await lot.save()
-        await wafer.save()
-        await die.save()
-
         for component in components.values():
             settings = str(component.full) if hasattr(component, "full") else ""
             component_model = db.Component(
@@ -33,8 +27,6 @@ async def db_write():
                 settings=settings,
                 die=die,
             )
-            await component_model.save()
-
             instance = db.Instance(
                 die=die,
                 component=component_model,
@@ -42,6 +34,13 @@ async def db_write():
                 y=component.label.y,
             )
             await instance.save()
+
+            # measurement_x = [0, 1, 2]
+            # measurement_y = [0, 2, 4]
+            # measurement = db.Measurement()
+
+            all_instances = await db.Instance.all()
+            print(all_instances)
 
 
 if __name__ == "__main__":
