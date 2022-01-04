@@ -376,9 +376,9 @@ cells:
     function_name: straight
     info_version: 1
     changed:
-      length: 0.1
       cross_section:
         function: cross_section
+      length: 0.1
     default:
       length: 10
       npoints: 2
@@ -445,9 +445,9 @@ cells:
     function_name: straight
     info_version: 1
     changed:
-      length: 0.01
       cross_section:
         function: cross_section
+      length: 0.01
     default:
       length: 10
       npoints: 2
@@ -1842,6 +1842,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
     full:
       gap: 0.2
       radius: 12
@@ -1854,6 +1855,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
   straight_417ceb80:
     length: 0.6
     width: 0.5
@@ -2167,6 +2169,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
     full:
       gap: 0.2
       radius: 12
@@ -2179,6 +2182,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
   straight_58603fbb:
     length: 4.5
     width: 0.5
@@ -2437,6 +2441,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
     full:
       gap: 0.2
       radius: 12
@@ -2449,6 +2454,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
   straight_fe07a399:
     length: 6.5
     width: 0.5
@@ -2688,6 +2694,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
     full:
       gap: 0.2
       radius: 5
@@ -2699,6 +2706,7 @@ cells:
         function: coupler_straight
       cross_section:
         function: cross_section
+      bend_cross_section: null
   straight_69588c85:
     length: 9.6
     width: 0.5
@@ -3250,6 +3258,7 @@ cells:
       - 1
       - 0
       port_type: electrical
+      port_inclusion: 0
     full:
       size:
       - 605
@@ -3258,4 +3267,5 @@ cells:
       - 99
       - 0
       port_type: electrical
-version: 1
+      port_inclusion: 0
+version: 0.0.1
