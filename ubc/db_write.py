@@ -1,13 +1,12 @@
 import asyncio
 from omegaconf import OmegaConf
 
-from ubc import db_models as db
-from ubc import db as database
+from ubc import db
 from ubc.config import PATH
 
 
 async def db_write():
-    await database.setup_database()
+    await db.setup_database()
 
     for mask_number in range(1, 1):
         mask = PATH.mask / f"EBeam_JoaquinMatres_{mask_number}.tp.yml"
@@ -27,6 +26,8 @@ async def db_write():
                 settings=settings,
                 die=die,
             )
+            await component_model.save()
+
             instance = db.Instance(
                 die=die,
                 component=component_model,

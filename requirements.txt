@@ -10,3 +10,4 @@ opticalmaterialspy
 pytest
 tqdm
 pydbantic==0.0.18
+aiosqlite
