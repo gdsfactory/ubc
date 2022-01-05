@@ -6,7 +6,6 @@ die:
 """
 
 from typing import Optional, List
-import uuid
 
 import asyncio
 from pydbantic import Database
@@ -20,74 +19,72 @@ class Reticle(DataBaseModel):
     We name them by Fab together with an incremental name (UBC1, UBC2 ...)
     """
 
-    name: str
-    id: str = PrimaryKey(default=uuid.uuid4())
+    name: str = PrimaryKey()
 
 
 class DOE(DataBaseModel):
     """Design of experiment"""
 
-    name: str
-    id: str = PrimaryKey(default=uuid.uuid4())
-
-
-# Physical
-class Foundry(DataBaseModel):
-    name: str
-    id: str = PrimaryKey(default=uuid.uuid4())
-
-
-class FoundryProcess(DataBaseModel):
-    name: str
-    foundry: Foundry
-    id: str = PrimaryKey(default=uuid.uuid4())
-
-
-class Lot(DataBaseModel):
-    """A lot is a group of wafers that go through the same foundry process"""
-
-    name: str
-    foundry_process: FoundryProcess
-    reticle: Reticle
-    id: str = PrimaryKey(default=uuid.uuid4())
-
-
-class Wafer(DataBaseModel):
-    name: str
-    lot: Lot
-    id: str = PrimaryKey(default=uuid.uuid4())
-
-
-class Die(DataBaseModel):
-    name: str
-    wafer: Wafer
-    id: str = PrimaryKey(default=uuid.uuid4())
+    name: str = PrimaryKey()
+    reticle: Optional[Reticle]
 
 
 class Component(DataBaseModel):
     """Component"""
 
-    name: str
-    die: Die
+    name: str = PrimaryKey()
     settings: str
-    # settings: Dict[str, Union[float, int, str]]
-    id: str = PrimaryKey(default=uuid.uuid4())
 
 
 class Instance(DataBaseModel):
-    die: Die
+    """Instances are references to Components"""
+
     component: Component
-    x: float
-    y: float
+    x_nm: int
+    y_nm: int
     doe: Optional[DOE]
-    id: str = PrimaryKey(default=uuid.uuid4())
+
+
+# Physical
+class Foundry(DataBaseModel):
+    name: str = PrimaryKey()
+
+
+class FoundryProcess(DataBaseModel):
+    name: str = PrimaryKey()
+    foundry: Foundry
+
+
+class Lot(DataBaseModel):
+    """A lot is a group of wafers that go through the same foundry process"""
+
+    name: str = PrimaryKey()
+    foundry_process: FoundryProcess
+    reticle: Reticle
+
+
+class Wafer(DataBaseModel):
+    name: str = PrimaryKey()
+    lot: Lot
+
+
+class Die(DataBaseModel):
+    name: str = PrimaryKey()
+    lot: Lot
+    wafer: Wafer
+
+
+class Device(DataBaseModel):
+    """A Device is a physical realization of an instance"""
+
+    die: Die
+    instance: Instance
 
 
 # Data
 class Measurement(DataBaseModel):
-    name: str
-    instance: str
-    id: str = PrimaryKey(default=uuid.uuid4())
+    name: str = PrimaryKey()
+    device: Device
     x: List[float]
     y: List[float]
     port1: str
@@ -95,9 +92,8 @@ class Measurement(DataBaseModel):
 
 
 class Simulation(DataBaseModel):
-    name: str
-    component: str
-    id: str = PrimaryKey(default=uuid.uuid4())
+    name: str = PrimaryKey()
+    component: Component
     x: List[float]
     y: List[float]
     port1: str
@@ -106,7 +102,20 @@ class Simulation(DataBaseModel):
 
 async def setup_database():
     await Database.create(
-        "sqlite:///test.db", tables=[Measurement, Simulation, Instance]
+        "sqlite:///test.db",
+        tables=[
+            Reticle,
+            DOE,
+            Component,
+            Instance,
+            Foundry,
+            FoundryProcess,
+            Lot,
+            Die,
+            Device,
+            Measurement,
+            Simulation,
+        ],
     )
 
 
