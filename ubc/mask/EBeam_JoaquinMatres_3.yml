@@ -319,9 +319,9 @@ cells:
     function_name: straight
     info_version: 1
     changed:
+      length: 0.01
       cross_section:
         function: cross_section
-      length: 0.01
     default:
       length: 10
       npoints: 2

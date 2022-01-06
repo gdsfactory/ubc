@@ -344,4 +344,4 @@ info:
   module: ubc.components.add_fiber_array
   name: add_fiber_array_d41d8cd9
 ports: {}
-version: 1
+version: 0.0.1
