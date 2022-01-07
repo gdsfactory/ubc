@@ -1,8 +1,18 @@
+"""Technology definitions
+
+- LayerStack
+- cross_sections (xs_)
+- constants (WIDTH, CLADDING_OFFSET ...)
+- adapted gdsfactory.components to this technology
+"""
+
 import pydantic
 
 import gdsfactory as gf
 from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
+
+from ubc.config import PATH
 
 nm = 1e-3
 
@@ -39,6 +49,12 @@ def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
 
 
 LAYER_STACK = get_layer_stack_ubc()
+layer_set = gf.layers.load_lyp(PATH.lyp)
+to_3d = gf.partial(
+    gf.export.to_3d,
+    layer_set=layer_set,
+    layer_stack=LAYER_STACK,
+)
 
 
 strip = gf.partial(gf.cross_section.strip, layers_cladding=(LAYER.DEVREC,))
