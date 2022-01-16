@@ -11,6 +11,7 @@ import pydantic
 import gdsfactory as gf
 from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
+import gdsfactory.simulation as sim
 
 from ubc.config import PATH
 
@@ -54,6 +55,24 @@ to_3d = gf.partial(
     gf.export.to_3d,
     layer_set=layer_set,
     layer_stack=LAYER_STACK,
+)
+
+write_sparameters_lumerical = gf.partial(
+    sim.write_sparameters_lumerical,
+    layer_stack=LAYER_STACK,
+    dirpath=PATH.sparameters,
+)
+
+plot_sparameters = gf.partial(
+    sim.plot.plot_sparameters,
+    dirpath=PATH.sparameters,
+    write_sparameters_function=write_sparameters_lumerical,
+)
+
+read_sparameters_pandas = gf.partial(
+    sim.read_sparameters_pandas,
+    layer_stack=LAYER_STACK,
+    dirpath=PATH.sparameters,
 )
 
 

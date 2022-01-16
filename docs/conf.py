@@ -3,7 +3,7 @@ version = "0.0.6"
 copyright = "2019, gdsfactory"
 author = "gdsfactory"
 
-master_doc = "furo"
+html_theme = "furo"
 # html_theme = "sphinx_rtd_theme"
 
 source_suffix = {
@@ -41,6 +41,7 @@ exclude_patterns = [
     "extra",
     "notebooks/plugins/tidy3d/01_tidy3d.ipynb",
     "notebooks/plugins/*",
+    "report",
 ]
 
 napoleon_use_param = True

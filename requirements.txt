@@ -1,6 +1,6 @@
 -e .
 lygadgets
-gdsfactory[full]==3.9.18
+gdsfactory[full]==3.10.5
 gdslib==0.3.3
 modes
 matplotlib

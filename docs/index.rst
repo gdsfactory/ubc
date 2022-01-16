@@ -7,4 +7,5 @@ Ubc
 
     README
     ubc
+    components
     notebooks

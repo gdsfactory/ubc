@@ -1,6 +1,6 @@
 # UBC PDK
 
-```{{eval-rst}}
+```{eval-rst}
 .. automodule:: ubc
     :members:
 ```
