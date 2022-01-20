@@ -1,5 +1,5 @@
 cells:
-  dbr_d41d8cd9:
+  dbr:
     changed: {}
     default:
       dw: 0.1
@@ -16,7 +16,7 @@ cells:
     function_name: dbr
     info_version: 1
     module: ubc.components.dbr
-    name: dbr_d41d8cd9
+    name: dbr
 info:
   changed: {}
   default:
@@ -34,7 +34,7 @@ info:
   function_name: dbr
   info_version: 1
   module: ubc.components.dbr
-  name: dbr_d41d8cd9
+  name: dbr
 ports:
   o1:
     layer:

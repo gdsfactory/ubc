@@ -1,7 +1,7 @@
 cells:
   ebeam_gc_te1310:
     name: ebeam_gc_te1310
-  ebeam_gc_te1310_gc_te13_3fc4cfae:
+  ebeam_gc_te1310_gc_te1310:
     changed: {}
     child:
       name: ebeam_gc_te1310
@@ -10,7 +10,7 @@ cells:
     function_name: gc_te1310
     info_version: 1
     module: ubc.components.grating_couplers
-    name: ebeam_gc_te1310_gc_te13_3fc4cfae
+    name: ebeam_gc_te1310_gc_te1310
     polarization: te
     wavelength: 1.31
 info:
@@ -22,7 +22,7 @@ info:
   function_name: gc_te1310
   info_version: 1
   module: ubc.components.grating_couplers
-  name: ebeam_gc_te1310_gc_te13_3fc4cfae
+  name: ebeam_gc_te1310_gc_te1310
   polarization: te
   wavelength: 1.31
 ports:

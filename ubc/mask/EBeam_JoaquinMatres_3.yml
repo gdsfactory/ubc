@@ -357,10 +357,10 @@ cells:
       with_cladding_box: true
       cross_section:
         function: cross_section
-  ebeam_gc_te1550_gc_te15_1f57ae3d:
+  ebeam_gc_te1550_gc_te1550:
     child:
       name: ebeam_gc_te1550
-    name: ebeam_gc_te1550_gc_te15_1f57ae3d
+    name: ebeam_gc_te1550_gc_te1550
     module: ubc.components.grating_couplers
     function_name: gc_te1550
     info_version: 1

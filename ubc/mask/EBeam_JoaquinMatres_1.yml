@@ -250,10 +250,10 @@ cells:
       with_cladding_box: true
       cross_section:
         function: cross_section
-  ebeam_gc_te1550_gc_te15_1f57ae3d:
+  ebeam_gc_te1550_gc_te1550:
     child:
       name: ebeam_gc_te1550
-    name: ebeam_gc_te1550_gc_te15_1f57ae3d
+    name: ebeam_gc_te1550_gc_te1550
     module: ubc.components.grating_couplers
     function_name: gc_te1550
     info_version: 1
@@ -315,8 +315,8 @@ cells:
       nbends: 2
       cross_section:
         function: cross_section
-  mmi1x2_d41d8cd9:
-    name: mmi1x2_d41d8cd9
+  mmi1x2:
+    name: mmi1x2
     module: gdsfactory.components.mmi1x2
     function_name: mmi1x2
     info_version: 1
@@ -2962,13 +2962,13 @@ cells:
       bend:
         function: bend_euler
       with_component: false
-  add_fiber_array_13fbad33:
-    name: add_fiber_array_13fbad33
+  add_fiber_array_162b245c:
+    name: add_fiber_array_162b245c
     module: ubc.components.add_fiber_array
     function_name: add_fiber_array
     info_version: 1
     changed:
-      component: straight_808ab8f9_strai_88fdfcca
+      component: straight_808ab8f9_straight
     default:
       component:
         function: straight
@@ -2982,7 +2982,7 @@ cells:
       grating_coupler:
         function: gc_te1550
     full:
-      component: straight_808ab8f9_strai_88fdfcca
+      component: straight_808ab8f9_straight
       component_name: null
       gc_port_name: o1
       get_input_labels_function:
@@ -2992,7 +2992,7 @@ cells:
       fanout_length: 0
       grating_coupler:
         function: gc_te1550
-  straight_808ab8f9_add_f_00cceb41:
+  straight_808ab8f9_add_f_965bfa36:
     child:
       child:
         length: 10
@@ -3023,7 +3023,7 @@ cells:
           layer:
           - 1
           - 0
-      name: straight_808ab8f9_strai_88fdfcca
+      name: straight_808ab8f9_straight
       module: ubc.components.straight
       function_name: straight
       info_version: 1
@@ -3042,12 +3042,12 @@ cells:
         - 1
         - 0
         with_pins: true
-    name: straight_808ab8f9_add_f_00cceb41
+    name: straight_808ab8f9_add_f_965bfa36
     module: gdsfactory.routing.add_fiber_array
     function_name: add_fiber_array
     info_version: 1
     changed:
-      component: straight_808ab8f9_strai_88fdfcca
+      component: straight_808ab8f9_straight
       component_name: null
       grating_coupler:
         function: gc_te1550
@@ -3102,7 +3102,7 @@ cells:
       layer_label:
       - 10
       - 0
-      component: straight_808ab8f9_strai_88fdfcca
+      component: straight_808ab8f9_straight
       with_loopback: false
       optical_routing_type: 0
       fanout_length: 0
@@ -3129,7 +3129,7 @@ cells:
       with_cladding_box: true
       cross_section:
         function: cross_section
-  straight_808ab8f9_strai_88fdfcca:
+  straight_808ab8f9_straight:
     child:
       length: 10
       width: 0.5
@@ -3159,7 +3159,7 @@ cells:
         layer:
         - 1
         - 0
-    name: straight_808ab8f9_strai_88fdfcca
+    name: straight_808ab8f9_straight
     module: ubc.components.straight
     function_name: straight
     info_version: 1
