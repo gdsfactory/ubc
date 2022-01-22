@@ -6,7 +6,18 @@ update:
 
 link:
 	lygadgets_link lygadgets
-	lygadgets_link tech/ubc
+	lygadgets_link gdsfactory
+	lygadgets_link toolz
+	lygadgets_link phidl
+	lygadgets_link gdspy
+	lygadgets_link numpy
+	lygadgets_link matplotlib
+	lygadgets_link cycler
+	lygadgets_link pyparsing
+	lygadgets_link six
+	lygadgets_link dateutil
+	lygadgets_link kiwisolver
+	lygadgets_link scipy  # [because of splines in the nanowires]
 
 test:
 	pytest -s

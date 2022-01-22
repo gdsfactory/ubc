@@ -1,7 +1,10 @@
+## 0.0.7
+
+- compatible with gdsfactory 3.11.0
+
 ## 0.0.6
 
 - compatible with gdsfactory 3.9.12
-- add database
 - merge mask metadata
 - replace `-` with `_` in measurement names
 

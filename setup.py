@@ -17,6 +17,11 @@ def get_install_requires():
         return [line.strip() for line in f.readlines() if not line.startswith("-")]
 
 
+def get_install_requires_dev():
+    with open("requirements_dev.txt", "r") as f:
+        return [line.strip() for line in f.readlines() if not line.startswith("-")]
+
+
 setup(
     name="ubc",
     version="0.0.6",
@@ -28,11 +33,13 @@ setup(
     description="UBC Siepic Ebeam PDK from edx course",
     long_description=read("README.md"),
     packages=find_packages(exclude=("tests",)),
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
     ],
+    extras_require={
+        "full": list(set(get_install_requires() + get_install_requires_dev())),
+        "basic": get_install_requires(),
+    },
 )

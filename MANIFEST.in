@@ -1,2 +1,2 @@
 include requirements.txt
-include ubc/config.yml
+include ubc/gds/*.gds
