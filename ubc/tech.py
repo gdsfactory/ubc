@@ -12,6 +12,7 @@ import gdsfactory as gf
 from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
 import gdsfactory.simulation as sim
+import gdsfactory.simulation.lumerical as lumerical
 
 from ubc.config import PATH
 
@@ -58,19 +59,13 @@ to_3d = gf.partial(
 )
 
 write_sparameters_lumerical = gf.partial(
-    sim.write_sparameters_lumerical,
+    lumerical.write_sparameters_lumerical,
     layer_stack=LAYER_STACK,
     dirpath=PATH.sparameters,
 )
 
-plot_sparameters = gf.partial(
-    sim.plot.plot_sparameters,
-    dirpath=PATH.sparameters,
-    write_sparameters_function=write_sparameters_lumerical,
-)
-
-read_sparameters_pandas = gf.partial(
-    sim.read_sparameters_pandas,
+get_sparameters_data_lumerical = gf.partial(
+    sim.get_sparameters_data_lumerical,
     layer_stack=LAYER_STACK,
     dirpath=PATH.sparameters,
 )
