@@ -1,4 +1,4 @@
-Ubc
+UBC
 ===================================
 
 
@@ -6,6 +6,5 @@ Ubc
     :maxdepth: 2
 
     README
-    ubc
     components
     notebooks

@@ -29,7 +29,6 @@ setup(
     license="MIT",
     author="gdsfactory",
     install_requires=get_install_requires(),
-    author_email="https://github.com/gdsfactory/ubc",
     description="UBC Siepic Ebeam PDK from edx course",
     long_description=read("README.md"),
     packages=find_packages(exclude=("tests",)),
