@@ -4,11 +4,11 @@ UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photon
 
 ## Installation for users
 
-You can install directly from pip `pip install ubc`
+You can install directly from pip `pip install ubcpdk`
 
-pip also lets you install a specific version `pip install ubc==0.0.7`
+pip also lets you install a specific version `pip install ubcpdk==0.0.7`
 
-and update to the latest version with `pip install ubc --upgrade`
+and update to the latest version with `pip install ubcpdk --upgrade`
 
 ## Installation for developers
 
