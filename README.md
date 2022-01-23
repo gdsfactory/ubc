@@ -1,4 +1,4 @@
-# UBC PDK 0.0.6
+# UBC PDK 0.0.7
 
 UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 

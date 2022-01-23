@@ -1,5 +1,5 @@
 project = "ubc"
-version = "0.0.6"
+version = "0.0.7"
 copyright = "2019, gdsfactory"
 author = "gdsfactory"
 
