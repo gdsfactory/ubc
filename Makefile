@@ -20,17 +20,17 @@ link:
 	lygadgets_link ubc/klayout/tech
 
 test:
-	pytest -s
+	poetry run pytest -s
 
 test-force:
 	rm -r gds_ref
-	pytest --force-regen
+	poetry run pytest --force-regen
 
 diff:
 	pf merge-cells gds_diff
 
 cov:
-	pytest --cov=ubc
+	poetry run pytest --cov=ubc
 
 mypy:
 	mypy . --ignore-missing-imports
