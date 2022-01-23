@@ -2,17 +2,26 @@
 
 UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 
-## Installation for users
+## Installation
 
-You can install directly from pip `pip install ubcpdk`
+### Installation for users
 
-pip also lets you install a specific version `pip install ubcpdk==0.0.7`
-
+You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.7`
 and update to the latest version with `pip install ubcpdk --upgrade`
 
-## Installation for developers
+If you are on Windows, I recommend you install gdsfactory with Anaconda3 or Miniconda3.
 
-Run `make install` in a terminal. If you are on Windows, open an anaconda prompt terminal and type:
+I also reccommend you install the gdsfactory link to klayout `gt tool install`
+
+```
+conda install -c conda-forge gdspy
+pip install ubcpdk --upgrade
+gf tool install
+```
+
+### Installation for developers
+
+For developers you need to `git clone` the github repository, fork it, git add, git commit, git push and merge request your changes.
 
 ```
 git clone https://github.com/gdsfactory/ubc.git
@@ -22,6 +31,7 @@ pip install -r requirements_dev.txt --upgrade
 pip install pre-commit
 pre-commit install
 python install_tech.py
+gf tool install
 ```
 
 ## Acks
