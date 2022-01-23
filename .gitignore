@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 run_layouts/
 ref_layouts/
+poetry.lock
 
 # C extensions
 *.so
