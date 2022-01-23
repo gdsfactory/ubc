@@ -14,10 +14,10 @@ link:
 	lygadgets_link matplotlib
 	lygadgets_link cycler
 	lygadgets_link pyparsing
-	lygadgets_link six
 	lygadgets_link dateutil
 	lygadgets_link kiwisolver
 	lygadgets_link scipy  # [because of splines in the nanowires]
+	lygadgets_link ubc/klayout/tech
 
 test:
 	pytest -s

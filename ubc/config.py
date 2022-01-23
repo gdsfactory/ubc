@@ -57,7 +57,7 @@ class Path:
     ring_tm_r30_g200 = ring / "LukasC_RingDoubleTMR30g200_1491.mat"
     ring_tm_r30_g250 = ring / "LukasC_RingDoubleTMR30g250_1490.mat"
     dbr = data / "bragg"
-    lyp = repo / "klayout" / "tech" / "layers.lyp"
+    lyp = module / "klayout" / "tech" / "layers.lyp"
 
 
 PATH = Path()

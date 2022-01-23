@@ -1,3 +1,7 @@
+## 0.0.8
+
+- fix installation by addding lyp files to MANIFEST
+
 ## 0.0.7
 
 - compatible with gdsfactory 3.11.0

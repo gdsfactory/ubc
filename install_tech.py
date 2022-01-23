@@ -11,7 +11,7 @@ else:
 
 cwd = pathlib.Path(__file__).resolve().parent
 home = pathlib.Path.home()
-src = cwd / "klayout" / "tech"
+src = cwd / "ubc" / "klayout" / "tech"
 dest_folder = home / klayout_folder / "tech"
 dest_folder.mkdir(exist_ok=True, parents=True)
 dest = dest_folder / "ubc"
