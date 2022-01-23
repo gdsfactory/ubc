@@ -24,7 +24,7 @@ def get_install_requires_dev():
 
 setup(
     name="ubcpdk",
-    version="0.0.7",
+    version="0.0.8",
     url="https://github.com/gdsfactory/ubc",
     license="MIT",
     author="gdsfactory",
