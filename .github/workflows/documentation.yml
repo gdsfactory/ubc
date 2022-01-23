@@ -26,6 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         sudo apt install pandoc
         make install
+        pip install sphinx
     - name: Test documentation
       run: |
         cd docs
