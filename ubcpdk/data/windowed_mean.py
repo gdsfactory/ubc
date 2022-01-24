@@ -20,7 +20,7 @@ def windowed_mean(data: np.array, n: int = 60) -> np.array:
 
 
 if __name__ == "__main__":
-    from ubcpdk.da.read_mat import read_mat
+    from ubcpdk.data.read_mat import read_mat
     from ubcpdk.config import PATH
     import matplotlib.pyplot as plt
 

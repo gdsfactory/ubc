@@ -3,8 +3,6 @@
 import gdsfactory as gf
 from ubcpdk.config import CONFIG, PATH
 from ubcpdk.tech import LAYER, strip
-
-from ubcpdk import da
 from ubcpdk import components
 from ubcpdk import tech
 

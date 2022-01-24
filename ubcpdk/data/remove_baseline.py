@@ -1,5 +1,5 @@
 import numpy as np
-from ubcpdk.da.read_mat import read_mat
+from ubcpdk.data.read_mat import read_mat
 
 
 def remove_baseline(wavelength: np.ndarray, power: np.ndarray, deg: int = 4):
