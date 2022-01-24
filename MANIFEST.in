@@ -1,7 +1,11 @@
+recursive-include ubc/klayout/*
+global-include *.gds
+global-include *.lyp
+global-include *.lym
+global-include *.lyt
 include requirements.txt
 include requirements_dev.txt
 include ubc/gds/*.gds
 include ubc/klayout/layers.lyp
 include ubc/klayout/tech.lyt
 include ubc/klayout/pymacros/klayout_Library.lym
-recursive-include ubc/klayout/*
