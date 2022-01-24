@@ -3,7 +3,6 @@
 - LayerStack
 - cross_sections (xs_)
 - constants (WIDTH, CLADDING_OFFSET ...)
-- adapted gdsfactory.components to this technology
 """
 
 import pydantic

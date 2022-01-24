@@ -34,7 +34,7 @@ class Path:
     repo = repo_path
     data = repo_path / "data"
     sparameters = module / "sparameters"
-    mask = module_path / "mask"
+    mask = module_path / "samples" / "extra" / "ubc1"
 
     mzi = data / "mzi"
     mzi1 = mzi / "ZiheGao_MZI1_272_Scan1.mat"
