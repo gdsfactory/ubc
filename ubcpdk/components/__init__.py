@@ -66,11 +66,12 @@ __all__ = list(factory.keys())
 
 
 if __name__ == "__main__":
+    c = dc_adiabatic()
     # c = straight_no_pins()
     # c = add_fiber_array(component=c)
     # c = gc_tm1550()
     # print(c.get_ports_array())
     # print(c.ports.keys())
-    c = straight()
+    # c = straight()
     # c = add_fiber_array(component=c)
     c.show()
