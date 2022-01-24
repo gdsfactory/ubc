@@ -5,9 +5,7 @@ from numpy import ndarray
 from gdsfactory.component import Component
 from gdsfactory.port import auto_rename_ports
 from ubcpdk.tech import LAYER
-
-cwd = pathlib.Path(__file__).parent.absolute()
-gds = cwd / "gds"
+from ubcpdk.config import PATH
 
 
 layer = LAYER.WG
@@ -37,9 +35,17 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
 
 
 @gf.functions.cache
-def import_gds(gdsname: str, rename_ports: bool = False) -> Component:
-    """import gds from SIEPIC PDK"""
-    c = gf.import_gds(gds / f"{gdsname}.gds")
+def import_gds(
+    gdsname: str, rename_ports: bool = False, gdsdir: pathlib.Path = PATH.gds
+) -> Component:
+    """import gds from SIEPIC PDK
+
+    Args:
+        gdsname: name of the cell to import.
+        rename_ports: rename ports.
+        gdsdir: directory with GDS files.
+    """
+    c = gf.import_gds(gdsdir / f"{gdsname}.gds")
     c.function_name = gdsname
 
     n = 0

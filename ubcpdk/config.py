@@ -33,6 +33,7 @@ class Path:
     module = module_path
     repo = repo_path
     data = repo_path / "data"
+    gds = module_path / "gds"
     sparameters = module / "sparameters"
     mask = module_path / "samples" / "extra" / "ubc1"
 

@@ -24,12 +24,9 @@ This is a gdsfactory-based pdk, which provides a fully scripted python based flo
 
 ### Installation for users
 
-You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==1.0.0`
-and update to the latest version with `pip install ubcpdk --upgrade`
 
-If you are on Windows, I recommend you install gdspy with Anaconda3, Miniconda3 or [mamba](https://github.com/conda-forge/miniforge#mambaforge) (faster conda alternative) and `pip` for gdsfactory.
+If you are on Windows, I recommend you install gdspy with Anaconda3, Miniconda3 or [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) (faster conda alternative) and `pip` for gdsfactory.
 
-I also recommend you install the gdsfactory link to klayout `gf tool install`
 
 ```
 mamba install gdspy
@@ -47,6 +44,11 @@ gf tool install
 ```
 
 Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdspy` with `conda install -c conda-forge gdspy`
+
+If you use linux or MacOs you can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==1.0.0`
+and update to the latest version with `pip install ubcpdk --upgrade`
+
+I also recommend you install the gdsfactory link to klayout `gf tool install`
 
 
 
