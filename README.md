@@ -1,4 +1,4 @@
-# UBC PDK 0.0.10
+# UBC PDK 0.0.11
 
 UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 
@@ -6,7 +6,7 @@ UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photon
 
 ### Installation for users
 
-You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.10`
+You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.11`
 and update to the latest version with `pip install ubcpdk --upgrade`
 
 If you are on Windows, I recommend you install gdsfactory with Anaconda3 or Miniconda3.
