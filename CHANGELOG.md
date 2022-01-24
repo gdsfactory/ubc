@@ -1,6 +1,7 @@
 ## 1.0.0
 
 - rename package from ubc to ubcpdk to match pypi name
+- move ubcsp into ubcpdk/simulations/circuits
 
 ## 0.0.12
 
