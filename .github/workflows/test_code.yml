@@ -28,6 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install .[full]
           pip install flake8
+          python setup.py install
       - name: Lint with flake8
         run: |
           flake8 .
