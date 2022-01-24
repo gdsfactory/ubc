@@ -1,0 +1,347 @@
+cells:
+  add_fiber_array:
+    changed: {}
+    default:
+      component:
+        function: straight
+      component_name: null
+      fanout_length: 0
+      gc_port_name: o1
+      get_input_labels_function:
+        function: get_input_labels
+      grating_coupler:
+        function: gc_te1550
+      optical_routing_type: 0
+      with_loopback: false
+    full:
+      component:
+        function: straight
+      component_name: null
+      fanout_length: 0
+      gc_port_name: o1
+      get_input_labels_function:
+        function: get_input_labels
+      grating_coupler:
+        function: gc_te1550
+      optical_routing_type: 0
+      with_loopback: false
+    function_name: add_fiber_array
+    info_version: 1
+    module: ubcpdk.components.add_fiber_array
+    name: add_fiber_array
+  bend_euler_1da190e0:
+    changed:
+      cross_section:
+        function: cross_section
+    default:
+      angle: 90
+      cross_section:
+        function: cross_section
+      direction: ccw
+      npoints: 720
+      p: 0.5
+      with_arc_floorplan: true
+      with_cladding_box: true
+    dy: 10
+    full:
+      angle: 90
+      cross_section:
+        function: cross_section
+      direction: ccw
+      npoints: 720
+      p: 0.5
+      with_arc_floorplan: true
+      with_cladding_box: true
+    function_name: bend_euler
+    info_version: 1
+    length: 16.637
+    module: gdsfactory.components.bend_euler
+    name: bend_euler_1da190e0
+    radius: 10
+    radius_min: 7.061
+  ebeam_gc_te1550:
+    name: ebeam_gc_te1550
+  ebeam_gc_te1550_gc_te1550:
+    changed: {}
+    child:
+      name: ebeam_gc_te1550
+    default: {}
+    full: {}
+    function_name: gc_te1550
+    info_version: 1
+    module: ubcpdk.components.grating_couplers
+    name: ebeam_gc_te1550_gc_te1550
+    polarization: te
+    wavelength: 1.55
+  straight_14538343:
+    changed:
+      cross_section:
+        function: cross_section
+      length: 6.2
+    default:
+      cross_section:
+        function: cross_section
+      length: 10
+      npoints: 2
+      with_cladding_box: true
+    full:
+      cross_section:
+        function: cross_section
+      length: 6.2
+      npoints: 2
+      with_cladding_box: true
+    function_name: straight
+    info_version: 1
+    length: 6.2
+    module: gdsfactory.components.straight
+    name: straight_14538343
+    width: 0.5
+  straight_808ab8f9:
+    changed:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+    default:
+      cross_section:
+        function: cross_section
+      length: 10
+      npoints: 2
+      with_cladding_box: true
+    full:
+      cross_section:
+        function: cross_section
+      layer:
+      - 1
+      - 0
+      length: 10
+      npoints: 2
+      width: 0.5
+      with_cladding_box: true
+    function_name: straight
+    info_version: 1
+    length: 10
+    module: gdsfactory.components.straight
+    name: straight_808ab8f9
+    width: 0.5
+  straight_808ab8f9_add_f_c90b2f78:
+    changed:
+      component:
+        function: straight
+      component_name: null
+      fanout_length: 0
+      gc_port_name: o1
+      get_input_labels_function:
+        function: get_input_labels
+      grating_coupler:
+        function: gc_te1550
+      layer_label:
+      - 10
+      - 0
+      optical_routing_type: 0
+      with_loopback: false
+    child:
+      changed: {}
+      child:
+        changed:
+          layer:
+          - 1
+          - 0
+          length: 10
+          width: 0.5
+        default:
+          cross_section:
+            function: cross_section
+          length: 10
+          npoints: 2
+          with_cladding_box: true
+        full:
+          cross_section:
+            function: cross_section
+          layer:
+          - 1
+          - 0
+          length: 10
+          npoints: 2
+          width: 0.5
+          with_cladding_box: true
+        function_name: straight
+        info_version: 1
+        length: 10
+        module: gdsfactory.components.straight
+        name: straight_808ab8f9
+        width: 0.5
+      default:
+        layer:
+        - 1
+        - 0
+        length: 10
+        width: 0.5
+        with_pins: true
+      full:
+        layer:
+        - 1
+        - 0
+        length: 10
+        width: 0.5
+        with_pins: true
+      function_name: straight
+      info_version: 1
+      module: ubcpdk.components.straight
+      name: straight_808ab8f9_straight
+    default:
+      bend:
+        function: bend_euler
+      component_name: null
+      cross_section:
+        function: cross_section
+      gc_port_labels: null
+      gc_port_name: o1
+      get_input_labels_function:
+        function: get_input_labels
+      grating_coupler:
+        function: grating_coupler_elliptical_trenches
+        polarization: te
+        taper_angle: 35
+      layer_label:
+      - 66
+      - 0
+      select_ports:
+        function: select_ports
+        port_type: optical
+      straight:
+        function: straight
+    full:
+      bend:
+        function: bend_euler
+      component:
+        function: straight
+      component_name: null
+      cross_section:
+        function: cross_section
+      fanout_length: 0
+      gc_port_labels: null
+      gc_port_name: o1
+      get_input_labels_function:
+        function: get_input_labels
+      grating_coupler:
+        function: gc_te1550
+      layer_label:
+      - 10
+      - 0
+      optical_routing_type: 0
+      select_ports:
+        function: select_ports
+        port_type: optical
+      straight:
+        function: straight
+      with_loopback: false
+    function_name: add_fiber_array
+    info_version: 1
+    module: gdsfactory.routing.add_fiber_array
+    name: straight_808ab8f9_add_f_c90b2f78
+  straight_808ab8f9_straight:
+    changed: {}
+    child:
+      changed:
+        layer:
+        - 1
+        - 0
+        length: 10
+        width: 0.5
+      default:
+        cross_section:
+          function: cross_section
+        length: 10
+        npoints: 2
+        with_cladding_box: true
+      full:
+        cross_section:
+          function: cross_section
+        layer:
+        - 1
+        - 0
+        length: 10
+        npoints: 2
+        width: 0.5
+        with_cladding_box: true
+      function_name: straight
+      info_version: 1
+      length: 10
+      module: gdsfactory.components.straight
+      name: straight_808ab8f9
+      width: 0.5
+    default:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+      with_pins: true
+    full:
+      layer:
+      - 1
+      - 0
+      length: 10
+      width: 0.5
+      with_pins: true
+    function_name: straight
+    info_version: 1
+    module: ubcpdk.components.straight
+    name: straight_808ab8f9_straight
+  straight_8535e376:
+    changed:
+      cross_section:
+        function: cross_section
+      length: 48.5
+    default:
+      cross_section:
+        function: cross_section
+      length: 10
+      npoints: 2
+      with_cladding_box: true
+    full:
+      cross_section:
+        function: cross_section
+      length: 48.5
+      npoints: 2
+      with_cladding_box: true
+    function_name: straight
+    info_version: 1
+    length: 48.5
+    module: gdsfactory.components.straight
+    name: straight_8535e376
+    width: 0.5
+info:
+  changed: {}
+  default:
+    component:
+      function: straight
+    component_name: null
+    fanout_length: 0
+    gc_port_name: o1
+    get_input_labels_function:
+      function: get_input_labels
+    grating_coupler:
+      function: gc_te1550
+    optical_routing_type: 0
+    with_loopback: false
+  full:
+    component:
+      function: straight
+    component_name: null
+    fanout_length: 0
+    gc_port_name: o1
+    get_input_labels_function:
+      function: get_input_labels
+    grating_coupler:
+      function: gc_te1550
+    optical_routing_type: 0
+    with_loopback: false
+  function_name: add_fiber_array
+  info_version: 1
+  module: ubcpdk.components.add_fiber_array
+  name: add_fiber_array
+ports: {}
+version: 0.0.1

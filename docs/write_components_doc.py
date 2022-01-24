@@ -1,6 +1,6 @@
 import pathlib
 import inspect
-import ubc
+import ubcpdk
 
 
 filepath = pathlib.Path(__file__).parent.absolute() / "components.rst"
@@ -35,11 +35,11 @@ Components
 """
     )
 
-    for name in sorted(ubc.components.factory.keys()):
+    for name in sorted(ubcpdk.components.factory.keys()):
         if name in skip or name.startswith("_"):
             continue
         print(name)
-        sig = inspect.signature(ubc.components.factory[name])
+        sig = inspect.signature(ubcpdk.components.factory[name])
         kwargs = ", ".join(
             [
                 f"{p}={repr(sig.parameters[p].default)}"

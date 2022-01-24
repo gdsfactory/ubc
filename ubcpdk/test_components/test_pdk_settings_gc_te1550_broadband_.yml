@@ -1,0 +1,40 @@
+cells:
+  ebeam_gc_te1550_broadba_16fad5cf:
+    changed: {}
+    child:
+      name: ebeam_gc_te1550_broadband
+    default: {}
+    full: {}
+    function_name: gc_te1550_broadband
+    info_version: 1
+    module: ubcpdk.components.grating_couplers
+    name: ebeam_gc_te1550_broadba_16fad5cf
+    polarization: te
+    wavelength: 1.55
+  ebeam_gc_te1550_broadband:
+    name: ebeam_gc_te1550_broadband
+info:
+  changed: {}
+  child:
+    name: ebeam_gc_te1550_broadband
+  default: {}
+  full: {}
+  function_name: gc_te1550_broadband
+  info_version: 1
+  module: ubcpdk.components.grating_couplers
+  name: ebeam_gc_te1550_broadba_16fad5cf
+  polarization: te
+  wavelength: 1.55
+ports:
+  o1:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 0
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+version: 0.0.1

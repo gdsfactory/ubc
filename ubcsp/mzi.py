@@ -50,10 +50,10 @@ def mzi(
     .. plot::
         :include-source:
 
-        import ubc
+        import ubcpdk
         import gdslib as gl
 
-        c = ubc.circuits.mzi()
+        c = ubcpdk.circuits.mzi()
         gl.plot_circuit(c)
 
     """
