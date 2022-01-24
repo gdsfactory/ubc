@@ -1,3 +1,5 @@
+"""Sample mask for the course."""
+
 from typing import Tuple
 from pathlib import Path
 from omegaconf import OmegaConf
