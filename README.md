@@ -5,7 +5,7 @@
 ![](https://img.shields.io/github/forks/gdsfactory/ubc)
 ![](https://img.shields.io/github/stars/gdsfactory/ubc)
 [![](https://img.shields.io/github/license/gdsfactory/ubc)](https://choosealicense.com/licenses/mit/)
-[![](https://img.shields.io/codecov/c/github/gdsfactory/ubc)](https://codecov.io/gh/gdsfactory/ubc/tree/master/ubc)
+[![codecov](https://codecov.io/gh/gdsfactory/ubc/branch/master/graph/badge.svg?token=T3kCV2gYE9)](https://codecov.io/gh/gdsfactory/ubc)
 [![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
@@ -20,7 +20,7 @@ and update to the latest version with `pip install ubcpdk --upgrade`
 
 If you are on Windows, I recommend you install gdsfactory with Mamba (faster conda) and Pip.
 
-I also recommend you install the gdsfactory link to klayout `gt tool install`
+I also recommend you install the gdsfactory link to klayout `gf tool install`
 
 ```
 conda install -c conda-forge gdspy
@@ -28,13 +28,17 @@ pip install ubcpdk --upgrade
 gf tool install
 ```
 
-If you want to get all the extras (holoviews plots, tensorflow modes, modesolver ...)
+If you want to get all the extras (mode solvers, meep, circuit simulation ...)
 
 ```
-conda install -c conda-forge gdspy
+mamba install gdspy
+mamba install pymeep=*=mpi_mpich_*
 pip install ubcpdk[full] --upgrade
 gf tool install
 ```
+
+Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install` with `conda install -c conda-forge`
+
 
 ### Installation for developers
 
