@@ -1,4 +1,4 @@
-# UBC PDK 0.0.11
+# UBC PDK 0.0.12
 
 [![](https://img.shields.io/pypi/v/ubc)](https://pypi.org/project/ubc/)
 [![](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
@@ -15,7 +15,7 @@ UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photon
 
 ### Installation for users
 
-You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.11`
+You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.12`
 and update to the latest version with `pip install ubcpdk --upgrade`
 
 If you are on Windows, I recommend you install gdsfactory with Anaconda3 or Miniconda3.
