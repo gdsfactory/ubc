@@ -1,6 +1,6 @@
-# UBC PDK 0.0.12
+# UBCpdk 0.0.12
 
-[![](https://img.shields.io/pypi/v/ubc)](https://pypi.org/project/ubc/)
+[![](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
 [![](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
 ![](https://img.shields.io/github/forks/gdsfactory/ubc)
 ![](https://img.shields.io/github/stars/gdsfactory/ubc)
@@ -18,9 +18,9 @@ UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photon
 You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.12`
 and update to the latest version with `pip install ubcpdk --upgrade`
 
-If you are on Windows, I recommend you install gdsfactory with Anaconda3 or Miniconda3.
+If you are on Windows, I recommend you install gdsfactory with Mamba (faster conda) and Pip.
 
-I also reccommend you install the gdsfactory link to klayout `gt tool install`
+I also recommend you install the gdsfactory link to klayout `gt tool install`
 
 ```
 conda install -c conda-forge gdspy
@@ -38,7 +38,7 @@ gf tool install
 
 ### Installation for developers
 
-For developers you need to `git clone` the github repository, fork it, git add, git commit, git push and merge request your changes.
+For developers you need to `git clone` the GitHub repository, fork it, git add, git commit, git push and merge request your changes.
 
 ```
 git clone https://github.com/gdsfactory/ubc.git
@@ -53,7 +53,7 @@ gf tool install
 
 ## Acks
 
-UBC pdk top contributors:
+UBCpdk top contributors:
 
 - Lukas Chrostowski (UBC professor): creator of the course and maintainer of the PDK cells
 - Joaquin Matres (Google): maintainer of gdsfactory
