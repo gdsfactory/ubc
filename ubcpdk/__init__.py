@@ -5,6 +5,7 @@ from ubcpdk.config import CONFIG, PATH
 from ubcpdk.tech import LAYER, strip
 from ubcpdk import components
 from ubcpdk import tech
+from ubcpdk import data
 
 
 lys = gf.layers.load_lyp(PATH.lyp)
@@ -12,7 +13,7 @@ lys = gf.layers.load_lyp(PATH.lyp)
 
 __all__ = [
     "CONFIG",
-    "da",
+    "data",
     "PATH",
     "components",
     "tech",

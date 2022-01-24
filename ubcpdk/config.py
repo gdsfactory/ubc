@@ -65,5 +65,4 @@ PATH = Path()
 
 
 if __name__ == "__main__":
-    print(CONFIG.tech.layers_cladding.clad)
-    print(PATH.data)
+    print(PATH.gds)
