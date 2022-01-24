@@ -11,6 +11,15 @@
 
 UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 
+This is a gdsfactory-based pdk, which provides a fully scripted python based flow for the edx course.
+
+## Documentation
+
+- [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
+- [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
+- [miniforge install instructions](https://github.com/conda-forge/miniforge#mambaforge)
+
+
 ## Installation
 
 ### Installation for users
@@ -18,12 +27,12 @@ UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photon
 You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.12`
 and update to the latest version with `pip install ubcpdk --upgrade`
 
-If you are on Windows, I recommend you install gdsfactory with Mamba (faster conda) and Pip.
+If you are on Windows, I recommend you install gdspy with Anaconda3, Miniconda3 or [mamba](https://github.com/conda-forge/miniforge#mambaforge) (faster conda alternative) and `pip` for gdsfactory.
 
 I also recommend you install the gdsfactory link to klayout `gf tool install`
 
 ```
-conda install -c conda-forge gdspy
+mamba install gdspy
 pip install ubcpdk --upgrade
 gf tool install
 ```
@@ -37,7 +46,8 @@ pip install ubcpdk[full] --upgrade
 gf tool install
 ```
 
-Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install` with `conda install -c conda-forge`
+Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdspy` with `conda install -c conda-forge gdspy`
+
 
 
 ### Installation for developers
@@ -75,7 +85,8 @@ Open source heroes:
 Links:
 
 - [UBC docs](https://gdsfactory.github.io/ubc/) and [repo](https://github.com/gdsfactory/ubc)
+- [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
+- [miniforge install instructions](https://github.com/conda-forge/miniforge#mambaforge)
 - [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 - [siepic Ebeam PDK](https://github.com/lukasc-ubc/SiEPIC_EBeam_PDK)
-- [gdsfactory](https://gdsfactory.github.io/gdsfactory/)
 - [awesome photonics list](https://github.com/joamatab/awesome_photonics)
