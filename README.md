@@ -1,4 +1,4 @@
-# UBCpdk 0.0.12
+# UBCpdk 0.0.13
 
 [![](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
 [![](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
@@ -24,7 +24,7 @@ This is a gdsfactory-based pdk, which provides a fully scripted python based flo
 
 ### Installation for users
 
-You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.12`
+You can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==0.0.13`
 and update to the latest version with `pip install ubcpdk --upgrade`
 
 If you are on Windows, I recommend you install gdspy with Anaconda3, Miniconda3 or [mamba](https://github.com/conda-forge/miniforge#mambaforge) (faster conda alternative) and `pip` for gdsfactory.
