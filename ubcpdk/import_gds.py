@@ -1,7 +1,7 @@
 import pathlib
 
-import gdsfactory as gf
 from numpy import ndarray
+import gdsfactory as gf
 from gdsfactory.component import Component
 from gdsfactory.port import auto_rename_ports
 from ubcpdk.tech import LAYER
