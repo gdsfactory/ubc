@@ -1,4 +1,5 @@
 recursive-include ubcpdk/klayout/*
+recursive-include ubcpdk/gds/*
 global-include *.gds
 global-include *.lyp
 global-include *.lym
