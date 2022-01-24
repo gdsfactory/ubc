@@ -19,6 +19,14 @@ pip install ubcpdk --upgrade
 gf tool install
 ```
 
+If you want to get all the extras (holoviews plots, tensorflow modes, modesolver ...)
+
+```
+conda install -c conda-forge gdspy
+pip install ubcpdk[full] --upgrade
+gf tool install
+```
+
 ### Installation for developers
 
 For developers you need to `git clone` the github repository, fork it, git add, git commit, git push and merge request your changes.

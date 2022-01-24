@@ -1,9 +1,3 @@
 -e .
 lygadgets
-gdsfactory[full]==3.11.4
-gdslib==0.3.3
-modes
-matplotlib
-opticalmaterialspy
-pytest
-tqdm
+gdsfactory==3.11.4
