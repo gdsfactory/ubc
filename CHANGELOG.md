@@ -1,4 +1,4 @@
-## 0.0.10
+## 0.0.12
 
 - fix installation by addding lyp files to MANIFEST
 - compatible with latest gdsfactory

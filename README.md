@@ -1,5 +1,14 @@
 # UBC PDK 0.0.11
 
+[![](https://img.shields.io/pypi/v/ubc)](https://pypi.org/project/ubc/)
+[![](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
+![](https://img.shields.io/github/forks/gdsfactory/ubc)
+![](https://img.shields.io/github/stars/gdsfactory/ubc)
+[![](https://img.shields.io/github/license/gdsfactory/ubc)](https://choosealicense.com/licenses/mit/)
+[![](https://img.shields.io/codecov/c/github/gdsfactory/ubc)](https://codecov.io/gh/gdsfactory/ubc/tree/master/ubc)
+[![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+
 UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 
 ## Installation
