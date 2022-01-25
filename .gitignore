@@ -13,6 +13,7 @@ ref_layouts/
 *.db
 .idea/
 poetry.lock
+Pipfile
 
 # Distribution / packaging
 .Python
