@@ -26,6 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         sudo apt install pandoc
         pip install gdsfactory[dev]
+        pip install .[full]
         make install
     - name: Test documentation
       run: |
