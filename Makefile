@@ -17,7 +17,11 @@ link:
 	lygadgets_link dateutil
 	lygadgets_link kiwisolver
 	lygadgets_link scipy  # [because of splines in the nanowires]
-	lygadgets_link ubc/klayout/tech
+	lygadgets_link omegaconf
+	lygadgets_link loguru
+	lygadgets_link pydantic
+	lygadgets_link picwriter
+	lygadgets_link ubcpdk/klayout/tech
 
 test:
 	pytest -s

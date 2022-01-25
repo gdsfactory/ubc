@@ -41,11 +41,11 @@ else:
         sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
         sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-        from ubc import _component_functions
+        from ubcpdk.components import factory
         class UbcLib(lygadgets.WrappedLibrary):
-            tech_name = "ubc"
-            all_funcs_to_wrap = _component_functions
-            description = "ubc pdk"
+            tech_name = "ubcpdk"
+            all_funcs_to_wrap = factory.values()
+            description = "ubcpdk"
 
         UbcLib()
 
