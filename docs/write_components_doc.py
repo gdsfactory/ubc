@@ -55,7 +55,7 @@ Components
 {name}
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.{name}
+.. autofunction:: ubcpdk.components.{name}
 
 """
             )
@@ -66,14 +66,14 @@ Components
 {name}
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.{name}
+.. autofunction:: ubcpdk.components.{name}
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.{name}({kwargs})
+  c = ubcpdk.components.{name}({kwargs})
   c.plot()
 
 """
