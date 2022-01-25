@@ -22,6 +22,7 @@ jobs:
       - name: Installing the library
         shell: bash -l {0}
         run: |
+          sudo apt install pandoc
           pip install gdsfactory[dev]
           pip install -e .[full]
       - name: Running the Sphinx to gh-pages Action
