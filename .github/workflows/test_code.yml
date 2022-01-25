@@ -26,8 +26,6 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: |
-          pwd
-          ls
           pip install .[full]
           pip install flake8
       - name: Lint with flake8
