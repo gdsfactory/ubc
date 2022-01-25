@@ -12,17 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Sphinx docs to gh-pages
     steps:
+      - name: Cancel Workflow Action
+        uses: styfle/cancel-workflow-action@0.9.1
       - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
         with:
-          fetch-depth: 0
-      - name: Make conda environment
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          python-version: 3.9 # Python version to build the html sphinx documentation
-          environment-file: environment.yml    # Path to the documentation conda environment
-          auto-update-conda: false
-          auto-activate-base: false
-          show-channel-urls: true
+          python-version: 3.9
       - name: Installing the library
         shell: bash -l {0}
         run: |
@@ -33,4 +29,4 @@ jobs:
         with:
           branch: master
           dir_docs: docs
-          sphinxopts: ''
+          sphinxopts: ""
