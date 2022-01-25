@@ -1,7 +1,10 @@
-recursive-include ubcpdk/klayout/*
-recursive-include ubcpdk/gds/*
+recursive-include ubcpdk/gds *.gds
 global-include *.lyp
 global-include *.lym
 global-include *.lyt
 include requirements.txt
 include requirements_dev.txt
+include ubcpdk/gds/*.gds
+include ubcpdk/klayout/tech/tech.lyt
+include ubcpdk/klayout/tech/layers.lyp
+include ubcpdk/klayout/tech/pymacros/klayout_Library.lym
