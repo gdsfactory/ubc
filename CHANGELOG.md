@@ -1,3 +1,9 @@
+## 1.0.0
+
+- rename package from ubc to ubcpdk to match pypi name
+- move ubcpdk.simulations.circuits into ubcpdk/simulations/circuits
+- rename ubcpdk/da as ubcpdk/data
+
 ## 0.0.12
 
 - fix installation by addding lyp files to MANIFEST

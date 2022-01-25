@@ -1,0 +1,12 @@
+[html]
+directory = coverage_html_report
+
+[paths]
+source =
+    ubcpdk/
+
+[run]
+omit =
+    *.bak
+    ubc/klayout/*
+    docs/*

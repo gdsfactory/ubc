@@ -1,6 +1,6 @@
 
 
-Here is a list of generic component factories that you can customize for your fab or use it as an inspiration to build your own.
+Here are the components available in the PDK
 
 
 Components
@@ -10,14 +10,14 @@ Components
 add_fiber_array
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.add_fiber_array
+.. autofunction:: ubcpdk.components.add_fiber_array
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.add_fiber_array(gc_port_name='o1', with_loopback=False, optical_routing_type=0, fanout_length=0.0)
+  c = ubcpdk.components.add_fiber_array(gc_port_name='o1', with_loopback=False, optical_routing_type=0, fanout_length=0.0)
   c.plot()
 
 
@@ -25,14 +25,14 @@ add_fiber_array
 crossing
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.crossing
+.. autofunction:: ubcpdk.components.crossing
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.crossing()
+  c = ubcpdk.components.crossing()
   c.plot()
 
 
@@ -40,14 +40,14 @@ crossing
 dbr
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.dbr
+.. autofunction:: ubcpdk.components.dbr
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.dbr(w0=0.5, dw=0.1, n=600, l1=0.07940573770491803, l2=0.07940573770491803)
+  c = ubcpdk.components.dbr(w0=0.5, dw=0.1, n=600, l1=0.07940573770491803, l2=0.07940573770491803)
   c.plot()
 
 
@@ -55,14 +55,14 @@ dbr
 dbr_cavity
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.dbr_cavity
+.. autofunction:: ubcpdk.components.dbr_cavity
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.dbr_cavity()
+  c = ubcpdk.components.dbr_cavity()
   c.plot()
 
 
@@ -70,14 +70,14 @@ dbr_cavity
 dc_adiabatic
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.dc_adiabatic
+.. autofunction:: ubcpdk.components.dc_adiabatic
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.dc_adiabatic()
+  c = ubcpdk.components.dc_adiabatic()
   c.plot()
 
 
@@ -85,14 +85,14 @@ dc_adiabatic
 dc_broadband_te
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.dc_broadband_te
+.. autofunction:: ubcpdk.components.dc_broadband_te
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.dc_broadband_te()
+  c = ubcpdk.components.dc_broadband_te()
   c.plot()
 
 
@@ -100,14 +100,14 @@ dc_broadband_te
 dc_broadband_tm
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.dc_broadband_tm
+.. autofunction:: ubcpdk.components.dc_broadband_tm
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.dc_broadband_tm()
+  c = ubcpdk.components.dc_broadband_tm()
   c.plot()
 
 
@@ -115,14 +115,14 @@ dc_broadband_tm
 gc_te1310
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.gc_te1310
+.. autofunction:: ubcpdk.components.gc_te1310
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.gc_te1310()
+  c = ubcpdk.components.gc_te1310()
   c.plot()
 
 
@@ -130,14 +130,14 @@ gc_te1310
 gc_te1550
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.gc_te1550
+.. autofunction:: ubcpdk.components.gc_te1550
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.gc_te1550()
+  c = ubcpdk.components.gc_te1550()
   c.plot()
 
 
@@ -145,14 +145,14 @@ gc_te1550
 gc_te1550_broadband
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.gc_te1550_broadband
+.. autofunction:: ubcpdk.components.gc_te1550_broadband
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.gc_te1550_broadband()
+  c = ubcpdk.components.gc_te1550_broadband()
   c.plot()
 
 
@@ -160,14 +160,14 @@ gc_te1550_broadband
 gc_tm1550
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.gc_tm1550
+.. autofunction:: ubcpdk.components.gc_tm1550
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.gc_tm1550()
+  c = ubcpdk.components.gc_tm1550()
   c.plot()
 
 
@@ -175,14 +175,14 @@ gc_tm1550
 ring_with_crossing
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.ring_with_crossing
+.. autofunction:: ubcpdk.components.ring_with_crossing
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.ring_with_crossing()
+  c = ubcpdk.components.ring_with_crossing()
   c.plot()
 
 
@@ -190,14 +190,14 @@ ring_with_crossing
 spiral
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.spiral
+.. autofunction:: ubcpdk.components.spiral
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.spiral(N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0)
+  c = ubcpdk.components.spiral(N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0)
   c.plot()
 
 
@@ -205,14 +205,14 @@ spiral
 straight
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.straight
+.. autofunction:: ubcpdk.components.straight
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.straight(length=10.0, width=0.5, layer=(1, 0), with_pins=True)
+  c = ubcpdk.components.straight(length=10.0, width=0.5, layer=(1, 0), with_pins=True)
   c.plot()
 
 
@@ -220,14 +220,14 @@ straight
 y_adiabatic
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.y_adiabatic
+.. autofunction:: ubcpdk.components.y_adiabatic
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.y_adiabatic()
+  c = ubcpdk.components.y_adiabatic()
   c.plot()
 
 
@@ -235,12 +235,12 @@ y_adiabatic
 y_splitter
 ----------------------------------------------------
 
-.. autofunction:: ubc.components.y_splitter
+.. autofunction:: ubcpdk.components.y_splitter
 
 .. plot::
   :include-source:
 
-  import ubc
+  import ubcpdk
 
-  c = ubc.components.y_splitter()
+  c = ubcpdk.components.y_splitter()
   c.plot()

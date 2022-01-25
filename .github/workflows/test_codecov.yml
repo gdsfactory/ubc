@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Cancel Workflow Action
+        uses: styfle/cancel-workflow-action@0.9.1
       - uses: actions/checkout@v2
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
@@ -21,7 +23,8 @@ jobs:
         run: |
           pip install pytest
           pip install pytest-cov
-          pytest --cov=./ --cov-report=xml
+          pytest --cov=ubcpdk --cov-report=xml
+          pytest --cov=ubcpdk --cov-report=xml --cov-config=.coveragerc ubcpdk
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:

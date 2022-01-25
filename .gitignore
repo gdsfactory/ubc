@@ -13,6 +13,8 @@ ref_layouts/
 *.db
 .idea/
 poetry.lock
+Pipfile
+pyproject.toml
 
 # Distribution / packaging
 .Python
