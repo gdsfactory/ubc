@@ -1,4 +1,3 @@
--e .
 lygadgets
 triangle
-gdsfactory[full]==3.11.7
+gdsfactory[full]==3.12.1
