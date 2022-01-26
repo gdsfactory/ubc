@@ -1,12 +1,12 @@
 # UBCpdk 1.0.3
 
-[![](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
-[![](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
-![](https://img.shields.io/github/forks/gdsfactory/ubc)
-![](https://img.shields.io/github/stars/gdsfactory/ubc)
-[![](https://img.shields.io/github/license/gdsfactory/ubc)](https://choosealicense.com/licenses/mit/)
+[![pypi](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
+[![issues](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
+![forks](https://img.shields.io/github/forks/gdsfactory/ubc)
+![Stars](https://img.shields.io/github/stars/gdsfactory/ubc)
+[![mit](https://img.shields.io/github/license/gdsfactory/ubc)](https://choosealicense.com/licenses/mit/)
 [![codecov](https://codecov.io/gh/gdsfactory/ubc/branch/master/graph/badge.svg?token=T3kCV2gYE9)](https://codecov.io/gh/gdsfactory/ubc)
-[![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
 UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
@@ -29,7 +29,7 @@ If you are on Windows, I recommend you install gdspy with Anaconda3, Miniconda3 
 
 
 ```
-mamba install gdspy
+mamba install gdspy -y
 pip install ubcpdk --upgrade
 gf tool install
 ```
@@ -37,13 +37,13 @@ gf tool install
 If you want to get all the extras (mode solvers, meep, circuit simulation ...)
 
 ```
-mamba install gdspy
-mamba install pymeep=*=mpi_mpich_*
+mamba install gdspy -y
+mamba install pymeep=*=mpi_mpich_* -y
 pip install ubcpdk[full] --upgrade
 gf tool install
 ```
 
-Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdspy` with `conda install -c conda-forge gdspy`
+Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdspy -y` with `conda install -c conda-forge gdspy -y`
 
 If you use linux or MacOs you can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==1.0.3`
 and update to the latest version with `pip install ubcpdk --upgrade`
