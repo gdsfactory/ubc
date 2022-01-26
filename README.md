@@ -1,5 +1,6 @@
 # UBCpdk 1.0.3
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/ubc/HEAD)
 [![pypi](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
 [![issues](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
 ![forks](https://img.shields.io/github/forks/gdsfactory/ubc)
@@ -15,6 +16,7 @@ This is a gdsfactory-based pdk, which provides a fully scripted python based flo
 
 ## Documentation
 
+- run notebooks on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/ubc/HEAD)
 - [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
 - [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
 - [miniforge install instructions](https://github.com/conda-forge/miniforge#mambaforge)

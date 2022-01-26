@@ -10,6 +10,7 @@ RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
     # Common useful utilities
     git \
+    htop \
     neovim
 
 USER jovyan
@@ -20,5 +21,5 @@ RUN conda init bash
 RUN mamba install gdspy -y
 RUN mamba install pymeep=*=mpi_mpich_* -y
 
-RUN pip install gdsfactory[full] triangle
+RUN pip install ubcpdk[full] triangle
 WORKDIR /home/jovyan
