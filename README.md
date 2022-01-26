@@ -1,4 +1,4 @@
-# UBCpdk 1.0.1
+# UBCpdk 1.0.2
 
 [![](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
 [![](https://img.shields.io/github/issues/gdsfactory/ubc)](https://github.com/gdsfactory/ubc/issues)
@@ -45,7 +45,7 @@ gf tool install
 
 Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdspy` with `conda install -c conda-forge gdspy`
 
-If you use linux or MacOs you can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==1.0.1`
+If you use linux or MacOs you can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==1.0.2`
 and update to the latest version with `pip install ubcpdk --upgrade`
 
 I also recommend you install the gdsfactory link to klayout `gf tool install`
