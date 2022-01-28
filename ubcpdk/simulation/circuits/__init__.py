@@ -1,4 +1,4 @@
-"""Circuit simulations
+"""Circuit simulation
 """
 
 from .add_grating_coupler import add_grating_coupler
