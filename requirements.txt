@@ -1,4 +1,4 @@
 -e .
 lygadgets
 triangle
-gdsfactory[full]
+gdsfactory[full]>=3.12.9
