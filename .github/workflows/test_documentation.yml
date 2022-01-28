@@ -31,15 +31,11 @@ jobs:
           echo $CONDA/bin >> $GITHUB_PATH
       - name: Install dependencies
         run: |
-          make install
-          make meep
-      - name: Install dependencies
-        run: |
           python -m pip install --upgrade pip
           sudo apt install pandoc
           pip install gdsfactory[dev]
-          pip install .[full]
           make install
+          make meep
       - name: Test documentation
         run: |
           cd docs

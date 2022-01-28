@@ -25,16 +25,13 @@ jobs:
       - name: Add conda to system path
         run: |
           echo $CONDA/bin >> $GITHUB_PATH
-      - name: Install dependencies
-        run: |
-          make install
-          make meep
       - name: Installing the library
         shell: bash -l {0}
         run: |
           sudo apt install pandoc
           pip install gdsfactory[dev]
-          pip install -e .[full]
+          make install
+          make meep
       - name: Running the Sphinx to gh-pages Action
         uses: uibcdf/action-sphinx-docs-to-gh-pages@v1.0-beta.2
         with:
