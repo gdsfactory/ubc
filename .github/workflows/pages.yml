@@ -30,7 +30,7 @@ jobs:
         run: |
           sudo apt install pandoc
           pip install gdsfactory[dev]
-          make install
+          pip install -e .[full]
           make meep
       - name: Running the Sphinx to gh-pages Action
         uses: uibcdf/action-sphinx-docs-to-gh-pages@v1.0-beta.2
