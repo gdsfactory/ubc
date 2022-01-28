@@ -8,3 +8,4 @@ UBC
     README
     components
     notebooks
+    CHANGELOG
