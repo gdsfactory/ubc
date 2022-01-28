@@ -32,7 +32,7 @@ CONFIG = OmegaConf.merge(config_base, config_cwd)
 class Path:
     module = module
     repo = repo
-    samples = module / "data"
+    samples = module / "samples"
     data = samples / "data"
     gds = module / "gds"
     sparameters = module / "sparameters"

@@ -36,7 +36,9 @@ def y_adiabatic() -> Component:
 
 def y_splitter() -> Component:
     """Y junction TE1550 50/50 power."""
-    return import_gds("ebeam_y_1550")
+    c = import_gds("ebeam_y_1550")
+    c.auto_rename_ports()
+    return c
 
 
 spiral = gf.partial(gf.components.spiral_external_io)
