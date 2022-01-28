@@ -9,6 +9,7 @@ import pathlib
 
 from omegaconf import OmegaConf
 
+
 default_config = io.StringIO(
     """
 username: JoaquinMatres
@@ -35,7 +36,7 @@ class Path:
     samples = module / "samples"
     data = samples / "data"
     gds = module / "gds"
-    sparameters = module / "sparameters"
+    sparameters = repo / "sparameters"
     mask = module / "samples" / "extra" / "ubc1"
 
     mzi = data / "mzi"
@@ -66,4 +67,4 @@ PATH = Path()
 
 
 if __name__ == "__main__":
-    print(PATH.gds)
+    print(PATH.sparameters)

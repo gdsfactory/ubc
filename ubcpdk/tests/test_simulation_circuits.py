@@ -3,10 +3,10 @@ import pytest
 
 from gdslib.simphony.circuit import get_transmission
 
-from ubcpdk.simulations.circuits import circuit_factory
-from ubcpdk.simulations.circuits import component_factory
-from ubcpdk.simulations.circuits import circuit_names
-from ubcpdk.simulations.circuits import component_names
+from ubcpdk.simulation.circuits import circuit_factory
+from ubcpdk.simulation.circuits import component_factory
+from ubcpdk.simulation.circuits import circuit_names
+from ubcpdk.simulation.circuits import component_names
 
 
 @pytest.mark.parametrize("component_type", component_names)

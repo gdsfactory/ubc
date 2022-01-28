@@ -11,7 +11,7 @@ Design:
 - Measure the reflectivity spectrum (only).  This only requires two grating couplers.  Removing the 3rd grating coupler that was previously used to measure the transmission eliminates a source of back-reflection (-20 dB).  Instead of the 3rd grating coupler, we use a terminator (-30 dB back reflection).
 - Make the layout very compact, particularly the gratings themselves, so that we minimize the manufacturing variability. Namely, we want the central wavelength to be as similar as possible.
 - For each layout block, we have 24 gratings, connected to 24 pairs of grating couplers.  The grating couplers are interlaced to minimize space.
-- Check for a wide range of ∆W to look for saturation and nonlinearity (as shown by James Pond’s simulations).  Also check a narrow range to look for mask quantization errors.
+- Check for a wide range of ∆W to look for saturation and nonlinearity (as shown by James Pond’s simulation).  Also check a narrow range to look for mask quantization errors.
 - Parameter range, set 1-2:
 -     ∆W = [5, 10, 20:20:200 nm] (total 12)
 -     type = [rectangular, sinusoidal]

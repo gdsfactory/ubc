@@ -30,6 +30,9 @@ test-force:
 	rm -r gds_ref
 	pytest --force-regen
 
+meep:
+	mamba install pymeep=*=mpi_mpich_* -y
+
 diff:
 	pf merge-cells gds_diff
 
