@@ -1,4 +1,5 @@
 recursive-include ubcpdk/gds *.gds
+recursive-include ubcpdk/samples/data/ *.mat
 global-include *.lyp
 global-include *.lym
 global-include *.lyt

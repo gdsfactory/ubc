@@ -19,8 +19,8 @@ username: JoaquinMatres
 cwd = pathlib.Path.cwd()
 cwd_config = cwd / "config.yml"
 config_base = OmegaConf.load(default_config)
-module_path = pathlib.Path(__file__).parent.absolute()
-repo_path = module_path.parent
+module = pathlib.Path(__file__).parent.absolute()
+repo = module.parent
 
 try:
     config_cwd = OmegaConf.load(cwd_config)
@@ -30,12 +30,13 @@ CONFIG = OmegaConf.merge(config_base, config_cwd)
 
 
 class Path:
-    module = module_path
-    repo = repo_path
-    data = repo_path / "data"
-    gds = module_path / "gds"
+    module = module
+    repo = repo
+    samples = module / "data"
+    data = samples / "data"
+    gds = module / "gds"
     sparameters = module / "sparameters"
-    mask = module_path / "samples" / "extra" / "ubc1"
+    mask = module / "samples" / "extra" / "ubc1"
 
     mzi = data / "mzi"
     mzi1 = mzi / "ZiheGao_MZI1_272_Scan1.mat"
