@@ -1,3 +1,9 @@
+# Changelog
+
+## 1.0.4
+
+- move sample data into the module
+
 ## 1.0.0
 
 - rename package from ubc to ubcpdk to match pypi name
