@@ -4,6 +4,7 @@
 
 - move ubcpdk.simulations  to ubcpdk.simulation for consistency with gdsfactory
 - add ubcpdk.simulation.gmeep
+- move tests to ubcpdk/tests
 
 ## 1.0.5
 
