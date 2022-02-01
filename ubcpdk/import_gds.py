@@ -1,9 +1,6 @@
-import pathlib
-
 from numpy import ndarray
 import gdsfactory as gf
 from gdsfactory.component import Component
-from gdsfactory.port import auto_rename_ports
 
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
@@ -35,20 +32,10 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
     return 0
 
 
-@gf.functions.cache
-def import_gds(
-    gdsname: str, rename_ports: bool = False, gdsdir: pathlib.Path = PATH.gds
-) -> Component:
-    """import gds from SIEPIC PDK
+def add_ports(component: Component) -> Component:
+    """Add ports from labels."""
 
-    Args:
-        gdsname: name of the cell to import.
-        rename_ports: rename ports.
-        gdsdir: directory with GDS files.
-    """
-    c = gf.import_gds(gdsdir / f"{gdsname}.gds")
-    c.function_name = gdsname
-
+    c = component
     n = 0
     for label in c.get_labels():
         if label.text.startswith("opt"):
@@ -63,7 +50,7 @@ def import_gds(
                 width=port_width,
                 orientation=guess_port_orientaton(
                     position=label.position,
-                    name=gdsname,
+                    name=c.name,
                     label=label.text,
                     n=n,
                 ),
@@ -71,15 +58,16 @@ def import_gds(
             )
             if port_name not in c.ports:
                 c.add_port(port)
-
-    if rename_ports:
-        auto_rename_ports(c)
-
     return c
 
 
+add_ports_renamed = gf.compose(gf.port.auto_rename_ports, add_ports)
+
+import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_renamed)
+
+
 if __name__ == "__main__":
-    gdsname = "ebeam_y_1550"
+    gdsname = "ebeam_y_1550.gds"
     c = import_gds(gdsname)
     print(c.ports)
     c.show()

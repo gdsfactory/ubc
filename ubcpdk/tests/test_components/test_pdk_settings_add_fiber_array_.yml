@@ -10,7 +10,16 @@ cells:
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
-        function: gc_te1550
+        decorator:
+        - - function: add_ports
+          - function: auto_rename_ports
+        - angle: 180
+          function: rotate
+        function: import_gds
+        gdsdir: gds
+        gdspath: ebeam_gc_te1550.gds
+        polarization: te
+        wavelength: 1.55
       optical_routing_type: 0
       with_loopback: false
     full:
@@ -22,17 +31,24 @@ cells:
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
-        function: gc_te1550
+        decorator:
+        - - function: add_ports
+          - function: auto_rename_ports
+        - angle: 180
+          function: rotate
+        function: import_gds
+        gdsdir: gds
+        gdspath: ebeam_gc_te1550.gds
+        polarization: te
+        wavelength: 1.55
       optical_routing_type: 0
       with_loopback: false
     function_name: add_fiber_array
     info_version: 1
     module: ubcpdk.components.add_fiber_array
     name: add_fiber_array
-  bend_euler_1da190e0:
-    changed:
-      cross_section:
-        function: cross_section
+  bend_euler:
+    changed: {}
     default:
       angle: 90
       cross_section:
@@ -56,52 +72,35 @@ cells:
     info_version: 1
     length: 16.637
     module: gdsfactory.components.bend_euler
-    name: bend_euler_1da190e0
+    name: bend_euler
     radius: 10
     radius_min: 7.061
   ebeam_gc_te1550:
     name: ebeam_gc_te1550
-  ebeam_gc_te1550_gc_te1550:
-    changed: {}
-    child:
-      name: ebeam_gc_te1550
-    default: {}
-    full: {}
-    function_name: gc_te1550
-    info_version: 1
-    module: ubcpdk.components.grating_couplers
-    name: ebeam_gc_te1550_gc_te1550
     polarization: te
     wavelength: 1.55
-  straight_14538343:
+  ebeam_gc_te1550_rotate_77dd13e8:
     changed:
-      cross_section:
-        function: cross_section
-      length: 6.2
+      angle: 180
+      component: ebeam_gc_te1550
+    child:
+      name: ebeam_gc_te1550
+      polarization: te
+      wavelength: 1.55
     default:
-      cross_section:
-        function: cross_section
-      length: 10
-      npoints: 2
-      with_cladding_box: true
+      angle: 90
     full:
-      cross_section:
-        function: cross_section
-      length: 6.2
-      npoints: 2
-      with_cladding_box: true
-    function_name: straight
+      angle: 180
+      component: ebeam_gc_te1550
+    function_name: rotate
     info_version: 1
-    length: 6.2
-    module: gdsfactory.components.straight
-    name: straight_14538343
-    width: 0.5
-  straight_808ab8f9:
+    module: gdsfactory.functions
+    name: ebeam_gc_te1550_rotate_77dd13e8
+  straight_65989e8e:
     changed:
       layer:
       - 1
       - 0
-      length: 10
       width: 0.5
     default:
       cross_section:
@@ -123,19 +122,24 @@ cells:
     info_version: 1
     length: 10
     module: gdsfactory.components.straight
-    name: straight_808ab8f9
+    name: straight_65989e8e
     width: 0.5
-  straight_808ab8f9_add_f_c90b2f78:
+  straight_65989e8e_add_f_83b1445b:
     changed:
       component:
         function: straight
-      component_name: null
       fanout_length: 0
-      gc_port_name: o1
-      get_input_labels_function:
-        function: get_input_labels
       grating_coupler:
-        function: gc_te1550
+        decorator:
+        - - function: add_ports
+          - function: auto_rename_ports
+        - angle: 180
+          function: rotate
+        function: import_gds
+        gdsdir: gds
+        gdspath: ebeam_gc_te1550.gds
+        polarization: te
+        wavelength: 1.55
       layer_label:
       - 10
       - 0
@@ -148,7 +152,6 @@ cells:
           layer:
           - 1
           - 0
-          length: 10
           width: 0.5
         default:
           cross_section:
@@ -170,7 +173,7 @@ cells:
         info_version: 1
         length: 10
         module: gdsfactory.components.straight
-        name: straight_808ab8f9
+        name: straight_65989e8e
         width: 0.5
       default:
         layer:
@@ -189,7 +192,7 @@ cells:
       function_name: straight
       info_version: 1
       module: ubcpdk.components.straight
-      name: straight_808ab8f9_straight
+      name: straight_65989e8e_straight
     default:
       bend:
         function: bend_euler
@@ -226,7 +229,16 @@ cells:
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
-        function: gc_te1550
+        decorator:
+        - - function: add_ports
+          - function: auto_rename_ports
+        - angle: 180
+          function: rotate
+        function: import_gds
+        gdsdir: gds
+        gdspath: ebeam_gc_te1550.gds
+        polarization: te
+        wavelength: 1.55
       layer_label:
       - 10
       - 0
@@ -240,15 +252,14 @@ cells:
     function_name: add_fiber_array
     info_version: 1
     module: gdsfactory.routing.add_fiber_array
-    name: straight_808ab8f9_add_f_c90b2f78
-  straight_808ab8f9_straight:
+    name: straight_65989e8e_add_f_83b1445b
+  straight_65989e8e_straight:
     changed: {}
     child:
       changed:
         layer:
         - 1
         - 0
-        length: 10
         width: 0.5
       default:
         cross_section:
@@ -270,7 +281,7 @@ cells:
       info_version: 1
       length: 10
       module: gdsfactory.components.straight
-      name: straight_808ab8f9
+      name: straight_65989e8e
       width: 0.5
     default:
       layer:
@@ -289,11 +300,9 @@ cells:
     function_name: straight
     info_version: 1
     module: ubcpdk.components.straight
-    name: straight_808ab8f9_straight
-  straight_8535e376:
+    name: straight_65989e8e_straight
+  straight_d54c3d92:
     changed:
-      cross_section:
-        function: cross_section
       length: 48.5
     default:
       cross_section:
@@ -311,7 +320,28 @@ cells:
     info_version: 1
     length: 48.5
     module: gdsfactory.components.straight
-    name: straight_8535e376
+    name: straight_d54c3d92
+    width: 0.5
+  straight_de80e131:
+    changed:
+      length: 6.2
+    default:
+      cross_section:
+        function: cross_section
+      length: 10
+      npoints: 2
+      with_cladding_box: true
+    full:
+      cross_section:
+        function: cross_section
+      length: 6.2
+      npoints: 2
+      with_cladding_box: true
+    function_name: straight
+    info_version: 1
+    length: 6.2
+    module: gdsfactory.components.straight
+    name: straight_de80e131
     width: 0.5
 info:
   changed: {}
@@ -324,7 +354,16 @@ info:
     get_input_labels_function:
       function: get_input_labels
     grating_coupler:
-      function: gc_te1550
+      decorator:
+      - - function: add_ports
+        - function: auto_rename_ports
+      - angle: 180
+        function: rotate
+      function: import_gds
+      gdsdir: gds
+      gdspath: ebeam_gc_te1550.gds
+      polarization: te
+      wavelength: 1.55
     optical_routing_type: 0
     with_loopback: false
   full:
@@ -336,7 +375,16 @@ info:
     get_input_labels_function:
       function: get_input_labels
     grating_coupler:
-      function: gc_te1550
+      decorator:
+      - - function: add_ports
+        - function: auto_rename_ports
+      - angle: 180
+        function: rotate
+      function: import_gds
+      gdsdir: gds
+      gdspath: ebeam_gc_te1550.gds
+      polarization: te
+      wavelength: 1.55
     optical_routing_type: 0
     with_loopback: false
   function_name: add_fiber_array

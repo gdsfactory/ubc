@@ -6,7 +6,7 @@ from ubcpdk.import_gds import import_gds
 
 def crossing() -> Component:
     """TE waveguide crossing."""
-    return import_gds("ebeam_crossing4", rename_ports=True)
+    return import_gds("ebeam_crossing4.gds")
 
 
 def ring_with_crossing(**kwargs) -> Component:

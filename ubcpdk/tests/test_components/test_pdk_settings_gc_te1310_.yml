@@ -1,30 +1,42 @@
 cells:
   ebeam_gc_te1310:
     name: ebeam_gc_te1310
-  ebeam_gc_te1310_gc_te1310:
-    changed: {}
-    child:
-      name: ebeam_gc_te1310
-    default: {}
-    full: {}
-    function_name: gc_te1310
-    info_version: 1
-    module: ubcpdk.components.grating_couplers
-    name: ebeam_gc_te1310_gc_te1310
     polarization: te
     wavelength: 1.31
+  ebeam_gc_te1310_rotate_1d7c470d:
+    changed:
+      angle: 180
+      component: ebeam_gc_te1310
+    child:
+      name: ebeam_gc_te1310
+      polarization: te
+      wavelength: 1.31
+    default:
+      angle: 90
+    full:
+      angle: 180
+      component: ebeam_gc_te1310
+    function_name: rotate
+    info_version: 1
+    module: gdsfactory.functions
+    name: ebeam_gc_te1310_rotate_1d7c470d
 info:
-  changed: {}
+  changed:
+    angle: 180
+    component: ebeam_gc_te1310
   child:
     name: ebeam_gc_te1310
-  default: {}
-  full: {}
-  function_name: gc_te1310
+    polarization: te
+    wavelength: 1.31
+  default:
+    angle: 90
+  full:
+    angle: 180
+    component: ebeam_gc_te1310
+  function_name: rotate
   info_version: 1
-  module: ubcpdk.components.grating_couplers
-  name: ebeam_gc_te1310_gc_te1310
-  polarization: te
-  wavelength: 1.31
+  module: gdsfactory.functions
+  name: ebeam_gc_te1310_rotate_1d7c470d
 ports:
   o1:
     layer:

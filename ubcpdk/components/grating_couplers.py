@@ -1,46 +1,41 @@
 import gdsfactory as gf
-from ubcpdk.import_gds import import_gds
+from ubcpdk.import_gds import import_gds, add_ports_renamed
 
 
-@gf.cell
-def gc_te1550() -> gf.Component:
-    c = import_gds("ebeam_gc_te1550")
-    c = c.rotate(angle=180)
-    c.info.polarization = "te"
-    c.info.wavelength = 1.550
-    c.auto_rename_ports()
-    return c
+add_ports_rotate180 = gf.compose(gf.functions.rotate180, add_ports_renamed)
+
+gc_te1550 = gf.partial(
+    import_gds,
+    "ebeam_gc_te1550.gds",
+    decorator=add_ports_rotate180,
+    polarization="te",
+    wavelength=1.55,
+)
+
+gc_te1550_broadband = gf.partial(
+    import_gds,
+    "ebeam_gc_te1550_broadband.gds",
+    decorator=add_ports_rotate180,
+    polarization="te",
+    wavelength=1.55,
+)
 
 
-@gf.cell
-def gc_te1550_broadband() -> gf.Component:
-    c = import_gds("ebeam_gc_te1550_broadband")
-    c = c.rotate(angle=180)
-    c.info.polarization = "te"
-    c.info.wavelength = 1.550
-    c.auto_rename_ports()
-    gf.port.auto_rename_ports(c)
-    return c
+gc_te1310 = gf.partial(
+    import_gds,
+    "ebeam_gc_te1310.gds",
+    decorator=add_ports_rotate180,
+    polarization="te",
+    wavelength=1.31,
+)
 
-
-@gf.cell
-def gc_te1310() -> gf.Component:
-    c = import_gds("ebeam_gc_te1310")
-    c = c.rotate(angle=180)
-    c.info.polarization = "te"
-    c.info.wavelength = 1.310
-    c.auto_rename_ports()
-    return c
-
-
-@gf.cell
-def gc_tm1550() -> gf.Component:
-    c = import_gds("ebeam_gc_tm1550")
-    c = c.rotate(angle=180)
-    c.info.polarization = "tm"
-    c.info.wavelength = 1.550
-    c.auto_rename_ports()
-    return c
+gc_tm1550 = gf.partial(
+    import_gds,
+    "ebeam_gc_tm1550.gds",
+    decorator=add_ports_rotate180,
+    polarization="tm",
+    wavelength=1.55,
+)
 
 
 if __name__ == "__main__":
