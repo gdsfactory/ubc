@@ -1,7 +1,9 @@
 cells:
   ebeam_y_1550:
+    doc: Y junction TE1550 50/50 power.
     name: ebeam_y_1550
 info:
+  doc: Y junction TE1550 50/50 power.
   name: ebeam_y_1550
 ports:
   o1:

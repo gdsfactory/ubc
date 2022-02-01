@@ -1,50 +1,52 @@
 cells:
   ebeam_bdc_tm1550:
+    doc: Broadband directional coupler TM1550 50/50 power.
     name: ebeam_bdc_tm1550
 info:
+  doc: Broadband directional coupler TM1550 50/50 power.
   name: ebeam_bdc_tm1550
 ports:
-  opt1:
-    layer:
-    - 1
-    - 0
-    midpoint:
-    - 0.1
-    - 2.4
-    name: opt1
-    orientation: 180
-    port_type: optical
-    width: 0.5
-  opt2:
+  o1:
     layer:
     - 1
     - 0
     midpoint:
     - 0.1
     - -2.4
-    name: opt2
+    name: o1
     orientation: 180
     port_type: optical
     width: 0.5
-  opt3:
+  o2:
+    layer:
+    - 1
+    - 0
+    midpoint:
+    - 0.1
+    - 2.4
+    name: o2
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o3:
     layer:
     - 1
     - 0
     midpoint:
     - 35.7
     - 2.4
-    name: opt3
+    name: o3
     orientation: 0
     port_type: optical
     width: 0.5
-  opt4:
+  o4:
     layer:
     - 1
     - 0
     midpoint:
     - 35.7
     - -2.4
-    name: opt4
+    name: o4
     orientation: 0
     port_type: optical
     width: 0.5

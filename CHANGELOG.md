@@ -1,8 +1,15 @@
 # Changelog
 
+## 1.1.0
+
+- remove triangle from requirements.txt
+- enforce gdsfactory>=4.0.0
+- simplify grating couplers definition
+- add meep and lumerical simulation functions
+
 ## 1.0.6
 
-- move ubcpdk.simulations  to ubcpdk.simulation for consistency with gdsfactory
+- move ubcpdk.simulations to ubcpdk.simulation for consistency with gdsfactory
 - add ubcpdk.simulation.gmeep
 - move tests to ubcpdk/tests
 
@@ -35,7 +42,6 @@
 ## 0.0.3
 
 - components in different folders
-
 
 ## 0.0.2
 

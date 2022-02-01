@@ -1,30 +1,42 @@
 cells:
   ebeam_gc_te1550:
     name: ebeam_gc_te1550
-  ebeam_gc_te1550_gc_te1550:
-    changed: {}
-    child:
-      name: ebeam_gc_te1550
-    default: {}
-    full: {}
-    function_name: gc_te1550
-    info_version: 1
-    module: ubcpdk.components.grating_couplers
-    name: ebeam_gc_te1550_gc_te1550
     polarization: te
     wavelength: 1.55
+  ebeam_gc_te1550_rotate_77dd13e8:
+    changed:
+      angle: 180
+      component: ebeam_gc_te1550
+    child:
+      name: ebeam_gc_te1550
+      polarization: te
+      wavelength: 1.55
+    default:
+      angle: 90
+    full:
+      angle: 180
+      component: ebeam_gc_te1550
+    function_name: rotate
+    info_version: 1
+    module: gdsfactory.functions
+    name: ebeam_gc_te1550_rotate_77dd13e8
 info:
-  changed: {}
+  changed:
+    angle: 180
+    component: ebeam_gc_te1550
   child:
     name: ebeam_gc_te1550
-  default: {}
-  full: {}
-  function_name: gc_te1550
+    polarization: te
+    wavelength: 1.55
+  default:
+    angle: 90
+  full:
+    angle: 180
+    component: ebeam_gc_te1550
+  function_name: rotate
   info_version: 1
-  module: ubcpdk.components.grating_couplers
-  name: ebeam_gc_te1550_gc_te1550
-  polarization: te
-  wavelength: 1.55
+  module: gdsfactory.functions
+  name: ebeam_gc_te1550_rotate_77dd13e8
 ports:
   o1:
     layer:

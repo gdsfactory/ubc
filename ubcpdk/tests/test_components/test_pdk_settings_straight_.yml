@@ -1,10 +1,9 @@
 cells:
-  straight_808ab8f9:
+  straight_65989e8e:
     changed:
       layer:
       - 1
       - 0
-      length: 10
       width: 0.5
     default:
       cross_section:
@@ -26,16 +25,15 @@ cells:
     info_version: 1
     length: 10
     module: gdsfactory.components.straight
-    name: straight_808ab8f9
+    name: straight_65989e8e
     width: 0.5
-  straight_808ab8f9_straight:
+  straight_65989e8e_straight:
     changed: {}
     child:
       changed:
         layer:
         - 1
         - 0
-        length: 10
         width: 0.5
       default:
         cross_section:
@@ -57,7 +55,7 @@ cells:
       info_version: 1
       length: 10
       module: gdsfactory.components.straight
-      name: straight_808ab8f9
+      name: straight_65989e8e
       width: 0.5
     default:
       layer:
@@ -76,7 +74,7 @@ cells:
     function_name: straight
     info_version: 1
     module: ubcpdk.components.straight
-    name: straight_808ab8f9_straight
+    name: straight_65989e8e_straight
 info:
   changed: {}
   child:
@@ -84,7 +82,6 @@ info:
       layer:
       - 1
       - 0
-      length: 10
       width: 0.5
     default:
       cross_section:
@@ -106,7 +103,7 @@ info:
     info_version: 1
     length: 10
     module: gdsfactory.components.straight
-    name: straight_808ab8f9
+    name: straight_65989e8e
     width: 0.5
   default:
     layer:
@@ -125,7 +122,7 @@ info:
   function_name: straight
   info_version: 1
   module: ubcpdk.components.straight
-  name: straight_808ab8f9_straight
+  name: straight_65989e8e_straight
 ports:
   o1:
     layer:

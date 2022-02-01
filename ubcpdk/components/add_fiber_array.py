@@ -31,8 +31,8 @@ def get_input_label_text(
         gc: grating coupler reference.
         component_name: optional component name.
     """
-    polarization = gc.info.polarization
-    wavelength = gc.info.wavelength
+    polarization = gc.info_child.polarization
+    wavelength = gc.info_child.wavelength
 
     assert polarization.upper() in [
         "TE",
