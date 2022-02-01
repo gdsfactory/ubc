@@ -56,3 +56,6 @@ pydocstyle:
 
 doc8:
 	doc8 docs/
+
+git-rm-merged:
+	git branch -D `git branch --merged | grep -v \* | xargs`
