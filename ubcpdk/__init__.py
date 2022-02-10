@@ -8,7 +8,7 @@ from ubcpdk import tech
 from ubcpdk import data
 
 
-gf.asserts.version(">=4.0.0")
+gf.asserts.version(">=4.1.0")
 lys = gf.layers.load_lyp(PATH.lyp)
 __version__ = "1.1.0"
 

@@ -1,52 +1,20 @@
-cells:
-  ebeam_gc_te1310:
-    name: ebeam_gc_te1310
-    polarization: te
-    wavelength: 1.31
-  ebeam_gc_te1310_rotate_1d7c470d:
-    changed:
-      angle: 180
-      component: ebeam_gc_te1310
-    child:
-      name: ebeam_gc_te1310
-      polarization: te
-      wavelength: 1.31
-    default:
-      angle: 90
-    full:
-      angle: 180
-      component: ebeam_gc_te1310
-    function_name: rotate
-    info_version: 1
-    module: gdsfactory.functions
-    name: ebeam_gc_te1310_rotate_1d7c470d
-info:
+settings:
   changed:
     angle: 180
-    component: ebeam_gc_te1310
-  child:
-    name: ebeam_gc_te1310
-    polarization: te
-    wavelength: 1.31
+    component:
+      settings: {}
+      version: 0.0.1
+  child: {}
   default:
     angle: 90
   full:
     angle: 180
-    component: ebeam_gc_te1310
+    component:
+      settings: {}
+      version: 0.0.1
   function_name: rotate
-  info_version: 1
+  info: {}
+  info_version: 2
   module: gdsfactory.functions
-  name: ebeam_gc_te1310_rotate_1d7c470d
-ports:
-  o1:
-    layer:
-    - 1
-    - 0
-    midpoint:
-    - 0
-    - 0
-    name: o1
-    orientation: 180
-    port_type: optical
-    width: 0.5
+  name: rotate_f258530e
 version: 0.0.1

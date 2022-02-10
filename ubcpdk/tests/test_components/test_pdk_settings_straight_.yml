@@ -1,81 +1,4 @@
-cells:
-  straight_65989e8e:
-    changed:
-      layer:
-      - 1
-      - 0
-      width: 0.5
-    default:
-      cross_section:
-        function: cross_section
-      length: 10
-      npoints: 2
-      with_cladding_box: true
-    full:
-      cross_section:
-        function: cross_section
-      layer:
-      - 1
-      - 0
-      length: 10
-      npoints: 2
-      width: 0.5
-      with_cladding_box: true
-    function_name: straight
-    info_version: 1
-    length: 10
-    module: gdsfactory.components.straight
-    name: straight_65989e8e
-    width: 0.5
-  straight_65989e8e_straight:
-    changed: {}
-    child:
-      changed:
-        layer:
-        - 1
-        - 0
-        width: 0.5
-      default:
-        cross_section:
-          function: cross_section
-        length: 10
-        npoints: 2
-        with_cladding_box: true
-      full:
-        cross_section:
-          function: cross_section
-        layer:
-        - 1
-        - 0
-        length: 10
-        npoints: 2
-        width: 0.5
-        with_cladding_box: true
-      function_name: straight
-      info_version: 1
-      length: 10
-      module: gdsfactory.components.straight
-      name: straight_65989e8e
-      width: 0.5
-    default:
-      layer:
-      - 1
-      - 0
-      length: 10
-      width: 0.5
-      with_pins: true
-    full:
-      layer:
-      - 1
-      - 0
-      length: 10
-      width: 0.5
-      with_pins: true
-    function_name: straight
-    info_version: 1
-    module: ubcpdk.components.straight
-    name: straight_65989e8e_straight
-info:
+settings:
   changed: {}
   child:
     changed:
@@ -83,6 +6,7 @@ info:
       - 1
       - 0
       width: 0.5
+    child: null
     default:
       cross_section:
         function: cross_section
@@ -100,11 +24,12 @@ info:
       width: 0.5
       with_cladding_box: true
     function_name: straight
-    info_version: 1
-    length: 10
+    info:
+      length: 10.0
+      width: 0.5
+    info_version: 2
     module: gdsfactory.components.straight
-    name: straight_65989e8e
-    width: 0.5
+    name: straight_87bde41b
   default:
     layer:
     - 1
@@ -120,30 +45,8 @@ info:
     width: 0.5
     with_pins: true
   function_name: straight
-  info_version: 1
+  info: {}
+  info_version: 2
   module: ubcpdk.components.straight
-  name: straight_65989e8e_straight
-ports:
-  o1:
-    layer:
-    - 1
-    - 0
-    midpoint:
-    - 0
-    - 0
-    name: o1
-    orientation: 180
-    port_type: optical
-    width: 0.5
-  o2:
-    layer:
-    - 1
-    - 0
-    midpoint:
-    - 10
-    - 0
-    name: o2
-    orientation: 0
-    port_type: optical
-    width: 0.5
+  name: straight_87bde41b_straight
 version: 0.0.1

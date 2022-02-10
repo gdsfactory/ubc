@@ -21,5 +21,5 @@ RUN conda init bash
 RUN mamba install gdspy -y
 RUN mamba install pymeep=*=mpi_mpich_* -y
 
-RUN pip install ubcpdk[full] triangle
+RUN pip install ubcpdk[full]
 WORKDIR /home/jovyan

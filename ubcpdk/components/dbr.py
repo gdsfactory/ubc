@@ -5,14 +5,11 @@ from ubcpdk.tech import strip
 L = 1.55 / 4 / 2 / 2.44
 
 
-def straight(cross_section: gf.types.CrossSectionFactory = strip, **kwargs):
-    return gf.c.straight(cross_section=cross_section, **kwargs)
-
-
 @gf.cell
 def dbr(
     w0: float = 0.5, dw: float = 0.1, n: int = 600, l1: float = L, l2: float = L
 ) -> gf.Component:
+    straight = gf.partial(gf.c.straight, cross_section=strip)
     return gf.components.dbr(
         w1=w0 - dw / 2,
         w2=w0 + dw / 2,

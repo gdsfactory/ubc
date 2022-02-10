@@ -1,3 +1,4 @@
+import pathlib
 import pytest
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
@@ -6,6 +7,7 @@ from ubcpdk.components import factory
 
 
 component_names = factory.keys()
+dirpath = pathlib.Path(__file__).absolute().with_suffix(".gds")
 
 
 @pytest.fixture(params=component_names, scope="function")
@@ -15,7 +17,7 @@ def component(request) -> Component:
 
 def test_pdk_gds(component: Component) -> None:
     """Avoid regressions in GDS geometry shapes and layers."""
-    difftest(component)
+    difftest(component, dirpath=dirpath)
 
 
 def test_pdk_settings(

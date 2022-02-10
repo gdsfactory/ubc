@@ -1,6 +1,5 @@
 import gdslib as gl
 from gdslib import autoname
-from gdslib.types import ModelFactory
 import gdsfactory as gf
 from simphony.library import siepic
 from simphony.netlist import Subcircuit
@@ -11,8 +10,8 @@ def mzi(
     length_y: float = 1.0,
     delta_length: float = 100.0,
     length_x: float = 10.0,
-    y_model_factory: ModelFactory = siepic.ebeam_y_1550,
-    waveguide: ModelFactory = siepic.ebeam_wg_integral_1550,
+    y_model_factory = siepic.ebeam_y_1550,
+    waveguide = siepic.ebeam_wg_integral_1550,
 ) -> Subcircuit:
     """Mzi circuit model
 

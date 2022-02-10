@@ -1,158 +1,9 @@
-cells:
-  bend_euler_ad3c06b6:
-    changed:
-      radius: 5
-      width: 0.5
-    default:
-      angle: 90
-      cross_section:
-        function: cross_section
-      direction: ccw
-      npoints: 720
-      p: 0.5
-      with_arc_floorplan: true
-      with_cladding_box: true
-    dy: 5
-    full:
-      angle: 90
-      cross_section:
-        function: cross_section
-      direction: ccw
-      npoints: 720
-      p: 0.5
-      radius: 5
-      width: 0.5
-      with_arc_floorplan: true
-      with_cladding_box: true
-    function_name: bend_euler
-    info_version: 1
-    length: 8.318
-    module: gdsfactory.components.bend_euler
-    name: bend_euler_ad3c06b6
-    radius: 5
-    radius_min: 3.53
-  coupler_ring:
-    changed: {}
-    default:
-      bend: null
-      bend_cross_section: null
-      coupler90:
-        function: coupler90
-      coupler_straight:
-        function: coupler_straight
-      cross_section:
-        function: cross_section
-      gap: 0.2
-      length_x: 4
-      radius: 5
-    full:
-      bend: null
-      bend_cross_section: null
-      coupler90:
-        function: coupler90
-      coupler_straight:
-        function: coupler_straight
-      cross_section:
-        function: cross_section
-      gap: 0.2
-      length_x: 4
-      radius: 5
-    function_name: coupler_ring
-    info_version: 1
-    module: gdsfactory.components.coupler_ring
-    name: coupler_ring
-  ebeam_crossing4:
-    name: ebeam_crossing4
-  ebeam_crossing4_ring_si_4a59a99d:
-    changed:
-      component: ebeam_crossing4
-    child:
-      name: ebeam_crossing4
-    default:
-      bend:
-        function: bend_euler
-      component:
-        function: taper
-        width2: 3
-      coupler:
-        function: coupler_ring
-      gap: 0.2
-      length_x: 4
-      length_y: 0
-      radius: 5
-      straight:
-        function: straight
-      wg_width: 0.5
-      with_component: true
-    full:
-      bend:
-        function: bend_euler
-      component: ebeam_crossing4
-      coupler:
-        function: coupler_ring
-      gap: 0.2
-      length_x: 4
-      length_y: 0
-      radius: 5
-      straight:
-        function: straight
-      wg_width: 0.5
-      with_component: true
-    function_name: ring_single_dut
-    info_version: 1
-    module: gdsfactory.components.ring_single_dut
-    name: ebeam_crossing4_ring_si_4a59a99d
-  straight_b70e023c:
-    changed:
-      length: 9.6
-      width: 0.5
-    default:
-      cross_section:
-        function: cross_section
-      length: 10
-      npoints: 2
-      with_cladding_box: true
-    full:
-      cross_section:
-        function: cross_section
-      length: 9.6
-      npoints: 2
-      width: 0.5
-      with_cladding_box: true
-    function_name: straight
-    info_version: 1
-    length: 9.6
-    module: gdsfactory.components.straight
-    name: straight_b70e023c
-    width: 0.5
-  straight_d4cb55ff:
-    changed:
-      length: 4
-      width: 0.5
-    default:
-      cross_section:
-        function: cross_section
-      length: 10
-      npoints: 2
-      with_cladding_box: true
-    full:
-      cross_section:
-        function: cross_section
-      length: 4
-      npoints: 2
-      width: 0.5
-      with_cladding_box: true
-    function_name: straight
-    info_version: 1
-    length: 4
-    module: gdsfactory.components.straight
-    name: straight_d4cb55ff
-    width: 0.5
-info:
+settings:
   changed:
-    component: ebeam_crossing4
-  child:
-    name: ebeam_crossing4
+    component:
+      settings: {}
+      version: 0.0.1
+  child: {}
   default:
     bend:
       function: bend_euler
@@ -172,7 +23,9 @@ info:
   full:
     bend:
       function: bend_euler
-    component: ebeam_crossing4
+    component:
+      settings: {}
+      version: 0.0.1
     coupler:
       function: coupler_ring
     gap: 0.2
@@ -184,30 +37,8 @@ info:
     wg_width: 0.5
     with_component: true
   function_name: ring_single_dut
-  info_version: 1
+  info: {}
+  info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ebeam_crossing4_ring_si_4a59a99d
-ports:
-  o1:
-    layer:
-    - 1
-    - 0
-    midpoint:
-    - -9
-    - 0
-    name: o1
-    orientation: 180
-    port_type: optical
-    width: 0.5
-  o2:
-    layer:
-    - 1
-    - 0
-    midpoint:
-    - 5
-    - 0
-    name: o2
-    orientation: 0
-    port_type: optical
-    width: 0.5
+  name: ring_single_dut_9c01015b
 version: 0.0.1
