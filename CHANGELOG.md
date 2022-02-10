@@ -2,6 +2,10 @@
 
 ## 1.1.0
 
+- enforce gdsfactory>=4.1.0
+ 
+## 1.1.0
+
 - remove triangle from requirements.txt
 - enforce gdsfactory>=4.0.0
 - simplify grating couplers definition
