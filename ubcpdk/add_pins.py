@@ -22,6 +22,6 @@ def add_pins(
 if __name__ == "__main__":
     import gdsfactory as gf
 
-    c = gf.c.straight()
+    c = gf.components.straight()
     add_pins(c)
     c.show(show_ports=False)

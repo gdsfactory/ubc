@@ -41,7 +41,7 @@ def mzi_gc(
 
       import gdsfactory as gf
 
-      c = gf.c.mzi(L0=0.1, L1=0, L2=10)
+      c = gf.components.mzi(L0=0.1, L1=0, L2=10)
       gf.plotgds(c)
 
     """

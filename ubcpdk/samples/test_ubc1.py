@@ -62,7 +62,7 @@ def test_mask2():
 
     m = c[0]
     m.name = "EBeam_JoaquinMatres_2"
-    m << gf.c.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
+    m << gf.components.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
@@ -86,7 +86,7 @@ def test_mask1():
     c = gf.pack(e, max_size=floorplan_size)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_1"
-    m << gf.c.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
+    m << gf.components.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
@@ -100,7 +100,7 @@ def test_mask3():
     c = gf.pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_3"
-    m << gf.c.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
+    m << gf.components.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 

@@ -42,7 +42,7 @@ def mzi(
 
       import gdsfactory as gf
 
-      c = gf.c.mzi(length_y=0.1, delta_length=0, length_x=10)
+      c = gf.components.mzi(length_y=0.1, delta_length=0, length_x=10)
       gf.plotgds(c)
 
 
