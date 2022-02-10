@@ -37,6 +37,7 @@ class Path:
     data = samples / "data"
     gds = module / "gds"
     sparameters = repo / "sparameters"
+    modes = repo / "modes"
     mask = module / "samples" / "extra" / "ubc1"
 
     mzi = data / "mzi"

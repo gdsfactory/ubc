@@ -15,6 +15,7 @@ ref_layouts/
 poetry.lock
 Pipfile
 pyproject.toml
+modes/
 
 # Distribution / packaging
 .Python
