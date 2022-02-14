@@ -29,10 +29,11 @@ def get_input_label_text(
     Args:
         port: component port.
         gc: grating coupler reference.
+        gc_index: grating coupler index
         component_name: optional component name.
     """
-    polarization = gc.info_child.polarization
-    wavelength = gc.info_child.wavelength
+    polarization = gc.info.get("polarization")
+    wavelength = gc.info.get("wavelength")
 
     assert polarization.upper() in [
         "TE",
@@ -42,7 +43,7 @@ def get_input_label_text(
         isinstance(wavelength, (int, float)) and 1.0 < wavelength < 2.0
     ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
 
-    name = component_name or port.parent.info_child.name
+    name = component_name or port.parent.metadata_child.get("name")
     # name = component_name
     # elif type(port.parent) == Component:
     # name = port.parent.name
@@ -52,7 +53,7 @@ def get_input_label_text(
 
     label = (
         f"opt_in_{polarization.upper()}_{int(wavelength*1e3)}_device_"
-        + f"{CONFIG.username}_({name})-{gc_index}-{port.name}"
+        f"{CONFIG.username}_({name})-{gc_index}-{port.name}"
     )
     return label
 
@@ -161,7 +162,7 @@ def add_fiber_array(
     ref = c << component
     ref.rotate(-90)
     c.add_ports(ref.ports)
-    c.component = component
+    c.copy_child_info(component)
     return c
 
 

@@ -1,130 +1,6 @@
-cells:
-  add_fiber_array:
-    changed: {}
-    default:
-      component:
-        function: straight
-      component_name: null
-      fanout_length: 0
-      gc_port_name: o1
-      get_input_labels_function:
-        function: get_input_labels
-      grating_coupler:
-        decorator:
-        - - function: add_ports
-          - function: auto_rename_ports
-        - angle: 180
-          function: rotate
-        function: import_gds
-        gdsdir: gds
-        gdspath: ebeam_gc_te1550.gds
-        polarization: te
-        wavelength: 1.55
-      optical_routing_type: 0
-      with_loopback: false
-    full:
-      component:
-        function: straight
-      component_name: null
-      fanout_length: 0
-      gc_port_name: o1
-      get_input_labels_function:
-        function: get_input_labels
-      grating_coupler:
-        decorator:
-        - - function: add_ports
-          - function: auto_rename_ports
-        - angle: 180
-          function: rotate
-        function: import_gds
-        gdsdir: gds
-        gdspath: ebeam_gc_te1550.gds
-        polarization: te
-        wavelength: 1.55
-      optical_routing_type: 0
-      with_loopback: false
-    function_name: add_fiber_array
-    info_version: 1
-    module: ubcpdk.components.add_fiber_array
-    name: add_fiber_array
-  bend_euler:
-    changed: {}
-    default:
-      angle: 90
-      cross_section:
-        function: cross_section
-      direction: ccw
-      npoints: 720
-      p: 0.5
-      with_arc_floorplan: true
-      with_cladding_box: true
-    dy: 10
-    full:
-      angle: 90
-      cross_section:
-        function: cross_section
-      direction: ccw
-      npoints: 720
-      p: 0.5
-      with_arc_floorplan: true
-      with_cladding_box: true
-    function_name: bend_euler
-    info_version: 1
-    length: 16.637
-    module: gdsfactory.components.bend_euler
-    name: bend_euler
-    radius: 10
-    radius_min: 7.061
-  ebeam_gc_te1550:
-    name: ebeam_gc_te1550
-    polarization: te
-    wavelength: 1.55
-  ebeam_gc_te1550_rotate_77dd13e8:
-    changed:
-      angle: 180
-      component: ebeam_gc_te1550
-    child:
-      name: ebeam_gc_te1550
-      polarization: te
-      wavelength: 1.55
-    default:
-      angle: 90
-    full:
-      angle: 180
-      component: ebeam_gc_te1550
-    function_name: rotate
-    info_version: 1
-    module: gdsfactory.functions
-    name: ebeam_gc_te1550_rotate_77dd13e8
-  straight_65989e8e:
-    changed:
-      layer:
-      - 1
-      - 0
-      width: 0.5
-    default:
-      cross_section:
-        function: cross_section
-      length: 10
-      npoints: 2
-      with_cladding_box: true
-    full:
-      cross_section:
-        function: cross_section
-      layer:
-      - 1
-      - 0
-      length: 10
-      npoints: 2
-      width: 0.5
-      with_cladding_box: true
-    function_name: straight
-    info_version: 1
-    length: 10
-    module: gdsfactory.components.straight
-    name: straight_65989e8e
-    width: 0.5
-  straight_65989e8e_add_f_83b1445b:
+settings:
+  changed: {}
+  child:
     changed:
       component:
         function: straight
@@ -153,6 +29,7 @@ cells:
           - 1
           - 0
           width: 0.5
+        child: null
         default:
           cross_section:
             function: cross_section
@@ -170,11 +47,12 @@ cells:
           width: 0.5
           with_cladding_box: true
         function_name: straight
-        info_version: 1
-        length: 10
+        info:
+          length: 10.0
+          width: 0.5
+        info_version: 2
         module: gdsfactory.components.straight
-        name: straight_65989e8e
-        width: 0.5
+        name: straight_87bde41b
       default:
         layer:
         - 1
@@ -190,9 +68,10 @@ cells:
         width: 0.5
         with_pins: true
       function_name: straight
-      info_version: 1
+      info: {}
+      info_version: 2
       module: ubcpdk.components.straight
-      name: straight_65989e8e_straight
+      name: straight_87bde41b_straight
     default:
       bend:
         function: bend_euler
@@ -250,101 +129,10 @@ cells:
         function: straight
       with_loopback: false
     function_name: add_fiber_array
-    info_version: 1
+    info: {}
+    info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_65989e8e_add_f_83b1445b
-  straight_65989e8e_straight:
-    changed: {}
-    child:
-      changed:
-        layer:
-        - 1
-        - 0
-        width: 0.5
-      default:
-        cross_section:
-          function: cross_section
-        length: 10
-        npoints: 2
-        with_cladding_box: true
-      full:
-        cross_section:
-          function: cross_section
-        layer:
-        - 1
-        - 0
-        length: 10
-        npoints: 2
-        width: 0.5
-        with_cladding_box: true
-      function_name: straight
-      info_version: 1
-      length: 10
-      module: gdsfactory.components.straight
-      name: straight_65989e8e
-      width: 0.5
-    default:
-      layer:
-      - 1
-      - 0
-      length: 10
-      width: 0.5
-      with_pins: true
-    full:
-      layer:
-      - 1
-      - 0
-      length: 10
-      width: 0.5
-      with_pins: true
-    function_name: straight
-    info_version: 1
-    module: ubcpdk.components.straight
-    name: straight_65989e8e_straight
-  straight_d54c3d92:
-    changed:
-      length: 48.5
-    default:
-      cross_section:
-        function: cross_section
-      length: 10
-      npoints: 2
-      with_cladding_box: true
-    full:
-      cross_section:
-        function: cross_section
-      length: 48.5
-      npoints: 2
-      with_cladding_box: true
-    function_name: straight
-    info_version: 1
-    length: 48.5
-    module: gdsfactory.components.straight
-    name: straight_d54c3d92
-    width: 0.5
-  straight_de80e131:
-    changed:
-      length: 6.2
-    default:
-      cross_section:
-        function: cross_section
-      length: 10
-      npoints: 2
-      with_cladding_box: true
-    full:
-      cross_section:
-        function: cross_section
-      length: 6.2
-      npoints: 2
-      with_cladding_box: true
-    function_name: straight
-    info_version: 1
-    length: 6.2
-    module: gdsfactory.components.straight
-    name: straight_de80e131
-    width: 0.5
-info:
-  changed: {}
+    name: straight_87bde41b_strai_17ef6bf9
   default:
     component:
       function: straight
@@ -388,8 +176,8 @@ info:
     optical_routing_type: 0
     with_loopback: false
   function_name: add_fiber_array
-  info_version: 1
+  info: {}
+  info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: add_fiber_array
-ports: {}
+  name: straight_87bde41b_strai_7214f353
 version: 0.0.1
