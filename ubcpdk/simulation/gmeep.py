@@ -36,14 +36,14 @@ write_sparameters_meep_mpi_lt = gf.partial(
 )
 
 
-write_sparameters_meep_mpi_pool = gf.partial(
-    gm.write_sparameters_meep_mpi_pool, dirpath=sparameters, layer_stack=LAYER_STACK
+write_sparameters_meep_batch = gf.partial(
+    gm.write_sparameters_meep_batch, dirpath=sparameters, layer_stack=LAYER_STACK
 )
-write_sparameters_meep_mpi_pool_lr = gf.partial(
-    gm.write_sparameters_meep_mpi_pool_lr, dirpath=sparameters, layer_stack=LAYER_STACK
+write_sparameters_meep_batch_lr = gf.partial(
+    gm.write_sparameters_meep_batch_lr, dirpath=sparameters, layer_stack=LAYER_STACK
 )
-write_sparameters_meep_mpi_pool_lt = gf.partial(
-    gm.write_sparameters_meep_mpi_pool_lt, dirpath=sparameters, layer_stack=LAYER_STACK
+write_sparameters_meep_batch_lt = gf.partial(
+    gm.write_sparameters_meep_batch_lt, dirpath=sparameters, layer_stack=LAYER_STACK
 )
 
 
@@ -56,9 +56,9 @@ __all__ = [
     "write_sparameters_meep_mpi",
     "write_sparameters_meep_mpi_lr",
     "write_sparameters_meep_mpi_lt",
-    "write_sparameters_meep_mpi_pool",
-    "write_sparameters_meep_mpi_pool_lr",
-    "write_sparameters_meep_mpi_pool_lt",
+    "write_sparameters_meep_batch",
+    "write_sparameters_meep_batch_lr",
+    "write_sparameters_meep_batch_lt",
     "plot",
     "port_symmetries",
 ]
