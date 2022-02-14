@@ -52,7 +52,10 @@ y_splitter = gf.partial(
     doc="Y junction TE1550 50/50 power.",
 )
 
-
+mzi = gf.partial(gf.components.mzi, splitter=y_splitter)
+ring_single = gf.partial(gf.components.ring_single)
+ebeam_dc_halfring_straight = gf.partial(gf.components.coupler_ring)
+ebeam_dc_te1550 = gf.partial(gf.components.coupler)
 spiral = gf.partial(gf.components.spiral_external_io)
 
 
@@ -80,7 +83,7 @@ __all__ = list(factory.keys())
 
 
 if __name__ == "__main__":
-    c = dc_broadband_te()
+    # c = dc_broadband_te()
     # c = dc_adiabatic()
     # c = straight_no_pins()
     # c = add_fiber_array(component=c)
@@ -89,4 +92,5 @@ if __name__ == "__main__":
     # print(c.ports.keys())
     # c = straight()
     # c = add_fiber_array(component=c)
+    c = mzi()
     c.show()

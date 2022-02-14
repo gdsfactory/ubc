@@ -15,12 +15,12 @@ find_modes_waveguide = gf.partial(
     slab_thickness=0 * nm,
     resolution=20,
     nmodes=4,
-    dirpath=PATH.modes,
+    cache=PATH.modes,
 )
 
 
 find_neff_vs_width = gf.partial(
-    gm.find_neff_vs_width, dirpath=PATH.modes, filepath="find_neff_vs_width.csv"
+    gm.find_neff_vs_width, cache=PATH.modes, filepath="find_neff_vs_width.csv"
 )
 
 
