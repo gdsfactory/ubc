@@ -11,5 +11,5 @@ Tutorials for `UBC PDK <https://github.com/gdsfactory/ubc>`_
    :caption: Contents:
 
    notebooks/00_layout.ipynb
-   notebooks/01_sparameters.ipynb
-   notebooks/02_circuit_simulation.ipynb
+   notebooks/11_sparameters.ipynb
+   notebooks/12_circuit_simulation.ipynb
