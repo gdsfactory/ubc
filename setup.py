@@ -17,11 +17,6 @@ def get_install_requires():
         return [line.strip() for line in f.readlines() if not line.startswith("-")]
 
 
-def get_install_requires_dev():
-    with open("requirements_dev.txt", "r") as f:
-        return [line.strip() for line in f.readlines() if not line.startswith("-")]
-
-
 setup(
     name="ubcpdk",
     version="1.2.1",
@@ -38,8 +33,4 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
     ],
-    extras_require={
-        "full": list(set(get_install_requires() + get_install_requires_dev())),
-        "basic": get_install_requires(),
-    },
 )

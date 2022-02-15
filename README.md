@@ -41,7 +41,7 @@ If you want to get all the extras (mode solvers, meep, circuit simulation ...)
 ```
 mamba install gdspy -y
 mamba install pymeep=*=mpi_mpich_* -y
-pip install ubcpdk[full] --upgrade
+pip install ubcpdk --upgrade
 gf tool install
 ```
 
@@ -61,8 +61,7 @@ For developers you need to `git clone` the GitHub repository, fork it, git add, 
 ```
 git clone https://github.com/gdsfactory/ubc.git --shallow-exclude=gh-pages
 cd ubc
-pip install -r requirements.txt --upgrade
-pip install -r requirements_dev.txt --upgrade
+pip install -e .
 pip install pre-commit
 pre-commit install
 python install_tech.py
