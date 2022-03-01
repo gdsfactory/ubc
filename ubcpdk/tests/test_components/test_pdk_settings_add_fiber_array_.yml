@@ -12,6 +12,7 @@ settings:
         - angle: 180
           function: rotate
         function: import_gds
+        gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
         polarization: te
         wavelength: 1.55
@@ -113,6 +114,7 @@ settings:
         - angle: 180
           function: rotate
         function: import_gds
+        gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
         polarization: te
         wavelength: 1.55
@@ -130,7 +132,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_87bde41b_strai_2aa0eb2e
+    name: straight_87bde41b_strai_17ef6bf9
   default:
     component:
       function: straight
@@ -146,6 +148,7 @@ settings:
       - angle: 180
         function: rotate
       function: import_gds
+      gdsdir: gds
       gdspath: ebeam_gc_te1550.gds
       polarization: te
       wavelength: 1.55
@@ -166,6 +169,7 @@ settings:
       - angle: 180
         function: rotate
       function: import_gds
+      gdsdir: gds
       gdspath: ebeam_gc_te1550.gds
       polarization: te
       wavelength: 1.55
@@ -175,5 +179,5 @@ settings:
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_87bde41b_strai_f4c8e2f7
+  name: straight_87bde41b_strai_7214f353
 version: 0.0.1
