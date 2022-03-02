@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.3.1
+## [1.3.1](https://github.com/gdsfactory/ubc/pull/7)
 
 - update gdsfactory>=4.2.16
 - add tidy3d simulations
