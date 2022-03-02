@@ -10,7 +10,7 @@ from ubcpdk import data
 
 gf.asserts.version(">=4.2.1")
 lys = gf.layers.load_lyp(PATH.lyp)
-__version__ = "1.3.1"
+__version__ = "1.3.2"
 
 __all__ = [
     "CONFIG",
