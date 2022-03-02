@@ -83,6 +83,7 @@ __all__ = list(factory.keys())
 
 
 if __name__ == "__main__":
+    # print(dc_broadband_te.__doc__)
     # c = dc_broadband_te()
     # c = dc_adiabatic()
     # c = straight_no_pins()
@@ -92,5 +93,6 @@ if __name__ == "__main__":
     # print(c.ports.keys())
     # c = straight()
     # c = add_fiber_array(component=c)
-    c = mzi()
+    # c = mzi()
+    c = gc_te1550()
     c.show()

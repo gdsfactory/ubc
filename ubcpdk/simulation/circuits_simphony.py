@@ -59,9 +59,8 @@ circuit_factory = dict(mzi=mzi)
 
 
 if __name__ == "__main__":
-    import matplotlib.pyplot as plt
-    from gdsfactory.simulation.simphony.plot_circuit import plot_circuit
+    # from gdsfactory.simulation.simphony.plot_circuit import plot_circuit
+    # c = mzi()
+    # plot_circuit(c)
 
-    c = mzi()
-    plot_circuit(c)
-    plt.show()
+    gs.plot_model(ebeam_gc_te1550)

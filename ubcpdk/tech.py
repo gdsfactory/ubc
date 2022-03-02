@@ -17,6 +17,21 @@ from ubcpdk.config import PATH
 
 nm = 1e-3
 
+MATERIAL_NAME_TO_LUMERICAL = {
+    "si": "Si (Silicon) - Palik",
+    "sio2": "SiO2 (Glass) - Palik",
+    "sin": "Si3N4 (Silicon Nitride) - Phillip",
+}
+
+MATERIAL_NAME_TO_TIDY3D = {
+    "si": 3.47,
+    "sio2": 1.44,
+    "sin": 2.0,
+    # "si": "cSi",
+    # "sio2": "SiO2",
+    # "sin": "Si3N4",
+}
+
 
 @pydantic.dataclasses.dataclass(frozen=True)
 class LayerMapUbc:
