@@ -30,6 +30,9 @@ test-force:
 	rm -r gds_ref
 	pytest --force-regen
 
+doc:
+	python docs/write_components_doc.py
+
 meep:
 	mamba install pymeep=*=mpi_mpich_* -y
 

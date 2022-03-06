@@ -20,7 +20,7 @@ skip = {
 }
 
 skip_plot = {}
-skip_settings = {}
+skip_settings = {"flatten", "safe_cell_names"}
 
 
 with open(filepath, "w+") as f:
