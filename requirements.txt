@@ -1,4 +1,4 @@
 -e .
 lygadgets
-gdsfactory[full]>=4.3.5
+gdsfactory[full]==4.3.5
 modes
