@@ -4,10 +4,11 @@ __pycache__/
 *$py.class
 run_layouts/
 ref_layouts/
+ubcpdk/tests/test_components.gds/gds_run/
+ubcpdk/tests/test_components.gds/gds_diff/
 
 # C extensions
 *.so
-*.gds
 *.sqlite3
 *.png
 *.db
