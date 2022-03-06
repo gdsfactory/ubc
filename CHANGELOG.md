@@ -1,6 +1,8 @@
 # Changelog
 
-## 1.3.4
+## [1.3.5]
+
+## [1.3.4](https://github.com/gdsfactory/ubc/pull/8)
 
 - add pins also adds the device recognition layer
 
