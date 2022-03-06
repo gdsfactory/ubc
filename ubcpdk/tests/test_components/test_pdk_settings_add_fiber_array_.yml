@@ -2,6 +2,10 @@ settings:
   changed: {}
   child:
     changed:
+      bend:
+        decorator:
+          function: add_pins
+        function: bend_euler
       component:
         function: straight
       fanout_length: 0
@@ -96,6 +100,8 @@ settings:
         function: straight
     full:
       bend:
+        decorator:
+          function: add_pins
         function: bend_euler
       component:
         function: straight
@@ -132,7 +138,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_87bde41b_strai_17ef6bf9
+    name: straight_87bde41b_strai_326a6368
   default:
     component:
       function: straight
@@ -179,5 +185,5 @@ settings:
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_87bde41b_strai_7214f353
+  name: straight_87bde41b_strai_f2d83180
 version: 0.0.1
