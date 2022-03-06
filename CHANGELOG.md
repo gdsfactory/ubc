@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.4
+
+- add pins also adds the device recognition layer
+
 ## 1.3.3
 
 - enable dispersive fdtd simulations in tidy3d thanks to gdsfactory 4.3.4

@@ -14,6 +14,7 @@ from ubcpdk.tech import LAYER
 
 from ubcpdk.components.grating_couplers import gc_te1550
 from ubcpdk.components.straight import straight
+from ubcpdk.components.cells import bend_euler
 
 L = 1.55 / 4 / 2 / 2.44
 
@@ -24,7 +25,7 @@ def get_input_label_text(
     gc_index: Optional[int] = None,
     component_name: Optional[str] = None,
 ) -> str:
-    """Return label for a component port and a grating coupler.
+    """Return label for port and a grating coupler.
 
     Args:
         port: component port.
@@ -64,8 +65,8 @@ def get_input_labels_all(
     component_name,
     layer_label=LAYER.LABEL,
     gc_port_name: str = "o1",
-):
-    """Return labels (elements list) for all component ports."""
+) -> List[Label]:
+    """Return list of labels  all component ports."""
     elements = []
     for i, g in enumerate(io_gratings):
         label = get_input_label(
@@ -90,7 +91,7 @@ def get_input_labels(
     port_index: int = 1,
     get_input_label_text_function: Callable = get_input_label_text,
 ) -> List[Label]:
-    """Return labels (elements list) for all component ports."""
+    """Return list of labels for all component ports."""
     if port_index == -1:
         return get_input_labels_all(
             io_gratings=io_gratings,
@@ -157,6 +158,8 @@ def add_fiber_array(
         optical_routing_type=optical_routing_type,
         layer_label=LAYER.LABEL,
         fanout_length=fanout_length,
+        straight=straight,
+        bend=bend_euler,
         **kwargs,
     )
     ref = c << component

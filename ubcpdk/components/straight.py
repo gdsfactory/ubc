@@ -42,4 +42,4 @@ def straight(
 
 if __name__ == "__main__":
     c = straight()
-    c.show()
+    c.show(show_ports=False)
