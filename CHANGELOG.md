@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3
+
+- enable dispersive fdtd simulations in tidy3d thanks to gdsfactory 4.3.4
+
 ## [1.3.1](https://github.com/gdsfactory/ubc/pull/7)
 
 - update gdsfactory>=4.2.16

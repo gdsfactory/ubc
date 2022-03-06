@@ -23,13 +23,10 @@ MATERIAL_NAME_TO_LUMERICAL = {
     "sin": "Si3N4 (Silicon Nitride) - Phillip",
 }
 
-MATERIAL_NAME_TO_TIDY3D = {
+MATERIAL_NAME_TO_TIDY3D_INDEX = {
     "si": 3.47,
     "sio2": 1.44,
     "sin": 2.0,
-    # "si": "cSi",
-    # "sio2": "SiO2",
-    # "sin": "Si3N4",
 }
 
 
