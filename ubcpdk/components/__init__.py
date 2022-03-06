@@ -9,6 +9,7 @@ def y_splitter() -> Component:
 
 import gdsfactory as gf
 from ubcpdk.import_gds import import_gds
+from ubcpdk.add_pins import add_pins
 
 from ubcpdk.components.add_fiber_array import add_fiber_array
 from ubcpdk.components.grating_couplers import (
@@ -52,7 +53,8 @@ y_splitter = gf.partial(
     doc="Y junction TE1550 50/50 power.",
 )
 
-mzi = gf.partial(gf.components.mzi, splitter=y_splitter)
+bend = gf.partial(gf.components.bend_euler, decorator=add_pins)
+mzi = gf.partial(gf.components.mzi, splitter=y_splitter, straight=straight, bend=bend)
 ring_single = gf.partial(gf.components.ring_single)
 ebeam_dc_halfring_straight = gf.partial(gf.components.coupler_ring)
 ebeam_dc_te1550 = gf.partial(gf.components.coupler)
@@ -93,6 +95,6 @@ if __name__ == "__main__":
     # print(c.ports.keys())
     # c = straight()
     # c = add_fiber_array(component=c)
-    # c = mzi()
-    c = gc_te1550()
+    c = mzi()
+    # c = gc_te1550()
     c.show()
