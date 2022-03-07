@@ -5,7 +5,6 @@ from ubcpdk.components.add_fiber_array import (
     add_fiber_array,
 )
 from ubcpdk.components.cells import (
-    bend_euler,
     dc_adiabatic,
     dc_broadband_te,
     dc_broadband_tm,
@@ -16,6 +15,7 @@ from ubcpdk.components.cells import (
     spiral,
     y_adiabatic,
     y_splitter,
+    bend_euler,
 )
 from ubcpdk.components.crossing import (
     crossing,
@@ -37,6 +37,7 @@ from ubcpdk.components.straight import (
 
 factory = dict(
     add_fiber_array=add_fiber_array,
+    bend_euler=bend_euler,
     crossing=crossing,
     dbr=dbr,
     dbr_cavity=dbr_cavity,

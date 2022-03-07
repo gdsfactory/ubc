@@ -65,6 +65,16 @@ if __name__ == "__main__":
     # print(c.ports.keys())
     # c = straight()
     # c = add_fiber_array(component=c)
-    c = mzi()
+    # c = mzi(splitter=y_splitter)
     # c = gc_te1550()
+
+    # c = y_splitter()
+    # s = dc_adiabatic()
+
+    c = gf.Component()
+    s = y_splitter()
+    sp = c << s
+    wg = c << straight()
+    wg.connect("o1", sp.ports["o1"])
+
     c.show(show_ports=False)

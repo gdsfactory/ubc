@@ -4,6 +4,7 @@ from gdsfactory.component import Component
 
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
+from ubcpdk.add_pins import add_pins
 
 
 layer = LAYER.WG
@@ -32,8 +33,19 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
     return 0
 
 
+def remove_pins(component) -> Component:
+    """Remove PINS and"""
+    # component.remove_labels(test=lambda x: True)
+    component.remove_layers(layers=(LAYER.DEVREC, LAYER.PORT))
+    component.paths = []
+    component._bb_valid = False
+    return component
+
+
 def add_ports(component: Component) -> Component:
-    """Add ports from labels."""
+    """Add ports from labels.
+    guessing port orientaton from port location
+    """
 
     c = component
     n = 0
@@ -58,10 +70,13 @@ def add_ports(component: Component) -> Component:
             )
             if port_name not in c.ports:
                 c.add_port(port)
+
     return c
 
 
-add_ports_renamed = gf.compose(gf.port.auto_rename_ports, add_ports)
+add_ports_renamed = gf.compose(
+    add_pins, gf.port.auto_rename_ports, remove_pins, add_ports
+)
 
 import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_renamed)
 
@@ -69,5 +84,5 @@ import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_rena
 if __name__ == "__main__":
     gdsname = "ebeam_y_1550.gds"
     c = import_gds(gdsname)
-    print(c.ports)
-    c.show()
+    # print(c.ports)
+    c.show(show_ports=False)
