@@ -67,4 +67,4 @@ if __name__ == "__main__":
     # c = add_fiber_array(component=c)
     c = mzi()
     # c = gc_te1550()
-    c.show()
+    c.show(show_ports=False)

@@ -41,5 +41,10 @@ def straight(
 
 
 if __name__ == "__main__":
-    c = straight()
+    c = gf.Component()
+    # s1 = c.add_ref(straight())
+
+    s1 = c << straight()
+    s2 = c << straight()
+    s2.connect("o2", s1.ports["o1"])
     c.show(show_ports=False)
