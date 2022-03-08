@@ -1,6 +1,4 @@
-"""
-
-Each partial function is equivalent to
+""" Each partial function is equivalent to
 
 def y_splitter() -> Component:
     c = import_gds("ebeam_y_1550", rename_ports=True)
@@ -8,8 +6,8 @@ def y_splitter() -> Component:
 """
 
 import gdsfactory as gf
+from gdsfactory.add_pins import add_pins_siepic
 from ubcpdk.import_gds import import_gds
-from ubcpdk.add_pins import add_pins
 
 from ubcpdk.components.straight import straight
 
@@ -44,7 +42,7 @@ y_splitter = gf.partial(
     doc="Y junction TE1550 50/50 power.",
 )
 
-bend_euler = gf.partial(gf.components.bend_euler, decorator=add_pins)
+bend_euler = gf.partial(gf.components.bend_euler, decorator=add_pins_siepic)
 mzi = gf.partial(
     gf.components.mzi, splitter=y_splitter, straight=straight, bend=bend_euler
 )
@@ -65,16 +63,16 @@ if __name__ == "__main__":
     # print(c.ports.keys())
     # c = straight()
     # c = add_fiber_array(component=c)
-    # c = mzi(splitter=y_splitter)
+    c = mzi(splitter=y_splitter)
     # c = gc_te1550()
 
     # c = y_splitter()
     # s = dc_adiabatic()
 
-    c = gf.Component()
-    s = y_splitter()
-    sp = c << s
-    wg = c << straight()
-    wg.connect("o1", sp.ports["o1"])
+    # c = gf.Component()
+    # s = y_splitter()
+    # sp = c << s
+    # wg = c << straight()
+    # wg.connect("o1", sp.ports["o1"])
 
     c.show(show_ports=False)

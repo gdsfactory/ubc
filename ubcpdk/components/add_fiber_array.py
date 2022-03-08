@@ -180,4 +180,3 @@ if __name__ == "__main__":
     c = pdk.straight()
     c = add_fiber_array(component=c)
     c.show()
-    c.pprint
