@@ -4,6 +4,7 @@ from gdsfactory.component import Component
 
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
+from gdsfactory.add_pins import add_pins_bbox_siepic
 
 
 layer = LAYER.WG
@@ -32,8 +33,19 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
     return 0
 
 
+def remove_pins(component) -> Component:
+    """Remove PINS and"""
+    # component.remove_labels(test=lambda x: True)
+    component.remove_layers(layers=(LAYER.DEVREC, LAYER.PORT))
+    component.paths = []
+    component._bb_valid = False
+    return component
+
+
 def add_ports(component: Component) -> Component:
-    """Add ports from labels."""
+    """Add ports from labels.
+    guessing port orientaton from port location
+    """
 
     c = component
     n = 0
@@ -44,6 +56,7 @@ def add_ports(component: Component) -> Component:
     for label in c.get_labels():
         if label.text.startswith("opt"):
             port_name = label.text
+            print(label.position)
             port = gf.Port(
                 name=port_name,
                 midpoint=label.position,
@@ -58,10 +71,19 @@ def add_ports(component: Component) -> Component:
             )
             if port_name not in c.ports:
                 c.add_port(port)
+
     return c
 
 
-add_ports_renamed = gf.compose(gf.port.auto_rename_ports, add_ports)
+# gratings have a 2nm square that is sticking out 1nm
+add_pins_gratings = gf.partial(add_pins_bbox_siepic, padding=-1e-3)
+
+add_ports_renamed = gf.compose(
+    add_pins_bbox_siepic, gf.port.auto_rename_ports, remove_pins, add_ports
+)
+add_ports_renamed_gratings = gf.compose(
+    add_pins_gratings, gf.port.auto_rename_ports, remove_pins, add_ports
+)
 
 import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_renamed)
 
@@ -69,5 +91,5 @@ import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_rena
 if __name__ == "__main__":
     gdsname = "ebeam_y_1550.gds"
     c = import_gds(gdsname)
-    print(c.ports)
-    c.show()
+    # print(c.ports)
+    c.show(show_ports=False)

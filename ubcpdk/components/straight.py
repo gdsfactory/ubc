@@ -1,7 +1,7 @@
 import gdsfactory as gf
 
 from ubcpdk.tech import LAYER
-from ubcpdk.add_pins import add_pins
+from gdsfactory.add_pins import add_pins_bbox_siepic
 
 
 @gf.cell
@@ -36,10 +36,15 @@ def straight(
 
         for i, text in enumerate(labels):
             c.add_label(text=text, position=(length / 2, i * 0.1), layer=LAYER.DEVREC)
-        add_pins(c)
+        add_pins_bbox_siepic(c)
     return c
 
 
 if __name__ == "__main__":
-    c = straight()
+    c = gf.Component()
+    # s1 = c.add_ref(straight())
+
+    s1 = c << straight()
+    s2 = c << straight()
+    s2.connect("o2", s1.ports["o1"])
     c.show(show_ports=False)

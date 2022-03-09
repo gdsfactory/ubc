@@ -4,7 +4,8 @@ settings:
     changed:
       bend:
         decorator:
-          function: add_pins
+        - function: add_bbox_siepic
+        - function: add_pins_siepic
         function: bend_euler
       component:
         function: straight
@@ -12,7 +13,10 @@ settings:
       grating_coupler:
         decorator:
         - - function: add_ports
+          - function: remove_pins
           - function: auto_rename_ports
+          - function: add_pins_siepic_of_add_bbox_siepic
+            padding: -0.001
         - angle: 180
           function: rotate
         function: import_gds
@@ -101,7 +105,8 @@ settings:
     full:
       bend:
         decorator:
-          function: add_pins
+        - function: add_bbox_siepic
+        - function: add_pins_siepic
         function: bend_euler
       component:
         function: straight
@@ -116,7 +121,10 @@ settings:
       grating_coupler:
         decorator:
         - - function: add_ports
+          - function: remove_pins
           - function: auto_rename_ports
+          - function: add_pins_siepic_of_add_bbox_siepic
+            padding: -0.001
         - angle: 180
           function: rotate
         function: import_gds
@@ -138,7 +146,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_87bde41b_strai_326a6368
+    name: straight_87bde41b_strai_c1713dff
   default:
     component:
       function: straight
@@ -150,7 +158,10 @@ settings:
     grating_coupler:
       decorator:
       - - function: add_ports
+        - function: remove_pins
         - function: auto_rename_ports
+        - function: add_pins_siepic_of_add_bbox_siepic
+          padding: -0.001
       - angle: 180
         function: rotate
       function: import_gds
@@ -171,7 +182,10 @@ settings:
     grating_coupler:
       decorator:
       - - function: add_ports
+        - function: remove_pins
         - function: auto_rename_ports
+        - function: add_pins_siepic_of_add_bbox_siepic
+          padding: -0.001
       - angle: 180
         function: rotate
       function: import_gds
@@ -185,5 +199,5 @@ settings:
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_87bde41b_strai_f2d83180
+  name: straight_87bde41b_strai_83238d66
 version: 0.0.1
