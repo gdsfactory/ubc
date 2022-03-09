@@ -1,6 +1,8 @@
 # Changelog
 
-## [1.3.5]
+## [1.3.5](https://github.com/gdsfactory/ubc/pull/9)
+
+- pins are compatible with siepic
 
 ## [1.3.4](https://github.com/gdsfactory/ubc/pull/8)
 
