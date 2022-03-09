@@ -4,7 +4,7 @@ from gdsfactory.component import Component
 
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
-from gdsfactory.add_pins import add_pins_siepic
+from gdsfactory.add_pins import add_pins_bbox_siepic
 
 
 layer = LAYER.WG
@@ -76,10 +76,10 @@ def add_ports(component: Component) -> Component:
 
 
 # gratings have a 2nm square that is sticking out 1nm
-add_pins_gratings = gf.partial(add_pins_siepic, padding=-1e-3)
+add_pins_gratings = gf.partial(add_pins_bbox_siepic, padding=-1e-3)
 
 add_ports_renamed = gf.compose(
-    add_pins_siepic, gf.port.auto_rename_ports, remove_pins, add_ports
+    add_pins_bbox_siepic, gf.port.auto_rename_ports, remove_pins, add_ports
 )
 add_ports_renamed_gratings = gf.compose(
     add_pins_gratings, gf.port.auto_rename_ports, remove_pins, add_ports
