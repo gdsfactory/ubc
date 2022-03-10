@@ -36,7 +36,8 @@ class LayerMapUbc:
     WG2: Layer = (31, 0)
     DEVREC: Layer = (68, 0)
     LABEL: Layer = (10, 0)
-    PORT: Layer = (1, 10)
+    PORT: Layer = (1, 10)   # PinRec
+    PORTE: Layer = (1, 11)  # PinRecM
     FLOORPLAN: Layer = (99, 0)
 
 
