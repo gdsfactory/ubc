@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.6]
+
+- change pin length from 100nm to 10nm
+
 ## [1.3.5](https://github.com/gdsfactory/ubc/pull/9)
 
 - pins are compatible with siepic
