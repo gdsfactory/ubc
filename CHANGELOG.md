@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.3.6]
+## [1.3.6](https://github.com/gdsfactory/ubc/pull/11)
 
 - change pin length from 100nm to 10nm
 
