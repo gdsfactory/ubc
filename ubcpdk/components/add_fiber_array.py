@@ -177,6 +177,7 @@ if __name__ == "__main__":
     # c = gc_tm1550()
     # print(c.get_ports_array())
     # print(c.ports.keys())
-    c = pdk.straight()
+    # c = pdk.straight()
+    c = pdk.mzi()
     c = add_fiber_array(component=c)
     c.show()
