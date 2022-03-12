@@ -142,23 +142,27 @@ def add_ports_from_siepic_pins(
     return c
 
 
-def add_siepic_labels(
+
+def add_siepic_labels_and_simulation_info(
     component: Component,
-    component_name_label: str = None,
+    model: str = None,
     library: str = "Design kits/ebeam",
     label_layer: Layer = LAYER.DEVREC,
 ) -> Component:
     """
+
+    Required
     Args:
         component: component
-        component_name_label: name of component for SiEPIC label (defaults to component name)
+        model: name of component for SiEPIC label (defaults to component name)
         library: Lumerical Interconnect library for SiEPIC label
         label_layer: layer for writing SiEPIC labels
     """
     c = component
 
+    model = c.name if not model else model
     c.add_label(
-        text=f"Component={c.name if not component_name_label else component_name_label}",
+        text=f"Component={model}",
         position=c.center + (0, c.size_info.height / 6),
         layer=label_layer,
     )
@@ -167,6 +171,8 @@ def add_siepic_labels(
         position=c.center - (0, c.size_info.height / 6),
         layer=label_layer,
     )
+    c.settings['model'] = model
+    c.settings['info'] = c.info
     return c
 
 
@@ -185,7 +191,7 @@ import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_rena
 add_ports_renamed_siepic = gf.compose(
     add_siepic_labels,
     add_pins_bbox_siepic,
-    gf.port.auto_rename_ports,
+    #gf.port.auto_rename_ports,
     remove_pins,
     add_ports_from_siepic_pins,
 )

@@ -34,12 +34,18 @@ y_adiabatic = gf.partial(
     import_gds_siepic_pins,
     "ebeam_y_adiabatic.gds",
     doc="Adiabatic Y junction TE1550 50/50 power.",
+    name='ebeam_y_adiabatic'
 )
 
 y_splitter = gf.partial(
     import_gds_siepic_pins,
     "ebeam_y_1550.gds",
     doc="Y junction TE1550 50/50 power.",
+    name='ebeam_y_1550',
+    model='ebeam_y_1550',
+    opt1='opt_a1',
+    opt2='opt_b1',
+    opt3='opt_b2'
 )
 crossing = gf.partial(
     import_gds_siepic_pins,
