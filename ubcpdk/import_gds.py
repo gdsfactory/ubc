@@ -142,6 +142,7 @@ def add_ports_from_siepic_pins(
     return c
 
 
+
 def add_siepic_labels_and_simulation_info(
     component: Component,
     model: str = None,
@@ -149,6 +150,7 @@ def add_siepic_labels_and_simulation_info(
     label_layer: Layer = LAYER.DEVREC,
 ) -> Component:
     """
+
     Required
     Args:
         component: component
@@ -200,7 +202,7 @@ import_gds_siepic_pins = gf.partial(
 
 
 if __name__ == "__main__":
-    #gdsname = "ebeam_crossing4.gds"
+    gdsname = "ebeam_crossing4.gds"
     gdsname = "ebeam_y_1550.gds"
     c = import_gds_siepic_pins(gdsname)
     # print(c.ports)

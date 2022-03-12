@@ -16,8 +16,6 @@ from ubcpdk.components.cells import (
     y_adiabatic,
     y_splitter,
     bend_euler,
-)
-from ubcpdk.components.crossing import (
     crossing,
     ring_with_crossing,
 )

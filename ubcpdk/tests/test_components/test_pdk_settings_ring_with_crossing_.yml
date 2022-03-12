@@ -1,8 +1,17 @@
 settings:
   changed:
     component:
-      settings: {}
-      version: 0.0.1
+      decorator:
+      - function: add_ports_from_siepic_pins
+      - function: remove_pins
+      - function: auto_rename_ports
+      - - function: add_bbox_siepic
+        - function: add_pins_siepic
+      - function: add_siepic_labels
+      doc: TE waveguide crossing.
+      function: import_gds
+      gdsdir: gds
+      gdspath: ebeam_crossing4.gds
   child: {}
   default:
     bend:
@@ -24,8 +33,17 @@ settings:
     bend:
       function: bend_euler
     component:
-      settings: {}
-      version: 0.0.1
+      decorator:
+      - function: add_ports_from_siepic_pins
+      - function: remove_pins
+      - function: auto_rename_ports
+      - - function: add_bbox_siepic
+        - function: add_pins_siepic
+      - function: add_siepic_labels
+      doc: TE waveguide crossing.
+      function: import_gds
+      gdsdir: gds
+      gdspath: ebeam_crossing4.gds
     coupler:
       function: coupler_ring
     gap: 0.2
@@ -40,5 +58,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_9c01015b
+  name: ring_single_dut_aa824f1c
 version: 0.0.1
