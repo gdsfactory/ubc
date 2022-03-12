@@ -176,26 +176,41 @@ def add_siepic_labels_and_simulation_info(
 add_pins_gratings = gf.partial(add_pins_bbox_siepic, padding=-1e-3)
 
 add_ports_renamed = gf.compose(
-    add_pins_bbox_siepic, gf.port.auto_rename_ports, remove_pins, add_ports
+    add_pins_bbox_siepic,
+    gf.port.auto_rename_ports,
+    remove_pins,
+    add_ports
 )
 add_ports_renamed_gratings = gf.compose(
-    add_pins_gratings, gf.port.auto_rename_ports, remove_pins, add_ports
+    add_pins_gratings,
+    gf.port.auto_rename_ports,
+    remove_pins,
+    add_ports
 )
 
 import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_renamed)
 
-add_ports_renamed_siepic = gf.compose(
+add_ports_siepic = gf.compose(
     add_siepic_labels_and_simulation_info,
     add_pins_bbox_siepic,
-    # gf.port.auto_rename_ports,
+    remove_pins,
+    add_ports_from_siepic_pins,
+)
+
+add_ports_siepic_gratings = gf.compose(
+    add_siepic_labels_and_simulation_info,
+    add_pins_gratings,
     remove_pins,
     add_ports_from_siepic_pins,
 )
 
 import_gds_siepic_pins = gf.partial(
-    gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_renamed_siepic
+    gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_siepic
 )
 
+import_gds_siepic_pins_gratings = gf.partial(
+    gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_siepic_gratings
+)
 
 if __name__ == "__main__":
     gdsname = "ebeam_crossing4.gds"
