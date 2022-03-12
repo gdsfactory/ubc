@@ -4,14 +4,14 @@ settings:
       decorator:
       - function: add_ports_from_siepic_pins
       - function: remove_pins
-      - function: auto_rename_ports
       - - function: add_bbox_siepic
         - function: add_pins_siepic
-      - function: add_siepic_labels
+      - function: add_siepic_labels_and_simulation_info
       doc: TE waveguide crossing.
       function: import_gds
       gdsdir: gds
       gdspath: ebeam_crossing4.gds
+    port_name: opt4
   child: {}
   default:
     bend:
@@ -24,10 +24,10 @@ settings:
     gap: 0.2
     length_x: 4
     length_y: 0
+    port_name: o1
     radius: 5
     straight:
       function: straight
-    wg_width: 0.5
     with_component: true
   full:
     bend:
@@ -36,10 +36,9 @@ settings:
       decorator:
       - function: add_ports_from_siepic_pins
       - function: remove_pins
-      - function: auto_rename_ports
       - - function: add_bbox_siepic
         - function: add_pins_siepic
-      - function: add_siepic_labels
+      - function: add_siepic_labels_and_simulation_info
       doc: TE waveguide crossing.
       function: import_gds
       gdsdir: gds
@@ -49,14 +48,14 @@ settings:
     gap: 0.2
     length_x: 4
     length_y: 0
+    port_name: opt4
     radius: 5
     straight:
       function: straight
-    wg_width: 0.5
     with_component: true
   function_name: ring_single_dut
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_aa824f1c
+  name: ring_single_dut_99c8d6ec
 version: 0.0.1

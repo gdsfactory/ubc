@@ -34,18 +34,18 @@ y_adiabatic = gf.partial(
     import_gds_siepic_pins,
     "ebeam_y_adiabatic.gds",
     doc="Adiabatic Y junction TE1550 50/50 power.",
-    name='ebeam_y_adiabatic'
+    name="ebeam_y_adiabatic",
 )
 
 y_splitter = gf.partial(
     import_gds_siepic_pins,
     "ebeam_y_1550.gds",
     doc="Y junction TE1550 50/50 power.",
-    name='ebeam_y_1550',
-    model='ebeam_y_1550',
-    opt1='opt_a1',
-    opt2='opt_b1',
-    opt3='opt_b2'
+    name="ebeam_y_1550",
+    model="ebeam_y_1550",
+    opt1="opt_a1",
+    opt2="opt_b1",
+    opt3="opt_b2",
 )
 crossing = gf.partial(
     import_gds_siepic_pins,
@@ -56,13 +56,22 @@ crossing = gf.partial(
 
 bend_euler = gf.partial(gf.components.bend_euler, decorator=add_pins_bbox_siepic)
 mzi = gf.partial(
-    gf.components.mzi, splitter=y_splitter, straight=straight, bend=bend_euler
+    gf.components.mzi,
+    splitter=y_splitter,
+    straight=straight,
+    bend=bend_euler,
+    port_e1_splitter="opt2",
+    port_e0_splitter="opt3",
+    port_e1_combiner="opt2",
+    port_e0_combiner="opt3",
 )
 ring_single = gf.partial(gf.components.ring_single)
 ebeam_dc_halfring_straight = gf.partial(gf.components.coupler_ring)
 ebeam_dc_te1550 = gf.partial(gf.components.coupler)
 spiral = gf.partial(gf.components.spiral_external_io)
-ring_with_crossing = gf.partial(gf.components.ring_single_dut, component=crossing)
+ring_with_crossing = gf.partial(
+    gf.components.ring_single_dut, component=crossing, port_name="opt4"
+)
 
 
 if __name__ == "__main__":
@@ -82,10 +91,13 @@ if __name__ == "__main__":
     # c = y_splitter()
     # s = dc_adiabatic()
 
-    c = gf.Component()
-    s = y_splitter()
-    sp = c << s
-    wg = c << straight()
-    wg.connect("o1", sp.ports["o1"])
+    # c = mzi()
 
+    # c = gf.Component()
+    # s = y_splitter()
+    # sp = c << s
+    # wg = c << straight()
+    # wg.connect("o1", sp.ports["opt1"])
+
+    c = ring_with_crossing()
     c.show(show_ports=False)

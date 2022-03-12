@@ -170,7 +170,7 @@ def add_fiber_array(
 
 
 if __name__ == "__main__":
-    import ubcpdk.components as pdk
+    # import ubcpdk.components as pdk
 
     # c = straight_no_pins()
     # c = add_fiber_array(component=c)
@@ -178,6 +178,7 @@ if __name__ == "__main__":
     # print(c.get_ports_array())
     # print(c.ports.keys())
     # c = pdk.straight()
-    c = pdk.mzi()
-    c = add_fiber_array(component=c)
+    # c = pdk.mzi()
+    # c = add_fiber_array(component=c)
+    c = add_fiber_array()
     c.show()
