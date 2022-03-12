@@ -69,7 +69,9 @@ ring_single = gf.partial(gf.components.ring_single)
 ebeam_dc_halfring_straight = gf.partial(gf.components.coupler_ring)
 ebeam_dc_te1550 = gf.partial(gf.components.coupler)
 spiral = gf.partial(gf.components.spiral_external_io)
-ring_with_crossing = gf.partial(gf.components.ring_single_dut, component=crossing)
+ring_with_crossing = gf.partial(
+    gf.components.ring_single_dut, component=crossing, port_name="opt4"
+)
 
 
 if __name__ == "__main__":
@@ -89,7 +91,7 @@ if __name__ == "__main__":
     # c = y_splitter()
     # s = dc_adiabatic()
 
-    c = mzi()
+    # c = mzi()
 
     # c = gf.Component()
     # s = y_splitter()
@@ -97,4 +99,5 @@ if __name__ == "__main__":
     # wg = c << straight()
     # wg.connect("o1", sp.ports["opt1"])
 
+    c = ring_with_crossing()
     c.show(show_ports=False)

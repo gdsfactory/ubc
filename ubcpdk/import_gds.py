@@ -37,7 +37,6 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
 
 def remove_pins(component) -> Component:
     """Remove PINS and"""
-    # component.remove_labels(test=lambda x: True)
     component.remove_layers(layers=(LAYER.DEVREC, LAYER.PORT, LAYER.PORTE))
     component.paths = []
     component._bb_valid = False
@@ -58,7 +57,6 @@ def add_ports(component: Component) -> Component:
     for label in c.get_labels():
         if label.text.startswith("opt"):
             port_name = label.text
-            print(label.position)
             port = gf.Port(
                 name=port_name,
                 midpoint=label.position,
@@ -150,7 +148,6 @@ def add_siepic_labels_and_simulation_info(
 ) -> Component:
     """
 
-    Required
     Args:
         component: component
         model: name of component for SiEPIC label (defaults to component name)
@@ -170,8 +167,8 @@ def add_siepic_labels_and_simulation_info(
         position=c.center - (0, c.size_info.height / 6),
         layer=label_layer,
     )
-    c.settings["model"] = model
-    c.settings["info"] = c.info
+    # c.settings["model"] = model
+    # c.settings["info"] = c.info
     return c
 
 
