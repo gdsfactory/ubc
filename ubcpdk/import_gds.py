@@ -167,9 +167,6 @@ def add_siepic_labels_and_simulation_info(
         position=c.center - (0, c.size_info.height / 6),
         layer=label_layer,
     )
-    c.settings["model"] = model
-    c.settings["info"] = c.info
-    c.settings["name"] = c.name
     return c
 
 
@@ -213,23 +210,6 @@ import_gds_siepic_pins_gratings = gf.partial(
     gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_siepic_gratings
 )
 
-add_ports_siepic_interconnect = gf.compose(
-    add_siepic_labels_and_simulation_info,
-    add_ports_siepic
-)
-
-add_ports_siepic_gratings_interconnect = gf.compose(
-    add_siepic_labels_and_simulation_info,
-    add_ports_siepic_gratings
-)
-
-import_gds_siepic_pins_interconnect = gf.partial(
-    gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_siepic_interconnect
-)
-
-import_gds_siepic_pins_gratings_interconnect = gf.partial(
-    gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_siepic_gratings_interconnect
-)
 
 if __name__ == "__main__":
     gdsname = "ebeam_crossing4.gds"
