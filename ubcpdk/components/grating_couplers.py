@@ -1,21 +1,19 @@
 import gdsfactory as gf
-from ubcpdk.import_gds import import_gds, add_ports_renamed_gratings, import_gds_siepic_pins
+from ubcpdk.import_gds import add_ports_renamed_gratings, import_gds_siepic_pins
 
 # This rotation is causing issues in interconnect
 add_ports_rotate180 = gf.compose(gf.functions.rotate180, add_ports_renamed_gratings)
 
 
 gc_te1550 = gf.partial(
-    #import_gds_siepic_pins,
+    import_gds_siepic_pins,
     "ebeam_gc_te1550.gds",
     decorator=gf.functions.rotate180,
     polarization="te",
     wavelength=1.55,
-    name='ebeam_gc_te1550',
-    opt1='opt_wg'
+    name="ebeam_gc_te1550",
+    opt1="opt_wg",
 )
-
-# FIXME: move 1nm to the left, snapping issue?
 
 gc_te1550_broadband = gf.partial(
     import_gds_siepic_pins,
@@ -45,6 +43,6 @@ gc_tm1550 = gf.partial(
 
 if __name__ == "__main__":
     # c = gc_te1310()
-    c = gc_tm1550()
-    # c = gc_te1550()
+    # c = gc_tm1550()
+    c = gc_te1550()
     c.show()

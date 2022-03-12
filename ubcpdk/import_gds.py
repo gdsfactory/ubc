@@ -3,10 +3,10 @@ import gdsfactory as gf
 from gdsfactory.component import Component
 from gdsfactory.port import Port
 from gdsfactory.types import Layer
+from gdsfactory.add_pins import add_pins_bbox_siepic
 
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
-from gdsfactory.add_pins import add_pins_bbox_siepic
 
 
 layer = LAYER.WG
@@ -142,7 +142,6 @@ def add_ports_from_siepic_pins(
     return c
 
 
-
 def add_siepic_labels_and_simulation_info(
     component: Component,
     model: str = None,
@@ -171,8 +170,8 @@ def add_siepic_labels_and_simulation_info(
         position=c.center - (0, c.size_info.height / 6),
         layer=label_layer,
     )
-    c.settings['model'] = model
-    c.settings['info'] = c.info
+    c.settings["model"] = model
+    c.settings["info"] = c.info
     return c
 
 
@@ -189,9 +188,9 @@ add_ports_renamed_gratings = gf.compose(
 import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_renamed)
 
 add_ports_renamed_siepic = gf.compose(
-    add_siepic_labels,
+    add_siepic_labels_and_simulation_info,
     add_pins_bbox_siepic,
-    #gf.port.auto_rename_ports,
+    # gf.port.auto_rename_ports,
     remove_pins,
     add_ports_from_siepic_pins,
 )
