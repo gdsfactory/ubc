@@ -68,7 +68,7 @@ mzi = gf.partial(
 )
 ring_single = gf.partial(gf.components.ring_single)
 
-
+@gf.cell
 def ebeam_dc_halfring_straight(
         gap: float = 0.2,
         radius: float = 5.0,
