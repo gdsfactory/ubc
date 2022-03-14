@@ -12,6 +12,7 @@ from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
 import gdsfactory.simulation as sim
 import gdsfactory.simulation.lumerical as lumerical
+from gdsfactory.add_pins import add_pins_siepic
 
 from ubcpdk.config import PATH
 
@@ -83,4 +84,9 @@ get_sparameters_data_lumerical = gf.partial(
 )
 
 
-strip = gf.partial(gf.cross_section.strip, layers_cladding=(LAYER.DEVREC,))
+strip = gf.partial(
+    gf.cross_section.strip,
+    layer=LAYER.WG,
+    layer_bbox=LAYER.DEVREC,
+    decorator=add_pins_siepic
+)
