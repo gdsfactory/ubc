@@ -121,7 +121,7 @@ def get_input_labels(
 def add_fiber_array(
     component: ComponentOrFactory = straight,
     component_name: Optional[str] = None,
-    gc_port_name: str = "o1",
+    gc_port_name: str = "opt1",
     get_input_labels_function: Callable = get_input_labels,
     with_loopback: bool = False,
     optical_routing_type: int = 0,
