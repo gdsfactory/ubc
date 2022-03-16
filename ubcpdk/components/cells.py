@@ -7,9 +7,10 @@ def y_splitter() -> Component:
 
 import gdsfactory as gf
 from gdsfactory.add_pins import add_pins_bbox_siepic
-from ubcpdk.import_gds import import_gds_siepic_pins
 
+from ubcpdk.import_gds import import_gds_siepic_pins
 from ubcpdk.components.straight import straight
+from ubcpdk.tech import strip, LAYER_STACK, LAYER
 
 
 dc_broadband_te = gf.partial(
@@ -66,7 +67,40 @@ mzi = gf.partial(
     port_e0_combiner="opt3",
 )
 ring_single = gf.partial(gf.components.ring_single)
-ebeam_dc_halfring_straight = gf.partial(gf.components.coupler_ring)
+
+@gf.cell
+def ebeam_dc_halfring_straight(
+        gap: float = 0.2,
+        radius: float = 5.0,
+        length_x: float = 4.0,
+        cross_section=strip,
+        **kwargs
+):
+    component = gf.components.coupler_ring(
+        gap=gap,
+        radius=radius,
+        length_x=length_x,
+        cross_section=cross_section,
+    )
+    x = cross_section(**kwargs) if callable(cross_section) else cross_section
+    thickness = LAYER_STACK.get_layer_to_thickness()
+    um = 1e-6
+    component.info["model"] = "ebeam_dc_halfring_straight"
+    component.info["name"] = "ebeam_dc_halfring_straight"
+    component.info["o1"] = "port 1"
+    component.info["o2"] = "port 2"
+    component.info["o3"] = "port 4"
+    component.info["o4"] = "port 3"
+    component.info["interconnect"] = {
+        "gap": gap*um,
+        "radius": radius*um,
+        "wg_thickness": thickness[LAYER.WG]*um,
+        "wg_width": x.info["width"]*um,
+        "Lc": length_x*um
+    }
+    return component
+
+
 ebeam_dc_te1550 = gf.partial(gf.components.coupler)
 spiral = gf.partial(gf.components.spiral_external_io)
 ring_with_crossing = gf.partial(
@@ -99,5 +133,5 @@ if __name__ == "__main__":
     # wg = c << straight()
     # wg.connect("o1", sp.ports["opt1"])
 
-    c = ring_with_crossing()
+    c = ebeam_dc_halfring_straight()
     c.show(show_ports=False)
