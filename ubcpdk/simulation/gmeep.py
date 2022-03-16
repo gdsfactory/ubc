@@ -1,4 +1,4 @@
-"""Customize gdsfactory meep simulations with UBC layer_stack and Path
+"""Customize gdsfactory meep simulations with layer_stack and Path
 """
 
 import meep as mp
