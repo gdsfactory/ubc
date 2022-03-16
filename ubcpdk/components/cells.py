@@ -68,13 +68,14 @@ mzi = gf.partial(
 )
 ring_single = gf.partial(gf.components.ring_single)
 
+
 @gf.cell
 def ebeam_dc_halfring_straight(
-        gap: float = 0.2,
-        radius: float = 5.0,
-        length_x: float = 4.0,
-        cross_section=strip,
-        **kwargs
+    gap: float = 0.2,
+    radius: float = 5.0,
+    length_x: float = 4.0,
+    cross_section=strip,
+    **kwargs
 ):
     component = gf.components.coupler_ring(
         gap=gap,
@@ -92,11 +93,11 @@ def ebeam_dc_halfring_straight(
     component.info["o3"] = "port 4"
     component.info["o4"] = "port 3"
     component.info["interconnect"] = {
-        "gap": gap*um,
-        "radius": radius*um,
-        "wg_thickness": thickness[LAYER.WG]*um,
-        "wg_width": x.info["width"]*um,
-        "Lc": length_x*um
+        "gap": gap * um,
+        "radius": radius * um,
+        "wg_thickness": thickness[LAYER.WG] * um,
+        "wg_width": x.info["width"] * um,
+        "Lc": length_x * um,
     }
     return component
 
