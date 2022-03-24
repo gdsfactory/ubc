@@ -18,6 +18,7 @@ setup(
     license="MIT",
     author="gdsfactory",
     install_requires=get_install_requires(),
+    # install_requires=('gdsfactory', 'modes', 'lygadgets')
     description="UBC Siepic Ebeam PDK from edx course",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
