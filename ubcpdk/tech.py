@@ -83,10 +83,11 @@ get_sparameters_data_lumerical = gf.partial(
     dirpath=PATH.sparameters,
 )
 
-
 strip = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
     layer_bbox=LAYER.DEVREC,
-    decorator=add_pins_siepic
+    decorator=add_pins_siepic,
 )
+
+cross_section_factory = dict(strip=strip)

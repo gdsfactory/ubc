@@ -7,6 +7,9 @@ from ubcpdk import components
 from ubcpdk import tech
 from ubcpdk import data
 
+from ubcpdk.components import component_factory
+from ubcpdk.tech import cross_section_factory
+
 
 gf.asserts.version(">=4.2.1")
 lys = gf.layers.load_lyp(PATH.lyp)
@@ -21,6 +24,8 @@ __all__ = [
     "strip",
     "LAYER",
     "__version__",
+    "component_factory",
+    "cross_section_factory",
 ]
 
 
