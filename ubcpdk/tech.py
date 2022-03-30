@@ -3,6 +3,8 @@
 - LayerStack
 - cross_sections (xs_)
 - constants (WIDTH, CLADDING_OFFSET ...)
+
+TODO: make sure routes use cross_section
 """
 
 import pydantic
