@@ -1,10 +1,16 @@
 import gdsfactory as gf
-from ubcpdk.import_gds import add_ports_renamed_gratings, add_ports_siepic_gratings, import_gds_siepic_pins
+from ubcpdk.import_gds import (
+    add_ports_renamed_gratings,
+    add_ports_siepic_gratings,
+    import_gds_siepic_pins,
+)
 
 
 # This rotation is causing issues in interconnect
 add_ports_rotate180 = gf.compose(gf.functions.rotate180, add_ports_renamed_gratings)
-add_ports_rotate180_siepic = gf.compose(gf.functions.rotate180, add_ports_siepic_gratings)
+add_ports_rotate180_siepic = gf.compose(
+    gf.functions.rotate180, add_ports_siepic_gratings
+)
 
 import_gc = gf.partial(
     import_gds_siepic_pins,

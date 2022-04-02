@@ -33,7 +33,7 @@ from ubcpdk.components.straight import (
     straight,
 )
 
-factory = dict(
+component_factory = dict(
     add_fiber_array=add_fiber_array,
     bend_euler=bend_euler,
     crossing=crossing,

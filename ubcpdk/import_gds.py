@@ -174,16 +174,10 @@ def add_siepic_labels_and_simulation_info(
 add_pins_gratings = gf.partial(add_pins_bbox_siepic, padding=-1e-3)
 
 add_ports_renamed = gf.compose(
-    add_pins_bbox_siepic,
-    gf.port.auto_rename_ports,
-    remove_pins,
-    add_ports
+    add_pins_bbox_siepic, gf.port.auto_rename_ports, remove_pins, add_ports
 )
 add_ports_renamed_gratings = gf.compose(
-    add_pins_gratings,
-    gf.port.auto_rename_ports,
-    remove_pins,
-    add_ports
+    add_pins_gratings, gf.port.auto_rename_ports, remove_pins, add_ports
 )
 
 import_gds = gf.partial(gf.import_gds, gdsdir=PATH.gds, decorator=add_ports_renamed)

@@ -1,7 +1,8 @@
 # Changelog
 
-## 1.3.8
+## 1.3.9
 
+- add circuit samples
 
 ## [1.3.7](https://github.com/gdsfactory/ubc/pull/15)
 
