@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.0]
+
+- simpler component_factory thanks to `import_module_factories` function from gf.cell
+
 ## [1.3.9](https://github.com/gdsfactory/ubc/pull/17)
 
 - add circuit samples
