@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.4.0]
+## [1.4.0](https://github.com/gdsfactory/ubc/pull/18)
 
 - simpler component_factory thanks to `import_module_factories` function from gf.cell
 
