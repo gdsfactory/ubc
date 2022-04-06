@@ -1,0 +1,95 @@
+settings:
+  changed:
+    bend:
+      decorator:
+      - function: add_bbox_siepic
+      - function: add_pins_siepic
+      function: bend_euler
+    port_e0_combiner: opt3
+    port_e0_splitter: opt3
+    port_e1_combiner: opt2
+    port_e1_splitter: opt2
+    splitter:
+      decorator:
+      - function: add_ports_from_siepic_pins
+      - function: remove_pins
+      - - function: add_bbox_siepic
+        - function: add_pins_siepic
+      - function: add_siepic_labels_and_simulation_info
+      doc: Y junction TE1550 50/50 power.
+      function: import_gds
+      gdsdir: gds
+      gdspath: ebeam_y_1550.gds
+      model: ebeam_y_1550
+      name: ebeam_y_1550
+      opt1: opt_a1
+      opt2: opt_b1
+      opt3: opt_b2
+  child: null
+  default:
+    bend:
+      function: bend_euler
+    combiner: null
+    cross_section:
+      function: cross_section
+    delta_length: 10
+    length_x: 0.1
+    length_y: 2
+    nbends: 2
+    port_e0_combiner: o3
+    port_e0_splitter: o3
+    port_e1_combiner: o2
+    port_e1_splitter: o2
+    splitter:
+      function: mmi1x2
+    straight:
+      function: straight
+    straight_x_bot: null
+    straight_x_top: null
+    straight_y: null
+    with_splitter: true
+  full:
+    bend:
+      decorator:
+      - function: add_bbox_siepic
+      - function: add_pins_siepic
+      function: bend_euler
+    combiner: null
+    cross_section:
+      function: cross_section
+    delta_length: 10
+    length_x: 0.1
+    length_y: 2
+    nbends: 2
+    port_e0_combiner: opt3
+    port_e0_splitter: opt3
+    port_e1_combiner: opt2
+    port_e1_splitter: opt2
+    splitter:
+      decorator:
+      - function: add_ports_from_siepic_pins
+      - function: remove_pins
+      - - function: add_bbox_siepic
+        - function: add_pins_siepic
+      - function: add_siepic_labels_and_simulation_info
+      doc: Y junction TE1550 50/50 power.
+      function: import_gds
+      gdsdir: gds
+      gdspath: ebeam_y_1550.gds
+      model: ebeam_y_1550
+      name: ebeam_y_1550
+      opt1: opt_a1
+      opt2: opt_b1
+      opt3: opt_b2
+    straight:
+      function: straight
+    straight_x_bot: null
+    straight_x_top: null
+    straight_y: null
+    with_splitter: true
+  function_name: mzi
+  info: {}
+  info_version: 2
+  module: gdsfactory.components.mzi
+  name: mzi_f9d34325
+version: 0.0.1

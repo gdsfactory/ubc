@@ -35,11 +35,11 @@ Components
 """
     )
 
-    for name in sorted(ubcpdk.components.factory.keys()):
+    for name in sorted(ubcpdk.component_factory.keys()):
         if name in skip or name.startswith("_"):
             continue
         print(name)
-        sig = inspect.signature(ubcpdk.components.factory[name])
+        sig = inspect.signature(ubcpdk.component_factory[name])
         kwargs = ", ".join(
             [
                 f"{p}={repr(sig.parameters[p].default)}"
