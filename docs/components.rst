@@ -17,7 +17,22 @@ add_fiber_array
 
   import ubcpdk
 
-  c = ubcpdk.components.add_fiber_array(gc_port_name='o1', with_loopback=False, optical_routing_type=0, fanout_length=0.0)
+  c = ubcpdk.components.add_fiber_array(gc_port_name='opt1', with_loopback=False, optical_routing_type=0, fanout_length=0.0)
+  c.plot()
+
+
+
+bend_euler
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.bend_euler
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.bend_euler(angle=90.0, p=0.5, with_arc_floorplan=True, npoints=720, direction='ccw', with_cladding_box=True)
   c.plot()
 
 
@@ -112,6 +127,21 @@ dc_broadband_tm
 
 
 
+ebeam_dc_te1550
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.ebeam_dc_te1550
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.ebeam_dc_te1550(gap=0.236, length=20.0, dy=5.0, dx=10.0)
+  c.plot()
+
+
+
 gc_te1310
 ----------------------------------------------------
 
@@ -172,6 +202,36 @@ gc_tm1550
 
 
 
+mzi
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.mzi
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.mzi(delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='opt2', port_e0_splitter='opt3', port_e1_combiner='opt2', port_e0_combiner='opt3', nbends=2)
+  c.plot()
+
+
+
+ring_single
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.ring_single
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.ring_single(gap=0.2, radius=10.0, length_x=4.0, length_y=0.6)
+  c.plot()
+
+
+
 ring_with_crossing
 ----------------------------------------------------
 
@@ -182,7 +242,7 @@ ring_with_crossing
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_with_crossing()
+  c = ubcpdk.components.ring_with_crossing(gap=0.2, length_x=4, length_y=0, radius=5.0, with_component=True, port_name='opt4')
   c.plot()
 
 
@@ -227,7 +287,7 @@ y_adiabatic
 
   import ubcpdk
 
-  c = ubcpdk.components.y_adiabatic()
+  c = ubcpdk.components.y_adiabatic(name='ebeam_y_adiabatic')
   c.plot()
 
 
@@ -242,5 +302,5 @@ y_splitter
 
   import ubcpdk
 
-  c = ubcpdk.components.y_splitter()
+  c = ubcpdk.components.y_splitter(name='ebeam_y_1550')
   c.plot()
