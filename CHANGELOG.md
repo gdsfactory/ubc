@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.1
+## [1.4.1](https://github.com/gdsfactory/ubc/pull/19)
 
 - update layer_stack to be compatible with latest gdsfactory 4.7.1
 
