@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+
+- update layer_stack to be compatible with latest gdsfactory 4.7.1
+
 ## [1.4.0](https://github.com/gdsfactory/ubc/pull/18)
 
 - simpler component_factory thanks to `import_module_factories` function from gf.cell
