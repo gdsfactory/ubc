@@ -1,7 +1,7 @@
 """UBC Siepic Ebeam PDK from edx course"""
 import gdsfactory as gf
 from gdsfactory.config import logger
-from gdsfactory.cell import get_module_factories
+from gdsfactory.get_factories import get_component_factories
 
 
 from ubcpdk.config import CONFIG, PATH, module
@@ -32,7 +32,7 @@ __all__ = [
 
 
 logger.info(f"Found UBCpdk {__version__!r} installed at {module!r}")
-component_factory = get_module_factories(components)
+component_factory = get_component_factories(components)
 
 
 if __name__ == "__main__":

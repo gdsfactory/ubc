@@ -50,18 +50,20 @@ LAYER = LayerMapUbc()
 def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
     """Returns generic LayerStack"""
     return LayerStack(
-        strip=LayerLevel(
-            layer=LAYER.WG,
-            thickness=thickness,
-            zmin=0.0,
-            material="si",
-        ),
-        strip2=LayerLevel(
-            layer=LAYER.WG2,
-            thickness=thickness,
-            zmin=0.0,
-            material="si",
-        ),
+        layers=dict(
+            strip=LayerLevel(
+                layer=LAYER.WG,
+                thickness=thickness,
+                zmin=0.0,
+                material="si",
+            ),
+            strip2=LayerLevel(
+                layer=LAYER.WG2,
+                thickness=thickness,
+                zmin=0.0,
+                material="si",
+            ),
+        )
     )
 
 
