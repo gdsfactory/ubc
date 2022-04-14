@@ -81,7 +81,7 @@ def test_mask1():
         for dw in [50e-3, 100e-3, 150e-3, 200e-3]
     ]
     e += [add_gc(ubcpdk.components.ring_with_crossing())]
-    e += [add_gc(ubcpdk.components.ring_with_crossing(with_component=False))]
+    # e += [add_gc(ubcpdk.components.ring_with_crossing(with_component=False))]
 
     c = gf.pack(e, max_size=floorplan_size)
     m = c[0]
@@ -106,6 +106,6 @@ def test_mask3():
 
 if __name__ == "__main__":
     m, tm = test_mask1()
-    m, tm = test_mask2()
-    m, tm = test_mask3()
+    # m, tm = test_mask2()
+    # m, tm = test_mask3()
     m.show()

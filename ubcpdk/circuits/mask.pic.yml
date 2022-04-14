@@ -6,7 +6,7 @@ instances:
     component: pack_doe
     settings:
       component: ring_single
-      radius: [30, 50, 20]
+      radius: [30, 50, 20, 40]
       length_x: [1, 2, 3]
     pack:
       do_permutations: True
