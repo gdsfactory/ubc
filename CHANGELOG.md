@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.2
+## [1.4.2](https://github.com/gdsfactory/ubc/pull/20)
 
 - rename component_factory to cells and cross_section_factory to cross_sections
 
