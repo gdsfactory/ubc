@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.2
+
+- rename component_factory to cells and cross_section_factory to cross_sections
+
+
 ## [1.4.1](https://github.com/gdsfactory/ubc/pull/19)
 
 - update layer_stack to be compatible with latest gdsfactory 4.7.1
