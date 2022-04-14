@@ -1,5 +1,6 @@
 import gdsfactory as gf
 from ubcpdk.tech import strip
+from ubcpdk.components.add_fiber_array import add_fiber_array
 
 
 L = 1.55 / 4 / 2 / 2.44
@@ -24,6 +25,12 @@ def dbr_cavity(**kwargs) -> gf.Component:
     return gf.components.cavity(component=dbr(**kwargs))
 
 
+def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
+    component = gf.get_component(component, **kwargs)
+    return add_fiber_array(component)
+
+
 if __name__ == "__main__":
-    c = dbr_cavity()
+    # c = dbr_cavity(n=10)
+    c = dbr_cavity_te(n=10)
     c.show()

@@ -134,5 +134,6 @@ if __name__ == "__main__":
     # wg = c << straight()
     # wg.connect("o1", sp.ports["opt1"])
 
-    c = ebeam_dc_halfring_straight()
+    # c = ebeam_dc_halfring_straight()
+    c = ring_with_crossing()
     c.show(show_ports=False)
