@@ -94,4 +94,4 @@ strip = gf.partial(
     decorator=add_pins_siepic,
 )
 
-cross_section_factory = dict(strip=strip)
+cross_sections = dict(strip=strip)

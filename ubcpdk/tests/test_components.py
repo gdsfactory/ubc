@@ -3,16 +3,16 @@ import pytest
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
-from ubcpdk import component_factory
+from ubcpdk import cells
 
 
-component_names = component_factory.keys()
+cell_names = cells.keys()
 dirpath = pathlib.Path(__file__).absolute().with_suffix(".gds")
 
 
-@pytest.fixture(params=component_names, scope="function")
+@pytest.fixture(params=cell_names, scope="function")
 def component(request) -> Component:
-    return component_factory[request.param]()
+    return cells[request.param]()
 
 
 def test_pdk_gds(component: Component) -> None:
