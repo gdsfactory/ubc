@@ -1,5 +1,12 @@
 settings:
-  changed: {}
+  changed:
+    decorator:
+    - function: add_ports_from_siepic_pins
+    - function: remove_pins
+    - function: add_pins_siepic_of_add_bbox_siepic
+      settings:
+        padding: -0.001
+    - function: add_siepic_labels_and_simulation_info
   child: null
   default:
     coupler_straight:
@@ -21,6 +28,13 @@ settings:
     cross_section:
       function: cross_section
       settings: {}
+    decorator:
+    - function: add_ports_from_siepic_pins
+    - function: remove_pins
+    - function: add_pins_siepic_of_add_bbox_siepic
+      settings:
+        padding: -0.001
+    - function: add_siepic_labels_and_simulation_info
     dx: 10
     dy: 5
     gap: 0.236
@@ -31,5 +45,5 @@ settings:
     min_bend_radius: 9.451
   info_version: 2
   module: gdsfactory.components.coupler
-  name: coupler
+  name: coupler_0bf175bc
 version: 0.0.1

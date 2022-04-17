@@ -3,30 +3,34 @@ settings:
   child:
     changed:
       bend:
-        decorator:
-        - function: add_bbox_siepic
-        - function: add_pins_siepic
         function: bend_euler
+        settings:
+          decorator:
+          - function: add_bbox_siepic
+          - function: add_pins_siepic
       component:
         function: straight
       fanout_length: 0
       gc_port_name: opt1
       grating_coupler:
-        decorator:
-        - - function: add_ports_from_siepic_pins
-          - function: remove_pins
-          - function: add_pins_siepic_of_add_bbox_siepic
-            padding: -0.001
-          - function: add_siepic_labels_and_simulation_info
-        - angle: 180
-          function: rotate
         function: import_gds
-        gdsdir: gds
-        gdspath: ebeam_gc_te1550.gds
-        model: ebeam_gc_te1550
-        opt1: opt_wg
-        polarization: te
-        wavelength: 1.55
+        settings:
+          decorator:
+          - - function: add_ports_from_siepic_pins
+            - function: remove_pins
+            - function: add_pins_siepic_of_add_bbox_siepic
+              settings:
+                padding: -0.001
+            - function: add_siepic_labels_and_simulation_info
+          - function: rotate
+            settings:
+              angle: 180
+          gdsdir: gds
+          gdspath: ebeam_gc_te1550.gds
+          model: ebeam_gc_te1550
+          opt1: opt_wg
+          polarization: te
+          wavelength: 1.55
       layer_label:
       - 10
       - 0
@@ -44,19 +48,19 @@ settings:
         default:
           cross_section:
             function: cross_section
+            settings: {}
           length: 10
           npoints: 2
-          with_cladding_box: true
         full:
           cross_section:
             function: cross_section
+            settings: {}
           layer:
           - 1
           - 0
           length: 10
           npoints: 2
           width: 0.5
-          with_cladding_box: true
         function_name: straight
         info:
           length: 10.0
@@ -89,61 +93,70 @@ settings:
       component_name: null
       cross_section:
         function: cross_section
+        settings: {}
       gc_port_labels: null
       gc_port_name: o1
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
         function: grating_coupler_elliptical_trenches
-        polarization: te
-        taper_angle: 35
+        settings:
+          polarization: te
+          taper_angle: 35
       layer_label:
       - 66
       - 0
       select_ports:
         function: select_ports
-        port_type: optical
+        settings:
+          port_type: optical
       straight:
         function: straight
     full:
       bend:
-        decorator:
-        - function: add_bbox_siepic
-        - function: add_pins_siepic
         function: bend_euler
+        settings:
+          decorator:
+          - function: add_bbox_siepic
+          - function: add_pins_siepic
       component:
         function: straight
       component_name: null
       cross_section:
         function: cross_section
+        settings: {}
       fanout_length: 0
       gc_port_labels: null
       gc_port_name: opt1
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
-        decorator:
-        - - function: add_ports_from_siepic_pins
-          - function: remove_pins
-          - function: add_pins_siepic_of_add_bbox_siepic
-            padding: -0.001
-          - function: add_siepic_labels_and_simulation_info
-        - angle: 180
-          function: rotate
         function: import_gds
-        gdsdir: gds
-        gdspath: ebeam_gc_te1550.gds
-        model: ebeam_gc_te1550
-        opt1: opt_wg
-        polarization: te
-        wavelength: 1.55
+        settings:
+          decorator:
+          - - function: add_ports_from_siepic_pins
+            - function: remove_pins
+            - function: add_pins_siepic_of_add_bbox_siepic
+              settings:
+                padding: -0.001
+            - function: add_siepic_labels_and_simulation_info
+          - function: rotate
+            settings:
+              angle: 180
+          gdsdir: gds
+          gdspath: ebeam_gc_te1550.gds
+          model: ebeam_gc_te1550
+          opt1: opt_wg
+          polarization: te
+          wavelength: 1.55
       layer_label:
       - 10
       - 0
       optical_routing_type: 0
       select_ports:
         function: select_ports
-        port_type: optical
+        settings:
+          port_type: optical
       straight:
         function: straight
       with_loopback: false
@@ -151,7 +164,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_87bde41b_strai_6490ae29
+    name: straight_87bde41b_strai_de27d4c4
   default:
     component:
       function: straight
@@ -161,21 +174,24 @@ settings:
     get_input_labels_function:
       function: get_input_labels
     grating_coupler:
-      decorator:
-      - - function: add_ports_from_siepic_pins
-        - function: remove_pins
-        - function: add_pins_siepic_of_add_bbox_siepic
-          padding: -0.001
-        - function: add_siepic_labels_and_simulation_info
-      - angle: 180
-        function: rotate
       function: import_gds
-      gdsdir: gds
-      gdspath: ebeam_gc_te1550.gds
-      model: ebeam_gc_te1550
-      opt1: opt_wg
-      polarization: te
-      wavelength: 1.55
+      settings:
+        decorator:
+        - - function: add_ports_from_siepic_pins
+          - function: remove_pins
+          - function: add_pins_siepic_of_add_bbox_siepic
+            settings:
+              padding: -0.001
+          - function: add_siepic_labels_and_simulation_info
+        - function: rotate
+          settings:
+            angle: 180
+        gdsdir: gds
+        gdspath: ebeam_gc_te1550.gds
+        model: ebeam_gc_te1550
+        opt1: opt_wg
+        polarization: te
+        wavelength: 1.55
     optical_routing_type: 0
     with_loopback: false
   full:
@@ -187,26 +203,29 @@ settings:
     get_input_labels_function:
       function: get_input_labels
     grating_coupler:
-      decorator:
-      - - function: add_ports_from_siepic_pins
-        - function: remove_pins
-        - function: add_pins_siepic_of_add_bbox_siepic
-          padding: -0.001
-        - function: add_siepic_labels_and_simulation_info
-      - angle: 180
-        function: rotate
       function: import_gds
-      gdsdir: gds
-      gdspath: ebeam_gc_te1550.gds
-      model: ebeam_gc_te1550
-      opt1: opt_wg
-      polarization: te
-      wavelength: 1.55
+      settings:
+        decorator:
+        - - function: add_ports_from_siepic_pins
+          - function: remove_pins
+          - function: add_pins_siepic_of_add_bbox_siepic
+            settings:
+              padding: -0.001
+          - function: add_siepic_labels_and_simulation_info
+        - function: rotate
+          settings:
+            angle: 180
+        gdsdir: gds
+        gdspath: ebeam_gc_te1550.gds
+        model: ebeam_gc_te1550
+        opt1: opt_wg
+        polarization: te
+        wavelength: 1.55
     optical_routing_type: 0
     with_loopback: false
   function_name: add_fiber_array
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_87bde41b_strai_feb49d09
+  name: straight_87bde41b_strai_9c296313
 version: 0.0.1

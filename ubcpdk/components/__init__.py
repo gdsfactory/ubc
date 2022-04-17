@@ -32,12 +32,14 @@ from ubcpdk.components.grating_couplers import (
 from ubcpdk.components.straight import (
     straight,
 )
+from ubcpdk.components.generic import coupler
 
 
 __all__ = [
     "add_fiber_array",
     "bend_euler",
     "cells",
+    "coupler",
     "crossing",
     "dbr",
     "dbr_cavity",

@@ -36,7 +36,7 @@ __all__ = [
 logger.info(f"Found UBCpdk {__version__!r} installed at {module!r}")
 cells = get_cells(components)
 
-PDK = Pdk(cells=cells, cross_sections=cross_sections)
+PDK = Pdk(name="ubcpdk", cells=cells, cross_sections=cross_sections)
 PDK.activate()
 
 
