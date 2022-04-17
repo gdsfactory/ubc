@@ -3,7 +3,7 @@ import pytest
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
 from pytest_regressions.data_regression import DataRegressionFixture
-from ubcpdk import cells
+from ubcpdk import _cells_to_test as cells
 
 
 cell_names = cells.keys()

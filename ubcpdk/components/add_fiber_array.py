@@ -7,7 +7,7 @@ from gdsfactory.add_labels import get_input_label
 from gdsfactory.cell import cell
 from gdsfactory.component import Component
 from gdsfactory.port import Port
-from gdsfactory.types import ComponentReference, ComponentOrFactory
+from gdsfactory.types import ComponentReference, ComponentSpec
 
 from ubcpdk.config import CONFIG
 from ubcpdk.tech import LAYER
@@ -15,8 +15,6 @@ from ubcpdk.tech import LAYER
 from ubcpdk.components.grating_couplers import gc_te1550
 from ubcpdk.components.straight import straight
 from ubcpdk.components.cells import bend_euler
-
-L = 1.55 / 4 / 2 / 2.44
 
 
 def get_input_label_text(
@@ -119,14 +117,14 @@ def get_input_labels(
 
 @cell
 def add_fiber_array(
-    component: ComponentOrFactory = straight,
+    component: ComponentSpec = straight,
     component_name: Optional[str] = None,
     gc_port_name: str = "opt1",
     get_input_labels_function: Callable = get_input_labels,
     with_loopback: bool = False,
     optical_routing_type: int = 0,
     fanout_length: float = 0.0,
-    grating_coupler: ComponentOrFactory = gc_te1550,
+    grating_coupler: ComponentSpec = gc_te1550,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
