@@ -96,7 +96,7 @@ def ebeam_dc_halfring_straight(
         "gap": gap * um,
         "radius": radius * um,
         "wg_thickness": thickness[LAYER.WG] * um,
-        "wg_width": x.info["width"] * um,
+        "wg_width": x.width * um,
         "Lc": length_x * um,
     }
     return component
