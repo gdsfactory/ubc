@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.1]
+
+- add fiber accepts ComponentSpec
+
 ## [1.5.0](https://github.com/gdsfactory/ubc/pull/21)
 
 - update tests to pass for gdsfactory 5.0.1
