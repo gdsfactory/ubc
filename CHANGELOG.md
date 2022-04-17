@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.0]
+
+- update tests to pass for gdsfactory 5.0.0
+
 ## [1.4.2](https://github.com/gdsfactory/ubc/pull/20)
 
 - rename component_factory to cells and cross_section_factory to cross_sections
