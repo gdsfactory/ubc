@@ -1,8 +1,9 @@
 # Changelog
 
-## [1.5.1]
+## [1.5.1](https://github.com/gdsfactory/ubc/pull/22)
 
 - add fiber accepts ComponentSpec
+- register gdsfactory containers together with cells
 
 ## [1.5.0](https://github.com/gdsfactory/ubc/pull/21)
 
