@@ -90,7 +90,8 @@ get_sparameters_data_lumerical = gf.partial(
 strip = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
-    layer_bbox=LAYER.DEVREC,
+    bbox_layers=[LAYER.DEVREC],
+    bbox_offsets=[0],
     decorator=add_pins_siepic,
 )
 
