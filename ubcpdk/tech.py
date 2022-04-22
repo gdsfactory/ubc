@@ -7,14 +7,16 @@
 TODO: make sure routes use cross_section
 """
 
+import sys
 import pydantic
 
 import gdsfactory as gf
+from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
 import gdsfactory.simulation as sim
 import gdsfactory.simulation.lumerical as lumerical
-from gdsfactory.add_pins import add_pins_siepic
+from gdsfactory.add_pins import add_pins_siepic, add_pins_bbox_siepic
 
 from ubcpdk.config import PATH
 
@@ -87,12 +89,27 @@ get_sparameters_data_lumerical = gf.partial(
     dirpath=PATH.sparameters,
 )
 
+
+strip_pins = gf.partial(
+    gf.cross_section.strip,
+    layer=LAYER.WG,
+    decorator=add_pins_siepic,
+)
 strip = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
-    bbox_layers=[LAYER.DEVREC],
-    bbox_offsets=[0],
-    decorator=add_pins_siepic,
+    decorator=add_pins_bbox_siepic,
+)
+strip_no_pins = gf.partial(
+    gf.cross_section.strip,
+    layer=LAYER.WG,
 )
 
-cross_sections = dict(strip=strip)
+cross_sections = get_cross_section_factories(sys.modules[__name__])
+
+
+__all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
+
+
+if __name__ == "__main__":
+    c = gf.c.straight(cross_section=strip)
