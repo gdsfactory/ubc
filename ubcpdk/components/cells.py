@@ -63,7 +63,7 @@ mzi = gf.partial(
     port_e0_splitter="opt3",
     port_e1_combiner="opt2",
     port_e0_combiner="opt3",
-    cross_section="strip_pins_bbox",
+    cross_section="strip",
 )
 
 

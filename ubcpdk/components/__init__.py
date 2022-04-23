@@ -15,6 +15,7 @@ from ubcpdk.components.cells import (
     bend_euler,
     crossing,
     ring_with_crossing,
+    mzi,
 )
 from ubcpdk.components.dbr import (
     dbr,
