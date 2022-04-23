@@ -14,7 +14,7 @@ from ubcpdk import data
 from ubcpdk.tech import cross_sections
 
 
-gf.asserts.version(">=4.7.3")
+gf.asserts.version(">=5.1.2")
 lys = gf.layers.load_lyp(PATH.lyp)
 __version__ = "1.5.1"
 
