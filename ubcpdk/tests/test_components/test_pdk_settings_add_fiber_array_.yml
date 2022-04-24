@@ -6,10 +6,10 @@ settings:
         function: bend_euler
         settings:
           decorator:
-          - function: add_bbox_siepic
-          - function: add_pins_siepic
+            function: add_pins_bbox_siepic
       component:
         function: straight
+      cross_section: strip
       fanout_length: 0
       gc_port_name: opt1
       grating_coupler:
@@ -18,7 +18,7 @@ settings:
           decorator:
           - - function: add_ports_from_siepic_pins
             - function: remove_pins
-            - function: add_pins_siepic_of_add_bbox_siepic
+            - function: add_pins_bbox_siepic
               settings:
                 padding: -0.001
             - function: add_siepic_labels_and_simulation_info
@@ -40,10 +40,7 @@ settings:
       changed: {}
       child:
         changed:
-          layer:
-          - 1
-          - 0
-          width: 0.5
+          cross_section: strip
         child: null
         default:
           cross_section:
@@ -51,42 +48,33 @@ settings:
             settings: {}
           length: 10
           npoints: 2
+          with_bbox: false
         full:
-          cross_section:
-            function: cross_section
-            settings: {}
-          layer:
-          - 1
-          - 0
+          cross_section: strip
           length: 10
           npoints: 2
-          width: 0.5
+          with_bbox: false
         function_name: straight
         info:
           length: 10.0
           width: 0.5
         info_version: 2
         module: gdsfactory.components.straight
-        name: straight_87bde41b
+        name: straight_fdb9781f
       default:
-        layer:
-        - 1
-        - 0
+        cross_section: strip
         length: 10
-        width: 0.5
         with_pins: true
       full:
-        layer:
-        - 1
-        - 0
+        cross_section: strip
         length: 10
-        width: 0.5
         with_pins: true
       function_name: straight
-      info: {}
+      info:
+        width: 0.5
       info_version: 2
       module: ubcpdk.components.straight
-      name: straight_87bde41b_straight
+      name: straight_fdb9781f_straight
     default:
       bend:
         function: bend_euler
@@ -118,14 +106,11 @@ settings:
         function: bend_euler
         settings:
           decorator:
-          - function: add_bbox_siepic
-          - function: add_pins_siepic
+            function: add_pins_bbox_siepic
       component:
         function: straight
       component_name: null
-      cross_section:
-        function: cross_section
-        settings: {}
+      cross_section: strip
       fanout_length: 0
       gc_port_labels: null
       gc_port_name: opt1
@@ -137,7 +122,7 @@ settings:
           decorator:
           - - function: add_ports_from_siepic_pins
             - function: remove_pins
-            - function: add_pins_siepic_of_add_bbox_siepic
+            - function: add_pins_bbox_siepic
               settings:
                 padding: -0.001
             - function: add_siepic_labels_and_simulation_info
@@ -165,11 +150,12 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_87bde41b_strai_de27d4c4
+    name: straight_fdb9781f_strai_673ef1bd
   default:
     component:
       function: straight
     component_name: null
+    cross_section: strip
     fanout_length: 0
     gc_port_name: opt1
     get_input_labels_function:
@@ -180,7 +166,7 @@ settings:
         decorator:
         - - function: add_ports_from_siepic_pins
           - function: remove_pins
-          - function: add_pins_siepic_of_add_bbox_siepic
+          - function: add_pins_bbox_siepic
             settings:
               padding: -0.001
           - function: add_siepic_labels_and_simulation_info
@@ -199,6 +185,7 @@ settings:
     component:
       function: straight
     component_name: null
+    cross_section: strip
     fanout_length: 0
     gc_port_name: opt1
     get_input_labels_function:
@@ -209,7 +196,7 @@ settings:
         decorator:
         - - function: add_ports_from_siepic_pins
           - function: remove_pins
-          - function: add_pins_siepic_of_add_bbox_siepic
+          - function: add_pins_bbox_siepic
             settings:
               padding: -0.001
           - function: add_siepic_labels_and_simulation_info
@@ -228,5 +215,5 @@ settings:
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_87bde41b_strai_9c296313
+  name: straight_fdb9781f_strai_86bcaee6
 version: 0.0.1

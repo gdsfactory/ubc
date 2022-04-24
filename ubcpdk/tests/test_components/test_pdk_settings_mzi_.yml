@@ -4,8 +4,8 @@ settings:
       function: bend_euler
       settings:
         decorator:
-        - function: add_bbox_siepic
-        - function: add_pins_siepic
+          function: add_pins_bbox_siepic
+    cross_section: strip
     port_e0_combiner: opt3
     port_e0_splitter: opt3
     port_e1_combiner: opt2
@@ -16,8 +16,7 @@ settings:
         decorator:
         - function: add_ports_from_siepic_pins
         - function: remove_pins
-        - - function: add_bbox_siepic
-          - function: add_pins_siepic
+        - function: add_pins_bbox_siepic
         - function: add_siepic_labels_and_simulation_info
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
@@ -56,12 +55,9 @@ settings:
       function: bend_euler
       settings:
         decorator:
-        - function: add_bbox_siepic
-        - function: add_pins_siepic
+          function: add_pins_bbox_siepic
     combiner: null
-    cross_section:
-      function: cross_section
-      settings: {}
+    cross_section: strip
     delta_length: 10
     length_x: 0.1
     length_y: 2
@@ -76,8 +72,7 @@ settings:
         decorator:
         - function: add_ports_from_siepic_pins
         - function: remove_pins
-        - - function: add_bbox_siepic
-          - function: add_pins_siepic
+        - function: add_pins_bbox_siepic
         - function: add_siepic_labels_and_simulation_info
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
@@ -97,5 +92,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_f9d34325
+  name: mzi_5e33a216
 version: 0.0.1

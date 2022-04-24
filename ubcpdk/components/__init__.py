@@ -10,14 +10,12 @@ from ubcpdk.components.cells import (
     dc_broadband_tm,
     ebeam_dc_halfring_straight,
     ebeam_dc_te1550,
-    mzi,
-    ring_single,
-    spiral,
     y_adiabatic,
     y_splitter,
     bend_euler,
     crossing,
     ring_with_crossing,
+    mzi,
 )
 from ubcpdk.components.dbr import (
     dbr,
@@ -32,7 +30,7 @@ from ubcpdk.components.grating_couplers import (
 from ubcpdk.components.straight import (
     straight,
 )
-from ubcpdk.components.generic import coupler
+from ubcpdk.components.generic import coupler, ring_single, spiral
 
 
 __all__ = [

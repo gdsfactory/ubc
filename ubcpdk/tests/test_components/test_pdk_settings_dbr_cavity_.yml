@@ -22,6 +22,11 @@ settings:
         module: ubcpdk.components.dbr
         name: dbr
       version: 0.0.1
+    coupler:
+      function: coupler
+      settings:
+        decorator:
+          function: add_pins_bbox_siepic
   child:
     changed: {}
     child: null
@@ -74,11 +79,14 @@ settings:
       version: 0.0.1
     coupler:
       function: coupler
+      settings:
+        decorator:
+          function: add_pins_bbox_siepic
     gap: 0.2
     length: 0.1
   function_name: cavity
   info: {}
   info_version: 2
   module: gdsfactory.components.cavity
-  name: dbr_cavity_a61b22bd
+  name: dbr_cavity_3c2a3092
 version: 0.0.1

@@ -1,31 +1,31 @@
 import gdsfactory as gf
+from gdsfactory.types import CrossSectionSpec
 
 from ubcpdk.tech import LAYER
-from gdsfactory.add_pins import add_pins_bbox_siepic
 
 
 @gf.cell
 def straight(
     length: float = 10.0,
-    width: float = 0.5,
-    layer: gf.types.Layer = LAYER.WG,
     with_pins: bool = True,
+    cross_section: CrossSectionSpec = "strip",
     **kwargs,
 ) -> gf.Component:
     """Straight waveguide.
 
     Args:
         length:
-        width:
-        layer:
         with_pins:
+        cross_section:
     """
     c = gf.Component()
 
-    s = gf.components.straight(length=length, width=width, layer=layer, **kwargs)
+    s = gf.components.straight(length=length, cross_section=cross_section, **kwargs)
     ref = c << s
     c.add_ports(ref.ports)
     c.copy_child_info(s)
+
+    width = c.info["width"] = s.info["width"]
 
     if with_pins:
         labels = [
@@ -36,7 +36,6 @@ def straight(
 
         for i, text in enumerate(labels):
             c.add_label(text=text, position=(length / 2, i * 0.1), layer=LAYER.DEVREC)
-        add_pins_bbox_siepic(c)
     return c
 
 

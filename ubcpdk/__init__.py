@@ -5,7 +5,6 @@ from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
 from gdsfactory import containers
 
-
 from ubcpdk.config import CONFIG, PATH, module
 from ubcpdk.tech import LAYER, strip
 from ubcpdk import components
@@ -15,7 +14,7 @@ from ubcpdk import data
 from ubcpdk.tech import cross_sections
 
 
-gf.asserts.version(">=4.7.3")
+gf.asserts.version(">=5.1.2")
 lys = gf.layers.load_lyp(PATH.lyp)
 __version__ = "1.5.1"
 
@@ -39,7 +38,7 @@ cells = get_cells([containers, components])
 _cells_to_test = get_cells(components)
 
 PDK = Pdk(name="ubcpdk", cells=cells, cross_sections=cross_sections)
-PDK.activate()
+gf.set_active_pdk(PDK)
 
 
 if __name__ == "__main__":

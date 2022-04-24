@@ -7,14 +7,17 @@
 TODO: make sure routes use cross_section
 """
 
-import pydantic
+import sys
+
+from pydantic import BaseModel
 
 import gdsfactory as gf
+from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
 import gdsfactory.simulation as sim
 import gdsfactory.simulation.lumerical as lumerical
-from gdsfactory.add_pins import add_pins_siepic
+from gdsfactory.add_pins import add_pins_siepic, add_pins_bbox_siepic
 
 from ubcpdk.config import PATH
 
@@ -33,8 +36,7 @@ MATERIAL_NAME_TO_TIDY3D_INDEX = {
 }
 
 
-@pydantic.dataclasses.dataclass(frozen=True)
-class LayerMapUbc:
+class LayerMapUbc(BaseModel):
     WG: Layer = (1, 0)
     WG2: Layer = (31, 0)
     DEVREC: Layer = (68, 0)
@@ -42,6 +44,10 @@ class LayerMapUbc:
     PORT: Layer = (1, 10)  # PinRec
     PORTE: Layer = (1, 11)  # PinRecM
     FLOORPLAN: Layer = (99, 0)
+
+    class Config:
+        frozen = True
+        extra = "forbid"
 
 
 LAYER = LayerMapUbc()
@@ -87,11 +93,27 @@ get_sparameters_data_lumerical = gf.partial(
     dirpath=PATH.sparameters,
 )
 
+
+strip_pins = gf.partial(
+    gf.cross_section.strip,
+    layer=LAYER.WG,
+    decorator=add_pins_siepic,
+)
 strip = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
-    layer_bbox=LAYER.DEVREC,
-    decorator=add_pins_siepic,
+    decorator=add_pins_bbox_siepic,
+)
+strip_no_pins = gf.partial(
+    gf.cross_section.strip,
+    layer=LAYER.WG,
 )
 
-cross_sections = dict(strip=strip)
+cross_sections = get_cross_section_factories(sys.modules[__name__])
+
+
+__all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
+
+
+if __name__ == "__main__":
+    c = gf.c.straight(cross_section=strip)

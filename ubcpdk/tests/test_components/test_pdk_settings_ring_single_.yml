@@ -1,14 +1,20 @@
 settings:
-  changed: {}
+  changed:
+    bend:
+      function: bend_euler
+      settings:
+        cross_section: strip
+    coupler_ring:
+      function: coupler_ring
+      settings:
+        cross_section: strip
   child: null
   default:
     bend:
       function: bend_euler
     coupler_ring:
       function: coupler_ring
-    cross_section:
-      function: cross_section
-      settings: {}
+    cross_section: strip
     gap: 0.2
     length_x: 4
     length_y: 0.6
@@ -18,11 +24,13 @@ settings:
   full:
     bend:
       function: bend_euler
+      settings:
+        cross_section: strip
     coupler_ring:
       function: coupler_ring
-    cross_section:
-      function: cross_section
-      settings: {}
+      settings:
+        cross_section: strip
+    cross_section: strip
     gap: 0.2
     length_x: 4
     length_y: 0.6
@@ -33,5 +41,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single
-  name: ring_single
+  name: ring_single_039539d6
 version: 0.0.1

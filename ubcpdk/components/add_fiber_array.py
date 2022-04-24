@@ -7,7 +7,7 @@ from gdsfactory.add_labels import get_input_label
 from gdsfactory.cell import cell
 from gdsfactory.component import Component
 from gdsfactory.port import Port
-from gdsfactory.types import ComponentReference, ComponentSpec
+from gdsfactory.types import ComponentReference, ComponentSpec, CrossSectionSpec
 
 from ubcpdk.config import CONFIG
 from ubcpdk.tech import LAYER
@@ -125,6 +125,7 @@ def add_fiber_array(
     optical_routing_type: int = 0,
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
+    cross_section: CrossSectionSpec = "strip",
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
@@ -156,7 +157,7 @@ def add_fiber_array(
         optical_routing_type=optical_routing_type,
         layer_label=LAYER.LABEL,
         fanout_length=fanout_length,
-        straight=straight,
+        cross_section=cross_section,
         bend=bend_euler,
         **kwargs,
     )
