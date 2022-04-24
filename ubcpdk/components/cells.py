@@ -10,6 +10,7 @@ from gdsfactory.add_pins import add_pins_bbox_siepic
 
 from ubcpdk.import_gds import import_gds_siepic_pins
 from ubcpdk.tech import strip, LAYER_STACK, LAYER
+from ubcpdk.components.straight import straight
 
 
 dc_broadband_te = gf.partial(
@@ -59,6 +60,7 @@ mzi = gf.partial(
     gf.components.mzi,
     splitter=y_splitter,
     bend=bend_euler,
+    straight=straight,
     port_e1_splitter="opt2",
     port_e0_splitter="opt3",
     port_e1_combiner="opt2",

@@ -8,7 +8,8 @@ TODO: make sure routes use cross_section
 """
 
 import sys
-import pydantic
+
+from pydantic import BaseModel
 
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
@@ -35,8 +36,7 @@ MATERIAL_NAME_TO_TIDY3D_INDEX = {
 }
 
 
-@pydantic.dataclasses.dataclass(frozen=True)
-class LayerMapUbc:
+class LayerMapUbc(BaseModel):
     WG: Layer = (1, 0)
     WG2: Layer = (31, 0)
     DEVREC: Layer = (68, 0)
@@ -44,6 +44,10 @@ class LayerMapUbc:
     PORT: Layer = (1, 10)  # PinRec
     PORTE: Layer = (1, 11)  # PinRecM
     FLOORPLAN: Layer = (99, 0)
+
+    class Config:
+        frozen = True
+        extra = "forbid"
 
 
 LAYER = LayerMapUbc()

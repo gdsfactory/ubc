@@ -3,10 +3,6 @@ settings:
   child:
     changed:
       cross_section: strip
-      layer:
-      - 1
-      - 0
-      width: 0.5
     child: null
     default:
       cross_section:
@@ -17,12 +13,8 @@ settings:
       with_bbox: false
     full:
       cross_section: strip
-      layer:
-      - 1
-      - 0
       length: 10
       npoints: 2
-      width: 0.5
       with_bbox: false
     function_name: straight
     info:
@@ -30,27 +22,19 @@ settings:
       width: 0.5
     info_version: 2
     module: gdsfactory.components.straight
-    name: straight_91051567
+    name: straight_fdb9781f
   default:
     cross_section: strip
-    layer:
-    - 1
-    - 0
     length: 10
-    width: 0.5
     with_pins: true
   full:
     cross_section: strip
-    layer:
-    - 1
-    - 0
     length: 10
-    width: 0.5
     with_pins: true
   function_name: straight
   info:
     width: 0.5
   info_version: 2
   module: ubcpdk.components.straight
-  name: straight_91051567_straight
+  name: straight_fdb9781f_straight
 version: 0.0.1

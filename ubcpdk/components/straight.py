@@ -7,8 +7,6 @@ from ubcpdk.tech import LAYER
 @gf.cell
 def straight(
     length: float = 10.0,
-    width: float = 0.5,
-    layer: gf.types.Layer = LAYER.WG,
     with_pins: bool = True,
     cross_section: CrossSectionSpec = "strip",
     **kwargs,
@@ -17,19 +15,17 @@ def straight(
 
     Args:
         length:
-        width:
-        layer:
         with_pins:
+        cross_section:
     """
     c = gf.Component()
 
-    s = gf.components.straight(
-        length=length, width=width, layer=layer, cross_section=cross_section, **kwargs
-    )
+    s = gf.components.straight(length=length, cross_section=cross_section, **kwargs)
     ref = c << s
     c.add_ports(ref.ports)
     c.copy_child_info(s)
-    c.info["width"] = s.info["width"]
+
+    width = c.info["width"] = s.info["width"]
 
     if with_pins:
         labels = [
