@@ -43,6 +43,15 @@ def remove_pins(component) -> Component:
     return component
 
 
+def remove_pins_recursive(component):
+    component = remove_pins(component)
+    if component.references:
+        for ref in component.references:
+            rcell = ref.parent
+            ref.parent = remove_pins_recursive(rcell)
+    return component
+
+
 def add_ports(component: Component) -> Component:
     """Add ports from labels.
     guessing port orientaton from port location

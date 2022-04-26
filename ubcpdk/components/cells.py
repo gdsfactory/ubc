@@ -6,11 +6,29 @@ def y_splitter() -> Component:
 """
 
 import gdsfactory as gf
+from gdsfactory.add_labels import add_siepic_labels
 from gdsfactory.add_pins import add_pins_bbox_siepic
 
 from ubcpdk.import_gds import import_gds_siepic_pins
 from ubcpdk.tech import strip, LAYER_STACK, LAYER
-from ubcpdk.components.straight import straight
+from ubcpdk.import_gds import remove_pins_recursive
+
+
+um = 1e-6
+
+add_siepic_labels = gf.partial(
+    add_siepic_labels,
+    label_layer=LAYER.DEVREC,
+    library="Design Kits/ebeam"
+    )
+
+straight_ubc = gf.partial(gf.components.straight, cross_section="strip")
+bend_euler_ubc = gf.partial(gf.components.bend_euler, cross_section="strip")
+bend_s_ubc = gf.partial(gf.components.bend_s, cross_section="strip")
+
+straight = gf.compose(add_siepic_labels, straight_ubc)
+bend_euler = gf.compose(add_siepic_labels, bend_euler_ubc)
+bend_s = gf.compose(add_siepic_labels, bend_s_ubc)
 
 
 dc_broadband_te = gf.partial(
@@ -54,8 +72,6 @@ crossing = gf.partial(
     doc="TE waveguide crossing.",
 )
 
-
-bend_euler = gf.partial(gf.components.bend_euler, decorator=add_pins_bbox_siepic)
 mzi = gf.partial(
     gf.components.mzi,
     splitter=y_splitter,
@@ -65,7 +81,7 @@ mzi = gf.partial(
     port_e0_splitter="opt3",
     port_e1_combiner="opt2",
     port_e0_combiner="opt3",
-    cross_section="strip",
+    cross_section="strip"
 )
 
 
@@ -74,37 +90,75 @@ def ebeam_dc_halfring_straight(
     gap: float = 0.2,
     radius: float = 5.0,
     length_x: float = 4.0,
-    cross_section=strip,
+    cross_section="strip",
+    siepic: bool = True,
+    model: str = 'ebeam_dc_halfring_straight',
     **kwargs
 ):
-    component = gf.components.coupler_ring(
+    c = gf.Component()
+    coupler_ring = c << gf.components.coupler_ring(
         gap=gap,
         radius=radius,
         length_x=length_x,
+        bend=bend_euler,
+        straight=straight,
         cross_section=cross_section,
     )
-    x = cross_section(**kwargs) if callable(cross_section) else cross_section
+    x = gf.get_cross_section(cross_section=cross_section, **kwargs)
     thickness = LAYER_STACK.get_layer_to_thickness()
-    um = 1e-6
-    component.info["model"] = "ebeam_dc_halfring_straight"
-    component.info["name"] = "ebeam_dc_halfring_straight"
-    component.info["o1"] = "port 1"
-    component.info["o2"] = "port 2"
-    component.info["o3"] = "port 4"
-    component.info["o4"] = "port 3"
-    component.info["interconnect"] = {
-        "gap": gap * um,
-        "radius": radius * um,
-        "wg_thickness": thickness[LAYER.WG] * um,
-        "wg_width": x.width * um,
-        "Lc": length_x * um,
-    }
-    return component
+
+    c.add_ports(coupler_ring.ports)
+
+    if siepic:
+        c.info.update(
+            layout_model_port_pairs=(
+                ("o1", "port 1"),
+                ("o2", "port 2"),
+                ("o3", "port 4"),
+                ("o4", "port 3"),
+                ),
+            properties={
+                "gap": gap * um,
+                "radius": radius * um,
+                "wg_thickness": thickness[LAYER.WG] * um,
+                "wg_width": x.width * um,
+                "Lc": length_x * um,
+                },
+            component_type=["optical"]
+            )
+
+        add_siepic_info = gf.compose(
+            gf.partial(add_siepic_labels, model=model),
+            add_pins_bbox_siepic,
+            remove_pins_recursive,
+            )
+        c = add_siepic_info(c)
+    return c
 
 
-ebeam_dc_te1550 = gf.partial(gf.components.coupler)
+ebeam_dc_te1550 = gf.compose(
+    gf.partial(add_siepic_labels, model="ebeam_dc_te1550"),
+    add_pins_bbox_siepic,
+    remove_pins_recursive,
+    gf.partial(
+        gf.components.coupler,
+        component_type=['optical'],
+        layout_model_property_pairs=(
+            ("length", "coupling_length")
+            ),
+        properites=(
+            ('annotate', False)
+            )
+        )
+    )
+spiral = gf.partial(gf.components.spiral_external_io)
 ring_with_crossing = gf.partial(
-    gf.components.ring_single_dut, component=crossing, port_name="opt4"
+    gf.components.ring_single_dut,
+    component=crossing,
+    port_name="opt4",
+    bend=bend_euler,
+    straight=straight,
+    cross_section=strip
 )
 
 
