@@ -1,56 +1,62 @@
 import gdsfactory as gf
 from ubcpdk.import_gds import (
-    add_ports_renamed_gratings,
-    add_ports_siepic_gratings,
-    import_gds_siepic_pins,
+    import_gds
 )
 
 
-# This rotation is causing issues in interconnect
-add_ports_rotate180 = gf.compose(gf.functions.rotate180, add_ports_renamed_gratings)
-add_ports_rotate180_siepic = gf.compose(
-    gf.functions.rotate180, add_ports_siepic_gratings
+import_gc = gf.compose(
+    gf.functions.rotate180,
+    import_gds,
 )
 
-import_gc = gf.partial(
-    import_gds_siepic_pins,
-    decorator=add_ports_rotate180,
-)
-
-import_gc_interconnect = gf.partial(
-    import_gds_siepic_pins,
-    decorator=add_ports_rotate180_siepic,
-)
 
 gc_te1550 = gf.partial(
-    import_gc_interconnect,
+    import_gc,
     "ebeam_gc_te1550.gds",
     polarization="te",
     wavelength=1.55,
     model="ebeam_gc_te1550",
-    opt1="opt_wg",
+    name="ebeam_gc_te1550",
+    layout_model_port_pairs=(
+        ("opt1", "opt_wg"),
+        )
 )
 
 gc_te1550_broadband = gf.partial(
     import_gc,
     "ebeam_gc_te1550_broadband.gds",
+    name="ebeam_gc_te1550_broadband",
+    model="ebeam_gc_te1550_broadband",
     polarization="te",
     wavelength=1.55,
+    layout_model_port_pairs=(
+        ("opt1", "opt_wg"),
+        )
 )
 
 
 gc_te1310 = gf.partial(
     import_gc,
     "ebeam_gc_te1310.gds",
+    name="ebeam_gc_te1310",
+    model="ebeam_gc_te1310",
     polarization="te",
     wavelength=1.31,
+    layout_model_port_pairs=(
+        ("opt1", "opt_wg"),
+        )
 )
 
 gc_tm1550 = gf.partial(
     import_gc,
     "ebeam_gc_tm1550.gds",
+    name="ebeam_gc_tm1550",
+    model="ebeam_gc_tm1550",
     polarization="tm",
     wavelength=1.55,
+    layout_model_port_pairs=(
+        ("opt1", "opt_wg"),
+        )
 )
 
 
