@@ -13,8 +13,7 @@ from ubcpdk.config import CONFIG
 from ubcpdk.tech import LAYER
 
 from ubcpdk.components.grating_couplers import gc_te1550
-from ubcpdk.components.straight import straight
-from ubcpdk.components.cells import bend_euler
+from ubcpdk.components.cells import bend_euler, straight
 
 
 def get_input_label_text(

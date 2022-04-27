@@ -13,7 +13,7 @@ from pydantic import BaseModel
 
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
-from gdsfactory.tech import LayerStack, LayerLevel
+from gdsfactory.tech import LayerStack, LayerLevel, Section
 from gdsfactory.types import Layer
 import gdsfactory.simulation as sim
 import gdsfactory.simulation.lumerical as lumerical
@@ -73,6 +73,18 @@ def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
     )
 
 
+class Tech(BaseModel):
+    name: str = "ubc"
+    layer: LayerMapUbc = LAYER
+
+    fiber_array_spacing: float = 250.0
+    WG = {"width": 0.5}
+    DEVREC = {"width": 0.5}
+
+
+TECH = Tech()
+
+
 LAYER_STACK = get_layer_stack_ubc()
 layer_set = gf.layers.load_lyp(PATH.lyp)
 to_3d = gf.partial(
@@ -87,26 +99,57 @@ write_sparameters_lumerical = gf.partial(
     dirpath=PATH.sparameters,
 )
 
+
+strip_wg_simulation_info = dict(
+    model="ebeam_wg_integral_1550",
+    library="Design kits/ebeam",
+    layout_model_property_pairs=(
+        # (layout_property_name, interconnect_property_name)
+        ('length', 'wg_length', 1e-6),
+        ('width', 'wg_width', 1e-6),
+        ),
+    layout_model_port_pairs=(
+        ("o1", "port 1"),
+        ("o2", "port 2")
+        ),
+    spice_params=["wg_length", "wg_width"],
+    component_type=['optical'],
+    properties=(
+        ('annotate', False),
+        )
+    )
+
 get_sparameters_data_lumerical = gf.partial(
     sim.get_sparameters_data_lumerical,
     layer_stack=LAYER_STACK,
     dirpath=PATH.sparameters,
 )
 
+siepic_devrec_section = Section(
+    width=TECH.DEVREC["width"],
+    layer=LAYER.DEVREC,
+    name="DEVREC"
+    )
 
 strip_pins = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
+    width=TECH.WG["width"],
+    info=strip_wg_simulation_info,
     decorator=add_pins_siepic,
 )
 strip = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
-    decorator=add_pins_bbox_siepic,
+    width=TECH.WG["width"],
+    sections=(siepic_devrec_section,),
+    info=strip_wg_simulation_info,
+    decorator=add_pins_siepic,
 )
 strip_no_pins = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
+    width=TECH.WG["width"],
 )
 
 cross_sections = get_cross_section_factories(sys.modules[__name__])

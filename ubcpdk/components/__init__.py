@@ -13,6 +13,7 @@ from ubcpdk.components.cells import (
     y_adiabatic,
     y_splitter,
     bend_euler,
+    straight,
     crossing,
     ring_with_crossing,
     mzi,
@@ -27,15 +28,14 @@ from ubcpdk.components.grating_couplers import (
     gc_te1550_broadband,
     gc_tm1550,
 )
-from ubcpdk.components.straight import (
-    straight,
-)
+
 from ubcpdk.components.generic import coupler, ring_single, spiral
 
 
 __all__ = [
     "add_fiber_array",
     "bend_euler",
+    "straight",
     "cells",
     "coupler",
     "crossing",
@@ -55,7 +55,6 @@ __all__ = [
     "ring_single",
     "ring_with_crossing",
     "spiral",
-    "straight",
     "y_adiabatic",
     "y_splitter",
 ]
