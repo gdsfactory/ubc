@@ -1,10 +1,15 @@
 settings:
   changed:
     bend:
-      function: bend_euler
+    - function: bend_euler
       settings:
-        decorator:
-          function: add_pins_bbox_siepic
+        cross_section: strip
+    - function: add_siepic_labels
+      settings:
+        label_layer:
+        - 68
+        - 0
+        library: Design Kits/ebeam
     cross_section: strip
     port_e0_combiner: opt3
     port_e0_splitter: opt3
@@ -14,18 +19,30 @@ settings:
       function: import_gds
       settings:
         decorator:
-        - function: add_ports_from_siepic_pins
-        - function: remove_pins
-        - function: add_pins_bbox_siepic
-        - function: add_siepic_labels_and_simulation_info
+          function: add_ports_from_siepic_pins
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
+        layout_model_port_pairs:
+        - - opt1
+          - opt_a1
+        - - opt2
+          - opt_b1
+        - - opt3
+          - opt_b2
+        library: Design kits/ebeam
         model: ebeam_y_1550
         name: ebeam_y_1550
-        opt1: opt_a1
-        opt2: opt_b1
-        opt3: opt_b2
+    straight:
+    - function: straight
+      settings:
+        cross_section: strip
+    - function: add_siepic_labels
+      settings:
+        label_layer:
+        - 68
+        - 0
+        library: Design Kits/ebeam
   child: null
   default:
     bend:
@@ -52,10 +69,15 @@ settings:
     with_splitter: true
   full:
     bend:
-      function: bend_euler
+    - function: bend_euler
       settings:
-        decorator:
-          function: add_pins_bbox_siepic
+        cross_section: strip
+    - function: add_siepic_labels
+      settings:
+        label_layer:
+        - 68
+        - 0
+        library: Design Kits/ebeam
     combiner: null
     cross_section: strip
     delta_length: 10
@@ -70,20 +92,30 @@ settings:
       function: import_gds
       settings:
         decorator:
-        - function: add_ports_from_siepic_pins
-        - function: remove_pins
-        - function: add_pins_bbox_siepic
-        - function: add_siepic_labels_and_simulation_info
+          function: add_ports_from_siepic_pins
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
+        layout_model_port_pairs:
+        - - opt1
+          - opt_a1
+        - - opt2
+          - opt_b1
+        - - opt3
+          - opt_b2
+        library: Design kits/ebeam
         model: ebeam_y_1550
         name: ebeam_y_1550
-        opt1: opt_a1
-        opt2: opt_b1
-        opt3: opt_b2
     straight:
-      function: straight
+    - function: straight
+      settings:
+        cross_section: strip
+    - function: add_siepic_labels
+      settings:
+        label_layer:
+        - 68
+        - 0
+        library: Design Kits/ebeam
     straight_x_bot: null
     straight_x_top: null
     straight_y: null
@@ -92,5 +124,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_5e33a216
+  name: mzi_59ab7b29
 version: 0.0.1

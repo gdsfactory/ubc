@@ -3,32 +3,37 @@ settings:
   child:
     changed:
       bend:
-        function: bend_euler
+      - function: bend_euler
         settings:
-          decorator:
-            function: add_pins_bbox_siepic
+          cross_section: strip
+      - function: add_siepic_labels
+        settings:
+          label_layer:
+          - 68
+          - 0
+          library: Design Kits/ebeam
       component:
-        function: straight
+      - function: straight
+        settings:
+          cross_section: strip
+      - function: add_siepic_labels
+        settings:
+          label_layer:
+          - 68
+          - 0
+          library: Design Kits/ebeam
       cross_section: strip
       fanout_length: 0
       gc_port_name: opt1
       grating_coupler:
-        function: import_gds
+        function: Compose
         settings:
-          decorator:
-          - - function: add_ports_from_siepic_pins
-            - function: remove_pins
-            - function: add_pins_bbox_siepic
-              settings:
-                padding: -0.001
-            - function: add_siepic_labels_and_simulation_info
-          - function: rotate
-            settings:
-              angle: 180
-          gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
+          layout_model_port_pairs:
+          - - opt1
+            - opt_wg
           model: ebeam_gc_te1550
-          opt1: opt_wg
+          name: ebeam_gc_te1550
           polarization: te
           wavelength: 1.55
       layer_label:
@@ -37,44 +42,50 @@ settings:
       optical_routing_type: 0
       with_loopback: false
     child:
-      changed: {}
-      child:
-        changed:
-          cross_section: strip
-        child: null
-        default:
-          cross_section:
-            function: cross_section
-            settings: {}
-          length: 10
-          npoints: 2
-          with_bbox: false
-        full:
-          cross_section: strip
-          length: 10
-          npoints: 2
-          with_bbox: false
-        function_name: straight
-        info:
-          length: 10.0
-          width: 0.5
-        info_version: 2
-        module: gdsfactory.components.straight
-        name: straight_fdb9781f
-      default:
+      changed:
         cross_section: strip
+      child: null
+      default:
+        cross_section:
+          function: cross_section
+          settings: {}
         length: 10
-        with_pins: true
+        npoints: 2
+        with_bbox: false
       full:
         cross_section: strip
         length: 10
-        with_pins: true
+        npoints: 2
+        with_bbox: false
       function_name: straight
       info:
+        component_type:
+        - optical
+        layout_model_port_pairs:
+        - - o1
+          - port 1
+        - - o2
+          - port 2
+        layout_model_property_pairs:
+        - - length
+          - wg_length
+          - 1.0e-06
+        - - width
+          - wg_width
+          - 1.0e-06
+        length: 10.0
+        library: Design kits/ebeam
+        model: ebeam_wg_integral_1550
+        properties:
+        - - annotate
+          - false
+        spice_params:
+        - wg_length
+        - wg_width
         width: 0.5
       info_version: 2
-      module: ubcpdk.components.straight
-      name: straight_fdb9781f_straight
+      module: gdsfactory.components.straight
+      name: straight_fdb9781f
     default:
       bend:
         function: bend_euler
@@ -103,12 +114,25 @@ settings:
         function: straight
     full:
       bend:
-        function: bend_euler
+      - function: bend_euler
         settings:
-          decorator:
-            function: add_pins_bbox_siepic
+          cross_section: strip
+      - function: add_siepic_labels
+        settings:
+          label_layer:
+          - 68
+          - 0
+          library: Design Kits/ebeam
       component:
-        function: straight
+      - function: straight
+        settings:
+          cross_section: strip
+      - function: add_siepic_labels
+        settings:
+          label_layer:
+          - 68
+          - 0
+          library: Design Kits/ebeam
       component_name: null
       cross_section: strip
       fanout_length: 0
@@ -117,22 +141,14 @@ settings:
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
-        function: import_gds
+        function: Compose
         settings:
-          decorator:
-          - - function: add_ports_from_siepic_pins
-            - function: remove_pins
-            - function: add_pins_bbox_siepic
-              settings:
-                padding: -0.001
-            - function: add_siepic_labels_and_simulation_info
-          - function: rotate
-            settings:
-              angle: 180
-          gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
+          layout_model_port_pairs:
+          - - opt1
+            - opt_wg
           model: ebeam_gc_te1550
-          opt1: opt_wg
+          name: ebeam_gc_te1550
           polarization: te
           wavelength: 1.55
       layer_label:
@@ -150,10 +166,18 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_fdb9781f_strai_673ef1bd
+    name: straight_fdb9781f_add_f_33b5652d
   default:
     component:
-      function: straight
+    - function: straight
+      settings:
+        cross_section: strip
+    - function: add_siepic_labels
+      settings:
+        label_layer:
+        - 68
+        - 0
+        library: Design Kits/ebeam
     component_name: null
     cross_section: strip
     fanout_length: 0
@@ -161,29 +185,29 @@ settings:
     get_input_labels_function:
       function: get_input_labels
     grating_coupler:
-      function: import_gds
+      function: Compose
       settings:
-        decorator:
-        - - function: add_ports_from_siepic_pins
-          - function: remove_pins
-          - function: add_pins_bbox_siepic
-            settings:
-              padding: -0.001
-          - function: add_siepic_labels_and_simulation_info
-        - function: rotate
-          settings:
-            angle: 180
-        gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
+        layout_model_port_pairs:
+        - - opt1
+          - opt_wg
         model: ebeam_gc_te1550
-        opt1: opt_wg
+        name: ebeam_gc_te1550
         polarization: te
         wavelength: 1.55
     optical_routing_type: 0
     with_loopback: false
   full:
     component:
-      function: straight
+    - function: straight
+      settings:
+        cross_section: strip
+    - function: add_siepic_labels
+      settings:
+        label_layer:
+        - 68
+        - 0
+        library: Design Kits/ebeam
     component_name: null
     cross_section: strip
     fanout_length: 0
@@ -191,22 +215,14 @@ settings:
     get_input_labels_function:
       function: get_input_labels
     grating_coupler:
-      function: import_gds
+      function: Compose
       settings:
-        decorator:
-        - - function: add_ports_from_siepic_pins
-          - function: remove_pins
-          - function: add_pins_bbox_siepic
-            settings:
-              padding: -0.001
-          - function: add_siepic_labels_and_simulation_info
-        - function: rotate
-          settings:
-            angle: 180
-        gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
+        layout_model_port_pairs:
+        - - opt1
+          - opt_wg
         model: ebeam_gc_te1550
-        opt1: opt_wg
+        name: ebeam_gc_te1550
         polarization: te
         wavelength: 1.55
     optical_routing_type: 0
@@ -215,5 +231,5 @@ settings:
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_fdb9781f_strai_86bcaee6
+  name: straight_fdb9781f_add_f_f369f194
 version: 0.0.1

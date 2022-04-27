@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.5.3]
+
+- [PR](https://github.com/gdsfactory/ubc/pull/24) replaced bbox with Section in strip cross_section
+- [PR](https://github.com/gdsfactory/ubc/pull/25) assumes that the imported gds file is already siepic-compatible and adds ports where it finds siepic pins.
+
 ## [1.5.2](https://github.com/gdsfactory/ubc/pull/23)
 
 - compatible with gdsfactory 5.2.0

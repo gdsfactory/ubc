@@ -17,10 +17,8 @@ from ubcpdk.import_gds import remove_pins_recursive
 um = 1e-6
 
 add_siepic_labels = gf.partial(
-    add_siepic_labels,
-    label_layer=LAYER.DEVREC,
-    library="Design Kits/ebeam"
-    )
+    add_siepic_labels, label_layer=LAYER.DEVREC, library="Design Kits/ebeam"
+)
 
 straight_ubc = gf.partial(gf.components.straight, cross_section="strip")
 bend_euler_ubc = gf.partial(gf.components.bend_euler, cross_section="strip")
@@ -72,8 +70,8 @@ y_splitter = gf.partial(
     layout_model_port_pairs=(
         ("opt1", "opt_a1"),
         ("opt2", "opt_b1"),
-        ("opt3", "opt_b2")
-        )
+        ("opt3", "opt_b2"),
+    ),
 )
 crossing = gf.partial(
     import_gds,
@@ -91,7 +89,7 @@ mzi = gf.partial(
     port_e0_splitter="opt3",
     port_e1_combiner="opt2",
     port_e0_combiner="opt3",
-    cross_section="strip"
+    cross_section="strip",
 )
 
 
@@ -102,7 +100,7 @@ def ebeam_dc_halfring_straight(
     length_x: float = 4.0,
     cross_section="strip",
     siepic: bool = True,
-    model: str = 'ebeam_dc_halfring_straight',
+    model: str = "ebeam_dc_halfring_straight",
     **kwargs
 ):
     c = gf.Component()
@@ -126,22 +124,22 @@ def ebeam_dc_halfring_straight(
                 ("o2", "port 2"),
                 ("o3", "port 4"),
                 ("o4", "port 3"),
-                ),
+            ),
             properties={
                 "gap": gap * um,
                 "radius": radius * um,
                 "wg_thickness": thickness[LAYER.WG] * um,
                 "wg_width": x.width * um,
                 "Lc": length_x * um,
-                },
-            component_type=["optical"]
-            )
+            },
+            component_type=["optical"],
+        )
 
         add_siepic_info = gf.compose(
             gf.partial(add_siepic_labels, model=model),
             add_pins_bbox_siepic,
             remove_pins_recursive,
-            )
+        )
         c = add_siepic_info(c)
     return c
 
@@ -152,15 +150,11 @@ ebeam_dc_te1550 = gf.compose(
     remove_pins_recursive,
     gf.partial(
         gf.components.coupler,
-        component_type=['optical'],
-        layout_model_property_pairs=(
-            ("length", "coupling_length")
-            ),
-        properites=(
-            ('annotate', False)
-            )
-        )
-    )
+        # component_type=["optical"],
+        # layout_model_property_pairs=(("length", "coupling_length")),
+        # properites=(("annotate", False)),
+    ),
+)
 spiral = gf.partial(gf.components.spiral_external_io)
 ring_with_crossing = gf.partial(
     gf.components.ring_single_dut,
@@ -168,7 +162,7 @@ ring_with_crossing = gf.partial(
     port_name="opt4",
     bend=bend_euler,
     straight=straight,
-    cross_section=strip
+    cross_section=strip,
 )
 
 
@@ -189,7 +183,7 @@ if __name__ == "__main__":
     # c = y_splitter()
     # s = dc_adiabatic()
 
-    c = mzi()
+    # c = mzi()
 
     # c = gf.Component()
     # s = y_splitter()
@@ -199,4 +193,6 @@ if __name__ == "__main__":
 
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
+
+    c = ebeam_dc_te1550()
     c.show(show_ports=False)
