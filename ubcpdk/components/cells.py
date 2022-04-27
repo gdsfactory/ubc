@@ -9,7 +9,7 @@ import gdsfactory as gf
 from gdsfactory.add_labels import add_siepic_labels
 from gdsfactory.add_pins import add_pins_bbox_siepic
 
-from ubcpdk.import_gds import import_gds_siepic_pins
+from ubcpdk.import_gds import import_gds
 from ubcpdk.tech import strip, LAYER_STACK, LAYER
 from ubcpdk.import_gds import remove_pins_recursive
 
@@ -32,43 +32,53 @@ bend_s = gf.compose(add_siepic_labels, bend_s_ubc)
 
 
 dc_broadband_te = gf.partial(
-    import_gds_siepic_pins,
+    import_gds,
     "ebeam_bdc_te1550.gds",
+    name="ebeam_bdc_te1550",
+    model="ebeam_bdc_te1550",
     doc="Broadband directional coupler TE1550 50/50 power.",
 )
 
 dc_broadband_tm = gf.partial(
-    import_gds_siepic_pins,
+    import_gds,
     "ebeam_bdc_tm1550.gds",
+    name="ebeam_bdc_tm1550",
+    model="ebeam_bdc_tm1550",
     doc="Broadband directional coupler TM1550 50/50 power.",
 )
 
 dc_adiabatic = gf.partial(
-    import_gds_siepic_pins,
+    import_gds,
     "ebeam_adiabatic_te1550.gds",
+    name="ebeam_adiabatic_te1550",
+    model="ebeam_adiabatic_te1550",
     doc="Adiabatic directional coupler TE1550 50/50 power.",
 )
 
 y_adiabatic = gf.partial(
-    import_gds_siepic_pins,
+    import_gds,
     "ebeam_y_adiabatic.gds",
-    doc="Adiabatic Y junction TE1550 50/50 power.",
     name="ebeam_y_adiabatic",
+    model="ebeam_y_adiabatic",
+    doc="Adiabatic Y junction TE1550 50/50 power.",
 )
 
 y_splitter = gf.partial(
-    import_gds_siepic_pins,
+    import_gds,
     "ebeam_y_1550.gds",
     doc="Y junction TE1550 50/50 power.",
     name="ebeam_y_1550",
     model="ebeam_y_1550",
-    opt1="opt_a1",
-    opt2="opt_b1",
-    opt3="opt_b2",
+    layout_model_port_pairs=(
+        ("opt1", "opt_a1"),
+        ("opt2", "opt_b1"),
+        ("opt3", "opt_b2")
+        )
 )
 crossing = gf.partial(
-    import_gds_siepic_pins,
+    import_gds,
     "ebeam_crossing4.gds",
+    model="ebeam_crossing4",
     doc="TE waveguide crossing.",
 )
 
