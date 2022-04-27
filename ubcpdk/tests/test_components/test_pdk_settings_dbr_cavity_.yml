@@ -25,6 +25,7 @@ settings:
     coupler:
       function: coupler
       settings:
+        cross_section: strip
         decorator:
           function: add_pins_bbox_siepic
   child:
@@ -80,6 +81,7 @@ settings:
     coupler:
       function: coupler
       settings:
+        cross_section: strip
         decorator:
           function: add_pins_bbox_siepic
     gap: 0.2
@@ -88,5 +90,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.cavity
-  name: dbr_cavity_3c2a3092
+  name: dbr_cavity_d4283fc8
 version: 0.0.1

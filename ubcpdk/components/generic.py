@@ -7,7 +7,9 @@ bend_with_pins = gf.partial(
     gf.components.bend_euler,
     cross_section="strip",
 )
-coupler = gf.partial(gf.components.coupler, decorator=add_pins_bbox_siepic)
+coupler = gf.partial(
+    gf.components.coupler, decorator=add_pins_bbox_siepic, cross_section="strip"
+)
 coupler_ring = gf.partial(gf.components.coupler_ring, cross_section="strip")
 
 ring_single = gf.partial(
@@ -22,6 +24,7 @@ spiral = gf.partial(gf.components.spiral_external_io)
 
 if __name__ == "__main__":
     # c = coupler_ring()
-    c = ring_single()
+    # c = ring_single()
     # c = bend_with_pins()
-    c.show()
+    c = coupler()
+    c.show(show_ports=False)

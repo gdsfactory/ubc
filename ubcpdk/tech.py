@@ -105,19 +105,14 @@ strip_wg_simulation_info = dict(
     library="Design kits/ebeam",
     layout_model_property_pairs=(
         # (layout_property_name, interconnect_property_name)
-        ('length', 'wg_length', 1e-6),
-        ('width', 'wg_width', 1e-6),
-        ),
-    layout_model_port_pairs=(
-        ("o1", "port 1"),
-        ("o2", "port 2")
-        ),
+        ("length", "wg_length", 1e-6),
+        ("width", "wg_width", 1e-6),
+    ),
+    layout_model_port_pairs=(("o1", "port 1"), ("o2", "port 2")),
     spice_params=["wg_length", "wg_width"],
-    component_type=['optical'],
-    properties=(
-        ('annotate', False),
-        )
-    )
+    component_type=["optical"],
+    properties=(("annotate", False),),
+)
 
 get_sparameters_data_lumerical = gf.partial(
     sim.get_sparameters_data_lumerical,
@@ -128,8 +123,7 @@ get_sparameters_data_lumerical = gf.partial(
 siepic_devrec_section = Section(
     width=TECH.DEVREC["width"],
     layer=LAYER.DEVREC,
-    name="DEVREC"
-    )
+)
 
 strip_pins = gf.partial(
     gf.cross_section.strip,
@@ -160,3 +154,4 @@ __all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
 
 if __name__ == "__main__":
     c = gf.c.straight(cross_section=strip)
+    c.show(show_ports=False)

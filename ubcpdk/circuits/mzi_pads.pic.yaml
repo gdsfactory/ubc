@@ -1,0 +1,45 @@
+name: sample_different_factory
+
+instances:
+    tl:
+      component: pad
+    tr:
+      component: pad
+
+    mzi:
+      component: mzi_phase_shifter_top_heater_metal
+
+placements:
+    mzi:
+        ymax: tl,south
+        dy: -100
+    tl:
+        x: mzi,west
+        y: mzi,north
+        dy: 100
+    tr:
+        x: mzi,west
+        dx: 200
+        y: mzi,north
+        dy: 100
+
+routes:
+    electrical1:
+        routing_strategy: get_bundle
+        settings:
+            separation: 20
+            layer: [31, 0]
+            width: 10
+
+        links:
+            mzi,e2: tr,e1
+
+    electrical2:
+        routing_strategy: get_bundle
+        settings:
+            separation: 20
+            layer: [31, 0]
+            width: 10
+
+        links:
+            mzi,e1: tl,e1

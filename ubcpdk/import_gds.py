@@ -182,8 +182,8 @@ import_gds = gf.partial(
     gf.import_gds,
     gdsdir=PATH.gds,
     library="Design kits/ebeam",
-    decorator=add_ports_from_siepic_pins
-    )
+    decorator=add_ports_from_siepic_pins,
+)
 #
 # gratings have a 2nm square that is sticking out 1nm
 # add_pins_gratings = gf.partial(add_pins_bbox_siepic, padding=-1e-3)
