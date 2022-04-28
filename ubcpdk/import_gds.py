@@ -25,10 +25,11 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
         return 90
     if p[1] < 0 and "crossing" in name:
         return 270
-    if n == 4 and label in ["opt1", "opt2"]:
-        return 180
-    if n == 4 and label in ["opt3", "opt4"]:
-        return 0
+    if n == 4:
+        if label in {"opt1", "opt2"}:
+            return 180
+        if label in {"opt3", "opt4"}:
+            return 0
     if p[0] <= 0:
         return 180
     return 0
@@ -57,11 +58,7 @@ def add_ports(component: Component) -> Component:
     """
 
     c = component
-    n = 0
-    for label in c.get_labels():
-        if label.text.startswith("opt"):
-            n += 1
-
+    n = sum(1 for label in c.get_labels() if label.text.startswith("opt"))
     for label in c.get_labels():
         if label.text.startswith("opt"):
             port_name = label.text
@@ -164,7 +161,7 @@ def add_siepic_labels_and_simulation_info(
     """
     c = component
 
-    model = c.name if not model else model
+    model = model or c.name
     c.add_label(
         text=f"Component={model}",
         position=c.center + (0, c.size_info.height / 6),

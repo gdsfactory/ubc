@@ -33,8 +33,7 @@ def get_length(power_per_cent=80, w=1.55, n=2.4):
                          L
     """
     beta = 2 * np.pi * n / w
-    dl = (np.arccos(2 * power_per_cent / 100 - 1)) / beta
-    return dl
+    return (np.arccos(2 * power_per_cent / 100 - 1)) / beta
 
 
 if __name__ == "__main__":
