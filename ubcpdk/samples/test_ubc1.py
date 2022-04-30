@@ -35,8 +35,7 @@ def test_mask2():
     N = 15
     radius = 15
 
-    e = []
-    e.append(
+    e = [
         ubcpdk.components.add_fiber_array(
             component=ubcpdk.components.spiral(
                 N=N,
@@ -46,7 +45,8 @@ def test_mask2():
                 info=dict(does=["spiral", "te1550"]),
             )
         )
-    )
+    ]
+
     e.append(
         ubcpdk.components.add_fiber_array(
             component=ubcpdk.components.spiral(

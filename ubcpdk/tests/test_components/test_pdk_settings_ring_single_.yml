@@ -41,5 +41,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single
-  name: ring_single_039539d6
+  name: ring_single_e75e1864
 version: 0.0.1
