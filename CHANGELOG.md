@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.4]
+
+- update to latest gdsfactory
+
 ## [1.5.3](https://github.com/gdsfactory/ubc/pull/26)
 
 - [PR](https://github.com/gdsfactory/ubc/pull/24) replaced bbox with Section in strip cross_section
