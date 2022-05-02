@@ -1,4 +1,6 @@
 """UBC Siepic Ebeam PDK from edx course"""
+import pathlib
+
 import gdsfactory as gf
 from gdsfactory.config import logger
 from gdsfactory.get_factories import get_cells
@@ -38,9 +40,10 @@ cells = get_cells([containers, components])
 _cells_to_test = get_cells(components)
 
 PDK = Pdk(name="ubcpdk", cells=cells, cross_sections=cross_sections)
+PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
 gf.set_active_pdk(PDK)
 
 
 if __name__ == "__main__":
-    f = cells
+    f = PDK.cells
     print(f.keys())

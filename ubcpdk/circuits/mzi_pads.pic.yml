@@ -1,4 +1,5 @@
-name: sample_different_factory
+name: sample_different_factory2
+pdk: generic
 
 instances:
     tl:
