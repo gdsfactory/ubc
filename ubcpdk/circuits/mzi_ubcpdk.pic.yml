@@ -1,9 +1,9 @@
-name: mzi
+name: mzi_ubcpdk
+pdk: ubcpdk
 
 vars:
    dy: -70
 
-pdk: ubcpdk
 
 info:
     polarization: te

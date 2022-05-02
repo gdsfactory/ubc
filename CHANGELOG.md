@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.5.5]
+
+- update gdsfactory
+- register `*.pic.yml`
+
 ## [1.5.4](https://github.com/gdsfactory/ubc/pull/27)
 
 - update gdsfactory

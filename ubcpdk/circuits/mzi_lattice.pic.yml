@@ -1,0 +1,14 @@
+name: mzi_lattice
+pdk: ubcpdk
+
+instances:
+    mzi1:
+      component: mzi_ubcpdk
+
+    mzi2:
+      component: mzi_ubcpdk
+
+placements:
+    mzi2:
+        ymax: mzi1,west
+        dx: 400
