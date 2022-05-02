@@ -166,7 +166,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_fdb9781f_add_f_33b5652d
+    name: straight_fdb9781f_add_f_3896be9f
   default:
     component:
     - function: straight
@@ -231,5 +231,5 @@ settings:
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_fdb9781f_add_f_f369f194
+  name: straight_fdb9781f_add_f_78263898
 version: 0.0.1
