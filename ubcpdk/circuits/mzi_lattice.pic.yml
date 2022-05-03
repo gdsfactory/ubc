@@ -2,48 +2,47 @@ name: mzi_lattice
 pdk: ubcpdk
 
 instances:
-    mzi1:
-      component: mzi_ubcpdk
-      settings:
-        dy: -300
+  mzi1:
+    component: mzi_ubcpdk
+    settings:
+      dy: -300
 
-    mzi2:
-      component: mzi_ubcpdk
-      settings:
-        dy: -50
+  mzi2:
+    component: mzi_ubcpdk
+    settings:
+      dy: -50
 
-    gc1:
-       component: gc_te1550
+  gc1:
+    component: gc_te1550
 
-    gc2:
-       component: gc_te1550
+  gc2:
+    component: gc_te1550
 
 placements:
-    mzi2:
-        ymax: mzi1,north
-        dy: -200
-        xmin: mzi1,east
-        dx: 100
+  mzi2:
+    ymax: mzi1,north
+    dy: -200
+    xmin: mzi1,east
+    dx: 100
 
-    gc1:
-       xmax: mzi1,west
-       dx: 100
-       mirror: True
+  gc1:
+    xmax: mzi1,west
+    mirror: True
+    dx: -20
 
-    gc2:
-      xmin: mzi2,east
-      dx: 100
-
+  gc2:
+    xmin: mzi2,east
+    dx: 100
 
 routes:
   optical:
-        links:
-            mzi1,o2: mzi2,o1
+    links:
+      mzi1,o2: mzi2,o1
 
   gc1:
-        links:
-            gc1,opt1: mzi1,o1
+    links:
+      gc1,opt1: mzi1,o1
 
   gc2:
-        links:
-            gc2,opt1: mzi2,o2
+    links:
+      gc2,opt1: mzi2,o2
