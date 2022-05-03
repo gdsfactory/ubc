@@ -1,14 +1,14 @@
 name: mzi_ubcpdk
 pdk: ubcpdk
 
-vars:
-   dy: -70
-
+settings:
+   dy: -80
 
 info:
     polarization: te
     wavelength: 1.55
     description: mzi for ubcpdk
+
 
 instances:
     yr:
@@ -33,7 +33,7 @@ routes:
             yl,opt3: yr,opt2
         routing_strategy: get_bundle_from_steps
         settings:
-          steps: [dx: 30, dy: '${vars.dy}', dx: 20]
+          steps: [dx: 30, dy: '${settings.dy}', dx: 20]
           cross_section: strip
 
 ports:
