@@ -1,12 +1,15 @@
 import pathlib
 import pytest
+from pytest_regressions.data_regression import DataRegressionFixture
+
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
-from pytest_regressions.data_regression import DataRegressionFixture
-from ubcpdk import _cells_to_test as cells
+from ubcpdk import PDK
 
 
-cell_names = cells.keys()
+skip = []
+cells = PDK.cells
+cell_names = set(cells.keys()) - set(skip)
 dirpath = pathlib.Path(__file__).absolute().with_suffix(".gds")
 
 

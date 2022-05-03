@@ -4,6 +4,9 @@ install:
 update:
 	pre-commit autoupdate --bleeding-edge
 
+watch:
+	gf yaml watch
+
 link:
 	lygadgets_link lygadgets
 	lygadgets_link gdsfactory

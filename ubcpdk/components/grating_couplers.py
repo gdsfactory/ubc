@@ -2,10 +2,7 @@ import gdsfactory as gf
 from ubcpdk.import_gds import import_gds
 
 
-import_gc = gf.compose(
-    gf.functions.rotate180,
-    import_gds,
-)
+import_gc = gf.partial(import_gds, rotation=180)
 
 
 gc_te1550 = gf.partial(
