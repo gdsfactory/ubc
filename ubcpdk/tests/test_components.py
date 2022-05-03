@@ -6,8 +6,10 @@ from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
 from ubcpdk import PDK
 
+
+skip = []
 cells = PDK.cells
-cell_names = cells.keys()
+cell_names = set(cells.keys()) - set(skip)
 dirpath = pathlib.Path(__file__).absolute().with_suffix(".gds")
 
 
