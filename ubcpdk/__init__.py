@@ -5,7 +5,6 @@ import gdsfactory as gf
 from gdsfactory.config import logger
 from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
-from gdsfactory import containers
 
 from ubcpdk.config import CONFIG, PATH, module
 from ubcpdk.tech import LAYER, strip
@@ -36,9 +35,7 @@ __all__ = [
 
 
 logger.info(f"Found UBCpdk {__version__!r} installed at {module!r}")
-cells = get_cells([containers, components])
-_cells_to_test = get_cells(components)
-
+cells = get_cells(components)
 PDK = Pdk(name="ubcpdk", cells=cells, cross_sections=cross_sections)
 PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
 gf.set_active_pdk(PDK)
