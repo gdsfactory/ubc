@@ -1,22 +1,2 @@
-settings:
-  changed:
-    angle: 180
-    component:
-      settings: {}
-      version: 0.0.1
-  child: {}
-  default:
-    angle: 90
-  full:
-    angle: 180
-    component:
-      settings: {}
-      version: 0.0.1
-  function_name: rotate
-  info:
-    polarization: te
-    wavelength: 1.55
-  info_version: 2
-  module: gdsfactory.functions
-  name: rotate_daac7245
+settings: {}
 version: 0.0.1
