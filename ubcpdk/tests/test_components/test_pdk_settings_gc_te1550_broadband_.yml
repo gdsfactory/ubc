@@ -1,2 +1,47 @@
-settings: {}
+name: ebeam_gc_te1550_broadband
+settings:
+  changed:
+    decorator:
+    - function: add_ports_from_siepic_pins
+    - function: rotate
+      settings:
+        angle: 180
+    gdsdir: gds
+    gdspath: ebeam_gc_te1550_broadband.gds
+    layout_model_port_pairs:
+    - - opt1
+      - opt_wg
+    library: Design kits/ebeam
+    model: ebeam_gc_te1550_broadband
+    polarization: te
+    wavelength: 1.55
+  child: null
+  default:
+    cellname: null
+    gdsdir: null
+    snap_to_grid_nm: null
+  full:
+    cellname: null
+    decorator:
+    - function: add_ports_from_siepic_pins
+    - function: rotate
+      settings:
+        angle: 180
+    gdsdir: gds
+    gdspath: ebeam_gc_te1550_broadband.gds
+    layout_model_port_pairs:
+    - - opt1
+      - opt_wg
+    library: Design kits/ebeam
+    model: ebeam_gc_te1550_broadband
+    polarization: te
+    snap_to_grid_nm: null
+    wavelength: 1.55
+  function_name: import_gds
+  info:
+    polarization: te
+    wavelength: 1.55
+  info_version: 2
+  module: gdsfactory.read.import_gds
+  name: ebeam_gc_te1550_broadband
 version: 0.0.1

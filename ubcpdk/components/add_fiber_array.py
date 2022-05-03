@@ -169,6 +169,7 @@ def add_fiber_array(
 
 if __name__ == "__main__":
     # import ubcpdk.components as pdk
+    # c = gc_te1550()
 
     # c = straight_no_pins()
     # c = add_fiber_array(component=c)

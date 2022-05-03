@@ -34,14 +34,16 @@ jobs:
           pip install .
       - name: Test with pytest
         run: pytest
-      - name: Check if there are changes
-        id: changes
-        uses: UnicornGlobal/has-changes-action@v1.0.11
-
-      # You can now access a variable indicating if there have been changes
-      - name: Process changes
-        if: steps.changes.outputs.changed == 1
+      - name: Check requirements.txt
+        uses: Verbalinsurection/track-pypi-version@1.1.0
+        id: checkr
+        with:
+          compush: 'true'
+          backup: 'false'
+          reqfile: './requirements.txt'
+      - name: Get if update needed output
         run: |
+          echo ${{ steps.checkr.outputs.commit }}
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "Add changes" -a

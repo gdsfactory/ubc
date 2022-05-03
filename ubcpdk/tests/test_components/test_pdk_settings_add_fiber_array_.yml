@@ -1,3 +1,4 @@
+name: straight_fdb9781f_add_f_593c9075
 settings:
   changed: {}
   child:
@@ -29,7 +30,11 @@ settings:
         function: import_gds
         settings:
           decorator:
-            function: add_ports_from_siepic_pins
+          - function: add_ports_from_siepic_pins
+          - function: rotate
+            settings:
+              angle: 180
+          flatten: true
           gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
           layout_model_port_pairs:
@@ -39,7 +44,6 @@ settings:
           model: ebeam_gc_te1550
           name: ebeam_gc_te1550
           polarization: te
-          rotation: 180
           wavelength: 1.55
       layer_label:
       - 10
@@ -149,7 +153,11 @@ settings:
         function: import_gds
         settings:
           decorator:
-            function: add_ports_from_siepic_pins
+          - function: add_ports_from_siepic_pins
+          - function: rotate
+            settings:
+              angle: 180
+          flatten: true
           gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
           layout_model_port_pairs:
@@ -159,7 +167,6 @@ settings:
           model: ebeam_gc_te1550
           name: ebeam_gc_te1550
           polarization: te
-          rotation: 180
           wavelength: 1.55
       layer_label:
       - 10
@@ -176,7 +183,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_fdb9781f_add_f_1f67570e
+    name: straight_fdb9781f_add_f_db57b34c
   default:
     component:
     - function: straight
@@ -198,7 +205,11 @@ settings:
       function: import_gds
       settings:
         decorator:
-          function: add_ports_from_siepic_pins
+        - function: add_ports_from_siepic_pins
+        - function: rotate
+          settings:
+            angle: 180
+        flatten: true
         gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
         layout_model_port_pairs:
@@ -208,7 +219,6 @@ settings:
         model: ebeam_gc_te1550
         name: ebeam_gc_te1550
         polarization: te
-        rotation: 180
         wavelength: 1.55
     optical_routing_type: 0
     with_loopback: false
@@ -233,7 +243,11 @@ settings:
       function: import_gds
       settings:
         decorator:
-          function: add_ports_from_siepic_pins
+        - function: add_ports_from_siepic_pins
+        - function: rotate
+          settings:
+            angle: 180
+        flatten: true
         gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
         layout_model_port_pairs:
@@ -243,7 +257,6 @@ settings:
         model: ebeam_gc_te1550
         name: ebeam_gc_te1550
         polarization: te
-        rotation: 180
         wavelength: 1.55
     optical_routing_type: 0
     with_loopback: false
@@ -251,5 +264,5 @@ settings:
   info: {}
   info_version: 2
   module: ubcpdk.components.add_fiber_array
-  name: straight_fdb9781f_add_f_47230ea4
+  name: straight_fdb9781f_add_f_593c9075
 version: 0.0.1
