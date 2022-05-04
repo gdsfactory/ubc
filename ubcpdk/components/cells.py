@@ -183,8 +183,6 @@ if __name__ == "__main__":
     # c = y_splitter()
     # s = dc_adiabatic()
 
-    # c = mzi()
-
     # c = gf.Component()
     # s = y_splitter()
     # sp = c << s
@@ -192,7 +190,8 @@ if __name__ == "__main__":
     # wg.connect("o1", sp.ports["opt1"])
 
     # c = ebeam_dc_halfring_straight()
-    # c = ring_with_crossing()
+    c = ring_with_crossing()
 
+    c = mzi()
     c = ebeam_dc_te1550()
-    c.show(show_ports=False)
+    c.show()

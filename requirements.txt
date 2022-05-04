@@ -1,4 +1,4 @@
--e .
-lygadgets
-gdsfactory[full]==5.4.2
-modes
+-e .==null
+lygadgets==0.1.31
+gdsfactory[full]==5.5.1
+modes==1.0.6

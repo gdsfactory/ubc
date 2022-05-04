@@ -1,6 +1,8 @@
+name: dbr_cavity_8a37997a
 settings:
   changed:
     component:
+      name: dbr
       settings:
         changed: {}
         child: null
@@ -57,6 +59,7 @@ settings:
     length: 0.1
   full:
     component:
+      name: dbr
       settings:
         changed: {}
         child: null
@@ -90,5 +93,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.cavity
-  name: dbr_cavity_2a8d288f
+  name: dbr_cavity_8a37997a
 version: 0.0.1

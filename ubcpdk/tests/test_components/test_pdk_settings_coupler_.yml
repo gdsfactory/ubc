@@ -1,2 +1,36 @@
-settings: {}
+name: coupler_8fdbfb26
+settings:
+  changed:
+    decorator:
+      function: add_pins_bbox_siepic
+  child: null
+  default:
+    coupler_straight:
+      function: coupler_straight
+    coupler_symmetric:
+      function: coupler_symmetric
+    cross_section: strip
+    dx: 10
+    dy: 5
+    gap: 0.236
+    length: 20
+  full:
+    coupler_straight:
+      function: coupler_straight
+    coupler_symmetric:
+      function: coupler_symmetric
+    cross_section: strip
+    decorator:
+      function: add_pins_bbox_siepic
+    dx: 10
+    dy: 5
+    gap: 0.236
+    length: 20
+  function_name: coupler
+  info:
+    length: 10.314
+    min_bend_radius: 9.451
+  info_version: 2
+  module: gdsfactory.components.coupler
+  name: coupler_8fdbfb26
 version: 0.0.1
