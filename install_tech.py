@@ -57,7 +57,7 @@ def install_drc(src, dest):
         os.remove(dest)
         make_link(src, dest)
 
-    print(f"layermap installed to {dest}")
+    print(f"drc installed to {dest}")
 
 
 if __name__ == "__main__":
