@@ -15,10 +15,16 @@ dest = dest_folder / "ubcpdk"
 
 
 def make_link(src, dest):
-    if sys.platform == "win32":
-        subprocess.check_call(f"mklink /J {dest} {src}", shell=True)
-    else:
+    try:
         os.symlink(src, dest)
+    except OSError as err:
+        print("Could not create symlink!")
+        print("     Error: ", err)
+        if sys.platform == "win32":
+            print("Trying to create a junction instead of a symlink...")
+            proc = subprocess.check_call(f"mklink /J {dest} {src}", shell=True)
+            if proc != 0:
+                print("Could not create link!")
 
 
 def install_tech(src, dest):
