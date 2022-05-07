@@ -20,6 +20,9 @@ cp -r ${REPO_TECH}/EBeam.lyt ${UBC_TECH}/tech.lyt
 cp -r ${REPO_TECH}/EBeam_v${CML_VER}.cml ${UBC_TECH}/EBeam.cml
 cp -r ${REPO_TECH}/lumerical_process_file.lbr ${UBC_TECH}/lumerical_process_file.lbr
 
+# TODO: Make this work with the naming used by SiEPIC
+# gf gds layermap_to_dataclass ${UBC_TECH}/layers.lyp
+
 # Copy files from gds
 cp -r ${REPO_TECH}/gds/development/*.gds ${GDS_DIR}
 cp -r ${REPO_TECH}/gds/mature/*.gds ${GDS_DIR}
