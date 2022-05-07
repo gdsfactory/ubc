@@ -15,8 +15,8 @@ wget ${GIT_REPO}/archive/refs/tags/v${VERSION}.tar.gz
 tar -xvf v${VERSION}.tar.gz
 
 # Copy files from tech
-cp -r ${REPO_TECH}/klayout_Layers_EBeam.lyp ${UBC_TECH}/klayout_Layers_EBeam.lyp
-cp -r ${REPO_TECH}/EBeam.lyt ${UBC_TECH}/EBeam.lyt
+cp -r ${REPO_TECH}/klayout_Layers_EBeam.lyp ${UBC_TECH}/layers.lyp
+cp -r ${REPO_TECH}/EBeam.lyt ${UBC_TECH}/tech.lyt
 cp -r ${REPO_TECH}/EBeam_v${CML_VER}.cml ${UBC_TECH}/EBeam.cml
 cp -r ${REPO_TECH}/lumerical_process_file.lbr ${UBC_TECH}/lumerical_process_file.lbr
 
