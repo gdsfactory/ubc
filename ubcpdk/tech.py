@@ -6,7 +6,6 @@
 
 TODO: make sure routes use cross_section
 """
-
 import sys
 
 from pydantic import BaseModel
@@ -35,6 +34,12 @@ MATERIAL_NAME_TO_TIDY3D_INDEX = {
     "sin": 2.0,
 }
 
+## TODO: update_source will generate a layers.py, so use that instead
+# if os.path.exists(PATH.tech / "layers.py"):
+#     from .klayout.tech.layers import LayerMap as LayerMapUbc
+#
+# else:
+
 
 class LayerMapUbc(BaseModel):
     WG: Layer = (1, 0)
@@ -55,6 +60,7 @@ LAYER = LayerMapUbc()
 
 def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
     """Returns generic LayerStack"""
+    ## TODO: Translate xml in lumerical process file
     return LayerStack(
         layers=dict(
             strip=LayerLevel(
