@@ -20,13 +20,9 @@ add_siepic_labels = gf.partial(
     add_siepic_labels, label_layer=LAYER.DEVREC, library="Design Kits/ebeam"
 )
 
-straight_ubc = gf.partial(gf.components.straight, cross_section="strip")
-bend_euler_ubc = gf.partial(gf.components.bend_euler, cross_section="strip")
-bend_s_ubc = gf.partial(gf.components.bend_s, cross_section="strip")
-
-straight = gf.compose(add_siepic_labels, straight_ubc)
-bend_euler = gf.compose(add_siepic_labels, bend_euler_ubc)
-bend_s = gf.compose(add_siepic_labels, bend_s_ubc)
+straight = gf.partial(gf.components.straight, cross_section="strip", decorator=add_siepic_labels)
+bend_euler = gf.partial(gf.components.bend_euler, cross_section="strip", decorator=add_siepic_labels)
+bend_s = gf.partial(gf.components.bend_s, cross_section="strip", decorator=add_siepic_labels)
 
 
 dc_broadband_te = gf.partial(
@@ -193,5 +189,5 @@ if __name__ == "__main__":
     c = ring_with_crossing()
 
     c = mzi()
-    c = ebeam_dc_te1550()
+    #c = ebeam_dc_te1550()
     c.show()
