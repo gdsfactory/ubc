@@ -1,4 +1,4 @@
 -e .==null
 lygadgets==0.1.31
-gdsfactory[full]==5.5.1
+gdsfactory[full]==5.6.1
 modes==1.0.6

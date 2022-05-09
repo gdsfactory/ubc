@@ -12,6 +12,7 @@ ubcpdk/tests/test_components.gds/gds_diff/
 *.sqlite3
 *.png
 *.db
+*.pkl
 .idea/
 poetry.lock
 Pipfile

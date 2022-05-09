@@ -19,6 +19,7 @@ settings:
   default:
     cellname: null
     gdsdir: null
+    read_metadata: true
     snap_to_grid_nm: null
   full:
     cellname: null
@@ -35,6 +36,7 @@ settings:
     library: Design kits/ebeam
     model: ebeam_gc_te1310
     polarization: te
+    read_metadata: true
     snap_to_grid_nm: null
     wavelength: 1.31
   function_name: import_gds
