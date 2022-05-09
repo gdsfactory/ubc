@@ -1,16 +1,17 @@
-name: mzi_b26cff02
+name: mzi_6d6faa6c
 settings:
   changed:
     bend:
-    - function: bend_euler
+      function: bend_euler
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
     cross_section: strip
     port_e0_combiner: opt3
     port_e0_splitter: opt3
@@ -35,15 +36,16 @@ settings:
         model: ebeam_y_1550
         name: ebeam_y_1550
     straight:
-    - function: straight
+      function: straight
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
   child: null
   default:
     bend:
@@ -70,15 +72,16 @@ settings:
     with_splitter: true
   full:
     bend:
-    - function: bend_euler
+      function: bend_euler
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
     combiner: null
     cross_section: strip
     delta_length: 10
@@ -108,15 +111,16 @@ settings:
         model: ebeam_y_1550
         name: ebeam_y_1550
     straight:
-    - function: straight
+      function: straight
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
     straight_x_bot: null
     straight_x_top: null
     straight_y: null
@@ -125,5 +129,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_b26cff02
+  name: mzi_6d6faa6c
 version: 0.0.1

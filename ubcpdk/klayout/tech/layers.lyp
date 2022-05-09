@@ -17,7 +17,7 @@
   <animation>0</animation>
   <name>Waveguides (silicon)</name>
   <source>*/*@*</source>
-  
+
   <group-members>
   <frame-color>#ff80a8</frame-color>
   <fill-color>#ff80a8</fill-color>
@@ -34,7 +34,7 @@
   <source>1/0@1</source>
   <width>2.0</width>
   </group-members>
-  
+
   <group-members>
   <frame-color>#ff0000</frame-color>
   <fill-color>#ff0000</fill-color>
@@ -50,7 +50,7 @@
   <name>31_Si_p6nm</name>
   <source>31/0@1</source>
   </group-members>
-  
+
   <group-members>
   <frame-color>#80a8ff</frame-color>
   <fill-color>#80a8ff</fill-color>
@@ -68,7 +68,7 @@
   <name>Si - 90 nm rib</name>
   <source>2/0@1</source>
   </group-members>
-  
+
   <group-members>
   <frame-color>#cc80a8</frame-color>
   <fill-color>#cc80a8</fill-color>
@@ -85,9 +85,9 @@
   <source>1/69@1</source>
   <width>2.0</width>
   </group-members>
-  
+
  </properties>
- 
+
  <properties>
   <frame-color>#0000ff</frame-color>
   <fill-color>#0000ff</fill-color>
@@ -103,7 +103,7 @@
   <name>Text</name>
   <source>10/0@1</source>
  </properties>
- 
+
  <properties>
   <frame-color/>
   <fill-color/>
@@ -120,7 +120,7 @@
   <animation>0</animation>
   <name>Doping/Epitaxial growth</name>
   <source>*/*@*</source>
-  
+
   <group-members>
 	<animation>0</animation>
 	<marked>false</marked>
@@ -170,7 +170,7 @@
   <animation>0</animation>
   <name>Metal</name>
   <source>*/*@*</source>
-  
+
  <group-members>
   <frame-color>#ebc634</frame-color>
   <fill-color>#ebc634</fill-color>
@@ -186,7 +186,7 @@
   <name>M1_heater</name>
   <source>11/0@1</source>
  </group-members>
- 
+
  <group-members>
   <frame-color>#3471eb</frame-color>
   <fill-color>#3471eb</fill-color>
@@ -202,7 +202,7 @@
   <name>M2_router</name>
   <source>12/0@1</source>
  </group-members>
- 
+
  <group-members>
   <frame-color>#000000</frame-color>
   <fill-color>#000000</fill-color>
@@ -218,7 +218,7 @@
   <name>M_Open</name>
   <source>13/0@1</source>
  </group-members>
- 
+
  <group-members>
   <frame-color>#000000</frame-color>
   <fill-color>#3a027f</fill-color>
@@ -235,7 +235,7 @@
   <source>40/0@1</source>
  </group-members>
  </properties>
- 
+
  <properties>
   <frame-color>#ffae00</frame-color>
   <fill-color>#ffae00</fill-color>
@@ -251,7 +251,7 @@
   <name>Oxide open (to BOX)</name>
   <source>6/0@1</source>
  </properties>
- 
+
  <properties>
   <frame-color>#8000ff</frame-color>
   <fill-color>#8000ff</fill-color>
@@ -284,7 +284,7 @@
   <name>Deep Trench</name>
   <source>201/0@1</source>
  </properties>
- 
+
  <properties>
   <frame-color>#ff00ff</frame-color>
   <fill-color>#ff00ff</fill-color>
@@ -300,7 +300,7 @@
   <name>SEM</name>
   <source>200/0@1</source>
  </properties>
- 
+
  <properties>
   <frame-color/>
   <fill-color/>
@@ -317,7 +317,7 @@
   <animation>0</animation>
   <name>SiEPIC</name>
   <source>*/*@*</source>
-  
+
  <group-members>
   <frame-color>#004080</frame-color>
   <fill-color>#004080</fill-color>
@@ -364,7 +364,7 @@
   <name>PinRecM</name>
   <source>1/11@1</source>
  </group-members>
-  
+
  <group-members>
   <frame-color>#004080</frame-color>
   <fill-color>#004080</fill-color>
@@ -380,7 +380,7 @@
   <name>FbrTgt</name>
   <source>81/0@1</source>
  </group-members>
- 
+
  <group-members>
   <frame-color>#805000</frame-color>
   <fill-color>#000080</fill-color>
@@ -396,7 +396,7 @@
   <name>Errors</name>
   <source>999/0@1</source>
  </group-members>
- 
+
  <group-members>
   <frame-color>#800057</frame-color>
   <fill-color>#800057</fill-color>
@@ -454,7 +454,7 @@
    <width>1</width>
    <marked>false</marked>
    <animation>0</animation>
-   <name>Si</name>
+   <name>Si_</name>
    <source>1/0@1</source>
   </group-members>
  </properties>

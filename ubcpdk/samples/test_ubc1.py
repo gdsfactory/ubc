@@ -103,9 +103,18 @@ def test_mask3():
     m << gf.components.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
+    # return m
+
 
 if __name__ == "__main__":
+    # m = test_mask3()
+    # m.write_gds_with_metadata()
+
     m, tm = test_mask1()
-    # m, tm = test_mask2()
-    # m, tm = test_mask3()
+    m, tm = test_mask2()
+    m, tm = test_mask3()
     m.show()
+
+    # c = add_gc(ubcpdk.components.dc_broadband_te())
+    # print(c.to_yaml(with_cells=True, with_ports=True))
+    # c.write_gds_with_metadata()

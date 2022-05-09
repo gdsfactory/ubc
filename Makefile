@@ -5,7 +5,7 @@ update:
 	pre-commit autoupdate --bleeding-edge
 
 watch:
-	gf yaml watch
+	gf yaml watch ubcpdk
 
 link:
 	lygadgets_link lygadgets

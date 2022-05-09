@@ -1,16 +1,17 @@
-name: ring_single_dut_7f6b4934
+name: ring_single_dut_16806306
 settings:
   changed:
     bend:
-    - function: bend_euler
+      function: bend_euler
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
     component:
       function: import_gds
       settings:
@@ -69,15 +70,16 @@ settings:
         width: 0.5
     port_name: opt4
     straight:
-    - function: straight
+      function: straight
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
   child: {}
   default:
     bend:
@@ -98,15 +100,16 @@ settings:
     with_component: true
   full:
     bend:
-    - function: bend_euler
+      function: bend_euler
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
     component:
       function: import_gds
       settings:
@@ -171,19 +174,20 @@ settings:
     port_name: opt4
     radius: 5
     straight:
-    - function: straight
+      function: straight
       settings:
         cross_section: strip
-    - function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+        decorator:
+          function: add_siepic_labels
+          settings:
+            label_layer:
+            - 68
+            - 0
+            library: Design Kits/ebeam
     with_component: true
   function_name: ring_single_dut
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_7f6b4934
+  name: ring_single_dut_16806306
 version: 0.0.1
