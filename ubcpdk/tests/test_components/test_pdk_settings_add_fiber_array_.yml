@@ -1,4 +1,4 @@
-name: straight_cb4e6ca2_add_f_bf7d2a81
+name: straight_cb4e6ca2_add_f_f5304b8b
 settings:
   changed:
     gc_port_name: opt1
@@ -7,6 +7,13 @@ settings:
       settings:
         decorator:
         - function: add_ports_from_siepic_pins
+          settings:
+            pin_layer_electrical:
+            - 1
+            - 11
+            pin_layer_optical:
+            - 1
+            - 10
         - function: rotate
           settings:
             angle: 180
@@ -32,6 +39,13 @@ settings:
         settings:
           decorator:
           - function: add_ports_from_siepic_pins
+            settings:
+              pin_layer_electrical:
+              - 1
+              - 11
+              pin_layer_optical:
+              - 1
+              - 10
           - function: rotate
             settings:
               angle: 180
@@ -150,6 +164,13 @@ settings:
         settings:
           decorator:
           - function: add_ports_from_siepic_pins
+            settings:
+              pin_layer_electrical:
+              - 1
+              - 11
+              pin_layer_optical:
+              - 1
+              - 10
           - function: rotate
             settings:
               angle: 180
@@ -179,7 +200,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_cb4e6ca2_add_f_b6c44ecb
+    name: straight_cb4e6ca2_add_f_423e711c
   default:
     component: straight
     component_name: null
@@ -211,6 +232,13 @@ settings:
       settings:
         decorator:
         - function: add_ports_from_siepic_pins
+          settings:
+            pin_layer_electrical:
+            - 1
+            - 11
+            pin_layer_optical:
+            - 1
+            - 10
         - function: rotate
           settings:
             angle: 180
@@ -234,5 +262,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.dft.siepic
-  name: straight_cb4e6ca2_add_f_bf7d2a81
+  name: straight_cb4e6ca2_add_f_f5304b8b
 version: 0.0.1

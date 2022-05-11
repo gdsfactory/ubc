@@ -67,8 +67,8 @@ if __name__ == "__main__":
     # d = clean_value_name(decorator)
     # print(d)
 
-    test_gc()
+    # test_gc()
     # c = gc_tm1550()
-    # c = gc_te1310()
-    c = gc_te1550()
+    c = gc_te1310()
+    # c = gc_te1550()
     c.show()
