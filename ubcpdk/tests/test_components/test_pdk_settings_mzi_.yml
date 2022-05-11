@@ -1,4 +1,4 @@
-name: mzi_6d6faa6c
+name: mzi_ec2aec99
 settings:
   changed:
     bend:
@@ -22,6 +22,13 @@ settings:
       settings:
         decorator:
           function: add_ports_from_siepic_pins
+          settings:
+            pin_layer_electrical:
+            - 1
+            - 11
+            pin_layer_optical:
+            - 1
+            - 10
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
@@ -97,6 +104,13 @@ settings:
       settings:
         decorator:
           function: add_ports_from_siepic_pins
+          settings:
+            pin_layer_electrical:
+            - 1
+            - 11
+            pin_layer_optical:
+            - 1
+            - 10
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
@@ -129,5 +143,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_6d6faa6c
+  name: mzi_ec2aec99
 version: 0.0.1
