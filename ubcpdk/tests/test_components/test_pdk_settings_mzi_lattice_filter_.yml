@@ -1,47 +1,45 @@
-name: mask_compact_f5aba6e9
+name: mzi_lattice_f0e0b81e
 settings:
   changed:
     conf:
       instances:
-        mzis:
-          component: pack_doe_grid
+        gc1:
+          component: gc_te1550
+        gc2:
+          component: gc_te1550
+        mzi1:
+          component: mzi_ubcpdk
           settings:
-            do_permutations: true
-            doe: mzi
-            function: add_fiber_array
-            settings:
-              delta_length:
-              - 10
-              - 100
-            spacing:
-            - 10
-            - 10
-        rings:
-          component: pack_doe
+            dy: -200
+        mzi2:
+          component: mzi_ubcpdk
           settings:
-            do_permutations: true
-            doe: ring_single
-            function:
-              function: add_fiber_array
-              settings:
-                fanout_length: 200
-            settings:
-              length_x:
-              - 1
-              - 2
-              - 3
-              radius:
-              - 30
-              - 50
-              - 20
-              - 40
-      name: mask_compact
+            dy: -55
+      name: mzi_lattice
       pdk: ubcpdk
       placements:
-        mzis:
-          xmin: rings,east
-        rings:
-          xmin: 50
+        gc1:
+          dx: -20
+          mirror: true
+          xmax: mzi1,west
+        gc2:
+          dx: 100
+          xmin: mzi2,east
+        mzi2:
+          dx: 100
+          dy: -200
+          xmin: mzi1,east
+          ymax: mzi1,north
+      routes:
+        gc1:
+          links:
+            gc1,opt1: mzi1,o1
+        gc2:
+          links:
+            gc2,opt1: mzi2,o2
+        optical:
+          links:
+            mzi1,o2: mzi2,o1
   child: null
   default:
     label_instance_function:
@@ -96,45 +94,43 @@ settings:
   full:
     conf:
       instances:
-        mzis:
-          component: pack_doe_grid
+        gc1:
+          component: gc_te1550
+        gc2:
+          component: gc_te1550
+        mzi1:
+          component: mzi_ubcpdk
           settings:
-            do_permutations: true
-            doe: mzi
-            function: add_fiber_array
-            settings:
-              delta_length:
-              - 10
-              - 100
-            spacing:
-            - 10
-            - 10
-        rings:
-          component: pack_doe
+            dy: -200
+        mzi2:
+          component: mzi_ubcpdk
           settings:
-            do_permutations: true
-            doe: ring_single
-            function:
-              function: add_fiber_array
-              settings:
-                fanout_length: 200
-            settings:
-              length_x:
-              - 1
-              - 2
-              - 3
-              radius:
-              - 30
-              - 50
-              - 20
-              - 40
-      name: mask_compact
+            dy: -55
+      name: mzi_lattice
       pdk: ubcpdk
       placements:
-        mzis:
-          xmin: rings,east
-        rings:
-          xmin: 50
+        gc1:
+          dx: -20
+          mirror: true
+          xmax: mzi1,west
+        gc2:
+          dx: 100
+          xmin: mzi2,east
+        mzi2:
+          dx: 100
+          dy: -200
+          xmin: mzi1,east
+          ymax: mzi1,north
+      routes:
+        gc1:
+          links:
+            gc1,opt1: mzi1,o1
+        gc2:
+          links:
+            gc2,opt1: mzi2,o2
+        optical:
+          links:
+            mzi1,o2: mzi2,o1
     label_instance_function:
       function: add_instance_label
     routing_strategy:
@@ -188,5 +184,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.read.from_yaml
-  name: mask_compact_f5aba6e9
+  name: mzi_lattice_f0e0b81e
 version: 0.0.1
