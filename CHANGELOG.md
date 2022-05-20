@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.10](https://github.com/gdsfactory/ubc/pull/43)
+
+- update to gdsfactory 5.7.1
+
 ## [1.5.9](https://github.com/gdsfactory/ubc/pull/41)
 
 - update to latest gdsfactory
