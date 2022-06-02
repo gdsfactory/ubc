@@ -36,9 +36,15 @@ __all__ = [
 
 logger.info(f"Found UBCpdk {__version__!r} installed at {module!r}")
 cells = get_cells(components)
-PDK = Pdk(name="ubcpdk", cells=cells, cross_sections=cross_sections)
+PDK = Pdk(
+    name="ubcpdk",
+    cells=cells,
+    cross_sections=cross_sections,
+    layers=LAYER.dict(),
+    # base_pdk=gf.pdk.GENERIC,
+)
 PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
-gf.set_active_pdk(PDK)
+PDK.activate()
 
 
 if __name__ == "__main__":

@@ -2,40 +2,39 @@ name: mzi_ubcpdk
 pdk: ubcpdk
 
 settings:
-   dy: -80
+  dy: -20
 
 info:
-    polarization: te
-    wavelength: 1.55
-    description: mzi for ubcpdk
-
+  polarization: te
+  wavelength: 1.55
+  description: mzi for ubcpdk
 
 instances:
-    yr:
-      component: y_splitter
-    yl:
-      component: y_splitter
+  yr:
+    component: y_splitter
+  yl:
+    component: y_splitter
 
 placements:
-    yr:
-        rotation: 180
-        x: 100
-        y: 0
+  yr:
+    rotation: 180
+    x: 100
+    y: 0
 
 routes:
-    route_top:
-        links:
-            yl,opt2: yr,opt3
-        settings:
-            cross_section: strip
-    route_bot:
-        links:
-            yl,opt3: yr,opt2
-        routing_strategy: get_bundle_from_steps
-        settings:
-          steps: [dx: 30, dy: '${settings.dy}', dx: 20]
-          cross_section: strip
+  route_top:
+    links:
+      yl,opt2: yr,opt3
+    settings:
+      cross_section: strip
+  route_bot:
+    links:
+      yl,opt3: yr,opt2
+    routing_strategy: get_bundle_from_steps
+    settings:
+      steps: [dx: 30, dy: "${settings.dy}", dx: 20]
+      cross_section: strip
 
 ports:
-    o1: yl,opt1
-    o2: yr,opt1
+  o1: yl,opt1
+  o2: yr,opt1

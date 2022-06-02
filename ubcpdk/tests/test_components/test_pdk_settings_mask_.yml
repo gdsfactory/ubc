@@ -57,9 +57,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -77,9 +75,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -148,9 +144,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -168,9 +162,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2

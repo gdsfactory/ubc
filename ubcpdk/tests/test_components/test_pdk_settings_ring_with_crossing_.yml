@@ -1,17 +1,10 @@
-name: ring_single_dut_80d44f09
+name: ring_single_dut_ba0e5e57
 settings:
   changed:
     bend:
       function: bend_euler
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
     component:
       function: import_gds
       settings:
@@ -32,8 +25,16 @@ settings:
     cross_section:
       function: cross_section
       settings:
-        decorator:
+        add_bbox:
+          function: add_bbox_siepic
+        add_pins:
           function: add_pins_siepic
+          settings:
+            pin_length: 0.1
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0
         info:
           component_type:
           - optical
@@ -60,33 +61,12 @@ settings:
         layer:
         - 1
         - 0
-        sections:
-        - hidden: false
-          layer:
-          - 68
-          - 0
-          name: null
-          offset: 0
-          port_names:
-          - null
-          - null
-          port_types:
-          - optical
-          - optical
-          width: 0.5
         width: 0.5
     port_name: opt4
     straight:
       function: straight
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
   child: {}
   default:
     bend:
@@ -110,13 +90,6 @@ settings:
       function: bend_euler
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
     component:
       function: import_gds
       settings:
@@ -139,8 +112,16 @@ settings:
     cross_section:
       function: cross_section
       settings:
-        decorator:
+        add_bbox:
+          function: add_bbox_siepic
+        add_pins:
           function: add_pins_siepic
+          settings:
+            pin_length: 0.1
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0
         info:
           component_type:
           - optical
@@ -167,20 +148,6 @@ settings:
         layer:
         - 1
         - 0
-        sections:
-        - hidden: false
-          layer:
-          - 68
-          - 0
-          name: null
-          offset: 0
-          port_names:
-          - null
-          - null
-          port_types:
-          - optical
-          - optical
-          width: 0.5
         width: 0.5
     gap: 0.2
     length_x: 4
@@ -191,17 +158,10 @@ settings:
       function: straight
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
     with_component: true
   function_name: ring_single_dut
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_80d44f09
+  name: ring_single_dut_ba0e5e57
 version: 0.0.1

@@ -1,4 +1,4 @@
-name: mzi_ubcpdk_ecaea802
+name: mzi_ubcpdk_3e355e1e
 settings:
   changed:
     conf:
@@ -30,7 +30,7 @@ settings:
             cross_section: strip
             steps:
             - dx: 30
-            - dy: -50
+            - dy: -20
             - dx: 20
         route_top:
           links:
@@ -38,7 +38,7 @@ settings:
           settings:
             cross_section: strip
       settings:
-        dy: -50
+        dy: -20
   child: null
   default:
     label_instance_function:
@@ -54,9 +54,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -74,9 +72,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -120,7 +116,7 @@ settings:
             cross_section: strip
             steps:
             - dx: 30
-            - dy: -50
+            - dy: -20
             - dx: 20
         route_top:
           links:
@@ -128,7 +124,7 @@ settings:
           settings:
             cross_section: strip
       settings:
-        dy: -50
+        dy: -20
     label_instance_function:
       function: add_instance_label
     routing_strategy:
@@ -142,9 +138,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -162,9 +156,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -185,5 +177,5 @@ settings:
     wavelength: 1.55
   info_version: 2
   module: gdsfactory.read.from_yaml
-  name: mzi_ubcpdk_ecaea802
+  name: mzi_ubcpdk_3e355e1e
 version: 0.0.1

@@ -12,15 +12,20 @@ from pydantic import BaseModel
 
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
-from gdsfactory.tech import LayerStack, LayerLevel, Section
+from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
 import gdsfactory.simulation as sim
 import gdsfactory.simulation.lumerical as lumerical
-from gdsfactory.add_pins import add_pins_siepic, add_pins_bbox_siepic
+from gdsfactory.add_pins import add_pins_bbox_siepic as add_pins_bbox_siepic_10nm
+from gdsfactory.add_pins import add_pins_siepic as add_pins_siepic_10nm
 
 from ubcpdk.config import PATH
 
 nm = 1e-3
+
+add_pins_siepic = gf.partial(add_pins_siepic_10nm, pin_length=100 * nm)
+add_pins_bbox_siepic = gf.partial(add_pins_bbox_siepic_10nm, pin_length=100 * nm)
+
 
 MATERIAL_NAME_TO_LUMERICAL = {
     "si": "Si (Silicon) - Palik",
@@ -49,6 +54,11 @@ class LayerMapUbc(BaseModel):
     PORT: Layer = (1, 10)  # PinRec
     PORTE: Layer = (1, 11)  # PinRecM
     FLOORPLAN: Layer = (99, 0)
+
+    TE: Layer = (203, 0)
+    TM: Layer = (204, 0)
+    TEXT: Layer = (66, 0)
+    LABEL_INSTANCE: Layer = (66, 0)
 
     class Config:
         frozen = True
@@ -126,28 +136,23 @@ get_sparameters_data_lumerical = gf.partial(
     dirpath=PATH.sparameters,
 )
 
-siepic_devrec_section = Section(
-    width=TECH.DEVREC["width"],
-    layer=LAYER.DEVREC,
-)
 
 strip_pins = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
     width=TECH.WG["width"],
     info=strip_wg_simulation_info,
-    decorator=add_pins_siepic,
+    add_pins=add_pins_siepic,
 )
 strip = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
     width=TECH.WG["width"],
-    sections=(siepic_devrec_section,),
     info=strip_wg_simulation_info,
-    decorator=add_pins_siepic,
+    add_pins=add_pins_siepic,
 )
 strip_no_pins = gf.partial(
-    gf.cross_section.strip,
+    gf.cross_section.cross_section,
     layer=LAYER.WG,
     width=TECH.WG["width"],
 )

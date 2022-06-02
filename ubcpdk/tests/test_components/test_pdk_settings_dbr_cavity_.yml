@@ -1,4 +1,4 @@
-name: dbr_cavity_8a37997a
+name: dbr_cavity_ace99022
 settings:
   changed:
     component:
@@ -30,6 +30,8 @@ settings:
         cross_section: strip
         decorator:
           function: add_pins_bbox_siepic
+          settings:
+            pin_length: 0.1
   child:
     changed: {}
     child: null
@@ -87,11 +89,13 @@ settings:
         cross_section: strip
         decorator:
           function: add_pins_bbox_siepic
+          settings:
+            pin_length: 0.1
     gap: 0.2
     length: 0.1
   function_name: cavity
   info: {}
   info_version: 2
   module: gdsfactory.components.cavity
-  name: dbr_cavity_8a37997a
+  name: dbr_cavity_ace99022
 version: 0.0.1

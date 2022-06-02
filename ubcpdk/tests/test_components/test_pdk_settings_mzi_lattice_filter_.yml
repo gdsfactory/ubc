@@ -1,4 +1,4 @@
-name: mzi_lattice_f0e0b81e
+name: mzi_lattice_4c01a2e8
 settings:
   changed:
     conf:
@@ -10,24 +10,25 @@ settings:
         mzi1:
           component: mzi_ubcpdk
           settings:
-            dy: -200
+            dy: -100
         mzi2:
           component: mzi_ubcpdk
           settings:
-            dy: -55
+            dy: -255
       name: mzi_lattice
       pdk: ubcpdk
       placements:
         gc1:
-          dx: -20
+          dx: -40
+          dy: -20
           mirror: true
           xmax: mzi1,west
         gc2:
           dx: 100
           xmin: mzi2,east
         mzi2:
-          dx: 100
-          dy: -200
+          dx: 50
+          dy: 200
           xmin: mzi1,east
           ymax: mzi1,north
       routes:
@@ -40,6 +41,8 @@ settings:
         optical:
           links:
             mzi1,o2: mzi2,o1
+          settings:
+            auto_widen: true
   child: null
   default:
     label_instance_function:
@@ -55,9 +58,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -75,9 +76,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -101,24 +100,25 @@ settings:
         mzi1:
           component: mzi_ubcpdk
           settings:
-            dy: -200
+            dy: -100
         mzi2:
           component: mzi_ubcpdk
           settings:
-            dy: -55
+            dy: -255
       name: mzi_lattice
       pdk: ubcpdk
       placements:
         gc1:
-          dx: -20
+          dx: -40
+          dy: -20
           mirror: true
           xmax: mzi1,west
         gc2:
           dx: 100
           xmin: mzi2,east
         mzi2:
-          dx: 100
-          dy: -200
+          dx: 50
+          dy: 200
           xmin: mzi1,east
           ymax: mzi1,north
       routes:
@@ -131,6 +131,8 @@ settings:
         optical:
           links:
             mzi1,o2: mzi2,o1
+          settings:
+            auto_widen: true
     label_instance_function:
       function: add_instance_label
     routing_strategy:
@@ -144,9 +146,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -164,9 +164,7 @@ settings:
           cross_section:
             function: cross_section
             settings:
-              layer:
-              - 49
-              - 0
+              layer: M3
               port_names:
               - e1
               - e2
@@ -184,5 +182,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.read.from_yaml
-  name: mzi_lattice_f0e0b81e
+  name: mzi_lattice_4c01a2e8
 version: 0.0.1
