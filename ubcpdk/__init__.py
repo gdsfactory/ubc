@@ -41,7 +41,7 @@ PDK = Pdk(
     cells=cells,
     cross_sections=cross_sections,
     layers=LAYER.dict(),
-    # base_pdk=gf.pdk.GENERIC,
+    base_pdk=gf.pdk.GENERIC,
 )
 PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
 PDK.activate()

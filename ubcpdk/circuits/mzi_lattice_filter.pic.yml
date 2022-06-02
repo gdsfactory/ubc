@@ -1,4 +1,4 @@
-name: mzi_lattice
+name: mzi_lattice_ubcpdk
 pdk: ubcpdk
 
 instances:

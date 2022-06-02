@@ -1,10 +1,6 @@
-name: straight_add_fiber_arra_d1e6f132
+name: straight_add_fiber_arra_7367acc7
 settings:
   changed:
-    component:
-      function: straight
-      settings:
-        cross_section: strip
     gc_port_name: opt1
     grating_coupler:
       function: import_gds
@@ -33,10 +29,6 @@ settings:
         wavelength: 1.55
   child:
     changed:
-      component:
-        function: straight
-        settings:
-          cross_section: strip
       fanout_length: 0
       gc_port_name: opt1
       grating_coupler:
@@ -135,8 +127,6 @@ settings:
       bend: bend_euler
       component:
         function: straight
-        settings:
-          cross_section: strip
       component_name: null
       cross_section: strip
       fanout_length: 0
@@ -182,7 +172,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_arra_3eaf2674
+    name: straight_add_fiber_arra_0041247d
   default:
     component:
       function: straight
@@ -205,8 +195,6 @@ settings:
   full:
     component:
       function: straight
-      settings:
-        cross_section: strip
     component_name: null
     cross_section: strip
     fanout_length: 0
@@ -247,5 +235,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.dft.siepic
-  name: straight_add_fiber_arra_d1e6f132
+  name: straight_add_fiber_arra_7367acc7
 version: 0.0.1
