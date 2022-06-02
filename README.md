@@ -71,16 +71,9 @@ gf tool install
 
 UBCpdk top contributors:
 
-- Lukas Chrostowski (UBC professor): creator of the course and maintainer of the PDK cells
 - Joaquin Matres (Google): maintainer of gdsfactory
-
-Open source heroes:
-
-- Matthias Köfferlein (Germany): for Klayout
-- Lucas Heitzmann (University of Campinas, Brazil): for gdspy
-- Adam McCaughan (NIST): for phidl
-- Alex Tait (Queens University): for lytest and lygadgets
-- Thomas Ferreira de Lima (NEC): for `pip install klayout`
+- Thomas Dorch (Freedom Photonics): for Meep's material database access, MPB sidewall angles, and add_pin_path
+- Lukas Chrostowski (UBC professor): creator of the course and maintainer of the PDK cells
 
 
 Links:
