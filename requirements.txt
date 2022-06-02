@@ -1,3 +1,3 @@
 lygadgets==0.1.31
-gdsfactory[full]==5.8.6
+gdsfactory[full]==5.8.7
 modes==1.0.6
