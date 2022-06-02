@@ -10,9 +10,8 @@
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
-UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
-
-This is a gdsfactory-based pdk, which provides a fully scripted python based flow for the edx course.
+UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana) for gdsfactory.
+It provides a fully python driven flow alternative for the edx course for the most advanced users.
 
 ## Documentation
 
