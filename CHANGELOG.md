@@ -1,8 +1,8 @@
 # Changelog
 
-## [1.6.0]
+## [1.6.0](https://github.com/gdsfactory/ubc/pull/45)
 
-- update to gdsfactory 5.8.6
+- update to gdsfactory 5.8.7
 
 ## [1.5.10](https://github.com/gdsfactory/ubc/pull/43)
 
