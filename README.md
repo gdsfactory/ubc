@@ -75,12 +75,10 @@ UBCpdk top contributors:
 - Thomas Dorch (Freedom Photonics): for Meep's material database access, MPB sidewall angles, and add_pin_path
 - Lukas Chrostowski (UBC professor): creator of the course and maintainer of the PDK cells
 
-
 Links:
 
 - [UBC docs](https://gdsfactory.github.io/ubc/) and [repo](https://github.com/gdsfactory/ubc)
 - [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
-- [miniforge install instructions](https://github.com/conda-forge/miniforge#mambaforge)
 - [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 - [siepic Ebeam PDK](https://github.com/lukasc-ubc/SiEPIC_EBeam_PDK)
 - [awesome photonics list](https://github.com/joamatab/awesome_photonics)
