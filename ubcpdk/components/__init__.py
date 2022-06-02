@@ -1,3 +1,4 @@
+import gdsfactory as gf
 from ubcpdk.components import cells
 from ubcpdk.components import grating_couplers
 
@@ -31,6 +32,7 @@ from ubcpdk.components.grating_couplers import (
 
 from ubcpdk.components.generic import coupler, ring_single, spiral
 
+pad = gf.partial(gf.components.pad, layer="WG")
 
 __all__ = [
     "add_fiber_array",
@@ -57,4 +59,5 @@ __all__ = [
     "spiral",
     "y_adiabatic",
     "y_splitter",
+    "pad",
 ]

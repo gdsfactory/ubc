@@ -10,9 +10,8 @@
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
-UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
-
-This is a gdsfactory-based pdk, which provides a fully scripted python based flow for the edx course.
+UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana) for gdsfactory.
+It provides a fully python driven flow alternative for the edx course for the most advanced users.
 
 ## Documentation
 
@@ -72,23 +71,14 @@ gf tool install
 
 UBCpdk top contributors:
 
-- Lukas Chrostowski (UBC professor): creator of the course and maintainer of the PDK cells
 - Joaquin Matres (Google): maintainer of gdsfactory
-
-Open source heroes:
-
-- Matthias Köfferlein (Germany): for Klayout
-- Lucas Heitzmann (University of Campinas, Brazil): for gdspy
-- Adam McCaughan (NIST): for phidl
-- Alex Tait (Queens University): for lytest and lygadgets
-- Thomas Ferreira de Lima (NEC): for `pip install klayout`
-
+- Thomas Dorch (Freedom Photonics): for Meep's material database access, MPB sidewall angles, and add_pin_path
+- Lukas Chrostowski (UBC professor): creator of the course and maintainer of the PDK cells
 
 Links:
 
 - [UBC docs](https://gdsfactory.github.io/ubc/) and [repo](https://github.com/gdsfactory/ubc)
 - [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
-- [miniforge install instructions](https://github.com/conda-forge/miniforge#mambaforge)
 - [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 - [siepic Ebeam PDK](https://github.com/lukasc-ubc/SiEPIC_EBeam_PDK)
 - [awesome photonics list](https://github.com/joamatab/awesome_photonics)

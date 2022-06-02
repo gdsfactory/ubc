@@ -1,18 +1,10 @@
-name: mzi_ec2aec99
+name: mzi_60ee5f30
 settings:
   changed:
     bend:
       function: bend_euler
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
-    cross_section: strip
     port_e0_combiner: opt3
     port_e0_splitter: opt3
     port_e1_combiner: opt2
@@ -46,21 +38,11 @@ settings:
       function: straight
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
   child: null
   default:
-    bend:
-      function: bend_euler
+    bend: bend_euler
     combiner: null
-    cross_section:
-      function: cross_section
-      settings: {}
+    cross_section: strip
     cross_section_x_bot: null
     cross_section_x_top: null
     delta_length: 10
@@ -71,8 +53,7 @@ settings:
     port_e0_splitter: o3
     port_e1_combiner: o2
     port_e1_splitter: o2
-    splitter:
-      function: mmi1x2
+    splitter: mmi1x2
     straight:
       function: straight
     straight_x_bot: null
@@ -84,13 +65,6 @@ settings:
       function: bend_euler
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
     combiner: null
     cross_section: strip
     cross_section_x_bot: null
@@ -132,13 +106,6 @@ settings:
       function: straight
       settings:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
     straight_x_bot: null
     straight_x_top: null
     straight_y: null
@@ -147,5 +114,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_ec2aec99
+  name: mzi_60ee5f30
 version: 0.0.1

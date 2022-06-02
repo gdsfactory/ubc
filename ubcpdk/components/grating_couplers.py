@@ -14,7 +14,6 @@ import_gc = gf.partial(
     library="Design kits/ebeam",
     decorator=decorator,
     layout_model_port_pairs=(("opt1", "opt_wg"),),
-    flatten=True,
 )
 
 gc_te1550 = gf.partial(

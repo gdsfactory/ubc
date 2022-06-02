@@ -15,19 +15,21 @@ from ubcpdk.import_gds import remove_pins_recursive
 
 
 um = 1e-6
-
 add_siepic_labels = gf.partial(
     add_siepic_labels, label_layer=LAYER.DEVREC, library="Design Kits/ebeam"
 )
 
 straight = gf.partial(
-    gf.components.straight, cross_section="strip", decorator=add_siepic_labels
+    gf.components.straight,
+    cross_section="strip",
 )
 bend_euler = gf.partial(
-    gf.components.bend_euler, cross_section="strip", decorator=add_siepic_labels
+    gf.components.bend_euler,
+    cross_section="strip",
 )
 bend_s = gf.partial(
-    gf.components.bend_s, cross_section="strip", decorator=add_siepic_labels
+    gf.components.bend_s,
+    cross_section="strip",
 )
 
 
@@ -169,6 +171,8 @@ ring_with_crossing = gf.partial(
 
 
 if __name__ == "__main__":
+    from ubcpdk.components.add_fiber_array import add_fiber_array
+
     # print(dc_broadband_te.__doc__)
     # c = dc_broadband_te()
     # c = dc_adiabatic()
@@ -192,8 +196,9 @@ if __name__ == "__main__":
     # wg.connect("o1", sp.ports["opt1"])
 
     # c = ebeam_dc_halfring_straight()
-    c = ring_with_crossing()
+    # c = ring_with_crossing()
 
     c = mzi()
+    c = add_fiber_array(mzi())
     # c = ebeam_dc_te1550()
     c.show()

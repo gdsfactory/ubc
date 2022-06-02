@@ -1,31 +1,14 @@
-name: straight_cb4e6ca2
+name: straight
 settings:
-  changed:
-    cross_section: strip
-    decorator:
-      function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
+  changed: {}
   child: null
   default:
-    cross_section:
-      function: cross_section
-      settings: {}
+    cross_section: strip
     length: 10
     npoints: 2
     with_bbox: false
   full:
     cross_section: strip
-    decorator:
-      function: add_siepic_labels
-      settings:
-        label_layer:
-        - 68
-        - 0
-        library: Design Kits/ebeam
     length: 10
     npoints: 2
     with_bbox: false
@@ -57,5 +40,5 @@ settings:
     width: 0.5
   info_version: 2
   module: gdsfactory.components.straight
-  name: straight_cb4e6ca2
+  name: straight
 version: 0.0.1

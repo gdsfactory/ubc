@@ -4,12 +4,11 @@ from pytest_regressions.data_regression import DataRegressionFixture
 
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
-from ubcpdk import PDK
+from ubcpdk import cells
 
 
-skip = []
-cells = PDK.cells
-cell_names = set(cells.keys()) - set(skip)
+skip_test = {}
+cell_names = set(cells.keys()) - set(skip_test)
 dirpath = pathlib.Path(__file__).absolute().with_suffix(".gds")
 
 

@@ -1,4 +1,4 @@
-name: straight_cb4e6ca2_add_f_f5304b8b
+name: straight_add_fiber_arra_7367acc7
 settings:
   changed:
     gc_port_name: opt1
@@ -17,7 +17,6 @@ settings:
         - function: rotate
           settings:
             angle: 180
-        flatten: true
         gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
         layout_model_port_pairs:
@@ -30,8 +29,6 @@ settings:
         wavelength: 1.55
   child:
     changed:
-      component: straight
-      cross_section: strip
       fanout_length: 0
       gc_port_name: opt1
       grating_coupler:
@@ -49,7 +46,6 @@ settings:
           - function: rotate
             settings:
               angle: 180
-          flatten: true
           gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
           layout_model_port_pairs:
@@ -66,32 +62,15 @@ settings:
       optical_routing_type: 0
       with_loopback: false
     child:
-      changed:
-        cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
+      changed: {}
       child: null
       default:
-        cross_section:
-          function: cross_section
-          settings: {}
+        cross_section: strip
         length: 10
         npoints: 2
         with_bbox: false
       full:
         cross_section: strip
-        decorator:
-          function: add_siepic_labels
-          settings:
-            label_layer:
-            - 68
-            - 0
-            library: Design Kits/ebeam
         length: 10
         npoints: 2
         with_bbox: false
@@ -123,14 +102,13 @@ settings:
         width: 0.5
       info_version: 2
       module: gdsfactory.components.straight
-      name: straight_cb4e6ca2
+      name: straight
     default:
       bend: bend_euler
-      component: mmi2x2
+      component:
+        function: straight
       component_name: null
-      cross_section:
-        function: cross_section
-        settings: {}
+      cross_section: strip
       gc_port_labels: null
       gc_port_name: o1
       get_input_labels_function:
@@ -140,18 +118,15 @@ settings:
         settings:
           polarization: te
           taper_angle: 35
-      layer_label:
-      - 66
-      - 0
+      layer_label: TEXT
       select_ports:
         function: select_ports
         settings:
           port_type: optical
-      straight:
-        function: straight
     full:
       bend: bend_euler
-      component: straight
+      component:
+        function: straight
       component_name: null
       cross_section: strip
       fanout_length: 0
@@ -174,7 +149,6 @@ settings:
           - function: rotate
             settings:
               angle: 180
-          flatten: true
           gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
           layout_model_port_pairs:
@@ -193,16 +167,15 @@ settings:
         function: select_ports
         settings:
           port_type: optical
-      straight:
-        function: straight
       with_loopback: false
     function_name: add_fiber_array
     info: {}
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_cb4e6ca2_add_f_423e711c
+    name: straight_add_fiber_arra_0041247d
   default:
-    component: straight
+    component:
+      function: straight
     component_name: null
     cross_section: strip
     fanout_length: 0
@@ -220,7 +193,8 @@ settings:
     optical_routing_type: 0
     with_loopback: false
   full:
-    component: straight
+    component:
+      function: straight
     component_name: null
     cross_section: strip
     fanout_length: 0
@@ -242,7 +216,6 @@ settings:
         - function: rotate
           settings:
             angle: 180
-        flatten: true
         gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
         layout_model_port_pairs:
@@ -262,5 +235,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.dft.siepic
-  name: straight_cb4e6ca2_add_f_f5304b8b
+  name: straight_add_fiber_arra_7367acc7
 version: 0.0.1
