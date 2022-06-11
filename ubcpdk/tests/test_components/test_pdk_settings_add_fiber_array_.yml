@@ -104,7 +104,6 @@ settings:
       module: gdsfactory.components.straight
       name: straight
     default:
-      bend: bend_euler
       component:
         function: straight
       component_name: null
@@ -123,10 +122,7 @@ settings:
         function: select_ports
         settings:
           port_type: optical
-      straight:
-        function: straight
     full:
-      bend: bend_euler
       component:
         function: straight
       component_name: null
@@ -169,8 +165,6 @@ settings:
         function: select_ports
         settings:
           port_type: optical
-      straight:
-        function: straight
       with_loopback: false
     function_name: add_fiber_array
     info: {}
