@@ -18,10 +18,11 @@ instances:
   gc2:
     component: gc_te1550
 
+
 placements:
   mzi2:
     ymax: mzi1,north
-    dy: +200
+    dy: 0
     xmin: mzi1,east
     dx: 50
 

@@ -1,42 +1,44 @@
 from functools import partial
 
 import gdsfactory.simulation.simphony as gs
-from simphony.library import siepic
+from simphony.libraries import siepic
 
 
 def ebeam_y_1550():
-    c = siepic.ebeam_y_1550()
-    c.pins = ("o1", "o2", "o3")
+    c = siepic.YBranch()
+    c.rename_pins("o1", "o2", "o3")
     return c
 
 
 def ebeam_bdc_te1550():
-    c = siepic.ebeam_bdc_te1550()
-    c.pins = ("o1", "o2", "o4", "o3")
+    c = siepic.BidirectionalCoupler()
+    c.rename_pins("o1", "o2", "o4", "o3")
     return c
 
 
 def ebeam_dc_halfring_straight():
-    c = siepic.ebeam_dc_halfring_straight()
-    c.pins = ("o1", "o2", "o4", "o3")
+    c = siepic.HalfRing()
+    c.rename_pins("o1", "o2", "o4", "o3")
     return c
 
 
 def ebeam_dc_te1550():
-    c = siepic.ebeam_dc_te1550()
-    c.pins = ("o1", "o2", "o4", "o3")
+    c = siepic.DirectionalCoupler()
+    c.rename_pins("o1", "o2", "o4", "o3")
     return c
 
 
 def ebeam_gc_te1550():
-    c = siepic.ebeam_gc_te1550()
-    c.pins = ("o1", "o2")
+    c = siepic.GratingCoupler()
+    c.rename_pins("o1", "o2")
     return c
 
 
 def ebeam_terminator_te1550():
-    c = siepic.ebeam_terminator_te1550()
-    c.pins = ("o1",)
+    c = siepic.Terminator()
+    c.rename_pins(
+        "o1",
+    )
     return c
 
 

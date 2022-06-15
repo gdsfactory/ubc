@@ -7,7 +7,7 @@ from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
 
 from ubcpdk.config import CONFIG, PATH, module
-from ubcpdk.tech import LAYER, strip
+from ubcpdk.tech import LAYER, strip, LAYER_STACK, LAYER_COLORS
 from ubcpdk import components
 from ubcpdk import tech
 from ubcpdk import data
@@ -15,7 +15,6 @@ from ubcpdk import data
 from ubcpdk.tech import cross_sections
 
 
-gf.asserts.version(">=5.1.2")
 lys = gf.layers.load_lyp(PATH.lyp)
 __version__ = "1.6.2"
 
@@ -42,6 +41,9 @@ PDK = Pdk(
     cross_sections=cross_sections,
     layers=LAYER.dict(),
     base_pdk=gf.pdk.GENERIC,
+    layer_stack=LAYER_STACK,
+    layer_colors=LAYER_COLORS,
+    sparameters_path=PATH.sparameters,
 )
 PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
 PDK.activate()
