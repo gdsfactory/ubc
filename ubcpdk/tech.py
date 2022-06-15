@@ -69,7 +69,7 @@ LAYER = LayerMapUbc()
 
 
 def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
-    """Returns generic LayerStack"""
+    """Returns UBC LayerStack"""
     ## TODO: Translate xml in lumerical process file
     return LayerStack(
         layers=dict(
@@ -102,12 +102,7 @@ TECH = Tech()
 
 
 LAYER_STACK = get_layer_stack_ubc()
-layer_set = gf.layers.load_lyp(PATH.lyp)
-to_3d = gf.partial(
-    gf.export.to_3d,
-    layer_set=layer_set,
-    layer_stack=LAYER_STACK,
-)
+LAYER_COLORS = gf.layers.load_lyp(PATH.lyp)
 
 write_sparameters_lumerical = gf.partial(
     lumerical.write_sparameters_lumerical,

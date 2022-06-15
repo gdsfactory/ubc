@@ -2,7 +2,8 @@ name: mzi_ubcpdk
 pdk: ubcpdk
 
 settings:
-  dy: -20
+  dy: -50
+
 
 info:
   polarization: te

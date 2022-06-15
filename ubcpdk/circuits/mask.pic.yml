@@ -20,7 +20,7 @@ instances:
     settings:
       doe: mzi
       settings:
-        delta_length: [10, 100]
+        delta_length: [10, 100, 300, 500]
       do_permutations: True
       spacing: [10, 10]
       function: add_fiber_array
