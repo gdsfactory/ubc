@@ -1,5 +1,5 @@
 project = "ubcpdk"
-version = "1.6.2"
+version = "1.6.3"
 copyright = "2019, gdsfactory"
 author = "gdsfactory"
 
