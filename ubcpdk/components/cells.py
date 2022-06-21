@@ -15,9 +15,9 @@ from ubcpdk.import_gds import remove_pins_recursive
 
 
 um = 1e-6
-add_siepic_labels = gf.partial(
-    add_siepic_labels, label_layer=LAYER.DEVREC, library="Design Kits/ebeam"
-)
+# add_siepic_labels = gf.partial(
+#     add_siepic_labels, label_layer=LAYER.DEVREC, library="Design Kits/ebeam"
+# )
 
 straight = gf.partial(
     gf.components.straight,
@@ -70,11 +70,10 @@ y_splitter = gf.partial(
     "ebeam_y_1550.gds",
     doc="Y junction TE1550 50/50 power.",
     name="ebeam_y_1550",
-    model="ebeam_y_1550",
-    layout_model_port_pairs=(
-        ("opt1", "opt_a1"),
-        ("opt2", "opt_b1"),
-        ("opt3", "opt_b2"),
+    interconnect=dict(
+        model="ebeam_y_1550",
+        layout_model_port_pairs=dict(opt1="opt_a1", opt2="opt_b1", opt3="opt_b2"),
+        properties=dict(annotate=True),
     ),
 )
 crossing = gf.partial(

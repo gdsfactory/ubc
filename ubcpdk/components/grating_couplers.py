@@ -11,9 +11,7 @@ decorator = gf.compose(
 import_gc = gf.partial(
     gf.import_gds,
     gdsdir=PATH.gds,
-    library="Design kits/ebeam",
     decorator=decorator,
-    layout_model_port_pairs=(("opt1", "opt_wg"),),
 )
 
 gc_te1550 = gf.partial(
@@ -21,17 +19,25 @@ gc_te1550 = gf.partial(
     gdspath="ebeam_gc_te1550.gds",
     polarization="te",
     wavelength=1.55,
-    model="ebeam_gc_te1550",
     name="ebeam_gc_te1550",
+    interconnect=dict(
+        model="ebeam_gc_te1550",
+        library="Design kits/ebeam",
+        layout_model_port_pairs=dict(opt1="opt_wg"),
+    ),
 )
 
 gc_te1550_broadband = gf.partial(
     import_gc,
     gdspath="ebeam_gc_te1550_broadband.gds",
     name="ebeam_gc_te1550_broadband",
-    model="ebeam_gc_te1550_broadband",
     polarization="te",
     wavelength=1.55,
+    interconnect=dict(
+        model="ebeam_gc_te1550_broadband",
+        library="Design kits/ebeam",
+        layout_model_port_pairs=dict(opt1="opt_wg"),
+    ),
 )
 
 
