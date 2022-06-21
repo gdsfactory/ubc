@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.6.2](https://github.com/gdsfactory/ubc/pull/52)
+## [1.6.4](https://github.com/gdsfactory/ubc/pull/52)
 
 - update interconnect plugin [PR](https://github.com/gdsfactory/ubc/pull/51)
 
