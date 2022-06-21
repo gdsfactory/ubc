@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.6.2](https://github.com/gdsfactory/ubc/pull/52)
+
+- update interconnect plugin [PR](https://github.com/gdsfactory/ubc/pull/51)
+
 ## [1.6.1](https://github.com/gdsfactory/ubc/pull/49)
 
 - update to gdsfactory 5.10.1
