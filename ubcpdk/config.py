@@ -37,6 +37,7 @@ class Path:
     data = samples / "data"
     gds = module / "gds"
     sparameters = repo / "sparameters"
+    interconnect_cml_path = module / "simulation" / "lumerical" / "EBeam.cml"
     modes = repo / "modes"
     mask = module / "samples" / "extra" / "ubc1"
 
