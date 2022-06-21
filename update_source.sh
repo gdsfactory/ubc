@@ -7,6 +7,7 @@ export GIT_REPO=https://github.com/SiEPIC/SiEPIC_EBeam_PDK
 
 export REPO_TECH=SiEPIC_EBeam_PDK-${VERSION}/klayout_dot_config/tech/EBeam
 export UBC_TECH=ubcpdk/klayout/tech
+export LUM_DIR=ubcpdk/simulation/lumerical
 export GDS_DIR=ubcpdk/gds
 
 
@@ -17,8 +18,8 @@ tar -xvf v${VERSION}.tar.gz
 # Copy files from tech
 cp -r ${REPO_TECH}/klayout_Layers_EBeam.lyp ${UBC_TECH}/layers.lyp
 cp -r ${REPO_TECH}/EBeam.lyt ${UBC_TECH}/tech.lyt
-cp -r ${REPO_TECH}/EBeam_v${CML_VER}.cml ${UBC_TECH}/EBeam.cml
-cp -r ${REPO_TECH}/lumerical_process_file.lbr ${UBC_TECH}/lumerical_process_file.lbr
+cp -r ${REPO_TECH}/EBeam_v${CML_VER}.cml ${LUM_DIR}/EBeam.cml
+cp -r ${REPO_TECH}/lumerical_process_file.lbr ${LUM_DIR}/lumerical_process_file.lbr
 
 # TODO: Make this work with the naming used by SiEPIC
 # gf gds layermap_to_dataclass ${UBC_TECH}/layers.lyp

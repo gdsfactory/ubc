@@ -113,16 +113,13 @@ write_sparameters_lumerical = gf.partial(
 
 strip_wg_simulation_info = dict(
     model="ebeam_wg_integral_1550",
-    library="Design kits/ebeam",
-    layout_model_property_pairs=(
-        # (layout_property_name, interconnect_property_name)
-        ("length", "wg_length", 1e-6),
-        ("width", "wg_width", 1e-6),
+    layout_model_property_pairs=dict(
+        # interconnect_property_name=(layout_property_name, scaling_value)
+        wg_length=("length", 1e-6),
+        wg_width=("width", 1e-6),
     ),
-    layout_model_port_pairs=(("o1", "port 1"), ("o2", "port 2")),
-    spice_params=["wg_length", "wg_width"],
-    component_type=["optical"],
-    properties=(("annotate", False),),
+    layout_model_port_pairs=dict(o1="port 1", o2="port 2"),
+    properties=dict(annotate=False),
 )
 
 get_sparameters_data_lumerical = gf.partial(
@@ -136,14 +133,14 @@ strip_pins = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
     width=TECH.WG["width"],
-    info=strip_wg_simulation_info,
+    info=dict(interconnect=strip_wg_simulation_info),
     add_pins=add_pins_siepic,
 )
 strip = gf.partial(
     gf.cross_section.strip,
     layer=LAYER.WG,
     width=TECH.WG["width"],
-    info=strip_wg_simulation_info,
+    info=dict(interconnect=strip_wg_simulation_info),
     add_pins=add_pins_siepic,
 )
 strip_no_pins = gf.partial(
