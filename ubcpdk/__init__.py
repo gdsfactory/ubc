@@ -44,6 +44,7 @@ PDK = Pdk(
     layer_stack=LAYER_STACK,
     layer_colors=LAYER_COLORS,
     sparameters_path=PATH.sparameters,
+    interconnect_cml_path=PATH.interconnect_cml_path,
 )
 PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
 PDK.activate()
