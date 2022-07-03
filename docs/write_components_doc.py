@@ -2,6 +2,7 @@ import pathlib
 import inspect
 import ubcpdk
 
+cells = ubcpdk.PDK.cells
 
 filepath = pathlib.Path(__file__).parent.absolute() / "components.rst"
 
@@ -35,11 +36,11 @@ Components
 """
     )
 
-    for name in sorted(ubcpdk.component_factory.keys()):
+    for name in sorted(cells.keys()):
         if name in skip or name.startswith("_"):
             continue
         print(name)
-        sig = inspect.signature(ubcpdk.component_factory[name])
+        sig = inspect.signature(cells[name])
         kwargs = ", ".join(
             [
                 f"{p}={repr(sig.parameters[p].default)}"
