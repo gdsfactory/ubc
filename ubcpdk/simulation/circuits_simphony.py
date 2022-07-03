@@ -4,38 +4,38 @@ import gdsfactory.simulation.simphony as gs
 from simphony.libraries import siepic
 
 
-def ebeam_y_1550():
-    c = siepic.YBranch()
+def ebeam_y_1550(**kwargs):
+    c = siepic.YBranch(**kwargs)
     c.rename_pins("o1", "o2", "o3")
     return c
 
 
-def ebeam_bdc_te1550():
-    c = siepic.BidirectionalCoupler()
+def ebeam_bdc_te1550(**kwargs):
+    c = siepic.BidirectionalCoupler(**kwargs)
     c.rename_pins("o1", "o2", "o4", "o3")
     return c
 
 
-def ebeam_dc_halfring_straight():
-    c = siepic.HalfRing()
+def ebeam_dc_halfring_straight(**kwargs):
+    c = siepic.HalfRing(**kwargs)
     c.rename_pins("o1", "o2", "o4", "o3")
     return c
 
 
-def ebeam_dc_te1550():
-    c = siepic.DirectionalCoupler()
+def ebeam_dc_te1550(**kwargs):
+    c = siepic.DirectionalCoupler(**kwargs)
     c.rename_pins("o1", "o2", "o4", "o3")
     return c
 
 
-def ebeam_gc_te1550():
-    c = siepic.GratingCoupler()
+def ebeam_gc_te1550(**kwargs):
+    c = siepic.GratingCoupler(**kwargs)
     c.rename_pins("o1", "o2")
     return c
 
 
-def ebeam_terminator_te1550():
-    c = siepic.Terminator()
+def ebeam_terminator_te1550(**kwargs):
+    c = siepic.Terminator(**kwargs)
     c.rename_pins(
         "o1",
     )
