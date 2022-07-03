@@ -36,6 +36,7 @@ jobs:
           pip install gdsfactory[dev] triangle
           make install
           make meep
+          pip install gdsfactory[sipann]
       - name: Test documentation
         run: |
           cd docs
