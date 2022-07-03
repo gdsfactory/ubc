@@ -1,4 +1,4 @@
-name: mzi_60ee5f30
+name: mzi_599c7ad0
 settings:
   changed:
     bend:
@@ -24,15 +24,15 @@ settings:
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
-        layout_model_port_pairs:
-        - - opt1
-          - opt_a1
-        - - opt2
-          - opt_b1
-        - - opt3
-          - opt_b2
+        interconnect:
+          layout_model_port_pairs:
+            opt1: opt_a1
+            opt2: opt_b1
+            opt3: opt_b2
+          model: ebeam_y_1550
+          properties:
+            annotate: true
         library: Design kits/ebeam
-        model: ebeam_y_1550
         name: ebeam_y_1550
     straight:
       function: straight
@@ -93,15 +93,15 @@ settings:
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
-        layout_model_port_pairs:
-        - - opt1
-          - opt_a1
-        - - opt2
-          - opt_b1
-        - - opt3
-          - opt_b2
+        interconnect:
+          layout_model_port_pairs:
+            opt1: opt_a1
+            opt2: opt_b1
+            opt3: opt_b2
+          model: ebeam_y_1550
+          properties:
+            annotate: true
         library: Design kits/ebeam
-        model: ebeam_y_1550
         name: ebeam_y_1550
     straight:
       function: straight
@@ -115,5 +115,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_60ee5f30
+  name: mzi_599c7ad0
 version: 0.0.1

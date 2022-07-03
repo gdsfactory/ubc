@@ -1,3 +1,4 @@
 lygadgets==0.1.33
-gdsfactory[full]==5.10.15
+gdsfactory[full]==5.12.9
+gdsfactory[sipann]
 modes==1.0.6

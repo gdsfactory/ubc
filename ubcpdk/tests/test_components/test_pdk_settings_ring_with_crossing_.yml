@@ -1,4 +1,4 @@
-name: ring_single_dut_ba0e5e57
+name: ring_single_dut_0ab86d4f
 settings:
   changed:
     bend:
@@ -36,28 +36,20 @@ settings:
         cladding_offsets:
         - 0
         info:
-          component_type:
-          - optical
-          layout_model_port_pairs:
-          - - o1
-            - port 1
-          - - o2
-            - port 2
-          layout_model_property_pairs:
-          - - length
-            - wg_length
-            - 1.0e-06
-          - - width
-            - wg_width
-            - 1.0e-06
-          library: Design kits/ebeam
-          model: ebeam_wg_integral_1550
-          properties:
-          - - annotate
-            - false
-          spice_params:
-          - wg_length
-          - wg_width
+          interconnect:
+            layout_model_port_pairs:
+              o1: port 1
+              o2: port 2
+            layout_model_property_pairs:
+              wg_length:
+              - length
+              - 1.0e-06
+              wg_width:
+              - width
+              - 1.0e-06
+            model: ebeam_wg_integral_1550
+            properties:
+              annotate: false
         layer:
         - 1
         - 0
@@ -123,28 +115,20 @@ settings:
         cladding_offsets:
         - 0
         info:
-          component_type:
-          - optical
-          layout_model_port_pairs:
-          - - o1
-            - port 1
-          - - o2
-            - port 2
-          layout_model_property_pairs:
-          - - length
-            - wg_length
-            - 1.0e-06
-          - - width
-            - wg_width
-            - 1.0e-06
-          library: Design kits/ebeam
-          model: ebeam_wg_integral_1550
-          properties:
-          - - annotate
-            - false
-          spice_params:
-          - wg_length
-          - wg_width
+          interconnect:
+            layout_model_port_pairs:
+              o1: port 1
+              o2: port 2
+            layout_model_property_pairs:
+              wg_length:
+              - length
+              - 1.0e-06
+              wg_width:
+              - width
+              - 1.0e-06
+            model: ebeam_wg_integral_1550
+            properties:
+              annotate: false
         layer:
         - 1
         - 0
@@ -163,5 +147,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_ba0e5e57
+  name: ring_single_dut_0ab86d4f
 version: 0.0.1
