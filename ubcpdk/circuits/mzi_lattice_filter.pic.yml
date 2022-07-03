@@ -1,6 +1,7 @@
 name: mzi_lattice_ubcpdk
 pdk: ubcpdk
 
+
 instances:
   mzi1:
     component: mzi_ubcpdk
@@ -10,7 +11,7 @@ instances:
   mzi2:
     component: mzi_ubcpdk
     settings:
-      dy: -255
+      dy: -500
 
   gc1:
     component: gc_te1550
@@ -18,11 +19,10 @@ instances:
   gc2:
     component: gc_te1550
 
-
 placements:
   mzi2:
     ymax: mzi1,north
-    dy: 0
+    dy: 100
     xmin: mzi1,east
     dx: 50
 
@@ -35,6 +35,7 @@ placements:
   gc2:
     xmin: mzi2,east
     dx: 100
+    dy: 100
 
 
 routes:

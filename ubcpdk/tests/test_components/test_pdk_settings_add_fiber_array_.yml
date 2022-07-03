@@ -1,4 +1,4 @@
-name: straight_add_fiber_arra_3951e0d6
+name: straight_add_fiber_arra_e1feec4c
 settings:
   changed:
     gc_port_name: opt1
@@ -19,11 +19,11 @@ settings:
             angle: 180
         gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
-        layout_model_port_pairs:
-        - - opt1
-          - opt_wg
-        library: Design kits/ebeam
-        model: ebeam_gc_te1550
+        interconnect:
+          layout_model_port_pairs:
+            opt1: opt_wg
+          library: Design kits/ebeam
+          model: ebeam_gc_te1550
         name: ebeam_gc_te1550
         polarization: te
         wavelength: 1.55
@@ -48,11 +48,11 @@ settings:
               angle: 180
           gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
-          layout_model_port_pairs:
-          - - opt1
-            - opt_wg
-          library: Design kits/ebeam
-          model: ebeam_gc_te1550
+          interconnect:
+            layout_model_port_pairs:
+              opt1: opt_wg
+            library: Design kits/ebeam
+            model: ebeam_gc_te1550
           name: ebeam_gc_te1550
           polarization: te
           wavelength: 1.55
@@ -76,29 +76,21 @@ settings:
         with_bbox: true
       function_name: straight
       info:
-        component_type:
-        - optical
-        layout_model_port_pairs:
-        - - o1
-          - port 1
-        - - o2
-          - port 2
-        layout_model_property_pairs:
-        - - length
-          - wg_length
-          - 1.0e-06
-        - - width
-          - wg_width
-          - 1.0e-06
+        interconnect:
+          layout_model_port_pairs:
+            o1: port 1
+            o2: port 2
+          layout_model_property_pairs:
+            wg_length:
+            - length
+            - 1.0e-06
+            wg_width:
+            - width
+            - 1.0e-06
+          model: ebeam_wg_integral_1550
+          properties:
+            annotate: false
         length: 10.0
-        library: Design kits/ebeam
-        model: ebeam_wg_integral_1550
-        properties:
-        - - annotate
-          - false
-        spice_params:
-        - wg_length
-        - wg_width
         width: 0.5
       info_version: 2
       module: gdsfactory.components.straight
@@ -149,11 +141,11 @@ settings:
               angle: 180
           gdsdir: gds
           gdspath: ebeam_gc_te1550.gds
-          layout_model_port_pairs:
-          - - opt1
-            - opt_wg
-          library: Design kits/ebeam
-          model: ebeam_gc_te1550
+          interconnect:
+            layout_model_port_pairs:
+              opt1: opt_wg
+            library: Design kits/ebeam
+            model: ebeam_gc_te1550
           name: ebeam_gc_te1550
           polarization: te
           wavelength: 1.55
@@ -167,10 +159,24 @@ settings:
           port_type: optical
       with_loopback: false
     function_name: add_fiber_array
-    info: {}
+    info:
+      interconnect:
+        layout_model_port_pairs:
+          o1: port 1
+          o2: port 2
+        layout_model_property_pairs:
+          wg_length:
+          - length
+          - 1.0e-06
+          wg_width:
+          - width
+          - 1.0e-06
+        model: ebeam_wg_integral_1550
+        properties:
+          annotate: false
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_arra_632b451f
+    name: straight_add_fiber_arra_dc93f3d0
   default:
     component:
       function: straight
@@ -216,11 +222,11 @@ settings:
             angle: 180
         gdsdir: gds
         gdspath: ebeam_gc_te1550.gds
-        layout_model_port_pairs:
-        - - opt1
-          - opt_wg
-        library: Design kits/ebeam
-        model: ebeam_gc_te1550
+        interconnect:
+          layout_model_port_pairs:
+            opt1: opt_wg
+          library: Design kits/ebeam
+          model: ebeam_gc_te1550
         name: ebeam_gc_te1550
         polarization: te
         wavelength: 1.55
@@ -230,8 +236,22 @@ settings:
     optical_routing_type: 0
     with_loopback: false
   function_name: add_fiber_array_siepic
-  info: {}
+  info:
+    interconnect:
+      layout_model_port_pairs:
+        o1: port 1
+        o2: port 2
+      layout_model_property_pairs:
+        wg_length:
+        - length
+        - 1.0e-06
+        wg_width:
+        - width
+        - 1.0e-06
+      model: ebeam_wg_integral_1550
+      properties:
+        annotate: false
   info_version: 2
   module: gdsfactory.dft.siepic
-  name: straight_add_fiber_arra_3951e0d6
+  name: straight_add_fiber_arra_e1feec4c
 version: 0.0.1

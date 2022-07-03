@@ -1,10 +1,9 @@
-"""Technology definitions
+"""Technology definitions.
 
 - LayerStack
 - cross_sections (xs_)
 - constants (WIDTH, CLADDING_OFFSET ...)
 
-TODO: make sure routes use cross_section
 """
 import sys
 
@@ -14,8 +13,6 @@ import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.tech import LayerStack, LayerLevel
 from gdsfactory.types import Layer
-import gdsfactory.simulation as sim
-import gdsfactory.simulation.lumerical as lumerical
 from gdsfactory.add_pins import add_pins_bbox_siepic as add_pins_bbox_siepic_10nm
 from gdsfactory.add_pins import add_pins_siepic as add_pins_siepic_10nm
 
@@ -38,12 +35,6 @@ MATERIAL_NAME_TO_TIDY3D_INDEX = {
     "sio2": 1.44,
     "sin": 2.0,
 }
-
-## TODO: update_source will generate a layers.py, so use that instead
-# if os.path.exists(PATH.tech / "layers.py"):
-#     from .klayout.tech.layers import LayerMap as LayerMapUbc
-#
-# else:
 
 
 class LayerMapUbc(BaseModel):
@@ -104,12 +95,6 @@ TECH = Tech()
 LAYER_STACK = get_layer_stack_ubc()
 LAYER_COLORS = gf.layers.load_lyp(PATH.lyp)
 
-write_sparameters_lumerical = gf.partial(
-    lumerical.write_sparameters_lumerical,
-    layer_stack=LAYER_STACK,
-    dirpath=PATH.sparameters,
-)
-
 
 strip_wg_simulation_info = dict(
     model="ebeam_wg_integral_1550",
@@ -120,12 +105,6 @@ strip_wg_simulation_info = dict(
     ),
     layout_model_port_pairs=dict(o1="port 1", o2="port 2"),
     properties=dict(annotate=False),
-)
-
-get_sparameters_data_lumerical = gf.partial(
-    sim.get_sparameters_data_lumerical,
-    layer_stack=LAYER_STACK,
-    dirpath=PATH.sparameters,
 )
 
 

@@ -5,7 +5,7 @@
  <group/>
  <dbu>0.001</dbu>
  <base-path/>
- <original-base-path>C:\Users\Mustafa\KLayout\salt\siepic_ebeam_pdk\tech\EBeam</original-base-path>
+ <original-base-path>/home/jmatres/ubc/ubcpdk/klayout/tech</original-base-path>
  <layer-properties_file>klayout_Layers_EBeam.lyp</layer-properties_file>
  <add-other-layers>true</add-other-layers>
  <reader-options>
@@ -37,17 +37,17 @@
    <produce-regions>true</produce-regions>
    <region-layer>REGIONS</region-layer>
    <produce-via-geometry>true</produce-via-geometry>
-   <special-via_geometry-suffix-string/>
-   <special-via_geometry-datatype-string>0</special-via_geometry-datatype-string>
+   <via_geometry-suffix-string/>
+   <via_geometry-datatype-string>0</via_geometry-datatype-string>
    <produce-pins>true</produce-pins>
-   <special-pins-suffix-string>.PIN</special-pins-suffix-string>
-   <special-pins-datatype-string>2</special-pins-datatype-string>
+   <pins-suffix-string>.PIN</pins-suffix-string>
+   <pins-datatype-string>2</pins-datatype-string>
    <produce-lef-pins>true</produce-lef-pins>
-   <special-lef_pins-suffix-string>.PIN</special-lef_pins-suffix-string>
-   <special-lef_pins-datatype-string>2</special-lef_pins-datatype-string>
+   <lef_pins-suffix-string>.PIN</lef_pins-suffix-string>
+   <lef_pins-datatype-string>2</lef_pins-datatype-string>
    <produce-fills>true</produce-fills>
-   <special-fills-suffix-string>.FILL</special-fills-suffix-string>
-   <special-fills-datatype-string>5</special-fills-datatype-string>
+   <fills-suffix-string>.FILL</fills-suffix-string>
+   <fills-datatype-string>5</fills-datatype-string>
    <produce-obstructions>true</produce-obstructions>
    <obstructions-suffix>.OBS</obstructions-suffix>
    <obstructions-datatype>3</obstructions-datatype>
@@ -61,8 +61,8 @@
    <lef-labels-suffix>.LABEL</lef-labels-suffix>
    <lef-labels-datatype>1</lef-labels-datatype>
    <produce-routing>true</produce-routing>
-   <special-routing-suffix-string/>
-   <special-routing-datatype-string>0</special-routing-datatype-string>
+   <routing-suffix-string/>
+   <routing-datatype-string>0</routing-datatype-string>
    <produce-special-routing>true</produce-special-routing>
    <special-routing-suffix-string/>
    <special-routing-datatype-string>0</special-routing-datatype-string>
@@ -199,7 +199,7 @@
 #     1: 0.5 1.2
 #   end
 
-</src>
+1: 0.5 1.5</src>
  </d25>
  <connectivity>
  </connectivity>

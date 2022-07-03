@@ -19,6 +19,11 @@ settings:
     recenter: false
   function_name: rotate
   info:
+    interconnect:
+      layout_model_port_pairs:
+        opt1: opt_wg
+      library: Design kits/ebeam
+      model: ebeam_gc_te1550
     polarization: te
     wavelength: 1.55
   info_version: 2
