@@ -26,11 +26,11 @@ It provides a fully python driven flow alternative for the edx course for the mo
 ### Installation for users
 
 
-If you are on Windows, I recommend you install gdspy with Anaconda3, Miniconda3 or [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) (faster conda alternative) and `pip` for gdsfactory.
+If you are on Windows, I recommend you install gdsfactory with Anaconda3, Miniconda3 or [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) (faster conda alternative) and `pip` for gdsfactory.
 
 
 ```
-mamba install gdspy -y
+mamba install gdsfactory -y
 pip install ubcpdk --upgrade
 gf tool install
 ```
@@ -38,13 +38,13 @@ gf tool install
 If you want to get all the extras (mode solvers, meep, circuit simulation ...)
 
 ```
-mamba install gdspy -y
+mamba install gdsfactory -y
 mamba install pymeep=*=mpi_mpich_* -y
 pip install ubcpdk --upgrade
 gf tool install
 ```
 
-Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdspy -y` with `conda install -c conda-forge gdspy -y`
+Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdsfactory -y` with `conda install -c conda-forge gdsfactory -y`
 
 If you use linux or MacOs you can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==1.6.5`
 and update to the latest version with `pip install ubcpdk --upgrade`
