@@ -17,7 +17,7 @@ C
 
   import ubcpdk
 
-  c = ubcpdk.components.C(width=1.0, size=(10.0, 20.0), layer='WG')
+  c = ubcpdk.PDK.get_component("C", width=1.0, size=(10.0, 20.0), layer='WG')
   c.plot()
 
 
@@ -32,7 +32,7 @@ L
 
   import ubcpdk
 
-  c = ubcpdk.components.L(width=1, size=(10, 20), layer='M3', port_type='electrical')
+  c = ubcpdk.PDK.get_component("L", width=1, size=(10, 20), layer='M3', port_type='electrical')
   c.plot()
 
 
@@ -47,7 +47,7 @@ add_fiber_array
 
   import ubcpdk
 
-  c = ubcpdk.components.add_fiber_array(gc_port_name='opt1', with_loopback=False, optical_routing_type=0, fanout_length=0.0, cross_section='strip', layer_label=(10, 0))
+  c = ubcpdk.PDK.get_component("add_fiber_array", gc_port_name='opt1', with_loopback=False, optical_routing_type=0, fanout_length=0.0, cross_section='strip', layer_label=(10, 0))
   c.plot()
 
 
@@ -62,7 +62,7 @@ add_fidutials
 
   import ubcpdk
 
-  c = ubcpdk.components.add_fidutials(gap=50, offset=(0, 0))
+  c = ubcpdk.PDK.get_component("add_fidutials", gap=50, offset=(0, 0))
   c.plot()
 
 
@@ -77,7 +77,7 @@ add_fidutials_offsets
 
   import ubcpdk
 
-  c = ubcpdk.components.add_fidutials_offsets(offsets=((0, 100), (0, -100)))
+  c = ubcpdk.PDK.get_component("add_fidutials_offsets", offsets=((0, 100), (0, -100)))
   c.plot()
 
 
@@ -92,7 +92,7 @@ add_frame
 
   import ubcpdk
 
-  c = ubcpdk.components.add_frame(width=10.0, spacing=10.0, layer='WG')
+  c = ubcpdk.PDK.get_component("add_frame", width=10.0, spacing=10.0, layer='WG')
   c.plot()
 
 
@@ -107,7 +107,7 @@ align_wafer
 
   import ubcpdk
 
-  c = ubcpdk.components.align_wafer(width=10.0, spacing=10.0, cross_length=80.0, layer='WG', square_corner='bottom_left')
+  c = ubcpdk.PDK.get_component("align_wafer", width=10.0, spacing=10.0, cross_length=80.0, layer='WG', square_corner='bottom_left')
   c.plot()
 
 
@@ -122,7 +122,7 @@ array
 
   import ubcpdk
 
-  c = ubcpdk.components.array(spacing=(150.0, 150.0), columns=6, rows=1)
+  c = ubcpdk.PDK.get_component("array", spacing=(150.0, 150.0), columns=6, rows=1)
   c.plot()
 
 
@@ -137,7 +137,7 @@ array_with_fanout
 
   import ubcpdk
 
-  c = ubcpdk.components.array_with_fanout(columns=3, pitch=150.0, waveguide_pitch=10.0, start_straight_length=5.0, end_straight_length=40.0, radius=5.0, component_port_name='e4', cross_section='strip')
+  c = ubcpdk.PDK.get_component("array_with_fanout", columns=3, pitch=150.0, waveguide_pitch=10.0, start_straight_length=5.0, end_straight_length=40.0, radius=5.0, component_port_name='e4', cross_section='strip')
   c.plot()
 
 
@@ -152,7 +152,7 @@ array_with_fanout_2d
 
   import ubcpdk
 
-  c = ubcpdk.components.array_with_fanout_2d(pitch=150.0, columns=3, rows=2)
+  c = ubcpdk.PDK.get_component("array_with_fanout_2d", pitch=150.0, columns=3, rows=2)
   c.plot()
 
 
@@ -167,7 +167,7 @@ array_with_via
 
   import ubcpdk
 
-  c = ubcpdk.components.array_with_via(columns=3, spacing=150.0, via_spacing=10.0, straight_length=60.0, via_stack_dy=0, port_orientation=180)
+  c = ubcpdk.PDK.get_component("array_with_via", columns=3, spacing=150.0, via_spacing=10.0, straight_length=60.0, via_stack_dy=0, port_orientation=180)
   c.plot()
 
 
@@ -182,7 +182,7 @@ array_with_via_2d
 
   import ubcpdk
 
-  c = ubcpdk.components.array_with_via_2d(spacing=(150.0, 150.0), columns=3, rows=2)
+  c = ubcpdk.PDK.get_component("array_with_via_2d", spacing=(150.0, 150.0), columns=3, rows=2)
   c.plot()
 
 
@@ -197,7 +197,7 @@ awg
 
   import ubcpdk
 
-  c = ubcpdk.components.awg(arms=10, outputs=3, fpr_spacing=50.0)
+  c = ubcpdk.PDK.get_component("awg", arms=10, outputs=3, fpr_spacing=50.0)
   c.plot()
 
 
@@ -212,7 +212,7 @@ bbox
 
   import ubcpdk
 
-  c = ubcpdk.components.bbox(bbox=((-1.0, -1.0), (3.0, 4.0)), layer=(1, 0), top=0, bottom=0, left=0, right=0)
+  c = ubcpdk.PDK.get_component("bbox", bbox=((-1.0, -1.0), (3.0, 4.0)), layer=(1, 0), top=0, bottom=0, left=0, right=0)
   c.plot()
 
 
@@ -227,7 +227,7 @@ bend_circular
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_circular(angle=90.0, npoints=720, with_bbox=True)
+  c = ubcpdk.PDK.get_component("bend_circular", angle=90.0, npoints=720, with_bbox=True)
   c.plot()
 
 
@@ -242,7 +242,7 @@ bend_circular180
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_circular180(angle=180, npoints=720, with_bbox=True)
+  c = ubcpdk.PDK.get_component("bend_circular180", angle=180, npoints=720, with_bbox=True)
   c.plot()
 
 
@@ -257,7 +257,7 @@ bend_circular_heater
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_circular_heater(radius=10, angle=90, npoints=720, heater_to_wg_distance=1.2, heater_width=0.5, layer_heater=(47, 0), with_bbox=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("bend_circular_heater", radius=10, angle=90, npoints=720, heater_to_wg_distance=1.2, heater_width=0.5, layer_heater=(47, 0), with_bbox=True, cross_section='strip')
   c.plot()
 
 
@@ -272,7 +272,7 @@ bend_euler
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_euler(angle=90.0, p=0.5, with_arc_floorplan=True, npoints=720, direction='ccw', with_bbox=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("bend_euler", angle=90.0, p=0.5, with_arc_floorplan=True, npoints=720, direction='ccw', with_bbox=True, cross_section='strip')
   c.plot()
 
 
@@ -287,7 +287,7 @@ bend_euler180
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_euler180(angle=180, p=0.5, with_arc_floorplan=True, npoints=720, direction='ccw', with_bbox=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("bend_euler180", angle=180, p=0.5, with_arc_floorplan=True, npoints=720, direction='ccw', with_bbox=True, cross_section='strip')
   c.plot()
 
 
@@ -302,7 +302,7 @@ bend_euler_s
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_euler_s()
+  c = ubcpdk.PDK.get_component("bend_euler_s", )
   c.plot()
 
 
@@ -317,7 +317,7 @@ bend_port
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_port(port_name='e1', port_name2='e2', cross_section='metal3', angle=180)
+  c = ubcpdk.PDK.get_component("bend_port", port_name='e1', port_name2='e2', cross_section='metal3', angle=180)
   c.plot()
 
 
@@ -332,7 +332,7 @@ bend_s
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_s(size=(10.0, 2.0), nb_points=99, with_bbox=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("bend_s", size=(10.0, 2.0), nb_points=99, with_bbox=True, cross_section='strip')
   c.plot()
 
 
@@ -347,7 +347,7 @@ bend_straight_bend
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_straight_bend(straight_length=10.0, angle=90, p=0.5, with_arc_floorplan=True, npoints=720, direction='ccw')
+  c = ubcpdk.PDK.get_component("bend_straight_bend", straight_length=10.0, angle=90, p=0.5, with_arc_floorplan=True, npoints=720, direction='ccw')
   c.plot()
 
 
@@ -362,7 +362,7 @@ cavity
 
   import ubcpdk
 
-  c = ubcpdk.components.cavity(length=0.1, gap=0.2)
+  c = ubcpdk.PDK.get_component("cavity", length=0.1, gap=0.2)
   c.plot()
 
 
@@ -377,7 +377,7 @@ cdc
 
   import ubcpdk
 
-  c = ubcpdk.components.cdc(length=30.0, gap=0.5, period=0.22, dc=0.5, angle=0.5235987755982988, width_top=2.0, width_bot=0.75, input_bot=False, fins=False, fin_size=(0.2, 0.05), port_midpoint=(0, 0), direction='EAST')
+  c = ubcpdk.PDK.get_component("cdc", length=30.0, gap=0.5, period=0.22, dc=0.5, angle=0.5235987755982988, width_top=2.0, width_bot=0.75, input_bot=False, fins=False, fin_size=(0.2, 0.05), port_midpoint=(0, 0), direction='EAST')
   c.plot()
 
 
@@ -392,7 +392,7 @@ cdsem_all
 
   import ubcpdk
 
-  c = ubcpdk.components.cdsem_all(widths=(0.4, 0.45, 0.5, 0.6, 0.8, 1.0), dense_lines_width=0.3, dense_lines_width_difference=0.02, dense_lines_gap=0.3, dense_lines_labels=('DL', 'DM', 'DH'))
+  c = ubcpdk.PDK.get_component("cdsem_all", widths=(0.4, 0.45, 0.5, 0.6, 0.8, 1.0), dense_lines_width=0.3, dense_lines_width_difference=0.02, dense_lines_gap=0.3, dense_lines_labels=('DL', 'DM', 'DH'))
   c.plot()
 
 
@@ -407,7 +407,7 @@ circle
 
   import ubcpdk
 
-  c = ubcpdk.components.circle(radius=10.0, angle_resolution=2.5, layer='WG')
+  c = ubcpdk.PDK.get_component("circle", radius=10.0, angle_resolution=2.5, layer='WG')
   c.plot()
 
 
@@ -422,7 +422,7 @@ compass
 
   import ubcpdk
 
-  c = ubcpdk.components.compass(size=(4.0, 2.0), layer='WG', port_type='electrical', port_inclusion=0.0, port_orientations=(180, 90, 0, -90))
+  c = ubcpdk.PDK.get_component("compass", size=(4.0, 2.0), layer='WG', port_type='electrical', port_inclusion=0.0, port_orientations=(180, 90, 0, -90))
   c.plot()
 
 
@@ -437,7 +437,7 @@ compensation_path
 
   import ubcpdk
 
-  c = ubcpdk.components.compensation_path(direction='top', cross_section='strip')
+  c = ubcpdk.PDK.get_component("compensation_path", direction='top', cross_section='strip')
   c.plot()
 
 
@@ -452,7 +452,7 @@ component_lattice
 
   import ubcpdk
 
-  c = ubcpdk.components.component_lattice(lattice='\n        C-X\n        CXX\n        CXX\n        C-X\n        ', grid_per_unit=1000)
+  c = ubcpdk.PDK.get_component("component_lattice", lattice='\n        C-X\n        CXX\n        CXX\n        C-X\n        ', grid_per_unit=1000)
   c.plot()
 
 
@@ -467,7 +467,7 @@ component_sequence
 
   import ubcpdk
 
-  c = ubcpdk.components.component_sequence(port_name1='o1', port_name2='o2', start_orientation=0.0)
+  c = ubcpdk.PDK.get_component("component_sequence", port_name1='o1', port_name2='o2', start_orientation=0.0)
   c.plot()
 
 
@@ -482,7 +482,7 @@ copy_layers
 
   import ubcpdk
 
-  c = ubcpdk.components.copy_layers(layers=((1, 0), (2, 0)))
+  c = ubcpdk.PDK.get_component("copy_layers", layers=((1, 0), (2, 0)))
   c.plot()
 
 
@@ -497,7 +497,7 @@ coupler
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler(gap=0.236, length=20.0, dy=5.0, dx=10.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("coupler", gap=0.236, length=20.0, dy=5.0, dx=10.0, cross_section='strip')
   c.plot()
 
 
@@ -512,7 +512,7 @@ coupler90
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler90(gap=0.2, radius=10.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("coupler90", gap=0.2, radius=10.0, cross_section='strip')
   c.plot()
 
 
@@ -527,7 +527,7 @@ coupler90bend
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler90bend(radius=10.0, gap=0.2, cross_section_inner='strip', cross_section_outer='strip')
+  c = ubcpdk.PDK.get_component("coupler90bend", radius=10.0, gap=0.2, cross_section_inner='strip', cross_section_outer='strip')
   c.plot()
 
 
@@ -542,7 +542,7 @@ coupler90circular
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler90circular(gap=0.2, radius=10.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("coupler90circular", gap=0.2, radius=10.0, cross_section='strip')
   c.plot()
 
 
@@ -557,7 +557,7 @@ coupler_adiabatic
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler_adiabatic(length1=20.0, length2=50.0, length3=30.0, wg_sep=1.0, input_wg_sep=3.0, output_wg_sep=3.0, dw=0.1, port=(0, 0), direction='EAST', cross_section='strip')
+  c = ubcpdk.PDK.get_component("coupler_adiabatic", length1=20.0, length2=50.0, length3=30.0, wg_sep=1.0, input_wg_sep=3.0, output_wg_sep=3.0, dw=0.1, port=(0, 0), direction='EAST', cross_section='strip')
   c.plot()
 
 
@@ -572,7 +572,7 @@ coupler_asymmetric
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler_asymmetric(gap=0.234, dy=5.0, dx=10.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("coupler_asymmetric", gap=0.234, dy=5.0, dx=10.0, cross_section='strip')
   c.plot()
 
 
@@ -587,7 +587,7 @@ coupler_full
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler_full(length=40.0, gap=0.5, dw=0.1, angle=0.5235987755982988, parity=1, port=(0, 0), direction='EAST', cross_section='strip')
+  c = ubcpdk.PDK.get_component("coupler_full", length=40.0, gap=0.5, dw=0.1, angle=0.5235987755982988, parity=1, port=(0, 0), direction='EAST', cross_section='strip')
   c.plot()
 
 
@@ -602,7 +602,7 @@ coupler_ring
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler_ring(gap=0.2, radius=5.0, length_x=4.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("coupler_ring", gap=0.2, radius=5.0, length_x=4.0, cross_section='strip')
   c.plot()
 
 
@@ -617,7 +617,7 @@ coupler_straight
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler_straight(length=10.0, gap=0.27)
+  c = ubcpdk.PDK.get_component("coupler_straight", length=10.0, gap=0.27)
   c.plot()
 
 
@@ -632,7 +632,7 @@ coupler_symmetric
 
   import ubcpdk
 
-  c = ubcpdk.components.coupler_symmetric(gap=0.234, dy=5.0, dx=10.0)
+  c = ubcpdk.PDK.get_component("coupler_symmetric", gap=0.234, dy=5.0, dx=10.0)
   c.plot()
 
 
@@ -647,7 +647,7 @@ cross
 
   import ubcpdk
 
-  c = ubcpdk.components.cross(length=10.0, width=3.0, layer='WG')
+  c = ubcpdk.PDK.get_component("cross", length=10.0, width=3.0, layer='WG')
   c.plot()
 
 
@@ -662,7 +662,7 @@ crossing
 
   import ubcpdk
 
-  c = ubcpdk.components.crossing(read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("crossing", read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -677,7 +677,7 @@ crossing45
 
   import ubcpdk
 
-  c = ubcpdk.components.crossing45(port_spacing=40.0, alpha=0.08, npoints=101, cross_section='strip')
+  c = ubcpdk.PDK.get_component("crossing45", port_spacing=40.0, alpha=0.08, npoints=101, cross_section='strip')
   c.plot()
 
 
@@ -692,7 +692,7 @@ crossing_arm
 
   import ubcpdk
 
-  c = ubcpdk.components.crossing_arm(r1=3.0, r2=1.1, w=1.2, L=3.4, layer_slab='SLAB150', cross_section='strip')
+  c = ubcpdk.PDK.get_component("crossing_arm", r1=3.0, r2=1.1, w=1.2, L=3.4, layer_slab='SLAB150', cross_section='strip')
   c.plot()
 
 
@@ -707,7 +707,7 @@ crossing_etched
 
   import ubcpdk
 
-  c = ubcpdk.components.crossing_etched(width=0.5, r1=3.0, r2=1.1, w=1.2, L=3.4, layer_wg='WG', layer_slab='SLAB150')
+  c = ubcpdk.PDK.get_component("crossing_etched", width=0.5, r1=3.0, r2=1.1, w=1.2, L=3.4, layer_wg='WG', layer_slab='SLAB150')
   c.plot()
 
 
@@ -722,7 +722,7 @@ crossing_from_taper
 
   import ubcpdk
 
-  c = ubcpdk.components.crossing_from_taper()
+  c = ubcpdk.PDK.get_component("crossing_from_taper", )
   c.plot()
 
 
@@ -737,7 +737,7 @@ cutback_bend
 
   import ubcpdk
 
-  c = ubcpdk.components.cutback_bend(straight_length=5.0, rows=6, columns=5)
+  c = ubcpdk.PDK.get_component("cutback_bend", straight_length=5.0, rows=6, columns=5)
   c.plot()
 
 
@@ -752,7 +752,7 @@ cutback_bend180
 
   import ubcpdk
 
-  c = ubcpdk.components.cutback_bend180(straight_length=5.0, rows=6, columns=6, spacing=3)
+  c = ubcpdk.PDK.get_component("cutback_bend180", straight_length=5.0, rows=6, columns=6, spacing=3)
   c.plot()
 
 
@@ -767,7 +767,7 @@ cutback_bend180circular
 
   import ubcpdk
 
-  c = ubcpdk.components.cutback_bend180circular(straight_length=5.0, rows=6, columns=6, spacing=3)
+  c = ubcpdk.PDK.get_component("cutback_bend180circular", straight_length=5.0, rows=6, columns=6, spacing=3)
   c.plot()
 
 
@@ -782,7 +782,7 @@ cutback_bend90
 
   import ubcpdk
 
-  c = ubcpdk.components.cutback_bend90(straight_length=5.0, rows=6, columns=6, spacing=5)
+  c = ubcpdk.PDK.get_component("cutback_bend90", straight_length=5.0, rows=6, columns=6, spacing=5)
   c.plot()
 
 
@@ -797,7 +797,7 @@ cutback_bend90circular
 
   import ubcpdk
 
-  c = ubcpdk.components.cutback_bend90circular(straight_length=5.0, rows=6, columns=6, spacing=5)
+  c = ubcpdk.PDK.get_component("cutback_bend90circular", straight_length=5.0, rows=6, columns=6, spacing=5)
   c.plot()
 
 
@@ -812,7 +812,7 @@ cutback_component
 
   import ubcpdk
 
-  c = ubcpdk.components.cutback_component(cols=4, rows=5, radius=5.0, port1='o1', port2='o2', mirror=False)
+  c = ubcpdk.PDK.get_component("cutback_component", cols=4, rows=5, radius=5.0, port1='o1', port2='o2', mirror=False)
   c.plot()
 
 
@@ -827,7 +827,7 @@ cutback_component_mirror
 
   import ubcpdk
 
-  c = ubcpdk.components.cutback_component_mirror(cols=4, rows=5, radius=5.0, port1='o1', port2='o2', mirror=True)
+  c = ubcpdk.PDK.get_component("cutback_component_mirror", cols=4, rows=5, radius=5.0, port1='o1', port2='o2', mirror=True)
   c.plot()
 
 
@@ -842,7 +842,7 @@ dbr
 
   import ubcpdk
 
-  c = ubcpdk.components.dbr(w0=0.5, dw=0.1, n=600, l1=0.07940573770491803, l2=0.07940573770491803)
+  c = ubcpdk.PDK.get_component("dbr", w0=0.5, dw=0.1, n=600, l1=0.07940573770491803, l2=0.07940573770491803)
   c.plot()
 
 
@@ -857,7 +857,7 @@ dbr_cavity
 
   import ubcpdk
 
-  c = ubcpdk.components.dbr_cavity()
+  c = ubcpdk.PDK.get_component("dbr_cavity", )
   c.plot()
 
 
@@ -872,7 +872,7 @@ dbr_tapered
 
   import ubcpdk
 
-  c = ubcpdk.components.dbr_tapered(length=10.0, period=0.85, dc=0.5, w1=0.4, w2=1.0, taper_length=20.0, fins=False, fin_size=(0.2, 0.05), port=(0, 0), direction='EAST')
+  c = ubcpdk.PDK.get_component("dbr_tapered", length=10.0, period=0.85, dc=0.5, w1=0.4, w2=1.0, taper_length=20.0, fins=False, fin_size=(0.2, 0.05), port=(0, 0), direction='EAST')
   c.plot()
 
 
@@ -887,7 +887,7 @@ dc_adiabatic
 
   import ubcpdk
 
-  c = ubcpdk.components.dc_adiabatic(read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("dc_adiabatic", read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -902,7 +902,7 @@ dc_broadband_te
 
   import ubcpdk
 
-  c = ubcpdk.components.dc_broadband_te(read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("dc_broadband_te", read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -917,7 +917,7 @@ dc_broadband_tm
 
   import ubcpdk
 
-  c = ubcpdk.components.dc_broadband_tm(read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("dc_broadband_tm", read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -932,7 +932,7 @@ delay_snake
 
   import ubcpdk
 
-  c = ubcpdk.components.delay_snake(wg_width=0.5, wg_width_wide=2.0, total_length=1600.0, L0=5.0, taper_length=10.0, n=2)
+  c = ubcpdk.PDK.get_component("delay_snake", wg_width=0.5, wg_width_wide=2.0, total_length=1600.0, L0=5.0, taper_length=10.0, n=2)
   c.plot()
 
 
@@ -947,7 +947,7 @@ delay_snake2
 
   import ubcpdk
 
-  c = ubcpdk.components.delay_snake2(length=1600.0, length0=0.0, n=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("delay_snake2", length=1600.0, length0=0.0, n=2, cross_section='strip')
   c.plot()
 
 
@@ -962,7 +962,7 @@ delay_snake3
 
   import ubcpdk
 
-  c = ubcpdk.components.delay_snake3(length=1600.0, length0=0.0, n=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("delay_snake3", length=1600.0, length0=0.0, n=2, cross_section='strip')
   c.plot()
 
 
@@ -977,7 +977,7 @@ delay_snake_sbend
 
   import ubcpdk
 
-  c = ubcpdk.components.delay_snake_sbend(length=100.0, length1=0.0, length4=0.0, radius=5.0, waveguide_spacing=5.0, sbend_xsize=100.0)
+  c = ubcpdk.PDK.get_component("delay_snake_sbend", length=100.0, length1=0.0, length4=0.0, radius=5.0, waveguide_spacing=5.0, sbend_xsize=100.0)
   c.plot()
 
 
@@ -992,7 +992,7 @@ dicing_lane
 
   import ubcpdk
 
-  c = ubcpdk.components.dicing_lane(size=(50, 300), layer_dicing='DICING')
+  c = ubcpdk.PDK.get_component("dicing_lane", size=(50, 300), layer_dicing='DICING')
   c.plot()
 
 
@@ -1007,7 +1007,7 @@ die
 
   import ubcpdk
 
-  c = ubcpdk.components.die(size=(10000.0, 10000.0), street_width=100.0, street_length=1000.0, die_name='chip99', text_size=100.0, text_location='SW', layer='FLOORPLAN', bbox_layer='FLOORPLAN', draw_corners=True, draw_dicing_lane=True)
+  c = ubcpdk.PDK.get_component("die", size=(10000.0, 10000.0), street_width=100.0, street_length=1000.0, die_name='chip99', text_size=100.0, text_location='SW', layer='FLOORPLAN', bbox_layer='FLOORPLAN', draw_corners=True, draw_dicing_lane=True)
   c.plot()
 
 
@@ -1022,7 +1022,7 @@ die_bbox
 
   import ubcpdk
 
-  c = ubcpdk.components.die_bbox(street_width=100.0, text_size=100.0, text_anchor='sw', layer='M3', padding=10.0)
+  c = ubcpdk.PDK.get_component("die_bbox", street_width=100.0, text_size=100.0, text_anchor='sw', layer='M3', padding=10.0)
   c.plot()
 
 
@@ -1037,7 +1037,7 @@ die_bbox_frame
 
   import ubcpdk
 
-  c = ubcpdk.components.die_bbox_frame(bbox=((-1.0, -1.0), (3.0, 4.0)), street_width=100.0, street_length=1000.0, text_size=100.0, text_anchor='sw', layer='M3', padding=10.0)
+  c = ubcpdk.PDK.get_component("die_bbox_frame", bbox=((-1.0, -1.0), (3.0, 4.0)), street_width=100.0, street_length=1000.0, text_size=100.0, text_anchor='sw', layer='M3', padding=10.0)
   c.plot()
 
 
@@ -1052,7 +1052,7 @@ disk
 
   import ubcpdk
 
-  c = ubcpdk.components.disk(radius=10.0, gap=0.2, wrap_angle_deg=180.0, parity=1, port=(0, 0), direction='EAST')
+  c = ubcpdk.PDK.get_component("disk", radius=10.0, gap=0.2, wrap_angle_deg=180.0, parity=1, port=(0, 0), direction='EAST')
   c.plot()
 
 
@@ -1067,7 +1067,7 @@ ebeam_dc_te1550
 
   import ubcpdk
 
-  c = ubcpdk.components.ebeam_dc_te1550(gap=0.236, length=20.0, dy=5.0, dx=10.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("ebeam_dc_te1550", gap=0.236, length=20.0, dy=5.0, dx=10.0, cross_section='strip')
   c.plot()
 
 
@@ -1082,7 +1082,7 @@ edge_coupler_array
 
   import ubcpdk
 
-  c = ubcpdk.components.edge_coupler_array(n=5, pitch=127.0, h_mirror=False, v_mirror=False, text_offset=(10, 20))
+  c = ubcpdk.PDK.get_component("edge_coupler_array", n=5, pitch=127.0, h_mirror=False, v_mirror=False, text_offset=(10, 20))
   c.plot()
 
 
@@ -1097,7 +1097,7 @@ edge_coupler_array_with_loopback
 
   import ubcpdk
 
-  c = ubcpdk.components.edge_coupler_array_with_loopback(cross_section='strip', radius=30, n=8, pitch=127.0, extension_length=1.0, h_mirror=False, v_mirror=False, right_loopback=True, text_offset=(0, 0))
+  c = ubcpdk.PDK.get_component("edge_coupler_array_with_loopback", cross_section='strip', radius=30, n=8, pitch=127.0, extension_length=1.0, h_mirror=False, v_mirror=False, right_loopback=True, text_offset=(0, 0))
   c.plot()
 
 
@@ -1112,7 +1112,7 @@ edge_coupler_silicon
 
   import ubcpdk
 
-  c = ubcpdk.components.edge_coupler_silicon(length=100, width1=0.5, width2=0.2, with_bbox=True, with_two_ports=False, cross_section='strip')
+  c = ubcpdk.PDK.get_component("edge_coupler_silicon", length=100, width1=0.5, width2=0.2, with_bbox=True, with_two_ports=False, cross_section='strip')
   c.plot()
 
 
@@ -1127,7 +1127,7 @@ ellipse
 
   import ubcpdk
 
-  c = ubcpdk.components.ellipse(radii=(10.0, 5.0), angle_resolution=2.5, layer='WG')
+  c = ubcpdk.PDK.get_component("ellipse", radii=(10.0, 5.0), angle_resolution=2.5, layer='WG')
   c.plot()
 
 
@@ -1142,7 +1142,7 @@ extend_port
 
   import ubcpdk
 
-  c = ubcpdk.components.extend_port()
+  c = ubcpdk.PDK.get_component("extend_port", )
   c.plot()
 
 
@@ -1157,7 +1157,7 @@ extend_ports
 
   import ubcpdk
 
-  c = ubcpdk.components.extend_ports(length=5.0, port_type='optical', centered=False)
+  c = ubcpdk.PDK.get_component("extend_ports", length=5.0, port_type='optical', centered=False)
   c.plot()
 
 
@@ -1172,7 +1172,7 @@ extend_ports_list
 
   import ubcpdk
 
-  c = ubcpdk.components.extend_ports_list()
+  c = ubcpdk.PDK.get_component("extend_ports_list", )
   c.plot()
 
 
@@ -1187,7 +1187,7 @@ fiber
 
   import ubcpdk
 
-  c = ubcpdk.components.fiber(core_diameter=10, cladding_diameter=125, layer_core='WG', layer_cladding='WGCLAD')
+  c = ubcpdk.PDK.get_component("fiber", core_diameter=10, cladding_diameter=125, layer_core='WG', layer_cladding='WGCLAD')
   c.plot()
 
 
@@ -1202,7 +1202,7 @@ fiber_array
 
   import ubcpdk
 
-  c = ubcpdk.components.fiber_array(n=8, pitch=127.0, core_diameter=10, cladding_diameter=125, layer_core='WG', layer_cladding='WGCLAD')
+  c = ubcpdk.PDK.get_component("fiber_array", n=8, pitch=127.0, core_diameter=10, cladding_diameter=125, layer_core='WG', layer_cladding='WGCLAD')
   c.plot()
 
 
@@ -1217,7 +1217,7 @@ gc_te1310
 
   import ubcpdk
 
-  c = ubcpdk.components.gc_te1310(gdspath='ebeam_gc_te1310.gds', read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("gc_te1310", gdspath='ebeam_gc_te1310.gds', read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -1232,7 +1232,7 @@ gc_te1550
 
   import ubcpdk
 
-  c = ubcpdk.components.gc_te1550(gdspath='ebeam_gc_te1550.gds', read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("gc_te1550", gdspath='ebeam_gc_te1550.gds', read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -1247,7 +1247,7 @@ gc_te1550_broadband
 
   import ubcpdk
 
-  c = ubcpdk.components.gc_te1550_broadband(gdspath='ebeam_gc_te1550_broadband.gds', read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("gc_te1550_broadband", gdspath='ebeam_gc_te1550_broadband.gds', read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -1262,7 +1262,7 @@ gc_tm1550
 
   import ubcpdk
 
-  c = ubcpdk.components.gc_tm1550(gdspath='ebeam_gc_tm1550.gds', read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("gc_tm1550", gdspath='ebeam_gc_tm1550.gds', read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -1277,7 +1277,7 @@ grating
 
   import ubcpdk
 
-  c = ubcpdk.components.grating()
+  c = ubcpdk.PDK.get_component("grating", )
   c.plot()
 
 
@@ -1292,7 +1292,7 @@ grating_coupler_array
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_array(pitch=127.0, n=6, port_name='o1', rotation=0)
+  c = ubcpdk.PDK.get_component("grating_coupler_array", pitch=127.0, n=6, port_name='o1', rotation=0)
   c.plot()
 
 
@@ -1307,7 +1307,7 @@ grating_coupler_circular
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_circular(taper_angle=30.0, taper_length=10.0, length=30.0, period=1.0, fill_factor=0.7, n_periods=30, bias_gap=0, port=(0.0, 0.0), layer_cladding='WGCLAD', direction='EAST', polarization='te', wavelength=1.55, fiber_marker_width=11.0, fiber_marker_layer='TE', cladding_offset=2.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_circular", taper_angle=30.0, taper_length=10.0, length=30.0, period=1.0, fill_factor=0.7, n_periods=30, bias_gap=0, port=(0.0, 0.0), layer_cladding='WGCLAD', direction='EAST', polarization='te', wavelength=1.55, fiber_marker_width=11.0, fiber_marker_layer='TE', cladding_offset=2.0, cross_section='strip')
   c.plot()
 
 
@@ -1322,7 +1322,7 @@ grating_coupler_elliptical
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_elliptical(polarization='te', taper_length=16.6, taper_angle=40.0, wavelength=1.554, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, nclad=1.443, n_periods=30, big_last_tooth=False, layer_slab='SLAB150', slab_xmin=-1.0, slab_offset=2.0, fiber_marker_width=11.0, fiber_marker_layer='TE', spiked=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_elliptical", polarization='te', taper_length=16.6, taper_angle=40.0, wavelength=1.554, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, nclad=1.443, n_periods=30, big_last_tooth=False, layer_slab='SLAB150', slab_xmin=-1.0, slab_offset=2.0, fiber_marker_width=11.0, fiber_marker_layer='TE', spiked=True, cross_section='strip')
   c.plot()
 
 
@@ -1337,7 +1337,7 @@ grating_coupler_elliptical_arbitrary
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_elliptical_arbitrary(gaps=(0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1), widths=(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), taper_length=16.6, taper_angle=60.0, wavelength=1.554, fiber_angle=15.0, neff=2.638, nclad=1.443, layer_slab='SLAB150', slab_xmin=-3.0, polarization='te', fiber_marker_width=11.0, fiber_marker_layer='TE', spiked=True, bias_gap=0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_elliptical_arbitrary", gaps=(0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1), widths=(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), taper_length=16.6, taper_angle=60.0, wavelength=1.554, fiber_angle=15.0, neff=2.638, nclad=1.443, layer_slab='SLAB150', slab_xmin=-3.0, polarization='te', fiber_marker_width=11.0, fiber_marker_layer='TE', spiked=True, bias_gap=0, cross_section='strip')
   c.plot()
 
 
@@ -1352,7 +1352,7 @@ grating_coupler_elliptical_lumerical
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_elliptical_lumerical(parameters=(-2.4298362615732447, 0.1, 0.48007023217536954, 0.1, 0.607397685752365, 0.1, 0.4498844003086115, 0.1, 0.4274116312627637, 0.1, 0.4757904248387285, 0.1, 0.5026649898504233, 0.10002922416240886, 0.5100366774007897, 0.1, 0.494399635363353, 0.1079599958465788, 0.47400592737426483, 0.14972685326277918, 0.43272750134545823, 0.1839530796530385, 0.3872023336708212, 0.2360175325711591, 0.36032212454768675, 0.24261846353500535, 0.35770350120764394, 0.2606637836858316, 0.3526104381544335, 0.24668202254540886, 0.3717488388788273, 0.22920754299702897, 0.37769616507688464, 0.2246528336925301, 0.3765437598650894, 0.22041773376471022, 0.38047596041838994, 0.21923601658169187, 0.3798873698864591, 0.21700438236445285, 0.38291698672245644, 0.21827768053295463, 0.3641322152037017, 0.23729077006065105, 0.3676834419346081, 0.24865079519725933, 0.34415050295044936, 0.2733570818755685, 0.3306230780901629, 0.27350446437732157), layer='WG', layer_slab='SLAB150', taper_angle=55, taper_length=12.6, fiber_angle=5, bias_gap=0)
+  c = ubcpdk.PDK.get_component("grating_coupler_elliptical_lumerical", parameters=(-2.4298362615732447, 0.1, 0.48007023217536954, 0.1, 0.607397685752365, 0.1, 0.4498844003086115, 0.1, 0.4274116312627637, 0.1, 0.4757904248387285, 0.1, 0.5026649898504233, 0.10002922416240886, 0.5100366774007897, 0.1, 0.494399635363353, 0.1079599958465788, 0.47400592737426483, 0.14972685326277918, 0.43272750134545823, 0.1839530796530385, 0.3872023336708212, 0.2360175325711591, 0.36032212454768675, 0.24261846353500535, 0.35770350120764394, 0.2606637836858316, 0.3526104381544335, 0.24668202254540886, 0.3717488388788273, 0.22920754299702897, 0.37769616507688464, 0.2246528336925301, 0.3765437598650894, 0.22041773376471022, 0.38047596041838994, 0.21923601658169187, 0.3798873698864591, 0.21700438236445285, 0.38291698672245644, 0.21827768053295463, 0.3641322152037017, 0.23729077006065105, 0.3676834419346081, 0.24865079519725933, 0.34415050295044936, 0.2733570818755685, 0.3306230780901629, 0.27350446437732157), layer='WG', layer_slab='SLAB150', taper_angle=55, taper_length=12.6, fiber_angle=5, bias_gap=0)
   c.plot()
 
 
@@ -1367,7 +1367,7 @@ grating_coupler_elliptical_te
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_elliptical_te(polarization='te', taper_length=16.6, taper_angle=40.0, wavelength=1.554, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, nclad=1.443, n_periods=30, big_last_tooth=False, layer_slab='SLAB150', slab_xmin=-1.0, slab_offset=2.0, fiber_marker_width=11.0, fiber_marker_layer='TE', spiked=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_elliptical_te", polarization='te', taper_length=16.6, taper_angle=40.0, wavelength=1.554, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, nclad=1.443, n_periods=30, big_last_tooth=False, layer_slab='SLAB150', slab_xmin=-1.0, slab_offset=2.0, fiber_marker_width=11.0, fiber_marker_layer='TE', spiked=True, cross_section='strip')
   c.plot()
 
 
@@ -1382,7 +1382,7 @@ grating_coupler_elliptical_tm
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_elliptical_tm(polarization='tm', taper_length=30, taper_angle=40.0, wavelength=1.554, fiber_angle=15.0, grating_line_width=0.707, neff=1.8, nclad=1.443, n_periods=16, big_last_tooth=False, layer_slab='SLAB150', slab_xmin=-2, slab_offset=2.0, fiber_marker_width=11.0, fiber_marker_layer='TM', spiked=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_elliptical_tm", polarization='tm', taper_length=30, taper_angle=40.0, wavelength=1.554, fiber_angle=15.0, grating_line_width=0.707, neff=1.8, nclad=1.443, n_periods=16, big_last_tooth=False, layer_slab='SLAB150', slab_xmin=-2, slab_offset=2.0, fiber_marker_width=11.0, fiber_marker_layer='TM', spiked=True, cross_section='strip')
   c.plot()
 
 
@@ -1397,7 +1397,7 @@ grating_coupler_elliptical_trenches
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_elliptical_trenches(polarization='te', fiber_marker_width=11.0, fiber_marker_layer='TE', taper_length=16.6, taper_angle=30.0, trenches_extra_angle=9.0, wavelength=1.53, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, ncladding=1.443, layer_trench='SLAB150', p_start=26, n_periods=30, end_straight_length=0.2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_elliptical_trenches", polarization='te', fiber_marker_width=11.0, fiber_marker_layer='TE', taper_length=16.6, taper_angle=30.0, trenches_extra_angle=9.0, wavelength=1.53, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, ncladding=1.443, layer_trench='SLAB150', p_start=26, n_periods=30, end_straight_length=0.2, cross_section='strip')
   c.plot()
 
 
@@ -1412,7 +1412,7 @@ grating_coupler_loss_fiber_array
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_loss_fiber_array(pitch=127.0, input_port_indexes=(0, 1))
+  c = ubcpdk.PDK.get_component("grating_coupler_loss_fiber_array", pitch=127.0, input_port_indexes=(0, 1))
   c.plot()
 
 
@@ -1427,7 +1427,7 @@ grating_coupler_loss_fiber_array4
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_loss_fiber_array4(pitch=127.0)
+  c = ubcpdk.PDK.get_component("grating_coupler_loss_fiber_array4", pitch=127.0)
   c.plot()
 
 
@@ -1442,7 +1442,7 @@ grating_coupler_loss_fiber_single
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_loss_fiber_single(cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_loss_fiber_single", cross_section='strip')
   c.plot()
 
 
@@ -1457,7 +1457,7 @@ grating_coupler_rectangular
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_rectangular(n_periods=20, period=0.75, fill_factor=0.5, width_grating=11.0, length_taper=150.0, polarization='te', wavelength=1.55, layer_slab='SLAB150', fiber_marker_layer='TE', slab_xmin=-1.0, slab_offset=1.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_rectangular", n_periods=20, period=0.75, fill_factor=0.5, width_grating=11.0, length_taper=150.0, polarization='te', wavelength=1.55, layer_slab='SLAB150', fiber_marker_layer='TE', slab_xmin=-1.0, slab_offset=1.0, cross_section='strip')
   c.plot()
 
 
@@ -1472,7 +1472,7 @@ grating_coupler_rectangular_arbitrary
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_rectangular_arbitrary(gaps=(0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2), widths=(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), width_grating=11.0, length_taper=150.0, polarization='te', wavelength=1.55, layer_slab='SLAB150', slab_xmin=-1.0, slab_offset=1.0, fiber_marker_layer='TE', cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_rectangular_arbitrary", gaps=(0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2), widths=(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), width_grating=11.0, length_taper=150.0, polarization='te', wavelength=1.55, layer_slab='SLAB150', slab_xmin=-1.0, slab_offset=1.0, fiber_marker_layer='TE', cross_section='strip')
   c.plot()
 
 
@@ -1487,7 +1487,7 @@ grating_coupler_rectangular_arbitrary_slab
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_rectangular_arbitrary_slab(gaps=(0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2), widths=(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), width_grating=11.0, length_taper=150.0, polarization='te', wavelength=1.55, layer_slab='SLAB150', slab_offset=2.0, fiber_marker_layer='TE', cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_rectangular_arbitrary_slab", gaps=(0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2), widths=(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), width_grating=11.0, length_taper=150.0, polarization='te', wavelength=1.55, layer_slab='SLAB150', slab_offset=2.0, fiber_marker_layer='TE', cross_section='strip')
   c.plot()
 
 
@@ -1502,7 +1502,7 @@ grating_coupler_te
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_te(polarization='te', fiber_marker_width=11.0, fiber_marker_layer='TE', taper_length=16.6, taper_angle=35, trenches_extra_angle=9.0, wavelength=1.53, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, ncladding=1.443, layer_trench='SLAB150', p_start=26, n_periods=30, end_straight_length=0.2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_te", polarization='te', fiber_marker_width=11.0, fiber_marker_layer='TE', taper_length=16.6, taper_angle=35, trenches_extra_angle=9.0, wavelength=1.53, fiber_angle=15.0, grating_line_width=0.343, neff=2.638, ncladding=1.443, layer_trench='SLAB150', p_start=26, n_periods=30, end_straight_length=0.2, cross_section='strip')
   c.plot()
 
 
@@ -1517,7 +1517,7 @@ grating_coupler_tm
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_tm(polarization='tm', fiber_marker_width=11.0, fiber_marker_layer='TM', taper_length=16.6, taper_angle=30.0, trenches_extra_angle=9.0, wavelength=1.53, fiber_angle=15.0, grating_line_width=0.6, neff=1.8, ncladding=1.443, layer_trench='SLAB150', p_start=26, n_periods=30, end_straight_length=0.2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("grating_coupler_tm", polarization='tm', fiber_marker_width=11.0, fiber_marker_layer='TM', taper_length=16.6, taper_angle=30.0, trenches_extra_angle=9.0, wavelength=1.53, fiber_angle=15.0, grating_line_width=0.6, neff=1.8, ncladding=1.443, layer_trench='SLAB150', p_start=26, n_periods=30, end_straight_length=0.2, cross_section='strip')
   c.plot()
 
 
@@ -1532,7 +1532,7 @@ grating_coupler_tree
 
   import ubcpdk
 
-  c = ubcpdk.components.grating_coupler_tree(n=4, straight_spacing=4.0, with_loopback=False, fanout_length=0.0, layer_label='TEXT')
+  c = ubcpdk.PDK.get_component("grating_coupler_tree", n=4, straight_spacing=4.0, with_loopback=False, fanout_length=0.0, layer_label='TEXT')
   c.plot()
 
 
@@ -1547,7 +1547,7 @@ hline
 
   import ubcpdk
 
-  c = ubcpdk.components.hline(length=10.0, width=0.5, layer='WG', port_type='optical')
+  c = ubcpdk.PDK.get_component("hline", length=10.0, width=0.5, layer='WG', port_type='optical')
   c.plot()
 
 
@@ -1562,7 +1562,7 @@ litho_calipers
 
   import ubcpdk
 
-  c = ubcpdk.components.litho_calipers(notch_size=(2.0, 5.0), notch_spacing=2.0, num_notches=11, offset_per_notch=0.1, row_spacing=0.0, layer1='WG', layer2='SLAB150')
+  c = ubcpdk.PDK.get_component("litho_calipers", notch_size=(2.0, 5.0), notch_spacing=2.0, num_notches=11, offset_per_notch=0.1, row_spacing=0.0, layer1='WG', layer2='SLAB150')
   c.plot()
 
 
@@ -1577,7 +1577,7 @@ litho_ruler
 
   import ubcpdk
 
-  c = ubcpdk.components.litho_ruler(height=2, width=0.5, spacing=2.0, scale=(3, 1, 1, 1, 1, 2, 1, 1, 1, 1), num_marks=21, layer='WG')
+  c = ubcpdk.PDK.get_component("litho_ruler", height=2, width=0.5, spacing=2.0, scale=(3, 1, 1, 1, 1, 2, 1, 1, 1, 1), num_marks=21, layer='WG')
   c.plot()
 
 
@@ -1592,7 +1592,7 @@ litho_steps
 
   import ubcpdk
 
-  c = ubcpdk.components.litho_steps(line_widths=(1.0, 2.0, 4.0, 8.0, 16.0), line_spacing=10.0, height=100.0, layer='WG')
+  c = ubcpdk.PDK.get_component("litho_steps", line_widths=(1.0, 2.0, 4.0, 8.0, 16.0), line_spacing=10.0, height=100.0, layer='WG')
   c.plot()
 
 
@@ -1607,7 +1607,7 @@ logo
 
   import ubcpdk
 
-  c = ubcpdk.components.logo(text='GDSFACTORY')
+  c = ubcpdk.PDK.get_component("logo", text='GDSFACTORY')
   c.plot()
 
 
@@ -1622,7 +1622,7 @@ loop_mirror
 
   import ubcpdk
 
-  c = ubcpdk.components.loop_mirror()
+  c = ubcpdk.PDK.get_component("loop_mirror", )
   c.plot()
 
 
@@ -1637,7 +1637,7 @@ loss_deembedding_ch12_34
 
   import ubcpdk
 
-  c = ubcpdk.components.loss_deembedding_ch12_34(pitch=127.0, input_port_indexes=(0, 2))
+  c = ubcpdk.PDK.get_component("loss_deembedding_ch12_34", pitch=127.0, input_port_indexes=(0, 2))
   c.plot()
 
 
@@ -1652,7 +1652,7 @@ loss_deembedding_ch13_24
 
   import ubcpdk
 
-  c = ubcpdk.components.loss_deembedding_ch13_24(pitch=127.0, input_port_indexes=(0, 1), cross_section='strip')
+  c = ubcpdk.PDK.get_component("loss_deembedding_ch13_24", pitch=127.0, input_port_indexes=(0, 1), cross_section='strip')
   c.plot()
 
 
@@ -1667,7 +1667,7 @@ loss_deembedding_ch14_23
 
   import ubcpdk
 
-  c = ubcpdk.components.loss_deembedding_ch14_23(pitch=127.0, input_port_indexes=(0, 1))
+  c = ubcpdk.PDK.get_component("loss_deembedding_ch14_23", pitch=127.0, input_port_indexes=(0, 1))
   c.plot()
 
 
@@ -1682,7 +1682,7 @@ mask
 
   import ubcpdk
 
-  c = ubcpdk.components.mask()
+  c = ubcpdk.PDK.get_component("mask", )
   c.plot()
 
 
@@ -1697,7 +1697,7 @@ mmi1x2
 
   import ubcpdk
 
-  c = ubcpdk.components.mmi1x2(width=0.5, width_taper=1.0, length_taper=10.0, length_mmi=5.5, width_mmi=2.5, gap_mmi=0.25, with_bbox=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mmi1x2", width=0.5, width_taper=1.0, length_taper=10.0, length_mmi=5.5, width_mmi=2.5, gap_mmi=0.25, with_bbox=True, cross_section='strip')
   c.plot()
 
 
@@ -1712,7 +1712,7 @@ mmi2x2
 
   import ubcpdk
 
-  c = ubcpdk.components.mmi2x2(width=0.5, width_taper=1.0, length_taper=10.0, length_mmi=5.5, width_mmi=2.5, gap_mmi=0.25, with_bbox=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mmi2x2", width=0.5, width_taper=1.0, length_taper=10.0, length_mmi=5.5, width_mmi=2.5, gap_mmi=0.25, with_bbox=True, cross_section='strip')
   c.plot()
 
 
@@ -1727,7 +1727,7 @@ mzi
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi(delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='opt2', port_e0_splitter='opt3', port_e1_combiner='opt2', port_e0_combiner='opt3', nbends=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mzi", delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='opt2', port_e0_splitter='opt3', port_e1_combiner='opt2', port_e0_combiner='opt3', nbends=2, cross_section='strip')
   c.plot()
 
 
@@ -1742,7 +1742,7 @@ mzi1x2_2x2
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi1x2_2x2(delta_length=10.0, length_y=2.0, length_x=0.1, splitter='mmi1x2', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o3', port_e0_combiner='o4', nbends=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mzi1x2_2x2", delta_length=10.0, length_y=2.0, length_x=0.1, splitter='mmi1x2', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o3', port_e0_combiner='o4', nbends=2, cross_section='strip')
   c.plot()
 
 
@@ -1757,7 +1757,7 @@ mzi2x2_2x2
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi2x2_2x2(delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='o3', port_e0_splitter='o4', port_e1_combiner='o3', port_e0_combiner='o4', nbends=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mzi2x2_2x2", delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='o3', port_e0_splitter='o4', port_e1_combiner='o3', port_e0_combiner='o4', nbends=2, cross_section='strip')
   c.plot()
 
 
@@ -1772,7 +1772,7 @@ mzi_arm
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_arm(length_y_left=0.8, length_y_right=0.8, length_x=0.1)
+  c = ubcpdk.PDK.get_component("mzi_arm", length_y_left=0.8, length_y_right=0.8, length_x=0.1)
   c.plot()
 
 
@@ -1787,7 +1787,7 @@ mzi_arms
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_arms(delta_length=10.0, length_y=0.8, length_x=0.1, with_splitter=True, delta_yright=0)
+  c = ubcpdk.PDK.get_component("mzi_arms", delta_length=10.0, length_y=0.8, length_x=0.1, with_splitter=True, delta_yright=0)
   c.plot()
 
 
@@ -1802,7 +1802,7 @@ mzi_coupler
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_coupler(delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='o3', port_e0_splitter='o4', port_e1_combiner='o3', port_e0_combiner='o4', nbends=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mzi_coupler", delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='o3', port_e0_splitter='o4', port_e1_combiner='o3', port_e0_combiner='o4', nbends=2, cross_section='strip')
   c.plot()
 
 
@@ -1817,7 +1817,7 @@ mzi_lattice
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_lattice(coupler_lengths=(10.0, 20.0), coupler_gaps=(0.2, 0.3), delta_lengths=(10.0,))
+  c = ubcpdk.PDK.get_component("mzi_lattice", coupler_lengths=(10.0, 20.0), coupler_gaps=(0.2, 0.3), delta_lengths=(10.0,))
   c.plot()
 
 
@@ -1832,7 +1832,7 @@ mzi_lattice_filter
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_lattice_filter()
+  c = ubcpdk.PDK.get_component("mzi_lattice_filter", )
   c.plot()
 
 
@@ -1847,7 +1847,7 @@ mzi_pads_center
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_pads_center(length_x=500, length_y=40, mzi_sig_top='e3', mzi_gnd_top='e2', mzi_sig_bot='e1', mzi_gnd_bot='e4', pad_sig_bot='e1_1_1', pad_sig_top='e3_1_3', pad_gnd_bot='e4_1_2', pad_gnd_top='e2_1_2', delta_length=40.0, end_straight_length=5, start_straight_length=5, metal_route_width=10)
+  c = ubcpdk.PDK.get_component("mzi_pads_center", length_x=500, length_y=40, mzi_sig_top='e3', mzi_gnd_top='e2', mzi_sig_bot='e1', mzi_gnd_bot='e4', pad_sig_bot='e1_1_1', pad_sig_top='e3_1_3', pad_gnd_bot='e4_1_2', pad_gnd_top='e2_1_2', delta_length=40.0, end_straight_length=5, start_straight_length=5, metal_route_width=10)
   c.plot()
 
 
@@ -1862,7 +1862,7 @@ mzi_phase_shifter
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_phase_shifter(delta_length=10.0, length_y=2.0, length_x=200, straight_x_top='straight_heater_metal', splitter='mmi1x2', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mzi_phase_shifter", delta_length=10.0, length_y=2.0, length_x=200, straight_x_top='straight_heater_metal', splitter='mmi1x2', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='strip')
   c.plot()
 
 
@@ -1877,7 +1877,7 @@ mzi_phase_shifter_top_heater_metal
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_phase_shifter_top_heater_metal(delta_length=10.0, length_y=2.0, length_x=200, splitter='mmi1x2', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='strip')
+  c = ubcpdk.PDK.get_component("mzi_phase_shifter_top_heater_metal", delta_length=10.0, length_y=2.0, length_x=200, splitter='mmi1x2', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='strip')
   c.plot()
 
 
@@ -1892,7 +1892,7 @@ mzi_ubcpdk
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_ubcpdk()
+  c = ubcpdk.PDK.get_component("mzi_ubcpdk", )
   c.plot()
 
 
@@ -1907,7 +1907,7 @@ mzit
 
   import ubcpdk
 
-  c = ubcpdk.components.mzit(w0=0.5, w1=0.45, w2=0.55, dy=2.0, delta_length=10.0, length=1.0, coupler_length1=5.0, coupler_length2=10.0, coupler_gap1=0.2, coupler_gap2=0.3, taper_length=5.0)
+  c = ubcpdk.PDK.get_component("mzit", w0=0.5, w1=0.45, w2=0.55, dy=2.0, delta_length=10.0, length=1.0, coupler_length1=5.0, coupler_length2=10.0, coupler_gap1=0.2, coupler_gap2=0.3, taper_length=5.0)
   c.plot()
 
 
@@ -1922,7 +1922,7 @@ mzit_lattice
 
   import ubcpdk
 
-  c = ubcpdk.components.mzit_lattice(coupler_lengths=(10.0, 20.0), coupler_gaps=(0.2, 0.3), delta_lengths=(10.0,))
+  c = ubcpdk.PDK.get_component("mzit_lattice", coupler_lengths=(10.0, 20.0), coupler_gaps=(0.2, 0.3), delta_lengths=(10.0,))
   c.plot()
 
 
@@ -1937,7 +1937,7 @@ nxn
 
   import ubcpdk
 
-  c = ubcpdk.components.nxn(west=1, east=4, north=0, south=0, xsize=8.0, ysize=8.0, wg_width=0.5, layer='WG', wg_margin=1.0)
+  c = ubcpdk.PDK.get_component("nxn", west=1, east=4, north=0, south=0, xsize=8.0, ysize=8.0, wg_width=0.5, layer='WG', wg_margin=1.0)
   c.plot()
 
 
@@ -1952,7 +1952,7 @@ pack_doe
 
   import ubcpdk
 
-  c = ubcpdk.components.pack_doe(do_permutations=False)
+  c = ubcpdk.PDK.get_component("pack_doe", do_permutations=False)
   c.plot()
 
 
@@ -1967,7 +1967,7 @@ pack_doe_grid
 
   import ubcpdk
 
-  c = ubcpdk.components.pack_doe_grid(do_permutations=False, with_text=False)
+  c = ubcpdk.PDK.get_component("pack_doe_grid", do_permutations=False, with_text=False)
   c.plot()
 
 
@@ -1982,7 +1982,7 @@ pad
 
   import ubcpdk
 
-  c = ubcpdk.components.pad(size=(100.0, 100.0), layer='WG', port_inclusion=0, port_orientation=0)
+  c = ubcpdk.PDK.get_component("pad", size=(100.0, 100.0), layer='WG', port_inclusion=0)
   c.plot()
 
 
@@ -1997,7 +1997,7 @@ pad_array
 
   import ubcpdk
 
-  c = ubcpdk.components.pad_array(pad='pad', spacing=(150.0, 150.0), columns=6, rows=1, orientation=270)
+  c = ubcpdk.PDK.get_component("pad_array", pad='pad', spacing=(150.0, 150.0), columns=6, rows=1, orientation=270)
   c.plot()
 
 
@@ -2012,7 +2012,7 @@ pad_array0
 
   import ubcpdk
 
-  c = ubcpdk.components.pad_array0(pad='pad', spacing=(150.0, 150.0), columns=1, rows=3, orientation=0)
+  c = ubcpdk.PDK.get_component("pad_array0", pad='pad', spacing=(150.0, 150.0), columns=1, rows=3, orientation=0)
   c.plot()
 
 
@@ -2027,7 +2027,7 @@ pad_array180
 
   import ubcpdk
 
-  c = ubcpdk.components.pad_array180(pad='pad', spacing=(150.0, 150.0), columns=1, rows=3, orientation=180)
+  c = ubcpdk.PDK.get_component("pad_array180", pad='pad', spacing=(150.0, 150.0), columns=1, rows=3, orientation=180)
   c.plot()
 
 
@@ -2042,7 +2042,7 @@ pad_array270
 
   import ubcpdk
 
-  c = ubcpdk.components.pad_array270(pad='pad', spacing=(150.0, 150.0), columns=6, rows=1, orientation=270)
+  c = ubcpdk.PDK.get_component("pad_array270", pad='pad', spacing=(150.0, 150.0), columns=6, rows=1, orientation=270)
   c.plot()
 
 
@@ -2057,7 +2057,7 @@ pad_array90
 
   import ubcpdk
 
-  c = ubcpdk.components.pad_array90(pad='pad', spacing=(150.0, 150.0), columns=6, rows=1, orientation=90)
+  c = ubcpdk.PDK.get_component("pad_array90", pad='pad', spacing=(150.0, 150.0), columns=6, rows=1, orientation=90)
   c.plot()
 
 
@@ -2072,7 +2072,7 @@ pad_gsg_open
 
   import ubcpdk
 
-  c = ubcpdk.components.pad_gsg_open(size=(22, 7), layer_metal='M3', metal_spacing=5.0, short=False, pad_spacing=150)
+  c = ubcpdk.PDK.get_component("pad_gsg_open", size=(22, 7), layer_metal='M3', metal_spacing=5.0, short=False, pad_spacing=150)
   c.plot()
 
 
@@ -2087,7 +2087,7 @@ pad_gsg_short
 
   import ubcpdk
 
-  c = ubcpdk.components.pad_gsg_short(size=(22, 7), layer_metal='M3', metal_spacing=5.0, short=True, pad_spacing=150)
+  c = ubcpdk.PDK.get_component("pad_gsg_short", size=(22, 7), layer_metal='M3', metal_spacing=5.0, short=True, pad_spacing=150)
   c.plot()
 
 
@@ -2102,7 +2102,7 @@ pads
 
   import ubcpdk
 
-  c = ubcpdk.components.pads()
+  c = ubcpdk.PDK.get_component("pads", )
   c.plot()
 
 
@@ -2117,7 +2117,7 @@ pads_shorted
 
   import ubcpdk
 
-  c = ubcpdk.components.pads_shorted(columns=8, pad_spacing=150.0, layer_metal='M3', metal_width=10)
+  c = ubcpdk.PDK.get_component("pads_shorted", columns=8, pad_spacing=150.0, layer_metal='M3', metal_width=10)
   c.plot()
 
 
@@ -2132,7 +2132,7 @@ pixel
 
   import ubcpdk
 
-  c = ubcpdk.components.pixel(size=1.0, layer='WG')
+  c = ubcpdk.PDK.get_component("pixel", size=1.0, layer='WG')
   c.plot()
 
 
@@ -2147,7 +2147,7 @@ qrcode
 
   import ubcpdk
 
-  c = ubcpdk.components.qrcode(data='mask01', psize=1, layer='WG')
+  c = ubcpdk.PDK.get_component("qrcode", data='mask01', psize=1, layer='WG')
   c.plot()
 
 
@@ -2162,7 +2162,7 @@ ramp
 
   import ubcpdk
 
-  c = ubcpdk.components.ramp(length=10.0, width1=5.0, width2=8.0, layer='WG')
+  c = ubcpdk.PDK.get_component("ramp", length=10.0, width1=5.0, width2=8.0, layer='WG')
   c.plot()
 
 
@@ -2177,7 +2177,7 @@ rectangle
 
   import ubcpdk
 
-  c = ubcpdk.components.rectangle(size=(4.0, 2.0), layer='WG', centered=False, port_type='electrical', port_orientations=(180, 90, 0, -90))
+  c = ubcpdk.PDK.get_component("rectangle", size=(4.0, 2.0), layer='WG', centered=False, port_type='electrical', port_orientations=(180, 90, 0, -90))
   c.plot()
 
 
@@ -2192,7 +2192,7 @@ rectangle_with_slits
 
   import ubcpdk
 
-  c = ubcpdk.components.rectangle_with_slits(size=(100.0, 200.0), layer='WG', layer_slit='SLAB150', centered=False, slit_size=(1.0, 1.0), slit_spacing=(20, 20), slit_enclosure=10)
+  c = ubcpdk.PDK.get_component("rectangle_with_slits", size=(100.0, 200.0), layer='WG', layer_slit='SLAB150', centered=False, slit_size=(1.0, 1.0), slit_spacing=(20, 20), slit_enclosure=10)
   c.plot()
 
 
@@ -2207,7 +2207,7 @@ resistance_meander
 
   import ubcpdk
 
-  c = ubcpdk.components.resistance_meander(pad_size=(50.0, 50.0), num_squares=1000, width=1.0, res_layer='M3', pad_layer='M3', gnd_layer='M3')
+  c = ubcpdk.PDK.get_component("resistance_meander", pad_size=(50.0, 50.0), num_squares=1000, width=1.0, res_layer='M3', pad_layer='M3', gnd_layer='M3')
   c.plot()
 
 
@@ -2222,7 +2222,7 @@ resistance_sheet
 
   import ubcpdk
 
-  c = ubcpdk.components.resistance_sheet(width=10, layers=('SLAB90', 'NPP'), layer_offsets=(0, 0.2), pad_pitch=100.0, port_orientation1=180, port_orientation2=0)
+  c = ubcpdk.PDK.get_component("resistance_sheet", width=10, layers=('SLAB90', 'NPP'), layer_offsets=(0, 0.2), pad_pitch=100.0, port_orientation1=180, port_orientation2=0)
   c.plot()
 
 
@@ -2237,7 +2237,7 @@ ring
 
   import ubcpdk
 
-  c = ubcpdk.components.ring(radius=10.0, width=0.5, angle_resolution=2.5, layer='WG')
+  c = ubcpdk.PDK.get_component("ring", radius=10.0, width=0.5, angle_resolution=2.5, layer='WG')
   c.plot()
 
 
@@ -2252,7 +2252,7 @@ ring_double
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_double(gap=0.2, radius=10.0, length_x=0.01, length_y=0.01)
+  c = ubcpdk.PDK.get_component("ring_double", gap=0.2, radius=10.0, length_x=0.01, length_y=0.01)
   c.plot()
 
 
@@ -2267,7 +2267,7 @@ ring_double_heater
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_double_heater(gap=0.2, radius=10.0, length_x=0.01, length_y=0.01, port_orientation=90, via_stack_offset=(0, 0))
+  c = ubcpdk.PDK.get_component("ring_double_heater", gap=0.2, radius=10.0, length_x=0.01, length_y=0.01, port_orientation=90, via_stack_offset=(0, 0))
   c.plot()
 
 
@@ -2282,7 +2282,7 @@ ring_single
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_single(gap=0.2, radius=10.0, length_x=4.0, length_y=0.6, cross_section='strip')
+  c = ubcpdk.PDK.get_component("ring_single", gap=0.2, radius=10.0, length_x=4.0, length_y=0.6, cross_section='strip')
   c.plot()
 
 
@@ -2297,7 +2297,7 @@ ring_single_array
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_single_array(spacing=5.0)
+  c = ubcpdk.PDK.get_component("ring_single_array", spacing=5.0)
   c.plot()
 
 
@@ -2312,7 +2312,7 @@ ring_single_dut
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_single_dut(gap=0.2, length_x=4, length_y=0, radius=5.0, with_component=True, port_name='o1')
+  c = ubcpdk.PDK.get_component("ring_single_dut", gap=0.2, length_x=4, length_y=0, radius=5.0, with_component=True, port_name='o1')
   c.plot()
 
 
@@ -2327,7 +2327,7 @@ ring_single_heater
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_single_heater(gap=0.2, radius=10.0, length_x=4.0, length_y=0.6, port_orientation=90, via_stack_offset=(0, 0))
+  c = ubcpdk.PDK.get_component("ring_single_heater", gap=0.2, radius=10.0, length_x=4.0, length_y=0.6, port_orientation=90, via_stack_offset=(0, 0))
   c.plot()
 
 
@@ -2342,7 +2342,7 @@ ring_with_crossing
 
   import ubcpdk
 
-  c = ubcpdk.components.ring_with_crossing(gap=0.2, length_x=4, length_y=0, radius=5.0, with_component=True, port_name='opt4')
+  c = ubcpdk.PDK.get_component("ring_with_crossing", gap=0.2, length_x=4, length_y=0, radius=5.0, with_component=True, port_name='opt4')
   c.plot()
 
 
@@ -2357,7 +2357,7 @@ seal_ring
 
   import ubcpdk
 
-  c = ubcpdk.components.seal_ring(bbox=((-1.0, -1.0), (3.0, 4.0)), width=10, padding=10.0, with_north=True, with_south=True, with_east=True, with_west=True)
+  c = ubcpdk.PDK.get_component("seal_ring", bbox=((-1.0, -1.0), (3.0, 4.0)), width=10, padding=10.0, with_north=True, with_south=True, with_east=True, with_west=True)
   c.plot()
 
 
@@ -2372,7 +2372,7 @@ spiral
 
   import ubcpdk
 
-  c = ubcpdk.components.spiral(N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("spiral", N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0, cross_section='strip')
   c.plot()
 
 
@@ -2387,7 +2387,7 @@ spiral_circular
 
   import ubcpdk
 
-  c = ubcpdk.components.spiral_circular(length=1000.0, wg_width=0.5, spacing=3.0, min_bend_radius=5.0, points=1000, layer='WG')
+  c = ubcpdk.PDK.get_component("spiral_circular", length=1000.0, wg_width=0.5, spacing=3.0, min_bend_radius=5.0, points=1000, layer='WG')
   c.plot()
 
 
@@ -2402,7 +2402,7 @@ spiral_external_io
 
   import ubcpdk
 
-  c = ubcpdk.components.spiral_external_io(N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("spiral_external_io", N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0, cross_section='strip')
   c.plot()
 
 
@@ -2417,7 +2417,7 @@ spiral_inner_io
 
   import ubcpdk
 
-  c = ubcpdk.components.spiral_inner_io(N=6, x_straight_inner_right=150.0, x_straight_inner_left=50.0, y_straight_inner_top=50.0, y_straight_inner_bottom=10.0, grating_spacing=127.0, waveguide_spacing=3.0, cross_section='strip')
+  c = ubcpdk.PDK.get_component("spiral_inner_io", N=6, x_straight_inner_right=150.0, x_straight_inner_left=50.0, y_straight_inner_top=50.0, y_straight_inner_bottom=10.0, grating_spacing=127.0, waveguide_spacing=3.0, cross_section='strip')
   c.plot()
 
 
@@ -2432,7 +2432,7 @@ spiral_inner_io_fiber_single
 
   import ubcpdk
 
-  c = ubcpdk.components.spiral_inner_io_fiber_single(cross_section='strip', x_straight_inner_right=40.0, x_straight_inner_left=75.0, y_straight_inner_top=10.0, y_straight_inner_bottom=0.0, grating_spacing=200.0)
+  c = ubcpdk.PDK.get_component("spiral_inner_io_fiber_single", cross_section='strip', x_straight_inner_right=40.0, x_straight_inner_left=75.0, y_straight_inner_top=10.0, y_straight_inner_bottom=0.0, grating_spacing=200.0)
   c.plot()
 
 
@@ -2447,7 +2447,7 @@ splitter_chain
 
   import ubcpdk
 
-  c = ubcpdk.components.splitter_chain(columns=3)
+  c = ubcpdk.PDK.get_component("splitter_chain", columns=3)
   c.plot()
 
 
@@ -2462,7 +2462,7 @@ splitter_tree
 
   import ubcpdk
 
-  c = ubcpdk.components.splitter_tree(noutputs=4, spacing=(90.0, 50.0), cross_section='strip')
+  c = ubcpdk.PDK.get_component("splitter_tree", noutputs=4, spacing=(90.0, 50.0), cross_section='strip')
   c.plot()
 
 
@@ -2477,7 +2477,7 @@ staircase
 
   import ubcpdk
 
-  c = ubcpdk.components.staircase(length_v=5.0, length_h=5.0, rows=4)
+  c = ubcpdk.PDK.get_component("staircase", length_v=5.0, length_h=5.0, rows=4)
   c.plot()
 
 
@@ -2492,7 +2492,7 @@ straight
 
   import ubcpdk
 
-  c = ubcpdk.components.straight(length=10.0, npoints=2, with_bbox=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("straight", length=10.0, npoints=2, with_bbox=True, cross_section='strip')
   c.plot()
 
 
@@ -2507,7 +2507,7 @@ straight_array
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_array(n=4, spacing=4.0)
+  c = ubcpdk.PDK.get_component("straight_array", n=4, spacing=4.0)
   c.plot()
 
 
@@ -2522,7 +2522,7 @@ straight_heater_doped_rib
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_heater_doped_rib(length=320.0, nsections=3, via_stack_metal_size=(10.0, 10.0), via_stack_size=(10.0, 10.0), with_taper1=True, with_taper2=True, heater_width=2.0, heater_gap=0.8, via_stack_gap=0.0, width=0.5, with_top_via_stack=True, with_bot_via_stack=True)
+  c = ubcpdk.PDK.get_component("straight_heater_doped_rib", length=320.0, nsections=3, via_stack_metal_size=(10.0, 10.0), via_stack_size=(10.0, 10.0), with_taper1=True, with_taper2=True, heater_width=2.0, heater_gap=0.8, via_stack_gap=0.0, width=0.5, with_top_via_stack=True, with_bot_via_stack=True)
   c.plot()
 
 
@@ -2537,7 +2537,7 @@ straight_heater_doped_strip
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_heater_doped_strip(length=320.0, nsections=3, via_stack_metal_size=(10.0, 10.0), via_stack_size=(10.0, 10.0), with_taper1=True, with_taper2=True, heater_width=2.0, heater_gap=0.8, via_stack_gap=0.0, width=0.5, with_top_via_stack=True, with_bot_via_stack=True)
+  c = ubcpdk.PDK.get_component("straight_heater_doped_strip", length=320.0, nsections=3, via_stack_metal_size=(10.0, 10.0), via_stack_size=(10.0, 10.0), with_taper1=True, with_taper2=True, heater_width=2.0, heater_gap=0.8, via_stack_gap=0.0, width=0.5, with_top_via_stack=True, with_bot_via_stack=True)
   c.plot()
 
 
@@ -2552,7 +2552,7 @@ straight_heater_meander
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_heater_meander(length=300.0, spacing=2.0, cross_section='strip', heater_width=2.5, extension_length=15.0, layer_heater='HEATER', radius=5.0, port_orientation1=180, port_orientation2=0, heater_taper_length=10.0, straight_width=0.9, taper_length=10)
+  c = ubcpdk.PDK.get_component("straight_heater_meander", length=300.0, spacing=2.0, cross_section='strip', heater_width=2.5, extension_length=15.0, layer_heater='HEATER', radius=5.0, port_orientation1=180, port_orientation2=0, heater_taper_length=10.0, straight_width=0.9, taper_length=10)
   c.plot()
 
 
@@ -2567,7 +2567,7 @@ straight_heater_metal
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_heater_metal(length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=False, port_orientation1=180, port_orientation2=0, heater_taper_length=5.0)
+  c = ubcpdk.PDK.get_component("straight_heater_metal", length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=False, port_orientation1=180, port_orientation2=0, heater_taper_length=5.0)
   c.plot()
 
 
@@ -2582,7 +2582,7 @@ straight_heater_metal_90_90
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_heater_metal_90_90(length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=False, port_orientation1=90, port_orientation2=90, heater_taper_length=5.0)
+  c = ubcpdk.PDK.get_component("straight_heater_metal_90_90", length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=False, port_orientation1=90, port_orientation2=90, heater_taper_length=5.0)
   c.plot()
 
 
@@ -2597,7 +2597,7 @@ straight_heater_metal_undercut
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_heater_metal_undercut(length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=True, port_orientation1=180, port_orientation2=0, heater_taper_length=5.0)
+  c = ubcpdk.PDK.get_component("straight_heater_metal_undercut", length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=True, port_orientation1=180, port_orientation2=0, heater_taper_length=5.0)
   c.plot()
 
 
@@ -2612,7 +2612,7 @@ straight_heater_metal_undercut_90_90
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_heater_metal_undercut_90_90(length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=False, port_orientation1=90, port_orientation2=90, heater_taper_length=5.0)
+  c = ubcpdk.PDK.get_component("straight_heater_metal_undercut_90_90", length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight_input=15.0, heater_width=2.5, cross_section_heater='heater_metal', cross_section_waveguide_heater='strip_heater_metal', cross_section_heater_undercut='strip_heater_metal_undercut', with_undercut=False, port_orientation1=90, port_orientation2=90, heater_taper_length=5.0)
   c.plot()
 
 
@@ -2627,7 +2627,7 @@ straight_pin
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_pin(length=500.0, via_stack_width=10.0, via_stack_spacing=2)
+  c = ubcpdk.PDK.get_component("straight_pin", length=500.0, via_stack_width=10.0, via_stack_spacing=2)
   c.plot()
 
 
@@ -2642,7 +2642,7 @@ straight_pin_slot
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_pin_slot(length=500.0, via_stack_width=10.0, via_stack_spacing=3.0, via_stack_slab_spacing=2.0)
+  c = ubcpdk.PDK.get_component("straight_pin_slot", length=500.0, via_stack_width=10.0, via_stack_spacing=3.0, via_stack_slab_spacing=2.0)
   c.plot()
 
 
@@ -2657,7 +2657,7 @@ straight_pn
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_pn(length=500.0, via_stack_width=10.0, via_stack_spacing=2)
+  c = ubcpdk.PDK.get_component("straight_pn", length=500.0, via_stack_width=10.0, via_stack_spacing=2)
   c.plot()
 
 
@@ -2672,7 +2672,7 @@ straight_rib
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_rib(length=10.0, npoints=2, with_bbox=True)
+  c = ubcpdk.PDK.get_component("straight_rib", length=10.0, npoints=2, with_bbox=True)
   c.plot()
 
 
@@ -2687,7 +2687,7 @@ straight_rib_tapered
 
   import ubcpdk
 
-  c = ubcpdk.components.straight_rib_tapered(length=5.0, port1='o2', port2='o1', port_type='optical', centered=False)
+  c = ubcpdk.PDK.get_component("straight_rib_tapered", length=5.0, port1='o2', port2='o1', port_type='optical', centered=False)
   c.plot()
 
 
@@ -2702,7 +2702,7 @@ switch_tree
 
   import ubcpdk
 
-  c = ubcpdk.components.switch_tree(noutputs=4, spacing=(500, 100), cross_section='strip')
+  c = ubcpdk.PDK.get_component("switch_tree", noutputs=4, spacing=(500, 100), cross_section='strip')
   c.plot()
 
 
@@ -2717,7 +2717,7 @@ taper
 
   import ubcpdk
 
-  c = ubcpdk.components.taper(length=10.0, width1=0.5, with_bbox=True, with_two_ports=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper", length=10.0, width1=0.5, with_bbox=True, with_two_ports=True, cross_section='strip')
   c.plot()
 
 
@@ -2732,7 +2732,7 @@ taper2
 
   import ubcpdk
 
-  c = ubcpdk.components.taper2(length=10.0, width1=0.5, width2=3, with_bbox=True, with_two_ports=True, cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper2", length=10.0, width1=0.5, width2=3, with_bbox=True, with_two_ports=True, cross_section='strip')
   c.plot()
 
 
@@ -2747,7 +2747,7 @@ taper_0p5_to_3_l36
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_0p5_to_3_l36(cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_0p5_to_3_l36", cross_section='strip')
   c.plot()
 
 
@@ -2762,7 +2762,7 @@ taper_cross_section_linear
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_cross_section_linear(length=10, npoints=2, linear=True)
+  c = ubcpdk.PDK.get_component("taper_cross_section_linear", length=10, npoints=2, linear=True)
   c.plot()
 
 
@@ -2777,7 +2777,7 @@ taper_cross_section_sine
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_cross_section_sine(length=10, npoints=101, linear=False)
+  c = ubcpdk.PDK.get_component("taper_cross_section_sine", length=10, npoints=101, linear=False)
   c.plot()
 
 
@@ -2792,7 +2792,7 @@ taper_from_csv
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_from_csv(cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_from_csv", cross_section='strip')
   c.plot()
 
 
@@ -2807,7 +2807,7 @@ taper_parabolic
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_parabolic(length=20, width1=0.5, width2=5.0, exp=0.5, npoints=100, layer='WG')
+  c = ubcpdk.PDK.get_component("taper_parabolic", length=20, width1=0.5, width2=5.0, exp=0.5, npoints=100, layer='WG')
   c.plot()
 
 
@@ -2822,7 +2822,7 @@ taper_strip_to_ridge
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_strip_to_ridge(length=10.0, width1=0.5, width2=0.5, w_slab1=0.15, w_slab2=6.0, layer_wg='WG', layer_slab='SLAB90', cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_strip_to_ridge", length=10.0, width1=0.5, width2=0.5, w_slab1=0.15, w_slab2=6.0, layer_wg='WG', layer_slab='SLAB90', cross_section='strip')
   c.plot()
 
 
@@ -2837,7 +2837,7 @@ taper_strip_to_ridge_trenches
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_strip_to_ridge_trenches(length=10.0, width=0.5, slab_offset=3.0, trench_width=2.0, trench_layer='SLAB90', layer_wg='WG', trench_offset=0.1)
+  c = ubcpdk.PDK.get_component("taper_strip_to_ridge_trenches", length=10.0, width=0.5, slab_offset=3.0, trench_width=2.0, trench_layer='SLAB90', layer_wg='WG', trench_offset=0.1)
   c.plot()
 
 
@@ -2852,7 +2852,7 @@ taper_w10_l100
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_w10_l100(cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_w10_l100", cross_section='strip')
   c.plot()
 
 
@@ -2867,7 +2867,7 @@ taper_w10_l150
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_w10_l150(cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_w10_l150", cross_section='strip')
   c.plot()
 
 
@@ -2882,7 +2882,7 @@ taper_w10_l200
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_w10_l200(cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_w10_l200", cross_section='strip')
   c.plot()
 
 
@@ -2897,7 +2897,7 @@ taper_w11_l200
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_w11_l200(cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_w11_l200", cross_section='strip')
   c.plot()
 
 
@@ -2912,7 +2912,7 @@ taper_w12_l200
 
   import ubcpdk
 
-  c = ubcpdk.components.taper_w12_l200(cross_section='strip')
+  c = ubcpdk.PDK.get_component("taper_w12_l200", cross_section='strip')
   c.plot()
 
 
@@ -2927,7 +2927,7 @@ text
 
   import ubcpdk
 
-  c = ubcpdk.components.text(text='abcd', size=10.0, position=(0, 0), justify='left', layer='WG')
+  c = ubcpdk.PDK.get_component("text", text='abcd', size=10.0, position=(0, 0), justify='left', layer='WG')
   c.plot()
 
 
@@ -2942,7 +2942,7 @@ text_lines
 
   import ubcpdk
 
-  c = ubcpdk.components.text_lines(text=('Chip', '01'), size=0.4, layer='WG')
+  c = ubcpdk.PDK.get_component("text_lines", text=('Chip', '01'), size=0.4, layer='WG')
   c.plot()
 
 
@@ -2957,7 +2957,7 @@ text_rectangular
 
   import ubcpdk
 
-  c = ubcpdk.components.text_rectangular(text='abcd', size=10.0, position=(0.0, 0.0), justify='left', layer='WG')
+  c = ubcpdk.PDK.get_component("text_rectangular", text='abcd', size=10.0, position=(0.0, 0.0), justify='left', layer='WG')
   c.plot()
 
 
@@ -2972,7 +2972,7 @@ text_rectangular_multi_layer
 
   import ubcpdk
 
-  c = ubcpdk.components.text_rectangular_multi_layer(text='abcd', layers=('WG', 'M1', 'M2', 'M3'))
+  c = ubcpdk.PDK.get_component("text_rectangular_multi_layer", text='abcd', layers=('WG', 'M1', 'M2', 'M3'))
   c.plot()
 
 
@@ -2987,7 +2987,7 @@ triangle
 
   import ubcpdk
 
-  c = ubcpdk.components.triangle(x=10, xtop=0, y=20, ybot=0, layer='WG')
+  c = ubcpdk.PDK.get_component("triangle", x=10, xtop=0, y=20, ybot=0, layer='WG')
   c.plot()
 
 
@@ -3002,7 +3002,7 @@ verniers
 
   import ubcpdk
 
-  c = ubcpdk.components.verniers(widths=(0.1, 0.2, 0.3, 0.4, 0.5), gap=0.1, xsize=100, layer_label='LABEL')
+  c = ubcpdk.PDK.get_component("verniers", widths=(0.1, 0.2, 0.3, 0.4, 0.5), gap=0.1, xsize=100, layer_label='LABEL')
   c.plot()
 
 
@@ -3017,7 +3017,7 @@ version_stamp
 
   import ubcpdk
 
-  c = ubcpdk.components.version_stamp(labels=('demo_label',), with_qr_code=False, layer='WG', pixel_size=1, version='5.12.9', text_size=10)
+  c = ubcpdk.PDK.get_component("version_stamp", labels=('demo_label',), with_qr_code=False, layer='WG', pixel_size=1, version='5.12.15', text_size=10)
   c.plot()
 
 
@@ -3032,7 +3032,7 @@ via
 
   import ubcpdk
 
-  c = ubcpdk.components.via(size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=1.0, layer='VIAC', bbox_offset=0)
+  c = ubcpdk.PDK.get_component("via", size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=1.0, layer='VIAC', bbox_offset=0)
   c.plot()
 
 
@@ -3047,7 +3047,7 @@ via1
 
   import ubcpdk
 
-  c = ubcpdk.components.via1(size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=2, layer='VIA1', bbox_offset=0)
+  c = ubcpdk.PDK.get_component("via1", size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=2, layer='VIA1', bbox_offset=0)
   c.plot()
 
 
@@ -3062,7 +3062,7 @@ via2
 
   import ubcpdk
 
-  c = ubcpdk.components.via2(size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=1.0, layer='VIA2', bbox_offset=0)
+  c = ubcpdk.PDK.get_component("via2", size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=1.0, layer='VIA2', bbox_offset=0)
   c.plot()
 
 
@@ -3077,7 +3077,7 @@ via_corner
 
   import ubcpdk
 
-  c = ubcpdk.components.via_corner(cross_section=((functools.partial(<cyfunction cross_section at 0x7fc313fc0ee0>, layer='M2', width=10.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical')), (0, 180)), (functools.partial(<cyfunction cross_section at 0x7fc313fc0ee0>, layer='M3', width=10.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical')), (90, 270))), vias=(functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIA1', enclosure=2),), layers_labels=('m2', 'm3'))
+  c = ubcpdk.PDK.get_component("via_corner", cross_section=((functools.partial(<cyfunction cross_section at 0x7f00a5cc8ad0>, layer='M2', width=10.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical')), (0, 180)), (functools.partial(<cyfunction cross_section at 0x7f00a5cc8ad0>, layer='M3', width=10.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical')), (90, 270))), vias=(functools.partial(<function via at 0x7f00667a2b90>, layer='VIA1', enclosure=2),), layers_labels=('m2', 'm3'))
   c.plot()
 
 
@@ -3092,7 +3092,7 @@ via_cutback
 
   import ubcpdk
 
-  c = ubcpdk.components.via_cutback(num_vias=100.0, wire_width=10.0, via_width=5.0, via_spacing=40.0, min_pad_spacing=0.0, pad_size=(150, 150), layer1='HEATER', layer2='M1', via_layer='VIAC', wire_pad_inclusion=12.0)
+  c = ubcpdk.PDK.get_component("via_cutback", num_vias=100.0, wire_width=10.0, via_width=5.0, via_spacing=40.0, min_pad_spacing=0.0, pad_size=(150, 150), layer1='HEATER', layer2='M1', via_layer='VIAC', wire_pad_inclusion=12.0)
   c.plot()
 
 
@@ -3107,7 +3107,7 @@ via_stack
 
   import ubcpdk
 
-  c = ubcpdk.components.via_stack(size=(11.0, 11.0), layers=('M1', 'M2', 'M3'), vias=(functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIA1', enclosure=2), functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIA2')))
+  c = ubcpdk.PDK.get_component("via_stack", size=(11.0, 11.0), layers=('M1', 'M2', 'M3'), vias=(functools.partial(<function via at 0x7f00667a2b90>, layer='VIA1', enclosure=2), functools.partial(<function via at 0x7f00667a2b90>, layer='VIA2')))
   c.plot()
 
 
@@ -3122,7 +3122,7 @@ via_stack_heater_m3
 
   import ubcpdk
 
-  c = ubcpdk.components.via_stack_heater_m3(size=(11.0, 11.0), layers=((47, 0), (45, 0), (49, 0)), vias=(functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIA1', enclosure=2), functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIA2')))
+  c = ubcpdk.PDK.get_component("via_stack_heater_m3", size=(11.0, 11.0), layers=((47, 0), (45, 0), (49, 0)), vias=(functools.partial(<function via at 0x7f00667a2b90>, layer='VIA1', enclosure=2), functools.partial(<function via at 0x7f00667a2b90>, layer='VIA2')))
   c.plot()
 
 
@@ -3137,7 +3137,7 @@ via_stack_slab_m3
 
   import ubcpdk
 
-  c = ubcpdk.components.via_stack_slab_m3(size=(11.0, 11.0), layers=((3, 0), (41, 0), (45, 0), (49, 0)), vias=(functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIAC'), functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIA1', enclosure=2), functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIA2')))
+  c = ubcpdk.PDK.get_component("via_stack_slab_m3", size=(11.0, 11.0), layers=((3, 0), (41, 0), (45, 0), (49, 0)), vias=(functools.partial(<function via at 0x7f00667a2b90>, layer='VIAC'), functools.partial(<function via at 0x7f00667a2b90>, layer='VIA1', enclosure=2), functools.partial(<function via at 0x7f00667a2b90>, layer='VIA2')))
   c.plot()
 
 
@@ -3152,7 +3152,7 @@ via_stack_slot
 
   import ubcpdk
 
-  c = ubcpdk.components.via_stack_slot(size=(11.0, 11.0), layers=('M1', 'M2'), layer_offsets=(0, 1.0), enclosure=1.0, ysize=0.5, yspacing=2.0)
+  c = ubcpdk.PDK.get_component("via_stack_slot", size=(11.0, 11.0), layers=('M1', 'M2'), layer_offsets=(0, 1.0), enclosure=1.0, ysize=0.5, yspacing=2.0)
   c.plot()
 
 
@@ -3167,7 +3167,7 @@ via_stack_slot_m1_m2
 
   import ubcpdk
 
-  c = ubcpdk.components.via_stack_slot_m1_m2(size=(11.0, 11.0), layers=('M1', 'M2'), layer_offsets=(0, 1.0), enclosure=1.0, ysize=0.5, yspacing=2.0)
+  c = ubcpdk.PDK.get_component("via_stack_slot_m1_m2", size=(11.0, 11.0), layers=('M1', 'M2'), layer_offsets=(0, 1.0), enclosure=1.0, ysize=0.5, yspacing=2.0)
   c.plot()
 
 
@@ -3182,7 +3182,7 @@ via_stack_with_offset
 
   import ubcpdk
 
-  c = ubcpdk.components.via_stack_with_offset(layers=('PPP', 'M1'), sizes=((10, 10), (10, 10)), vias=(None, functools.partial(<function via at 0x7fc2d4afcb80>, layer='VIAC')), port_orientation=180)
+  c = ubcpdk.PDK.get_component("via_stack_with_offset", layers=('PPP', 'M1'), sizes=((10, 10), (10, 10)), vias=(None, functools.partial(<function via at 0x7f00667a2b90>, layer='VIAC')), port_orientation=180)
   c.plot()
 
 
@@ -3197,7 +3197,7 @@ viac
 
   import ubcpdk
 
-  c = ubcpdk.components.viac(size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=1.0, layer='VIAC', bbox_offset=0)
+  c = ubcpdk.PDK.get_component("viac", size=(0.7, 0.7), spacing=(2.0, 2.0), enclosure=1.0, layer='VIAC', bbox_offset=0)
   c.plot()
 
 
@@ -3212,7 +3212,7 @@ wire_corner
 
   import ubcpdk
 
-  c = ubcpdk.components.wire_corner(cross_section='metal3')
+  c = ubcpdk.PDK.get_component("wire_corner", cross_section='metal3')
   c.plot()
 
 
@@ -3227,7 +3227,7 @@ wire_sbend
 
   import ubcpdk
 
-  c = ubcpdk.components.wire_sbend(dx=20.0, dy=10.0)
+  c = ubcpdk.PDK.get_component("wire_sbend", dx=20.0, dy=10.0)
   c.plot()
 
 
@@ -3242,7 +3242,7 @@ wire_straight
 
   import ubcpdk
 
-  c = ubcpdk.components.wire_straight(length=10.0, npoints=2, with_bbox=True, cross_section='metal3')
+  c = ubcpdk.PDK.get_component("wire_straight", length=10.0, npoints=2, with_bbox=True, cross_section='metal3')
   c.plot()
 
 
@@ -3257,7 +3257,7 @@ y_adiabatic
 
   import ubcpdk
 
-  c = ubcpdk.components.y_adiabatic(read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("y_adiabatic", read_metadata=True, hashed_name=True)
   c.plot()
 
 
@@ -3272,5 +3272,5 @@ y_splitter
 
   import ubcpdk
 
-  c = ubcpdk.components.y_splitter(read_metadata=True, hashed_name=True)
+  c = ubcpdk.PDK.get_component("y_splitter", read_metadata=True, hashed_name=True)
   c.plot()

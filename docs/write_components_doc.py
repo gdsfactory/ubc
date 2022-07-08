@@ -74,7 +74,7 @@ Components
 
   import ubcpdk
 
-  c = ubcpdk.components.{name}({kwargs})
+  c = ubcpdk.PDK.get_component("{name}", {kwargs})
   c.plot()
 
 """
