@@ -82,6 +82,7 @@ add_ports_from_siepic_pins = gf.partial(
     add_ports_from_siepic_pins,
     pin_layer_optical=LAYER.PORT,
     pin_layer_electrical=LAYER.PORTE,
+    port_layer_optical=LAYER.WG,
 )
 
 import_gds = gf.partial(
