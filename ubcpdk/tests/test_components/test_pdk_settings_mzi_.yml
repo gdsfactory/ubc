@@ -1,4 +1,4 @@
-name: mzi_599c7ad0
+name: mzi_441a3ffa
 settings:
   changed:
     bend:
@@ -21,6 +21,9 @@ settings:
             pin_layer_optical:
             - 1
             - 10
+            port_layer_optical:
+            - 1
+            - 0
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
@@ -90,6 +93,9 @@ settings:
             pin_layer_optical:
             - 1
             - 10
+            port_layer_optical:
+            - 1
+            - 0
         doc: Y junction TE1550 50/50 power.
         gdsdir: gds
         gdspath: ebeam_y_1550.gds
@@ -115,5 +121,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_599c7ad0
+  name: mzi_441a3ffa
 version: 0.0.1

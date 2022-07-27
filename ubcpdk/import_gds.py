@@ -29,9 +29,7 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
             return 180
         if label in {"opt3", "opt4"}:
             return 0
-    if p[0] <= 0:
-        return 180
-    return 0
+    return 180 if p[0] <= 0 else 0
 
 
 def remove_pins(component) -> Component:
@@ -82,6 +80,7 @@ add_ports_from_siepic_pins = gf.partial(
     add_ports_from_siepic_pins,
     pin_layer_optical=LAYER.PORT,
     pin_layer_electrical=LAYER.PORTE,
+    port_layer_optical=LAYER.WG,
 )
 
 import_gds = gf.partial(

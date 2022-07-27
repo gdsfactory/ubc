@@ -1,4 +1,4 @@
-name: ring_single_dut_0ab86d4f
+name: ring_single_dut_d79cb48d
 settings:
   changed:
     bend:
@@ -17,6 +17,9 @@ settings:
             pin_layer_optical:
             - 1
             - 10
+            port_layer_optical:
+            - 1
+            - 0
         doc: TE waveguide crossing.
         gdsdir: gds
         gdspath: ebeam_crossing4.gds
@@ -94,6 +97,9 @@ settings:
             pin_layer_optical:
             - 1
             - 10
+            port_layer_optical:
+            - 1
+            - 0
         doc: TE waveguide crossing.
         gdsdir: gds
         gdspath: ebeam_crossing4.gds
@@ -147,5 +153,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_0ab86d4f
+  name: ring_single_dut_d79cb48d
 version: 0.0.1
