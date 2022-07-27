@@ -1,4 +1,4 @@
-name: straight_add_fiber_arra_e1feec4c
+name: straight_add_fiber_arra_18cb0574
 settings:
   changed:
     gc_port_name: opt1
@@ -14,6 +14,9 @@ settings:
             pin_layer_optical:
             - 1
             - 10
+            port_layer_optical:
+            - 1
+            - 0
         - function: rotate
           settings:
             angle: 180
@@ -43,6 +46,9 @@ settings:
               pin_layer_optical:
               - 1
               - 10
+              port_layer_optical:
+              - 1
+              - 0
           - function: rotate
             settings:
               angle: 180
@@ -136,6 +142,9 @@ settings:
               pin_layer_optical:
               - 1
               - 10
+              port_layer_optical:
+              - 1
+              - 0
           - function: rotate
             settings:
               angle: 180
@@ -176,7 +185,7 @@ settings:
           annotate: false
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_arra_dc93f3d0
+    name: straight_add_fiber_arra_244093bf
   default:
     component:
       function: straight
@@ -217,6 +226,9 @@ settings:
             pin_layer_optical:
             - 1
             - 10
+            port_layer_optical:
+            - 1
+            - 0
         - function: rotate
           settings:
             angle: 180
@@ -253,5 +265,5 @@ settings:
         annotate: false
   info_version: 2
   module: gdsfactory.dft.siepic
-  name: straight_add_fiber_arra_e1feec4c
+  name: straight_add_fiber_arra_18cb0574
 version: 0.0.1
