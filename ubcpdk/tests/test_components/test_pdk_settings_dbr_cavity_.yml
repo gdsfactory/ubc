@@ -1,4 +1,4 @@
-name: dbr_cavity_ace99022
+name: dbr_cavity_6697eb2a
 settings:
   changed:
     component:
@@ -21,17 +21,9 @@ settings:
         function_name: dbr
         info: {}
         info_version: 2
-        module: ubcpdk.components.dbr
+        module: ubcpdk.components
         name: dbr
       version: 0.0.1
-    coupler:
-      function: coupler
-      settings:
-        cross_section: strip
-        decorator:
-          function: add_pins_bbox_siepic
-          settings:
-            pin_length: 0.1
   child:
     changed: {}
     child: null
@@ -50,7 +42,7 @@ settings:
     function_name: dbr
     info: {}
     info_version: 2
-    module: ubcpdk.components.dbr
+    module: ubcpdk.components
     name: dbr
   default:
     component:
@@ -80,22 +72,16 @@ settings:
         function_name: dbr
         info: {}
         info_version: 2
-        module: ubcpdk.components.dbr
+        module: ubcpdk.components
         name: dbr
       version: 0.0.1
     coupler:
       function: coupler
-      settings:
-        cross_section: strip
-        decorator:
-          function: add_pins_bbox_siepic
-          settings:
-            pin_length: 0.1
     gap: 0.2
     length: 0.1
   function_name: cavity
   info: {}
   info_version: 2
   module: gdsfactory.components.cavity
-  name: dbr_cavity_ace99022
+  name: dbr_cavity_6697eb2a
 version: 0.0.1

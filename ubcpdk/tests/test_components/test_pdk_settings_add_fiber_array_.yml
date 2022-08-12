@@ -1,67 +1,15 @@
-name: straight_add_fiber_arra_18cb0574
+name: straight_add_fiber_arra_bd61bb4d
 settings:
   changed:
     gc_port_name: opt1
     grating_coupler:
-      function: import_gds
-      settings:
-        decorator:
-        - function: add_ports_from_siepic_pins
-          settings:
-            pin_layer_electrical:
-            - 1
-            - 11
-            pin_layer_optical:
-            - 1
-            - 10
-            port_layer_optical:
-            - 1
-            - 0
-        - function: rotate
-          settings:
-            angle: 180
-        gdsdir: gds
-        gdspath: ebeam_gc_te1550.gds
-        interconnect:
-          layout_model_port_pairs:
-            opt1: opt_wg
-          library: Design kits/ebeam
-          model: ebeam_gc_te1550
-        name: ebeam_gc_te1550
-        polarization: te
-        wavelength: 1.55
+      function: ebeam_gc_te1550
   child:
     changed:
       fanout_length: 0.0
       gc_port_name: opt1
       grating_coupler:
-        function: import_gds
-        settings:
-          decorator:
-          - function: add_ports_from_siepic_pins
-            settings:
-              pin_layer_electrical:
-              - 1
-              - 11
-              pin_layer_optical:
-              - 1
-              - 10
-              port_layer_optical:
-              - 1
-              - 0
-          - function: rotate
-            settings:
-              angle: 180
-          gdsdir: gds
-          gdspath: ebeam_gc_te1550.gds
-          interconnect:
-            layout_model_port_pairs:
-              opt1: opt_wg
-            library: Design kits/ebeam
-            model: ebeam_gc_te1550
-          name: ebeam_gc_te1550
-          polarization: te
-          wavelength: 1.55
+        function: ebeam_gc_te1550
       layer_label:
       - 10
       - 0
@@ -131,33 +79,7 @@ settings:
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
-        function: import_gds
-        settings:
-          decorator:
-          - function: add_ports_from_siepic_pins
-            settings:
-              pin_layer_electrical:
-              - 1
-              - 11
-              pin_layer_optical:
-              - 1
-              - 10
-              port_layer_optical:
-              - 1
-              - 0
-          - function: rotate
-            settings:
-              angle: 180
-          gdsdir: gds
-          gdspath: ebeam_gc_te1550.gds
-          interconnect:
-            layout_model_port_pairs:
-              opt1: opt_wg
-            library: Design kits/ebeam
-            model: ebeam_gc_te1550
-          name: ebeam_gc_te1550
-          polarization: te
-          wavelength: 1.55
+        function: ebeam_gc_te1550
       layer_label:
       - 10
       - 0
@@ -169,6 +91,11 @@ settings:
       with_loopback: false
     function_name: add_fiber_array
     info:
+      grating_coupler:
+        library: Design kits/ebeam
+        model: ebeam_gc_te1550
+        polarization: te
+        wavelength: 1.55
       interconnect:
         layout_model_port_pairs:
           o1: port 1
@@ -183,9 +110,11 @@ settings:
         model: ebeam_wg_integral_1550
         properties:
           annotate: false
+      length: 10.0
+      width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_arra_244093bf
+    name: straight_add_fiber_arra_b28db15b
   default:
     component:
       function: straight
@@ -215,33 +144,7 @@ settings:
     get_input_labels_function:
       function: get_input_labels
     grating_coupler:
-      function: import_gds
-      settings:
-        decorator:
-        - function: add_ports_from_siepic_pins
-          settings:
-            pin_layer_electrical:
-            - 1
-            - 11
-            pin_layer_optical:
-            - 1
-            - 10
-            port_layer_optical:
-            - 1
-            - 0
-        - function: rotate
-          settings:
-            angle: 180
-        gdsdir: gds
-        gdspath: ebeam_gc_te1550.gds
-        interconnect:
-          layout_model_port_pairs:
-            opt1: opt_wg
-          library: Design kits/ebeam
-          model: ebeam_gc_te1550
-        name: ebeam_gc_te1550
-        polarization: te
-        wavelength: 1.55
+      function: ebeam_gc_te1550
     layer_label:
     - 10
     - 0
@@ -249,6 +152,11 @@ settings:
     with_loopback: false
   function_name: add_fiber_array_siepic
   info:
+    grating_coupler:
+      library: Design kits/ebeam
+      model: ebeam_gc_te1550
+      polarization: te
+      wavelength: 1.55
     interconnect:
       layout_model_port_pairs:
         o1: port 1
@@ -263,7 +171,9 @@ settings:
       model: ebeam_wg_integral_1550
       properties:
         annotate: false
+    length: 10.0
+    width: 0.5
   info_version: 2
-  module: gdsfactory.dft.siepic
-  name: straight_add_fiber_arra_18cb0574
+  module: gdsfactory.labels.siepic
+  name: straight_add_fiber_arra_bd61bb4d
 version: 0.0.1

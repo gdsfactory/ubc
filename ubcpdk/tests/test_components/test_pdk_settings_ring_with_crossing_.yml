@@ -1,4 +1,4 @@
-name: ring_single_dut_d79cb48d
+name: ebeam_crossing4_ring_si_00a2738b
 settings:
   changed:
     bend:
@@ -6,25 +6,7 @@ settings:
       settings:
         cross_section: strip
     component:
-      function: import_gds
-      settings:
-        decorator:
-          function: add_ports_from_siepic_pins
-          settings:
-            pin_layer_electrical:
-            - 1
-            - 11
-            pin_layer_optical:
-            - 1
-            - 10
-            port_layer_optical:
-            - 1
-            - 0
-        doc: TE waveguide crossing.
-        gdsdir: gds
-        gdspath: ebeam_crossing4.gds
-        library: Design kits/ebeam
-        model: ebeam_crossing4
+      function: ebeam_crossing4
     cross_section:
       function: cross_section
       settings:
@@ -62,7 +44,18 @@ settings:
       function: straight
       settings:
         cross_section: strip
-  child: {}
+  child:
+    changed: {}
+    child: null
+    default: {}
+    full: {}
+    function_name: ebeam_crossing4
+    info:
+      library: Design kits/ebeam
+      model: ebeam_crossing4
+    info_version: 2
+    module: ubcpdk.components
+    name: ebeam_crossing4
   default:
     bend:
       function: bend_euler
@@ -86,25 +79,7 @@ settings:
       settings:
         cross_section: strip
     component:
-      function: import_gds
-      settings:
-        decorator:
-          function: add_ports_from_siepic_pins
-          settings:
-            pin_layer_electrical:
-            - 1
-            - 11
-            pin_layer_optical:
-            - 1
-            - 10
-            port_layer_optical:
-            - 1
-            - 0
-        doc: TE waveguide crossing.
-        gdsdir: gds
-        gdspath: ebeam_crossing4.gds
-        library: Design kits/ebeam
-        model: ebeam_crossing4
+      function: ebeam_crossing4
     coupler:
       function: coupler_ring
     cross_section:
@@ -150,8 +125,10 @@ settings:
         cross_section: strip
     with_component: true
   function_name: ring_single_dut
-  info: {}
+  info:
+    library: Design kits/ebeam
+    model: ebeam_crossing4
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_d79cb48d
+  name: ebeam_crossing4_ring_si_00a2738b
 version: 0.0.1

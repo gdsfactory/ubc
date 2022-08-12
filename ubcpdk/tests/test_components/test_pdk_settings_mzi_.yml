@@ -1,4 +1,4 @@
-name: mzi_441a3ffa
+name: mzi_77da1a7c
 settings:
   changed:
     bend:
@@ -10,33 +10,7 @@ settings:
     port_e1_combiner: opt2
     port_e1_splitter: opt2
     splitter:
-      function: import_gds
-      settings:
-        decorator:
-          function: add_ports_from_siepic_pins
-          settings:
-            pin_layer_electrical:
-            - 1
-            - 11
-            pin_layer_optical:
-            - 1
-            - 10
-            port_layer_optical:
-            - 1
-            - 0
-        doc: Y junction TE1550 50/50 power.
-        gdsdir: gds
-        gdspath: ebeam_y_1550.gds
-        interconnect:
-          layout_model_port_pairs:
-            opt1: opt_a1
-            opt2: opt_b1
-            opt3: opt_b2
-          model: ebeam_y_1550
-          properties:
-            annotate: true
-        library: Design kits/ebeam
-        name: ebeam_y_1550
+      function: ebeam_y_1550
     straight:
       function: straight
       settings:
@@ -82,33 +56,7 @@ settings:
     port_e1_combiner: opt2
     port_e1_splitter: opt2
     splitter:
-      function: import_gds
-      settings:
-        decorator:
-          function: add_ports_from_siepic_pins
-          settings:
-            pin_layer_electrical:
-            - 1
-            - 11
-            pin_layer_optical:
-            - 1
-            - 10
-            port_layer_optical:
-            - 1
-            - 0
-        doc: Y junction TE1550 50/50 power.
-        gdsdir: gds
-        gdspath: ebeam_y_1550.gds
-        interconnect:
-          layout_model_port_pairs:
-            opt1: opt_a1
-            opt2: opt_b1
-            opt3: opt_b2
-          model: ebeam_y_1550
-          properties:
-            annotate: true
-        library: Design kits/ebeam
-        name: ebeam_y_1550
+      function: ebeam_y_1550
     straight:
       function: straight
       settings:
@@ -121,5 +69,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_441a3ffa
+  name: mzi_77da1a7c
 version: 0.0.1

@@ -12,9 +12,7 @@ port_width = 0.5
 
 
 def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> int:
-    """we assume that ports with x<0 are inputs (orientation=180deg)
-    and ports with x>0 are outputs
-    """
+    """Assumes ports with x<0 have orientation=180 and ports with x>0  orientation=0."""
     p = position
     if "gc" in name:
         return 0
@@ -33,7 +31,7 @@ def guess_port_orientaton(position: ndarray, name: str, label: str, n: int) -> i
 
 
 def remove_pins(component) -> Component:
-    """Remove PINS and"""
+    """Remove PINS."""
     component.remove_layers(layers=(LAYER.DEVREC, LAYER.PORT, LAYER.PORTE))
     component.paths = []
     component._bb_valid = False
@@ -51,9 +49,9 @@ def remove_pins_recursive(component):
 
 def add_ports(component: Component) -> Component:
     """Add ports from labels.
-    guessing port orientaton from port location
-    """
 
+    guess port orientaton from port location.
+    """
     c = component
     n = sum(1 for label in c.get_labels() if label.text.startswith("opt"))
     for label in c.get_labels():
@@ -83,16 +81,31 @@ add_ports_from_siepic_pins = gf.partial(
     port_layer_optical=LAYER.WG,
 )
 
-import_gds = gf.partial(
-    gf.import_gds,
-    gdsdir=PATH.gds,
-    library="Design kits/ebeam",
-    decorator=add_ports_from_siepic_pins,
-)
+
+def import_gds(gdspath, **kwargs):
+    return gf.import_gds(
+        gdspath,
+        gdsdir=PATH.gds,
+        library="Design kits/ebeam",
+        model=gdspath.split(".")[0],
+        decorator=add_ports_from_siepic_pins,
+        **kwargs
+    )
+
+
+def import_gc(gdspath, **kwargs):
+    c = import_gds(gdspath, **kwargs)
+    return c.mirror().flatten()
+
 
 if __name__ == "__main__":
+    from gdsfactory.write_cells import get_import_gds_script
+
+    script = get_import_gds_script(dirpath=PATH.gds, module="ubc.components")
+    print(script)
+
     # gdsname = "ebeam_crossing4.gds"
-    gdsname = "ebeam_y_1550.gds"
-    c = import_gds(gdsname)
+    # gdsname = "ebeam_y_1550.gds"
+    # c = import_gds(gdsname)
     # print(c.ports)
-    c.show(show_ports=False)
+    # c.show(show_ports=False)

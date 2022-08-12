@@ -1,0 +1,14 @@
+name: ebeam_BondPad
+settings:
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: ebeam_BondPad
+  info:
+    library: Design kits/ebeam
+    model: ebeam_BondPad
+  info_version: 2
+  module: ubcpdk.components
+  name: ebeam_BondPad
+version: 0.0.1

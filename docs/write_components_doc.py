@@ -1,8 +1,7 @@
 import pathlib
+from typing import Tuple
 import inspect
-import ubcpdk
-
-cells = ubcpdk.PDK.cells
+from ubcpdk import cells
 
 filepath = pathlib.Path(__file__).parent.absolute() / "components.rst"
 
@@ -20,8 +19,8 @@ skip = {
     "waveguide_template",
 }
 
-skip_plot = {}
-skip_settings = {"flatten", "safe_cell_names"}
+skip_plot: Tuple[str, ...] = ("add_fiber_array_siepic",)
+skip_settings: Tuple[str, ...] = ("flatten", "safe_cell_names")
 
 
 with open(filepath, "w+") as f:

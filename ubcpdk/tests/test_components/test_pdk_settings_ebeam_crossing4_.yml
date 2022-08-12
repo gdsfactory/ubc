@@ -1,0 +1,14 @@
+name: ebeam_crossing4
+settings:
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: ebeam_crossing4
+  info:
+    library: Design kits/ebeam
+    model: ebeam_crossing4
+  info_version: 2
+  module: ubcpdk.components
+  name: ebeam_crossing4
+version: 0.0.1

@@ -1,0 +1,16 @@
+name: ebeam_gc_te1550_90nmSlab
+settings:
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: ebeam_gc_te1550_90nmSlab
+  info:
+    library: Design kits/ebeam
+    model: ebeam_gc_te1550_90nmSlab
+    polarization: te
+    wavelength: 1.55
+  info_version: 2
+  module: ubcpdk.components
+  name: ebeam_gc_te1550_90nmSlab
+version: 0.0.1

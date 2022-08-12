@@ -1,0 +1,14 @@
+name: ebeam_y_adiabatic_1310
+settings:
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: ebeam_y_adiabatic_1310
+  info:
+    library: Design kits/ebeam
+    model: ebeam_y_adiabatic_1310
+  info_version: 2
+  module: ubcpdk.components
+  name: ebeam_y_adiabatic_1310
+version: 0.0.1

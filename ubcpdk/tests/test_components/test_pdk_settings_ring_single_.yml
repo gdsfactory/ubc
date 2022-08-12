@@ -1,14 +1,6 @@
-name: ring_single_e75e1864
+name: ring_single
 settings:
-  changed:
-    bend:
-      function: bend_euler
-      settings:
-        cross_section: strip
-    coupler_ring:
-      function: coupler_ring
-      settings:
-        cross_section: strip
+  changed: {}
   child: null
   default:
     bend:
@@ -25,12 +17,8 @@ settings:
   full:
     bend:
       function: bend_euler
-      settings:
-        cross_section: strip
     coupler_ring:
       function: coupler_ring
-      settings:
-        cross_section: strip
     cross_section: strip
     gap: 0.2
     length_x: 4.0
@@ -42,5 +30,5 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single
-  name: ring_single_e75e1864
+  name: ring_single
 version: 0.0.1
