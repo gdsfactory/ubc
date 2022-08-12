@@ -1,5 +1,5 @@
 """Loads a default_config from this file.
-Overwrites config with a `config.yml` in the current working directory (if any).
+Overwrites config with optional `config.yml` in the current working directory.
 """
 
 __all__ = ["PATH", "CONFIG"]

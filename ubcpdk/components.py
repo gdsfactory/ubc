@@ -30,17 +30,17 @@ info1310tm = dict(polarization="tm", wavelength=1.31)
 
 # @gf.cell
 # def Packaging_FibreArray_8ch() -> gf.Component:
-#     """Returns Packaging_FibreArray_8ch fixed cell."""
+#     """Return Packaging_FibreArray_8ch fixed cell."""
 #     return import_gds("Packaging_FibreArray_8ch.gds")
 # @gf.cell
 # def thermal_phase_shifters() -> gf.Component:
-#     """Returns thermal_phase_shifters fixed cell."""
+#     """Return thermal_phase_shifters fixed cell."""
 #     return import_gds("thermal_phase_shifters.gds")
 
 
 @gf.cell
 def ebeam_BondPad() -> gf.Component:
-    """Returns ebeam_BondPad fixed cell.
+    """Return ebeam_BondPad fixed cell.
 
     .. plot::
       :include-source:
@@ -55,7 +55,7 @@ def ebeam_BondPad() -> gf.Component:
 
 @gf.cell
 def ebeam_adiabatic_te1550() -> gf.Component:
-    """Returns ebeam_adiabatic_te1550 fixed cell.
+    """Return ebeam_adiabatic_te1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -70,7 +70,7 @@ def ebeam_adiabatic_te1550() -> gf.Component:
 
 @gf.cell
 def ebeam_adiabatic_tm1550() -> gf.Component:
-    """Returns ebeam_adiabatic_tm1550 fixed cell.
+    """Return ebeam_adiabatic_tm1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -85,7 +85,7 @@ def ebeam_adiabatic_tm1550() -> gf.Component:
 
 @gf.cell
 def ebeam_bdc_te1550() -> gf.Component:
-    """Returns ebeam_bdc_te1550 fixed cell.
+    """Return ebeam_bdc_te1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -100,7 +100,7 @@ def ebeam_bdc_te1550() -> gf.Component:
 
 @gf.cell
 def ebeam_bdc_tm1550() -> gf.Component:
-    """Returns ebeam_bdc_tm1550 fixed cell.
+    """Return ebeam_bdc_tm1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -115,7 +115,7 @@ def ebeam_bdc_tm1550() -> gf.Component:
 
 @gf.cell
 def ebeam_crossing4() -> gf.Component:
-    """Returns ebeam_crossing4 fixed cell.
+    """Return ebeam_crossing4 fixed cell.
 
     .. plot::
       :include-source:
@@ -130,7 +130,7 @@ def ebeam_crossing4() -> gf.Component:
 
 @gf.cell
 def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
-    """Returns ebeam_splitter_adiabatic_swg_te1550 fixed cell.
+    """Return ebeam_splitter_adiabatic_swg_te1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -145,7 +145,7 @@ def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
 
 @gf.cell
 def ebeam_splitter_swg_assist_te1310() -> gf.Component:
-    """Returns ebeam_splitter_swg_assist_te1310 fixed cell.
+    """Return ebeam_splitter_swg_assist_te1310 fixed cell.
 
     .. plot::
       :include-source:
@@ -160,7 +160,7 @@ def ebeam_splitter_swg_assist_te1310() -> gf.Component:
 
 @gf.cell
 def ebeam_splitter_swg_assist_te1550() -> gf.Component:
-    """Returns ebeam_splitter_swg_assist_te1550 fixed cell.
+    """Return ebeam_splitter_swg_assist_te1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -175,7 +175,7 @@ def ebeam_splitter_swg_assist_te1550() -> gf.Component:
 
 @gf.cell
 def ebeam_swg_edgecoupler() -> gf.Component:
-    """Returns ebeam_swg_edgecoupler fixed cell.
+    """Return ebeam_swg_edgecoupler fixed cell.
 
     .. plot::
       :include-source:
@@ -190,7 +190,7 @@ def ebeam_swg_edgecoupler() -> gf.Component:
 
 @gf.cell
 def ebeam_terminator_te1310() -> gf.Component:
-    """Returns ebeam_terminator_te1310 fixed cell.
+    """Return ebeam_terminator_te1310 fixed cell.
 
     .. plot::
       :include-source:
@@ -205,7 +205,7 @@ def ebeam_terminator_te1310() -> gf.Component:
 
 @gf.cell
 def ebeam_terminator_te1550() -> gf.Component:
-    """Returns ebeam_terminator_te1550 fixed cell.
+    """Return ebeam_terminator_te1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -220,7 +220,7 @@ def ebeam_terminator_te1550() -> gf.Component:
 
 @gf.cell
 def ebeam_terminator_tm1550() -> gf.Component:
-    """Returns ebeam_terminator_tm1550 fixed cell.
+    """Return ebeam_terminator_tm1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -235,7 +235,7 @@ def ebeam_terminator_tm1550() -> gf.Component:
 
 @gf.cell
 def ebeam_y_1550() -> gf.Component:
-    """Returns ebeam_y_1550 fixed cell.
+    """Return ebeam_y_1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -250,7 +250,7 @@ def ebeam_y_1550() -> gf.Component:
 
 @gf.cell
 def ebeam_y_adiabatic() -> gf.Component:
-    """Returns ebeam_y_adiabatic fixed cell.
+    """Return ebeam_y_adiabatic fixed cell.
 
     .. plot::
       :include-source:
@@ -265,7 +265,7 @@ def ebeam_y_adiabatic() -> gf.Component:
 
 @gf.cell
 def ebeam_y_adiabatic_1310() -> gf.Component:
-    """Returns ebeam_y_adiabatic_1310 fixed cell.
+    """Return ebeam_y_adiabatic_1310 fixed cell.
 
     .. plot::
       :include-source:
@@ -280,7 +280,7 @@ def ebeam_y_adiabatic_1310() -> gf.Component:
 
 @gf.cell
 def metal_via() -> gf.Component:
-    """Returns metal_via fixed cell.
+    """Return metal_via fixed cell.
 
     .. plot::
       :include-source:
@@ -295,7 +295,7 @@ def metal_via() -> gf.Component:
 
 @gf.cell
 def photonic_wirebond_surfacetaper_1310() -> gf.Component:
-    """Returns photonic_wirebond_surfacetaper_1310 fixed cell.
+    """Return photonic_wirebond_surfacetaper_1310 fixed cell.
 
     .. plot::
       :include-source:
@@ -310,7 +310,7 @@ def photonic_wirebond_surfacetaper_1310() -> gf.Component:
 
 @gf.cell
 def photonic_wirebond_surfacetaper_1550() -> gf.Component:
-    """Returns photonic_wirebond_surfacetaper_1550 fixed cell.
+    """Return photonic_wirebond_surfacetaper_1550 fixed cell.
 
     .. plot::
       :include-source:
@@ -325,7 +325,7 @@ def photonic_wirebond_surfacetaper_1550() -> gf.Component:
 
 @gf.cell
 def ebeam_gc_te1310() -> gf.Component:
-    """Returns ebeam_gc_te1310 fixed cell.
+    """Return ebeam_gc_te1310 fixed cell.
 
     .. plot::
       :include-source:
@@ -340,7 +340,7 @@ def ebeam_gc_te1310() -> gf.Component:
 
 @gf.cell
 def ebeam_gc_te1310_8deg() -> gf.Component:
-    """Returns ebeam_gc_te1310_8deg fixed cell.
+    """Return ebeam_gc_te1310_8deg fixed cell.
 
     .. plot::
       :include-source:
@@ -355,7 +355,7 @@ def ebeam_gc_te1310_8deg() -> gf.Component:
 
 @gf.cell
 def ebeam_gc_te1310_broadband() -> gf.Component:
-    """Returns ebeam_gc_te1310_broadband fixed cell.
+    """Return ebeam_gc_te1310_broadband fixed cell.
 
     .. plot::
       :include-source:
@@ -370,25 +370,25 @@ def ebeam_gc_te1310_broadband() -> gf.Component:
 
 @gf.cell
 def ebeam_gc_te1550() -> gf.Component:
-    """Returns ebeam_gc_te1550 fixed cell."""
+    """Return ebeam_gc_te1550 fixed cell."""
     return import_gc("ebeam_gc_te1550.gds", info=info1550te)
 
 
 @gf.cell
 def ebeam_gc_te1550_90nmSlab() -> gf.Component:
-    """Returns ebeam_gc_te1550_90nmSlab fixed cell."""
+    """Return ebeam_gc_te1550_90nmSlab fixed cell."""
     return import_gc("ebeam_gc_te1550_90nmSlab.gds", info=info1550te)
 
 
 @gf.cell
 def ebeam_gc_te1550_broadband() -> gf.Component:
-    """Returns ebeam_gc_te1550_broadband fixed cell."""
+    """Return ebeam_gc_te1550_broadband fixed cell."""
     return import_gc("ebeam_gc_te1550_broadband.gds", info=info1550te)
 
 
 @gf.cell
 def ebeam_gc_tm1550() -> gf.Component:
-    """Returns ebeam_gc_tm1550 fixed cell."""
+    """Return ebeam_gc_tm1550 fixed cell."""
     return import_gc("ebeam_gc_tm1550.gds", info=info1550tm)
 
 
@@ -462,7 +462,7 @@ def ebeam_dc_halfring_straight(
     model: str = "ebeam_dc_halfring_straight",
     **kwargs
 ) -> gf.Component:
-    r"""Returns a ring coupler.
+    r"""Return a ring coupler.
 
     Args:
         gap: spacing between parallel coupled straight waveguides.

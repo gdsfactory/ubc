@@ -5,9 +5,8 @@ with open("README.md") as f:
     LONG_DESCRIPTION = f.read()
 
 
-def get_install_requires():
-    with open("requirements.txt", "r") as f:
-        return [line.strip() for line in f.readlines() if not line.startswith("-")]
+with open("requirements.txt") as f:
+    requirements = [line.strip() for line in f.readlines()]
 
 
 setup(
@@ -17,7 +16,7 @@ setup(
     include_package_data=True,
     license="MIT",
     author="gdsfactory",
-    install_requires=get_install_requires(),
+    install_requires=requirements,
     # install_requires=('gdsfactory', 'modes', 'lygadgets')
     description="UBC Siepic Ebeam PDK from edx course",
     long_description=LONG_DESCRIPTION,
@@ -27,5 +26,10 @@ setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
 )
