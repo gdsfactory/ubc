@@ -61,8 +61,10 @@ LAYER = LayerMapUbc()
 
 
 def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
-    """Returns UBC LayerStack"""
-    ## TODO: Translate xml in lumerical process file
+    """Returns UBC LayerStack.
+
+    TODO: Translate xml in lumerical process file.
+    """
     return LayerStack(
         layers=dict(
             strip=LayerLevel(
