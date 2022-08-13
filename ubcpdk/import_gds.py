@@ -101,7 +101,7 @@ def import_gc(gdspath, **kwargs):
 if __name__ == "__main__":
     from gdsfactory.write_cells import get_import_gds_script
 
-    script = get_import_gds_script(dirpath=PATH.gds, module="ubc.components")
+    script = get_import_gds_script(dirpath=PATH.gds, module="ubcpdk.components")
     print(script)
 
     # gdsname = "ebeam_crossing4.gds"

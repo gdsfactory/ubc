@@ -1,6 +1,7 @@
 """Cells imported from the PDK."""
 
 import gdsfactory as gf
+from gdsfactory.types import ComponentSpec
 
 from ubcpdk.import_gds import import_gds, import_gc
 from ubcpdk.tech import strip, LAYER_STACK, LAYER
@@ -44,9 +45,9 @@ def ebeam_BondPad() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_BondPad()
+      c = ubcpdk.components.ebeam_BondPad()
       c.plot()
     """
     return import_gds("ebeam_BondPad.gds")
@@ -59,9 +60,9 @@ def ebeam_adiabatic_te1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_adiabatic_te1550()
+      c = ubcpdk.components.ebeam_adiabatic_te1550()
       c.plot()
     """
     return import_gds("ebeam_adiabatic_te1550.gds")
@@ -74,9 +75,9 @@ def ebeam_adiabatic_tm1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_adiabatic_tm1550()
+      c = ubcpdk.components.ebeam_adiabatic_tm1550()
       c.plot()
     """
     return import_gds("ebeam_adiabatic_tm1550.gds")
@@ -89,9 +90,9 @@ def ebeam_bdc_te1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_bdc_te1550()
+      c = ubcpdk.components.ebeam_bdc_te1550()
       c.plot()
     """
     return import_gds("ebeam_bdc_te1550.gds")
@@ -104,9 +105,9 @@ def ebeam_bdc_tm1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_bdc_tm1550()
+      c = ubcpdk.components.ebeam_bdc_tm1550()
       c.plot()
     """
     return import_gds("ebeam_bdc_tm1550.gds")
@@ -119,9 +120,9 @@ def ebeam_crossing4() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_crossing4()
+      c = ubcpdk.components.ebeam_crossing4()
       c.plot()
     """
     return import_gds("ebeam_crossing4.gds")
@@ -134,9 +135,9 @@ def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_splitter_adiabatic_swg_te1550()
+      c = ubcpdk.components.ebeam_splitter_adiabatic_swg_te1550()
       c.plot()
     """
     return import_gds("ebeam_splitter_adiabatic_swg_te1550.gds")
@@ -149,9 +150,9 @@ def ebeam_splitter_swg_assist_te1310() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_splitter_swg_assist_te1310()
+      c = ubcpdk.components.ebeam_splitter_swg_assist_te1310()
       c.plot()
     """
     return import_gds("ebeam_splitter_swg_assist_te1310.gds")
@@ -164,9 +165,9 @@ def ebeam_splitter_swg_assist_te1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_splitter_swg_assist_te1550()
+      c = ubcpdk.components.ebeam_splitter_swg_assist_te1550()
       c.plot()
     """
     return import_gds("ebeam_splitter_swg_assist_te1550.gds")
@@ -179,9 +180,9 @@ def ebeam_swg_edgecoupler() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_swg_edgecoupler()
+      c = ubcpdk.components.ebeam_swg_edgecoupler()
       c.plot()
     """
     return import_gds("ebeam_swg_edgecoupler.gds")
@@ -194,9 +195,9 @@ def ebeam_terminator_te1310() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_terminator_te1310()
+      c = ubcpdk.components.ebeam_terminator_te1310()
       c.plot()
     """
     return import_gds("ebeam_terminator_te1310.gds")
@@ -209,9 +210,9 @@ def ebeam_terminator_te1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_terminator_te1550()
+      c = ubcpdk.components.ebeam_terminator_te1550()
       c.plot()
     """
     return import_gds("ebeam_terminator_te1550.gds")
@@ -224,9 +225,9 @@ def ebeam_terminator_tm1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_terminator_tm1550()
+      c = ubcpdk.components.ebeam_terminator_tm1550()
       c.plot()
     """
     return import_gds("ebeam_terminator_tm1550.gds")
@@ -239,9 +240,9 @@ def ebeam_y_1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_y_1550()
+      c = ubcpdk.components.ebeam_y_1550()
       c.plot()
     """
     return import_gds("ebeam_y_1550.gds")
@@ -254,9 +255,9 @@ def ebeam_y_adiabatic() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_y_adiabatic()
+      c = ubcpdk.components.ebeam_y_adiabatic()
       c.plot()
     """
     return import_gds("ebeam_y_adiabatic.gds")
@@ -269,9 +270,9 @@ def ebeam_y_adiabatic_1310() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_y_adiabatic_1310()
+      c = ubcpdk.components.ebeam_y_adiabatic_1310()
       c.plot()
     """
     return import_gds("ebeam_y_adiabatic_1310.gds")
@@ -284,9 +285,9 @@ def metal_via() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.metal_via()
+      c = ubcpdk.components.metal_via()
       c.plot()
     """
     return import_gds("metal_via.gds")
@@ -299,9 +300,9 @@ def photonic_wirebond_surfacetaper_1310() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.photonic_wirebond_surfacetaper_1310()
+      c = ubcpdk.components.photonic_wirebond_surfacetaper_1310()
       c.plot()
     """
     return import_gds("photonic_wirebond_surfacetaper_1310.gds")
@@ -314,9 +315,9 @@ def photonic_wirebond_surfacetaper_1550() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.photonic_wirebond_surfacetaper_1550()
+      c = ubcpdk.components.photonic_wirebond_surfacetaper_1550()
       c.plot()
     """
     return import_gds("photonic_wirebond_surfacetaper_1550.gds")
@@ -329,9 +330,9 @@ def ebeam_gc_te1310() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_gc_te1310()
+      c = ubcpdk.components.ebeam_gc_te1310()
       c.plot()
     """
     return import_gc("ebeam_gc_te1310.gds", info=info1310te)
@@ -344,9 +345,9 @@ def ebeam_gc_te1310_8deg() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_gc_te1310_8deg()
+      c = ubcpdk.components.ebeam_gc_te1310_8deg()
       c.plot()
     """
     return import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
@@ -359,9 +360,9 @@ def ebeam_gc_te1310_broadband() -> gf.Component:
     .. plot::
       :include-source:
 
-      import ubc
+      import ubcpdk
 
-      c = ubc.components.ebeam_gc_te1310_broadband()
+      c = ubcpdk.components.ebeam_gc_te1310_broadband()
       c.plot()
     """
     return import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
@@ -404,8 +405,12 @@ mzi = gf.partial(
 )
 
 
+@gf.cell
 def add_fiber_array(
-    gc_port_name="opt1", grating_coupler=ebeam_gc_te1550, **kwargs
+    component: ComponentSpec = "straight",
+    gc_port_name: str = "opt1",
+    grating_coupler: ComponentSpec = ebeam_gc_te1550,
+    **kwargs
 ) -> gf.Component:
     """Returns component with grating couplers and labels on each port.
 
@@ -413,11 +418,11 @@ def add_fiber_array(
     Can add align_ports loopback reference structure on the edges.
 
     Args:
+        component: to connect.
         gc_port_name: grating coupler input port name 'o1'.
         grating_coupler: grating coupler instance, function or list of functions.
 
     keyword Args:
-        component: to connect.
         component_name: for the label.
         get_input_labels_function: function to get input labels for grating couplers.
         with_loopback: True, adds loopback structures.
@@ -430,7 +435,10 @@ def add_fiber_array(
     from gdsfactory.labels.siepic import add_fiber_array_siepic
 
     return add_fiber_array_siepic(
-        gc_port_name=gc_port_name, grating_coupler=grating_coupler, **kwargs
+        component=component,
+        gc_port_name=gc_port_name,
+        grating_coupler=grating_coupler,
+        **kwargs
     )
 
 
@@ -459,7 +467,7 @@ def dbr_cavity(**kwargs) -> gf.Component:
 
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     component = gf.get_component(component, **kwargs)
-    return add_fiber_array(component)
+    return add_fiber_array(component=component)
 
 
 bend = gf.components.bend_euler
@@ -561,5 +569,6 @@ if __name__ == "__main__":
     # c = spiral()
     # c= coupler()
     # c = ebeam_gc_tm1550()
-    c = add_fiber_array()
+    # c = add_fiber_array()
+    c = dbr_cavity_te()
     c.show(show_ports=True)
