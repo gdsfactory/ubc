@@ -1,7 +1,6 @@
 """Cells imported from the PDK."""
 
 import gdsfactory as gf
-from gdsfactory.labels.siepic import add_fiber_array_siepic
 
 from ubcpdk.import_gds import import_gds, import_gc
 from ubcpdk.tech import strip, LAYER_STACK, LAYER
@@ -404,11 +403,36 @@ mzi = gf.partial(
     cross_section="strip",
 )
 
-add_fiber_array = gf.partial(
-    add_fiber_array_siepic,
-    gc_port_name="opt1",
-    grating_coupler=ebeam_gc_te1550,
-)
+
+def add_fiber_array(
+    gc_port_name="opt1", grating_coupler=ebeam_gc_te1550, **kwargs
+) -> gf.Component:
+    """Returns component with grating couplers and labels on each port.
+
+    Routes all component ports south.
+    Can add align_ports loopback reference structure on the edges.
+
+    Args:
+        gc_port_name: grating coupler input port name 'o1'.
+        grating_coupler: grating coupler instance, function or list of functions.
+
+    keyword Args:
+        component: to connect.
+        component_name: for the label.
+        get_input_labels_function: function to get input labels for grating couplers.
+        with_loopback: True, adds loopback structures.
+        optical_routing_type: None: autoselection, 0: no extension.
+        fanout_length: None  # if None, automatic calculation of fanout length.
+        cross_section: spec.
+        layer_label: for label.
+
+    """
+    from gdsfactory.labels.siepic import add_fiber_array_siepic
+
+    return add_fiber_array_siepic(
+        gc_port_name=gc_port_name, grating_coupler=grating_coupler, **kwargs
+    )
+
 
 L = 1.55 / 4 / 2 / 2.44
 

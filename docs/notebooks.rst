@@ -12,4 +12,4 @@ Tutorials for `UBC PDK <https://github.com/gdsfactory/ubc>`_
 
    notebooks/00_layout.ipynb
    notebooks/11_sparameters.ipynb
-   notebooks/12_circuit_simulation.ipynb
+   notebooks/13_sim_plugins.ipynb
