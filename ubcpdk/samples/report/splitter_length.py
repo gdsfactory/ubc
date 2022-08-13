@@ -1,4 +1,5 @@
-"""
+"""Equations for MZI.
+
 w = 1.55
 io/ii = 1/2*(1+cos(beta*dl))
 beta = 2*np.pi*n/w
@@ -13,12 +14,13 @@ l = np.pi/beta
 import numpy as np
 
 
-def get_pi_length(w=1.55, n=2.4):
+def get_pi_length(w: float = 1.55, n: float = 2.4) -> float:
     return w / 2 / n
 
 
-def get_length(power_per_cent=80, w=1.55, n=2.4):
-    """
+def get_length(power_per_cent: float = 80, w: float = 1.55, n: float = 2.4) -> float:
+    """Returns length for a MZI based variable.
+
     io/ii = 1/2*(1+cos(beta*dl)) = sqrt(power_per_cent)
     1+cos(beta*dl) = 2* power_per_cent
     cos(beta*dl) = 2* power_per_cent - 1

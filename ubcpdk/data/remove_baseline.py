@@ -3,9 +3,9 @@ from ubcpdk.data.read_mat import read_mat
 
 
 def remove_baseline(wavelength: np.ndarray, power: np.ndarray, deg: int = 4):
-    """
+    """Return power corrected without baseline.
+
     Fit a polynomial ``p(x) = p[0] * x**deg + ... + p[deg]`` of degree `deg`
-    returns power corrected without baseline
     """
     pfit = np.polyfit(wavelength - np.mean(wavelength), power, deg)
     power_baseline = np.polyval(pfit, wavelength - np.mean(wavelength))

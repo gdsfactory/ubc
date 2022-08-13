@@ -1,12 +1,14 @@
+from gdsfactory.types import Tuple, PathType
 from scipy.io import loadmat
+import numpy as np
 
 
-def read_mat(filename, port=0):
-    """reads .mat file and returns np.array
+def read_mat(filename: PathType, port: int = 0) -> Tuple[np.ndarray, np.ndarray]:
+    """Reads .mat file and returns 2 np.arrays (wavelength, power).
+
     input: (.mat data download filename, port response)
     outputs parsed data array [wavelength (m), power (dBm)]
     data is assumed to be from automated measurement scanResults or scandata format
-
     based on SiEPIC_Photonics_Package/core.py
     """
     data = loadmat(filename)

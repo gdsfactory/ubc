@@ -1,4 +1,5 @@
 """Loads a default_config from this file.
+
 Overwrites config with optional `config.yml` in the current working directory.
 """
 

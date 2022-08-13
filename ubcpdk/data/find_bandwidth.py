@@ -2,14 +2,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def find_bandwidth(x, y, threshold=3):
-    """Finds the x bandwidth above a threshold around max(y)
+def find_bandwidth(x: np.ndarray, y: np.ndarray, threshold: float = 3) -> float:
+    """Return bandwidth of x above a threshold around max(y).
 
     Args:
-        x:
-        y:
-        threshold: default bandwidth point (in y scale units):
-            3 for dB, 0.5 if Y is in linear scale from 0 to 1
+        x: wavelength.
+        y: power.
+        threshold: default bandwidth point (in y scale units)
+            3 for dB, 0.5 if Y is in linear scale from 0 to 1.
     """
     index_max = np.argmax(y)
     ymax = y[index_max]
@@ -23,7 +23,7 @@ def find_bandwidth(x, y, threshold=3):
     return float(xr[ir] - xl[il])
 
 
-def plot_bandwidth(x, y, threshold=3):
+def plot_bandwidth(x, y, threshold: float = 3) -> None:
     index_max = np.argmax(y)
     ymax = y[index_max]
     ybw = ymax - threshold

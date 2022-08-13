@@ -1,5 +1,4 @@
-"""Customize gdsfactory mode simulations
-"""
+"""MPB mode simulations."""
 
 import gdsfactory as gf
 import gdsfactory.simulation.modes as gm

@@ -1,5 +1,4 @@
-""" data analysis module
-"""
+"""Data analysis module."""
 
 
 from .chop import chop
