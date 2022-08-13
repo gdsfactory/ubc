@@ -9,7 +9,7 @@ with open("requirements.txt") as f:
     requirements = [line.strip() for line in f.readlines()]
 
 
-with open("requirements_simulation.txt") as f:
+with open("requirements_simulations.txt") as f:
     requirements_full = [
         line.strip() for line in f.readlines() if not line.strip().startswith("-")
     ]
