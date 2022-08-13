@@ -11,7 +11,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="ubcpdk",
-    version="1.6.8",
+    version="1.7.0",
     url="https://github.com/gdsfactory/ubc",
     include_package_data=True,
     license="MIT",
