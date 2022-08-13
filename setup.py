@@ -9,6 +9,12 @@ with open("requirements.txt") as f:
     requirements = [line.strip() for line in f.readlines()]
 
 
+with open("requirements_simulation.txt") as f:
+    requirements_full = [
+        line.strip() for line in f.readlines() if not line.strip().startswith("-")
+    ]
+
+
 setup(
     name="ubcpdk",
     version="1.7.0",
@@ -23,6 +29,9 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(exclude=("tests",)),
     python_requires=">=3.7",
+    extras_require={
+        "full": list(set(requirements + requirements_full)),
+    },
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",

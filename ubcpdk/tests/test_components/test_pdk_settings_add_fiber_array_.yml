@@ -1,156 +1,18 @@
-name: straight_add_fiber_arra_bd61bb4d
+name: add_fiber_array
 settings:
-  changed:
-    gc_port_name: opt1
-    grating_coupler:
-      function: ebeam_gc_te1550
-  child:
-    changed:
-      fanout_length: 0.0
-      gc_port_name: opt1
-      grating_coupler:
-        function: ebeam_gc_te1550
-      layer_label:
-      - 10
-      - 0
-      optical_routing_type: 0
-      with_loopback: false
-    child:
-      changed: {}
-      child: null
-      default:
-        cross_section: strip
-        length: 10.0
-        npoints: 2
-        with_bbox: true
-      full:
-        cross_section: strip
-        length: 10.0
-        npoints: 2
-        with_bbox: true
-      function_name: straight
-      info:
-        interconnect:
-          layout_model_port_pairs:
-            o1: port 1
-            o2: port 2
-          layout_model_property_pairs:
-            wg_length:
-            - length
-            - 1.0e-06
-            wg_width:
-            - width
-            - 1.0e-06
-          model: ebeam_wg_integral_1550
-          properties:
-            annotate: false
-        length: 10.0
-        width: 0.5
-      info_version: 2
-      module: gdsfactory.components.straight
-      name: straight
-    default:
-      component:
-        function: straight
-      component_name: null
-      cross_section: strip
-      gc_port_labels: null
-      gc_port_name: o1
-      get_input_labels_function:
-        function: get_input_labels
-      grating_coupler:
-        function: grating_coupler_elliptical_trenches
-        settings:
-          polarization: te
-          taper_angle: 35
-      layer_label: TEXT
-      select_ports:
-        function: select_ports
-        settings:
-          port_type: optical
-    full:
-      component:
-        function: straight
-      component_name: null
-      cross_section: strip
-      fanout_length: 0.0
-      gc_port_labels: null
-      gc_port_name: opt1
-      get_input_labels_function:
-        function: get_input_labels
-      grating_coupler:
-        function: ebeam_gc_te1550
-      layer_label:
-      - 10
-      - 0
-      optical_routing_type: 0
-      select_ports:
-        function: select_ports
-        settings:
-          port_type: optical
-      with_loopback: false
-    function_name: add_fiber_array
-    info:
-      grating_coupler:
-        library: Design kits/ebeam
-        model: ebeam_gc_te1550
-        polarization: te
-        wavelength: 1.55
-      interconnect:
-        layout_model_port_pairs:
-          o1: port 1
-          o2: port 2
-        layout_model_property_pairs:
-          wg_length:
-          - length
-          - 1.0e-06
-          wg_width:
-          - width
-          - 1.0e-06
-        model: ebeam_wg_integral_1550
-        properties:
-          annotate: false
-      length: 10.0
-      width: 0.5
-    info_version: 2
-    module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_arra_b28db15b
+  changed: {}
+  child: null
   default:
-    component:
-      function: straight
-    component_name: null
-    cross_section: strip
-    fanout_length: 0.0
-    gc_port_name: o1
-    get_input_labels_function:
-      function: get_input_labels
-    grating_coupler:
-      function: grating_coupler_elliptical_trenches
-      settings:
-        polarization: te
-        taper_angle: 35
-    layer_label:
-    - 10
-    - 0
-    optical_routing_type: 0
-    with_loopback: false
-  full:
-    component:
-      function: straight
-    component_name: null
-    cross_section: strip
-    fanout_length: 0.0
+    component: straight
     gc_port_name: opt1
-    get_input_labels_function:
-      function: get_input_labels
     grating_coupler:
       function: ebeam_gc_te1550
-    layer_label:
-    - 10
-    - 0
-    optical_routing_type: 0
-    with_loopback: false
-  function_name: add_fiber_array_siepic
+  full:
+    component: straight
+    gc_port_name: opt1
+    grating_coupler:
+      function: ebeam_gc_te1550
+  function_name: add_fiber_array
   info:
     grating_coupler:
       library: Design kits/ebeam
@@ -174,6 +36,6 @@ settings:
     length: 10.0
     width: 0.5
   info_version: 2
-  module: gdsfactory.labels.siepic
-  name: straight_add_fiber_arra_bd61bb4d
+  module: ubcpdk.components
+  name: add_fiber_array
 version: 0.0.1
