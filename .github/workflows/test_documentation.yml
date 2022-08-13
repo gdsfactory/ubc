@@ -35,7 +35,7 @@ jobs:
           sudo apt install pandoc
           pip install gdsfactory[dev] triangle
           make install
-          make meep
+          make plugins
           pip install gdsfactory[sipann]
       - name: Test documentation
         run: |

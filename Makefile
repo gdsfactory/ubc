@@ -40,6 +40,11 @@ doc:
 meep:
 	mamba install pymeep=*=mpi_mpich_* -y
 
+sax:
+	pip install sax jax jaxlib
+
+plugins: sax meep
+
 diff:
 	pf merge-cells gds_diff
 
