@@ -52,6 +52,7 @@ class LayerMapUbc(BaseModel):
     LABEL_INSTANCE: Layer = (66, 0)
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
+    SLAB150: Layer = (2, 0)
 
     class Config:
         frozen = True
