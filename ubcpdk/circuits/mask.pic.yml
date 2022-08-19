@@ -1,7 +1,6 @@
 name: mask_compact
 pdk: ubcpdk
 
-
 instances:
   rings:
     component: pack_doe
@@ -29,9 +28,9 @@ instances:
   mmis:
     component: pack_doe_grid
     settings:
-      doe: mzi
+      doe: dbr_cavity
       settings:
-        delta_length: [10, 100, 300, 500, 600]
+        n: [10, 100]
       do_permutations: True
       spacing: [10, 10]
       function: add_fiber_single
@@ -42,3 +41,6 @@ placements:
 
   mzis:
     xmin: rings,east
+
+  mmis:
+    xmin: mzis,east

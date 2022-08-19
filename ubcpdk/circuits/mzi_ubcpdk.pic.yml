@@ -12,9 +12,9 @@ info:
 
 instances:
   yr:
-    component: y_splitter
+    component: ebeam_y_1550
   yl:
-    component: y_splitter
+    component: ebeam_y_1550
 
 placements:
   yr:

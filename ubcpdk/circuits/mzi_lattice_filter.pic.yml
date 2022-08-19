@@ -8,16 +8,17 @@ instances:
     settings:
       dy: -100
 
+
   mzi2:
     component: mzi_ubcpdk
     settings:
       dy: -500
 
   gc1:
-    component: gc_te1550
+    component: ebeam_gc_te1550
 
   gc2:
-    component: gc_te1550
+    component: ebeam_gc_te1550
 
 placements:
   mzi2:
@@ -29,7 +30,7 @@ placements:
   gc1:
     xmax: mzi1,west
     mirror: True
-    dx: -40
+    dx: -100
     dy: -20
 
   gc2:
