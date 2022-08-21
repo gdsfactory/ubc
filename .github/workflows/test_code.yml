@@ -26,8 +26,9 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: |
-          pip install -e .
+          make install
           pip install flake8 pytest
+          dvc pull
       - name: Lint with flake8
         run: |
           flake8 .

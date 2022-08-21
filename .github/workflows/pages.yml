@@ -30,7 +30,7 @@ jobs:
         run: |
           sudo apt install pandoc
           pip install gdsfactory[dev]
-          pip install -e .
+          make install
           make plugins
           pip install gdsfactory[sipann]
       - name: Running the Sphinx to gh-pages Action
