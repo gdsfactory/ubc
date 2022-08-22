@@ -4,6 +4,7 @@ directory = coverage_html_report
 [paths]
 source =
     tests/
+    ubcpdk
 
 [run]
 omit =
