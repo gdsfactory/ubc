@@ -19,11 +19,9 @@ jobs:
       - name: Install dependencies
         run: |
           make install
+          pip install pytest pytest-cov
       - name: Test with pytest
         run: |
-          pip install pytest
-          pip install pytest-cov
-          pytest --cov=ubcpdk --cov-report=xml
           pytest --cov=ubcpdk --cov-report=xml --cov-config=.coveragerc ubcpdk
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3

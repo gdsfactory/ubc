@@ -36,14 +36,16 @@ class Path:
     repo = repo
     samples = module / "samples"
     gds = module / "gds"
-    sparameters = repo / "sparameters"
-    interconnect_cml_path = module / "simulation" / "lumerical" / "EBeam.cml"
-    modes = repo / "modes"
-    mask = module / "samples" / "extra" / "ubc1"
+
     data = repo / "data"
     difftest = data / "gdstests"
-
     measurements = data / "measurements"
+
+    sparameters = data / "sparameters"
+    modes = data / "modes"
+
+    interconnect_cml_path = module / "simulation" / "lumerical" / "EBeam.cml"
+    mask = module / "samples" / "extra" / "ubc1"
     mzi = measurements / "mzi"
     mzi1 = mzi / "ZiheGao_MZI1_272_Scan1.mat"
     mzi3 = mzi / "ZiheGao_MZI2_271_Scan1.mat"
