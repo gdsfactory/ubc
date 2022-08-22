@@ -3,7 +3,7 @@ directory = coverage_html_report
 
 [paths]
 source =
-    ubcpdk/
+    tests/
 
 [run]
 omit =
