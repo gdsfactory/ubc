@@ -16,7 +16,7 @@ from ubcpdk.tech import cross_sections
 
 
 lys = gf.layers.load_lyp(PATH.lyp)
-__version__ = "1.7.3"
+__version__ = "1.7.4"
 
 __all__ = [
     "CONFIG",
