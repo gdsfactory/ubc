@@ -1,8 +1,8 @@
-name: add_fiber_array_5764a2ad
+name: add_fiber_array_1e7b25b3
 settings:
   changed:
     component:
-      name: dbr_cavity_6697eb2a
+      name: dbr_cavity_dde9ca01
       settings:
         changed:
           component:
@@ -27,7 +27,6 @@ settings:
               info_version: 2
               module: ubcpdk.components
               name: dbr
-            version: 0.0.1
         child:
           changed: {}
           child: null
@@ -78,7 +77,6 @@ settings:
               info_version: 2
               module: ubcpdk.components
               name: dbr
-            version: 0.0.1
           coupler:
             function: coupler
           gap: 0.2
@@ -87,8 +85,7 @@ settings:
         info: {}
         info_version: 2
         module: gdsfactory.components.cavity
-        name: dbr_cavity_6697eb2a
-      version: 0.0.1
+        name: dbr_cavity_dde9ca01
   child: null
   default:
     component: straight
@@ -97,7 +94,7 @@ settings:
       function: ebeam_gc_te1550
   full:
     component:
-      name: dbr_cavity_6697eb2a
+      name: dbr_cavity_dde9ca01
       settings:
         changed:
           component:
@@ -122,7 +119,6 @@ settings:
               info_version: 2
               module: ubcpdk.components
               name: dbr
-            version: 0.0.1
         child:
           changed: {}
           child: null
@@ -173,7 +169,6 @@ settings:
               info_version: 2
               module: ubcpdk.components
               name: dbr
-            version: 0.0.1
           coupler:
             function: coupler
           gap: 0.2
@@ -182,8 +177,7 @@ settings:
         info: {}
         info_version: 2
         module: gdsfactory.components.cavity
-        name: dbr_cavity_6697eb2a
-      version: 0.0.1
+        name: dbr_cavity_dde9ca01
     gc_port_name: opt1
     grating_coupler:
       function: ebeam_gc_te1550
@@ -196,5 +190,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: add_fiber_array_5764a2ad
-version: 0.0.1
+  name: add_fiber_array_1e7b25b3

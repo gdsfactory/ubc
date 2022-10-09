@@ -11,4 +11,3 @@ settings:
   info_version: 2
   module: ubcpdk.components
   name: ebeam_terminator_tm1550
-version: 0.0.1

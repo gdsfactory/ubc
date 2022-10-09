@@ -11,4 +11,3 @@ settings:
   info_version: 2
   module: ubcpdk.components
   name: ebeam_y_adiabatic
-version: 0.0.1

@@ -1,4 +1,4 @@
-name: dbr_cavity_6697eb2a
+name: dbr_cavity_dde9ca01
 settings:
   changed:
     component:
@@ -23,7 +23,6 @@ settings:
         info_version: 2
         module: ubcpdk.components
         name: dbr
-      version: 0.0.1
   child:
     changed: {}
     child: null
@@ -74,7 +73,6 @@ settings:
         info_version: 2
         module: ubcpdk.components
         name: dbr
-      version: 0.0.1
     coupler:
       function: coupler
     gap: 0.2
@@ -83,5 +81,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.cavity
-  name: dbr_cavity_6697eb2a
-version: 0.0.1
+  name: dbr_cavity_dde9ca01

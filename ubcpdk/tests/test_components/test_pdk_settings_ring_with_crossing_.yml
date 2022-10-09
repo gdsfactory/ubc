@@ -131,4 +131,3 @@ settings:
   info_version: 2
   module: gdsfactory.components.ring_single_dut
   name: ebeam_crossing4_ring_si_00a2738b
-version: 0.0.1

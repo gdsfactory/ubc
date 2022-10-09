@@ -13,43 +13,20 @@
 UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana) for gdsfactory.
 It provides a fully python driven flow alternative for the edx course for the most advanced users.
 
-## Documentation
-
-- run notebooks on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/ubc/HEAD)
-- [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
-- [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
-- [miniforge install instructions](https://github.com/conda-forge/miniforge#mambaforge)
-
 
 ## Installation
 
 ### Installation for users
 
 
-If you are on Windows, I recommend you install gdsfactory with Anaconda3, Miniconda3 or [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) (faster conda alternative) and `pip` for gdsfactory.
+[Download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases)
+
+Open this PDK folder in your conda terminal and then type
 
 
 ```
-mamba install gdsfactory -y
 pip install ubcpdk --upgrade
-gf tool install
 ```
-
-If you want to get all the extras (mode solvers, meep, circuit simulation ...)
-
-```
-mamba install gdsfactory -y
-mamba install pymeep=*=mpi_mpich_* -y
-pip install ubcpdk --upgrade
-gf tool install
-```
-
-Mamba is a faster alternative to conda, if you don't want to install mamba, you can also replace `mamba install gdsfactory -y` with `conda install -c conda-forge gdsfactory -y`
-
-If you use linux or MacOs you can install directly from pip `pip install ubcpdk` specify a specific version `pip install ubcpdk==1.7.3`
-and update to the latest version with `pip install ubcpdk --upgrade`
-
-I also recommend you install the gdsfactory link to klayout `gf tool install`
 
 
 
@@ -64,8 +41,15 @@ pip install -e .
 pip install pre-commit
 pre-commit install
 python install_tech.py
-gf tool install
 ```
+
+
+## Documentation
+
+- run notebooks on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/ubc/HEAD)
+- [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
+- [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
+
 
 ## Acks
 

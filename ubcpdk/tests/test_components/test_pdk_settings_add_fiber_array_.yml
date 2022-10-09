@@ -38,4 +38,3 @@ settings:
   info_version: 2
   module: ubcpdk.components
   name: add_fiber_array
-version: 0.0.1

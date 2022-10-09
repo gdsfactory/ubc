@@ -11,4 +11,3 @@ settings:
   info_version: 2
   module: ubcpdk.components
   name: ebeam_bdc_te1550
-version: 0.0.1

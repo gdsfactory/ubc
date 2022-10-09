@@ -13,4 +13,3 @@ settings:
   info_version: 2
   module: ubcpdk.components
   name: ebeam_gc_te1310_8deg
-version: 0.0.1

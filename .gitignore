@@ -6,6 +6,7 @@ run_layouts/
 ref_layouts/
 ubcpdk/tests/test_components.gds/gds_run/
 ubcpdk/tests/test_components.gds/gds_diff/
+.dvc/
 
 # C extensions
 *.so
