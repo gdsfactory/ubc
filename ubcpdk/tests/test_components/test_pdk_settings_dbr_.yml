@@ -3,12 +3,14 @@ settings:
   changed: {}
   child: null
   default:
+    cross_section: strip_no_pins
     dw: 0.1
     l1: 0.07940573770491803
     l2: 0.07940573770491803
     n: 600
     w0: 0.5
   full:
+    cross_section: strip_no_pins
     dw: 0.1
     l1: 0.07940573770491803
     l2: 0.07940573770491803

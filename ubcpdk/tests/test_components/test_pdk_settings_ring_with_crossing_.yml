@@ -57,14 +57,12 @@ settings:
     module: ubcpdk.components
     name: ebeam_crossing4
   default:
-    bend:
-      function: bend_euler
+    bend: bend_euler
     component:
       function: taper
       settings:
         width2: 3
-    coupler:
-      function: coupler_ring
+    coupler: coupler_ring
     gap: 0.2
     length_x: 4
     length_y: 0
@@ -80,8 +78,7 @@ settings:
         cross_section: strip
     component:
       function: ebeam_crossing4
-    coupler:
-      function: coupler_ring
+    coupler: coupler_ring
     cross_section:
       function: cross_section
       settings:

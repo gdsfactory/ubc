@@ -8,6 +8,7 @@
  <doc/>
  <autorun>true</autorun>
  <autorun-early>false</autorun-early>
+ <priority>0</priority>
  <shortcut/>
  <show-in-menu>false</show-in-menu>
  <group-name/>
@@ -37,17 +38,17 @@ else:
 
         # As of yet, we are not putting pcells in klayout's GSI namespace. This might change.
         # For now, just get the files explicitly and make a WrappedLibrary.
-        import sys, os
-        sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
-        sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
+        #import sys, os
+        #sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
+        #sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-        from ubcpdk.components import factory
-        class UbcLib(lygadgets.WrappedLibrary):
+        from ubcpdk import cells
+        class UBC(lygadgets.WrappedLibrary):
             tech_name = "ubcpdk"
-            all_funcs_to_wrap = factory.values()
+            all_funcs_to_wrap = cells.values()
             description = "ubcpdk"
 
-        UbcLib()
+        UBC()
 
 </text>
 </klayout-macro>

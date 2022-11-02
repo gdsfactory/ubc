@@ -1,8 +1,8 @@
-name: add_fiber_array_1e7b25b3
+name: add_fiber_array_eab0e416
 settings:
   changed:
     component:
-      name: dbr_cavity_dde9ca01
+      name: dbr_cavity_11e4c29a
       settings:
         changed:
           component:
@@ -11,12 +11,14 @@ settings:
               changed: {}
               child: null
               default:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
                 n: 600
                 w0: 0.5
               full:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
@@ -27,16 +29,20 @@ settings:
               info_version: 2
               module: ubcpdk.components
               name: dbr
+          coupler:
+            function: coupler
         child:
           changed: {}
           child: null
           default:
+            cross_section: strip_no_pins
             dw: 0.1
             l1: 0.07940573770491803
             l2: 0.07940573770491803
             n: 600
             w0: 0.5
           full:
+            cross_section: strip_no_pins
             dw: 0.1
             l1: 0.07940573770491803
             l2: 0.07940573770491803
@@ -50,8 +56,7 @@ settings:
         default:
           component:
             function: dbr
-          coupler:
-            function: coupler
+          coupler: coupler
           gap: 0.2
           length: 0.1
         full:
@@ -61,12 +66,14 @@ settings:
               changed: {}
               child: null
               default:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
                 n: 600
                 w0: 0.5
               full:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
@@ -85,7 +92,7 @@ settings:
         info: {}
         info_version: 2
         module: gdsfactory.components.cavity
-        name: dbr_cavity_dde9ca01
+        name: dbr_cavity_11e4c29a
   child: null
   default:
     component: straight
@@ -94,7 +101,7 @@ settings:
       function: ebeam_gc_te1550
   full:
     component:
-      name: dbr_cavity_dde9ca01
+      name: dbr_cavity_11e4c29a
       settings:
         changed:
           component:
@@ -103,12 +110,14 @@ settings:
               changed: {}
               child: null
               default:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
                 n: 600
                 w0: 0.5
               full:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
@@ -119,16 +128,20 @@ settings:
               info_version: 2
               module: ubcpdk.components
               name: dbr
+          coupler:
+            function: coupler
         child:
           changed: {}
           child: null
           default:
+            cross_section: strip_no_pins
             dw: 0.1
             l1: 0.07940573770491803
             l2: 0.07940573770491803
             n: 600
             w0: 0.5
           full:
+            cross_section: strip_no_pins
             dw: 0.1
             l1: 0.07940573770491803
             l2: 0.07940573770491803
@@ -142,8 +155,7 @@ settings:
         default:
           component:
             function: dbr
-          coupler:
-            function: coupler
+          coupler: coupler
           gap: 0.2
           length: 0.1
         full:
@@ -153,12 +165,14 @@ settings:
               changed: {}
               child: null
               default:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
                 n: 600
                 w0: 0.5
               full:
+                cross_section: strip_no_pins
                 dw: 0.1
                 l1: 0.07940573770491803
                 l2: 0.07940573770491803
@@ -177,7 +191,7 @@ settings:
         info: {}
         info_version: 2
         module: gdsfactory.components.cavity
-        name: dbr_cavity_dde9ca01
+        name: dbr_cavity_11e4c29a
     gc_port_name: opt1
     grating_coupler:
       function: ebeam_gc_te1550
@@ -190,4 +204,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: add_fiber_array_1e7b25b3
+  name: add_fiber_array_eab0e416

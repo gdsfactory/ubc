@@ -11,7 +11,6 @@ link:
 	lygadgets_link lygadgets
 	lygadgets_link gdsfactory
 	lygadgets_link toolz
-	lygadgets_link phidl
 	lygadgets_link gdspy
 	lygadgets_link numpy
 	lygadgets_link matplotlib
@@ -25,7 +24,7 @@ link:
 	lygadgets_link omegaconf
 	lygadgets_link loguru
 	lygadgets_link pydantic
-	lygadgets_link picwriter
+	lygadgets_link shapely
 
 test:
 	pytest -s

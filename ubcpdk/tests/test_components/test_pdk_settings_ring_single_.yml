@@ -1,19 +1,19 @@
-name: ring_single
+name: ring_single_9ab3dce2
 settings:
-  changed: {}
-  child: null
-  default:
+  changed:
     bend:
       function: bend_euler
     coupler_ring:
       function: coupler_ring
+  child: null
+  default:
+    bend: bend_euler
+    coupler_ring: coupler_ring
     cross_section: strip
     gap: 0.2
     length_x: 4.0
     length_y: 0.6
     radius: 10.0
-    straight:
-      function: straight
   full:
     bend:
       function: bend_euler
@@ -24,10 +24,8 @@ settings:
     length_x: 4.0
     length_y: 0.6
     radius: 10.0
-    straight:
-      function: straight
   function_name: ring_single
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single
-  name: ring_single
+  name: ring_single_9ab3dce2

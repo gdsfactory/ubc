@@ -447,17 +447,16 @@ L = 1.55 / 4 / 2 / 2.44
 
 @gf.cell
 def dbr(
-    w0: float = 0.5, dw: float = 0.1, n: int = 600, l1: float = L, l2: float = L
+    w0: float = 0.5,
+    dw: float = 0.1,
+    n: int = 600,
+    l1: float = L,
+    l2: float = L,
+    cross_section="strip_no_pins",
 ) -> gf.Component:
-    straight_no_pins = gf.partial(gf.components.straight, cross_section="strip_no_pins")
 
     return gf.components.dbr(
-        w1=w0 - dw / 2,
-        w2=w0 + dw / 2,
-        n=n,
-        l1=l1,
-        l2=l2,
-        straight=straight_no_pins,
+        w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, cross_section=cross_section
     )
 
 
