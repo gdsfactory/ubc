@@ -35,7 +35,6 @@ else:
         pass
     else:
         # add a PCell library
-
         # As of yet, we are not putting pcells in klayout's GSI namespace. This might change.
         # For now, just get the files explicitly and make a WrappedLibrary.
         #import sys, os
@@ -47,7 +46,6 @@ else:
             tech_name = "ubcpdk"
             all_funcs_to_wrap = cells.values()
             description = "ubcpdk"
-
         UBC()
 
 </text>

@@ -34,7 +34,7 @@ test-force:
 	pytest --force-regen
 
 doc:
-	python docs/write_components_doc.py
+	python docs/write_components_autodoc.py
 
 meep:
 	mamba install pymeep=*=mpi_mpich_* -y

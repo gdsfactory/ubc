@@ -12,7 +12,6 @@ Components
    :toctree: _autosummary/
 
    add_fiber_array
-   add_fiber_array_siepic
    bend
    bend_euler
    bend_s

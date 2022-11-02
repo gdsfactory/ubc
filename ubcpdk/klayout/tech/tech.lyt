@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <technology>
- <name>EBeam</name>
+ <name>UCBPDK</name>
  <description/>
  <group/>
  <dbu>0.001</dbu>
  <base-path/>
  <original-base-path>/home/jmatres/ubc/ubcpdk/klayout/tech</original-base-path>
- <layer-properties_file>klayout_Layers_EBeam.lyp</layer-properties_file>
+ <layer-properties_file>layers.lyp</layer-properties_file>
  <add-other-layers>true</add-other-layers>
  <reader-options>
   <gds2>
