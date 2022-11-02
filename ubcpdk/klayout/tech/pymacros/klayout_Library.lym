@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <klayout-macro>
- <description/>
+ <description>import_ubcpdk_PCells</description>
  <version/>
  <category>pymacros</category>
  <prolog/>
  <epilog/>
  <doc/>
- <autorun>true</autorun>
+ <autorun>false</autorun>
  <autorun-early>false</autorun-early>
  <priority>0</priority>
  <shortcut/>
- <show-in-menu>false</show-in-menu>
+ <show-in-menu>true</show-in-menu>
  <group-name/>
- <menu-path/>
+ <menu-path>ubcpdk.begin</menu-path>
  <interpreter>python</interpreter>
  <dsl-interpreter-name/>
  <text>
