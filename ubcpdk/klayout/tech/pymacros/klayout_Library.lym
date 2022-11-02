@@ -17,36 +17,34 @@
  <dsl-interpreter-name/>
  <text>
 
-# check if lygadgets exists
 try:
-    import lygadgets
+    import flayout as fl
+    from ubcpdk import cells
 except ImportError:
     import pya
-    pya.MessageBox.info('lygadgets message',
-                        ('lygadgets has not been linked. So ubc pcells will not be available.\n' +
+    pya.MessageBox.info('ubcpdk message',
+                        ('ubcpdk has not been installed. So ubcpdk pcells will not be available.\n' +
                          'To use these, go into terminal/command line anywhere and type\n\n' +
-                         'pip install lygadgets\nlygadgets_link lygadgets'),
+                         'pip install ubcpdk'),
                         pya.MessageBox.Ok)
-else:
-    # check if lygadgets has the right version
-    try:
-        lygadgets.WrappedLibrary
-    except AttributeError:
-        pass
-    else:
-        # add a PCell library
-        # As of yet, we are not putting pcells in klayout's GSI namespace. This might change.
-        # For now, just get the files explicitly and make a WrappedLibrary.
-        #import sys, os
-        #sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
-        #sys.path.append(os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-        from ubcpdk import cells
-        class UBC(lygadgets.WrappedLibrary):
-            tech_name = "ubcpdk"
-            all_funcs_to_wrap = cells.values()
-            description = "ubcpdk"
-        UBC()
+
+pcells = []
+for name, cell in cells.items():
+    # Would be nice to add SiEPIC pins to all of these
+    try:
+      pcells.append(fl.pcell(cell, on_error="ignore"))
+    except:
+      # Currently, pcells defined with partial don't work due to a missing __name__ attribute
+      pass
+
+# Cell
+generic_lib = fl.library(
+    "ubcpdk",
+    pcells=pcells,
+    cells=[],
+    description="UBCPDK PCell Library",
+)
 
 </text>
 </klayout-macro>
