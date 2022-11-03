@@ -3,3 +3,6 @@ format:
 
 sync:
 	jupytext --sync *.ipynb
+
+convert:
+	jupytext *.ipynb --to *.py  
