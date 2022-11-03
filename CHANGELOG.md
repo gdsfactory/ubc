@@ -2,7 +2,7 @@
 
 ## [1.8.0](https://github.com/gdsfactory/ubc/pull/65)
 
-- update to gdsfactory 5.50.0
+- update to gdsfactory 5.50.3
 
 ## [1.6.6](https://github.com/gdsfactory/ubc/pull/65)
 
