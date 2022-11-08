@@ -1,4 +1,4 @@
 lygadgets
 flayout
-gdsfactory[full]==5.50.3
+gdsfactory[full]==5.55.0
 modes==1.0.6
