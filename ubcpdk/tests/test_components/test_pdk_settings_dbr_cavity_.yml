@@ -1,30 +1,9 @@
-name: dbr_cavity_11e4c29a
+name: dbr_cavity_aa257b23
 settings:
   changed:
     component:
-      name: dbr
-      settings:
-        changed: {}
-        child: null
-        default:
-          cross_section: strip_no_pins
-          dw: 0.1
-          l1: 0.07940573770491803
-          l2: 0.07940573770491803
-          n: 600
-          w0: 0.5
-        full:
-          cross_section: strip_no_pins
-          dw: 0.1
-          l1: 0.07940573770491803
-          l2: 0.07940573770491803
-          n: 600
-          w0: 0.5
-        function_name: dbr
-        info: {}
-        info_version: 2
-        module: ubcpdk.components
-        name: dbr
+      component: dbr
+      settings: {}
     coupler:
       function: coupler
   child:
@@ -57,29 +36,8 @@ settings:
     length: 0.1
   full:
     component:
-      name: dbr
-      settings:
-        changed: {}
-        child: null
-        default:
-          cross_section: strip_no_pins
-          dw: 0.1
-          l1: 0.07940573770491803
-          l2: 0.07940573770491803
-          n: 600
-          w0: 0.5
-        full:
-          cross_section: strip_no_pins
-          dw: 0.1
-          l1: 0.07940573770491803
-          l2: 0.07940573770491803
-          n: 600
-          w0: 0.5
-        function_name: dbr
-        info: {}
-        info_version: 2
-        module: ubcpdk.components
-        name: dbr
+      component: dbr
+      settings: {}
     coupler:
       function: coupler
     gap: 0.2
@@ -88,4 +46,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.cavity
-  name: dbr_cavity_11e4c29a
+  name: dbr_cavity_aa257b23
