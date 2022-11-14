@@ -560,14 +560,14 @@ ring_with_crossing = gf.partial(
 
 
 if __name__ == "__main__":
+    # c = ebeam_crossing4()
     # c = ebeam_dc_te1550()
     # c = ebeam_y_1550()
     # c = ebeam_bdc_te1550()
-    # c = ebeam_gc_te1550()
-    # c = add_fiber_array(c)
+    c = ebeam_gc_te1550()
     # c = spiral()
     # c= coupler()
     # c = ebeam_gc_tm1550()
     # c = add_fiber_array()
-    c = dbr_cavity_te()
+    # c = dbr_cavity_te()
     c.show(show_ports=True)

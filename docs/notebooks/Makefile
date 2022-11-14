@@ -5,4 +5,4 @@ sync:
 	jupytext --sync *.ipynb
 
 convert:
-	jupytext *.ipynb --to *.py  
+	jupytext *.ipynb --to *.py
