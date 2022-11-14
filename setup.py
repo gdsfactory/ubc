@@ -17,7 +17,7 @@ with open("requirements_simulations.txt") as f:
 
 setup(
     name="ubcpdk",
-    version="1.8.0",
+    version="1.9.0",
     url="https://github.com/gdsfactory/ubc",
     include_package_data=True,
     license="MIT",
