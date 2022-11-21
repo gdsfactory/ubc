@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -e .
-          pip install flake8 pytest
+          pip install -r requirements_dev.txt
       - name: Lint with flake8
         run: |
           flake8 .
