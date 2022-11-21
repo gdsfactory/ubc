@@ -2,7 +2,7 @@
 
 ## 1.10.0
 
-- update to gdsfactory 6.2.1
+- update to gdsfactory 6.2.1 [PR](https://github.com/gdsfactory/ubc/pull/120)
 
 ## [1.9.0](https://github.com/gdsfactory/ubc/pull/116)
 
