@@ -1,22 +1,32 @@
 """Symlink tech to klayout."""
 
-import os
-import pathlib
+import shutil
 import sys
+import os
 import subprocess
-
-klayout_folder = "KLayout" if sys.platform == "win32" else ".klayout"
-cwd = pathlib.Path(__file__).resolve().parent
-home = pathlib.Path.home()
-src = cwd / "ubcpdk" / "klayout" / "tech"
-dest_folder = home / klayout_folder / "tech"
-dest_folder.mkdir(exist_ok=True, parents=True)
-dest = dest_folder / "ubcpdk"
+import pathlib
 
 
-def make_link(src, dest):
+def remove_path_or_dir(dest: pathlib.Path):
+    if dest.is_dir():
+        if dest.is_symlink():
+            os.unlink(dest)
+        else:
+            shutil.rmtree(dest)
+    else:
+        os.remove(dest)
+
+
+def make_link(src, dest, overwrite: bool = True) -> None:
+    dest = pathlib.Path(dest)
+    if dest.exists() and not overwrite:
+        print(f"{dest} already exists")
+        return
+    if dest.exists() or dest.is_symlink():
+        print(f"removing {dest} already installed")
+        remove_path_or_dir(dest)
     try:
-        os.symlink(src, dest)
+        os.symlink(src, dest, target_is_directory=True)
     except OSError as err:
         print("Could not create symlink!")
         print("     Error: ", err)
@@ -26,44 +36,17 @@ def make_link(src, dest):
             proc = subprocess.check_call(f"mklink /J {dest} {src}", shell=True)
             if proc != 0:
                 print("Could not create link!")
-
-
-def install_tech(src, dest):
-    """Installs tech."""
-    if dest.exists():
-        print(f"tech already installed in {dest}")
-        return
-
-    try:
-        make_link(src, dest)
-    except Exception:
-        os.remove(dest)
-        make_link(src, dest)
-
-    print(f"layermap installed to {dest}")
-
-
-def install_drc(src, dest):
-    """Installs drc."""
-    if dest.exists():
-        print("drc already installed")
-        return
-
-    dest_folder = dest.parent
-    dest_folder.mkdir(exist_ok=True, parents=True)
-    try:
-        make_link(src, dest)
-    except Exception:
-        os.remove(dest)
-        make_link(src, dest)
-
-    print(f"drc installed to {dest}")
+    print("Symlink made:")
+    print(f"From: {src}")
+    print(f"To:   {dest}")
 
 
 if __name__ == "__main__":
-
-    install_tech(src=src, dest=dest)
-
-    # src = cwd / "klayout" / "tech" / "drc.lydrc"
-    # dest = home / klayout_folder / "drc" / "drc.lydrc"
-    # install_drc(src, dest)
+    klayout_folder = "KLayout" if sys.platform == "win32" else ".klayout"
+    cwd = pathlib.Path(__file__).resolve().parent
+    home = pathlib.Path.home()
+    src = cwd / "ubcpdk" / "klayout" / "tech"
+    dest_folder = home / klayout_folder / "tech"
+    dest_folder.mkdir(exist_ok=True, parents=True)
+    dest = dest_folder / "ubcpdk"
+    make_link(src=src, dest=dest)
