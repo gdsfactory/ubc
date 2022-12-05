@@ -53,7 +53,7 @@ repos:
     rev: 6a9d7a7a7d0db950a1bd8d5ecdd3298f114d2a12
     hooks:
       - id: codespell
-        args: ["-L TE,TE/TM,te,ba,FPR,fpr_spacing,ro,nd,donot,schem"]
+        args: ["-L TE,TE/TM,te,ba,FPR,fpr_spacing,ro,nd,donot,schem,pard"]
 
   # - repo: https://github.com/shellcheck-py/shellcheck-py
   #   rev: 98854f809ca9d0e235c0bd5c0ad5e986e02120a4
@@ -107,10 +107,10 @@ repos:
   #   hooks:
   #       - id: darglint
   #
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: "a6fe4222012e990042c86cdaaa904a8d059752ee"
-    hooks:
-        - id: pydocstyle
+  # - repo: https://github.com/pycqa/pydocstyle
+  #   rev: "a6fe4222012e990042c86cdaaa904a8d059752ee"
+  #   hooks:
+  #       - id: pydocstyle
   # - repo: https://github.com/asottile/reorder_python_imports
   #   rev: 2b2f0c74acdb3de316e23ceb7dd0d7945c354050
   #   hooks:
