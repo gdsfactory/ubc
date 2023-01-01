@@ -24,19 +24,6 @@ add_pins_siepic = gf.partial(add_pins_siepic_10nm, pin_length=100 * nm)
 add_pins_bbox_siepic = gf.partial(add_pins_bbox_siepic_10nm, pin_length=100 * nm)
 
 
-MATERIAL_NAME_TO_LUMERICAL = {
-    "si": "Si (Silicon) - Palik",
-    "sio2": "SiO2 (Glass) - Palik",
-    "sin": "Si3N4 (Silicon Nitride) - Phillip",
-}
-
-MATERIAL_NAME_TO_TIDY3D_INDEX = {
-    "si": 3.47,
-    "sio2": 1.44,
-    "sin": 2.0,
-}
-
-
 class LayerMapUbc(BaseModel):
     WG: Layer = (1, 0)
     WG2: Layer = (31, 0)
@@ -114,21 +101,21 @@ strip_wg_simulation_info = dict(
 
 
 strip_pins = gf.partial(
-    gf.cross_section.strip,
+    gf.cross_section.strip_siepic,
     layer=LAYER.WG,
     width=TECH.WG["width"],
     info=dict(interconnect=strip_wg_simulation_info),
     add_pins=add_pins_siepic,
 )
 strip = gf.partial(
-    gf.cross_section.strip,
+    gf.cross_section.strip_siepic,
     layer=LAYER.WG,
     width=TECH.WG["width"],
     info=dict(interconnect=strip_wg_simulation_info),
     add_pins=add_pins_siepic,
 )
 strip_no_pins = gf.partial(
-    gf.cross_section.cross_section,
+    gf.cross_section.strip,
     layer=LAYER.WG,
     width=TECH.WG["width"],
 )

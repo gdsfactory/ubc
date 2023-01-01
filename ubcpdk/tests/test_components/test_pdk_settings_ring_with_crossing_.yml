@@ -1,4 +1,4 @@
-name: ebeam_crossing4_ring_si_00a2738b
+name: ebeam_crossing4_ring_si_19a88ee5
 settings:
   changed:
     bend:
@@ -40,10 +40,6 @@ settings:
         - 0
         width: 0.5
     port_name: opt4
-    straight:
-      function: straight
-      settings:
-        cross_section: strip
   child:
     changed: {}
     child: null
@@ -70,8 +66,6 @@ settings:
     length_y: 0
     port_name: o1
     radius: 5.0
-    straight:
-      function: straight
     with_component: true
   full:
     bend:
@@ -119,10 +113,6 @@ settings:
     length_y: 0
     port_name: opt4
     radius: 5.0
-    straight:
-      function: straight
-      settings:
-        cross_section: strip
     with_component: true
   function_name: ring_single_dut
   info:
@@ -130,4 +120,4 @@ settings:
     model: ebeam_crossing4
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ebeam_crossing4_ring_si_00a2738b
+  name: ebeam_crossing4_ring_si_19a88ee5
