@@ -28,7 +28,7 @@ jobs:
         shell: bash -l {0}
         run: |
           sudo apt install pandoc
-          pip install gdsfactory[dev]
+          pip install -r requirements_dev.txt
           pip install -e .
           make plugins
       - name: Running the Sphinx to gh-pages Action
