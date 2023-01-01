@@ -3,9 +3,8 @@ name: Sphinx docs to gh-pages
 on:
   push:
     branches:
-      - master
-
-# workflow_dispatch:        # Un comment line if you also want to trigger action manually
+      - main
+  workflow_dispatch:
 
 jobs:
   sphinx_docs_to_gh-pages:
@@ -32,10 +31,13 @@ jobs:
           pip install gdsfactory[dev]
           pip install -e .
           make plugins
-          pip install gdsfactory[sipann]
       - name: Running the Sphinx to gh-pages Action
         uses: uibcdf/action-sphinx-docs-to-gh-pages@v1.0-beta.2
+        env:
+          TIDY3D_USER: ${{ secrets.TIDY3D_EMAIL }}
+          TIDY3D_PASS: ${{ secrets.TIDY3D_PASSWORD }}
+          DISPLAY: 1.0
         with:
-          branch: master
+          branch: main
           dir_docs: docs
           sphinxopts: ""
