@@ -520,8 +520,8 @@ def ebeam_dc_halfring_straight(
         radius=radius,
         length_x=length_x,
         bend=bend_euler,
-        straight=straight,
         cross_section=cross_section,
+        **kwargs
     )
     x = gf.get_cross_section(cross_section=cross_section, **kwargs)
     thickness = LAYER_STACK.get_layer_to_thickness()
@@ -554,17 +554,20 @@ ring_with_crossing = gf.partial(
     component=ebeam_crossing4,
     port_name="opt4",
     bend=bend_euler,
-    straight=straight,
     cross_section=strip,
 )
 
 
 if __name__ == "__main__":
+    # c = mzi()
+    c = ring_with_crossing()
+    # c = ring_single()
     # c = ebeam_crossing4()
+    # c = ebeam_dc_halfring_straight()
     # c = ebeam_dc_te1550()
     # c = ebeam_y_1550()
     # c = ebeam_bdc_te1550()
-    c = ebeam_gc_te1550()
+    # c = ebeam_gc_te1550()
     # c = spiral()
     # c= coupler()
     # c = ebeam_gc_tm1550()

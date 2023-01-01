@@ -152,7 +152,7 @@
 
 ## 0.0.12
 
-- fix installation by addding lyp files to MANIFEST
+- fix installation by adding lyp files to MANIFEST
 - compatible with latest gdsfactory
 - `pip install ubcpdk` has less dependencies than `pip install ubc[full]`
 

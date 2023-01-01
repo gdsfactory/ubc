@@ -1,5 +1,5 @@
-modes==1.0.6
-SIPANN==2.0.0
-sax
 jax
 jaxlib
+modes==1.0.6
+sax
+SIPANN==2.0.0
