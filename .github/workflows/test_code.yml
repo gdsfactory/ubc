@@ -84,10 +84,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           sudo apt install pandoc
-          pip install gdsfactory[dev] triangle
+          pip install -r requirements_dev.txt
           make install
           make plugins
-          pip install gdsfactory[sipann]
       - name: Test documentation
         env:
           TIDY3D_USER: ${{ secrets.TIDY3D_EMAIL }}
