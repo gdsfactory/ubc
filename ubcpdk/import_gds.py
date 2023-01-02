@@ -89,7 +89,7 @@ def import_gds(gdspath, **kwargs):
         library="Design kits/ebeam",
         model=gdspath.split(".")[0],
         decorator=add_ports_from_siepic_pins,
-        **kwargs
+        **kwargs,
     )
 
 
