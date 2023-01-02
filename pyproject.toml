@@ -89,11 +89,12 @@ exclude = '''  # Specify the files/dirs that should be ignored by the black form
 '''
 
 [tool.pytest.ini_options]
-testpaths = ["ubcpdk", "tests"]
+testpaths = ["tests"]
+# testpaths = ["ubcpdk", "tests"]
 # addopts = --tb=no
 # addopts = '--tb=short'
-python_files = ["ubcpdk/*.py", "tests/*.py"]
-# python_files = ["tests/*.py"]
+# python_files = ["ubcpdk/*.py", "tests/*.py"]
+python_files = ["tests/*.py"]
 # norecursedirs = ["extra/*.py", 'ubcdpk/simulations/*.py']
 
 [tool.flake8]
