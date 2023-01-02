@@ -18,12 +18,14 @@ def write_mask_gds_with_metadata(m) -> Tuple[Path, Path]:
     gdspath = PATH.mask / f"{m.name}.gds"
     m.write_gds_with_metadata(gdspath=gdspath)
 
-    labels_path = gf.mask.write_labels(gdspath=gdspath, layer_label=LAYER.LABEL)
+    labels_path = gf.labels.write_labels.write_labels_gdstk(
+        gdspath=gdspath, layer_label=LAYER.LABEL
+    )
     metadata_path = gdspath.with_suffix(".yml")
     test_metadata_path = gdspath.with_suffix(".tp.yml")
     mask_metadata = OmegaConf.load(metadata_path)
 
-    tm = gf.mask.merge_test_metadata(
+    tm = gf.labels.merge_test_metadata(
         labels_path=labels_path, mask_metadata=mask_metadata
     )
     test_metadata_path.write_text(OmegaConf.to_yaml(tm))
@@ -92,11 +94,11 @@ def test_mask1():
 
 def test_mask3():
     """contains mirror cavities and structures inside a resonator"""
-    e = [add_gc(ubcpdk.components.crossing())]
-    e += [add_gc(ubcpdk.components.dc_adiabatic(), optical_routing_type=1)]
-    e += [add_gc(ubcpdk.components.dc_broadband_te())]
-    e += [add_gc(ubcpdk.components.y_splitter(), optical_routing_type=1)]
-    e += [add_gc(ubcpdk.components.y_adiabatic(), optical_routing_type=1)]
+    e = [add_gc(ubcpdk.components.ebeam_crossing4())]
+    e += [add_gc(ubcpdk.components.ebeam_adiabatic_te1550(), optical_routing_type=1)]
+    e += [add_gc(ubcpdk.components.ebeam_bdc_te1550())]
+    e += [add_gc(ubcpdk.components.ebeam_y_1550(), optical_routing_type=1)]
+    e += [add_gc(ubcpdk.components.ebeam_y_adiabatic(), optical_routing_type=1)]
     c = gf.pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_3"
@@ -110,9 +112,10 @@ if __name__ == "__main__":
     # m = test_mask3()
     # m.write_gds_with_metadata()
 
-    m, tm = test_mask1()
-    m, tm = test_mask2()
-    m, tm = test_mask3()
+    m1, tm1 = test_mask1()
+    m2, tm2 = test_mask2()
+    m3, tm3 = test_mask3()
+    m = gf.grid([m1, m2, m3])
     m.show()
 
     # c = add_gc(ubcpdk.components.dc_broadband_te())
