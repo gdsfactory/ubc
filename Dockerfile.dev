@@ -19,7 +19,8 @@ COPY --chown=jovyan docs/notebooks /home/jovyan/notebooks
 RUN conda init bash
 
 RUN mamba install gdspy -y
+RUN mamba install gdstk -y
 RUN mamba install pymeep=*=mpi_mpich_* -y
 
-RUN pip install ubcpdk[full]
+RUN pip install ubcpdk
 WORKDIR /home/jovyan
