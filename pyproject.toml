@@ -95,7 +95,6 @@ testpaths = ["ubcpdk", "tests"]
 python_files = ["ubcpdk/*.py", "tests/*.py"]
 # python_files = ["tests/*.py"]
 # norecursedirs = ["extra/*.py", 'ubcdpk/simulations/*.py']
-addopts = '--cov=tests --cov-report html'
 
 [tool.flake8]
 max-line-length = 88
