@@ -22,7 +22,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-    "gdsfactory[full,tidy3d]==6.16.1",
+    "gdsfactory[full,tidy3d]==6.16.2",
     "flayout",
     "lygadgets",
     "modes",
@@ -89,11 +89,12 @@ exclude = '''  # Specify the files/dirs that should be ignored by the black form
 '''
 
 [tool.pytest.ini_options]
-testpaths = ["ubcdpk", "tests"]
+testpaths = ["tests"]
+# testpaths = ["ubcpdk", "tests"]
 # addopts = --tb=no
 # addopts = '--tb=short'
-python_files = ["ubcdpk/*.py", "tests/*.py"]
-# python_files = ["tests/*.py"]
+# python_files = ["ubcpdk/*.py", "tests/*.py"]
+python_files = ["tests/*.py"]
 # norecursedirs = ["extra/*.py", 'ubcdpk/simulations/*.py']
 
 [tool.flake8]
