@@ -1,0 +1,35 @@
+name: straight
+settings:
+  changed: {}
+  child: null
+  default:
+    cross_section: strip
+    length: 10.0
+    npoints: 2
+    with_bbox: true
+  full:
+    cross_section: strip
+    length: 10.0
+    npoints: 2
+    with_bbox: true
+  function_name: straight
+  info:
+    interconnect:
+      layout_model_port_pairs:
+        o1: port 1
+        o2: port 2
+      layout_model_property_pairs:
+        wg_length:
+        - length
+        - 1.0e-06
+        wg_width:
+        - width
+        - 1.0e-06
+      model: ebeam_wg_integral_1550
+      properties:
+        annotate: false
+    length: 10.0
+    width: 0.5
+  info_version: 2
+  module: gdsfactory.components.straight
+  name: straight

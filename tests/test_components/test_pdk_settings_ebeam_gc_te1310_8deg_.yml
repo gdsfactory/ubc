@@ -1,0 +1,15 @@
+name: ebeam_gc_te1310_8deg
+settings:
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: ebeam_gc_te1310_8deg
+  info:
+    library: Design kits/ebeam
+    model: ebeam_gc_te1310_8deg
+    polarization: te
+    wavelength: 1.31
+  info_version: 2
+  module: ubcpdk.components
+  name: ebeam_gc_te1310_8deg

@@ -1,0 +1,123 @@
+name: ebeam_crossing4_ring_si_19a88ee5
+settings:
+  changed:
+    bend:
+      function: bend_euler
+      settings:
+        cross_section: strip
+    component:
+      function: ebeam_crossing4
+    cross_section:
+      function: cross_section
+      settings:
+        add_bbox:
+          function: add_bbox_siepic
+        add_pins:
+          function: add_pins_siepic
+          settings:
+            pin_length: 0.1
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0
+        info:
+          interconnect:
+            layout_model_port_pairs:
+              o1: port 1
+              o2: port 2
+            layout_model_property_pairs:
+              wg_length:
+              - length
+              - 1.0e-06
+              wg_width:
+              - width
+              - 1.0e-06
+            model: ebeam_wg_integral_1550
+            properties:
+              annotate: false
+        layer:
+        - 1
+        - 0
+        width: 0.5
+    port_name: opt4
+  child:
+    changed: {}
+    child: null
+    default: {}
+    full: {}
+    function_name: ebeam_crossing4
+    info:
+      library: Design kits/ebeam
+      model: ebeam_crossing4
+    info_version: 2
+    module: ubcpdk.components
+    name: ebeam_crossing4
+  default:
+    bend:
+      function: bend_euler
+    component:
+      function: taper
+      settings:
+        width2: 3
+    coupler:
+      function: coupler_ring
+    gap: 0.2
+    length_x: 4
+    length_y: 0
+    port_name: o1
+    radius: 5.0
+    with_component: true
+  full:
+    bend:
+      function: bend_euler
+      settings:
+        cross_section: strip
+    component:
+      function: ebeam_crossing4
+    coupler:
+      function: coupler_ring
+    cross_section:
+      function: cross_section
+      settings:
+        add_bbox:
+          function: add_bbox_siepic
+        add_pins:
+          function: add_pins_siepic
+          settings:
+            pin_length: 0.1
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0
+        info:
+          interconnect:
+            layout_model_port_pairs:
+              o1: port 1
+              o2: port 2
+            layout_model_property_pairs:
+              wg_length:
+              - length
+              - 1.0e-06
+              wg_width:
+              - width
+              - 1.0e-06
+            model: ebeam_wg_integral_1550
+            properties:
+              annotate: false
+        layer:
+        - 1
+        - 0
+        width: 0.5
+    gap: 0.2
+    length_x: 4
+    length_y: 0
+    port_name: opt4
+    radius: 5.0
+    with_component: true
+  function_name: ring_single_dut
+  info:
+    library: Design kits/ebeam
+    model: ebeam_crossing4
+  info_version: 2
+  module: gdsfactory.components.ring_single_dut
+  name: ebeam_crossing4_ring_si_19a88ee5
