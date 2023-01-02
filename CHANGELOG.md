@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.12.0
+
+- update to gdsfactory 6.16.3
+
 ## 1.11.0
 
 - update to gdsfactory 6.16.1 [PR](https://github.com/gdsfactory/ubc/pull/146)
