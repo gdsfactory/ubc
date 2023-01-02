@@ -6,7 +6,7 @@
 ![forks](https://img.shields.io/github/forks/gdsfactory/ubc)
 ![Stars](https://img.shields.io/github/stars/gdsfactory/ubc)
 [![mit](https://img.shields.io/github/license/gdsfactory/ubc)](https://choosealicense.com/licenses/mit/)
-[![codecov](https://codecov.io/gh/gdsfactory/ubc/branch/master/graph/badge.svg?token=T3kCV2gYE9)](https://codecov.io/gh/gdsfactory/ubc)
+[![codecov](https://codecov.io/gh/gdsfactory/ubc/branch/main/graph/badge.svg?token=T3kCV2gYE9)](https://codecov.io/gh/gdsfactory/ubc)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
