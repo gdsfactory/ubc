@@ -17,7 +17,6 @@ ubcpdk/tests/test_components.gds/gds_diff/
 .idea/
 poetry.lock
 Pipfile
-pyproject.toml
 modes/
 
 # Distribution / packaging
