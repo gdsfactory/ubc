@@ -410,7 +410,7 @@ def add_fiber_array(
     component: ComponentSpec = "straight",
     gc_port_name: str = "opt1",
     grating_coupler: ComponentSpec = ebeam_gc_te1550,
-    **kwargs
+    **kwargs,
 ) -> gf.Component:
     """Returns component with grating couplers and labels on each port.
 
@@ -438,7 +438,7 @@ def add_fiber_array(
         component=component,
         gc_port_name=gc_port_name,
         grating_coupler=grating_coupler,
-        **kwargs
+        **kwargs,
     )
 
 
@@ -491,7 +491,7 @@ def ebeam_dc_halfring_straight(
     cross_section="strip",
     siepic: bool = True,
     model: str = "ebeam_dc_halfring_straight",
-    **kwargs
+    **kwargs,
 ) -> gf.Component:
     r"""Return a ring coupler.
 
@@ -521,7 +521,7 @@ def ebeam_dc_halfring_straight(
         length_x=length_x,
         bend=bend_euler,
         cross_section=cross_section,
-        **kwargs
+        **kwargs,
     )
     x = gf.get_cross_section(cross_section=cross_section, **kwargs)
     thickness = LAYER_STACK.get_layer_to_thickness()

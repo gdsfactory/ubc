@@ -1,4 +1,5 @@
-"""
+"""MZI spectrum model.
+
 based on https://github.com/SiEPIC-Kits/SiEPIC_Photonics_Package
 """
 
@@ -17,13 +18,13 @@ def mzi_spectrum(
     n2=-1,
     n3=0,
 ):
-    """Returns MZI spectrum:
+    """Returns MZI spectrum.
 
     Args:
-        L1_um
-        L2_um
-        wavelength_um
-        beta: propagation constant
+        L1_um.
+        L2_um.
+        wavelength_um.
+        beta: propagation constant.
     """
     if callable(beta):
         beta = beta(wavelength_um, neff=neff, alpha=alpha, n1=n1, n2=n2, n3=n3)
