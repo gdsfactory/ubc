@@ -21,7 +21,9 @@ It provides a fully python driven flow alternative for the edx course for the mo
 
 [Download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases)
 
-Open this PDK folder in your conda terminal and then type
+Open Anaconda Prompt and then install the ubcpdk using pip
+
+![anaconda prompt](https://i.imgur.com/Fyal5sT.png)
 
 
 ```

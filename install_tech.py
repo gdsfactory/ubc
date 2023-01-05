@@ -1,6 +1,4 @@
 """Symlink tech to klayout."""
-
-import shutil
 import sys
 import os
 import subprocess
@@ -9,10 +7,7 @@ import pathlib
 
 def remove_path_or_dir(dest: pathlib.Path):
     if dest.is_dir():
-        if dest.is_symlink():
-            os.unlink(dest)
-        else:
-            shutil.rmtree(dest)
+        os.unlink(dest)
     else:
         os.remove(dest)
 
