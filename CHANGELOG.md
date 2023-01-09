@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.13.0](https://github.com/gdsfactory/ubc/pull/146)
+
+- update to gdsfactory 6.19.0
+- simpler installer
+
 ## 1.12.0
 
 - update to gdsfactory 6.16.3
