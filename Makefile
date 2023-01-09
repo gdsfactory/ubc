@@ -43,6 +43,7 @@ sax:
 	pip install sax jax jaxlib
 
 plugins: sax meep
+	pip install -e .[full]
 
 diff:
 	pf merge-cells gds_diff

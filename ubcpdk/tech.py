@@ -11,7 +11,7 @@ from pydantic import BaseModel
 
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
-from gdsfactory.tech import LayerStack, LayerLevel
+from gdsfactory.technology import LayerStack, LayerLevel
 from gdsfactory.types import Layer
 from gdsfactory.add_pins import add_pins_bbox_siepic as add_pins_bbox_siepic_10nm
 from gdsfactory.add_pins import add_pins_siepic as add_pins_siepic_10nm
@@ -85,7 +85,7 @@ TECH = Tech()
 
 
 LAYER_STACK = get_layer_stack_ubc()
-LAYER_COLORS = gf.layers.load_lyp(PATH.lyp)
+LAYER_VIEWS = gf.technology.LayerViews.from_lyp(PATH.lyp)
 
 
 strip_wg_simulation_info = dict(
