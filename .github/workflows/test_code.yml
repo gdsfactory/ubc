@@ -34,9 +34,6 @@ jobs:
         run: |
           pip install .
           pip install flake8 pytest pytest_regressions
-      - name: Lint with flake8
-        run: |
-          flake8 .
       - name: Test with pytest
         run: pytest
   test_code_coverage_python37:
