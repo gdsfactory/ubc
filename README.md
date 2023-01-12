@@ -38,7 +38,7 @@ gf tool install
 For developers you need to `git clone` the GitHub repository, fork it, git add, git commit, git push and merge request your changes.
 
 ```
-git clone https://github.com/gdsfactory/ubc.git 
+git clone https://github.com/gdsfactory/ubc.git
 cd ubc
 pip install -e .
 pip install pre-commit

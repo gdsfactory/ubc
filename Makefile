@@ -44,6 +44,7 @@ sax:
 
 plugins: sax meep
 	pip install -e .[full]
+	pip install gdsfactory[docs,dev,full,gmsh,tidy3d,devsim,meow,sax]
 
 diff:
 	pf merge-cells gds_diff
