@@ -19,7 +19,7 @@ It provides a fully python driven flow alternative for the edx course for the mo
 ### Installation for users
 
 
-[Download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases)
+If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases)
 
 Open Anaconda Prompt and then install the ubcpdk using pip
 
@@ -28,6 +28,7 @@ Open Anaconda Prompt and then install the ubcpdk using pip
 
 ```
 pip install ubcpdk --upgrade
+gf tool install
 ```
 
 
@@ -37,14 +38,16 @@ pip install ubcpdk --upgrade
 For developers you need to `git clone` the GitHub repository, fork it, git add, git commit, git push and merge request your changes.
 
 ```
-git clone https://github.com/gdsfactory/ubc.git --shallow-exclude=gh-pages
+git clone https://github.com/gdsfactory/ubc.git 
 cd ubc
 pip install -e .
 pip install pre-commit
 pre-commit install
 python install_tech.py
+gf tool install
 ```
 
+Then you need to restart Klayout to make sure the new technology installed appears.
 
 ## Documentation
 
