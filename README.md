@@ -16,10 +16,12 @@ It provides a fully python driven flow alternative for the edx course for the mo
 
 ## Installation
 
-### Installation for users
+### Installation for new python users
 
 
-If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases)
+If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases) that includes python3, miniconda and all gdsfactory plugins.
+
+### Installation for new gdsfactory users
 
 Open Anaconda Prompt and then install the ubcpdk using pip
 
@@ -40,8 +42,7 @@ For developers you need to `git clone` the GitHub repository, fork it, git add, 
 ```
 git clone https://github.com/gdsfactory/ubc.git
 cd ubc
-pip install -e .
-pip install pre-commit
+pip install -e . pre-commit
 pre-commit install
 python install_tech.py
 gf tool install
