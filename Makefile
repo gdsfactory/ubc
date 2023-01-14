@@ -37,12 +37,11 @@ doc:
 	python docs/write_components_autodoc.py
 
 meep:
-	mamba install pymeep=*=mpi_mpich_* -y
+	conda install -n base conda-libmamba-solver
+	conda config --set solver libmamba
+	conda install -c conda-forge pymeep=*=mpi_mpich_* nlopt -y
 
-sax:
-	pip install sax jax jaxlib
-
-plugins: sax meep
+plugins: meep
 	pip install -e .[full]
 	pip install gdsfactory[docs,dev,full,gmsh,tidy3d,devsim,meow,sax]
 

@@ -31,9 +31,7 @@ requires-python = ">=3.7"
 
 [project.optional-dependencies]
 full = [
-    "gdsfactory[full,tidy3d]==6.19.3",
-    "flayout",
-    "lygadgets",
+    "gdsfactory[full,sax,tidy3d,meow]==6.19.3",
     "modes",
     ]
 
