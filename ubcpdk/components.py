@@ -335,7 +335,16 @@ def ebeam_gc_te1310() -> gf.Component:
       c = ubcpdk.components.ebeam_gc_te1310()
       c.plot()
     """
-    return import_gc("ebeam_gc_te1310.gds", info=info1310te)
+    c = import_gc("ebeam_gc_te1310.gds", info=info1310te)
+    name = "vertical_te"
+    c.add_port(
+        name=name,
+        port_type=name,
+        center=(25, 0),
+        layer=(1, 0),
+        width=9,
+    )
+    return c
 
 
 @gf.cell
@@ -350,7 +359,16 @@ def ebeam_gc_te1310_8deg() -> gf.Component:
       c = ubcpdk.components.ebeam_gc_te1310_8deg()
       c.plot()
     """
-    return import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
+    c = import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
+    name = "vertical_te"
+    c.add_port(
+        name=name,
+        port_type=name,
+        center=(25, 0),
+        layer=(1, 0),
+        width=9,
+    )
+    return c
 
 
 @gf.cell
@@ -365,31 +383,75 @@ def ebeam_gc_te1310_broadband() -> gf.Component:
       c = ubcpdk.components.ebeam_gc_te1310_broadband()
       c.plot()
     """
-    return import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
+    c = import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
+    name = "vertical_te"
+    c.add_port(
+        name=name,
+        port_type=name,
+        center=(25, 0),
+        layer=(1, 0),
+        width=9,
+    )
+    return c
 
 
 @gf.cell
 def ebeam_gc_te1550() -> gf.Component:
     """Return ebeam_gc_te1550 fixed cell."""
-    return import_gc("ebeam_gc_te1550.gds", info=info1550te)
+    c = import_gc("ebeam_gc_te1550.gds", info=info1550te)
+    name = "vertical_te"
+    c.add_port(
+        name=name,
+        port_type=name,
+        center=(25, 0),
+        layer=(1, 0),
+        width=9,
+    )
+    return c
 
 
 @gf.cell
 def ebeam_gc_te1550_90nmSlab() -> gf.Component:
     """Return ebeam_gc_te1550_90nmSlab fixed cell."""
-    return import_gc("ebeam_gc_te1550_90nmSlab.gds", info=info1550te)
+    c = import_gc("ebeam_gc_te1550_90nmSlab.gds", info=info1550te)
+    name = "vertical_te"
+    c.add_port(
+        name=name,
+        port_type=name,
+        center=(25, 0),
+        layer=(1, 0),
+        width=9,
+    )
+    return c
 
 
 @gf.cell
 def ebeam_gc_te1550_broadband() -> gf.Component:
     """Return ebeam_gc_te1550_broadband fixed cell."""
-    return import_gc("ebeam_gc_te1550_broadband.gds", info=info1550te)
+    c = import_gc("ebeam_gc_te1550_broadband.gds", info=info1550te)
+    name = "vertical_te"
+    c.add_port(
+        name=name,
+        port_type=name,
+        center=(25, 0),
+        layer=(1, 0),
+        width=9,
+    )
+    return c
 
 
 @gf.cell
 def ebeam_gc_tm1550() -> gf.Component:
     """Return ebeam_gc_tm1550 fixed cell."""
-    return import_gc("ebeam_gc_tm1550.gds", info=info1550tm)
+    c = import_gc("ebeam_gc_tm1550.gds", info=info1550tm)
+    c.add_port(
+        name="vertical_tm",
+        port_type="vertical_tm",
+        center=(25, 0),
+        layer=(1, 0),
+        width=9,
+    )
+    return c
 
 
 mzi = gf.partial(
@@ -568,6 +630,7 @@ if __name__ == "__main__":
     # c = ebeam_y_1550()
     # c = ebeam_bdc_te1550()
     # c = ebeam_gc_te1550()
+    c = ebeam_gc_tm1550()
     # c = spiral()
     # c= coupler()
     # c = ebeam_gc_tm1550()
