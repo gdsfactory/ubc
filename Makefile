@@ -1,5 +1,11 @@
 install:
-	bash install.sh
+	pip install -e .
+	pip install pre-commit
+	pre-commit install
+	python install_tech.py
+
+dev:
+	pip install -e .
 
 update:
 	pre-commit autoupdate --bleeding-edge
@@ -37,20 +43,19 @@ doc:
 	python docs/write_components_autodoc.py
 
 meep:
-	mamba install pymeep=*=mpi_mpich_* -y
+	conda install -n base conda-libmamba-solver
+	conda config --set solver libmamba
+	conda install -c conda-forge pymeep=*=mpi_mpich_* nlopt -y
 
-sax:
-	pip install sax jax jaxlib
-
-plugins: sax meep
-	pip install -e .[full]
+plugins: meep
 	pip install gdsfactory[docs,dev,full,gmsh,tidy3d,devsim,meow,sax]
+	pip install -e .[full] --upgrade
 
 diff:
 	pf merge-cells gds_diff
 
 cov:
-	pytest --cov=ubc
+	pytest --cov=ubcpdk
 
 mypy:
 	mypy . --ignore-missing-imports
@@ -59,13 +64,13 @@ lint:
 	flake8 .
 
 pylint:
-	pylint ubc
+	pylint ubcpdk
 
 lintd:
 	flake8 --select RST
 
 pydocstyle:
-	pydocstyle ubc
+	pydocstyle ubcpdk
 
 doc8:
 	doc8 docs/
