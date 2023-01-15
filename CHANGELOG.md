@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.14.0](https://github.com/gdsfactory/ubc/pull/157)
+- update to gdsfactory 6.20.0
+
 ## [1.13.0](https://github.com/gdsfactory/ubc/pull/146)
 
 - update to gdsfactory 6.19.0
