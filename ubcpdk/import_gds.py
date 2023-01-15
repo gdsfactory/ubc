@@ -171,7 +171,7 @@ add_ports_from_siepic_pins = gf.partial(
 
 
 def import_gds(gdspath, **kwargs):
-    c = gf.import_gds(
+    return gf.import_gds(
         gdspath,
         gdsdir=PATH.gds,
         library="Design kits/ebeam",
@@ -179,7 +179,6 @@ def import_gds(gdspath, **kwargs):
         decorator=add_ports_from_siepic_pins,
         **kwargs,
     )
-    return c
 
 
 def import_gc(gdspath, **kwargs):
