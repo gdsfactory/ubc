@@ -1,7 +1,11 @@
+from typing import Optional
+
 from numpy import ndarray
+from numpy import arctan2, degrees, isclose
+
 import gdsfactory as gf
 from gdsfactory.component import Component
-from gdsfactory.add_ports import add_ports_from_siepic_pins
+from gdsfactory.types import LayerSpec
 
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
@@ -74,6 +78,90 @@ def add_ports(component: Component) -> Component:
         return c
 
 
+def add_ports_from_siepic_pins(
+    component: Component,
+    pin_layer_optical: LayerSpec = "PORT",
+    port_layer_optical: Optional[LayerSpec] = None,
+    pin_layer_electrical: LayerSpec = "PORTE",
+    port_layer_electrical: Optional[LayerSpec] = None,
+) -> Component:
+    """Add ports from SiEPIC-type cells, where the pins are defined as paths.
+
+    Looks for label, path pairs.
+
+    Args:
+        component: component.
+        pin_layer_optical: layer for optical pins.
+        port_layer_optical: layer for optical ports.
+        pin_layer_electrical: layer for electrical pins.
+        port_layer_electrical: layer for electrical ports.
+    """
+    pin_layers = {"optical": pin_layer_optical, "electrical": pin_layer_electrical}
+
+    import gdsfactory as gf
+
+    pin_layer_optical = gf.get_layer(pin_layer_optical)
+    port_layer_optical = gf.get_layer(port_layer_optical)
+    pin_layer_electrical = gf.get_layer(pin_layer_electrical)
+    port_layer_electrical = gf.get_layer(port_layer_electrical)
+
+    c = component
+    labels = c.get_labels()
+
+    for path in c.paths:
+        p1, p2 = path.spine()
+
+        path_layers = list(zip(path.layers, path.datatypes))
+
+        # Find the center of the path
+        center = (p1 + p2) / 2
+
+        # Find the label closest to the pin
+        label = None
+        for i, _label in enumerate(labels):
+            if (
+                all(isclose(_label.origin, center))
+                or all(isclose(_label.origin, p1))
+                or all(isclose(_label.origin, p2))
+            ):
+                label = _label
+                labels.pop(i)
+        if label is None:
+            print(
+                f"Warning: label not found for path: in center={center} p1={p1} p2={p2}"
+            )
+            continue
+        if pin_layer_optical in path_layers:
+            port_type = "optical"
+            port_layer = port_layer_optical or None
+        elif pin_layer_electrical in path_layers:
+            port_type = "electrical"
+            port_layer = port_layer_electrical or None
+        else:
+            continue
+
+        port_name = str(label.text)
+
+        # If the port name is already used, add a number to it
+        i = 1
+        while port_name in c.ports:
+            port_name += f"_{i}"
+
+        angle = round(degrees(arctan2(p2[1] - p1[1], p2[0] - p1[0])) % 360)
+
+        port = gf.Port(
+            name=port_name,
+            center=center,
+            width=path.widths()[0][0],
+            orientation=angle,
+            layer=port_layer or pin_layers[port_type],
+            port_type=port_type,
+        )
+        c.add_port(port)
+    c.auto_rename_ports()
+    return c
+
+
 add_ports_from_siepic_pins = gf.partial(
     add_ports_from_siepic_pins,
     pin_layer_optical=LAYER.PORT,
@@ -95,17 +183,19 @@ def import_gds(gdspath, **kwargs):
 
 def import_gc(gdspath, **kwargs):
     c = import_gds(gdspath, **kwargs)
-    return c.mirror().flatten()
+    c2 = c.mirror().flatten()
+    c2.auto_rename_ports()
+    return c2
 
 
 if __name__ == "__main__":
-    from gdsfactory.write_cells import get_import_gds_script
-
-    script = get_import_gds_script(dirpath=PATH.gds, module="ubcpdk.components")
-    print(script)
+    # from gdsfactory.write_cells import get_import_gds_script
+    # script = get_import_gds_script(dirpath=PATH.gds, module="ubcpdk.components")
+    # print(script)
 
     # gdsname = "ebeam_crossing4.gds"
-    # gdsname = "ebeam_y_1550.gds"
-    # c = import_gds(gdsname)
-    # print(c.ports)
-    # c.show(show_ports=False)
+    gdsname = "ebeam_y_1550.gds"
+    c = import_gds(gdsname)
+    print(c.ports)
+
+    c.show(show_ports=False)

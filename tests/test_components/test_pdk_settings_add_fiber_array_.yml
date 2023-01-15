@@ -4,12 +4,12 @@ settings:
   child: null
   default:
     component: straight
-    gc_port_name: opt1
+    gc_port_name: o1
     grating_coupler:
       function: ebeam_gc_te1550
   full:
     component: straight
-    gc_port_name: opt1
+    gc_port_name: o1
     grating_coupler:
       function: ebeam_gc_te1550
   function_name: add_fiber_array
