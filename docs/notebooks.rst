@@ -2,8 +2,6 @@
 Tutorials
 #########
 
-Tutorials for `UBC PDK <https://github.com/gdsfactory/ubc>`_
-
 
 .. toctree::
    :maxdepth: 2
@@ -12,4 +10,5 @@ Tutorials for `UBC PDK <https://github.com/gdsfactory/ubc>`_
 
    notebooks/00_layout.ipynb
    notebooks/11_sparameters.ipynb
+   notebooks/12_sim_plugins_tidy3d.ipynb
    notebooks/13_sim_plugins.ipynb
