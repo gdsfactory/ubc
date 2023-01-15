@@ -85,7 +85,8 @@ jobs:
         run: |
           sudo apt install pandoc
           make plugins
-          pip install -e .[docs]
+          pip install -e .[docs] --upgrade
+          pip install numpy --upgrade
           conda list > requirements.txt
       - uses: actions/upload-artifact@v3
         with:
