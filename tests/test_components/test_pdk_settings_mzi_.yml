@@ -1,14 +1,10 @@
-name: mzi_77da1a7c
+name: mzi_e91b62d9
 settings:
   changed:
     bend:
       function: bend_euler
       settings:
         cross_section: strip
-    port_e0_combiner: opt3
-    port_e0_splitter: opt3
-    port_e1_combiner: opt2
-    port_e1_splitter: opt2
     splitter:
       function: ebeam_y_1550
     straight:
@@ -51,10 +47,10 @@ settings:
     length_x: 0.1
     length_y: 2.0
     nbends: 2
-    port_e0_combiner: opt3
-    port_e0_splitter: opt3
-    port_e1_combiner: opt2
-    port_e1_splitter: opt2
+    port_e0_combiner: o3
+    port_e0_splitter: o3
+    port_e1_combiner: o2
+    port_e1_splitter: o2
     splitter:
       function: ebeam_y_1550
     straight:
@@ -69,4 +65,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_77da1a7c
+  name: mzi_e91b62d9

@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.15.0](https://github.com/gdsfactory/ubc/pull/157)
+
+- update to gdsfactory 6.21.1
+- use o1, o2, o3 port naming convention instead of opt1, opt2, opt3
+
 ## [1.14.0](https://github.com/gdsfactory/ubc/pull/157)
 - update to gdsfactory 6.20.0
 

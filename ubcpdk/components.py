@@ -459,10 +459,6 @@ mzi = gf.partial(
     splitter=ebeam_y_1550,
     bend=bend_euler,
     straight=straight,
-    port_e1_splitter="opt2",
-    port_e0_splitter="opt3",
-    port_e1_combiner="opt2",
-    port_e0_combiner="opt3",
     cross_section="strip",
 )
 
@@ -470,7 +466,7 @@ mzi = gf.partial(
 @gf.cell
 def add_fiber_array(
     component: ComponentSpec = "straight",
-    gc_port_name: str = "opt1",
+    gc_port_name: str = "o1",
     grating_coupler: ComponentSpec = ebeam_gc_te1550,
     **kwargs,
 ) -> gf.Component:
@@ -614,7 +610,7 @@ spiral = gf.partial(gf.components.spiral_external_io)
 ring_with_crossing = gf.partial(
     gf.components.ring_single_dut,
     component=ebeam_crossing4,
-    port_name="opt4",
+    port_name="o4",
     bend=bend_euler,
     cross_section=strip,
 )
