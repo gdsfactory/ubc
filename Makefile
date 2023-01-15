@@ -49,7 +49,7 @@ meep:
 
 plugins: meep
 	pip install gdsfactory[docs,dev,full,gmsh,tidy3d,devsim,meow,sax]
-	pip install -e .[full]
+	pip install -e .[full] --upgrade
 
 diff:
 	pf merge-cells gds_diff
