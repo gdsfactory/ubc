@@ -86,3 +86,6 @@ build:
 	rm -rf dist
 	pip install build
 	python -m build
+
+notebooks:
+	nbstripout --drop-empty-cells docs/notebooks/*.ipynb
