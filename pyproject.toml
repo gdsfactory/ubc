@@ -22,7 +22,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-    "gdsfactory==6.22.1",
+    "gdsfactory==6.23.0",
     "modes",
     "klayout",
 ]
@@ -31,7 +31,7 @@ requires-python = ">=3.7"
 
 [project.optional-dependencies]
 full = [
-    "gdsfactory[full,sax,tidy3d,meow]==6.22.1",
+    "gdsfactory[full,sax,tidy3d,meow]==6.23.0",
     "modes",
     ]
 
