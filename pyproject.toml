@@ -22,7 +22,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-    "gdsfactory==6.24.0",
+    "gdsfactory==6.25.1",
     "modes",
     "klayout",
 ]
