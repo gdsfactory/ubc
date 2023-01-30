@@ -115,8 +115,8 @@ if __name__ == "__main__":
     m1, tm1 = test_mask1()
     m2, tm2 = test_mask2()
     m3, tm3 = test_mask3()
-    m = gf.grid([m1, m2, m3])
-    m.show()
+    # m = gf.grid([m1, m2, m3])
+    m1.show()
 
     # c = add_gc(ubcpdk.components.dc_broadband_te())
     # print(c.to_yaml(with_cells=True, with_ports=True))
