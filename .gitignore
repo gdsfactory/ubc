@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 run_layouts/
 ref_layouts/
+gds_diff/
+gds_run/
 ubcpdk/tests/test_components.gds/gds_run/
 ubcpdk/tests/test_components.gds/gds_diff/
 .dvc/
