@@ -44,6 +44,7 @@ PDK = Pdk(
     layer_views=LAYER_VIEWS,
     sparameters_path=PATH.sparameters,
     interconnect_cml_path=PATH.interconnect_cml_path,
+    default_decorator=tech.add_pins_bbox_siepic,
 )
 PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
 PDK.activate()

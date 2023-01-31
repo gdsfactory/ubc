@@ -1,0 +1,13 @@
+name: thermal_phase_shifter0
+settings:
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: thermal_phase_shifter0
+  info:
+    library: Design kits/ebeam
+    model: thermal_phase_shifters
+  info_version: 2
+  module: ubcpdk.components
+  name: thermal_phase_shifter0

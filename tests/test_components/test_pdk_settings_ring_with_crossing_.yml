@@ -1,4 +1,4 @@
-name: ebeam_crossing4_ring_si_6a7aaea2
+name: ebeam_crossing4_ring_si_075f61ca
 settings:
   changed:
     bend:
@@ -9,36 +9,7 @@ settings:
       function: ebeam_crossing4
     cross_section:
       function: cross_section
-      settings:
-        add_bbox:
-          function: add_bbox_siepic
-        add_pins:
-          function: add_pins_siepic
-          settings:
-            pin_length: 0.1
-        cladding_layers:
-        - DEVREC
-        cladding_offsets:
-        - 0
-        info:
-          interconnect:
-            layout_model_port_pairs:
-              o1: port 1
-              o2: port 2
-            layout_model_property_pairs:
-              wg_length:
-              - length
-              - 1.0e-06
-              wg_width:
-              - width
-              - 1.0e-06
-            model: ebeam_wg_integral_1550
-            properties:
-              annotate: false
-        layer:
-        - 1
-        - 0
-        width: 0.5
+      settings: {}
     port_name: o4
   child:
     changed: {}
@@ -78,36 +49,7 @@ settings:
       function: coupler_ring
     cross_section:
       function: cross_section
-      settings:
-        add_bbox:
-          function: add_bbox_siepic
-        add_pins:
-          function: add_pins_siepic
-          settings:
-            pin_length: 0.1
-        cladding_layers:
-        - DEVREC
-        cladding_offsets:
-        - 0
-        info:
-          interconnect:
-            layout_model_port_pairs:
-              o1: port 1
-              o2: port 2
-            layout_model_property_pairs:
-              wg_length:
-              - length
-              - 1.0e-06
-              wg_width:
-              - width
-              - 1.0e-06
-            model: ebeam_wg_integral_1550
-            properties:
-              annotate: false
-        layer:
-        - 1
-        - 0
-        width: 0.5
+      settings: {}
     gap: 0.2
     length_x: 4
     length_y: 0
@@ -120,4 +62,4 @@ settings:
     model: ebeam_crossing4
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ebeam_crossing4_ring_si_6a7aaea2
+  name: ebeam_crossing4_ring_si_075f61ca

@@ -12,16 +12,12 @@ from pydantic import BaseModel
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.technology import LayerStack, LayerLevel
-from gdsfactory.types import Layer
-from gdsfactory.add_pins import add_pins_bbox_siepic as add_pins_bbox_siepic_10nm
-from gdsfactory.add_pins import add_pins_siepic as add_pins_siepic_10nm
+from gdsfactory.types import Layer, LayerSpec, Component, Callable
+from gdsfactory.add_pins import add_pin_path, add_pins_siepic
 
 from ubcpdk.config import PATH
 
 nm = 1e-3
-
-add_pins_siepic = gf.partial(add_pins_siepic_10nm, pin_length=100 * nm)
-add_pins_bbox_siepic = gf.partial(add_pins_bbox_siepic_10nm, pin_length=100 * nm)
 
 
 class LayerMapUbc(BaseModel):
@@ -47,6 +43,40 @@ class LayerMapUbc(BaseModel):
 
 
 LAYER = LayerMapUbc()
+
+
+def add_pins_bbox_siepic(
+    component: Component,
+    function: Callable = add_pin_path,
+    port_type: str = "optical",
+    layer_pin: LayerSpec = "PORT",
+    pin_length: float = 2 * nm,
+    bbox_layer: LayerSpec = "DEVREC",
+    padding: float = 0,
+) -> Component:
+    """Add bounding box device recognition layer.
+
+    Args:
+        component: to add pins.
+        function: to add pins.
+        port_type: optical, electrical...
+        layer_pin: for pin.
+        pin_length: in um.
+        bbox_layer: bounding box layer.
+        padding: around device.
+    """
+    remove_layers = [layer_pin, bbox_layer, "TEXT"]
+    c = component.remove_layers(layers=remove_layers)
+    c.add_padding(default=padding, layers=(bbox_layer,))
+
+    c = add_pins_siepic(
+        component=component,
+        function=function,
+        port_type=port_type,
+        layer_pin=layer_pin,
+        pin_length=pin_length,
+    )
+    return c
 
 
 def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
@@ -99,26 +129,20 @@ strip_wg_simulation_info = dict(
     properties=dict(annotate=False),
 )
 
+cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
+cladding_offsets_optical_siepic = (0,)  # for SiEPIC verification
 
-strip_pins = gf.partial(
-    gf.cross_section.strip_siepic,
-    layer=LAYER.WG,
-    width=TECH.WG["width"],
-    info=dict(interconnect=strip_wg_simulation_info),
-    add_pins=add_pins_siepic,
-)
 strip = gf.partial(
-    gf.cross_section.strip_siepic,
-    layer=LAYER.WG,
-    width=TECH.WG["width"],
-    info=dict(interconnect=strip_wg_simulation_info),
-    add_pins=add_pins_siepic,
+    gf.cross_section.cross_section,
+    # add_pins=add_pins_siepic_optical_2nm,
+    # add_bbox=add_bbox_siepic,
+    # cladding_layers=cladding_layers_optical_siepic,
+    # cladding_offsets=cladding_offsets_optical_siepic,
+    # bbox_layers=cladding_layers_optical_siepic,
+    # bbox_offsets=cladding_offsets_optical_siepic,
+    # decorator=add_pins_bbox_siepic,
 )
-strip_no_pins = gf.partial(
-    gf.cross_section.strip,
-    layer=LAYER.WG,
-    width=TECH.WG["width"],
-)
+
 
 cross_sections = get_cross_section_factories(sys.modules[__name__])
 
@@ -127,5 +151,7 @@ __all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
 
 
 if __name__ == "__main__":
-    c = gf.c.straight(cross_section=strip)
+    # c = gf.c.straight(length=1, cross_section=strip)
+    # c = gf.c.bend_euler(cross_section=strip)
+    c = gf.c.mzi(delta_length=10, cross_section=strip)
     c.show(show_ports=False)

@@ -1,5 +1,4 @@
 """Cells imported from the PDK."""
-
 import gdsfactory as gf
 from gdsfactory.types import ComponentSpec
 
@@ -8,6 +7,7 @@ from ubcpdk.tech import strip, LAYER_STACK, LAYER
 
 
 um = 1e-6
+
 
 straight = gf.partial(
     gf.components.straight,
@@ -26,16 +26,50 @@ info1550te = dict(polarization="te", wavelength=1.55)
 info1310te = dict(polarization="te", wavelength=1.31)
 info1550tm = dict(polarization="tm", wavelength=1.55)
 info1310tm = dict(polarization="tm", wavelength=1.31)
+thermal_phase_shifter_names = [
+    "thermal_phase_shifter_m_6480beac",
+    "thermal_phase_shifter_t_22d678c3",
+    "thermal_phase_shifter_t_75acd1c1",
+    "thermal_phase_shifter_t_ab7ae757",
+]
 
 
 # @gf.cell
 # def Packaging_FibreArray_8ch() -> gf.Component:
 #     """Return Packaging_FibreArray_8ch fixed cell."""
 #     return import_gds("Packaging_FibreArray_8ch.gds")
-# @gf.cell
-# def thermal_phase_shifters() -> gf.Component:
-#     """Return thermal_phase_shifters fixed cell."""
-#     return import_gds("thermal_phase_shifters.gds")
+
+
+@gf.cell
+def thermal_phase_shifter0() -> gf.Component:
+    """Return thermal_phase_shifters fixed cell."""
+    return import_gds(
+        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[0]
+    )
+
+
+@gf.cell
+def thermal_phase_shifter1() -> gf.Component:
+    """Return thermal_phase_shifters fixed cell."""
+    return import_gds(
+        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[1]
+    )
+
+
+@gf.cell
+def thermal_phase_shifter2() -> gf.Component:
+    """Return thermal_phase_shifters fixed cell."""
+    return import_gds(
+        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[2]
+    )
+
+
+@gf.cell
+def thermal_phase_shifter3() -> gf.Component:
+    """Return thermal_phase_shifters fixed cell."""
+    return import_gds(
+        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[3]
+    )
 
 
 @gf.cell
@@ -510,12 +544,9 @@ def dbr(
     n: int = 600,
     l1: float = L,
     l2: float = L,
-    cross_section="strip_no_pins",
 ) -> gf.Component:
 
-    return gf.components.dbr(
-        w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, cross_section=cross_section
-    )
+    return gf.components.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2)
 
 
 def dbr_cavity(**kwargs) -> gf.Component:
@@ -617,19 +648,25 @@ ring_with_crossing = gf.partial(
 
 
 if __name__ == "__main__":
+    # c = dbr()
+    c = spiral()
+    # c = ebeam_adiabatic_tm1550()
     # c = mzi()
-    c = ring_with_crossing()
+    # c = ring_with_crossing()
     # c = ring_single()
     # c = ebeam_crossing4()
     # c = ebeam_dc_halfring_straight()
     # c = ebeam_dc_te1550()
     # c = ebeam_y_1550()
+    # c = ebeam_y_adiabatic()
     # c = ebeam_bdc_te1550()
     # c = ebeam_gc_te1550()
-    c = ebeam_gc_tm1550()
+    # c = ebeam_gc_tm1550()
     # c = spiral()
-    # c= coupler()
+    # c = coupler()
     # c = ebeam_gc_tm1550()
     # c = add_fiber_array()
+    # c = dbr_cavity()
     # c = dbr_cavity_te()
+    # c = thermal_phase_shifter0()
     c.show(show_ports=True)

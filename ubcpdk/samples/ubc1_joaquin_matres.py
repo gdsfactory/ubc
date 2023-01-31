@@ -98,7 +98,7 @@ def test_mask3():
     e += [add_gc(ubcpdk.components.ebeam_adiabatic_te1550(), optical_routing_type=1)]
     e += [add_gc(ubcpdk.components.ebeam_bdc_te1550())]
     e += [add_gc(ubcpdk.components.ebeam_y_1550(), optical_routing_type=1)]
-    e += [add_gc(ubcpdk.components.ebeam_y_adiabatic(), optical_routing_type=1)]
+    # e += [add_gc(ubcpdk.components.ebeam_y_adiabatic(), optical_routing_type=1)]
     c = gf.pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_3"
@@ -112,11 +112,11 @@ if __name__ == "__main__":
     # m = test_mask3()
     # m.write_gds_with_metadata()
 
-    m1, tm1 = test_mask1()
-    m2, tm2 = test_mask2()
-    m3, tm3 = test_mask3()
+    # m, tm1 = test_mask1()
+    # m, tm2 = test_mask2()
+    m, tm3 = test_mask3()
     # m = gf.grid([m1, m2, m3])
-    m1.show()
+    m.show()
 
     # c = add_gc(ubcpdk.components.dc_broadband_te())
     # print(c.to_yaml(with_cells=True, with_ports=True))
