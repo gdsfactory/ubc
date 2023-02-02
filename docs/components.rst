@@ -12,6 +12,7 @@ Components
    :toctree: _autosummary/
 
    add_fiber_array
+   add_pins_bbox_siepic
    bend
    bend_euler
    bend_s
@@ -47,9 +48,17 @@ Components
    ebeam_y_adiabatic_1310
    metal_via
    mzi
+   mzi_phase_shifter
    photonic_wirebond_surfacetaper_1310
    photonic_wirebond_surfacetaper_1550
+   ring_double_heater
    ring_single
+   ring_single_heater
    ring_with_crossing
    spiral
    straight
+   thermal_phase_shifter0
+   thermal_phase_shifter1
+   thermal_phase_shifter2
+   thermal_phase_shifter3
+   via_stack
