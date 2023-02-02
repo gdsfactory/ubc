@@ -13,7 +13,7 @@ import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.technology import LayerStack, LayerLevel
 from gdsfactory.types import Layer, LayerSpec, Component, Callable
-from gdsfactory.add_pins import add_pin_path, add_pins_siepic
+from gdsfactory.add_pins import add_pin_path, add_pins_siepic, add_bbox_siepic
 
 from ubcpdk.config import PATH
 
@@ -65,8 +65,9 @@ def add_pins_bbox_siepic(
         bbox_layer: bounding box layer.
         padding: around device.
     """
-    remove_layers = [layer_pin, bbox_layer, "TEXT"]
+    remove_layers = (layer_pin, bbox_layer, "TEXT")
     c = component.remove_layers(layers=remove_layers)
+    # c = component
     c.add_padding(default=padding, layers=(bbox_layer,))
 
     c = add_pins_siepic(
@@ -112,8 +113,6 @@ class Tech(BaseModel):
 
 
 TECH = Tech()
-
-
 LAYER_STACK = get_layer_stack_ubc()
 LAYER_VIEWS = gf.technology.LayerViews.from_lyp(PATH.lyp)
 
@@ -134,8 +133,8 @@ cladding_offsets_optical_siepic = (0,)  # for SiEPIC verification
 
 strip = gf.partial(
     gf.cross_section.cross_section,
-    # add_pins=add_pins_siepic_optical_2nm,
-    # add_bbox=add_bbox_siepic,
+    add_pins=add_pins_siepic,
+    add_bbox=add_bbox_siepic,
     # cladding_layers=cladding_layers_optical_siepic,
     # cladding_offsets=cladding_offsets_optical_siepic,
     # bbox_layers=cladding_layers_optical_siepic,

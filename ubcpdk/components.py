@@ -3,7 +3,7 @@ import gdsfactory as gf
 from gdsfactory.types import ComponentSpec
 
 from ubcpdk.import_gds import import_gds, import_gc
-from ubcpdk.tech import strip, LAYER_STACK, LAYER
+from ubcpdk.tech import strip, LAYER_STACK, LAYER, add_pins_bbox_siepic
 
 
 um = 1e-6
@@ -13,10 +13,7 @@ straight = gf.partial(
     gf.components.straight,
     cross_section="strip",
 )
-bend_euler = gf.partial(
-    gf.components.bend_euler,
-    cross_section="strip",
-)
+bend_euler = gf.partial(gf.components.bend_euler, cross_section="strip", npoints=100)
 bend_s = gf.partial(
     gf.components.bend_s,
     cross_section="strip",
@@ -378,6 +375,7 @@ def ebeam_gc_te1310() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
+    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -402,6 +400,7 @@ def ebeam_gc_te1310_8deg() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
+    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -426,6 +425,7 @@ def ebeam_gc_te1310_broadband() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
+    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -441,6 +441,7 @@ def ebeam_gc_te1550() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
+    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -456,6 +457,7 @@ def ebeam_gc_te1550_90nmSlab() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
+    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -471,6 +473,7 @@ def ebeam_gc_te1550_broadband() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
+    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -485,6 +488,7 @@ def ebeam_gc_tm1550() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
+    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -541,21 +545,30 @@ L = 1.55 / 4 / 2 / 2.44
 def dbr(
     w0: float = 0.5,
     dw: float = 0.1,
-    n: int = 600,
+    n: int = 5,
     l1: float = L,
     l2: float = L,
 ) -> gf.Component:
-
-    return gf.components.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2)
+    c = gf.Component()
+    s = c << gf.components.straight(length=l1)
+    dbr = c << gf.components.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2)
+    s.connect("o2", dbr.ports["o1"])
+    c.add_port("o1", port=s.ports["o1"])
+    c = add_pins_bbox_siepic(c)
+    return c
 
 
 def dbr_cavity(**kwargs) -> gf.Component:
-    return gf.components.cavity(component=dbr(**kwargs), coupler=coupler)
+    c = gf.components.cavity(
+        component=dbr(**kwargs), coupler=coupler, decorator=add_pins_bbox_siepic
+    )
+    return c
 
 
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     component = gf.get_component(component, **kwargs)
-    return add_fiber_array(component=component)
+    c = add_fiber_array(component=component)
+    return c
 
 
 bend = gf.components.bend_euler
@@ -648,8 +661,8 @@ ring_with_crossing = gf.partial(
 
 
 if __name__ == "__main__":
-    # c = dbr()
-    c = spiral()
+    c = dbr()
+    # c = spiral()
     # c = ebeam_adiabatic_tm1550()
     # c = mzi()
     # c = ring_with_crossing()
@@ -667,6 +680,6 @@ if __name__ == "__main__":
     # c = ebeam_gc_tm1550()
     # c = add_fiber_array()
     # c = dbr_cavity()
-    # c = dbr_cavity_te()
+    c = dbr_cavity_te()
     # c = thermal_phase_shifter0()
     c.show(show_ports=True)

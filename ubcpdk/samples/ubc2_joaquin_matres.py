@@ -33,7 +33,7 @@ def write_mask_gds_with_metadata(m) -> Tuple[Path, Path]:
 
 
 def test_mask1():
-    """spirals for extracting straight waveguide loss"""
+    """Add MZI interferometers."""
     mzi = gf.partial(gf.components.mzi, splitter=ubcpdk.components.ebeam_y_1550)
     mzis = [mzi(delta_length=delta_length) for delta_length in [10, 100]]
     mzis_with_gc = [add_gc(mzi) for mzi in mzis]
@@ -41,9 +41,7 @@ def test_mask1():
     c = gf.pack(mzis_with_gc)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_1"
-
-    fp = m << gf.components.compass(size=size, layer=LAYER.FLOORPLAN)
-    fp.move((size[0] / 2, size[1] / 2))
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 

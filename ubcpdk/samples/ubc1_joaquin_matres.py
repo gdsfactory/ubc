@@ -9,7 +9,7 @@ import ubcpdk
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
 
-floorplan_size = (605, 410)
+size = (605, 410)
 add_gc = ubcpdk.components.add_fiber_array
 
 
@@ -64,7 +64,7 @@ def test_mask2():
 
     m = c[0]
     m.name = "EBeam_JoaquinMatres_2"
-    m << gf.components.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
@@ -85,10 +85,10 @@ def test_mask1():
     e += [add_gc(ubcpdk.components.ring_with_crossing())]
     # e += [add_gc(ubcpdk.components.ring_with_crossing(with_component=False))]
 
-    c = gf.pack(e, max_size=floorplan_size)
+    c = gf.pack(e, max_size=size)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_1"
-    m << gf.components.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
@@ -102,7 +102,7 @@ def test_mask3():
     c = gf.pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_3"
-    m << gf.components.rectangle(size=floorplan_size, layer=LAYER.FLOORPLAN)
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
     # return m
@@ -112,10 +112,12 @@ if __name__ == "__main__":
     # m = test_mask3()
     # m.write_gds_with_metadata()
 
-    # m, tm1 = test_mask1()
-    # m, tm2 = test_mask2()
-    m, tm3 = test_mask3()
+    m1, tm1 = test_mask1()
+    # m2, tm2 = test_mask2()
+    # m3, tm3 = test_mask3()
     # m = gf.grid([m1, m2, m3])
+
+    m = m1
     m.show()
 
     # c = add_gc(ubcpdk.components.dc_broadband_te())
