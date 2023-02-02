@@ -1,4 +1,4 @@
-name: add_fiber_array_b89d850a
+name: add_fiber_array_52bfb5fe
 settings:
   changed:
     component:
@@ -9,6 +9,8 @@ settings:
           settings: {}
         coupler:
           function: coupler
+        decorator:
+          function: add_pins_bbox_siepic
   child: null
   default:
     component: straight
@@ -24,6 +26,8 @@ settings:
           settings: {}
         coupler:
           function: coupler
+        decorator:
+          function: add_pins_bbox_siepic
     gc_port_name: o1
     grating_coupler:
       function: ebeam_gc_te1550
@@ -36,4 +40,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: add_fiber_array_b89d850a
+  name: add_fiber_array_52bfb5fe

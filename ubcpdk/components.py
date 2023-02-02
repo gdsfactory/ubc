@@ -500,6 +500,20 @@ mzi = gf.partial(
     cross_section="strip",
 )
 
+mzi_phase_shifter = gf.partial(
+    gf.components.mzi_phase_shifter,
+    splitter=ebeam_y_1550,
+)
+
+via_stack = gf.partial(
+    gf.c.via_stack,
+    size=(2.5, 2.5),
+    layers=(LAYER.M1_HEATER, LAYER.M2_ROUTER),
+    vias=None,
+)
+ring_double_heater = gf.partial(gf.components.ring_double_heater, via_stack=via_stack)
+ring_single_heater = gf.partial(gf.components.ring_single_heater, via_stack=via_stack)
+
 
 @gf.cell
 def add_fiber_array(
@@ -680,6 +694,7 @@ if __name__ == "__main__":
     # c = ebeam_gc_tm1550()
     # c = add_fiber_array()
     # c = dbr_cavity()
-    c = dbr_cavity_te()
+    # c = dbr_cavity_te()
     # c = thermal_phase_shifter0()
+    c = ring_single_heater()
     c.show(show_ports=True)

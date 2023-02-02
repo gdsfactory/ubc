@@ -1,15 +1,20 @@
-name: ebeam_crossing4_ring_si_075f61ca
+name: ebeam_crossing4_ring_si_f5c92276
 settings:
   changed:
     bend:
       function: bend_euler
       settings:
         cross_section: strip
+        npoints: 100
     component:
       function: ebeam_crossing4
     cross_section:
       function: cross_section
-      settings: {}
+      settings:
+        add_bbox:
+          function: add_bbox_siepic
+        add_pins:
+          function: add_pins_siepic
     port_name: o4
   child:
     changed: {}
@@ -43,13 +48,18 @@ settings:
       function: bend_euler
       settings:
         cross_section: strip
+        npoints: 100
     component:
       function: ebeam_crossing4
     coupler:
       function: coupler_ring
     cross_section:
       function: cross_section
-      settings: {}
+      settings:
+        add_bbox:
+          function: add_bbox_siepic
+        add_pins:
+          function: add_pins_siepic
     gap: 0.2
     length_x: 4
     length_y: 0
@@ -62,4 +72,4 @@ settings:
     model: ebeam_crossing4
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ebeam_crossing4_ring_si_075f61ca
+  name: ebeam_crossing4_ring_si_f5c92276

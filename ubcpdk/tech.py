@@ -6,6 +6,7 @@
 
 """
 import sys
+from functools import partial
 
 from pydantic import BaseModel
 
@@ -23,6 +24,9 @@ nm = 1e-3
 class LayerMapUbc(BaseModel):
     WG: Layer = (1, 0)
     WG2: Layer = (31, 0)
+    M1_HEATER: Layer = (11, 0)
+    M2_ROUTER: Layer = (12, 0)
+
     DEVREC: Layer = (68, 0)
     LABEL: Layer = (10, 0)
     PORT: Layer = (1, 10)  # PinRec
@@ -36,6 +40,7 @@ class LayerMapUbc(BaseModel):
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
     SLAB150: Layer = (2, 0)
+    WAFER: Layer = (99999, 0)
 
     class Config:
         frozen = True
@@ -80,27 +85,77 @@ def add_pins_bbox_siepic(
     return c
 
 
-def get_layer_stack_ubc(thickness: float = 220 * nm) -> LayerStack:
-    """Returns UBC LayerStack.
+def get_layer_stack(
+    thickness_wg: float = 220 * nm,
+    zmin_heater: float = 1.1,
+    thickness_heater: float = 700 * nm,
+    thickness_metal2: float = 700 * nm,
+    substrate_thickness: float = 10.0,
+    box_thickness: float = 3.0,
+) -> LayerStack:
+    """Returns generic LayerStack.
 
-    TODO: Translate xml in lumerical process file.
+    based on paper https://www.degruyter.com/document/doi/10.1515/nanoph-2013-0034/html
+
+    Args:
+        thickness_wg: waveguide thickness in um.
+        zmin_heater: TiN heater.
+        thickness_heater: TiN thickness.
+        zmin_metal2: metal2.
+        thickness_metal2: metal2 thickness.
+        substrate_thickness: substrate thickness in um.
+        box_thickness: bottom oxide thickness in um.
     """
-    return LayerStack(
-        layers=dict(
-            strip=LayerLevel(
-                layer=LAYER.WG,
-                thickness=thickness,
-                zmin=0.0,
-                material="si",
-            ),
-            strip2=LayerLevel(
-                layer=LAYER.WG2,
-                thickness=thickness,
-                zmin=0.0,
-                material="si",
-            ),
+
+    class GenericLayerStack(LayerStack):
+        substrate = LayerLevel(
+            layer=LAYER.WAFER,
+            thickness=substrate_thickness,
+            zmin=-substrate_thickness - box_thickness,
+            material="si",
+            info={"mesh_order": 99},
         )
-    )
+        box = LayerLevel(
+            layer=LAYER.WAFER,
+            thickness=box_thickness,
+            zmin=-box_thickness,
+            material="sio2",
+            info={"mesh_order": 99},
+        )
+        core = LayerLevel(
+            layer=LAYER.WG,
+            thickness=thickness_wg,
+            zmin=0.0,
+            material="si",
+            info={"mesh_order": 1},
+            sidewall_angle=10,
+            width_to_z=0.5,
+        )
+        core2 = LayerLevel(
+            layer=LAYER.WG2,
+            thickness=thickness_wg,
+            zmin=0.0,
+            material="si",
+            info={"mesh_order": 1},
+            sidewall_angle=10,
+            width_to_z=0.5,
+        )
+        heater = LayerLevel(
+            layer=LAYER.M1_HEATER,
+            thickness=750e-3,
+            zmin=zmin_heater,
+            material="TiN",
+            info={"mesh_order": 1},
+        )
+        metal2 = LayerLevel(
+            layer=LAYER.M2_ROUTER,
+            thickness=thickness_metal2,
+            zmin=zmin_heater + thickness_heater,
+            material="Aluminum",
+            info={"mesh_order": 2},
+        )
+
+    return GenericLayerStack()
 
 
 class Tech(BaseModel):
@@ -113,7 +168,7 @@ class Tech(BaseModel):
 
 
 TECH = Tech()
-LAYER_STACK = get_layer_stack_ubc()
+LAYER_STACK = get_layer_stack()
 LAYER_VIEWS = gf.technology.LayerViews.from_lyp(PATH.lyp)
 
 
@@ -131,7 +186,7 @@ strip_wg_simulation_info = dict(
 cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
 cladding_offsets_optical_siepic = (0,)  # for SiEPIC verification
 
-strip = gf.partial(
+strip = partial(
     gf.cross_section.cross_section,
     add_pins=add_pins_siepic,
     add_bbox=add_bbox_siepic,
@@ -141,7 +196,26 @@ strip = gf.partial(
     # bbox_offsets=cladding_offsets_optical_siepic,
     # decorator=add_pins_bbox_siepic,
 )
+strip_heater_metal = partial(
+    gf.cross_section.strip_heater_metal,
+    layer="WG",
+    heater_width=2.5,
+    layer_heater=LAYER.M1_HEATER,
+)
 
+metal_routing = partial(
+    gf.cross_section.cross_section,
+    layer=LAYER.M2_ROUTER,
+    width=10.0,
+    port_names=gf.cross_section.port_names_electrical,
+    port_types=gf.cross_section.port_types_electrical,
+    radius=None,
+)
+heater_metal = partial(
+    metal_routing,
+    width=4,
+    layer=LAYER.M1_HEATER,
+)
 
 cross_sections = get_cross_section_factories(sys.modules[__name__])
 

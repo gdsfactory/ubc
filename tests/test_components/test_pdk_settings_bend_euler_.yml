@@ -1,6 +1,7 @@
-name: bend_euler
+name: bend_euler_npoints100
 settings:
-  changed: {}
+  changed:
+    npoints: 100
   child: null
   default:
     angle: 90.0
@@ -14,17 +15,17 @@ settings:
     angle: 90.0
     cross_section: strip
     direction: ccw
-    npoints: 720
+    npoints: 100
     p: 0.5
     with_arc_floorplan: true
     with_bbox: true
   function_name: bend_euler
   info:
     dy: 10.0
-    length: 16.637
+    length: 16.636
     radius: 10.0
     radius_min: 7.061
     width: 0.5
   info_version: 2
   module: gdsfactory.components.bend_euler
-  name: bend_euler
+  name: bend_euler_npoints100
