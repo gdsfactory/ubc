@@ -89,3 +89,6 @@ build:
 
 notebooks:
 	nbstripout --drop-empty-cells docs/notebooks/*.ipynb
+
+mask:
+	python ubcpdk/samples/write_masks.py

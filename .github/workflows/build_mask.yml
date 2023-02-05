@@ -1,0 +1,33 @@
+# https://github.com/actions/upload-artifact
+name: Build and upload mask with DRC
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  test_mask:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 12
+      matrix:
+        python-version: ["3.10"]
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+      - name: Install dependencies
+        run: |
+          make install
+      - name: build mask
+        run: make mask
+      - uses: actions/upload-artifact@v3
+        with:
+          name: mask
+          path: ubcpdk/samples/build

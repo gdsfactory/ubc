@@ -40,7 +40,7 @@ class Path:
     sparameters = repo / "sparameters"
     interconnect_cml_path = module / "simulation" / "lumerical" / "EBeam.cml"
     modes = repo / "modes"
-    mask = module / "samples" / "extra" / "ubc1"
+    mask = module / "samples" / "build"
 
     mzi = data / "mzi"
     mzi1 = mzi / "ZiheGao_MZI1_272_Scan1.mat"
