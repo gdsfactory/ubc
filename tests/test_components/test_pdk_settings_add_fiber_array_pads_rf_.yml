@@ -1,0 +1,18 @@
+name: add_fiber_array_pads_rf
+settings:
+  changed: {}
+  child: null
+  default:
+    component: ring_single_heater
+  full:
+    component: ring_single_heater
+  function_name: add_fiber_array_pads_rf
+  info:
+    grating_coupler:
+      library: Design kits/ebeam
+      model: ebeam_gc_te1550
+      polarization: te
+      wavelength: 1.55
+  info_version: 2
+  module: ubcpdk.components
+  name: add_fiber_array_pads_rf

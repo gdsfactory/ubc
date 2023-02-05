@@ -1,4 +1,4 @@
-name: ring_single_heater_b35e3f3c
+name: ring_single_heater_171f554b
 settings:
   changed:
     via_stack:
@@ -10,9 +10,11 @@ settings:
         - - 12
           - 0
         size:
-        - 2.5
-        - 2.5
-        vias: null
+        - 10
+        - 10
+        vias:
+        - null
+        - null
   child: null
   default:
     bend:
@@ -68,9 +70,11 @@ settings:
         - - 12
           - 0
         size:
-        - 2.5
-        - 2.5
-        vias: null
+        - 10
+        - 10
+        vias:
+        - null
+        - null
     via_stack_offset:
     - 0
     - 0
@@ -78,4 +82,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_heater
-  name: ring_single_heater_b35e3f3c
+  name: ring_single_heater_171f554b

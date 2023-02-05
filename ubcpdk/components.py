@@ -1,6 +1,6 @@
 """Cells imported from the PDK."""
 import gdsfactory as gf
-from gdsfactory.types import ComponentSpec
+from gdsfactory.types import ComponentSpec, Component
 
 from ubcpdk.import_gds import import_gds, import_gc
 from ubcpdk.tech import strip, LAYER_STACK, LAYER, add_pins_bbox_siepic
@@ -500,19 +500,24 @@ mzi = gf.partial(
     cross_section="strip",
 )
 
-mzi_phase_shifter = gf.partial(
+mzi_heater = gf.partial(
     gf.components.mzi_phase_shifter,
     splitter=ebeam_y_1550,
 )
 
-via_stack = gf.partial(
-    gf.c.via_stack,
-    size=(2.5, 2.5),
+via_stack_heater_mtop = gf.partial(
+    gf.components.via_stack,
+    size=(10, 10),
     layers=(LAYER.M1_HEATER, LAYER.M2_ROUTER),
-    vias=None,
+    vias=(None, None),
 )
-ring_double_heater = gf.partial(gf.components.ring_double_heater, via_stack=via_stack)
-ring_single_heater = gf.partial(gf.components.ring_single_heater, via_stack=via_stack)
+ring_double_heater = gf.partial(
+    gf.components.ring_double_heater, via_stack=via_stack_heater_mtop
+)
+ring_single_heater = gf.partial(
+    gf.components.ring_single_heater,
+    via_stack=via_stack_heater_mtop,
+)
 
 
 @gf.cell
@@ -674,8 +679,55 @@ ring_with_crossing = gf.partial(
 )
 
 
+pad = gf.partial(
+    gf.components.pad,
+    size=(75, 75),
+    layer=LAYER.M2_ROUTER,
+    bbox_layers=[LAYER.PAD_OPEN],
+    bbox_offsets=[1.8],
+)
+
+
+def add_label_electrical(component: Component, text: str, port_name: str = "e2"):
+    """Adds labels for electrical port.
+
+    Returns same component so it needs to be used as a decorator.
+    """
+    component.add_label(
+        text=text, position=component.ports[port_name].center, layer=LAYER.LABEL
+    )
+    return component
+
+
+pad_array = gf.partial(gf.components.pad, pad=pad, spacing=(200, 200))
+add_pads_rf = gf.partial(
+    gf.routing.add_electrical_pads_top, component="ring_single_heater"
+)
+add_pads_dc = gf.partial(
+    gf.routing.add_electrical_pads_top_dc, component="ring_single_heater"
+)
+
+
+@gf.cell
+def add_fiber_array_pads_rf(
+    component: ComponentSpec = "ring_single_heater", **kwargs
+) -> Component:
+    """Returns fiber array with label and electrical pads.
+
+    Args:
+        component: to add fiber array and pads.
+        kwargs: for add_fiber_array.
+    """
+    c0 = gf.get_component(component)
+    text = f"elec_{c0.name}_G"
+    add_label = gf.partial(add_label_electrical, text=text)
+    c1 = add_pads_rf(component=c0, decorator=add_label)
+    c2 = add_fiber_array(component=c1, **kwargs)
+    return c2
+
+
 if __name__ == "__main__":
-    c = dbr()
+    # c = dbr()
     # c = spiral()
     # c = ebeam_adiabatic_tm1550()
     # c = mzi()
@@ -696,5 +748,13 @@ if __name__ == "__main__":
     # c = dbr_cavity()
     # c = dbr_cavity_te()
     # c = thermal_phase_shifter0()
-    c = ring_single_heater()
+
+    # c = ring_single_heater()
+    # c = mzi_heater()
+    # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
+    c = add_fiber_array_pads_rf()
+    # c = add_pads_rf()
+    # c = add_pads_dc()
+
+    # c = add_pads_rf(c)
     c.show(show_ports=True)

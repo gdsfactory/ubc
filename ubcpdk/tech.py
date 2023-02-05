@@ -26,6 +26,8 @@ class LayerMapUbc(BaseModel):
     WG2: Layer = (31, 0)
     M1_HEATER: Layer = (11, 0)
     M2_ROUTER: Layer = (12, 0)
+    MTOP: Layer = (12, 0)
+    PAD_OPEN: Layer = (13, 0)
 
     DEVREC: Layer = (68, 0)
     LABEL: Layer = (10, 0)
