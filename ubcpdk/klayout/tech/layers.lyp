@@ -31,7 +31,7 @@
   <marked>false</marked>
   <xfill>false</xfill>
   <animation>0</animation>
-  <name>Waveguide 31/0</name>
+  <name>Waveguide2 31/0</name>
   <source>31/0@1</source>
  </properties>
  <properties>
@@ -152,23 +152,6 @@
   <animation>0</animation>
   <name>DEEPETCH 3/6</name>
   <source>3/6@1</source>
- </properties>
- <properties>
-  <frame-color>#ff8000</frame-color>
-  <fill-color>#ff8000</fill-color>
-  <frame-brightness>0</frame-brightness>
-  <fill-brightness>0</fill-brightness>
-  <dither-pattern>I15</dither-pattern>
-  <line-style/>
-  <valid>true</valid>
-  <visible>true</visible>
-  <transparent>true</transparent>
-  <width>1</width>
-  <marked>false</marked>
-  <xfill>false</xfill>
-  <animation>0</animation>
-  <name>MH 47/0</name>
-  <source>47/0@1</source>
  </properties>
  <properties>
   <frame-color>#9999cc</frame-color>

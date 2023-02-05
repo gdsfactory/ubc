@@ -750,9 +750,9 @@ if __name__ == "__main__":
     # c = thermal_phase_shifter0()
 
     # c = ring_single_heater()
-    # c = mzi_heater()
+    c = mzi_heater()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
-    c = add_fiber_array_pads_rf()
+    # c = add_fiber_array_pads_rf()
     # c = add_pads_rf()
     # c = add_pads_dc()
 
