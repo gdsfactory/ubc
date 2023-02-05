@@ -1,35 +1,49 @@
-name: pad_layerWG
+name: pad_f2c8bc83
 settings:
   changed:
-    layer: WG
+    bbox_layers:
+    - - 13
+      - 0
+    bbox_offsets:
+    - 1.8
+    layer:
+    - 12
+    - 0
+    size:
+    - 75
+    - 75
   child: null
   default:
     bbox_layers: null
     bbox_offsets: null
-    layer: M3
+    layer: MTOP
     port_inclusion: 0
     port_orientation: null
     size:
     - 100.0
     - 100.0
   full:
-    bbox_layers: null
-    bbox_offsets: null
-    layer: WG
+    bbox_layers:
+    - - 13
+      - 0
+    bbox_offsets:
+    - 1.8
+    layer:
+    - 12
+    - 0
     port_inclusion: 0
     port_orientation: null
     size:
-    - 100.0
-    - 100.0
+    - 75
+    - 75
   function_name: pad
   info:
     layer:
-    - 1
+    - 12
     - 0
     size:
-    - 100.0
-    - 100.0
+    - 75.0
+    - 75.0
   info_version: 2
   module: gdsfactory.components.pad
-  name: pad_layerWG
-version: 0.0.1
+  name: pad_f2c8bc83

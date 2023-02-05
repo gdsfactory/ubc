@@ -1,0 +1,56 @@
+name: via_stack_627f28a4
+settings:
+  changed:
+    layers:
+    - - 11
+      - 0
+    - - 12
+      - 0
+    size:
+    - 10
+    - 10
+    vias:
+    - null
+    - null
+  child: null
+  default:
+    layer_port: null
+    layers:
+    - M1
+    - M2
+    - M3
+    size:
+    - 11.0
+    - 11.0
+    vias:
+    - function: via
+      settings:
+        enclosure: 2
+        layer: VIA1
+    - function: via
+      settings:
+        layer: VIA2
+  full:
+    layer_port: null
+    layers:
+    - - 11
+      - 0
+    - - 12
+      - 0
+    size:
+    - 10
+    - 10
+    vias:
+    - null
+    - null
+  function_name: via_stack
+  info:
+    layer:
+    - 12
+    - 0
+    size:
+    - 10.0
+    - 10.0
+  info_version: 2
+  module: gdsfactory.components.via_stack
+  name: via_stack_627f28a4
