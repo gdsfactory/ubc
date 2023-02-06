@@ -56,7 +56,7 @@ def test_mask_2():
     e = [add_gc(ubcpdk.components.straight())]*2
     e += [
         add_gc(gf.components.ring_single(radius=12, gap=gap, length_x=coupling_length, bend=gf.components.bend_circular))
-        for gap in [0.1, 0.2, 0.3, 0.4, 0.5]
+        for gap in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
         for coupling_length in [0, 2]
     ]
 
