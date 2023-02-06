@@ -124,6 +124,13 @@ def get_layer_stack(
             material="sio2",
             info={"mesh_order": 99},
         )
+        clad = LayerLevel(
+            layer=LAYER.WAFER,
+            thickness=zmin_heater + thickness_heater,
+            zmin=0,
+            material="sio2",
+            info={"mesh_order": 100},
+        )
         core = LayerLevel(
             layer=LAYER.WG,
             thickness=thickness_wg,
