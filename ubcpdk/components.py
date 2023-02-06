@@ -561,6 +561,21 @@ L = 1.55 / 4 / 2 / 2.44
 
 
 @gf.cell
+def dbg(
+    w0: float = 0.5,
+    dw: float = 0.1,
+    n: int = 5,
+    l1: float = L,
+    l2: float = L,
+) -> gf.Component:
+    c = gf.Component()
+    dbg = c << gf.components.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2)
+    c.add_ports(dbg.ports)
+    c = add_pins_bbox_siepic(c)
+    return c
+
+
+@gf.cell
 def dbr(
     w0: float = 0.5,
     dw: float = 0.1,
