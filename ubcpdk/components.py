@@ -593,16 +593,16 @@ def dbr(
 
 
 def dbr_cavity(**kwargs) -> gf.Component:
-    c = gf.components.cavity(
-        component=dbr(**kwargs), coupler=coupler, decorator=add_pins_bbox_siepic
+    return gf.components.cavity(
+        component=dbr(**kwargs),
+        coupler=coupler,
+        decorator=add_pins_bbox_siepic,
     )
-    return c
 
 
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     component = gf.get_component(component, **kwargs)
-    c = add_fiber_array(component=component)
-    return c
+    return add_fiber_array(component=component)
 
 
 bend = gf.components.bend_euler
@@ -737,8 +737,7 @@ def add_fiber_array_pads_rf(
     text = f"elec_{c0.name}_G"
     add_label = gf.partial(add_label_electrical, text=text)
     c1 = add_pads_rf(component=c0, decorator=add_label)
-    c2 = add_fiber_array(component=c1, **kwargs)
-    return c2
+    return add_fiber_array(component=c1, **kwargs)
 
 
 if __name__ == "__main__":
