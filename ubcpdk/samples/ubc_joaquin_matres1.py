@@ -128,7 +128,11 @@ if __name__ == "__main__":
     # m3, tm3 = test_mask3()
     # m = gf.grid([m1, m2, m3])
 
-    m, _ = test_mask3()
+    # m, _ = test_mask1()
+    # m, _ = test_mask2() # spirals
+    # m, _ = test_mask3()
+    m, _ = test_mask4()
+    # m, _ = test_mask3()
     m.show()
 
     # c = add_gc(ubcpdk.components.dc_broadband_te())

@@ -1,10 +1,11 @@
 """Cells imported from the PDK."""
+from functools import partial
 import gdsfactory as gf
 from gdsfactory.typings import ComponentSpec
 from gdsfactory import Component
 
 from ubcpdk.import_gds import import_gds, import_gc
-from ubcpdk.tech import strip, LAYER_STACK, LAYER, add_pins_bbox_siepic
+from ubcpdk.tech import strip, LAYER_STACK, LAYER, add_pins_bbox_siepic, add_pins_siepic
 
 
 um = 1e-6
@@ -565,12 +566,14 @@ L = 1.55 / 4 / 2 / 2.44
 def dbg(
     w0: float = 0.5,
     dw: float = 0.1,
-    n: int = 5,
+    n: int = 600,
     l1: float = L,
     l2: float = L,
 ) -> gf.Component:
     c = gf.Component()
-    dbg = c << gf.components.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2)
+    dbg = c << gf.components.dbr(
+        w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, add_pins=None
+    )
     c.add_ports(dbg.ports)
     c = add_pins_bbox_siepic(c)
     return c
@@ -585,8 +588,12 @@ def dbr(
     l2: float = L,
 ) -> gf.Component:
     c = gf.Component()
-    s = c << gf.components.straight(length=l1)
-    dbr = c << gf.components.dbr(w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2)
+
+    add_pins_left = partial(add_pins_siepic, prefix="o1")
+    s = c << gf.components.straight(length=l1, add_pins=add_pins_left)
+    dbr = c << gf.components.dbr(
+        w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, add_pins=None
+    )
     s.connect("o2", dbr.ports["o1"])
     c.add_port("o1", port=s.ports["o1"])
     c = add_pins_bbox_siepic(c)
@@ -762,11 +769,11 @@ if __name__ == "__main__":
     # c = ebeam_gc_tm1550()
     # c = add_fiber_array()
     # c = dbr_cavity()
-    # c = dbr_cavity_te()
+    c = dbr_cavity_te()
     # c = thermal_phase_shifter0()
 
     # c = ring_single_heater()
-    c = mzi_heater()
+    # c = mzi_heater()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
     # c = add_fiber_array_pads_rf()
     # c = add_pads_rf()

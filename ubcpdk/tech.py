@@ -14,7 +14,7 @@ import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.technology import LayerStack, LayerLevel
 from gdsfactory.typings import Layer, LayerSpec, Callable
-from gdsfactory.add_pins import add_pin_path, add_pins_siepic, add_bbox_siepic
+from gdsfactory.add_pins import add_pin_path, add_bbox_siepic
 from gdsfactory.component import Component
 
 from ubcpdk.config import PATH
@@ -51,6 +51,45 @@ class LayerMapUbc(BaseModel):
 
 
 LAYER = LayerMapUbc()
+
+
+def add_pins_siepic(
+    component: Component,
+    function: Callable = add_pin_path,
+    port_type: str = "optical",
+    layer_pin: LayerSpec = "PORT",
+    pin_length: float = 10 * nm,
+    **kwargs,
+) -> Component:
+    """Add pins.
+
+    Enables you to run SiEPIC verification tools:
+    To Run verification install SiEPIC-tools KLayout package
+    then hit V shortcut in KLayout to run verification
+
+    - ensure no disconnected pins
+    - netlist extraction
+
+    Args:
+        component: to add pins.
+        function: to add pin.
+        port_type: optical, electrical, ...
+        layer_pin: pin layer.
+        pin_length: length of the pin marker for the port.
+
+    Keyword Args:
+        layer: select ports with GDS layer.
+        prefix: select ports with port name.
+        orientation: select ports with orientation in degrees.
+        width: select ports with port width.
+        layers_excluded: List of layers to exclude.
+        port_type: select ports with port_type (optical, electrical, vertical_te).
+        clockwise: if True, sort ports clockwise, False: counter-clockwise.
+    """
+    for p in component.get_ports_list(port_type=port_type, **kwargs):
+        function(component=component, port=p, layer=layer_pin, pin_length=pin_length)
+
+    return component
 
 
 def add_pins_bbox_siepic(
