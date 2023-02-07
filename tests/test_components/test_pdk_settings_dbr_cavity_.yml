@@ -1,51 +1,11 @@
-name: dbr_cavity_33d9feb4
+name: dbr_cavity
 settings:
-  changed:
-    component:
-      component: dbr
-      settings: {}
-    coupler:
-      function: coupler
-    decorator:
-      function: add_pins_bbox_siepic
-  child:
-    changed: {}
-    child: null
-    default:
-      dw: 0.1
-      l1: 0.07940573770491803
-      l2: 0.07940573770491803
-      n: 600
-      w0: 0.5
-    full:
-      dw: 0.1
-      l1: 0.07940573770491803
-      l2: 0.07940573770491803
-      n: 600
-      w0: 0.5
-    function_name: dbr
-    info: {}
-    info_version: 2
-    module: ubcpdk.components
-    name: dbr
-  default:
-    component:
-      function: dbr
-    coupler: coupler
-    gap: 0.2
-    length: 0.1
-  full:
-    component:
-      component: dbr
-      settings: {}
-    coupler:
-      function: coupler
-    decorator:
-      function: add_pins_bbox_siepic
-    gap: 0.2
-    length: 0.1
-  function_name: cavity
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: dbr_cavity
   info: {}
   info_version: 2
-  module: gdsfactory.components.cavity
-  name: dbr_cavity_33d9feb4
+  module: ubcpdk.components
+  name: dbr_cavity
