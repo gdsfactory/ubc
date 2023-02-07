@@ -5,7 +5,7 @@ from numpy import arctan2, degrees, isclose
 
 import gdsfactory as gf
 from gdsfactory.component import Component
-from gdsfactory.types import LayerSpec
+from gdsfactory.typings import LayerSpec
 
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH

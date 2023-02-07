@@ -1,6 +1,7 @@
 """Cells imported from the PDK."""
 import gdsfactory as gf
-from gdsfactory.types import ComponentSpec, Component
+from gdsfactory.typings import ComponentSpec
+from gdsfactory import Component
 
 from ubcpdk.import_gds import import_gds, import_gc
 from ubcpdk.tech import strip, LAYER_STACK, LAYER, add_pins_bbox_siepic

@@ -13,8 +13,9 @@ from pydantic import BaseModel
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.technology import LayerStack, LayerLevel
-from gdsfactory.types import Layer, LayerSpec, Component, Callable
+from gdsfactory.typings import Layer, LayerSpec, Callable
 from gdsfactory.add_pins import add_pin_path, add_pins_siepic, add_bbox_siepic
+from gdsfactory.component import Component
 
 from ubcpdk.config import PATH
 

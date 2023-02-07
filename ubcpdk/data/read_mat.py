@@ -1,4 +1,4 @@
-from gdsfactory.types import Tuple, PathType
+from gdsfactory.typings import Tuple, PathType
 from scipy.io import loadmat
 import numpy as np
 
