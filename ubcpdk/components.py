@@ -5,7 +5,14 @@ from gdsfactory.typings import ComponentSpec
 from gdsfactory import Component
 
 from ubcpdk.import_gds import import_gds, import_gc
-from ubcpdk.tech import strip, LAYER_STACK, LAYER, add_pins_bbox_siepic, add_pins_siepic
+from ubcpdk.tech import (
+    strip,
+    LAYER_STACK,
+    LAYER,
+    add_pins_bbox_siepic,
+    add_pins_siepic,
+    add_pins_siepic_metal,
+)
 
 
 um = 1e-6
@@ -707,7 +714,8 @@ pad = gf.partial(
     size=(75, 75),
     layer=LAYER.M2_ROUTER,
     bbox_layers=[LAYER.PAD_OPEN],
-    bbox_offsets=[1.8],
+    bbox_offsets=[-1.8],
+    decorator=add_pins_siepic_metal,
 )
 
 
@@ -722,12 +730,16 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
     return component
 
 
-pad_array = gf.partial(gf.components.pad, pad=pad, spacing=(200, 200))
+pad_array = gf.partial(gf.components.pad_array, pad=pad, spacing=(200, 200))
 add_pads_rf = gf.partial(
-    gf.routing.add_electrical_pads_top, component="ring_single_heater"
+    gf.routing.add_electrical_pads_top,
+    component="ring_single_heater",
+    pad_array=pad_array,
 )
 add_pads_dc = gf.partial(
-    gf.routing.add_electrical_pads_top_dc, component="ring_single_heater"
+    gf.routing.add_electrical_pads_top_dc,
+    component="ring_single_heater",
+    pad_array=pad_array,
 )
 
 
@@ -769,15 +781,16 @@ if __name__ == "__main__":
     # c = ebeam_gc_tm1550()
     # c = add_fiber_array()
     # c = dbr_cavity()
-    c = dbr_cavity_te()
+    # c = dbr_cavity_te()
     # c = thermal_phase_shifter0()
+    # c = add_pads_rf(c)
 
     # c = ring_single_heater()
     # c = mzi_heater()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
-    # c = add_fiber_array_pads_rf()
     # c = add_pads_rf()
     # c = add_pads_dc()
+    # c = pad()
+    c = add_fiber_array_pads_rf()
 
-    # c = add_pads_rf(c)
-    c.show(show_ports=True)
+    c.show(show_ports=False)

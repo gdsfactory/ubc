@@ -11,7 +11,9 @@ skip_test = {
     "add_siepic_labels",
     "add_fiber_array_siepic",
     "add_pins_bbox_siepic",
+    "add_pins_bbox_siepic_metal",
     "add_pins_siepic",
+    "add_pins_siepic_metal",
 }
 cell_names = set(cells.keys()) - set(skip_test)
 dirpath = pathlib.Path(__file__).absolute().with_suffix(".gds")

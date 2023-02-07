@@ -38,7 +38,7 @@ class LayerMapUbc(BaseModel):
 
     TE: Layer = (203, 0)
     TM: Layer = (204, 0)
-    TEXT: Layer = (66, 0)
+    TEXT: Layer = (10, 0)
     LABEL_INSTANCE: Layer = (66, 0)
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
@@ -92,6 +92,11 @@ def add_pins_siepic(
     return component
 
 
+add_pins_siepic_metal = partial(
+    add_pins_siepic, port_type="placement", layer_pin=LAYER.PORTE
+)
+
+
 def add_pins_bbox_siepic(
     component: Component,
     function: Callable = add_pin_path,
@@ -100,6 +105,7 @@ def add_pins_bbox_siepic(
     pin_length: float = 2 * nm,
     bbox_layer: LayerSpec = "DEVREC",
     padding: float = 0,
+    remove_layers: bool = True,
 ) -> Component:
     """Add bounding box device recognition layer.
 
@@ -112,9 +118,10 @@ def add_pins_bbox_siepic(
         bbox_layer: bounding box layer.
         padding: around device.
     """
-    remove_layers = (layer_pin, bbox_layer, "TEXT")
-    c = component.remove_layers(layers=remove_layers)
-    # c = component
+    c = component
+    if remove_layers:
+        remove_layers = (layer_pin, bbox_layer, "TEXT")
+        c = component.remove_layers(layers=remove_layers)
     c.add_padding(default=padding, layers=(bbox_layer,))
 
     c = add_pins_siepic(
@@ -125,6 +132,11 @@ def add_pins_bbox_siepic(
         pin_length=pin_length,
     )
     return c
+
+
+add_pins_bbox_siepic_metal = partial(
+    add_pins_bbox_siepic, port_type="placement", layer_pin=LAYER.PORTE
+)
 
 
 def get_layer_stack(

@@ -1,7 +1,34 @@
-name: ring_single_heater_171f_f9b9fd4d
+name: ring_single_heater_171f_3d0eebfe
 settings:
   changed:
     component: ring_single_heater
+    pad_array:
+      function: pad_array
+      settings:
+        pad:
+          function: pad
+          settings:
+            bbox_layers:
+            - - 13
+              - 0
+            bbox_offsets:
+            - -1.8
+            decorator:
+              function: add_pins_siepic
+              settings:
+                layer_pin:
+                - 1
+                - 11
+                port_type: placement
+            layer:
+            - 12
+            - 0
+            size:
+            - 75
+            - 75
+        spacing:
+        - 200
+        - 200
   child:
     changed:
       via_stack:
@@ -106,6 +133,31 @@ settings:
     layer: MTOP
     pad_array:
       function: pad_array
+      settings:
+        pad:
+          function: pad
+          settings:
+            bbox_layers:
+            - - 13
+              - 0
+            bbox_offsets:
+            - -1.8
+            decorator:
+              function: add_pins_siepic
+              settings:
+                layer_pin:
+                - 1
+                - 11
+                port_type: placement
+            layer:
+            - 12
+            - 0
+            size:
+            - 75
+            - 75
+        spacing:
+        - 200
+        - 200
     select_ports:
       function: select_ports
       settings:
@@ -117,4 +169,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.routing.add_electrical_pads_top
-  name: ring_single_heater_171f_f9b9fd4d
+  name: ring_single_heater_171f_3d0eebfe
