@@ -7,7 +7,12 @@ from gdsfactory.difftest import difftest
 from ubcpdk import cells
 
 
-skip_test = {"add_siepic_labels", "add_fiber_array_siepic", "add_pins_bbox_siepic"}
+skip_test = {
+    "add_siepic_labels",
+    "add_fiber_array_siepic",
+    "add_pins_bbox_siepic",
+    "add_pins_siepic",
+}
 cell_names = set(cells.keys()) - set(skip_test)
 dirpath = pathlib.Path(__file__).absolute().with_suffix(".gds")
 

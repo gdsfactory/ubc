@@ -1,4 +1,4 @@
-name: dbr
+name: dbg
 settings:
   changed: {}
   child: null
@@ -14,8 +14,8 @@ settings:
     l2: 0.07940573770491803
     n: 600
     w0: 0.5
-  function_name: dbr
+  function_name: dbg
   info: {}
   info_version: 2
   module: ubcpdk.components
-  name: dbr
+  name: dbg

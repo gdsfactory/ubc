@@ -583,7 +583,7 @@ def dbg(
 def dbr(
     w0: float = 0.5,
     dw: float = 0.1,
-    n: int = 5,
+    n: int = 600,
     l1: float = L,
     l2: float = L,
 ) -> gf.Component:
