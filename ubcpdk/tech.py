@@ -117,6 +117,7 @@ def add_pins_bbox_siepic(
         pin_length: in um.
         bbox_layer: bounding box layer.
         padding: around device.
+        remove_layers: removes old layers.
     """
     c = component
     if remove_layers:

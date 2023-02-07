@@ -1,4 +1,5 @@
 name: sample_different_factory
+pdk: ubcpdk
 
 instances:
   bl:
@@ -28,7 +29,7 @@ routes:
   electrical:
     settings:
       separation: 20
-      layer: M1
+      layer: M2_ROUTER
       width: 10
     links:
       tl,e3: tr,e1

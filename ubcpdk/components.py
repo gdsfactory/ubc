@@ -573,7 +573,7 @@ L = 1.55 / 4 / 2 / 2.44
 def dbg(
     w0: float = 0.5,
     dw: float = 0.1,
-    n: int = 600,
+    n: int = 100,
     l1: float = L,
     l2: float = L,
 ) -> gf.Component:
@@ -590,7 +590,7 @@ def dbg(
 def dbr(
     w0: float = 0.5,
     dw: float = 0.1,
-    n: int = 600,
+    n: int = 100,
     l1: float = L,
     l2: float = L,
 ) -> gf.Component:
@@ -599,7 +599,15 @@ def dbr(
     add_pins_left = partial(add_pins_siepic, prefix="o1")
     s = c << gf.components.straight(length=l1, add_pins=add_pins_left)
     dbr = c << gf.components.dbr(
-        w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, add_pins=None
+        w1=w0 - dw / 2,
+        w2=w0 + dw / 2,
+        n=n,
+        l1=l1,
+        l2=l2,
+        add_pins=None,
+        with_bbox=False,
+        bbox_layers=None,
+        bbox_offsets=None,
     )
     s.connect("o2", dbr.ports["o1"])
     c.add_port("o1", port=s.ports["o1"])
@@ -607,9 +615,11 @@ def dbr(
     return c
 
 
+@gf.cell
 def dbr_cavity(**kwargs) -> gf.Component:
+    d = dbr(**kwargs)
     c = gf.components.cavity(
-        component=dbr(**kwargs), coupler=coupler, decorator=add_pins_bbox_siepic
+        component=d, coupler=coupler, decorator=add_pins_bbox_siepic
     )
     return c
 
@@ -791,6 +801,7 @@ if __name__ == "__main__":
     # c = add_pads_rf()
     # c = add_pads_dc()
     # c = pad()
-    c = add_fiber_array_pads_rf()
-
-    c.show(show_ports=False)
+    # c = add_fiber_array_pads_rf()
+    # c = dbr()
+    c = dbr_cavity()
+    c.show(show_ports=True)
