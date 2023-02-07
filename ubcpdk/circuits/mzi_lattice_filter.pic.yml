@@ -36,7 +36,6 @@ placements:
     dx: 100
     dy: 100
 
-
 routes:
   optical:
     links:
@@ -46,7 +45,7 @@ routes:
 
   gc1:
     links:
-      gc1,o2: mzi1,o1
+      gc1,o1: mzi1,o1
 
   gc2:
     links:
