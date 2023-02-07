@@ -15,7 +15,7 @@ from ubcpdk import data
 from ubcpdk.tech import cross_sections
 
 
-__version__ = "1.16.2"
+__version__ = "1.17.0"
 
 __all__ = [
     "CONFIG",
