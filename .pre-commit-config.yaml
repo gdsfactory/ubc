@@ -13,7 +13,7 @@ repos:
       - id: unimport
         args: [--remove, --include-star-import]
   - repo: https://github.com/pycqa/isort
-    rev: b20228c9820f94633eb9d5e38f976a0e98bdb16c
+    rev: 5.12.0
     hooks:
       - id: isort
         files: ubcdpk/.*
