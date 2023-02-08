@@ -182,8 +182,7 @@ def import_gds(gdspath, **kwargs):
 
 def import_gc(gdspath, **kwargs):
     c = import_gds(gdspath, **kwargs)
-    c2 = gf.functions.mirror(component=c)
-    return c2
+    return gf.functions.mirror(component=c)
 
 
 if __name__ == "__main__":
