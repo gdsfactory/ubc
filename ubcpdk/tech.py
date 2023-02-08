@@ -105,7 +105,7 @@ def add_pins_bbox_siepic(
     pin_length: float = 2 * nm,
     bbox_layer: LayerSpec = "DEVREC",
     padding: float = 0,
-    remove_layers: bool = True,
+    remove_layers: bool = False,
 ) -> Component:
     """Add bounding box device recognition layer.
 
@@ -133,6 +133,9 @@ def add_pins_bbox_siepic(
         pin_length=pin_length,
     )
     return c
+
+
+add_pins_bbox_siepic_remove_layers = partial(add_pins_bbox_siepic, remove_layers=True)
 
 
 add_pins_bbox_siepic_metal = partial(
@@ -264,6 +267,8 @@ strip_heater_metal = partial(
     heater_width=2.5,
     layer_heater=LAYER.M1_HEATER,
 )
+
+strip_simple = gf.cross_section.cross_section
 
 metal_routing = partial(
     gf.cross_section.cross_section,

@@ -1,16 +1,15 @@
 """Cells imported from the PDK."""
-from functools import partial
 import gdsfactory as gf
 from gdsfactory.typings import ComponentSpec
 from gdsfactory import Component
 
 from ubcpdk.import_gds import import_gds, import_gc
+from ubcpdk import tech
 from ubcpdk.tech import (
     strip,
     LAYER_STACK,
     LAYER,
     add_pins_bbox_siepic,
-    add_pins_siepic,
     add_pins_siepic_metal,
 )
 
@@ -364,7 +363,7 @@ def photonic_wirebond_surfacetaper_1550() -> gf.Component:
 
 
 @gf.cell
-def ebeam_gc_te1310() -> gf.Component:
+def gc_te1310() -> gf.Component:
     """Return ebeam_gc_te1310 fixed cell.
 
     .. plot::
@@ -372,7 +371,7 @@ def ebeam_gc_te1310() -> gf.Component:
 
       import ubcpdk
 
-      c = ubcpdk.components.ebeam_gc_te1310()
+      c = ubcpdk.components.gc_te1310()
       c.plot()
     """
     c = import_gc("ebeam_gc_te1310.gds", info=info1310te)
@@ -389,7 +388,7 @@ def ebeam_gc_te1310() -> gf.Component:
 
 
 @gf.cell
-def ebeam_gc_te1310_8deg() -> gf.Component:
+def gc_te1310_8deg() -> gf.Component:
     """Return ebeam_gc_te1310_8deg fixed cell.
 
     .. plot::
@@ -397,7 +396,7 @@ def ebeam_gc_te1310_8deg() -> gf.Component:
 
       import ubcpdk
 
-      c = ubcpdk.components.ebeam_gc_te1310_8deg()
+      c = ubcpdk.components.gc_te1310_8deg()
       c.plot()
     """
     c = import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
@@ -414,7 +413,7 @@ def ebeam_gc_te1310_8deg() -> gf.Component:
 
 
 @gf.cell
-def ebeam_gc_te1310_broadband() -> gf.Component:
+def gc_te1310_broadband() -> gf.Component:
     """Return ebeam_gc_te1310_broadband fixed cell.
 
     .. plot::
@@ -422,7 +421,7 @@ def ebeam_gc_te1310_broadband() -> gf.Component:
 
       import ubcpdk
 
-      c = ubcpdk.components.ebeam_gc_te1310_broadband()
+      c = ubcpdk.components.gc_te1310_broadband()
       c.plot()
     """
     c = import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
@@ -434,12 +433,11 @@ def ebeam_gc_te1310_broadband() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
-    c = add_pins_bbox_siepic(c)
     return c
 
 
 @gf.cell
-def ebeam_gc_te1550() -> gf.Component:
+def gc_te1550() -> gf.Component:
     """Return ebeam_gc_te1550 fixed cell."""
     c = import_gc("ebeam_gc_te1550.gds", info=info1550te)
     name = "vertical_te"
@@ -450,12 +448,11 @@ def ebeam_gc_te1550() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
-    c = add_pins_bbox_siepic(c)
     return c
 
 
 @gf.cell
-def ebeam_gc_te1550_90nmSlab() -> gf.Component:
+def gc_te1550_90nmSlab() -> gf.Component:
     """Return ebeam_gc_te1550_90nmSlab fixed cell."""
     c = import_gc("ebeam_gc_te1550_90nmSlab.gds", info=info1550te)
     name = "vertical_te"
@@ -466,12 +463,11 @@ def ebeam_gc_te1550_90nmSlab() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
-    c = add_pins_bbox_siepic(c)
     return c
 
 
 @gf.cell
-def ebeam_gc_te1550_broadband() -> gf.Component:
+def gc_te1550_broadband() -> gf.Component:
     """Return ebeam_gc_te1550_broadband fixed cell."""
     c = import_gc("ebeam_gc_te1550_broadband.gds", info=info1550te)
     name = "vertical_te"
@@ -487,7 +483,7 @@ def ebeam_gc_te1550_broadband() -> gf.Component:
 
 
 @gf.cell
-def ebeam_gc_tm1550() -> gf.Component:
+def gc_tm1550() -> gf.Component:
     """Return ebeam_gc_tm1550 fixed cell."""
     c = import_gc("ebeam_gc_tm1550.gds", info=info1550tm)
     c.add_port(
@@ -533,7 +529,7 @@ ring_single_heater = gf.partial(
 def add_fiber_array(
     component: ComponentSpec = "straight",
     gc_port_name: str = "o1",
-    grating_coupler: ComponentSpec = ebeam_gc_te1550,
+    grating_coupler: ComponentSpec = gc_te1550,
     **kwargs,
 ) -> gf.Component:
     """Returns component with grating couplers and labels on each port.
@@ -596,31 +592,26 @@ def dbr(
 ) -> gf.Component:
     c = gf.Component()
 
-    add_pins_left = partial(add_pins_siepic, prefix="o1")
-    s = c << gf.components.straight(length=l1, add_pins=add_pins_left)
-    dbr = c << gf.components.dbr(
+    # add_pins_left = partial(add_pins_siepic, prefix="o1")
+    s = c << gf.components.straight(length=l1, cross_section=tech.strip_simple)
+    _dbr = gf.components.dbr(
         w1=w0 - dw / 2,
         w2=w0 + dw / 2,
         n=n,
         l1=l1,
         l2=l2,
-        add_pins=None,
-        with_bbox=False,
-        bbox_layers=None,
-        bbox_offsets=None,
+        cross_section=tech.strip_simple,
     )
+    dbr = c << _dbr
     s.connect("o2", dbr.ports["o1"])
     c.add_port("o1", port=s.ports["o1"])
-    c = add_pins_bbox_siepic(c)
     return c
 
 
 @gf.cell
 def dbr_cavity(**kwargs) -> gf.Component:
-    d = dbr(**kwargs)
-    c = gf.components.cavity(
-        component=d, coupler=coupler, decorator=add_pins_bbox_siepic
-    )
+    d = dbr(**kwargs, decorator=add_pins_bbox_siepic)
+    c = gf.components.cavity(component=d, coupler=coupler)
     return c
 
 
@@ -784,14 +775,16 @@ if __name__ == "__main__":
     # c = ebeam_y_1550()
     # c = ebeam_y_adiabatic()
     # c = ebeam_bdc_te1550()
-    c = ebeam_gc_te1550()
-    # c = ebeam_gc_tm1550()
+    # c = gc_te1550()
+    # c = gc_tm1550()
     # c = spiral()
     # c = coupler()
-    # c = ebeam_gc_tm1550()
-    # c = add_fiber_array()
+    # c = gc_tm1550()
+
+    # c = add_fiber_array(mzi())
+    # c = dbr()
     # c = dbr_cavity()
-    # c = dbr_cavity_te()
+    c = dbr_cavity_te()
     # c = thermal_phase_shifter0()
     # c = add_pads_rf(c)
 

@@ -51,7 +51,7 @@ def test_mask_1():
 
 
 def test_mask_2():
-    e = [add_gc(ubcpdk.components.straight())] * 2
+    e = [add_gc(ubcpdk.components.straight())]
     e += [
         add_gc(
             gf.components.ring_single(
