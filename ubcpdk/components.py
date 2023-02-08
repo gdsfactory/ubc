@@ -374,7 +374,11 @@ def gc_te1310() -> gf.Component:
       c = ubcpdk.components.gc_te1310()
       c.plot()
     """
-    c = import_gc("ebeam_gc_te1310.gds", info=info1310te)
+    c = gf.Component()
+    gc = import_gc("ebeam_gc_te1310.gds", info=info1310te)
+    gc_ref = c << gc
+    c.add_ports(gc_ref.ports)
+    c.copy_child_info(gc)
     name = "vertical_te"
     c.add_port(
         name=name,
@@ -383,7 +387,6 @@ def gc_te1310() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
-    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -399,7 +402,11 @@ def gc_te1310_8deg() -> gf.Component:
       c = ubcpdk.components.gc_te1310_8deg()
       c.plot()
     """
-    c = import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
+    c = gf.Component()
+    gc = import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
+    gc_ref = c << gc
+    c.add_ports(gc_ref.ports)
+    c.copy_child_info(gc)
     name = "vertical_te"
     c.add_port(
         name=name,
@@ -408,7 +415,6 @@ def gc_te1310_8deg() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
-    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -424,7 +430,11 @@ def gc_te1310_broadband() -> gf.Component:
       c = ubcpdk.components.gc_te1310_broadband()
       c.plot()
     """
-    c = import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
+    c = gf.Component()
+    gc = import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
+    gc_ref = c << gc
+    c.add_ports(gc_ref.ports)
+    c.copy_child_info(gc)
     name = "vertical_te"
     c.add_port(
         name=name,
@@ -439,7 +449,11 @@ def gc_te1310_broadband() -> gf.Component:
 @gf.cell
 def gc_te1550() -> gf.Component:
     """Return ebeam_gc_te1550 fixed cell."""
-    c = import_gc("ebeam_gc_te1550.gds", info=info1550te)
+    c = gf.Component()
+    gc = import_gc("ebeam_gc_te1550.gds", info=info1550te)
+    gc_ref = c << gc
+    c.add_ports(gc_ref.ports)
+    c.copy_child_info(gc)
     name = "vertical_te"
     c.add_port(
         name=name,
@@ -454,7 +468,11 @@ def gc_te1550() -> gf.Component:
 @gf.cell
 def gc_te1550_90nmSlab() -> gf.Component:
     """Return ebeam_gc_te1550_90nmSlab fixed cell."""
-    c = import_gc("ebeam_gc_te1550_90nmSlab.gds", info=info1550te)
+    c = gf.Component()
+    gc = import_gc("ebeam_gc_te1550_90nmSlab.gds", info=info1550te)
+    gc_ref = c << gc
+    c.add_ports(gc_ref.ports)
+    c.copy_child_info(gc)
     name = "vertical_te"
     c.add_port(
         name=name,
@@ -469,7 +487,11 @@ def gc_te1550_90nmSlab() -> gf.Component:
 @gf.cell
 def gc_te1550_broadband() -> gf.Component:
     """Return ebeam_gc_te1550_broadband fixed cell."""
-    c = import_gc("ebeam_gc_te1550_broadband.gds", info=info1550te)
+    c = gf.Component()
+    gc = import_gc("ebeam_gc_te1550_broadband.gds", info=info1550te)
+    gc_ref = c << gc
+    c.add_ports(gc_ref.ports)
+    c.copy_child_info(gc)
     name = "vertical_te"
     c.add_port(
         name=name,
@@ -478,14 +500,17 @@ def gc_te1550_broadband() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
-    c = add_pins_bbox_siepic(c)
     return c
 
 
 @gf.cell
 def gc_tm1550() -> gf.Component:
     """Return ebeam_gc_tm1550 fixed cell."""
-    c = import_gc("ebeam_gc_tm1550.gds", info=info1550tm)
+    c = gf.Component()
+    gc = import_gc("ebeam_gc_tm1550.gds", info=info1550tm)
+    gc_ref = c << gc
+    c.add_ports(gc_ref.ports)
+    c.copy_child_info(gc)
     c.add_port(
         name="vertical_tm",
         port_type="vertical_tm",
@@ -493,7 +518,6 @@ def gc_tm1550() -> gf.Component:
         layer=(1, 0),
         width=9,
     )
-    c = add_pins_bbox_siepic(c)
     return c
 
 
@@ -773,7 +797,8 @@ if __name__ == "__main__":
     # c = ebeam_y_adiabatic()
     # c = ebeam_bdc_te1550()
     # c = gc_te1550()
-    # c = gc_tm1550()
+    # c = gc_te1310()
+    c = gc_tm1550()
     # c = spiral()
     # c = coupler()
     # c = gc_tm1550()
@@ -781,7 +806,7 @@ if __name__ == "__main__":
     # c = add_fiber_array(mzi())
     # c = dbr()
     # c = dbr_cavity()
-    c = dbr_cavity_te()
+    # c = dbr_cavity_te()
     # c = thermal_phase_shifter0()
     # c = add_pads_rf(c)
 

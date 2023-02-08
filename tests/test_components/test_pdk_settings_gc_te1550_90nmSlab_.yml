@@ -1,7 +1,38 @@
-name: gc_te1550_90nmSlab
+name: mirror_d2cc2b58_gc_te15_311df1af
 settings:
   changed: {}
-  child: null
+  child:
+    changed:
+      component:
+        component: ebeam_gc_te1550_90nmSlab
+        settings: {}
+    child: {}
+    default:
+      p1:
+      - 0
+      - 1
+      p2:
+      - 0
+      - 0
+    full:
+      component:
+        component: ebeam_gc_te1550_90nmSlab
+        settings: {}
+      p1:
+      - 0
+      - 1
+      p2:
+      - 0
+      - 0
+    function_name: mirror
+    info:
+      library: Design kits/ebeam
+      model: ebeam_gc_te1550_90nmSlab
+      polarization: te
+      wavelength: 1.55
+    info_version: 2
+    module: gdsfactory.functions
+    name: mirror_d2cc2b58
   default: {}
   full: {}
   function_name: gc_te1550_90nmSlab
@@ -12,4 +43,4 @@ settings:
     wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: gc_te1550_90nmSlab
+  name: mirror_d2cc2b58_gc_te15_311df1af

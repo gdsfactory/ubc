@@ -1,10 +1,10 @@
-name: mirror_355ecc08_gc_tm1550
+name: mirror_58e2a10b_gc_te1310_8deg
 settings:
   changed: {}
   child:
     changed:
       component:
-        component: ebeam_gc_tm1550
+        component: ebeam_gc_te1310_8deg
         settings: {}
     child: {}
     default:
@@ -16,7 +16,7 @@ settings:
       - 0
     full:
       component:
-        component: ebeam_gc_tm1550
+        component: ebeam_gc_te1310_8deg
         settings: {}
       p1:
       - 0
@@ -27,20 +27,20 @@ settings:
     function_name: mirror
     info:
       library: Design kits/ebeam
-      model: ebeam_gc_tm1550
-      polarization: tm
-      wavelength: 1.55
+      model: ebeam_gc_te1310_8deg
+      polarization: te
+      wavelength: 1.31
     info_version: 2
     module: gdsfactory.functions
-    name: mirror_355ecc08
+    name: mirror_58e2a10b
   default: {}
   full: {}
-  function_name: gc_tm1550
+  function_name: gc_te1310_8deg
   info:
     library: Design kits/ebeam
-    model: ebeam_gc_tm1550
-    polarization: tm
-    wavelength: 1.55
+    model: ebeam_gc_te1310_8deg
+    polarization: te
+    wavelength: 1.31
   info_version: 2
   module: ubcpdk.components
-  name: mirror_355ecc08_gc_tm1550
+  name: mirror_58e2a10b_gc_te1310_8deg
