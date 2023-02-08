@@ -6,7 +6,6 @@ from numpy import arctan2, degrees, isclose
 import gdsfactory as gf
 from gdsfactory.component import Component
 from gdsfactory.typings import LayerSpec
-
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
 
@@ -183,9 +182,7 @@ def import_gds(gdspath, **kwargs):
 
 def import_gc(gdspath, **kwargs):
     c = import_gds(gdspath, **kwargs)
-    c2 = c.mirror().flatten()
-    c2.auto_rename_ports()
-    return c2
+    return gf.functions.mirror(component=c)
 
 
 if __name__ == "__main__":

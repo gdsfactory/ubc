@@ -4,7 +4,8 @@ import ubcpdk.samples.ubc_joaquin_matres1 as m1
 import ubcpdk.samples.ubc_helge as m2
 
 
-def write_m1():
+def test_masks_2023_v1():
+    """Write all masks for 2023_v1."""
     for mask in [
         m1.test_mask1,
         m1.test_mask2,
@@ -18,4 +19,4 @@ def write_m1():
 
 
 if __name__ == "__main__":
-    write_m1()
+    test_masks_2023_v1()

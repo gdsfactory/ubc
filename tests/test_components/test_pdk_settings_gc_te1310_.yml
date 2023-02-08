@@ -1,27 +1,46 @@
-name: rotate_5cce45cb
+name: mirror_b611a4d8_gc_te1310
 settings:
-  changed:
-    angle: 180
-    component:
-      name: ebeam_gc_te1310
-      settings: {}
-      version: 0.0.1
-  child: {}
-  default:
-    angle: 90
-    recenter: false
-  full:
-    angle: 180
-    component:
-      name: ebeam_gc_te1310
-      settings: {}
-      version: 0.0.1
-    recenter: false
-  function_name: rotate
+  changed: {}
+  child:
+    changed:
+      component:
+        component: ebeam_gc_te1310
+        settings: {}
+    child: {}
+    default:
+      p1:
+      - 0
+      - 1
+      p2:
+      - 0
+      - 0
+    full:
+      component:
+        component: ebeam_gc_te1310
+        settings: {}
+      p1:
+      - 0
+      - 1
+      p2:
+      - 0
+      - 0
+    function_name: mirror
+    info:
+      library: Design kits/ebeam
+      model: ebeam_gc_te1310
+      polarization: te
+      wavelength: 1.31
+    info_version: 2
+    module: gdsfactory.functions
+    name: mirror_b611a4d8
+  default: {}
+  full: {}
+  function_name: gc_te1310
   info:
+    library: Design kits/ebeam
+    model: ebeam_gc_te1310
     polarization: te
     wavelength: 1.31
   info_version: 2
-  module: gdsfactory.functions
-  name: rotate_5cce45cb
-version: 0.0.1
+  module: ubcpdk.components
+  name: mirror_b611a4d8_gc_te1310

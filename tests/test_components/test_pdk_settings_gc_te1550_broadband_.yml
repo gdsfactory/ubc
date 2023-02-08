@@ -1,32 +1,46 @@
-name: rotate_c698eecd
+name: mirror_a38c0f84_gc_te15_79b73d72
 settings:
-  changed:
-    angle: 180
-    component:
-      name: ebeam_gc_te1550_broadband
-      settings: {}
-      version: 0.0.1
-  child: {}
-  default:
-    angle: 90
-    recenter: false
-  full:
-    angle: 180
-    component:
-      name: ebeam_gc_te1550_broadband
-      settings: {}
-      version: 0.0.1
-    recenter: false
-  function_name: rotate
-  info:
-    interconnect:
-      layout_model_port_pairs:
-        opt1: opt_wg
+  changed: {}
+  child:
+    changed:
+      component:
+        component: ebeam_gc_te1550_broadband
+        settings: {}
+    child: {}
+    default:
+      p1:
+      - 0
+      - 1
+      p2:
+      - 0
+      - 0
+    full:
+      component:
+        component: ebeam_gc_te1550_broadband
+        settings: {}
+      p1:
+      - 0
+      - 1
+      p2:
+      - 0
+      - 0
+    function_name: mirror
+    info:
       library: Design kits/ebeam
       model: ebeam_gc_te1550_broadband
+      polarization: te
+      wavelength: 1.55
+    info_version: 2
+    module: gdsfactory.functions
+    name: mirror_a38c0f84
+  default: {}
+  full: {}
+  function_name: gc_te1550_broadband
+  info:
+    library: Design kits/ebeam
+    model: ebeam_gc_te1550_broadband
     polarization: te
     wavelength: 1.55
   info_version: 2
-  module: gdsfactory.functions
-  name: rotate_c698eecd
-version: 0.0.1
+  module: ubcpdk.components
+  name: mirror_a38c0f84_gc_te15_79b73d72

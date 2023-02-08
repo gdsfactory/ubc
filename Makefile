@@ -11,7 +11,7 @@ update:
 	pre-commit autoupdate --bleeding-edge
 
 watch:
-	gf yaml watch ubcpdk
+	gf watch ubcpdk
 
 link:
 	lygadgets_link lygadgets
@@ -91,4 +91,4 @@ notebooks:
 	nbstripout --drop-empty-cells docs/notebooks/*.ipynb
 
 mask:
-	python ubcpdk/samples/write_masks.py
+	python ubcpdk/samples/test_masks.py
