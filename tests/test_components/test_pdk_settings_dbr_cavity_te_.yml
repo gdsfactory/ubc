@@ -9,14 +9,14 @@ settings:
     component: straight
     gc_port_name: o1
     grating_coupler:
-      function: ebeam_gc_te1550
+      function: gc_te1550
   full:
     component:
       component: dbr_cavity
       settings: {}
     gc_port_name: o1
     grating_coupler:
-      function: ebeam_gc_te1550
+      function: gc_te1550
   function_name: add_fiber_array
   info:
     grating_coupler:
