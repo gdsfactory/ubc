@@ -1,13 +1,13 @@
 """Sample mask for the edx course Q1 2023."""
 
 import gdsfactory as gf
+from gdsfactory.typings import ComponentSpec
 
 import ubcpdk
 import ubcpdk.components as pdk
 from ubcpdk.tech import LAYER
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
 
-from gdsfactory.types import ComponentSpec
 
 size = (605, 410)
 add_gc = ubcpdk.components.add_fiber_array
@@ -69,7 +69,7 @@ def disks_proximity(
 
 
 def bend_gc_array(
-    gc_spec: ComponentSpec = pdk.ebeam_gc_te1550(),
+    gc_spec: ComponentSpec = pdk.gc_te1550(),
     bend_spec: ComponentSpec = gf.components.bend_euler(),
 ):
     """Two gc's with opposite bends.
@@ -164,9 +164,13 @@ def resonator_proximity_io(
     return c
 
 
-def test_mask1():
-    """Ring resonators with thermal cross-talk."""
+def test_mask0():
+    """Ring resonators with thermal cross-talk.
 
+    TODO: does not pass verification.
+
+    - needs labels.
+    """
     c = gf.Component()
     rings = c << resonator_proximity_io(num_resonators=7)
     disks = c << resonator_proximity_io(
@@ -198,6 +202,24 @@ def test_mask1():
     c.add(route.references)
 
     return write_mask_gds_with_metadata(c)
+
+
+def test_mask1():
+    """Ring resonators with thermal cross-talk."""
+    rings_active = [pdk.ring_single_heater(length_x=4)]
+    rings_passive = [pdk.ring_single(length_x=4)] * 2
+    rings_active_gc = [pdk.add_fiber_array_pads_rf(ring) for ring in rings_active]
+    rings_passive_gc = [pdk.add_fiber_array(ring) for ring in rings_passive]
+    rings_gc = rings_passive_gc + rings_active_gc
+
+    m = gf.Component()
+    spacing = -20
+    g = m << gf.grid(rings_gc, shape=(1, len(rings_gc)), spacing=(spacing, spacing))
+    g.xmin = 1
+    g.ymin = 1
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    m.name = "EBeam_JoaquinMatres_Simon_1"
+    return write_mask_gds_with_metadata(m)
 
 
 if __name__ == "__main__":

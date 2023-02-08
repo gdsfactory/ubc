@@ -31,7 +31,7 @@ def test_mask1():
 
     c = gf.pack(e, max_size=size)
     m = c[0]
-    m.name = "EBeam_JoaquinMatres_1"
+    m.name = "EBeam_JoaquinMatres_11"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -67,7 +67,7 @@ def test_mask2():
     c = gf.pack(e)
 
     m = c[0]
-    m.name = "EBeam_JoaquinMatres_2"
+    m.name = "EBeam_JoaquinMatres_12"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -81,7 +81,7 @@ def test_mask3():
     # e += [add_gc(ubcpdk.components.ebeam_y_adiabatic(), optical_routing_type=1)]
     c = gf.pack(e)
     m = c[0]
-    m.name = "EBeam_JoaquinMatres_3"
+    m.name = "EBeam_JoaquinMatres_13"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -101,7 +101,7 @@ def test_mask4():
 
     c = gf.pack(mzis_gc + mzis_heater_gc, max_size=size)
     m = c[0]
-    m.name = "EBeam_JoaquinMatres_4"
+    m.name = "EBeam_JoaquinMatres_14"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -114,7 +114,7 @@ def test_mask5():
 
     c = gf.pack(rings_gc, max_size=size)
     m = c[0]
-    m.name = "EBeam_JoaquinMatres_5"
+    m.name = "EBeam_JoaquinMatres_15"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -128,11 +128,11 @@ if __name__ == "__main__":
     # m3, tm3 = test_mask3()
     # m = gf.grid([m1, m2, m3])
 
-    m, _ = test_mask1()
+    # m, _ = test_mask1()
     # m, _ = test_mask2() # spirals
     # m, _ = test_mask3()  # coupler and crossing
     # m, _ = test_mask4()  # mzis
-    # m, _ = test_mask5()  # heaters
+    m, _ = test_mask5()  # heaters
     m.show(technology="EBeam")
 
     # c = add_gc(ubcpdk.components.dc_broadband_te())

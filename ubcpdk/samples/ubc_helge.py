@@ -9,7 +9,7 @@ size = (605, 410)
 add_gc = ubcpdk.components.add_fiber_array
 
 
-def test_mask_1():
+def test_mask1():
     """Ring resonators."""
 
     @gf.cell
@@ -45,12 +45,13 @@ def test_mask_1():
 
     c = gf.pack(rings_gc, max_size=size)
     m = c[0]
-    m.name = "EBeam_Helge_Simon_1"
+    m.name = "EBeam_JoaquinMatres_Helge_1"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
-def test_mask_2():
+def test_mask2():
+    """Ring with different couplings."""
     e = [add_gc(ubcpdk.components.straight())]
     e += [
         add_gc(
@@ -67,11 +68,11 @@ def test_mask_2():
 
     c = gf.pack(e, max_size=size)
     m = c[0]
-    m.name = "EBeam_Helge_Simon_2"
+    m.name = "EBeam_JoaquinMatres_Helge_2"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
 if __name__ == "__main__":
-    m, _ = test_mask_2()
+    m, _ = test_mask2()
     m.show()

@@ -1,22 +1,118 @@
-name: add_fiber_array_37b25c57
+name: dbr_cavity_add_fiber_ar_619758f4
 settings:
   changed:
     component:
       component: dbr_cavity
       settings: {}
-  child: null
+  child:
+    changed:
+      component:
+        component: dbr_cavity
+        settings: {}
+      fanout_length: 0.0
+      grating_coupler:
+        function: gc_te1550
+      layer_label:
+      - 10
+      - 0
+      optical_routing_type: 0
+      with_loopback: false
+    child:
+      changed: {}
+      child: null
+      default: {}
+      full: {}
+      function_name: dbr_cavity
+      info: {}
+      info_version: 2
+      module: ubcpdk.components
+      name: dbr_cavity
+    default:
+      component:
+        function: straight
+      component_name: null
+      cross_section: strip
+      gc_port_labels: null
+      gc_port_name: o1
+      get_input_labels_function:
+        function: get_input_labels
+      grating_coupler:
+        function: grating_coupler_elliptical_trenches
+        settings:
+          polarization: te
+          taper_angle: 35
+      layer_label: TEXT
+      select_ports:
+        function: select_ports
+        settings:
+          port_type: optical
+    full:
+      component:
+        component: dbr_cavity
+        settings: {}
+      component_name: null
+      cross_section: strip
+      fanout_length: 0.0
+      gc_port_labels: null
+      gc_port_name: o1
+      get_input_labels_function:
+        function: get_input_labels
+      grating_coupler:
+        function: gc_te1550
+      layer_label:
+      - 10
+      - 0
+      optical_routing_type: 0
+      select_ports:
+        function: select_ports
+        settings:
+          port_type: optical
+      with_loopback: false
+    function_name: add_fiber_array
+    info:
+      grating_coupler:
+        library: Design kits/ebeam
+        model: ebeam_gc_te1550
+        polarization: te
+        wavelength: 1.55
+    info_version: 2
+    module: gdsfactory.routing.add_fiber_array
+    name: dbr_cavity_add_fiber_ar_c2d56e90
   default:
-    component: straight
+    component:
+      function: straight
+      settings:
+        cross_section: strip
+    component_name: null
+    cross_section: strip
+    fanout_length: 0.0
     gc_port_name: o1
+    get_input_labels_function:
+      function: get_input_labels
     grating_coupler:
       function: gc_te1550
+    layer_label:
+    - 10
+    - 0
+    optical_routing_type: 0
+    with_loopback: false
   full:
     component:
       component: dbr_cavity
       settings: {}
+    component_name: null
+    cross_section: strip
+    fanout_length: 0.0
     gc_port_name: o1
+    get_input_labels_function:
+      function: get_input_labels
     grating_coupler:
       function: gc_te1550
+    layer_label:
+    - 10
+    - 0
+    optical_routing_type: 0
+    with_loopback: false
   function_name: add_fiber_array
   info:
     grating_coupler:
@@ -26,4 +122,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: add_fiber_array_37b25c57
+  name: dbr_cavity_add_fiber_ar_619758f4
