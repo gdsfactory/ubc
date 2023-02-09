@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.19.0](https://github.com/gdsfactory/ubc/pull/158)
+
+- update to gdsfactory 6.35.1
+- use bbox_layers
+
 ## [1.15.0](https://github.com/gdsfactory/ubc/pull/158)
 
 - update to gdsfactory 6.21.1
