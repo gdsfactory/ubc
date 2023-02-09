@@ -3,7 +3,6 @@
 - LayerStack
 - cross_sections (xs_)
 - constants (WIDTH, CLADDING_OFFSET ...)
-
 """
 import sys
 from functools import partial
@@ -13,8 +12,8 @@ from pydantic import BaseModel
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.technology import LayerStack, LayerLevel
-from gdsfactory.typings import Layer, LayerSpec, Callable
-from gdsfactory.add_pins import add_pin_path, add_bbox_siepic
+from gdsfactory.typings import Layer, LayerSpec, Callable, LayerSpecs
+from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 
 from ubcpdk.config import PATH
@@ -51,6 +50,31 @@ class LayerMapUbc(BaseModel):
 
 
 LAYER = LayerMapUbc()
+
+
+def add_bbox_siepic(
+    component: Component,
+    bbox_layer: LayerSpec = "DEVREC",
+    remove_layers: LayerSpecs = ("PORT", "PORTE"),
+) -> Component:
+    """Add bounding box device recognition layer.
+
+    Args:
+        component: to add bbox.
+        bbox_layer: bounding box.
+        remove_layers: remove other layers.
+    """
+    from gdsfactory.pdk import get_layer
+
+    bbox_layer = get_layer(bbox_layer)
+    remove_layers = remove_layers or []
+    remove_layers = list(remove_layers) + [bbox_layer]
+    remove_layers = [get_layer(layer) for layer in remove_layers]
+    component = component.remove_layers(layers=remove_layers, recursive=False)
+
+    if bbox_layer:
+        component.add_padding(default=0, layers=(bbox_layer,))
+    return component
 
 
 def add_pins_siepic(
@@ -101,9 +125,9 @@ def add_pins_bbox_siepic(
     component: Component,
     function: Callable = add_pin_path,
     port_type: str = "optical",
-    layer_pin: LayerSpec = "PORT",
+    layer_pin: Layer = LAYER.PORT,
     pin_length: float = 2 * nm,
-    bbox_layer: LayerSpec = "DEVREC",
+    bbox_layer: Layer = LAYER.DEVREC,
     padding: float = 0,
     remove_layers: bool = False,
 ) -> Component:
@@ -120,18 +144,21 @@ def add_pins_bbox_siepic(
         remove_layers: removes old layers.
     """
     c = component
-    if remove_layers:
+    if remove_layers or component.name.startswith(("mmi", "dbr")):
         remove_layers = (layer_pin, bbox_layer, "TEXT")
         c = component.remove_layers(layers=remove_layers)
-    c.add_padding(default=padding, layers=(bbox_layer,))
 
-    c = add_pins_siepic(
-        component=component,
-        function=function,
-        port_type=port_type,
-        layer_pin=layer_pin,
-        pin_length=pin_length,
-    )
+    if bbox_layer not in c.layers:
+        c.add_padding(default=padding, layers=(bbox_layer,))
+
+    if layer_pin not in c.layers:
+        c = add_pins_siepic(
+            component=component,
+            function=function,
+            port_type=port_type,
+            layer_pin=layer_pin,
+            pin_length=pin_length,
+        )
     return c
 
 
@@ -254,12 +281,11 @@ cladding_offsets_optical_siepic = (0,)  # for SiEPIC verification
 strip = partial(
     gf.cross_section.cross_section,
     add_pins=add_pins_siepic,
-    add_bbox=add_bbox_siepic,
-    # cladding_layers=cladding_layers_optical_siepic,
-    # cladding_offsets=cladding_offsets_optical_siepic,
+    # add_bbox=add_bbox_siepic,
+    cladding_layers=cladding_layers_optical_siepic,
+    cladding_offsets=cladding_offsets_optical_siepic,
     # bbox_layers=cladding_layers_optical_siepic,
     # bbox_offsets=cladding_offsets_optical_siepic,
-    # decorator=add_pins_bbox_siepic,
 )
 strip_heater_metal = partial(
     gf.cross_section.strip_heater_metal,
@@ -269,6 +295,10 @@ strip_heater_metal = partial(
 )
 
 strip_simple = gf.cross_section.cross_section
+strip_bbox = gf.partial(
+    strip,
+    add_bbox=add_bbox_siepic,
+)
 
 metal_routing = partial(
     gf.cross_section.cross_section,
@@ -291,7 +321,8 @@ __all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
 
 
 if __name__ == "__main__":
+    c = gf.c.mzi()
     # c = gf.c.straight(length=1, cross_section=strip)
     # c = gf.c.bend_euler(cross_section=strip)
-    c = gf.c.mzi(delta_length=10, cross_section=strip)
+    # c = gf.c.mzi(delta_length=10, cross_section=strip)
     c.show(show_ports=False)

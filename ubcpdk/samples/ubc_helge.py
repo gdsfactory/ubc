@@ -15,7 +15,6 @@ def test_mask1():
     @gf.cell
     def dbr_filter(n):
         c = gf.Component()
-
         splitter = pdk.ebeam_bdc_te1550()
 
         splitter_1 = c << splitter

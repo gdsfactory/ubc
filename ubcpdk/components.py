@@ -1,4 +1,5 @@
 """Cells imported from the PDK."""
+from functools import partial
 import gdsfactory as gf
 from gdsfactory.typings import (
     Callable,
@@ -723,6 +724,7 @@ def dbr(
         l1=l1,
         l2=l2,
         cross_section=tech.strip_simple,
+        decorator=None,
     )
     dbr = c << _dbr
     s.connect("o2", dbr.ports["o1"])
@@ -744,6 +746,7 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
 bend = gf.components.bend_euler
 coupler = gf.components.coupler
 coupler_ring = gf.components.coupler_ring
+mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
 
 ring_single = gf.partial(
     gf.components.ring_single,
@@ -910,7 +913,7 @@ if __name__ == "__main__":
     # c = ebeam_bdc_te1550()
     # c = gc_te1550()
     # c = gc_te1310()
-    c = gc_tm1550()
+    # c = gc_tm1550()
     # c = spiral()
     # c = coupler()
     # c = gc_tm1550()
@@ -929,6 +932,9 @@ if __name__ == "__main__":
     # c = add_pads_dc()
     # c = pad()
     # c = add_fiber_array_pads_rf()
-    # c = dbr()
+    # c = dbr(decorator=None)
+    c = mmi1x2()
+    # c = mzi(splitter='mmi1x2')
+    # c = mzi()
     # c = dbr_cavity()
     c.show(show_ports=True)
