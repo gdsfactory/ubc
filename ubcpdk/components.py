@@ -747,6 +747,7 @@ bend = gf.components.bend_euler
 coupler = gf.components.coupler
 coupler_ring = gf.components.coupler_ring
 mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
+coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
 ring_single = gf.partial(
     gf.components.ring_single,
@@ -933,8 +934,8 @@ if __name__ == "__main__":
     # c = pad()
     # c = add_fiber_array_pads_rf()
     # c = dbr(decorator=None)
-    c = mmi1x2()
+    # c = mmi1x2()
     # c = mzi(splitter='mmi1x2')
     # c = mzi()
-    # c = dbr_cavity()
+    c = dbr_cavity()
     c.show(show_ports=True)

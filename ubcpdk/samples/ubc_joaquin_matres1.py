@@ -131,9 +131,9 @@ if __name__ == "__main__":
     m, _ = test_mask1()
     # m, _ = test_mask2() # spirals
     # m, _ = test_mask3()  # coupler and crossing
-    # m, _ = test_mask4()  # mzis
-    # m, _ = test_mask5()  # heaters
-    m.show(technology="EBeam")
+    # m, _ = test_mask4()  # heated mzis
+    # m, _ = test_mask5()  # heated rings
+    m.show()
 
     # c = add_gc(ubcpdk.components.dc_broadband_te())
     # print(c.to_yaml(with_cells=True, with_ports=True))

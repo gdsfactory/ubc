@@ -19,6 +19,7 @@ from gdsfactory.component import Component
 from ubcpdk.config import PATH
 
 nm = 1e-3
+pin_length = 10 * nm
 
 
 class LayerMapUbc(BaseModel):
@@ -82,7 +83,7 @@ def add_pins_siepic(
     function: Callable = add_pin_path,
     port_type: str = "optical",
     layer_pin: LayerSpec = "PORT",
-    pin_length: float = 10 * nm,
+    pin_length: float = pin_length,
     **kwargs,
 ) -> Component:
     """Add pins.
@@ -126,7 +127,7 @@ def add_pins_bbox_siepic(
     function: Callable = add_pin_path,
     port_type: str = "optical",
     layer_pin: Layer = LAYER.PORT,
-    pin_length: float = 2 * nm,
+    pin_length: float = pin_length,
     bbox_layer: Layer = LAYER.DEVREC,
     padding: float = 0,
     remove_layers: bool = False,
