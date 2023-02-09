@@ -26,7 +26,6 @@ from ubcpdk.tech import (
     add_pins_siepic_metal,
 )
 
-
 um = 1e-6
 
 
@@ -178,6 +177,42 @@ def ebeam_crossing4() -> gf.Component:
       c.plot()
     """
     return import_gds("ebeam_crossing4.gds")
+
+
+@gf.cell
+def straight_one_pin(length=1, cross_section=tech.strip_bbox_only) -> gf.Component:
+    c = gf.Component()
+    add_pins_left = partial(tech.add_pins_siepic, prefix="o1", pin_length=0.1)
+    s = c << gf.components.straight(length=length, cross_section=cross_section)
+    c.add_ports(s.ports)
+    add_pins_left(c)
+    c.absorb(s)
+    return c
+
+
+@gf.cell
+def ebeam_crossing4_2ports() -> gf.Component:
+    """Return ebeam_crossing4 fixed cell.
+
+    .. plot::
+      :include-source:
+
+      import ubcpdk
+
+      c = ubcpdk.components.ebeam_crossing4_2ports()
+      c.plot()
+    """
+    c = gf.Component()
+    x = c << ebeam_crossing4()
+    s1 = c << straight_one_pin()
+    s2 = c << straight_one_pin()
+
+    s1.connect("o1", x.ports["o2"])
+    s2.connect("o1", x.ports["o4"])
+
+    c.add_port(name="o1", port=x.ports["o1"])
+    c.add_port(name="o4", port=x.ports["o3"])
+    return c
 
 
 @gf.cell
@@ -729,12 +764,13 @@ def dbr(
     dbr = c << _dbr
     s.connect("o2", dbr.ports["o1"])
     c.add_port("o1", port=s.ports["o1"])
+    c = add_pins_bbox_siepic(c)
     return c
 
 
 @gf.cell
 def dbr_cavity(**kwargs) -> gf.Component:
-    d = dbr(**kwargs, decorator=add_pins_bbox_siepic)
+    d = dbr(**kwargs)
     return gf.components.cavity(component=d, coupler=coupler)
 
 
@@ -827,7 +863,7 @@ ebeam_dc_te1550 = gf.components.coupler
 spiral = gf.partial(gf.components.spiral_external_io)
 ring_with_crossing = gf.partial(
     gf.components.ring_single_dut,
-    component=ebeam_crossing4,
+    component=ebeam_crossing4_2ports,
     port_name="o4",
     bend=bend_euler,
     cross_section=strip,
@@ -900,42 +936,37 @@ def add_pads(component: ComponentSpec = "ring_single_heater", **kwargs) -> Compo
 
 
 if __name__ == "__main__":
-    # c = dbr()
-    # c = spiral()
+    gf.clear_cache()
+    # c = add_fiber_array(mzi())
+    # c = add_fiber_array_pads_rf()
+    # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
+    # c = add_pads_dc()
+    # c = add_pads_rf()
+    # c = coupler()
+    # c = dbr(decorator=None)
+    # c = dbr_cavity()
+    # c = dbr_cavity_te()
+
     # c = ebeam_adiabatic_tm1550()
-    # c = mzi()
-    # c = ring_with_crossing()
-    # c = ring_single()
+    # c = ebeam_bdc_te1550()
     # c = ebeam_crossing4()
     # c = ebeam_dc_halfring_straight()
     # c = ebeam_dc_te1550()
     # c = ebeam_y_1550()
     # c = ebeam_y_adiabatic()
-    # c = ebeam_bdc_te1550()
-    # c = gc_te1550()
+
     # c = gc_te1310()
+    # c = gc_te1550()
     # c = gc_tm1550()
-    # c = spiral()
-    # c = coupler()
-    # c = gc_tm1550()
-
-    # c = add_fiber_array(mzi())
-    # c = dbr()
-    # c = dbr_cavity()
-    # c = dbr_cavity_te()
-    # c = thermal_phase_shifter0()
-    # c = add_pads_rf(c)
-
-    # c = ring_single_heater()
-    # c = mzi_heater()
-    # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
-    # c = add_pads_rf()
-    # c = add_pads_dc()
-    # c = pad()
-    # c = add_fiber_array_pads_rf()
-    # c = dbr(decorator=None)
     # c = mmi1x2()
     # c = mzi(splitter='mmi1x2')
-    # c = mzi()
-    c = dbr_cavity()
+    # c = mzi_heater()
+    # c = pad()
+    # c = ring_single()
+    # c = ring_single_heater()
+    c = ring_with_crossing()
+    # c = spiral()
+    # c = thermal_phase_shifter0()
+    # c = straight_one_pin()
+    # c = ebeam_crossing4_2ports()
     c.show(show_ports=True)

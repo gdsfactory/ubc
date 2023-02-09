@@ -22,12 +22,16 @@ def test_mask1():
     ]
 
     e += [
-        add_gc(ubcpdk.components.dbr_cavity(w0=w0, dw=dw))
+        ubcpdk.components.dbr_cavity_te(w0=w0, dw=dw)
         for w0 in [0.5]
         for dw in [50e-3, 100e-3, 150e-3, 200e-3]
     ]
     e += [add_gc(ubcpdk.components.ring_with_crossing())]
-    # e += [add_gc(ubcpdk.components.ring_with_crossing(with_component=False))]
+    e += [
+        add_gc(
+            ubcpdk.components.ring_with_crossing(port_name="o2", with_component=False)
+        )
+    ]
 
     c = gf.pack(e, max_size=size)
     m = c[0]
@@ -120,21 +124,11 @@ def test_mask5():
 
 
 if __name__ == "__main__":
-    # m = test_mask3()
-    # m.write_gds_with_metadata()
+    gf.clear_cache()
 
-    # m1, tm1 = test_mask1()
-    # m2, tm2 = test_mask2()
-    # m3, tm3 = test_mask3()
-    # m = gf.grid([m1, m2, m3])
-
-    m, _ = test_mask1()
+    m, _ = test_mask1()  # dbr and mzi
     # m, _ = test_mask2() # spirals
     # m, _ = test_mask3()  # coupler and crossing
     # m, _ = test_mask4()  # heated mzis
     # m, _ = test_mask5()  # heated rings
     m.show()
-
-    # c = add_gc(ubcpdk.components.dc_broadband_te())
-    # print(c.to_yaml(with_cells=True, with_ports=True))
-    # c.write_gds_with_metadata()

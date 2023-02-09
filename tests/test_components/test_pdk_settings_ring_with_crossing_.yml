@@ -1,4 +1,4 @@
-name: ebeam_crossing4_ring_si_f5c92276
+name: ebeam_crossing4_2ports__96de2244
 settings:
   changed:
     bend:
@@ -7,27 +7,27 @@ settings:
         cross_section: strip
         npoints: 100
     component:
-      function: ebeam_crossing4
+      function: ebeam_crossing4_2ports
     cross_section:
       function: cross_section
       settings:
-        add_bbox:
-          function: add_bbox_siepic
         add_pins:
           function: add_pins_siepic
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0
     port_name: o4
   child:
     changed: {}
     child: null
     default: {}
     full: {}
-    function_name: ebeam_crossing4
-    info:
-      library: Design kits/ebeam
-      model: ebeam_crossing4
+    function_name: ebeam_crossing4_2ports
+    info: {}
     info_version: 2
     module: ubcpdk.components
-    name: ebeam_crossing4
+    name: ebeam_crossing4_2ports
   default:
     bend:
       function: bend_euler
@@ -50,16 +50,18 @@ settings:
         cross_section: strip
         npoints: 100
     component:
-      function: ebeam_crossing4
+      function: ebeam_crossing4_2ports
     coupler:
       function: coupler_ring
     cross_section:
       function: cross_section
       settings:
-        add_bbox:
-          function: add_bbox_siepic
         add_pins:
           function: add_pins_siepic
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0
     gap: 0.2
     length_x: 4
     length_y: 0
@@ -67,9 +69,7 @@ settings:
     radius: 5.0
     with_component: true
   function_name: ring_single_dut
-  info:
-    library: Design kits/ebeam
-    model: ebeam_crossing4
+  info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ebeam_crossing4_ring_si_f5c92276
+  name: ebeam_crossing4_2ports__96de2244
