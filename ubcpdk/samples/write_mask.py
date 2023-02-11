@@ -35,5 +35,3 @@ def write_mask_gds_with_metadata(m) -> Tuple[Path, Path]:
     return m, tm
 
 
-if __name__ == "__main__":
-    pass
