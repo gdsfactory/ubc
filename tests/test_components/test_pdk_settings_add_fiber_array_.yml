@@ -1,4 +1,4 @@
-name: straight_add_fiber_arra_98f507a5
+name: straight_add_fiber_arra_95f3313e
 settings:
   changed: {}
   child:
@@ -8,6 +8,10 @@ settings:
         settings:
           cross_section: strip
       fanout_length: 0.0
+      get_input_label_text_function:
+        function: get_input_label_text
+      get_input_labels_function:
+        function: get_input_labels
       grating_coupler:
         function: gc_te1550
       layer_label:
@@ -43,8 +47,7 @@ settings:
       cross_section: strip
       gc_port_labels: null
       gc_port_name: o1
-      get_input_labels_function:
-        function: get_input_labels
+      get_input_labels_function: null
       grating_coupler:
         function: grating_coupler_elliptical_trenches
         settings:
@@ -65,6 +68,8 @@ settings:
       fanout_length: 0.0
       gc_port_labels: null
       gc_port_name: o1
+      get_input_label_text_function:
+        function: get_input_label_text
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
@@ -90,7 +95,7 @@ settings:
       width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_arra_c6cacdf5
+    name: straight_add_fiber_arra_07129a95
   default:
     component:
       function: straight
@@ -139,4 +144,4 @@ settings:
     width: 0.5
   info_version: 2
   module: ubcpdk.components
-  name: straight_add_fiber_arra_98f507a5
+  name: straight_add_fiber_arra_95f3313e

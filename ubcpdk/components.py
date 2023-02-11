@@ -1,4 +1,5 @@
 """Cells imported from the PDK."""
+from functools import partial
 import gdsfactory as gf
 from gdsfactory.typings import (
     Callable,
@@ -22,9 +23,9 @@ from ubcpdk.tech import (
     LAYER_STACK,
     LAYER,
     add_pins_bbox_siepic,
+    add_pins_bbox_siepic_remove_layers,
     add_pins_siepic_metal,
 )
-
 
 um = 1e-6
 
@@ -49,6 +50,11 @@ thermal_phase_shifter_names = [
     "thermal_phase_shifter_t_75acd1c1",
     "thermal_phase_shifter_t_ab7ae757",
 ]
+
+prefix_te1550 = f"opt_in_TE_1550_device_{CONFIG.username}"
+prefix_tm1550 = f"opt_in_TM_1550_device_{CONFIG.username}"
+prefix_te1310 = f"opt_in_TE_1310_device_{CONFIG.username}"
+prefix_tm1130 = f"opt_in_TM_1310_device_{CONFIG.username}"
 
 
 # @gf.cell
@@ -177,6 +183,42 @@ def ebeam_crossing4() -> gf.Component:
       c.plot()
     """
     return import_gds("ebeam_crossing4.gds")
+
+
+@gf.cell
+def straight_one_pin(length=1, cross_section=tech.strip_bbox_only) -> gf.Component:
+    c = gf.Component()
+    add_pins_left = partial(tech.add_pins_siepic, prefix="o1", pin_length=0.1)
+    s = c << gf.components.straight(length=length, cross_section=cross_section)
+    c.add_ports(s.ports)
+    add_pins_left(c)
+    c.absorb(s)
+    return c
+
+
+@gf.cell
+def ebeam_crossing4_2ports() -> gf.Component:
+    """Return ebeam_crossing4 fixed cell.
+
+    .. plot::
+      :include-source:
+
+      import ubcpdk
+
+      c = ubcpdk.components.ebeam_crossing4_2ports()
+      c.plot()
+    """
+    c = gf.Component()
+    x = c << ebeam_crossing4()
+    s1 = c << straight_one_pin()
+    s2 = c << straight_one_pin()
+
+    s1.connect("o1", x.ports["o2"])
+    s2.connect("o1", x.ports["o4"])
+
+    c.add_port(name="o1", port=x.ports["o1"])
+    c.add_port(name="o4", port=x.ports["o3"])
+    return c
 
 
 @gf.cell
@@ -315,6 +357,22 @@ def ebeam_y_adiabatic() -> gf.Component:
 
 
 @gf.cell
+def ebeam_y_adiabatic_tapers() -> gf.Component:
+    """Return ebeam_y_adiabatic fixed cell.
+
+    .. plot::
+      :include-source:
+
+      import ubcpdk
+
+      c = ubcpdk.components.ebeam_y_adiabatic()
+      c.plot()
+    """
+    y = import_gds("ebeam_y_adiabatic.gds")
+    return gf.add_tapers(y)
+
+
+@gf.cell
 def ebeam_y_adiabatic_1310() -> gf.Component:
     """Return ebeam_y_adiabatic_1310 fixed cell.
 
@@ -391,7 +449,7 @@ def gc_te1310() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1310
     c.add_port(
         name=name,
         port_type=name,
@@ -419,7 +477,7 @@ def gc_te1310_8deg() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1310
     c.add_port(
         name=name,
         port_type=name,
@@ -447,7 +505,7 @@ def gc_te1310_broadband() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1310
     c.add_port(
         name=name,
         port_type=name,
@@ -466,7 +524,7 @@ def gc_te1550() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1550
     c.add_port(
         name=name,
         port_type=name,
@@ -485,7 +543,7 @@ def gc_te1550_90nmSlab() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1550
     c.add_port(
         name=name,
         port_type=name,
@@ -504,7 +562,7 @@ def gc_te1550_broadband() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1550
     c.add_port(
         name=name,
         port_type=name,
@@ -523,9 +581,10 @@ def gc_tm1550() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
+    name = prefix_tm1550
     c.add_port(
-        name="vertical_tm",
-        port_type="vertical_tm",
+        name=name,
+        port_type=name,
         center=(25, 0),
         layer=(1, 0),
         width=9,
@@ -670,6 +729,7 @@ def add_fiber_array(
         grating_coupler=grating_coupler,
         gc_port_name=gc_port_name,
         get_input_labels_function=get_input_labels_function,
+        get_input_label_text_function=get_input_label_text,
         with_loopback=with_loopback,
         optical_routing_type=optical_routing_type,
         layer_label=layer_label,
@@ -695,11 +755,43 @@ def dbg(
     l1: float = L,
     l2: float = L,
 ) -> gf.Component:
+    """Includes two ports.
+
+    Args:
+        w0: width.
+        dw: delta width.
+        n: number of elements.
+        l1: length teeth1.
+        l2: length teeth2.
+    """
     c = gf.Component()
-    dbg = c << gf.components.dbr(
-        w1=w0 - dw / 2, w2=w0 + dw / 2, n=n, l1=l1, l2=l2, add_pins=None
+    s = gf.components.straight(length=l1, cross_section=tech.strip_simple)
+    g = c << gf.components.dbr(
+        w1=w0 - dw / 2,
+        w2=w0 + dw / 2,
+        n=n,
+        l1=l1,
+        l2=l2,
+        add_pins=None,
+        cross_section=tech.strip_simple,
     )
-    c.add_ports(dbg.ports)
+    s1 = c << s
+    s2 = c << s
+    s1.connect("o2", g.ports["o1"])
+    s2.connect("o2", g.ports["o2"])
+
+    c.add_port("o1", port=s1.ports["o1"])
+    c.add_port("o2", port=s2.ports["o1"])
+    c = add_pins_bbox_siepic(c)
+    return c
+
+
+@gf.cell
+def terminator_short(**kwargs) -> gf.Component:
+    c = gf.Component()
+    s = gf.components.taper(**kwargs, cross_section=tech.strip_simple)
+    s1 = c << s
+    c.add_port("o1", port=s1.ports["o1"])
     c = add_pins_bbox_siepic(c)
     return c
 
@@ -712,6 +804,15 @@ def dbr(
     l1: float = L,
     l2: float = L,
 ) -> gf.Component:
+    """Returns distributed bragg reflector.
+
+    Args:
+        w0: width.
+        dw: delta width.
+        n: number of elements.
+        l1: length teeth1.
+        l2: length teeth2.
+    """
     c = gf.Component()
 
     # add_pins_left = partial(add_pins_siepic, prefix="o1")
@@ -723,16 +824,18 @@ def dbr(
         l1=l1,
         l2=l2,
         cross_section=tech.strip_simple,
+        decorator=None,
     )
     dbr = c << _dbr
     s.connect("o2", dbr.ports["o1"])
     c.add_port("o1", port=s.ports["o1"])
+    c = add_pins_bbox_siepic(c)
     return c
 
 
 @gf.cell
 def dbr_cavity(**kwargs) -> gf.Component:
-    d = dbr(**kwargs, decorator=add_pins_bbox_siepic)
+    d = dbr(**kwargs)
     return gf.components.cavity(component=d, coupler=coupler)
 
 
@@ -744,6 +847,8 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
 bend = gf.components.bend_euler
 coupler = gf.components.coupler
 coupler_ring = gf.components.coupler_ring
+mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
+coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
 ring_single = gf.partial(
     gf.components.ring_single,
@@ -819,18 +924,21 @@ def ebeam_dc_halfring_straight(
     return c
 
 
-ebeam_dc_te1550 = gf.components.coupler
-spiral = gf.partial(gf.components.spiral_external_io)
-ring_with_crossing = gf.partial(
+ebeam_dc_te1550 = partial(
+    gf.components.coupler, decorator=add_pins_bbox_siepic_remove_layers
+)
+taper = partial(gf.components.taper)
+spiral = partial(gf.components.spiral_external_io)
+ring_with_crossing = partial(
     gf.components.ring_single_dut,
-    component=ebeam_crossing4,
+    component=ebeam_crossing4_2ports,
     port_name="o4",
     bend=bend_euler,
     cross_section=strip,
 )
 
 
-pad = gf.partial(
+pad = partial(
     gf.components.pad,
     size=(75, 75),
     layer=LAYER.M2_ROUTER,
@@ -845,6 +953,9 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
 
     Returns same component so it needs to be used as a decorator.
     """
+    if port_name not in component.ports:
+        raise ValueError(f"No port {port_name!r} in {list(component.ports.keys())}")
+
     component.add_label(
         text=text, position=component.ports[port_name].center, layer=LAYER.LABEL
     )
@@ -877,7 +988,10 @@ def add_fiber_array_pads_rf(
     c0 = gf.get_component(component)
     text = f"elec_{c0.name}_G"
     add_label = gf.partial(add_label_electrical, text=text)
-    c1 = add_pads_rf(component=c0, decorator=add_label)
+    rename_ports_and_add_label = gf.compose(
+        add_label, gf.port.auto_rename_ports_electrical
+    )
+    c1 = add_pads_rf(component=c0, decorator=rename_ports_and_add_label)
     return add_fiber_array(component=c1, **kwargs)
 
 
@@ -896,39 +1010,39 @@ def add_pads(component: ComponentSpec = "ring_single_heater", **kwargs) -> Compo
 
 
 if __name__ == "__main__":
-    # c = dbr()
-    # c = spiral()
+    # gf.clear_cache()
+    # c = add_fiber_array(mmi1x2())
+    # c = taper()
+
+    # c = add_fiber_array_pads_rf()
+    # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
+    c = add_pads()
+    # c = add_pads_rf()
+    # c = coupler()
+    # c = dbr(decorator=None)
+    # c = dbr_cavity()
+    # c = dbr_cavity_te()
+
     # c = ebeam_adiabatic_tm1550()
-    # c = mzi()
-    # c = ring_with_crossing()
-    # c = ring_single()
+    # c = ebeam_bdc_te1550()
     # c = ebeam_crossing4()
     # c = ebeam_dc_halfring_straight()
     # c = ebeam_dc_te1550()
     # c = ebeam_y_1550()
-    # c = ebeam_y_adiabatic()
-    # c = ebeam_bdc_te1550()
-    # c = gc_te1550()
+    # c = ebeam_y_adiabatic_tapers()
+
     # c = gc_te1310()
-    c = gc_tm1550()
-    # c = spiral()
-    # c = coupler()
+    # c = gc_te1550()
     # c = gc_tm1550()
-
-    # c = add_fiber_array(mzi())
-    # c = dbr()
-    # c = dbr_cavity()
-    # c = dbr_cavity_te()
-    # c = thermal_phase_shifter0()
-    # c = add_pads_rf(c)
-
-    # c = ring_single_heater()
+    # c = mmi1x2()
+    # c = mzi(splitter='mmi1x2')
     # c = mzi_heater()
-    # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
-    # c = add_pads_rf()
-    # c = add_pads_dc()
     # c = pad()
-    # c = add_fiber_array_pads_rf()
-    # c = dbr()
-    # c = dbr_cavity()
-    c.show(show_ports=True)
+    # c = ring_single()
+    # c = ring_single_heater()
+    # c = ring_with_crossing()
+    # c = spiral()
+    # c = thermal_phase_shifter0()
+    # c = straight_one_pin()
+    # c = ebeam_crossing4_2ports()
+    c.show(show_ports=False)

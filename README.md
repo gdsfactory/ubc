@@ -23,7 +23,7 @@ If you don't have python installed on your system you can [download the gdsfacto
 
 ### Installation for new gdsfactory users
 
-Open Anaconda Prompt and then install the ubcpdk using pip
+If you already have python installed. Open Anaconda Prompt and then install the ubcpdk using pip.
 
 ![anaconda prompt](https://i.imgur.com/Fyal5sT.png)
 

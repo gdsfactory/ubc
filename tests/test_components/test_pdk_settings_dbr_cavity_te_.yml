@@ -1,4 +1,4 @@
-name: dbr_cavity_add_fiber_ar_619758f4
+name: dbr_cavity_add_fiber_ar_a9c9f0b6
 settings:
   changed:
     component:
@@ -10,6 +10,10 @@ settings:
         component: dbr_cavity
         settings: {}
       fanout_length: 0.0
+      get_input_label_text_function:
+        function: get_input_label_text
+      get_input_labels_function:
+        function: get_input_labels
       grating_coupler:
         function: gc_te1550
       layer_label:
@@ -34,8 +38,7 @@ settings:
       cross_section: strip
       gc_port_labels: null
       gc_port_name: o1
-      get_input_labels_function:
-        function: get_input_labels
+      get_input_labels_function: null
       grating_coupler:
         function: grating_coupler_elliptical_trenches
         settings:
@@ -55,6 +58,8 @@ settings:
       fanout_length: 0.0
       gc_port_labels: null
       gc_port_name: o1
+      get_input_label_text_function:
+        function: get_input_label_text
       get_input_labels_function:
         function: get_input_labels
       grating_coupler:
@@ -77,7 +82,7 @@ settings:
         wavelength: 1.55
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: dbr_cavity_add_fiber_ar_c2d56e90
+    name: dbr_cavity_add_fiber_ar_d14c8fd0
   default:
     component:
       function: straight
@@ -122,4 +127,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: dbr_cavity_add_fiber_ar_619758f4
+  name: dbr_cavity_add_fiber_ar_a9c9f0b6

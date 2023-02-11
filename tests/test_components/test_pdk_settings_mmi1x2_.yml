@@ -1,4 +1,4 @@
-name: coupler_50c22d89
+name: mmi1x2_50c22d89
 settings:
   changed:
     cross_section:
@@ -14,20 +14,17 @@ settings:
         - 0
   child: null
   default:
-    coupler_straight:
-      function: coupler_straight
-    coupler_symmetric:
-      function: coupler_symmetric
     cross_section: strip
-    dx: 10.0
-    dy: 5.0
-    gap: 0.236
-    length: 20.0
+    gap_mmi: 0.25
+    length_mmi: 5.5
+    length_taper: 10.0
+    taper:
+      function: taper
+    width: null
+    width_mmi: 2.5
+    width_taper: 1.0
+    with_bbox: true
   full:
-    coupler_straight:
-      function: coupler_straight
-    coupler_symmetric:
-      function: coupler_symmetric
     cross_section:
       function: cross_section
       settings:
@@ -39,14 +36,17 @@ settings:
         - DEVREC
         cladding_offsets:
         - 0
-    dx: 10.0
-    dy: 5.0
-    gap: 0.236
-    length: 20.0
-  function_name: coupler
-  info:
-    length: 10.314
-    min_bend_radius: 9.451
+    gap_mmi: 0.25
+    length_mmi: 5.5
+    length_taper: 10.0
+    taper:
+      function: taper
+    width: null
+    width_mmi: 2.5
+    width_taper: 1.0
+    with_bbox: true
+  function_name: mmi1x2
+  info: {}
   info_version: 2
-  module: gdsfactory.components.coupler
-  name: coupler_50c22d89
+  module: gdsfactory.components.mmi1x2
+  name: mmi1x2_50c22d89

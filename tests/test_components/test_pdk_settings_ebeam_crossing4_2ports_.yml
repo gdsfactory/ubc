@@ -1,0 +1,11 @@
+name: ebeam_crossing4_2ports
+settings:
+  changed: {}
+  child: null
+  default: {}
+  full: {}
+  function_name: ebeam_crossing4_2ports
+  info: {}
+  info_version: 2
+  module: ubcpdk.components
+  name: ebeam_crossing4_2ports

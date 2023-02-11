@@ -1,0 +1,28 @@
+name: taper
+settings:
+  changed: {}
+  child: null
+  default:
+    cross_section: strip
+    length: 10.0
+    port: null
+    width1: 0.5
+    width2: null
+    with_bbox: true
+    with_two_ports: true
+  full:
+    cross_section: strip
+    length: 10.0
+    port: null
+    width1: 0.5
+    width2: null
+    with_bbox: true
+    with_two_ports: true
+  function_name: taper
+  info:
+    length: 10.0
+    width1: 0.5
+    width2: 0.5
+  info_version: 2
+  module: gdsfactory.components.taper
+  name: taper
