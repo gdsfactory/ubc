@@ -1,16 +1,16 @@
 """Sample mask for the edx course Q1 2023."""
 
-from functools import partial
 import gdsfactory as gf
 
 import ubcpdk
 import ubcpdk.components as pdk
-from ubcpdk.tech import LAYER
-from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
 
-size = (605, 410)
-add_gc = ubcpdk.components.add_fiber_array
-pack = partial(gf.pack, max_size=size, add_ports_prefix=False, add_ports_suffix=True)
+# from ubcpdk.tech import add_labels_to_ports_optical
+from ubcpdk.tech import LAYER
+from ubcpdk.samples.write_mask import write_mask_gds_with_metadata, add_gc, pack, size
+
+
+add_labels_to_ports_optical = gf.add_labels.add_labels_to_ports_optical
 
 
 def test_mask1():
@@ -37,7 +37,7 @@ def test_mask1():
 
     c = pack(e)
     m = c[0]
-    gf.add_labels.add_labels_to_ports_optical(m)
+    add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_11"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -75,7 +75,7 @@ def test_mask2():
 
     m = c[0]
     m.name = "EBeam_JoaquinMatres_12"
-    gf.add_labels.add_labels_to_ports_optical(m)
+    add_labels_to_ports_optical(m)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -87,11 +87,15 @@ def test_mask3():
     e += [add_gc(ubcpdk.components.ebeam_adiabatic_te1550(), optical_routing_type=1)]
     e += [add_gc(ubcpdk.components.ebeam_bdc_te1550())]
     e += [add_gc(ubcpdk.components.ebeam_y_1550(), optical_routing_type=1)]
-    e += [add_gc(ubcpdk.components.ebeam_y_adiabatic(), optical_routing_type=1)]
+    e += [add_gc(ubcpdk.components.ebeam_y_adiabatic_tapers(), optical_routing_type=1)]
+    e += [
+        add_gc(ubcpdk.components.straight(), component_name=f"straight_{i}")
+        for i in range(2)
+    ]
     c = pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_13"
-    # gf.add_labels.add_labels_to_ports_optical(m)
+    # add_labels_to_ports_optical(m)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -109,7 +113,7 @@ def test_mask4():
 
     c = pack(mzis_gc + mzis_heater_gc)
     m = c[0]
-    gf.add_labels.add_labels_to_ports_optical(m)
+    add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_14"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -123,7 +127,7 @@ def test_mask5():
 
     c = pack(rings_gc)
     m = c[0]
-    gf.add_labels.add_labels_to_ports_optical(m)
+    add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_15"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)

@@ -12,7 +12,7 @@ from pydantic import BaseModel
 import gdsfactory as gf
 from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.technology import LayerStack, LayerLevel
-from gdsfactory.typings import Layer, LayerSpec, Callable, LayerSpecs
+from gdsfactory.typings import Layer, LayerSpec, Callable, LayerSpecs, Optional
 from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 
@@ -51,6 +51,40 @@ class LayerMapUbc(BaseModel):
 
 
 LAYER = LayerMapUbc()
+
+
+def add_labels_to_ports_optical(
+    component: Component,
+    label_layer: LayerSpec = LAYER.TEXT,
+    port_type: Optional[str] = "optical",
+    **kwargs,
+) -> Component:
+    """Add labels to component ports.
+
+    Args:
+        component: to add labels.
+        label_layer: layer spec for the label.
+        port_type: to select ports.
+
+    keyword Args:
+        layer: select ports with GDS layer.
+        prefix: select ports with prefix in port name.
+        orientation: select ports with orientation in degrees.
+        width: select ports with port width.
+        layers_excluded: List of layers to exclude.
+        port_type: select ports with port_type (optical, electrical, vertical_te).
+        clockwise: if True, sort ports clockwise, False: counter-clockwise.
+    """
+    if len(component.ports) == 4:
+        suffix = "o3_0"
+    else:
+        suffix = "o2_0"
+
+    ports = component.get_ports_list(port_type=port_type, suffix=suffix, **kwargs)
+    for port in ports:
+        component.add_label(text=port.name, position=port.center, layer=label_layer)
+
+    return component
 
 
 def add_bbox_siepic(

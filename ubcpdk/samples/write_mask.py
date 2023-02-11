@@ -1,12 +1,20 @@
 """Sample mask for the course."""
+from functools import partial
 
 from typing import Tuple
 from pathlib import Path
 from omegaconf import OmegaConf
 import gdsfactory as gf
 
+import ubcpdk
 from ubcpdk.tech import LAYER
 from ubcpdk.config import PATH
+
+size = (605, 410)
+add_gc = ubcpdk.components.add_fiber_array
+pack = partial(
+    gf.pack, max_size=size, add_ports_prefix=False, add_ports_suffix=False, spacing=5
+)
 
 
 def write_mask_gds_with_metadata(m) -> Tuple[Path, Path]:
