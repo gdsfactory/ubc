@@ -10,7 +10,6 @@ from ubcpdk import cells
 skip_test = {
     "add_siepic_labels",
     "add_fiber_array_siepic",
-    "add_pins_bbox_siepic",
     "add_pins_bbox_siepic_metal",
     "add_pins_siepic",
     "add_pins_siepic_metal",

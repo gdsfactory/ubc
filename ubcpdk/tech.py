@@ -75,11 +75,7 @@ def add_labels_to_ports_optical(
         port_type: select ports with port_type (optical, electrical, vertical_te).
         clockwise: if True, sort ports clockwise, False: counter-clockwise.
     """
-    if len(component.ports) == 4:
-        suffix = "o3_0"
-    else:
-        suffix = "o2_0"
-
+    suffix = "o3_0" if len(component.ports) == 4 else "o2_0"
     ports = component.get_ports_list(port_type=port_type, suffix=suffix, **kwargs)
     for port in ports:
         component.add_label(text=port.name, position=port.center, layer=label_layer)
