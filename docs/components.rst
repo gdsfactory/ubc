@@ -17,6 +17,7 @@ Components
    add_pads_dc
    add_pads_rf
    add_pins_bbox_siepic
+   add_pins_bbox_siepic_remove_layers
    add_pins_siepic_metal
    bend
    bend_euler
@@ -46,6 +47,7 @@ Components
    ebeam_y_1550
    ebeam_y_adiabatic
    ebeam_y_adiabatic_1310
+   ebeam_y_adiabatic_tapers
    gc_te1310
    gc_te1310_8deg
    gc_te1310_broadband
@@ -67,6 +69,8 @@ Components
    spiral
    straight
    straight_one_pin
+   taper
+   terminator_short
    thermal_phase_shifter0
    thermal_phase_shifter1
    thermal_phase_shifter2
