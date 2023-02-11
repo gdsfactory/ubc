@@ -1,5 +1,6 @@
 """Sample mask for the edx course Q1 2023."""
 
+from functools import partial
 import gdsfactory as gf
 
 import ubcpdk
@@ -9,6 +10,7 @@ from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
 
 size = (605, 410)
 add_gc = ubcpdk.components.add_fiber_array
+pack = partial(gf.pack, max_size=size, add_ports_prefix=False, add_ports_suffix=True)
 
 
 def test_mask1():
@@ -33,8 +35,9 @@ def test_mask1():
         )
     ]
 
-    c = gf.pack(e, max_size=size)
+    c = pack(e)
     m = c[0]
+    gf.add_labels.add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_11"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -68,28 +71,29 @@ def test_mask2():
         )
     )
 
-    c = gf.pack(e)
+    c = pack(e)
 
     m = c[0]
     m.name = "EBeam_JoaquinMatres_12"
+    gf.add_labels.add_labels_to_ports_optical(m)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
 def test_mask3():
     """contains mirror cavities and structures inside a resonator"""
-    e = [add_gc(ubcpdk.components.ebeam_crossing4())]
+    e = []
+    e += [add_gc(ubcpdk.components.ebeam_crossing4())]
     e += [add_gc(ubcpdk.components.ebeam_adiabatic_te1550(), optical_routing_type=1)]
     e += [add_gc(ubcpdk.components.ebeam_bdc_te1550())]
     e += [add_gc(ubcpdk.components.ebeam_y_1550(), optical_routing_type=1)]
-    # e += [add_gc(ubcpdk.components.ebeam_y_adiabatic(), optical_routing_type=1)]
-    c = gf.pack(e)
+    e += [add_gc(ubcpdk.components.ebeam_y_adiabatic(), optical_routing_type=1)]
+    c = pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_13"
+    # gf.add_labels.add_labels_to_ports_optical(m)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
-
-    # return m
 
 
 def test_mask4():
@@ -103,8 +107,9 @@ def test_mask4():
         pdk.add_fiber_array_pads_rf(mzi, optical_routing_type=2) for mzi in mzis
     ]
 
-    c = gf.pack(mzis_gc + mzis_heater_gc, max_size=size)
+    c = pack(mzis_gc + mzis_heater_gc)
     m = c[0]
+    gf.add_labels.add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_14"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -116,8 +121,9 @@ def test_mask5():
     rings = [pdk.ring_single_heater(length_x=length_x) for length_x in [4, 6]]
     rings_gc = [pdk.add_fiber_array_pads_rf(ring) for ring in rings]
 
-    c = gf.pack(rings_gc, max_size=size)
+    c = pack(rings_gc)
     m = c[0]
+    gf.add_labels.add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_15"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -126,9 +132,9 @@ def test_mask5():
 if __name__ == "__main__":
     gf.clear_cache()
 
-    m, _ = test_mask1()  # dbr and mzi
-    # m, _ = test_mask2() # spirals
-    # m, _ = test_mask3()  # coupler and crossing
-    # m, _ = test_mask4()  # heated mzis
-    # m, _ = test_mask5()  # heated rings
+    # m, tm = test_mask1()  # dbr and mzi
+    # m, tm = test_mask2() # spirals
+    m, tm = test_mask3()  # coupler and crossing
+    # m, tm = test_mask4()  # heated mzis
+    # m, tm = test_mask5()  # heated rings
     m.show()

@@ -50,6 +50,11 @@ thermal_phase_shifter_names = [
     "thermal_phase_shifter_t_ab7ae757",
 ]
 
+prefix_te1550 = f"opt_in_TE_1550_device_{CONFIG.username}"
+prefix_tm1550 = f"opt_in_TM_1550_device_{CONFIG.username}"
+prefix_te1310 = f"opt_in_TE_1310_device_{CONFIG.username}"
+prefix_tm1130 = f"opt_in_TM_1310_device_{CONFIG.username}"
+
 
 # @gf.cell
 # def Packaging_FibreArray_8ch() -> gf.Component:
@@ -427,7 +432,7 @@ def gc_te1310() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1310
     c.add_port(
         name=name,
         port_type=name,
@@ -455,7 +460,7 @@ def gc_te1310_8deg() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1310
     c.add_port(
         name=name,
         port_type=name,
@@ -483,7 +488,7 @@ def gc_te1310_broadband() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1310
     c.add_port(
         name=name,
         port_type=name,
@@ -502,7 +507,7 @@ def gc_te1550() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1550
     c.add_port(
         name=name,
         port_type=name,
@@ -521,7 +526,7 @@ def gc_te1550_90nmSlab() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1550
     c.add_port(
         name=name,
         port_type=name,
@@ -540,7 +545,7 @@ def gc_te1550_broadband() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
-    name = "vertical_te"
+    name = prefix_te1550
     c.add_port(
         name=name,
         port_type=name,
@@ -559,9 +564,10 @@ def gc_tm1550() -> gf.Component:
     gc_ref = c << gc
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
+    name = prefix_tm1550
     c.add_port(
-        name="vertical_tm",
-        port_type="vertical_tm",
+        name=name,
+        port_type=name,
         center=(25, 0),
         layer=(1, 0),
         width=9,
@@ -885,6 +891,9 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
 
     Returns same component so it needs to be used as a decorator.
     """
+    if port_name not in component.ports:
+        raise ValueError(f"No port {port_name!r} in {list(component.ports.keys())}")
+
     component.add_label(
         text=text, position=component.ports[port_name].center, layer=LAYER.LABEL
     )
@@ -917,7 +926,10 @@ def add_fiber_array_pads_rf(
     c0 = gf.get_component(component)
     text = f"elec_{c0.name}_G"
     add_label = gf.partial(add_label_electrical, text=text)
-    c1 = add_pads_rf(component=c0, decorator=add_label)
+    rename_ports_and_add_label = gf.compose(
+        add_label, gf.port.auto_rename_ports_electrical
+    )
+    c1 = add_pads_rf(component=c0, decorator=rename_ports_and_add_label)
     return add_fiber_array(component=c1, **kwargs)
 
 
@@ -936,9 +948,9 @@ def add_pads(component: ComponentSpec = "ring_single_heater", **kwargs) -> Compo
 
 
 if __name__ == "__main__":
-    gf.clear_cache()
-    # c = add_fiber_array(mzi())
-    # c = add_fiber_array_pads_rf()
+    # gf.clear_cache()
+    # c = add_fiber_array(gf.c.mmi2x2())
+    c = add_fiber_array_pads_rf()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
     # c = add_pads_dc()
     # c = add_pads_rf()
@@ -964,9 +976,9 @@ if __name__ == "__main__":
     # c = pad()
     # c = ring_single()
     # c = ring_single_heater()
-    c = ring_with_crossing()
+    # c = ring_with_crossing()
     # c = spiral()
     # c = thermal_phase_shifter0()
     # c = straight_one_pin()
     # c = ebeam_crossing4_2ports()
-    c.show(show_ports=True)
+    c.show(show_ports=False)

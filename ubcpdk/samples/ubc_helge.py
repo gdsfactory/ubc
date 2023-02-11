@@ -46,29 +46,31 @@ def test_mask1():
     m = c[0]
     m.name = "EBeam_JoaquinMatres_Helge_1"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    gf.add_labels.add_labels_to_ports_optical(m)
     return write_mask_gds_with_metadata(m)
 
 
 def test_mask2():
     """Ring with different couplings."""
-    e = [add_gc(ubcpdk.components.straight())]
-    e += [
-        add_gc(
-            gf.components.ring_single(
-                radius=12,
-                gap=gap,
-                length_x=coupling_length,
-                bend=gf.components.bend_circular,
-            )
-        )
-        for gap in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
-        for coupling_length in [0, 2]
-    ]
+    e = [add_gc(ubcpdk.components.straight())] * 2
+    # e += [
+    #     add_gc(
+    #         gf.components.ring_single(
+    #             radius=12,
+    #             gap=gap,
+    #             length_x=coupling_length,
+    #             bend=gf.components.bend_circular,
+    #         )
+    #     )
+    #     for gap in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+    #     for coupling_length in [0, 2]
+    # ]
 
     c = gf.pack(e, max_size=size)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_Helge_2"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    gf.add_labels.add_labels_to_ports_optical(m)
     return write_mask_gds_with_metadata(m)
 
 

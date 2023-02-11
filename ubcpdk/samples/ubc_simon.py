@@ -214,10 +214,19 @@ def test_mask1():
 
     m = gf.Component()
     spacing = -20
-    g = m << gf.grid(rings_gc, shape=(1, len(rings_gc)), spacing=(spacing, spacing))
+    g = m << gf.grid(
+        rings_gc,
+        shape=(1, len(rings_gc)),
+        spacing=(spacing, spacing),
+        add_ports_prefix=False,
+        add_ports_suffix=True,
+    )
     g.xmin = 1
     g.ymin = 1
+
+    m.add_ports(g.ports)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    gf.add_labels.add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_Simon_1"
     return write_mask_gds_with_metadata(m)
 
