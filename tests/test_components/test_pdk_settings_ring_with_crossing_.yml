@@ -1,4 +1,4 @@
-name: ebeam_crossing4_2ports__96de2244
+name: ring_single_dut_2f65884a
 settings:
   changed:
     bend:
@@ -18,16 +18,7 @@ settings:
         cladding_offsets:
         - 0
     port_name: o4
-  child:
-    changed: {}
-    child: null
-    default: {}
-    full: {}
-    function_name: ebeam_crossing4_2ports
-    info: {}
-    info_version: 2
-    module: ubcpdk.components
-    name: ebeam_crossing4_2ports
+  child: null
   default:
     bend:
       function: bend_euler
@@ -69,7 +60,8 @@ settings:
     radius: 5.0
     with_component: true
   function_name: ring_single_dut
-  info: {}
+  info:
+    component: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ebeam_crossing4_2ports__96de2244
+  name: ring_single_dut_2f65884a

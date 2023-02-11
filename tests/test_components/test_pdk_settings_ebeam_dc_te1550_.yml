@@ -1,6 +1,10 @@
-name: coupler
+name: coupler_d51b16db
 settings:
-  changed: {}
+  changed:
+    decorator:
+      function: add_pins_bbox_siepic
+      settings:
+        remove_layers: true
   child: null
   default:
     coupler_straight:
@@ -18,6 +22,10 @@ settings:
     coupler_symmetric:
       function: coupler_symmetric
     cross_section: strip
+    decorator:
+      function: add_pins_bbox_siepic
+      settings:
+        remove_layers: true
     dx: 10.0
     dy: 5.0
     gap: 0.236
@@ -28,4 +36,4 @@ settings:
     min_bend_radius: 9.451
   info_version: 2
   module: gdsfactory.components.coupler
-  name: coupler
+  name: coupler_d51b16db

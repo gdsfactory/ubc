@@ -1012,11 +1012,11 @@ def add_pads(component: ComponentSpec = "ring_single_heater", **kwargs) -> Compo
 if __name__ == "__main__":
     # gf.clear_cache()
     # c = add_fiber_array(mmi1x2())
-    c = taper()
+    # c = taper()
 
     # c = add_fiber_array_pads_rf()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
-    # c = add_pads_dc()
+    c = add_pads()
     # c = add_pads_rf()
     # c = coupler()
     # c = dbr(decorator=None)
