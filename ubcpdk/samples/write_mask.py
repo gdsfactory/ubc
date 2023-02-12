@@ -33,5 +33,3 @@ def write_mask_gds_with_metadata(m) -> Tuple[Path, Path]:
     # )
     # test_metadata_path.write_text(OmegaConf.to_yaml(tm))
     return m, tm
-
-
