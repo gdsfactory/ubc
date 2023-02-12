@@ -80,5 +80,5 @@ def test_mask2():
 
 
 if __name__ == "__main__":
-    m, _ = test_mask1()
+    m, _ = test_mask2()
     m.show()

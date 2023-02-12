@@ -5,12 +5,8 @@ import gdsfactory as gf
 import ubcpdk
 import ubcpdk.components as pdk
 
-# from ubcpdk.tech import add_labels_to_ports_optical
 from ubcpdk.tech import LAYER
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata, add_gc, pack, size
-
-
-add_labels_to_ports_optical = gf.add_labels.add_labels_to_ports_optical
 
 
 def test_mask1():
@@ -37,7 +33,6 @@ def test_mask1():
 
     c = pack(e)
     m = c[0]
-    add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_11"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -75,7 +70,6 @@ def test_mask2():
 
     m = c[0]
     m.name = "EBeam_JoaquinMatres_12"
-    add_labels_to_ports_optical(m)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -95,7 +89,6 @@ def test_mask3():
     c = pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_13"
-    # add_labels_to_ports_optical(m)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
@@ -113,7 +106,6 @@ def test_mask4():
 
     c = pack(mzis_gc + mzis_heater_gc)
     m = c[0]
-    add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_14"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -127,7 +119,6 @@ def test_mask5():
 
     c = pack(rings_gc)
     m = c[0]
-    add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_15"
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
@@ -138,7 +129,7 @@ if __name__ == "__main__":
 
     # m, tm = test_mask1()  # dbr and mzi
     # m, tm = test_mask2() # spirals
-    m, tm = test_mask3()  # coupler and crossing
-    # m, tm = test_mask4()  # heated mzis
+    # m, tm = test_mask3()  # coupler and crossing
+    m, tm = test_mask4()  # heated mzis
     # m, tm = test_mask5()  # heated rings
     m.show()

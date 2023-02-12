@@ -226,25 +226,10 @@ def test_mask1():
 
     m.add_ports(g.ports)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
-    gf.add_labels.add_labels_to_ports_optical(m)
     m.name = "EBeam_JoaquinMatres_Simon_1"
     return write_mask_gds_with_metadata(m)
 
 
 if __name__ == "__main__":
-    # m = test_mask3()
-    # m.write_gds_with_metadata()
-
-    # m1, tm1 = test_mask1()
-    # m2, tm2 = test_mask2()
-    # m3, tm3 = test_mask3()
-    # m = gf.grid([m1, m2, m3])
     m, _ = test_mask1()
     m.show()
-
-    # c = gf.components.disk(wrap_angle_deg=10.0)
-    # c.show()
-
-    # c = add_gc(ubcpdk.components.dc_broadband_te())
-    # print(c.to_yaml(with_cells=True, with_ports=True))
-    # c.write_gds_with_metadata()
