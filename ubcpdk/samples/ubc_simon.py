@@ -358,8 +358,9 @@ def crosstalk_experiment_parametrized_mask(
     ring_y_offset: float = 0.0,
     resonator_func: ComponentSpec = rings_proximity,
     fill_layers=None,
-    fill_margin=5,
+    fill_margin=2,
     fill_size=(0.5, 0.5),
+    padding=20,
 ):
     """Ring resonators with thermal cross-talk.
 
@@ -369,6 +370,10 @@ def crosstalk_experiment_parametrized_mask(
     sep_resonators: distance between the resonators
     ring_y_offset: manual offset for the resonator positions to make the routes DRC clean
     resonator_func: rings_proximity or disks_proximity
+    fill_layers: layers to add as unity dennity fill around the rings
+    fill_margin: keepout between the fill_layers and the same design layers
+    fill_size: tiling size
+    padding: how much to extend the fill beyond the ring component
     """
     m = gf.Component()
 
@@ -411,7 +416,7 @@ def crosstalk_experiment_parametrized_mask(
             rings_component,
             fill_size=fill_size,
             fill_layers=fill_layers,
-            margin=2,
+            margin=fill_margin,
             fill_densities=[1.0] * len(fill_layers),
             avoid_layers=fill_layers,
         )
@@ -561,6 +566,31 @@ def test_mask5():
     return write_mask_gds_with_metadata(m)
 
 
+def test_mask6():
+    """Rings with thermal crosstalk, silicon fill"""
+    m = crosstalk_experiment_parametrized_mask(
+        name="EBeam_JoaquinMatres_Simon_4",
+        sep_resonators=20.0,
+        ring_y_offset=0.0,
+        resonator_func=rings_proximity,
+        fill_layers=[(LAYER.WG)],
+        fill_margin=5,
+        fill_size=(0.5, 0.5),
+        fill_extent=(20, 20),
+    )
+    return write_mask_gds_with_metadata(m)
+
+
 if __name__ == "__main__":
+
+    m, _ = test_mask3()
+    m.show()
+
+    m, _ = test_mask4()
+    m.show()
+
     m, _ = test_mask5()
+    m.show()
+
+    m, _ = test_mask6()
     m.show()
