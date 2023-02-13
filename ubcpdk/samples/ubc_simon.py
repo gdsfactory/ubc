@@ -559,7 +559,7 @@ def test_mask5():
     m = crosstalk_experiment_parametrized_mask(
         name="EBeam_JoaquinMatres_Simon_3",
         sep_resonators=20.0,
-        ring_y_offset=0.0,
+        ring_y_offset=40.0,
         resonator_func=rings_proximity,
         fill_layers=[(LAYER.M1_HEATER)],
     )
@@ -571,12 +571,11 @@ def test_mask6():
     m = crosstalk_experiment_parametrized_mask(
         name="EBeam_JoaquinMatres_Simon_4",
         sep_resonators=20.0,
-        ring_y_offset=0.0,
+        ring_y_offset=40.0,
         resonator_func=rings_proximity,
         fill_layers=[(LAYER.WG)],
         fill_margin=5,
         fill_size=(0.5, 0.5),
-        fill_extent=(20, 20),
     )
     return write_mask_gds_with_metadata(m)
 
