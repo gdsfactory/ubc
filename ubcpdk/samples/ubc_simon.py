@@ -412,14 +412,15 @@ def crosstalk_experiment_parametrized_mask(
         .movey((pads.ymin + pads.ymax) / 2 + ring_y_offset)
     )
     if fill_layers:
-        m << gf.fill_rectangle(
-            rings_component,
-            fill_size=fill_size,
-            fill_layers=fill_layers,
-            margin=fill_margin,
-            fill_densities=[1.0] * len(fill_layers),
-            avoid_layers=fill_layers,
-        )
+        for layer in fill_layers:
+            m << gf.fill_rectangle(
+                rings_component,
+                fill_size=fill_size,
+                fill_layers=[layer],
+                margin=fill_margin,
+                fill_densities=[1.0],
+                avoid_layers=[layer],
+            )
     rings = m << rings_component
 
     # Left optical connections
@@ -548,7 +549,7 @@ def test_mask4():
     m = crosstalk_experiment_parametrized_mask(
         name="EBeam_JoaquinMatres_Simon_2",
         sep_resonators=20.0,
-        ring_y_offset=0.0,
+        ring_y_offset=40.0,
         resonator_func=rings_proximity,
     )
     return write_mask_gds_with_metadata(m)
@@ -561,7 +562,7 @@ def test_mask5():
         sep_resonators=20.0,
         ring_y_offset=40.0,
         resonator_func=rings_proximity,
-        fill_layers=[(LAYER.M1_HEATER)],
+        fill_layers=[LAYER.M1_HEATER],
     )
     return write_mask_gds_with_metadata(m)
 
@@ -573,7 +574,7 @@ def test_mask6():
         sep_resonators=20.0,
         ring_y_offset=40.0,
         resonator_func=rings_proximity,
-        fill_layers=[(LAYER.WG)],
+        fill_layers=[LAYER.WG, LAYER.M1_HEATER],
         fill_margin=5,
         fill_size=(0.5, 0.5),
     )
