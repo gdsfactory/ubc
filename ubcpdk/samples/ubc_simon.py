@@ -363,7 +363,7 @@ def test_mask2(
         add_ports_suffix=True,
         rotation=180,
     )
-    g.xmin = 30
+    g.xmin = 25
     g.ymin = 150
 
     # Rings
@@ -380,7 +380,7 @@ def test_mask2(
         add_ports_prefix=False,
         add_ports_suffix=True,
     )
-    pads.xmin = 350
+    pads.xmin = 360
     pads.ymin = 10
 
     # Left optical connections
