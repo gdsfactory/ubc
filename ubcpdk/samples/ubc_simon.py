@@ -140,7 +140,7 @@ def rings_proximity(
     gap = 0.2  # TODO: make variable
     width = 0.5  # TODO: make variable
     for index in range(num_rings):
-        if index == 0 or index == num_rings // 2:
+        if index in [0, num_rings // 2]:
             ring = c << ring_single_heater(
                 length_x=2, via_stack=pdk.via_stack_heater_mtop
             ).rotate(90).movex(-index * (sep_resonators + 2 * radius + 3 * width - gap))
@@ -166,7 +166,7 @@ def disks_proximity(
     gap = 0.2
     width = 0.5
     for index in range(num_rings):
-        if index == 0 or index == num_rings // 2:
+        if index in [0, num_rings // 2]:
             disk = c << gf.components.disk_heater(
                 wrap_angle_deg=10.0,
                 radius=radius,
