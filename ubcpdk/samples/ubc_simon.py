@@ -152,6 +152,7 @@ def rings_proximity(
             )
         c.add_port(f"o1_{index}", port=ring.ports["o1"])
         c.add_port(f"o2_{index}", port=ring.ports["o2"])
+
     return c
 
 
@@ -356,6 +357,9 @@ def crosstalk_experiment_parametrized_mask(
     sep_resonators: float = 15.0,
     ring_y_offset: float = 0.0,
     resonator_func: ComponentSpec = rings_proximity,
+    fill_layers=None,
+    fill_margin=5,
+    fill_size=(0.5, 0.5),
 ):
     """Ring resonators with thermal cross-talk.
 
@@ -396,10 +400,22 @@ def crosstalk_experiment_parametrized_mask(
     pads.ymin = 10
 
     # Rings
-    rings = m << resonator_func(
-        num_rings=num_gcs // 2, sep_resonators=sep_resonators
-    ).rotate(90).movex(g.xmin + 225)
-    rings.y = (pads.ymin + pads.ymax) / 2 + ring_y_offset
+    rings_component = (
+        resonator_func(num_rings=num_gcs // 2, sep_resonators=sep_resonators)
+        .rotate(90)
+        .movex(g.xmin + 225)
+        .movey((pads.ymin + pads.ymax) / 2 + ring_y_offset)
+    )
+    if fill_layers:
+        m << gf.fill_rectangle(
+            rings_component,
+            fill_size=fill_size,
+            fill_layers=fill_layers,
+            margin=2,
+            fill_densities=[1.0] * len(fill_layers),
+            avoid_layers=fill_layers,
+        )
+    rings = m << rings_component
 
     # Left optical connections
     right_ports = [rings.ports[f"o2_{i}"] for i in range(num_gc_per_pitch)]
@@ -508,9 +524,43 @@ def crosstalk_experiment_parametrized_mask(
     m.add_ports(g.ports)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     m.name = name
+    return m
+
+
+def test_mask3():
+    """Rings with thermal crosstalk, close rings"""
+    m = crosstalk_experiment_parametrized_mask(
+        name="EBeam_JoaquinMatres_Simon_1",
+        sep_resonators=5.0,
+        ring_y_offset=20.0,
+        resonator_func=rings_proximity,
+    )
+    return write_mask_gds_with_metadata(m)
+
+
+def test_mask4():
+    """Rings with thermal crosstalk, far rings"""
+    m = crosstalk_experiment_parametrized_mask(
+        name="EBeam_JoaquinMatres_Simon_2",
+        sep_resonators=20.0,
+        ring_y_offset=0.0,
+        resonator_func=rings_proximity,
+    )
+    return write_mask_gds_with_metadata(m)
+
+
+def test_mask5():
+    """Rings with thermal crosstalk, metal fill"""
+    m = crosstalk_experiment_parametrized_mask(
+        name="EBeam_JoaquinMatres_Simon_3",
+        sep_resonators=20.0,
+        ring_y_offset=0.0,
+        resonator_func=rings_proximity,
+        fill_layers=[(LAYER.M1_HEATER)],
+    )
     return write_mask_gds_with_metadata(m)
 
 
 if __name__ == "__main__":
-    m, _ = crosstalk_experiment_parametrized_mask()
+    m, _ = test_mask5()
     m.show()
