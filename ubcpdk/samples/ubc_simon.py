@@ -1,18 +1,132 @@
 """Sample mask for the edx course Q1 2023."""
 
 import gdsfactory as gf
-from gdsfactory.typings import ComponentSpec
 
 import ubcpdk
 import ubcpdk.components as pdk
 from ubcpdk.tech import LAYER
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
+from gdsfactory.components.bend_euler import bend_euler
+from gdsfactory.components.coupler_ring import coupler_ring as _coupler_ring
+from gdsfactory.components.via_stack import via_stack_heater_m3
+from gdsfactory.components.straight import straight
+
+from gdsfactory.types import ComponentSpec, CrossSectionSpec, Float2
+from typing import Optional, List
+
+via_stack_heater_m3_mini = gf.partial(via_stack_heater_m3, size=(4, 4))
 
 
 size = (440, 470)
 add_gc = ubcpdk.components.add_fiber_array
 
 GC_PITCH = 127
+
+
+@gf.cell
+def ring_single_heater(
+    gap: float = 0.2,
+    radius: float = 10.0,
+    length_x: float = 4.0,
+    length_y: float = 0.6,
+    coupler_ring: ComponentSpec = _coupler_ring,
+    bend: ComponentSpec = bend_euler,
+    cross_section_waveguide_heater: CrossSectionSpec = "strip_heater_metal",
+    cross_section: CrossSectionSpec = "strip",
+    via_stack: ComponentSpec = via_stack_heater_m3_mini,
+    port_orientation: Optional[List[float]] = [180, 0],
+    via_stack_offset: Float2 = (0, 0),
+    **kwargs,
+) -> gf.Component:
+    """Override from gdsfactory to make ports face different directions.
+
+    Returns a single ring with heater on top.
+
+    ring coupler (cb: bottom) connects to two vertical straights (sl: left, sr: right),
+    two bends (bl, br) and horizontal straight (wg: top)
+
+    Args:
+        gap: gap between for coupler.
+        radius: for the bend and coupler.
+        length_x: ring coupler length.
+        length_y: vertical straight length.
+        coupler_ring: ring coupler function.
+        bend: 90 degrees bend function.
+        cross_section_waveguide_heater: for heater.
+        cross_section: for regular waveguide.
+        via_stack: for heater to routing metal.
+        port_orientation: for electrical ports to promote from via_stack.
+        via_stack_offset: x,y offset for via_stack.
+        kwargs: cross_section settings.
+
+    .. code::
+
+          bl-st-br
+          |      |
+          sl     sr length_y
+          |      |
+         --==cb==-- gap
+
+          length_x
+    """
+    gap = gf.snap.snap_to_grid(gap, nm=2)
+
+    coupler_ring = gf.get_component(
+        coupler_ring,
+        bend=bend,
+        gap=gap,
+        radius=radius,
+        length_x=length_x,
+        cross_section=cross_section,
+        bend_cross_section=cross_section_waveguide_heater,
+        **kwargs,
+    )
+
+    straight_side = straight(
+        length=length_y,
+        cross_section=cross_section_waveguide_heater,
+        **kwargs,
+    )
+    straight_top = straight(
+        length=length_x,
+        cross_section=cross_section_waveguide_heater,
+        **kwargs,
+    )
+
+    bend = gf.get_component(
+        bend, radius=radius, cross_section=cross_section_waveguide_heater, **kwargs
+    )
+
+    c = gf.Component()
+    cb = c << coupler_ring
+    sl = c << straight_side
+    sr = c << straight_side
+    bl = c << bend
+    br = c << bend
+    st = c << straight_top
+
+    sl.connect(port="o1", destination=cb.ports["o2"])
+    bl.connect(port="o2", destination=sl.ports["o2"])
+
+    st.connect(port="o2", destination=bl.ports["o1"])
+    br.connect(port="o2", destination=st.ports["o1"])
+    sr.connect(port="o1", destination=br.ports["o1"])
+    sr.connect(port="o2", destination=cb.ports["o3"])
+
+    c.add_port("o2", port=cb.ports["o4"])
+    c.add_port("o1", port=cb.ports["o1"])
+
+    via = gf.get_component(via_stack)
+    c1 = c << via
+    c2 = c << via
+    c1.xmax = -length_x / 2 + cb.x - via_stack_offset[0]
+    c2.xmin = +length_x / 2 + cb.x + via_stack_offset[0]
+    c1.movey(via_stack_offset[1])
+    c2.movey(via_stack_offset[1])
+    c.add_ports(c1.get_ports_list(orientation=port_orientation[0]), prefix="e1")
+    c.add_ports(c2.get_ports_list(orientation=port_orientation[1]), prefix="e2")
+    c.auto_rename_ports()
+    return c
 
 
 def rings_proximity(
@@ -25,12 +139,12 @@ def rings_proximity(
     gap = 0.2  # TODO: make variable
     width = 0.5  # TODO: make variable
     for index in range(num_rings):
-        if index == 0:
-            ring = c << pdk.ring_single_heater(
-                length_x=2, port_orientation=270, via_stack=pdk.via_stack_heater_mtop
+        if index == 0 or index == num_rings // 2:
+            ring = c << ring_single_heater(
+                length_x=2, via_stack=pdk.via_stack_heater_mtop
             ).rotate(90).movex(-index * (sep_resonators + 2 * radius + 3 * width - gap))
-            c.add_port("e1", port=ring.ports["e1"])
-            c.add_port("e2", port=ring.ports["e2"])
+            c.add_port(f"e1_{index}", port=ring.ports["e1"])
+            c.add_port(f"e2_{index}", port=ring.ports["e2"])
         else:
             ring = c << gf.components.ring_single(length_x=2).rotate(90).movex(
                 -index * (sep_resonators + 2 * radius + 3 * width - gap)
@@ -252,10 +366,10 @@ def test_mask2(
     g.xmin = 30
     g.ymin = 150
 
-    # Rings10
+    # Rings
     rings = m << rings_proximity(num_rings=num_gcs // 2, sep_resonators=5).rotate(
         90
-    ).movex(g.xmin + 175).movey(300)
+    ).movex(g.xmin + 225).movey(250)
 
     # Pads
     pad_spacing = 125 - (pdk.pad().ymax - pdk.pad().ymin)
@@ -314,18 +428,37 @@ def test_mask2(
         m.add(route.references)
 
     # Electrical connection
-    route = gf.routing.get_route_electrical(
-        rings.ports["e1"], pads.ports["e1_0_0"], bend="wire_corner"
-    )
-    m.add(route.references)
-    route = gf.routing.get_route_electrical(
-        rings.ports["e2"], pads.ports["e1_1_0"], bend="wire_corner"
-    )
-    m.add(route.references)
+    for ring_index, pad_index in zip([0, num_gcs // 4], [0, 3]):
+        ring_port = rings.ports[f"e2_{ring_index}"]
+        pad_port = pads.ports[f"e1_{pad_index}_0"]
+        x0 = ring_port.x
+        y0 = ring_port.y
+        x2 = pad_port.x
+        y2 = pad_port.y
+        dx = -50
+        route = gf.routing.get_route_from_waypoints(
+            [(x0, y0), (x0 + dx, y0), (x0 + dx, y2), (x2, y2)],
+            cross_section="metal_routing",
+            bend=gf.components.wire_corner,
+        )
+        m.add(route.references)
+    for ring_index, pad_index in zip([0, num_gcs // 4], [1, 2]):
+        ring_port = rings.ports[f"e1_{ring_index}"]
+        pad_port = pads.ports[f"e1_{pad_index}_0"]
+        x0 = ring_port.x
+        y0 = ring_port.y
+        x2 = pad_port.x
+        y2 = pad_port.y
+        dx = 50
+        route = gf.routing.get_route_from_waypoints(
+            [(x0, y0), (x0 + dx, y0), (x0 + dx, y2), (x2, y2)],
+            cross_section="metal_routing",
+            bend=gf.components.wire_corner,
+        )
+        m.add(route.references)
 
     # Add test labels
     # For every experiment, label the input GC (bottom one)
-    print(pads)
     for i in range(num_gc_per_pitch, num_gcs):
         unique_name = f"opt_in_TE_1550_device_EBeam_JoaquinMatres_Simon_{i}"
         # Place label at GC port
