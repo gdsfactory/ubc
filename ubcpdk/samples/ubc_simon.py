@@ -9,7 +9,7 @@ from ubcpdk.tech import LAYER
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
 
 
-size = (470, 440)
+size = (440, 470)
 add_gc = ubcpdk.components.add_fiber_array
 
 GC_PITCH = 127
@@ -230,6 +230,94 @@ def test_mask1():
     return write_mask_gds_with_metadata(m)
 
 
+def test_mask2():
+    """Ring resonators with thermal cross-talk."""
+    m = gf.Component()
+
+    # GC array
+    num_gcs = 10
+    num_gc_per_pitch = 5
+    spacing = GC_PITCH / num_gc_per_pitch - (
+        pdk.gc_te1550().ymax - pdk.gc_te1550().ymin
+    )
+    g = m << gf.grid(
+        [pdk.gc_te1550()] * num_gcs,
+        shape=(num_gcs, 1),
+        spacing=(spacing, spacing),
+        add_ports_prefix=False,
+        add_ports_suffix=True,
+        rotation=180,
+    )
+    g.xmin = 30
+    g.ymin = 150
+
+    # Rings10
+    rings = m << rings_proximity(num_rings=num_gcs // 2, sep_resonators=15).rotate(
+        90
+    ).movex(g.xmin + 175).movey(300)
+
+    # Pads
+    pad_spacing = 125 - (pdk.pad().ymax - pdk.pad().ymin)
+    pads = m << gf.grid(
+        [pdk.pad] * 4,
+        shape=(4, 1),
+        spacing=(pad_spacing, pad_spacing),
+        add_ports_prefix=False,
+        add_ports_suffix=True,
+    )
+    pads.xmin = 350
+    pads.ymin = 10
+
+    # Optical connections
+    right_ports = [rings.ports[f"o2_{i}"] for i in range(num_gc_per_pitch)]
+    left_ports = [g.ports[f"o1_{i}_0"] for i in range(num_gc_per_pitch)]
+    routes = gf.routing.get_bundle(right_ports, left_ports)
+    for route in routes:
+        m.add(route.references)
+
+    # GC loopbacks
+    extended_gc_ports = []
+    for i in range(num_gc_per_pitch, num_gcs - 1):
+        bend = m << gf.get_component(gf.components.bend_euler180)
+        bend.connect("o2", destination=g.ports[f"o1_{i}_0"])
+        escape = (
+            m
+            << gf.get_component(
+                gf.components.bezier,
+                control_points=[(0.0, 0.0), (15.0, 0.0), (15.0, 7.5), (30.0, 7.5)],
+            ).mirror()
+        )
+        escape.connect("o1", destination=bend.ports["o1"])
+        straight = m << gf.get_component(gf.components.straight, length=35 - 4 * i)
+        straight.connect("o1", destination=escape.ports["o2"])
+        bend = m << gf.get_component(gf.components.bend_euler)
+        bend.connect("o1", destination=straight.ports["o2"])
+        extended_gc_ports.append(bend.ports["o2"])
+    bend = m << gf.get_component(gf.components.bend_euler)
+    bend.connect("o2", destination=g.ports[f"o1_{num_gcs-1}_0"])
+    extended_gc_ports.append(bend.ports["o1"])
+
+    right_ports = [rings.ports[f"o1_{i}"] for i in range(num_gc_per_pitch)]
+    left_ports = extended_gc_ports
+    for i, (port1, port2) in enumerate(zip(right_ports, left_ports)):
+        print(i, port1, port2)
+        x0 = port1.x
+        y0 = port1.y
+        x2 = port2.x
+        y2 = port2.y
+        dx = 50 + (len(right_ports) - i) * 5
+        y1 = 100 - (len(right_ports) - i) * 5
+        route = gf.routing.get_route_from_waypoints(
+            [(x0, y0), (x0 + dx, y0), (x0 + dx, y1), (x2, y1), (x2, y2)]
+        )
+        m.add(route.references)
+
+    m.add_ports(g.ports)
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    m.name = "EBeam_JoaquinMatres_Simon_1"
+    return write_mask_gds_with_metadata(m)
+
+
 if __name__ == "__main__":
-    m, _ = test_mask1()
+    m, _ = test_mask2()
     m.show()
