@@ -347,6 +347,7 @@ def test_mask1():
 def test_mask2(
     num_gcs: int = 10,
     num_gc_per_pitch: int = 5,
+    sep_resonators: float = 15.0,
 ):
     """Ring resonators with thermal cross-talk."""
     m = gf.Component()
@@ -366,11 +367,6 @@ def test_mask2(
     g.xmin = 25
     g.ymin = 150
 
-    # Rings
-    rings = m << rings_proximity(num_rings=num_gcs // 2, sep_resonators=5).rotate(
-        90
-    ).movex(g.xmin + 225).movey(250)
-
     # Pads
     pad_spacing = 125 - (pdk.pad().ymax - pdk.pad().ymin)
     pads = m << gf.grid(
@@ -382,6 +378,12 @@ def test_mask2(
     )
     pads.xmin = 360
     pads.ymin = 10
+
+    # Rings
+    rings = m << rings_proximity(
+        num_rings=num_gcs // 2, sep_resonators=sep_resonators
+    ).rotate(90).movex(g.xmin + 225)
+    rings.y = (pads.ymin + pads.ymax) / 2
 
     # Left optical connections
     right_ports = [rings.ports[f"o2_{i}"] for i in range(num_gc_per_pitch)]
@@ -421,7 +423,7 @@ def test_mask2(
         x2 = port2.x
         y2 = port2.y
         dx = 50 + (len(right_ports) - i) * 5
-        y1 = 100 - (len(right_ports) - i) * 5
+        y1 = rings.ymin - 50 - (len(right_ports) - i) * 5
         route = gf.routing.get_route_from_waypoints(
             [(x0, y0), (x0 + dx, y0), (x0 + dx, y1), (x2, y1), (x2, y2)]
         )
