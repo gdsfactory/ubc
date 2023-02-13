@@ -230,13 +230,14 @@ def test_mask1():
     return write_mask_gds_with_metadata(m)
 
 
-def test_mask2():
+def test_mask2(
+    num_gcs: int = 10,
+    num_gc_per_pitch: int = 5,
+):
     """Ring resonators with thermal cross-talk."""
     m = gf.Component()
 
     # GC array
-    num_gcs = 10
-    num_gc_per_pitch = 5
     spacing = GC_PITCH / num_gc_per_pitch - (
         pdk.gc_te1550().ymax - pdk.gc_te1550().ymin
     )
@@ -252,7 +253,7 @@ def test_mask2():
     g.ymin = 150
 
     # Rings10
-    rings = m << rings_proximity(num_rings=num_gcs // 2, sep_resonators=15).rotate(
+    rings = m << rings_proximity(num_rings=num_gcs // 2, sep_resonators=5).rotate(
         90
     ).movex(g.xmin + 175).movey(300)
 
@@ -268,14 +269,14 @@ def test_mask2():
     pads.xmin = 350
     pads.ymin = 10
 
-    # Optical connections
+    # Left optical connections
     right_ports = [rings.ports[f"o2_{i}"] for i in range(num_gc_per_pitch)]
     left_ports = [g.ports[f"o1_{i}_0"] for i in range(num_gc_per_pitch)]
     routes = gf.routing.get_bundle(right_ports, left_ports)
     for route in routes:
         m.add(route.references)
 
-    # GC loopbacks
+    # GC loopbacks for easier routing
     extended_gc_ports = []
     for i in range(num_gc_per_pitch, num_gcs - 1):
         bend = m << gf.get_component(gf.components.bend_euler180)
@@ -297,6 +298,7 @@ def test_mask2():
     bend.connect("o2", destination=g.ports[f"o1_{num_gcs-1}_0"])
     extended_gc_ports.append(bend.ports["o1"])
 
+    # Right optical connections
     right_ports = [rings.ports[f"o1_{i}"] for i in range(num_gc_per_pitch)]
     left_ports = extended_gc_ports
     for i, (port1, port2) in enumerate(zip(right_ports, left_ports)):
@@ -320,6 +322,37 @@ def test_mask2():
         rings.ports["e2"], pads.ports["e1_1_0"], bend="wire_corner"
     )
     m.add(route.references)
+
+    # Add test labels
+    # For every experiment, label the input GC (bottom one)
+    print(pads)
+    for i in range(num_gc_per_pitch, num_gcs):
+        unique_name = f"opt_in_TE_1550_device_EBeam_JoaquinMatres_Simon_{i}"
+        # Place label at GC port
+        label = gf.component_layout.Label(
+            text=unique_name,
+            origin=g.ports[f"o1_{i}_0"].center,
+            anchor="o",
+            magnification=1.0,
+            rotation=0.0,
+            layer=LAYER.LABEL[0],
+            texttype=LAYER.LABEL[1],
+            x_reflection=False,
+        )
+        m.add(label)
+        # Place label at electrical ports
+        for index, padname in enumerate(["G1", "S1", "G2", "S2"][::-1]):
+            label = gf.component_layout.Label(
+                text=f"elec_{unique_name}_{padname}",
+                origin=(pads.xmin + 75 / 2, pads.ymin + (125) * index + 75 / 2),
+                anchor="o",
+                magnification=1.0,
+                rotation=0.0,
+                layer=LAYER.LABEL[0],
+                texttype=LAYER.LABEL[1],
+                x_reflection=False,
+            )
+            m.add(label)
 
     m.add_ports(g.ports)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
