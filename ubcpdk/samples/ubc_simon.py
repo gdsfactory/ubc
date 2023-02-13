@@ -300,7 +300,6 @@ def test_mask2():
     right_ports = [rings.ports[f"o1_{i}"] for i in range(num_gc_per_pitch)]
     left_ports = extended_gc_ports
     for i, (port1, port2) in enumerate(zip(right_ports, left_ports)):
-        print(i, port1, port2)
         x0 = port1.x
         y0 = port1.y
         x2 = port2.x
@@ -311,6 +310,16 @@ def test_mask2():
             [(x0, y0), (x0 + dx, y0), (x0 + dx, y1), (x2, y1), (x2, y2)]
         )
         m.add(route.references)
+
+    # Electrical connection
+    route = gf.routing.get_route_electrical(
+        rings.ports["e1"], pads.ports["e1_0_0"], bend="wire_corner"
+    )
+    m.add(route.references)
+    route = gf.routing.get_route_electrical(
+        rings.ports["e2"], pads.ports["e1_1_0"], bend="wire_corner"
+    )
+    m.add(route.references)
 
     m.add_ports(g.ports)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
