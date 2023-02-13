@@ -129,6 +129,7 @@ def ring_single_heater(
     return c
 
 
+@gf.cell
 def rings_proximity(
     num_rings=5,
     sep_resonators=2,
@@ -154,6 +155,7 @@ def rings_proximity(
     return c
 
 
+@gf.cell
 def disks_proximity(
     num_rings=5,
     sep_resonators=5,
@@ -163,7 +165,7 @@ def disks_proximity(
     gap = 0.2
     width = 0.5
     for index in range(num_rings):
-        if index == 0:
+        if index == 0 or index == num_rings // 2:
             disk = c << gf.components.disk_heater(
                 wrap_angle_deg=10.0,
                 radius=radius,
@@ -171,8 +173,8 @@ def disks_proximity(
                 via_stack=pdk.via_stack_heater_mtop,
                 heater_layer=LAYER.M1_HEATER,
             ).rotate(90).movex(-index * (sep_resonators + 2 * radius + 2 * width + gap))
-            c.add_port("e1", port=disk.ports["e1"])
-            c.add_port("e2", port=disk.ports["e2"])
+            c.add_port(f"e1_{index}", port=disk.ports["e2"])
+            c.add_port(f"e2_{index}", port=disk.ports["e1"])
         else:
             disk = c << gf.components.disk(wrap_angle_deg=10.0, radius=radius,).rotate(
                 90
@@ -281,7 +283,7 @@ def resonator_proximity_io(
 def test_mask0():
     """Ring resonators with thermal cross-talk.
 
-    TODO: does not pass verification.
+    Old cell; does not pass verification
 
     - needs labels.
     """
@@ -319,7 +321,10 @@ def test_mask0():
 
 
 def test_mask1():
-    """Ring resonators with thermal cross-talk."""
+    """Ring resonators with thermal cross-talk.
+
+    Old cell; does not pass verification
+    """
     rings_active = [pdk.ring_single_heater(length_x=4)]
     rings_passive = [pdk.ring_single(length_x=4)] * 2
     rings_active_gc = [pdk.add_fiber_array_pads_rf(ring) for ring in rings_active]
@@ -344,12 +349,23 @@ def test_mask1():
     return write_mask_gds_with_metadata(m)
 
 
-def test_mask2(
+def crosstalk_experiment_parametrized_mask(
+    name="EBeam_JoaquinMatres_Simon_1",
     num_gcs: int = 10,
     num_gc_per_pitch: int = 5,
     sep_resonators: float = 15.0,
+    ring_y_offset: float = 0.0,
+    resonator_func: ComponentSpec = rings_proximity,
 ):
-    """Ring resonators with thermal cross-talk."""
+    """Ring resonators with thermal cross-talk.
+
+    name: for labels
+    num_gcs: number of grating couplers (should be <10)
+    num_gc_per_pitch: number of grating couplers within a GC pitch (5 is optimal)
+    sep_resonators: distance between the resonators
+    ring_y_offset: manual offset for the resonator positions to make the routes DRC clean
+    resonator_func: rings_proximity or disks_proximity
+    """
     m = gf.Component()
 
     # GC array
@@ -380,10 +396,10 @@ def test_mask2(
     pads.ymin = 10
 
     # Rings
-    rings = m << rings_proximity(
+    rings = m << resonator_func(
         num_rings=num_gcs // 2, sep_resonators=sep_resonators
     ).rotate(90).movex(g.xmin + 225)
-    rings.y = (pads.ymin + pads.ymax) / 2
+    rings.y = (pads.ymin + pads.ymax) / 2 + ring_y_offset
 
     # Left optical connections
     right_ports = [rings.ports[f"o2_{i}"] for i in range(num_gc_per_pitch)]
@@ -429,7 +445,7 @@ def test_mask2(
         )
         m.add(route.references)
 
-    # Electrical connection
+    # Electrical connections
     for ring_index, pad_index in zip([0, num_gcs // 4], [0, 3]):
         ring_port = rings.ports[f"e2_{ring_index}"]
         pad_port = pads.ports[f"e1_{pad_index}_0"]
@@ -462,7 +478,7 @@ def test_mask2(
     # Add test labels
     # For every experiment, label the input GC (bottom one)
     for i in range(num_gc_per_pitch, num_gcs):
-        unique_name = f"opt_in_TE_1550_device_EBeam_JoaquinMatres_Simon_{i}"
+        unique_name = f"opt_in_TE_1550_device_{name}_{i}"
         # Place label at GC port
         label = gf.component_layout.Label(
             text=unique_name,
@@ -491,10 +507,10 @@ def test_mask2(
 
     m.add_ports(g.ports)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
-    m.name = "EBeam_JoaquinMatres_Simon_1"
+    m.name = name
     return write_mask_gds_with_metadata(m)
 
 
 if __name__ == "__main__":
-    m, _ = test_mask2()
+    m, _ = crosstalk_experiment_parametrized_mask()
     m.show()
