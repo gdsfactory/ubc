@@ -9,7 +9,7 @@ from ubcpdk.tech import LAYER
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
 
 
-size = (605, 410)
+size = (470, 440)
 add_gc = ubcpdk.components.add_fiber_array
 
 GC_PITCH = 127
