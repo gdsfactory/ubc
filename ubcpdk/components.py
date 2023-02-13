@@ -962,7 +962,7 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
     return component
 
 
-pad_array = gf.partial(gf.components.pad_array, pad=pad, spacing=(200, 200))
+pad_array = gf.partial(gf.components.pad_array, pad=pad, spacing=(125, 125))
 add_pads_rf = gf.partial(
     gf.routing.add_electrical_pads_top,
     component="ring_single_heater",
