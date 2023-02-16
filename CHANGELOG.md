@@ -1,6 +1,13 @@
 # Changelog
 
-## [1.18.0](https://github.com/gdsfactory/ubc/pull/186)
+## [1.20.0](https://github.com/gdsfactory/ubc/pull/194)
+
+- update floorplan size
+- fix optical labels, make sure optical and electrical labels match
+- fix pads spacing to 125um
+- flip orientation of heated rings
+
+## [1.19.0](https://github.com/gdsfactory/ubc/pull/186)
 
 - update to gdsfactory 6.37.0
 - fix drc errors
