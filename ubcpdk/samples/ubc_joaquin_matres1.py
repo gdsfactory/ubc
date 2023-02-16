@@ -40,8 +40,8 @@ def test_mask1():
 
 def test_mask2():
     """spirals for extracting straight waveguide loss"""
-    N = 15
-    radius = 15
+    N = 12
+    radius = 10
 
     e = [
         ubcpdk.components.add_fiber_array(
@@ -60,8 +60,8 @@ def test_mask2():
             component=ubcpdk.components.spiral(
                 N=N,
                 radius=radius,
-                y_straight_inner_top=30,
-                x_inner_length_cutback=85,
+                y_straight_inner_top=0,
+                x_inner_length_cutback=185,
             )
         )
     )
@@ -113,9 +113,7 @@ def test_mask4():
 
 def test_mask5():
     """Ring resonators."""
-
     rings = [pdk.ring_single_heater(length_x=length_x) for length_x in [4, 6]]
-
     rings = [gf.functions.rotate180(ring) for ring in rings]
     rings_gc = [pdk.add_fiber_array_pads_rf(ring) for ring in rings]
 
@@ -126,12 +124,51 @@ def test_mask5():
     return write_mask_gds_with_metadata(m)
 
 
-if __name__ == "__main__":
-    gf.clear_cache()
+def test_mask6():
+    """Splitters 1x2."""
+    mmis = []
+    mmis += [
+        gf.components.cutback_splitter(
+            component=pdk.ebeam_y_adiabatic_tapers, cols=1, rows=7
+        )
+    ]
+    mmis += [gf.components.cutback_splitter(component=pdk.ebeam_y_1550, cols=6, rows=7)]
+    mmis_gc = [pdk.add_fiber_array(mmi, optical_routing_type=1) for mmi in mmis]
 
+    c = pack(mmis_gc)
+    m = c[0]
+    m.name = "EBeam_JoaquinMatres_16"
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    return write_mask_gds_with_metadata(m)
+
+
+def test_mask7():
+    """Splitters 2x2."""
+    mmis = []
+    mmis += [gf.components.cutback_2x2(component=pdk.ebeam_bdc_te1550, cols=3)]
+    mmis += [gf.components.cutback_2x2(component="mmi2x2_with_sbend", cols=6)]
+
+    mmis += [gf.components.mmi2x2_with_sbend()]
+    mmis += [pdk.ebeam_bdc_te1550()]
+
+    mmis_gc = [
+        pdk.add_fiber_array(component=mmi, optical_routing_type=1) for mmi in mmis
+    ]
+    c = pack(mmis_gc)
+
+    m = c[0]
+    m.name = "EBeam_JoaquinMatres_17"
+    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    return write_mask_gds_with_metadata(m)
+
+
+if __name__ == "__main__":
+    # gf.clear_cache()
     # m, tm = test_mask1()  # dbr and mzi
-    # m, tm = test_mask2() # spirals
+    # m, tm = test_mask2()  # spirals
     # m, tm = test_mask3()  # coupler and crossing
     # m, tm = test_mask4()  # heated mzis
-    m, tm = test_mask5()  # heated rings
+    # m, tm = test_mask5()  # heated rings
+    # m, tm = test_mask6()  # 1x2 mmis
+    m, tm = test_mask7()  # 2x2mmis
     m.show()

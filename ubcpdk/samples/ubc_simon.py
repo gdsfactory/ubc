@@ -328,13 +328,17 @@ def test_mask1():
     Old cell; does not pass verification
     """
     rings_active = [pdk.ring_single_heater(length_x=4)]
-    rings_passive = [pdk.ring_single(length_x=4)] * 2
+    rings_passive = [pdk.ring_single(length_x=4)]
+
+    rings_passive = [gf.functions.rotate180(ring) for ring in rings_passive]
+    rings_active = [gf.functions.rotate180(ring) for ring in rings_active]
+
     rings_active_gc = [pdk.add_fiber_array_pads_rf(ring) for ring in rings_active]
     rings_passive_gc = [pdk.add_fiber_array(ring) for ring in rings_passive]
     rings_gc = rings_passive_gc + rings_active_gc
 
     m = gf.Component()
-    spacing = -20
+    spacing = 1
     g = m << gf.grid(
         rings_gc,
         shape=(1, len(rings_gc)),
@@ -583,7 +587,8 @@ def test_mask6():
 
 
 if __name__ == "__main__":
+    m, _ = test_mask1()
     # m, _ = test_mask3()
     # m, _ = test_mask4()
-    m, _ = test_mask5()
+    # m, _ = test_mask5()
     m.show()

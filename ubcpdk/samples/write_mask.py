@@ -13,7 +13,7 @@ from ubcpdk.config import PATH
 size = (440, 470)
 add_gc = ubcpdk.components.add_fiber_array
 pack = partial(
-    gf.pack, max_size=size, add_ports_prefix=False, add_ports_suffix=False, spacing=5
+    gf.pack, max_size=size, add_ports_prefix=False, add_ports_suffix=False, spacing=2
 )
 
 
