@@ -115,6 +115,8 @@ def test_mask5():
     """Ring resonators."""
 
     rings = [pdk.ring_single_heater(length_x=length_x) for length_x in [4, 6]]
+
+    rings = [gf.functions.rotate180(ring) for ring in rings]
     rings_gc = [pdk.add_fiber_array_pads_rf(ring) for ring in rings]
 
     c = pack(rings_gc)
@@ -129,7 +131,7 @@ if __name__ == "__main__":
 
     # m, tm = test_mask1()  # dbr and mzi
     # m, tm = test_mask2() # spirals
-    m, tm = test_mask3()  # coupler and crossing
-    m, tm = test_mask4()  # heated mzis
-    # m, tm = test_mask5()  # heated rings
+    # m, tm = test_mask3()  # coupler and crossing
+    # m, tm = test_mask4()  # heated mzis
+    m, tm = test_mask5()  # heated rings
     m.show()

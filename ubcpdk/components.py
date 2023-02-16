@@ -63,6 +63,10 @@ prefix_tm1130 = f"opt_in_TM_1310_device_{CONFIG.username}"
 #     return import_gds("Packaging_FibreArray_8ch.gds")
 
 
+def clean_name(name: str) -> str:
+    return name.replace("_", ".")
+
+
 @gf.cell
 def thermal_phase_shifter0() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
@@ -648,7 +652,9 @@ def get_input_label_text(
     ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
 
     name = component_name or port.parent.metadata_child.get("name")
-    return f"opt_in_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}_({name})-{gc_index}-{port.name}"
+    name = clean_name(name)
+    # return f"opt_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}-{gc_index}-{port.name}"
+    return f"opt_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}"
 
 
 def get_input_labels(
@@ -977,16 +983,19 @@ add_pads_dc = gf.partial(
 
 @gf.cell
 def add_fiber_array_pads_rf(
-    component: ComponentSpec = "ring_single_heater", **kwargs
+    component: ComponentSpec = "ring_single_heater",
+    username: str = CONFIG.username,
+    **kwargs,
 ) -> Component:
     """Returns fiber array with label and electrical pads.
 
     Args:
         component: to add fiber array and pads.
+        username: for the label.
         kwargs: for add_fiber_array.
     """
     c0 = gf.get_component(component)
-    text = f"elec_{c0.name}_G"
+    text = f"elec_{username}-{clean_name(c0.name)}_G"
     add_label = gf.partial(add_label_electrical, text=text)
     rename_ports_and_add_label = gf.compose(
         add_label, gf.port.auto_rename_ports_electrical
@@ -996,15 +1005,20 @@ def add_fiber_array_pads_rf(
 
 
 @gf.cell
-def add_pads(component: ComponentSpec = "ring_single_heater", **kwargs) -> Component:
+def add_pads(
+    component: ComponentSpec = "ring_single_heater",
+    username: str = CONFIG.username,
+    **kwargs,
+) -> Component:
     """Returns fiber array with label and electrical pads.
 
     Args:
         component: to add fiber array and pads.
+        username: for the label.
         kwargs: for add_fiber_array.
     """
     c0 = gf.get_component(component)
-    text = f"elec_{c0.name}_G"
+    text = f"elec_{username}-{clean_name(c0.name)}_G"
     add_label = gf.partial(add_label_electrical, text=text)
     return add_pads_rf(component=c0, decorator=add_label)
 
@@ -1016,6 +1030,7 @@ if __name__ == "__main__":
 
     # c = add_fiber_array_pads_rf()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
+
     c = add_pads()
     # c = add_pads_rf()
     # c = coupler()
