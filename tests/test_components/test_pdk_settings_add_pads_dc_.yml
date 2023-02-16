@@ -1,4 +1,4 @@
-name: ring_single_heater_171f_7c8f9baf
+name: ring_single_heater_171f_5dab5bcc
 settings:
   changed:
     component: ring_single_heater
@@ -27,8 +27,8 @@ settings:
             - 75
             - 75
         spacing:
-        - 200
-        - 200
+        - 125
+        - 125
   child:
     changed:
       via_stack:
@@ -165,8 +165,8 @@ settings:
             - 75
             - 75
         spacing:
-        - 200
-        - 200
+        - 125
+        - 125
     select_ports:
       function: select_ports
       settings:
@@ -178,4 +178,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.routing.add_electrical_pads_top_dc
-  name: ring_single_heater_171f_7c8f9baf
+  name: ring_single_heater_171f_5dab5bcc

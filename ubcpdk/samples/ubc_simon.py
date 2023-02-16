@@ -1,18 +1,19 @@
 """Sample mask for the edx course Q1 2023."""
 
-import gdsfactory as gf
+from typing import Optional, List
 
 import ubcpdk
 import ubcpdk.components as pdk
 from ubcpdk.tech import LAYER
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
+
+import gdsfactory as gf
 from gdsfactory.components.bend_euler import bend_euler
 from gdsfactory.components.coupler_ring import coupler_ring as _coupler_ring
 from gdsfactory.components.via_stack import via_stack_heater_m3
 from gdsfactory.components.straight import straight
 
-from gdsfactory.types import ComponentSpec, CrossSectionSpec, Float2
-from typing import Optional, List
+from gdsfactory.typings import ComponentSpec, CrossSectionSpec, Float2
 
 via_stack_heater_m3_mini = gf.partial(via_stack_heater_m3, size=(4, 4))
 
@@ -281,7 +282,7 @@ def resonator_proximity_io(
     return c
 
 
-def test_mask0():
+def needs_fixing():
     """Ring resonators with thermal cross-talk.
 
     Old cell; does not pass verification
@@ -346,7 +347,7 @@ def test_mask1():
 
     m.add_ports(g.ports)
     m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
-    m.name = "EBeam_JoaquinMatres_Simon_1"
+    m.name = "EBeam_JoaquinMatres_Simon_0"
     return write_mask_gds_with_metadata(m)
 
 
@@ -582,15 +583,7 @@ def test_mask6():
 
 
 if __name__ == "__main__":
-
-    m, _ = test_mask3()
-    m.show()
-
-    m, _ = test_mask4()
-    m.show()
-
+    # m, _ = test_mask3()
+    # m, _ = test_mask4()
     m, _ = test_mask5()
-    m.show()
-
-    m, _ = test_mask6()
     m.show()
