@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
     # m, tm = test_mask1()  # dbr and mzi
     # m, tm = test_mask2() # spirals
-    # m, tm = test_mask3()  # coupler and crossing
+    m, tm = test_mask3()  # coupler and crossing
     m, tm = test_mask4()  # heated mzis
     # m, tm = test_mask5()  # heated rings
     m.show()

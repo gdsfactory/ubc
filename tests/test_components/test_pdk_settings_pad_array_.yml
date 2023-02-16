@@ -1,4 +1,4 @@
-name: pad_array_18ea3cae
+name: pad_array_71569d1c
 settings:
   changed:
     pad:
@@ -23,8 +23,8 @@ settings:
         - 75
         - 75
     spacing:
-    - 200
-    - 200
+    - 125
+    - 125
   child: null
   default:
     columns: 6
@@ -60,8 +60,8 @@ settings:
         - 75
     rows: 1
     spacing:
-    - 200
-    - 200
+    - 125
+    - 125
   function_name: pad_array
   info:
     size:
@@ -69,4 +69,4 @@ settings:
     - 75
   info_version: 2
   module: gdsfactory.components.pad
-  name: pad_array_18ea3cae
+  name: pad_array_71569d1c

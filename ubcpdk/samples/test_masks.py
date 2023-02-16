@@ -16,6 +16,9 @@ def test_masks_2023_v1():
         m12.test_mask1,
         m12.test_mask2,
         m13.test_mask1,
+        m13.test_mask3,
+        m13.test_mask4,
+        m13.test_mask5,
     ]:
         m, tm = mask()
 
