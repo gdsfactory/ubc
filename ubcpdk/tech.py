@@ -323,6 +323,9 @@ strip_heater_metal = partial(
     layer="WG",
     heater_width=2.5,
     layer_heater=LAYER.M1_HEATER,
+    cladding_layers=cladding_layers_optical_siepic,
+    cladding_offsets=cladding_offsets_optical_siepic,
+    add_pins=add_pins_siepic,
 )
 
 strip_simple = gf.cross_section.cross_section

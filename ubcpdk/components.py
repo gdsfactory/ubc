@@ -1031,7 +1031,7 @@ if __name__ == "__main__":
     # c = add_fiber_array_pads_rf()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
 
-    c = add_pads()
+    # c = add_pads()
     # c = add_pads_rf()
     # c = coupler()
     # c = dbr(decorator=None)
@@ -1051,7 +1051,7 @@ if __name__ == "__main__":
     # c = gc_tm1550()
     # c = mmi1x2()
     # c = mzi(splitter='mmi1x2')
-    # c = mzi_heater()
+    c = mzi_heater()
     # c = pad()
     # c = ring_single()
     # c = ring_single_heater()
