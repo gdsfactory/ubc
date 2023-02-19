@@ -1,4 +1,4 @@
-# UBCpdk 1.20.0
+# ubcpdk (SiEPIC Ebeam PDK) 1.20.0
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/binder-sandbox/HEAD)
 [![pypi](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
@@ -9,15 +9,12 @@
 [![codecov](https://codecov.io/gh/gdsfactory/ubc/branch/main/graph/badge.svg?token=T3kCV2gYE9)](https://codecov.io/gh/gdsfactory/ubc)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-
-UBC SiEPIC Ebeam PDK from [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana) for gdsfactory.
-It provides a fully python driven flow alternative for the edx course for the most advanced users.
-
+SiEPIC Ebeam PDK adapted from [siepic Ebeam PDK](https://github.com/lukasc-ubc/SiEPIC_EBeam_PDK) for gdsfactory.
+It provides a fully python driven flow alternative for the most advanced users taking the [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
 
 ## Installation
 
 ### Installation for new python users
-
 
 If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases) that includes python3, miniconda and all gdsfactory plugins.
 
@@ -27,13 +24,12 @@ If you already have python installed. Open Anaconda Prompt and then install the 
 
 ![anaconda prompt](https://i.imgur.com/Fyal5sT.png)
 
-
 ```
 pip install ubcpdk --upgrade
 gf tool install
 ```
 
-
+Then you need to restart Klayout to make sure the new technology installed appears.
 
 ### Installation for developers
 
@@ -48,14 +44,11 @@ python install_tech.py
 gf tool install
 ```
 
-Then you need to restart Klayout to make sure the new technology installed appears.
-
 ## Documentation
 
 - Run notebooks on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/binder-sandbox/HEAD)
 - [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
 - [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
-
 
 ## Acks
 
@@ -70,5 +63,4 @@ Links:
 - [UBC docs](https://gdsfactory.github.io/ubc/) and [repo](https://github.com/gdsfactory/ubc)
 - [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
 - [edx course](https://www.edx.org/course/silicon-photonics-design-fabrication-and-data-ana)
-- [siepic Ebeam PDK](https://github.com/lukasc-ubc/SiEPIC_EBeam_PDK)
 - [awesome photonics list](https://github.com/joamatab/awesome_photonics)
