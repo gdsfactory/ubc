@@ -22,7 +22,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-    "gdsfactory[full]==6.41.1",
+    "gdsfactory[full,tidy3d,docs]==6.49.3",
     "modes",
     "klayout",
 ]
@@ -36,39 +36,14 @@ full = [
     ]
 
 dev = [
-    "autotyping",
-    "black>=21",
-    "doc8",
-    "mypy",
-    "pre-commit",
-    "pylsp-mypy",
-    "types-cachetools",
-    "flake8",
-    "flake8-bugbear",
-    "ipykernel",
     "pytest",
     "pytest-cov",
     "pytest_regressions",
-    "types-PyYAML",
-    "xdoctest",
-    "pyproject-flake8",
+    "femwell"
     ]
-
 docs = [
-    "autodoc_pydantic",
-    "docutils==0.17.1",
-    "matplotlib",
-    "myst-parser",
-    "nbsphinx",
-    "sphinx",
-    "sphinx-autodoc-typehints",
-    "sphinx-book-theme==0.3.3",
-    "sphinx-click",
-    "sphinx-copybutton",
-    "sphinx-markdown-tables==0.0.16",
-    "sphinxcontrib-video",
+    "jupytext",
     ]
-
 
 [tool.setuptools.packages]
 find = {}
@@ -154,3 +129,21 @@ inherit = false
 match = "(?!test).*\\.py"
 add-ignore = ["D100","D101","D102","D103","D104","D203","D405","D417"]
 convention = "google"
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    # "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+    "B905",  # `zip()` without an explicit `strict=` parameter
+    "C408",  # C408 Unnecessary `dict` call (rewrite as a literal)
+]
+extend-exclude = ["docs/notebooks"]

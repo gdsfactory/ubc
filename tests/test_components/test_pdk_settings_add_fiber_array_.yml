@@ -35,7 +35,15 @@ settings:
       function_name: straight
       info:
         cross_section: strip
+        function_name: cross_section
         length: 10.0
+        settings:
+          add_pins:
+            function: add_pins_siepic
+          cladding_layers:
+          - DEVREC
+          cladding_offsets:
+          - 0
         width: 0.5
       info_version: 2
       module: gdsfactory.components.straight
@@ -86,12 +94,20 @@ settings:
     function_name: add_fiber_array
     info:
       cross_section: strip
+      function_name: cross_section
       grating_coupler:
         library: Design kits/ebeam
         model: ebeam_gc_te1550
         polarization: te
         wavelength: 1.55
       length: 10.0
+      settings:
+        add_pins:
+          function: add_pins_siepic
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0
       width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
@@ -135,12 +151,20 @@ settings:
   function_name: add_fiber_array
   info:
     cross_section: strip
+    function_name: cross_section
     grating_coupler:
       library: Design kits/ebeam
       model: ebeam_gc_te1550
       polarization: te
       wavelength: 1.55
     length: 10.0
+    settings:
+      add_pins:
+        function: add_pins_siepic
+      cladding_layers:
+      - DEVREC
+      cladding_offsets:
+      - 0
     width: 0.5
   info_version: 2
   module: ubcpdk.components

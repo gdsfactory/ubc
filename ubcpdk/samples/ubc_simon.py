@@ -35,7 +35,7 @@ def ring_single_heater(
     cross_section_waveguide_heater: CrossSectionSpec = "strip_heater_metal",
     cross_section: CrossSectionSpec = "strip",
     via_stack: ComponentSpec = via_stack_heater_m3_mini,
-    port_orientation: Optional[List[float]] = [180, 0],
+    port_orientation: Optional[List[float]] = (180, 0),
     via_stack_offset: Float2 = (0, 0),
     **kwargs,
 ) -> gf.Component:
@@ -178,7 +178,10 @@ def disks_proximity(
             c.add_port(f"e1_{index}", port=disk.ports["e2"])
             c.add_port(f"e2_{index}", port=disk.ports["e1"])
         else:
-            disk = c << gf.components.disk(wrap_angle_deg=10.0, radius=radius,).rotate(
+            disk = c << gf.components.disk(
+                wrap_angle_deg=10.0,
+                radius=radius,
+            ).rotate(
                 90
             ).movex(-index * (sep_resonators + 2 * radius + 2 * width + gap))
         c.add_port(f"o1_{index}", port=disk.ports["o1"])

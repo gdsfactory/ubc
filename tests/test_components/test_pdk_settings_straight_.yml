@@ -15,7 +15,15 @@ settings:
   function_name: straight
   info:
     cross_section: strip
+    function_name: cross_section
     length: 10.0
+    settings:
+      add_pins:
+        function: add_pins_siepic
+      cladding_layers:
+      - DEVREC
+      cladding_offsets:
+      - 0
     width: 0.5
   info_version: 2
   module: gdsfactory.components.straight
