@@ -1,7 +1,7 @@
 """Symlink tech to klayout."""
 import sys
 import os
-import subprocess
+import shutil
 import pathlib
 
 
@@ -22,16 +22,9 @@ def make_link(src, dest, overwrite: bool = True) -> None:
         remove_path_or_dir(dest)
     try:
         os.symlink(src, dest, target_is_directory=True)
-    except OSError as err:
-        print("Could not create symlink!")
-        print("     Error: ", err)
-        if sys.platform == "win32":
-            # https://stackoverflow.com/questions/32877260/privlege-error-trying-to-create-symlink-using-python-on-windows-10
-            print("Trying to create a junction instead of a symlink...")
-            proc = subprocess.check_call(f"mklink /J {dest} {src}", shell=True)
-            if proc != 0:
-                print("Could not create link!")
-    print("Symlink made:")
+    except OSError:
+        shutil.copy(src, dest)
+    print("link made:")
     print(f"From: {src}")
     print(f"To:   {dest}")
 

@@ -1,121 +1,25 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 507fb40267012da3720be8866f0792a3817f7d9e
+    rev: 9260cbc9c84c06022993bfbcc42fdbf0305c5b8e
     hooks:
       - id: check-yaml
         exclude: ^(conda\.recipe/meta\.yaml|conda_build/templates/.*\.yaml|docs/click/meta\.yaml|conda/meta\.yaml|construct.yaml)
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: requirements-txt-fixer
-  - repo: https://github.com/hakancelikdev/unimport
-    rev: 33ead41ee30f1d323a9c2fcfd0114297efbbc4d5
-    hooks:
-      - id: unimport
-        args: [--remove, --include-star-import]
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 7b69d092ae4885dcc45648538ae780a6326bcd1e
     hooks:
       - id: isort
         files: ubcdpk/.*
         args: [--profile, black, --filter-files]
 
   - repo: https://github.com/psf/black
-    rev: 5d0d5936db2ed7a01c50a374e32753e1afe9cc71
+    rev: 25d886f52c2bbbb58386ac8050f4e67952507bc7
     hooks:
       - id: black
 
-  # - repo: https://github.com/omnilib/ufmt
-  #   rev: v2.0.0b1
-  #   hooks:
-  #     - id: ufmt
-  - repo: https://github.com/asottile/blacken-docs
-    rev: 79ef671d15161b9dbc16ac3760086b5222836583
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: "6a0ba1854991b693612486cc84a2254de82d071d"
     hooks:
-      - id: blacken-docs
-        additional_dependencies: [black==22.3.0]
-  - repo: https://github.com/pycqa/flake8
-    rev: ed3012d29f107fb0c8e4ef2b77a69c8bf3a85343
-    hooks:
-      - id: flake8
-        entry: pflake8
-        additional_dependencies: [flake8-docstrings, pyproject-flake8]
-
-  - repo: https://github.com/kynan/nbstripout
-    rev: 1185a8d25bb45ada13f64d9591c14d81d69206bc
-    hooks:
-      - id: nbstripout
-        files: .ipynb
-
-  - repo: https://github.com/asottile/pyupgrade
-    rev: 97ed6fb3cf2e650d4f762ba231c3f04c41797710
-    hooks:
-      - id: pyupgrade
-        args: [--py37-plus, --keep-runtime-typing]
-
-  - repo: https://github.com/codespell-project/codespell
-    rev: 587ee566f61dc3cb7e1af6c44bf85bc5ced4c730
-    hooks:
-      - id: codespell
-        args: ["-L TE,TE/TM,te,ba,FPR,fpr_spacing,ro,nd,donot,schem,pard"]
-
-  # - repo: https://github.com/shellcheck-py/shellcheck-py
-  #   rev: 98854f809ca9d0e235c0bd5c0ad5e986e02120a4
-  #   hooks:
-  #     - id: shellcheck
-
-  - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: 72bd2c94721ba5b87d0b61f3beab9eb01783ef9c # Use the ref you want to point at
-    hooks:
-      - id: python-use-type-annotations
-
-  - repo: https://github.com/PyCQA/bandit
-    rev: d9fe642e01866e460454641bcd14b9de9d2b1478
-    hooks:
-      - id: bandit
-        args: [--exit-zero]
-        # ignore all tests, not just tests data
-        exclude: ^tests/
-  # - repo: https://github.com/PyCQA/pylint
-  #   rev: v2.14.1
-  #   hooks:
-  #     - id: pylint
-  #       args: [--exit-zero]
-  # - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-  #   rev: 6565d773ca281682d7062d4c0be74538cc474cc9
-  #   hooks:
-  #     - id: pretty-format-java
-  #       args: [--autofix]
-  #     - id: pretty-format-kotlin
-  #       args: [--autofix]
-  #     - id: pretty-format-yaml
-  #       args: [--autofix, --indent, "2"]
-  # - repo: https://github.com/adrienverge/yamllint.git
-  #   rev: v1.21.0 # or higher tag
-  #   hooks:
-  #       - id: yamllint
-  #         args: [--format, parsable, --strict]
-  # - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-  #   rev: 0.1.0 # or specific tag
-  #   hooks:
-  #       - id: yamlfmt
-  # - repo: https://github.com/pre-commit/mirrors-mypy
-  #   rev: "214c33306afe17f1cc7d2d55e4da705b6ebe0627"
-  #   hooks:
-  #     - id: mypy
-  #       exclude: ^(docs/|example-plugin/|tests/fixtures)
-  #       additional_dependencies:
-  #         - "pydantic"
-  # - repo: https://github.com/terrencepreilly/darglint
-  #   rev: master
-  #   hooks:
-  #       - id: darglint
-  #
-  # - repo: https://github.com/pycqa/pydocstyle
-  #   rev: "a6fe4222012e990042c86cdaaa904a8d059752ee"
-  #   hooks:
-  #     - id: pydocstyle
-  #       additional_dependencies: ["pydocstyle[toml]"]
-  # - repo: https://github.com/asottile/reorder_python_imports
-  #   rev: 2b2f0c74acdb3de316e23ceb7dd0d7945c354050
-  #   hooks:
-  #     - id: reorder-python-imports
+      - id: ruff

@@ -92,3 +92,17 @@ notebooks:
 
 mask:
 	python ubcpdk/samples/test_masks.py
+
+jupytext:
+	jupytext docs/**/*.ipynb --to py
+
+notebooks:
+	jupytext docs/**/*.py --to ipynb
+
+notebooks-rm:
+	rm docs/notebooks/*.ipynb
+
+docs:
+	jb build docs
+
+.PHONY: drc doc docs
