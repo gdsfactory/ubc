@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.21.0](https://github.com/gdsfactory/ubc/pull/203)
+
+- use jupyterbook for docs
+- use py notebooks instead of ipynb
+- update to latest gdsfactory
+
 ## [1.20.0](https://github.com/gdsfactory/ubc/pull/194)
 
 - update floorplan size
