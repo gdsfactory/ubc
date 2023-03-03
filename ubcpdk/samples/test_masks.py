@@ -12,7 +12,8 @@ def test_masks_2023_v1():
     dirpath = PATH.mask
     dirpath_gds = dirpath / "gds"
 
-    shutil.rmtree(dirpath)
+    if dirpath.exists():
+        shutil.rmtree(dirpath)
     dirpath_gds.mkdir(exist_ok=True, parents=True)
 
     for mask in [
