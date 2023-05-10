@@ -144,11 +144,15 @@ def rings_proximity(
         if index in [0, num_rings // 2]:
             ring = c << ring_single_heater(
                 length_x=2, via_stack=pdk.via_stack_heater_mtop
-            ).rotate(90).movex(-index * (sep_resonators + 2 * radius + 3 * width - gap))
+            )
+            ring.rotate(90).movex(
+                -index * (sep_resonators + 2 * radius + 3 * width - gap)
+            )
             c.add_port(f"e1_{index}", port=ring.ports["e1"])
             c.add_port(f"e2_{index}", port=ring.ports["e2"])
         else:
-            ring = c << gf.components.ring_single(length_x=2).rotate(90).movex(
+            ring = c << gf.components.ring_single(length_x=2)
+            ring.rotate(90).movex(
                 -index * (sep_resonators + 2 * radius + 3 * width - gap)
             )
         c.add_port(f"o1_{index}", port=ring.ports["o1"])
@@ -413,23 +417,19 @@ def crosstalk_experiment_parametrized_mask(
     pads.ymin = 10
 
     # Rings
-    rings_component = (
-        resonator_func(num_rings=num_gcs // 2, sep_resonators=sep_resonators)
-        .rotate(90)
-        .movex(g.xmin + 225)
-        .movey((pads.ymin + pads.ymax) / 2 + ring_y_offset)
-    )
+    rings = m << resonator_func(num_rings=num_gcs // 2, sep_resonators=sep_resonators)
+    rings.rotate(90)
+    rings.movex(g.xmin + 225).movey((pads.ymin + pads.ymax) / 2 + ring_y_offset)
     if fill_layers:
         for layer in fill_layers:
             m << gf.fill_rectangle(
-                rings_component,
+                rings,
                 fill_size=fill_size,
                 fill_layers=[layer],
                 margin=fill_margin,
                 fill_densities=[1.0],
                 avoid_layers=[layer],
             )
-    rings = m << rings_component
 
     # Left optical connections
     right_ports = [rings.ports[f"o2_{i}"] for i in range(num_gc_per_pitch)]
@@ -590,8 +590,8 @@ def test_mask6():
 
 
 if __name__ == "__main__":
-    m, _ = test_mask1()
+    # m, _ = test_mask1()
     # m, _ = test_mask3()
     # m, _ = test_mask4()
-    # m, _ = test_mask5()
+    m, _ = test_mask5()
     m.show()

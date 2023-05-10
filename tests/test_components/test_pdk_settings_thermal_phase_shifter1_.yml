@@ -1,4 +1,53 @@
 name: thermal_phase_shifter1
+ports:
+  e1:
+    center:
+    - 492.5
+    - -3.0
+    layer:
+    - 1
+    - 11
+    name: e1
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 15.0
+  e2:
+    center:
+    - 7.5
+    - -3.0
+    layer:
+    - 1
+    - 11
+    name: e2
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 15.0
+  o1:
+    center:
+    - 0.0
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    shear_angle: null
+    width: 0.35000000000000003
+  o2:
+    center:
+    - 500.0
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o2
+    orientation: 0
+    port_type: optical
+    shear_angle: null
+    width: 0.35000000000000003
 settings:
   changed: {}
   child: null

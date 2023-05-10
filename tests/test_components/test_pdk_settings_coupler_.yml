@@ -1,4 +1,53 @@
 name: coupler_50c22d89
+ports:
+  o1:
+    center:
+    - -10.0
+    - -1.632
+    layer:
+    - 1
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  o2:
+    center:
+    - -10.0
+    - 2.368
+    layer:
+    - 1
+    - 0
+    name: o2
+    orientation: 180
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  o3:
+    center:
+    - 30.0
+    - 2.368
+    layer:
+    - 1
+    - 0
+    name: o3
+    orientation: 0.0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  o4:
+    center:
+    - 30.0
+    - -1.632
+    layer:
+    - 1
+    - 0
+    name: o4
+    orientation: 0.0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
 settings:
   changed:
     cross_section:
@@ -20,7 +69,7 @@ settings:
       function: coupler_symmetric
     cross_section: strip
     dx: 10.0
-    dy: 5.0
+    dy: 4.0
     gap: 0.236
     length: 20.0
   full:
@@ -40,13 +89,13 @@ settings:
         cladding_offsets:
         - 0
     dx: 10.0
-    dy: 5.0
+    dy: 4.0
     gap: 0.236
     length: 20.0
   function_name: coupler
   info:
-    length: 10.314
-    min_bend_radius: 9.451
+    length: 10.186
+    min_bend_radius: 11.857
   info_version: 2
   module: gdsfactory.components.coupler
   name: coupler_50c22d89

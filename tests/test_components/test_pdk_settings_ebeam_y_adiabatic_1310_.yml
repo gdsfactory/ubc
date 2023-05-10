@@ -1,4 +1,41 @@
 name: ebeam_y_adiabatic_1310
+ports:
+  o1:
+    center:
+    - 0.05
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    shear_angle: null
+    width: 0.35000000000000003
+  o2:
+    center:
+    - 52.05
+    - 1.25
+    layer:
+    - 1
+    - 0
+    name: o2
+    orientation: 0
+    port_type: optical
+    shear_angle: null
+    width: 0.35000000000000003
+  o3:
+    center:
+    - 52.05
+    - -1.25
+    layer:
+    - 1
+    - 0
+    name: o3
+    orientation: 0
+    port_type: optical
+    shear_angle: null
+    width: 0.35000000000000003
 settings:
   changed: {}
   child: null
