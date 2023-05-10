@@ -1,10 +1,12 @@
 """Sample mask for the edx course Q1 2023."""
 
+from functools import partial
 import gdsfactory as gf
 
 import ubcpdk
 import ubcpdk.components as pdk
 
+from ubcpdk import tech
 from ubcpdk.tech import LAYER
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata, add_gc, pack, size
 from ubcpdk.cutback_2x2 import cutback_2x2
@@ -145,11 +147,16 @@ def test_mask6():
 
 def test_mask7():
     """Splitters 2x2."""
+    mmi2x2_with_sbend = partial(
+        gf.components.mmi2x2_with_sbend,
+        decorator=tech.add_pins_bbox_siepic_remove_layers,
+    )
+
     mmis = []
     mmis += [cutback_2x2(component=pdk.ebeam_bdc_te1550, cols=3)]
-    mmis += [cutback_2x2(component="mmi2x2_with_sbend", cols=6)]
+    mmis += [cutback_2x2(component=mmi2x2_with_sbend, cols=6)]
 
-    mmis += [gf.components.mmi2x2_with_sbend()]
+    mmis += [mmi2x2_with_sbend()]
     mmis += [pdk.ebeam_bdc_te1550()]
 
     mmis_gc = [
