@@ -706,7 +706,7 @@ def add_fiber_array(
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
     cross_section: CrossSectionSpec = "strip",
-    layer_label: LayerSpec = (10, 0),
+    layer_label: LayerSpec = LAYER.TEXT,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
