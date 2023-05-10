@@ -16,7 +16,7 @@ It provides a fully python driven flow alternative for the most advanced users t
 
 ### Installation for new python users
 
-If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases) that includes python3, miniconda and all gdsfactory plugins.
+If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases) with python3, miniconda and all gdsfactory plugins.
 
 ### Installation for new gdsfactory users
 
@@ -26,7 +26,6 @@ If you already have python installed. Open Anaconda Prompt and then install the 
 
 ```
 pip install ubcpdk --upgrade
-gf tool install
 ```
 
 Then you need to restart Klayout to make sure the new technology installed appears.
@@ -41,7 +40,6 @@ cd ubc
 pip install -e . pre-commit
 pre-commit install
 python install_tech.py
-gf tool install
 ```
 
 ## Documentation
