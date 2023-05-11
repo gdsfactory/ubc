@@ -1,4 +1,41 @@
 name: ebeam_y_1550
+ports:
+  o1:
+    center:
+    - -7.4
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  o2:
+    center:
+    - 7.4
+    - 2.75
+    layer:
+    - 1
+    - 0
+    name: o2
+    orientation: 0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  o3:
+    center:
+    - 7.4
+    - -2.75
+    layer:
+    - 1
+    - 0
+    name: o3
+    orientation: 0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
 settings:
   changed: {}
   child: null

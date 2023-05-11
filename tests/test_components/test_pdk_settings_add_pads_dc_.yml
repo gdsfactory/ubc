@@ -1,4 +1,53 @@
 name: ring_single_heater_171f_5dab5bcc
+ports:
+  elec-ring_single_heater_171f554b-0:
+    center:
+    - -64.5
+    - 160.055
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-0
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-1:
+    center:
+    - 60.5
+    - 160.055
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-1
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  o1:
+    center:
+    - -17.0
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  o2:
+    center:
+    - 13.0
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o2
+    orientation: 0.0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
 settings:
   changed:
     component: ring_single_heater
@@ -125,6 +174,7 @@ settings:
           function: wire_corner
         cross_section: metal_routing
     pad_array: pad_array
+    port_names: null
     select_ports:
       function: select_ports
       settings:
@@ -167,6 +217,7 @@ settings:
         spacing:
         - 125
         - 125
+    port_names: null
     select_ports:
       function: select_ports
       settings:

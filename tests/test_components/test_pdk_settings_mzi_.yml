@@ -1,4 +1,29 @@
 name: mzi_55c1098f
+ports:
+  o1:
+    center:
+    - -7.4
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o1
+    orientation: 180
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  o2:
+    center:
+    - 62.325
+    - 0.0
+    layer:
+    - 1
+    - 0
+    name: o2
+    orientation: 0.0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
 settings:
   changed:
     bend:
@@ -14,6 +39,7 @@ settings:
         cross_section: strip
   child: null
   default:
+    add_optical_ports_arms: false
     bend:
       function: bend_euler
     combiner: null
@@ -23,6 +49,7 @@ settings:
     delta_length: 10.0
     length_x: 0.1
     length_y: 2.0
+    mirror_bot: false
     nbends: 2
     port_e0_combiner: o3
     port_e0_splitter: o3
@@ -36,6 +63,7 @@ settings:
     straight_y: null
     with_splitter: true
   full:
+    add_optical_ports_arms: false
     bend:
       function: bend_euler
       settings:
@@ -48,6 +76,7 @@ settings:
     delta_length: 10.0
     length_x: 0.1
     length_y: 2.0
+    mirror_bot: false
     nbends: 2
     port_e0_combiner: o3
     port_e0_splitter: o3

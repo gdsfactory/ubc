@@ -1,4 +1,29 @@
-name: dbr_cavity_add_fiber_ar_a9c9f0b6
+name: dbr_cavity_add_fiber_ar_f2ab6ad2
+ports:
+  opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o1:
+    center:
+    - -17.9
+    - 63.5
+    layer:
+    - 1
+    - 0
+    name: opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o1
+    orientation: 0.0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
+  opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o2:
+    center:
+    - -17.9
+    - -63.5
+    layer:
+    - 1
+    - 0
+    name: opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o2
+    orientation: 0.0
+    port_type: optical
+    shear_angle: null
+    width: 0.5
 settings:
   changed:
     component:
@@ -17,7 +42,7 @@ settings:
       grating_coupler:
         function: gc_te1550
       layer_label:
-      - 10
+      - 66
       - 0
       optical_routing_type: 0
       with_loopback: false
@@ -38,7 +63,11 @@ settings:
       cross_section: strip
       gc_port_labels: null
       gc_port_name: o1
-      get_input_labels_function: null
+      get_input_labels_function:
+        function: get_input_labels
+        settings:
+          get_input_label_text_function:
+            function: get_input_label_text_dash
       grating_coupler:
         function: grating_coupler_elliptical_trenches
         settings:
@@ -65,7 +94,7 @@ settings:
       grating_coupler:
         function: gc_te1550
       layer_label:
-      - 10
+      - 66
       - 0
       optical_routing_type: 0
       select_ports:
@@ -82,7 +111,7 @@ settings:
         wavelength: 1.55
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: dbr_cavity_add_fiber_ar_d14c8fd0
+    name: dbr_cavity_add_fiber_ar_1328381f
   default:
     component:
       function: straight
@@ -97,7 +126,7 @@ settings:
     grating_coupler:
       function: gc_te1550
     layer_label:
-    - 10
+    - 66
     - 0
     optical_routing_type: 0
     with_loopback: false
@@ -114,7 +143,7 @@ settings:
     grating_coupler:
       function: gc_te1550
     layer_label:
-    - 10
+    - 66
     - 0
     optical_routing_type: 0
     with_loopback: false
@@ -127,4 +156,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: dbr_cavity_add_fiber_ar_a9c9f0b6
+  name: dbr_cavity_add_fiber_ar_f2ab6ad2

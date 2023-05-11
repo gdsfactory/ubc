@@ -706,7 +706,7 @@ def add_fiber_array(
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
     cross_section: CrossSectionSpec = "strip",
-    layer_label: LayerSpec = (10, 0),
+    layer_label: LayerSpec = LAYER.TEXT,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
@@ -1028,7 +1028,7 @@ if __name__ == "__main__":
     # c = add_fiber_array(mmi1x2())
     # c = taper()
 
-    # c = add_fiber_array_pads_rf()
+    c = add_fiber_array_pads_rf()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
 
     # c = add_pads()
@@ -1050,8 +1050,7 @@ if __name__ == "__main__":
     # c = gc_te1550()
     # c = gc_tm1550()
     # c = mmi1x2()
-    # c = mzi(splitter='mmi1x2')
-    c = mzi_heater()
+    # c = mzi_heater()
     # c = pad()
     # c = ring_single()
     # c = ring_single_heater()
@@ -1060,4 +1059,6 @@ if __name__ == "__main__":
     # c = thermal_phase_shifter0()
     # c = straight_one_pin()
     # c = ebeam_crossing4_2ports()
+    # c = mzi()
+    # c = add_fiber_array(c)
     c.show(show_ports=False)
