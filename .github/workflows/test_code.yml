@@ -35,7 +35,7 @@ jobs:
           pip install .
           pip install flake8 pytest pytest_regressions
       - name: Test with pytest
-        run: pytest
+        run: pytest tests/
   test_code_coverage_python37:
     runs-on: ubuntu-latest
     needs: [pre-commit]
