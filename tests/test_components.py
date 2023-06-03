@@ -29,7 +29,7 @@ def component(request) -> Component:
 
 def test_pdk_gds(component: Component) -> None:
     """Avoid regressions in GDS geometry shapes and layers."""
-    difftest(component, dirpath_ref=dirpath_ref)
+    difftest(component, dirpath=dirpath_ref)
 
 
 def test_pdk_settings(

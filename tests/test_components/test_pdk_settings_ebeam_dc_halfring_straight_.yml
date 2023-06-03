@@ -79,11 +79,11 @@ settings:
     - - o4
       - port 3
     properties:
-      Lc: 4.0e-06
-      gap: 2.0e-07
-      radius: 4.9999999999999996e-06
-      wg_thickness: 2.1999999999999998e-07
-      wg_width: 5.0e-07
+      Lc: 0.0
+      gap: 0.0
+      radius: 0.0
+      wg_thickness: 0.0
+      wg_width: 0.0
   info_version: 2
   module: ubcpdk.components
   name: ebeam_dc_halfring_straight

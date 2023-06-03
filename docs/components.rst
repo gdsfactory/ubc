@@ -3,7 +3,7 @@
 Here are the components available in the PDK
 
 
-Components
+Cells
 =============================
 
 .. currentmodule:: ubcpdk.components
