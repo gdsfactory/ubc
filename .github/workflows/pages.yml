@@ -25,7 +25,7 @@ jobs:
         shell: bash -l {0}
         run: |
           sudo apt install libglu1-mesa
-          make plugins
+          make dev plugins
           make docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
