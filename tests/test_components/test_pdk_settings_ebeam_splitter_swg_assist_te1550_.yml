@@ -11,7 +11,7 @@ ports:
     orientation: 180
     port_type: optical
     shear_angle: null
-    width: 0.5000000000000001
+    width: 0.5
   o2:
     center:
     - -63.001
@@ -23,7 +23,7 @@ ports:
     orientation: 180
     port_type: optical
     shear_angle: null
-    width: 0.5000000000000001
+    width: 0.5
   o3:
     center:
     - 63.001
@@ -35,7 +35,7 @@ ports:
     orientation: 0
     port_type: optical
     shear_angle: null
-    width: 0.5000000000000001
+    width: 0.5
 settings:
   changed: {}
   child: null

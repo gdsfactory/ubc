@@ -30,7 +30,7 @@ with open(filepath, "w+") as f:
 Here are the components available in the PDK
 
 
-Components
+Cells
 =============================
 """
     )

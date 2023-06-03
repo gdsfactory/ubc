@@ -19,13 +19,14 @@ jobs:
         env:
           TIDY3D_USER: ${{ secrets.TIDY3D_EMAIL }}
           TIDY3D_PASS: ${{ secrets.TIDY3D_PASSWORD }}
+          SIMCLOUD_APIKEY: ${{ secrets.SIMCLOUD_APIKEY }}
           DISPLAY: 1.0
           DOCS: True
           GDSFACTORY_LAYOUT_PLOTTER: klayout
         shell: bash -l {0}
         run: |
           sudo apt install libglu1-mesa
-          make plugins
+          make dev plugins
           make docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

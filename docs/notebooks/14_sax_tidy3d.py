@@ -53,6 +53,7 @@ gf.config.set_plot_options(show_subports=False)
 # o1            o4
 # ```
 
+nm = 1e-3
 coupling = 0.5
 kappa = coupling**0.5
 tau = (1 - coupling) ** 0.5
@@ -132,27 +133,19 @@ def waveguide(wl=1.55, wl0=1.55, neff=2.34, ng=3.4, length=10.0, loss=0.0) -> sa
 
 strip = gt.modes.Waveguide(
     wavelength=1.55,
-    wg_width=0.5,
-    wg_thickness=0.22,
+    core_width=0.5,
+    core_thickness=0.22,
     slab_thickness=0.0,
-    ncore="si",
-    nclad="sio2",
+    core_material="si",
+    clad_material="sio2",
+    group_index_step=10 * nm,
 )
-strip.plot_Ex(0)  # TE
+strip.plot_field(mode_index=0, field_type="Ex")  # TE
 
 neff = strip.neffs[0].real
 neff
 
-nm = 1e-3
-ng = gt.modes.group_index(
-    wg_width=500 * nm,
-    wavelength=1.55,
-    wg_thickness=220 * nm,
-    slab_thickness=0 * nm,
-    ncore="si",
-    nclad="sio2",
-)
-ng
+ng = strip.n_group[0]
 
 straight_sc = gf.partial(gs.models.straight, neff=neff, ng=ng)
 
@@ -171,29 +164,16 @@ c
 nm = 1e-3
 cp = gt.modes.WaveguideCoupler(
     wavelength=1.55,
-    wg_width1=500 * nm,
-    wg_width2=500 * nm,
+    core_width=(500 * nm, 500 * nm),
     gap=200 * nm,
-    wg_thickness=220 * nm,
+    core_thickness=220 * nm,
     slab_thickness=0 * nm,
-    ncore="si",
-    nclad="sio2",
+    core_material="si",
+    clad_material="sio2",
 )
-cp.plot_Ex(0, plot_power=False)  # even mode
-cp.plot_Ex(1, plot_power=False)  # odd mode
+cp.plot_field(mode_index=0, field_type="Ex")  # even mode
+cp.plot_field(mode_index=1, field_type="Ex")  # odd mode
 
-help(gt.modes.find_coupling_vs_gap)
-
-df = gt.modes.find_coupling_vs_gap(
-    wg_width1=500 * nm,
-    wg_width2=500 * nm,
-    wg_thickness=220 * nm,
-    slab_thickness=0 * nm,
-    ncore="si",
-    nclad="sio2",
-    steps=3,
-)
-df
 
 # For a 200nm gap the effective index difference `dn` is `0.026`, which means that there is 100% power coupling over 29.4
 

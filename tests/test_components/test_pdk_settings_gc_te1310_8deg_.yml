@@ -11,7 +11,7 @@ ports:
     orientation: 180
     port_type: optical
     shear_angle: null
-    width: 0.35000000000000003
+    width: 0.35
   opt_in_TE_1310_device_JoaquinMatres:
     center:
     - 25.0

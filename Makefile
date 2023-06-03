@@ -5,7 +5,7 @@ install:
 	python install_tech.py
 
 dev:
-	pip install -e .
+	pip install -e .[dev,docs]
 
 update:
 	pre-commit autoupdate --bleeding-edge
