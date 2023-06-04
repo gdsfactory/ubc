@@ -12,6 +12,12 @@ jobs:
     name: Sphinx docs to gh-pages
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gdsfactory/
+          key: 0.0.1
+          restore-keys: 0.0.1
       - name: Add conda to system path
         run: |
           echo $CONDA/bin >> $GITHUB_PATH
