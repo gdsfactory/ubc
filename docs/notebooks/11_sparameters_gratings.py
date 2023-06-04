@@ -1,17 +1,19 @@
 # ---
 # jupyter:
 #   jupytext:
+#     custom_cell_magics: kql
 #     text_representation:
 #       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.14.5
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.11.2
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
 
+# %% [markdown]
 # # Grating coupler FDTD simulations
 #
 # You can also expand the planar component simulations to simulate an out-of-plane grating coupler.
@@ -20,7 +22,7 @@
 #
 # ## tidy3d
 
-# +
+# %%
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -29,19 +31,21 @@ import ubcpdk.components as pdk
 
 c = pdk.gc_te1550()
 c
-# -
 
+# %%
 fiber_angle_deg = -31
 s = gt.get_simulation_grating_coupler(
     c, is_3d=False, fiber_angle_deg=fiber_angle_deg, fiber_xoffset=0
 )
 f = gt.plot_simulation(s)
 
+# %%
 offsets = np.arange(-15, 6, 5)
 offsets
 
-sparams = [
-    gt.write_sparameters_grating_coupler(
+# %%
+jobs = [
+    dict(
         component=c,
         is_3d=False,
         fiber_angle_deg=fiber_angle_deg,
@@ -49,20 +53,22 @@ sparams = [
     )
     for fiber_xoffset in offsets
 ]
+sps = gt.write_sparameters_grating_coupler_batch(jobs)
 
 
+# %%
 def log(x):
     return 20 * np.log10(x)
 
 
-# +
+# %%
 for offset in offsets:
     sp = gt.write_sparameters_grating_coupler(
         c, is_3d=False, fiber_angle_deg=fiber_angle_deg, fiber_xoffset=offset
     )
     plt.plot(
         sp["wavelengths"],
-        20 * np.log10(np.abs(sp["vertical_te@0,o1@0"])),
+        20 * np.log10(np.abs(sp["o2@0,o1@0"])),
         label=str(offset),
     )
 
@@ -71,10 +77,10 @@ plt.ylabel("Transmission (dB)")
 plt.title("transmission vs fiber xoffset (um)")
 plt.legend()
 
-# +
+# %%
 # gt.write_sparameters_grating_coupler?
-# -
 
+# %%
 sparams = [
     gt.write_sparameters_grating_coupler(
         component=c,
