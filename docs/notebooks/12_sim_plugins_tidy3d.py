@@ -1,17 +1,20 @@
+# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
+#     custom_cell_magics: kql
 #     text_representation:
 #       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.14.5
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.11.2
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
 
+# %% [markdown]
 # # Circuit simulations (tidy3d + SAX)
 #
 # ![](https://i.imgur.com/RSOTDIN.png)
@@ -32,6 +35,7 @@
 # pip install "gdsfactory[tidy3d,sax]"
 # ```
 
+# %% [markdown]
 # ## tidy3d FDTD simulations
 #
 # Lets compute the Sparameters of a 1x2 power splitter using tidy3d.
@@ -42,30 +46,35 @@
 #
 # ![cloud_model](https://i.imgur.com/5VTCPLR.png)
 
-# +
+# %%
 import gdsfactory.simulation as sim
 import gdsfactory as gf
 import gdsfactory.simulation.gtidy3d as gt
 import ubcpdk.components as pdk
 
-# -
 
+# %%
 c = pdk.ebeam_y_1550()
 c
 
+# %%
 sp = gt.write_sparameters(c)
 
+# %%
 sim.plot.plot_sparameters(sp)
 
+# %%
 sim.plot.plot_loss1x2(sp)
 
+# %% [markdown]
 # ## Circuit simulation
 #
 
+# %%
 mzi10 = gf.components.mzi(splitter=c, delta_length=10)
 mzi10
 
-# +
+# %%
 import matplotlib.pyplot as plt
 import numpy as np
 import jax.numpy as jnp
@@ -75,20 +84,20 @@ import gdsfactory as gf
 import gdsfactory.simulation.sax as gsax
 
 
-# +
+# %%
 def straight(wl=1.5, length=10.0, neff=2.4) -> sax.SDict:
     return sax.reciprocal({("o1", "o2"): jnp.exp(2j * jnp.pi * neff * length / wl)})
 
 
 def bend_euler(wl=1.5, length=20.0):
-    """ "Let's assume a reduced transmission for the euler bend compared to a straight"""
+    """Assumes a reduced transmission for the euler bend compared to a straight"""
     return {k: 0.99 * v for k, v in straight(wl=wl, length=length).items()}
 
 
-# -
-
+# %%
 ebeam_y_1550 = gsax.read.model_from_npz(sp)
 
+# %%
 netlist = mzi10.get_netlist()
 circuit, _ = sax.circuit(
     netlist=netlist,
@@ -99,6 +108,7 @@ circuit, _ = sax.circuit(
     },
 )
 
+# %%
 wl = np.linspace(1.5, 1.6)
 S = circuit(wl=wl)
 plt.figure(figsize=(14, 4))
@@ -109,9 +119,11 @@ plt.ylabel("T")
 plt.grid(True)
 plt.show()
 
+# %%
 mzi20 = gf.components.mzi(splitter=c, delta_length=20)
 mzi20
 
+# %%
 netlist = mzi20.get_netlist()
 circuit, _ = sax.circuit(
     netlist=netlist,
@@ -122,6 +134,7 @@ circuit, _ = sax.circuit(
     },
 )
 
+# %%
 wl = np.linspace(1.5, 1.6)
 S = circuit(wl=wl)
 plt.figure(figsize=(14, 4))
@@ -131,3 +144,5 @@ plt.xlabel("λ [nm]")
 plt.ylabel("T")
 plt.grid(True)
 plt.show()
+
+# %%
