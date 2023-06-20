@@ -1032,7 +1032,7 @@ if __name__ == "__main__":
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
 
     # c = add_pads()
-    # c = add_pads_rf()
+    c = add_pads_rf()
     # c = coupler()
     # c = dbr(decorator=None)
     # c = dbr_cavity()

@@ -73,7 +73,7 @@ Cells
 
   import ubcpdk
 
-  c = ubcpdk.PDK.get_component("{name}", {kwargs})
+  c = ubcpdk.{name}({kwargs})
   c.plot()
 
 """
