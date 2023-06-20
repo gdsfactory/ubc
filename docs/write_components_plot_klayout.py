@@ -72,7 +72,7 @@ Cells
 
   import ubcpdk
 
-  c = ubcpdk.name({kwargs})
+  c = ubcpdk.{name}({kwargs})
   c.plot_klayout()
 
 """
