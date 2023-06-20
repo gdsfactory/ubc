@@ -68,13 +68,12 @@ Cells
 
 .. autofunction:: ubcpdk.components.{name}
 
-.. plot::
-  :include-source:
+  .. code-block:: python
 
   import ubcpdk
 
   c = ubcpdk.PDK.get_component("{name}", {kwargs})
-  c.plot()
+  c.plot_klayout()
 
 """
             )

@@ -31,10 +31,7 @@ with open(filepath, "w+") as f:
     f.write(
         """
 
-Here are the components available in the PDK
-
-
-Cells
+Cells (with plot)
 =============================
 
 .. currentmodule:: ubcpdk.components
