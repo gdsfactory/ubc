@@ -1,9 +1,10 @@
-import pathlib
 from typing import Tuple
 import inspect
+from ubcpdk.config import PATH
 from ubcpdk import cells
 
-filepath = pathlib.Path(__file__).parent.absolute() / "components_plot.rst"
+
+filepath = PATH.repo / "docs" / "components_plot.rst"
 
 skip = {
     "LIBRARY",
@@ -68,12 +69,13 @@ Cells
 
 .. autofunction:: ubcpdk.components.{name}
 
-  .. code-block:: python
+.. plot::
+  :include-source:
 
   import ubcpdk
 
   c = ubcpdk.{name}({kwargs})
-  c.plot_klayout()
+  c.plot()
 
 """
             )

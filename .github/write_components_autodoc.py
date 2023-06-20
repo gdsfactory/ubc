@@ -1,9 +1,9 @@
-import pathlib
 import inspect
 import ubcpdk
+from ubcpdk.config import PATH
 
 
-filepath = pathlib.Path(__file__).parent.absolute() / "components.rst"
+filepath = PATH.repo / "docs" / "components.rst"
 
 skip = {
     "LIBRARY",

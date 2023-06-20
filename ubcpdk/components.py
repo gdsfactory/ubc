@@ -109,7 +109,7 @@ def ebeam_BondPad() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_BondPad()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_BondPad.gds")
 
@@ -124,7 +124,7 @@ def ebeam_adiabatic_te1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_adiabatic_te1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_adiabatic_te1550.gds")
 
@@ -139,7 +139,7 @@ def ebeam_adiabatic_tm1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_adiabatic_tm1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_adiabatic_tm1550.gds")
 
@@ -154,7 +154,7 @@ def ebeam_bdc_te1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_bdc_te1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_bdc_te1550.gds")
 
@@ -169,7 +169,7 @@ def ebeam_bdc_tm1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_bdc_tm1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_bdc_tm1550.gds")
 
@@ -184,7 +184,7 @@ def ebeam_crossing4() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_crossing4()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_crossing4.gds")
 
@@ -210,7 +210,7 @@ def ebeam_crossing4_2ports() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_crossing4_2ports()
-      c.plot()
+      c.plot_matplotlib()
     """
     c = gf.Component()
     x = c << ebeam_crossing4()
@@ -235,7 +235,7 @@ def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_splitter_adiabatic_swg_te1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_splitter_adiabatic_swg_te1550.gds")
 
@@ -250,7 +250,7 @@ def ebeam_splitter_swg_assist_te1310() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_splitter_swg_assist_te1310()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_splitter_swg_assist_te1310.gds")
 
@@ -265,7 +265,7 @@ def ebeam_splitter_swg_assist_te1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_splitter_swg_assist_te1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_splitter_swg_assist_te1550.gds")
 
@@ -280,7 +280,7 @@ def ebeam_swg_edgecoupler() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_swg_edgecoupler()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_swg_edgecoupler.gds")
 
@@ -295,7 +295,7 @@ def ebeam_terminator_te1310() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_terminator_te1310()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_terminator_te1310.gds")
 
@@ -310,7 +310,7 @@ def ebeam_terminator_te1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_terminator_te1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_terminator_te1550.gds")
 
@@ -325,7 +325,7 @@ def ebeam_terminator_tm1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_terminator_tm1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_terminator_tm1550.gds")
 
@@ -340,7 +340,7 @@ def ebeam_y_1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_y_1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_y_1550.gds")
 
@@ -355,7 +355,7 @@ def ebeam_y_adiabatic() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_y_adiabatic()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_y_adiabatic.gds")
 
@@ -370,7 +370,7 @@ def ebeam_y_adiabatic_tapers() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_y_adiabatic()
-      c.plot()
+      c.plot_matplotlib()
     """
     y = import_gds("ebeam_y_adiabatic.gds")
     return gf.add_tapers(y)
@@ -386,7 +386,7 @@ def ebeam_y_adiabatic_1310() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.ebeam_y_adiabatic_1310()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("ebeam_y_adiabatic_1310.gds")
 
@@ -401,7 +401,7 @@ def metal_via() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.metal_via()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("metal_via.gds")
 
@@ -416,7 +416,7 @@ def photonic_wirebond_surfacetaper_1310() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.photonic_wirebond_surfacetaper_1310()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("photonic_wirebond_surfacetaper_1310.gds")
 
@@ -431,7 +431,7 @@ def photonic_wirebond_surfacetaper_1550() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.photonic_wirebond_surfacetaper_1550()
-      c.plot()
+      c.plot_matplotlib()
     """
     return import_gds("photonic_wirebond_surfacetaper_1550.gds")
 
@@ -446,7 +446,7 @@ def gc_te1310() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.gc_te1310()
-      c.plot()
+      c.plot_matplotlib()
     """
     c = gf.Component()
     gc = import_gc("ebeam_gc_te1310.gds", info=info1310te)
@@ -474,7 +474,7 @@ def gc_te1310_8deg() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.gc_te1310_8deg()
-      c.plot()
+      c.plot_matplotlib()
     """
     c = gf.Component()
     gc = import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
@@ -502,7 +502,7 @@ def gc_te1310_broadband() -> gf.Component:
       import ubcpdk
 
       c = ubcpdk.components.gc_te1310_broadband()
-      c.plot()
+      c.plot_matplotlib()
     """
     c = gf.Component()
     gc = import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
