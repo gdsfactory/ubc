@@ -23,6 +23,7 @@ keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
     "gdsfactory[cad,kfactory]==6.107.3",
+    "ipykernel",
     "modes",
 ]
 readme = "README.md"
