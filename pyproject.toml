@@ -22,12 +22,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-<<<<<<< HEAD
-    "gdsfactory[cad,kfactory]==6.107.7",
-=======
     "gdsfactory[cad,kfactory]==6.108.0",
-    "ipykernel",
->>>>>>> add_plots_to_docs
     "modes",
 ]
 readme = "README.md"
