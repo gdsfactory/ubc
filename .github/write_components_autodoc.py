@@ -1,9 +1,9 @@
-import pathlib
 import inspect
 import ubcpdk
+from ubcpdk.config import PATH
 
 
-filepath = pathlib.Path(__file__).parent.absolute() / "components.rst"
+filepath = PATH.repo / "docs" / "components.rst"
 
 skip = {
     "LIBRARY",
@@ -31,10 +31,7 @@ with open(filepath, "w+") as f:
     f.write(
         """
 
-Here are the components available in the PDK
-
-
-Cells
+Cells summary
 =============================
 
 .. currentmodule:: ubcpdk.components

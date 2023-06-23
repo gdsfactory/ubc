@@ -1,9 +1,10 @@
-import pathlib
 from typing import Tuple
 import inspect
+from ubcpdk.config import PATH
 from ubcpdk import cells
 
-filepath = pathlib.Path(__file__).parent.absolute() / "components.rst"
+
+filepath = PATH.repo / "docs" / "components_plot.rst"
 
 skip = {
     "LIBRARY",
@@ -73,8 +74,8 @@ Cells
 
   import ubcpdk
 
-  c = ubcpdk.PDK.get_component("{name}", {kwargs})
-  c.plot()
+  c = ubcpdk.components.{name}({kwargs})
+  c.plot_matplotlib()
 
 """
             )

@@ -1,9 +1,6 @@
 
 
-Here are the components available in the PDK
-
-
-Cells
+Cells summary
 =============================
 
 .. currentmodule:: ubcpdk.components

@@ -6,7 +6,6 @@ root: index
 chapters:
   - file: tech
   - file: components
+  - file: components_plot
   - file: tutorial
-    sections:
-      - glob: notebooks/*
   - file: changelog

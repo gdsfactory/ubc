@@ -20,6 +20,7 @@ ubcpdk/tests/test_components.gds/gds_diff/
 poetry.lock
 Pipfile
 modes/
+docs/_autosummary
 
 # Distribution / packaging
 .Python
