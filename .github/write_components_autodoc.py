@@ -31,7 +31,7 @@ with open(filepath, "w+") as f:
     f.write(
         """
 
-Cells (with plot)
+Cells summary
 =============================
 
 .. currentmodule:: ubcpdk.components

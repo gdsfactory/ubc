@@ -101,91 +101,37 @@ def thermal_phase_shifter3() -> gf.Component:
 
 @gf.cell
 def ebeam_BondPad() -> gf.Component:
-    """Return ebeam_BondPad fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_BondPad()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_BondPad fixed cell."""
     return import_gds("ebeam_BondPad.gds")
 
 
 @gf.cell
 def ebeam_adiabatic_te1550() -> gf.Component:
-    """Return ebeam_adiabatic_te1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_adiabatic_te1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_adiabatic_te1550 fixed cell."""
     return import_gds("ebeam_adiabatic_te1550.gds")
 
 
 @gf.cell
 def ebeam_adiabatic_tm1550() -> gf.Component:
-    """Return ebeam_adiabatic_tm1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_adiabatic_tm1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_adiabatic_tm1550 fixed cell."""
     return import_gds("ebeam_adiabatic_tm1550.gds")
 
 
 @gf.cell
 def ebeam_bdc_te1550() -> gf.Component:
-    """Return ebeam_bdc_te1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_bdc_te1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_bdc_te1550 fixed cell."""
     return import_gds("ebeam_bdc_te1550.gds")
 
 
 @gf.cell
 def ebeam_bdc_tm1550() -> gf.Component:
-    """Return ebeam_bdc_tm1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_bdc_tm1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_bdc_tm1550 fixed cell."""
     return import_gds("ebeam_bdc_tm1550.gds")
 
 
 @gf.cell
 def ebeam_crossing4() -> gf.Component:
-    """Return ebeam_crossing4 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_crossing4()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_crossing4 fixed cell."""
     return import_gds("ebeam_crossing4.gds")
 
 
@@ -202,16 +148,7 @@ def straight_one_pin(length=1, cross_section=tech.strip_bbox_only) -> gf.Compone
 
 @gf.cell
 def ebeam_crossing4_2ports() -> gf.Component:
-    """Return ebeam_crossing4 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_crossing4_2ports()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_crossing4 fixed cell."""
     c = gf.Component()
     x = c << ebeam_crossing4()
     s1 = c << straight_one_pin()
@@ -227,227 +164,92 @@ def ebeam_crossing4_2ports() -> gf.Component:
 
 @gf.cell
 def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
-    """Return ebeam_splitter_adiabatic_swg_te1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_splitter_adiabatic_swg_te1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_splitter_adiabatic_swg_te1550 fixed cell."""
     return import_gds("ebeam_splitter_adiabatic_swg_te1550.gds")
 
 
 @gf.cell
 def ebeam_splitter_swg_assist_te1310() -> gf.Component:
-    """Return ebeam_splitter_swg_assist_te1310 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_splitter_swg_assist_te1310()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_splitter_swg_assist_te1310 fixed cell."""
     return import_gds("ebeam_splitter_swg_assist_te1310.gds")
 
 
 @gf.cell
 def ebeam_splitter_swg_assist_te1550() -> gf.Component:
-    """Return ebeam_splitter_swg_assist_te1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_splitter_swg_assist_te1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_splitter_swg_assist_te1550 fixed cell."""
     return import_gds("ebeam_splitter_swg_assist_te1550.gds")
 
 
 @gf.cell
 def ebeam_swg_edgecoupler() -> gf.Component:
-    """Return ebeam_swg_edgecoupler fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_swg_edgecoupler()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_swg_edgecoupler fixed cell."""
     return import_gds("ebeam_swg_edgecoupler.gds")
 
 
 @gf.cell
 def ebeam_terminator_te1310() -> gf.Component:
-    """Return ebeam_terminator_te1310 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_terminator_te1310()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_terminator_te1310 fixed cell."""
     return import_gds("ebeam_terminator_te1310.gds")
 
 
 @gf.cell
 def ebeam_terminator_te1550() -> gf.Component:
-    """Return ebeam_terminator_te1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_terminator_te1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_terminator_te1550 fixed cell."""
     return import_gds("ebeam_terminator_te1550.gds")
 
 
 @gf.cell
 def ebeam_terminator_tm1550() -> gf.Component:
-    """Return ebeam_terminator_tm1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_terminator_tm1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_terminator_tm1550 fixed cell."""
     return import_gds("ebeam_terminator_tm1550.gds")
 
 
 @gf.cell
 def ebeam_y_1550() -> gf.Component:
-    """Return ebeam_y_1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_y_1550()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_y_1550 fixed cell."""
     return import_gds("ebeam_y_1550.gds")
 
 
 @gf.cell
 def ebeam_y_adiabatic() -> gf.Component:
-    """Return ebeam_y_adiabatic fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_y_adiabatic()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_y_adiabatic fixed cell."""
     return import_gds("ebeam_y_adiabatic.gds")
 
 
 @gf.cell
 def ebeam_y_adiabatic_tapers() -> gf.Component:
-    """Return ebeam_y_adiabatic fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_y_adiabatic()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_y_adiabatic fixed cell."""
     y = import_gds("ebeam_y_adiabatic.gds")
     return gf.add_tapers(y)
 
 
 @gf.cell
 def ebeam_y_adiabatic_1310() -> gf.Component:
-    """Return ebeam_y_adiabatic_1310 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.ebeam_y_adiabatic_1310()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_y_adiabatic_1310 fixed cell."""
     return import_gds("ebeam_y_adiabatic_1310.gds")
 
 
 @gf.cell
 def metal_via() -> gf.Component:
-    """Return metal_via fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.metal_via()
-      c.plot_matplotlib()
-    """
+    """Return metal_via fixed cell."""
     return import_gds("metal_via.gds")
 
 
 @gf.cell
 def photonic_wirebond_surfacetaper_1310() -> gf.Component:
-    """Return photonic_wirebond_surfacetaper_1310 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.photonic_wirebond_surfacetaper_1310()
-      c.plot_matplotlib()
-    """
+    """Return photonic_wirebond_surfacetaper_1310 fixed cell."""
     return import_gds("photonic_wirebond_surfacetaper_1310.gds")
 
 
 @gf.cell
 def photonic_wirebond_surfacetaper_1550() -> gf.Component:
-    """Return photonic_wirebond_surfacetaper_1550 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.photonic_wirebond_surfacetaper_1550()
-      c.plot_matplotlib()
-    """
+    """Return photonic_wirebond_surfacetaper_1550 fixed cell."""
     return import_gds("photonic_wirebond_surfacetaper_1550.gds")
 
 
 @gf.cell
 def gc_te1310() -> gf.Component:
-    """Return ebeam_gc_te1310 fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.gc_te1310()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_gc_te1310 fixed cell."""
     c = gf.Component()
     gc = import_gc("ebeam_gc_te1310.gds", info=info1310te)
     gc_ref = c << gc
@@ -466,16 +268,7 @@ def gc_te1310() -> gf.Component:
 
 @gf.cell
 def gc_te1310_8deg() -> gf.Component:
-    """Return ebeam_gc_te1310_8deg fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.gc_te1310_8deg()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_gc_te1310_8deg fixed cell."""
     c = gf.Component()
     gc = import_gc("ebeam_gc_te1310_8deg.gds", info=info1310te)
     gc_ref = c << gc
@@ -494,16 +287,7 @@ def gc_te1310_8deg() -> gf.Component:
 
 @gf.cell
 def gc_te1310_broadband() -> gf.Component:
-    """Return ebeam_gc_te1310_broadband fixed cell.
-
-    .. plot::
-      :include-source:
-
-      import ubcpdk
-
-      c = ubcpdk.components.gc_te1310_broadband()
-      c.plot_matplotlib()
-    """
+    """Return ebeam_gc_te1310_broadband fixed cell."""
     c = gf.Component()
     gc = import_gc("ebeam_gc_te1310_broadband.gds", info=info1310te)
     gc_ref = c << gc

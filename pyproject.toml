@@ -22,7 +22,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-    "gdsfactory[cad,kfactory]==6.107.3",
+    "gdsfactory[cad,kfactory]==6.108.0",
     "ipykernel",
     "modes",
 ]

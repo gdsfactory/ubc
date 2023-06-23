@@ -50,9 +50,12 @@ sphinx:
     - "sphinxcontrib.autodoc_pydantic"
   config:
     #autodoc_typehints: description
+    html_js_files:
+      - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
     autodoc_type_aliases:
       "ComponentSpec": "ComponentSpec"
     nb_execution_show_tb: True
+    nb_execution_raise_on_error: true
     nb_custom_formats:
         .py:
             - jupytext.reads
