@@ -14,16 +14,17 @@ It provides a fully python driven flow alternative for the most advanced users t
 
 ## Installation
 
-### Installation for new python users
-
 If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases) with python3, miniconda and all gdsfactory plugins.
 
 ### Installation for new gdsfactory users
 
-If you already have python installed. Open Anaconda Prompt and then install the ubcpdk using pip.
+Use python3.10 or python3.11, as some tools like kfactory are not available for older versions of python. We recommend [VSCode](https://code.visualstudio.com/) as an IDE.
 
-![anaconda prompt](https://i.imgur.com/Fyal5sT.png)
+If you don't have python installed on your system you can [download anaconda](https://www.anaconda.com/download/)
 
+Once you have python installed, open Anaconda Prompt as Administrator and then install the latest gdsfactory using pip.
+
+![anaconda prompt](https://i.imgur.com/eKk2bbs.png)
 ```
 pip install ubcpdk --upgrade
 ```
