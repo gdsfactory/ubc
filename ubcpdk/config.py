@@ -64,6 +64,7 @@ class Path:
     ring_tm_r30_g250 = ring / "LukasC_RingDoubleTMR30g250_1490.mat"
     dbr = data / "bragg"
     lyp = module / "klayout" / "tech" / "layers.lyp"
+    lyp_yaml = module / "layers.yaml"
     lyt = module / "klayout" / "tech" / "tech.lyt"
     tech = module / "klayout" / "tech"
 

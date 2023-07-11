@@ -1,0 +1,256 @@
+LayerViews:
+  Waveguide:
+    layer: [1, 0]
+    layer_in_name: true
+    width: 1
+    color: "#ff9d9d"
+    hatch_pattern: dotted
+  Waveguide2:
+    layer: [31, 0]
+    layer_in_name: true
+    width: 1
+    color: "#ff9d9d"
+    hatch_pattern: dotted
+  SLAB150:
+    layer: [2, 0]
+    layer_in_name: true
+    transparent: true
+    width: 1
+    color: "cyan"
+    hatch_pattern: coarsely dotted
+  M1_HEATER:
+    layer: [11, 0]
+    layer_in_name: true
+    color: "#ebc634"
+    hatch_pattern: hollow
+  M2_ROUTER:
+    layer: [12, 0]
+    layer_in_name: true
+    frame_color: "teal"
+    fill_color: "#800057"
+    hatch_pattern: dotted
+  M_Open:
+    layer: [13, 0]
+    layer_in_name: true
+    color: "black"
+    hatch_pattern: hollow
+  MH:
+    layer: [47, 0]
+    layer_in_name: true
+    transparent: true
+    width: 1
+    color: "#ff8000"
+  DEEPTRENCH:
+    layer: [4, 0]
+    layer_in_name: true
+    width: 1
+    color: "#9999cc"
+    hatch_pattern: left-hatched
+  OXIDE_ETCH:
+    layer: [6, 0]
+    layer_in_name: true
+    width: 1
+    color: "black"
+  TEXT:
+    layer: [10, 0]
+    layer_in_name: true
+    width: 1
+    color: "blue"
+  TE:
+    layer: [203, 0]
+    layer_in_name: true
+    transparent: true
+    width: 1
+    color: "blue"
+  TM:
+    layer: [204, 0]
+    layer_in_name: true
+    width: 1
+    color: "red"
+  LABEL_INSTANCES:
+    layer: [206, 0]
+    layer_in_name: true
+    color: "blue"
+  FLOORPLAN:
+    layer: [99, 0]
+    layer_in_name: true
+    color: "black"
+  Lumerical:
+    layer: [733, 0]
+    width: 3
+    color: "#800057"
+  DevRec:
+    layer: [68, 0]
+    visible: false
+    transparent: true
+    width: 1
+    color: "#004080"
+  PinRec:
+    layer: [1, 10]
+    color: "#404040"
+  FbrTgt:
+    layer: [81, 0]
+    width: 2
+    color: "#004080"
+  Text:
+    layer: [66, 0]
+    width: 1
+    color: "blue"
+  Errors:
+    layer: [69, 0]
+    width: 1
+    color: "blue"
+  PinRecM:
+    layer: [1, 11]
+    width: 1
+    color: "#004080"
+  XSECTION:
+    group_members:
+      XS_BOX:
+        layer: [300, 0]
+        layer_in_name: true
+        width: 1
+        color: "#f3ff80"
+        hatch_pattern: solid
+      XS_SI:
+        layer: [301, 0]
+        layer_in_name: true
+        width: 1
+        color: "black"
+        hatch_pattern: solid
+      XS_SIN:
+        layer: [319, 0]
+        layer_in_name: true
+        width: 1
+        color: "black"
+        hatch_pattern: solid
+      XS_N:
+        layer: [320, 0]
+        layer_in_name: true
+        width: 1
+        color: "#008ca5"
+        hatch_pattern: solid
+      XS_NPP:
+        layer: [321, 0]
+        layer_in_name: true
+        width: 1
+        color: "#004ca5"
+        hatch_pattern: solid
+      XS_P:
+        layer: [330, 0]
+        layer_in_name: true
+        width: 1
+        color: "#00f233"
+        hatch_pattern: solid
+      XS_PDPP:
+        layer: [327, 0]
+        layer_in_name: true
+        width: 1
+        color: "#00f233"
+        hatch_pattern: solid
+      XS_PPP:
+        layer: [331, 0]
+        layer_in_name: true
+        width: 1
+        color: "#00b233"
+        hatch_pattern: solid
+      XS_SI_SLAB:
+        layer: [313, 0]
+        layer_in_name: true
+        width: 1
+        color: "#80a8ff"
+      XS_OVERLAY:
+        layer: [311, 0]
+        layer_in_name: true
+        width: 1
+        color: "blue"
+      XS_OX_SI:
+        layer: [302, 0]
+        layer_in_name: true
+        width: 1
+        color: "#f3ff80"
+      XS_GE:
+        layer: [315, 0]
+        layer_in_name: true
+        width: 1
+        color: "#004ca5"
+      XS_VIAC:
+        layer: [303, 0]
+        layer_in_name: true
+        width: 1
+        color: "grey"
+      XS_M1:
+        layer: [304, 0]
+        layer_in_name: true
+        width: 1
+        color: "green"
+      XS_OXIDE_M1:
+        layer: [305, 0]
+        layer_in_name: true
+        width: 1
+        color: "#f3ff80"
+      XS_MH:
+        layer: [306, 0]
+        layer_in_name: true
+        width: 1
+        color: "green"
+      XS_OXIDE_M2:
+        layer: [307, 0]
+        layer_in_name: true
+        width: 1
+        color: "#f3ff80"
+      XS_OXIDE_MH:
+        layer: [317, 0]
+        layer_in_name: true
+        width: 1
+        color: "#f3ff80"
+      XS_OXIDE_ML:
+        layer: [309, 0]
+        layer_in_name: true
+        width: 1
+        color: "#f3ff80"
+      XS_M2:
+        layer: [399, 0]
+        layer_in_name: true
+        width: 1
+        color: "#805000"
+      XS_VIA2:
+        layer: [310, 0]
+        layer_in_name: true
+        width: 1
+        color: "grey"
+      XS_SIN2:
+        layer: [305, 0]
+        layer_in_name: true
+        width: 1
+        color: "#805000"
+  DRC_MARKER:
+    layer: [205, 0]
+    layer_in_name: true
+    transparent: true
+    width: 3
+    color: "red"
+  ERROR_MARKER:
+    layer: [207, 0]
+    layer_in_name: true
+    transparent: true
+    width: 3
+    color: "red"
+  SHOW_PORTS:
+    layer: [1, 12]
+    layer_in_name: true
+    color: "#ff80a8"
+  simulation:
+    group_members:
+      SIM_REGION:
+        layer: [100, 0]
+        layer_in_name: true
+        color: "black"
+      MONITOR:
+        layer: [101, 0]
+        layer_in_name: true
+        color: "blue"
+      SOURCE:
+        layer: [110, 0]
+        layer_in_name: true
+        color: "red"

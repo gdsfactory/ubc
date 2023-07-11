@@ -2,8 +2,8 @@ name: ring_single_heater_171f_5dab5bcc
 ports:
   elec-ring_single_heater_171f554b-0:
     center:
-    - -64.5
-    - 160.055
+    - -439.5
+    - 160.05
     layer:
     - 12
     - 0
@@ -14,12 +14,84 @@ ports:
     width: 75
   elec-ring_single_heater_171f554b-1:
     center:
-    - 60.5
-    - 160.055
+    - -314.5
+    - 160.05
     layer:
     - 12
     - 0
     name: elec-ring_single_heater_171f554b-1
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-2:
+    center:
+    - -189.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-2
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-3:
+    center:
+    - -64.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-3
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-4:
+    center:
+    - 60.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-4
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-5:
+    center:
+    - 185.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-5
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-6:
+    center:
+    - 310.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-6
+    orientation: 270
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-7:
+    center:
+    - 435.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-7
     orientation: 270
     port_type: electrical
     shear_angle: null
@@ -105,7 +177,7 @@ settings:
       gap: 0.2
       length_x: 4.0
       length_y: 0.6
-      port_orientation: 90
+      port_orientation: null
       radius: 10.0
       via_stack:
         function: via_stack
@@ -139,7 +211,7 @@ settings:
       gap: 0.2
       length_x: 4.0
       length_y: 0.6
-      port_orientation: 90
+      port_orientation: null
       radius: 10.0
       via_stack:
         function: via_stack

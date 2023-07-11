@@ -845,4 +845,5 @@ if __name__ == "__main__":
     # c = ebeam_crossing4_2ports()
     # c = mzi()
     # c = add_fiber_array(c)
+    c.plot_klayout()
     c.show(show_ports=False)

@@ -16,7 +16,7 @@ It provides a fully python driven flow alternative for the most advanced users t
 
 If you don't have python installed on your system you can [download the gdsfactory installer](https://github.com/gdsfactory/gdsfactory/releases) with python3, miniconda and all gdsfactory plugins.
 
-### Installation for new gdsfactory users
+### Installation for users
 
 Use python3.10 or python3.11, as some tools like kfactory are not available for older versions of python. We recommend [VSCode](https://code.visualstudio.com/) as an IDE.
 
