@@ -105,6 +105,7 @@ settings:
             snap_to_grid: null
             start_straight_length: 0.01
             taper_length: 10.0
+            vias: []
             width: 0.5
             width_wide: null
           weight: 10.0
@@ -125,7 +126,7 @@ settings:
             None, ''info'': None, ''decorator'': None, ''add_pins'': {''function'':
             ''add_pins_siepic''}, ''add_bbox'': None, ''mirror'': False, ''name'':
             None}, ''function_name'': ''cross_section''}, ''name'': None, ''mirror'':
-            False}_length'
+            False, ''vias'': []}_length'
           : 10.0
         settings:
           add_bbox: null
@@ -291,6 +292,7 @@ settings:
           snap_to_grid: null
           start_straight_length: 0.01
           taper_length: 10.0
+          vias: []
           width: 0.5
           width_wide: null
         weight: 10.0
@@ -310,7 +312,7 @@ settings:
           [''DEVREC''], ''cladding_offsets'': [0], ''cladding_simplify'': None, ''info'':
           None, ''decorator'': None, ''add_pins'': {''function'': ''add_pins_siepic''},
           ''add_bbox'': None, ''mirror'': False, ''name'': None}, ''function_name'':
-          ''cross_section''}, ''name'': None, ''mirror'': False}_length'
+          ''cross_section''}, ''name'': None, ''mirror'': False, ''vias'': []}_length'
         : 10.0
       settings:
         add_bbox: null
@@ -465,6 +467,7 @@ settings:
         snap_to_grid: null
         start_straight_length: 0.01
         taper_length: 10.0
+        vias: []
         width: 0.5
         width_wide: null
       weight: 10.0
@@ -484,7 +487,7 @@ settings:
         [0], ''cladding_simplify'': None, ''info'': None, ''decorator'': None, ''add_pins'':
         {''function'': ''add_pins_siepic''}, ''add_bbox'': None, ''mirror'': False,
         ''name'': None}, ''function_name'': ''cross_section''}, ''name'': None, ''mirror'':
-        False}_length'
+        False, ''vias'': []}_length'
       : 10.0
     settings:
       add_bbox: null

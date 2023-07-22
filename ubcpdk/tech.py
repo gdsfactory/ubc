@@ -360,8 +360,10 @@ __all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
 
 
 if __name__ == "__main__":
-    c = gf.c.mzi()
+    LAYER_VIEWS = gf.technology.LayerViews(filepath=PATH.lyp)
+    LAYER_VIEWS.to_yaml(PATH.layers_yaml)
+    # c = gf.c.mzi()
     # c = gf.c.straight(length=1, cross_section=strip)
     # c = gf.c.bend_euler(cross_section=strip)
     # c = gf.c.mzi(delta_length=10, cross_section=strip)
-    c.show(show_ports=False)
+    # c.show(show_ports=False)
