@@ -64,6 +64,7 @@ class Path:
     dbr = data / "bragg"
     lyp = module / "klayout" / "tech" / "layers.lyp"
     lyt = module / "klayout" / "tech" / "tech.lyt"
+    layers_yaml = module / "layers.yaml"
     tech = module / "klayout" / "tech"
 
 

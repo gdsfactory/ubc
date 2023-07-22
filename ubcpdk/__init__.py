@@ -1,8 +1,8 @@
 """UBC Siepic Ebeam PDK from edx course."""
 import pathlib
 
-import gdsfactory as gf
 from gdsfactory.config import logger
+from gdsfactory.generic_tech import get_generic_pdk
 from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
 
@@ -34,7 +34,7 @@ PDK = Pdk(
     cells=cells,
     cross_sections=cross_sections,
     layers=LAYER.dict(),
-    base_pdk=gf.get_generic_pdk(),
+    base_pdk=get_generic_pdk(),
     layer_stack=LAYER_STACK,
     layer_views=LAYER_VIEWS,
     sparameters_path=PATH.sparameters,
