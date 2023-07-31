@@ -2,25 +2,97 @@ name: ring_single_heater_171f_ac60d9ba
 ports:
   elec-ring_single_heater_171f554b-1:
     center:
-    - 60.5
-    - 160.055
+    - 435.5
+    - 160.05
     layer:
     - 12
     - 0
     name: elec-ring_single_heater_171f554b-1
-    orientation: 270
+    orientation: 270.0
     port_type: electrical
     shear_angle: null
     width: 75
   elec-ring_single_heater_171f554b-2:
     center:
-    - -64.5
-    - 160.055
+    - 310.5
+    - 160.05
     layer:
     - 12
     - 0
     name: elec-ring_single_heater_171f554b-2
-    orientation: 270
+    orientation: 270.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-3:
+    center:
+    - 185.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-3
+    orientation: 270.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-4:
+    center:
+    - 60.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-4
+    orientation: 270.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-5:
+    center:
+    - -64.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-5
+    orientation: 270.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-6:
+    center:
+    - -189.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-6
+    orientation: 270.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-7:
+    center:
+    - -314.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-7
+    orientation: 270.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  elec-ring_single_heater_171f554b-8:
+    center:
+    - -439.5
+    - 160.05
+    layer:
+    - 12
+    - 0
+    name: elec-ring_single_heater_171f554b-8
+    orientation: 270.0
     port_type: electrical
     shear_angle: null
     width: 75
@@ -32,7 +104,7 @@ ports:
     - 1
     - 0
     name: o1
-    orientation: 180
+    orientation: 180.0
     port_type: optical
     shear_angle: null
     width: 0.5
@@ -105,7 +177,7 @@ settings:
       gap: 0.2
       length_x: 4.0
       length_y: 0.6
-      port_orientation: 90
+      port_orientation: null
       radius: 10.0
       via_stack:
         function: via_stack
@@ -139,7 +211,7 @@ settings:
       gap: 0.2
       length_x: 4.0
       length_y: 0.6
-      port_orientation: 90
+      port_orientation: null
       radius: 10.0
       via_stack:
         function: via_stack

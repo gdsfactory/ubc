@@ -1,5 +1,5 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
+# Learn more at https://jterbook.org/customize/toc.html
 
 format: jb-book
 root: index
@@ -8,4 +8,15 @@ chapters:
   - file: components
   - file: components_plot
   - file: tutorial
+    sections:
+        - file: notebooks/00_layout
+        - file: notebooks/11_sparameters
+        - file: notebooks/11_sparameters_gratings
+        - file: notebooks/12_sim_plugins_tidy3d
+        - file: notebooks/13_sim_plugins
+        - file: notebooks/14_sax_tidy3d
+        - file: notebooks/21_schematic_driven_layout
+        - file: notebooks/31_data_analysis_mzi
+        - file: notebooks/32_data_analysis_ring
+        - file: notebooks/33_data_analysis_dbr
   - file: changelog

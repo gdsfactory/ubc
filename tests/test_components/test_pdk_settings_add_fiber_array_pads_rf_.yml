@@ -2,25 +2,97 @@ name: add_fiber_array_pads_rf
 ports:
   e1:
     center:
-    - 160.055
-    - -60.5
+    - 160.05
+    - -435.5
     layer:
     - 12
     - 0
     name: e1
-    orientation: 180
+    orientation: 180.0
     port_type: electrical
     shear_angle: null
     width: 75
   e2:
     center:
-    - 160.055
-    - 64.5
+    - 160.05
+    - -310.5
     layer:
     - 12
     - 0
     name: e2
-    orientation: 180
+    orientation: 180.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  e3:
+    center:
+    - 160.05
+    - -185.5
+    layer:
+    - 12
+    - 0
+    name: e3
+    orientation: 180.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  e4:
+    center:
+    - 160.05
+    - -60.5
+    layer:
+    - 12
+    - 0
+    name: e4
+    orientation: 180.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  e5:
+    center:
+    - 160.05
+    - 64.5
+    layer:
+    - 12
+    - 0
+    name: e5
+    orientation: 180.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  e6:
+    center:
+    - 160.05
+    - 189.5
+    layer:
+    - 12
+    - 0
+    name: e6
+    orientation: 180.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  e7:
+    center:
+    - 160.05
+    - 314.5
+    layer:
+    - 12
+    - 0
+    name: e7
+    orientation: 180.0
+    port_type: electrical
+    shear_angle: null
+    width: 75
+  e8:
+    center:
+    - 160.05
+    - 439.5
+    layer:
+    - 12
+    - 0
+    name: e8
+    orientation: 180.0
     port_type: electrical
     shear_angle: null
     width: 75

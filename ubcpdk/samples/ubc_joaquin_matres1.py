@@ -177,9 +177,9 @@ def test_mask7():
 if __name__ == "__main__":
     # gf.clear_cache()
     # m, tm = test_mask1()  # dbr and mzi
-    m, tm = test_mask2()  # spirals
+    # m, tm = test_mask2()  # spirals
     # m, tm = test_mask3()  # coupler and crossing
-    # m, tm = test_mask4()  # heated mzis
+    m, tm = test_mask4()  # heated mzis
     # m, tm = test_mask5()  # heated rings
     # m, tm = test_mask6()  # 1x2 mmis
     # m, tm = test_mask7()  # 2x2mmis

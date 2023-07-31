@@ -22,7 +22,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-    "gdsfactory[cad,kfactory]==6.109.2",
+    "gdsfactory==6.115.0",
     "modes",
 ]
 readme = "README.md"
@@ -30,7 +30,7 @@ requires-python = ">=3.7"
 
 [project.optional-dependencies]
 full = [
-    "gdsfactory[full]==6.109.2",
+    "gdsfactory[full]==6.115.0",
     "modes",
     ]
 
