@@ -23,14 +23,15 @@
 # ## tidy3d
 
 # %%
-import numpy as np
+import gplugins.gtidy3d as gt
 import matplotlib.pyplot as plt
+import numpy as np
 
-import gdsfactory.simulation.gtidy3d as gt
 import ubcpdk.components as pdk
+from ubcpdk.config import PATH
 
 c = pdk.gc_te1550()
-c
+c.plot()
 
 # %%
 fiber_angle_deg = -31
@@ -50,6 +51,7 @@ jobs = [
         is_3d=False,
         fiber_angle_deg=fiber_angle_deg,
         fiber_xoffset=fiber_xoffset,
+        dirpath=PATH.sparameters,
     )
     for fiber_xoffset in offsets
 ]
@@ -64,7 +66,11 @@ def log(x):
 # %%
 for offset in offsets:
     sp = gt.write_sparameters_grating_coupler(
-        c, is_3d=False, fiber_angle_deg=fiber_angle_deg, fiber_xoffset=offset
+        c,
+        is_3d=False,
+        fiber_angle_deg=fiber_angle_deg,
+        fiber_xoffset=offset,
+        dirpath=PATH.sparameters,
     )
     plt.plot(
         sp["wavelengths"],
@@ -78,15 +84,4 @@ plt.title("transmission vs fiber xoffset (um)")
 plt.legend()
 
 # %%
-# gt.write_sparameters_grating_coupler?
-
-# %%
-sparams = [
-    gt.write_sparameters_grating_coupler(
-        component=c,
-        is_3d=False,
-        fiber_angle_deg=fiber_angle_deg,
-        fiber_xoffset=fiber_xoffset,
-    )
-    for fiber_xoffset in offsets
-]
+help(gt.write_sparameters_grating_coupler)

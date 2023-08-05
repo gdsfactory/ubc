@@ -2,17 +2,9 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: 9260cbc9c84c06022993bfbcc42fdbf0305c5b8e
     hooks:
-      - id: check-yaml
-        exclude: ^(conda\.recipe/meta\.yaml|conda_build/templates/.*\.yaml|docs/click/meta\.yaml|conda/meta\.yaml|construct.yaml)
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: requirements-txt-fixer
-  - repo: https://github.com/pycqa/isort
-    rev: 7b69d092ae4885dcc45648538ae780a6326bcd1e
-    hooks:
-      - id: isort
-        files: ubcdpk/.*
-        args: [--profile, black, --filter-files]
 
   - repo: https://github.com/psf/black
     rev: 25d886f52c2bbbb58386ac8050f4e67952507bc7
@@ -23,3 +15,8 @@ repos:
     rev: "6a0ba1854991b693612486cc84a2254de82d071d"
     hooks:
       - id: ruff
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.10.0
+    hooks:
+      - id: pretty-format-toml
+        args: [--autofix]

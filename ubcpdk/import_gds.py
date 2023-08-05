@@ -1,14 +1,10 @@
-from typing import Optional
-
-from numpy import ndarray
-from numpy import arctan2, degrees, isclose
-
 import gdsfactory as gf
 from gdsfactory.component import Component
 from gdsfactory.typings import LayerSpec
-from ubcpdk.tech import LAYER
-from ubcpdk.config import PATH
+from numpy import arctan2, degrees, isclose, ndarray
 
+from ubcpdk.config import PATH
+from ubcpdk.tech import LAYER
 
 layer = LAYER.WG
 port_width = 0.5
@@ -80,9 +76,9 @@ def add_ports(component: Component) -> Component:
 def add_ports_from_siepic_pins(
     component: Component,
     pin_layer_optical: LayerSpec = "PORT",
-    port_layer_optical: Optional[LayerSpec] = None,
+    port_layer_optical: LayerSpec | None = None,
     pin_layer_electrical: LayerSpec = "PORTE",
-    port_layer_electrical: Optional[LayerSpec] = None,
+    port_layer_electrical: LayerSpec | None = None,
 ) -> Component:
     """Add ports from SiEPIC-type cells, where the pins are defined as paths.
 

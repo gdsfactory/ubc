@@ -1,7 +1,7 @@
 import inspect
+
 import ubcpdk
 from ubcpdk.config import PATH
-
 
 filepath = PATH.repo / "docs" / "components.rst"
 
@@ -51,7 +51,7 @@ Cells summary
             [
                 f"{p}={repr(sig.parameters[p].default)}"
                 for p in sig.parameters
-                if isinstance(sig.parameters[p].default, (int, float, str, tuple))
+                if isinstance(sig.parameters[p].default, int | float | str | tuple)
                 and p not in skip_settings
             ]
         )

@@ -1,0 +1,12 @@
+instances:
+  s1:
+    component: straight
+    settings: {length: 20}
+  s2:
+    component: straight
+    settings: {length: 40}
+schematic_placements:
+  s1: {x: null, y: null, port: null, rotation: 0, dx: null, dy: null, mirror: null}
+  s2: {x: null, y: null, port: null, rotation: 0, dx: null, dy: null, mirror: null}
+nets: []
+ports: {}

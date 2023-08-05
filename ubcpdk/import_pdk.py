@@ -1,6 +1,6 @@
 import gdsfactory as gf
-from ubcpdk.config import PATH
 
+from ubcpdk.config import PATH
 
 if __name__ == "__main__":
     print(

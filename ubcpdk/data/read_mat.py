@@ -1,6 +1,6 @@
-from gdsfactory.typings import Tuple, PathType
-from scipy.io import loadmat
 import numpy as np
+from gdsfactory.typings import PathType, Tuple
+from scipy.io import loadmat
 
 
 def read_mat(filename: PathType, port: int = 0) -> Tuple[np.ndarray, np.ndarray]:
@@ -28,6 +28,7 @@ def read_mat(filename: PathType, port: int = 0) -> Tuple[np.ndarray, np.ndarray]
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
+
     import ubcpdk
 
     w, p = read_mat(ubcpdk.PATH.mzi1)

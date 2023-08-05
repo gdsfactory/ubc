@@ -1,11 +1,11 @@
 import pathlib
-import pytest
-from pytest_regressions.data_regression import DataRegressionFixture
 
+import pytest
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
-from ubcpdk import cells
+from pytest_regressions.data_regression import DataRegressionFixture
 
+from ubcpdk import cells
 
 skip_test = {
     "add_siepic_labels",
@@ -36,8 +36,8 @@ def test_pdk_settings(
     component: Component, data_regression: DataRegressionFixture
 ) -> None:
     """Avoid regressions when exporting settings."""
-    data_regression.check(component.to_dict())
+    data_regression.check(component.to_dict(with_ports=False))
 
 
-def test_assert_ports_on_grid(component: Component):
+def test_assert_ports_on_grid(component: Component) -> None:
     component.assert_ports_on_grid()

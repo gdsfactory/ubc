@@ -20,6 +20,7 @@
 
 # + attributes={"classes": [], "id": "", "n": "2"}
 import matplotlib.pyplot as plt
+
 import ubcpdk
 from ubcpdk.data.dbr import dbrs
 
@@ -37,8 +38,9 @@ for key in dbrs.keys():
     plt.xlim([1530, 1600])
 
 # +
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 from ubcpdk import data
 from ubcpdk.data.dbr import dbrs
 

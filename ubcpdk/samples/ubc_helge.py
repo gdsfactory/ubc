@@ -2,8 +2,8 @@ import gdsfactory as gf
 
 import ubcpdk
 import ubcpdk.components as pdk
+from ubcpdk.samples.write_mask import pack, size, write_mask_gds_with_metadata
 from ubcpdk.tech import LAYER
-from ubcpdk.samples.write_mask import write_mask_gds_with_metadata, pack, size
 
 add_gc = ubcpdk.components.add_fiber_array
 nm = 1e-3

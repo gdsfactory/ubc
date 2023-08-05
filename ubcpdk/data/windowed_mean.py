@@ -16,9 +16,10 @@ def windowed_mean(data: np.array, n: int = 60) -> np.array:
 
 
 if __name__ == "__main__":
-    from ubcpdk.data.read_mat import read_mat
-    from ubcpdk.config import PATH
     import matplotlib.pyplot as plt
+
+    from ubcpdk.config import PATH
+    from ubcpdk.data.read_mat import read_mat
 
     wavelength, power = read_mat(PATH.ring_te_r3_g100)
     power_envelope = windowed_mean(power, 60)

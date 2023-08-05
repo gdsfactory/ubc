@@ -1,8 +1,7 @@
-from typing import Tuple
 import inspect
-from ubcpdk.config import PATH
-from ubcpdk import cells
 
+from ubcpdk import cells
+from ubcpdk.config import PATH
 
 filepath = PATH.repo / "docs" / "components_plot.rst"
 
@@ -20,8 +19,8 @@ skip = {
     "waveguide_template",
 }
 
-skip_plot: Tuple[str, ...] = ("add_fiber_array_siepic",)
-skip_settings: Tuple[str, ...] = ("flatten", "safe_cell_names")
+skip_plot: tuple[str, ...] = ("add_fiber_array_siepic",)
+skip_settings: tuple[str, ...] = ("flatten", "safe_cell_names")
 
 
 with open(filepath, "w+") as f:
@@ -45,7 +44,7 @@ Cells
             [
                 f"{p}={repr(sig.parameters[p].default)}"
                 for p in sig.parameters
-                if isinstance(sig.parameters[p].default, (int, float, str, tuple))
+                if isinstance(sig.parameters[p].default, int | float | str | tuple)
                 and p not in skip_settings
             ]
         )
@@ -75,7 +74,7 @@ Cells
   import ubcpdk
 
   c = ubcpdk.components.{name}({kwargs})
-  c.plot_matplotlib()
+  c.plot_klayout()
 
 """
             )

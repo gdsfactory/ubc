@@ -7,14 +7,13 @@
 import sys
 from functools import partial
 
-from pydantic import BaseModel
-
 import gdsfactory as gf
-from gdsfactory.cross_section import get_cross_section_factories
-from gdsfactory.technology import LayerStack, LayerLevel
-from gdsfactory.typings import Layer, LayerSpec, Callable, LayerSpecs, Optional
 from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
+from gdsfactory.cross_section import get_cross_section_factories
+from gdsfactory.technology import LayerLevel, LayerStack
+from gdsfactory.typings import Callable, Layer, LayerSpec, LayerSpecs, Optional
+from pydantic import BaseModel
 
 from ubcpdk.config import PATH
 

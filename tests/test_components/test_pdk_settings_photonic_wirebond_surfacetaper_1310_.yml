@@ -1,17 +1,4 @@
 name: photonic_wirebond_surfa_b165631b
-ports:
-  o1:
-    center:
-    - 110.0
-    - 0.0
-    layer:
-    - 1
-    - 0
-    name: o1
-    orientation: 0
-    port_type: optical
-    shear_angle: null
-    width: 0.35
 settings:
   changed: {}
   child: null

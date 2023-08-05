@@ -1,19 +1,17 @@
 """Sample mask for the edx course Q1 2023."""
 
-from typing import Optional, List
-
-import ubcpdk
-import ubcpdk.components as pdk
-from ubcpdk.tech import LAYER
-from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
 
 import gdsfactory as gf
 from gdsfactory.components.bend_euler import bend_euler
 from gdsfactory.components.coupler_ring import coupler_ring as _coupler_ring
-from gdsfactory.components.via_stack import via_stack_heater_m3
 from gdsfactory.components.straight import straight
-
+from gdsfactory.components.via_stack import via_stack_heater_m3
 from gdsfactory.typings import ComponentSpec, CrossSectionSpec, Float2
+
+import ubcpdk
+import ubcpdk.components as pdk
+from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
+from ubcpdk.tech import LAYER
 
 via_stack_heater_m3_mini = gf.partial(via_stack_heater_m3, size=(4, 4))
 
@@ -35,7 +33,7 @@ def ring_single_heater(
     cross_section_waveguide_heater: CrossSectionSpec = "strip_heater_metal",
     cross_section: CrossSectionSpec = "strip",
     via_stack: ComponentSpec = via_stack_heater_m3_mini,
-    port_orientation: Optional[List[float]] = (180, 0),
+    port_orientation: list[float] | None = (180, 0),
     via_stack_offset: Float2 = (0, 0),
     **kwargs,
 ) -> gf.Component:

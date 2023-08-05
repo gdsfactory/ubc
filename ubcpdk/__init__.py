@@ -1,31 +1,16 @@
 """UBC Siepic Ebeam PDK from edx course."""
 import pathlib
-import warnings
 
 import gdsfactory as gf
 from gdsfactory.config import logger
 from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
 
+from ubcpdk import components, data, tech
 from ubcpdk.config import CONFIG, PATH, module
-from ubcpdk.tech import LAYER, strip, LAYER_STACK, LAYER_VIEWS
-from ubcpdk import components
-from ubcpdk import tech
-from ubcpdk import data
+from ubcpdk.tech import LAYER, LAYER_STACK, LAYER_VIEWS, cross_sections, strip
 
-from ubcpdk.tech import cross_sections
-
-warnings.warn(
-    """
-The latest versions of ubcpdk work with Python 3.10 and above.
-If you are using Python 3.9 or below, please install ubcpdk==1.21.4
-However we recommend you to upgrade to Python 3.10 or above so you can use the latest ubcpdk and gdsfactory features.
-""",
-    stacklevel=2,
-)
-
-
-__version__ = "1.21.4"
+__version__ = "1.21.3"
 
 __all__ = [
     "CONFIG",

@@ -1,29 +1,4 @@
 name: straight_add_fiber_arra_448312f9
-ports:
-  opt-mirror_948d7eaf_gc_te1550-straight-o1:
-    center:
-    - -16.2
-    - 58.5
-    layer:
-    - 1
-    - 0
-    name: opt-mirror_948d7eaf_gc_te1550-straight-o1
-    orientation: 0.0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
-  opt-mirror_948d7eaf_gc_te1550-straight-o2:
-    center:
-    - -16.2
-    - -68.5
-    layer:
-    - 1
-    - 0
-    name: opt-mirror_948d7eaf_gc_te1550-straight-o2
-    orientation: 0.0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
 settings:
   changed: {}
   child:
@@ -62,6 +37,96 @@ settings:
         cross_section: strip
         function_name: cross_section
         length: 10.0
+        route_info:
+          length: 10.0
+          type:
+            auto_widen: false
+            auto_widen_minimum_length: 200.0
+            bbox_layers: []
+            bbox_offsets: []
+            cladding_layers:
+            - DEVREC
+            cladding_offsets:
+            - 0.0
+            cladding_simplify: null
+            end_straight_length: 0.01
+            gap: 3.0
+            info:
+              function_name: cross_section
+              settings:
+                add_bbox: null
+                add_pins:
+                  function: add_pins_siepic
+                auto_widen: false
+                auto_widen_minimum_length: 200.0
+                bbox_layers: null
+                bbox_offsets: null
+                cladding_layers:
+                - DEVREC
+                cladding_offsets:
+                - 0
+                cladding_simplify: null
+                decorator: null
+                end_straight_length: 0.01
+                gap: 3.0
+                info: null
+                layer: WG
+                min_length: 0.01
+                mirror: false
+                name: null
+                offset: 0
+                port_names:
+                - o1
+                - o2
+                port_types:
+                - optical
+                - optical
+                radius: 10.0
+                sections: null
+                snap_to_grid: null
+                start_straight_length: 0.01
+                taper_length: 10.0
+                width: 0.5
+                width_wide: null
+            layer: WG
+            min_length: 0.01
+            mirror: false
+            name: null
+            offset: 0.0
+            port_names:
+            - o1
+            - o2
+            port_types:
+            - optical
+            - optical
+            radius: 10.0
+            sections: []
+            simplify: null
+            snap_to_grid: null
+            start_straight_length: 0.01
+            taper_length: 10.0
+            width: 0.5
+            width_wide: null
+          weight: 10.0
+          ? '{''layer'': ''WG'', ''width'': 0.5, ''offset'': 0.0, ''radius'': 10.0,
+            ''width_wide'': None, ''simplify'': None, ''auto_widen'': False, ''auto_widen_minimum_length'':
+            200.0, ''taper_length'': 10.0, ''bbox_layers'': [], ''bbox_offsets'':
+            [], ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0.0], ''cladding_simplify'':
+            None, ''sections'': [], ''port_names'': [''o1'', ''o2''], ''port_types'':
+            [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
+            0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''info'':
+            {''settings'': {''width'': 0.5, ''offset'': 0, ''layer'': ''WG'', ''width_wide'':
+            None, ''auto_widen'': False, ''auto_widen_minimum_length'': 200.0, ''taper_length'':
+            10.0, ''radius'': 10.0, ''sections'': None, ''port_names'': [''o1'', ''o2''],
+            ''port_types'': [''optical'', ''optical''], ''gap'': 3.0, ''min_length'':
+            0.01, ''start_straight_length'': 0.01, ''end_straight_length'': 0.01,
+            ''snap_to_grid'': None, ''bbox_layers'': None, ''bbox_offsets'': None,
+            ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0], ''cladding_simplify'':
+            None, ''info'': None, ''decorator'': None, ''add_pins'': {''function'':
+            ''add_pins_siepic''}, ''add_bbox'': None, ''mirror'': False, ''name'':
+            None}, ''function_name'': ''cross_section''}, ''name'': None, ''mirror'':
+            False}_length'
+          : 10.0
         settings:
           add_bbox: null
           add_pins:
@@ -118,7 +183,7 @@ settings:
         settings:
           polarization: te
           taper_angle: 35
-      layer_label: TEXT
+      layer_label: LABEL
       select_ports:
         function: select_ports
         settings:
@@ -158,6 +223,95 @@ settings:
         polarization: te
         wavelength: 1.55
       length: 10.0
+      route_info:
+        length: 10.0
+        type:
+          auto_widen: false
+          auto_widen_minimum_length: 200.0
+          bbox_layers: []
+          bbox_offsets: []
+          cladding_layers:
+          - DEVREC
+          cladding_offsets:
+          - 0.0
+          cladding_simplify: null
+          end_straight_length: 0.01
+          gap: 3.0
+          info:
+            function_name: cross_section
+            settings:
+              add_bbox: null
+              add_pins:
+                function: add_pins_siepic
+              auto_widen: false
+              auto_widen_minimum_length: 200.0
+              bbox_layers: null
+              bbox_offsets: null
+              cladding_layers:
+              - DEVREC
+              cladding_offsets:
+              - 0
+              cladding_simplify: null
+              decorator: null
+              end_straight_length: 0.01
+              gap: 3.0
+              info: null
+              layer: WG
+              min_length: 0.01
+              mirror: false
+              name: null
+              offset: 0
+              port_names:
+              - o1
+              - o2
+              port_types:
+              - optical
+              - optical
+              radius: 10.0
+              sections: null
+              snap_to_grid: null
+              start_straight_length: 0.01
+              taper_length: 10.0
+              width: 0.5
+              width_wide: null
+          layer: WG
+          min_length: 0.01
+          mirror: false
+          name: null
+          offset: 0.0
+          port_names:
+          - o1
+          - o2
+          port_types:
+          - optical
+          - optical
+          radius: 10.0
+          sections: []
+          simplify: null
+          snap_to_grid: null
+          start_straight_length: 0.01
+          taper_length: 10.0
+          width: 0.5
+          width_wide: null
+        weight: 10.0
+        ? '{''layer'': ''WG'', ''width'': 0.5, ''offset'': 0.0, ''radius'': 10.0,
+          ''width_wide'': None, ''simplify'': None, ''auto_widen'': False, ''auto_widen_minimum_length'':
+          200.0, ''taper_length'': 10.0, ''bbox_layers'': [], ''bbox_offsets'': [],
+          ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0.0], ''cladding_simplify'':
+          None, ''sections'': [], ''port_names'': [''o1'', ''o2''], ''port_types'':
+          [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
+          0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''info'': {''settings'':
+          {''width'': 0.5, ''offset'': 0, ''layer'': ''WG'', ''width_wide'': None,
+          ''auto_widen'': False, ''auto_widen_minimum_length'': 200.0, ''taper_length'':
+          10.0, ''radius'': 10.0, ''sections'': None, ''port_names'': [''o1'', ''o2''],
+          ''port_types'': [''optical'', ''optical''], ''gap'': 3.0, ''min_length'':
+          0.01, ''start_straight_length'': 0.01, ''end_straight_length'': 0.01, ''snap_to_grid'':
+          None, ''bbox_layers'': None, ''bbox_offsets'': None, ''cladding_layers'':
+          [''DEVREC''], ''cladding_offsets'': [0], ''cladding_simplify'': None, ''info'':
+          None, ''decorator'': None, ''add_pins'': {''function'': ''add_pins_siepic''},
+          ''add_bbox'': None, ''mirror'': False, ''name'': None}, ''function_name'':
+          ''cross_section''}, ''name'': None, ''mirror'': False}_length'
+        : 10.0
       settings:
         add_bbox: null
         add_pins:
@@ -243,6 +397,95 @@ settings:
       polarization: te
       wavelength: 1.55
     length: 10.0
+    route_info:
+      length: 10.0
+      type:
+        auto_widen: false
+        auto_widen_minimum_length: 200.0
+        bbox_layers: []
+        bbox_offsets: []
+        cladding_layers:
+        - DEVREC
+        cladding_offsets:
+        - 0.0
+        cladding_simplify: null
+        end_straight_length: 0.01
+        gap: 3.0
+        info:
+          function_name: cross_section
+          settings:
+            add_bbox: null
+            add_pins:
+              function: add_pins_siepic
+            auto_widen: false
+            auto_widen_minimum_length: 200.0
+            bbox_layers: null
+            bbox_offsets: null
+            cladding_layers:
+            - DEVREC
+            cladding_offsets:
+            - 0
+            cladding_simplify: null
+            decorator: null
+            end_straight_length: 0.01
+            gap: 3.0
+            info: null
+            layer: WG
+            min_length: 0.01
+            mirror: false
+            name: null
+            offset: 0
+            port_names:
+            - o1
+            - o2
+            port_types:
+            - optical
+            - optical
+            radius: 10.0
+            sections: null
+            snap_to_grid: null
+            start_straight_length: 0.01
+            taper_length: 10.0
+            width: 0.5
+            width_wide: null
+        layer: WG
+        min_length: 0.01
+        mirror: false
+        name: null
+        offset: 0.0
+        port_names:
+        - o1
+        - o2
+        port_types:
+        - optical
+        - optical
+        radius: 10.0
+        sections: []
+        simplify: null
+        snap_to_grid: null
+        start_straight_length: 0.01
+        taper_length: 10.0
+        width: 0.5
+        width_wide: null
+      weight: 10.0
+      ? '{''layer'': ''WG'', ''width'': 0.5, ''offset'': 0.0, ''radius'': 10.0, ''width_wide'':
+        None, ''simplify'': None, ''auto_widen'': False, ''auto_widen_minimum_length'':
+        200.0, ''taper_length'': 10.0, ''bbox_layers'': [], ''bbox_offsets'': [],
+        ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0.0], ''cladding_simplify'':
+        None, ''sections'': [], ''port_names'': [''o1'', ''o2''], ''port_types'':
+        [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
+        0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''info'': {''settings'':
+        {''width'': 0.5, ''offset'': 0, ''layer'': ''WG'', ''width_wide'': None, ''auto_widen'':
+        False, ''auto_widen_minimum_length'': 200.0, ''taper_length'': 10.0, ''radius'':
+        10.0, ''sections'': None, ''port_names'': [''o1'', ''o2''], ''port_types'':
+        [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
+        0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''bbox_layers'':
+        None, ''bbox_offsets'': None, ''cladding_layers'': [''DEVREC''], ''cladding_offsets'':
+        [0], ''cladding_simplify'': None, ''info'': None, ''decorator'': None, ''add_pins'':
+        {''function'': ''add_pins_siepic''}, ''add_bbox'': None, ''mirror'': False,
+        ''name'': None}, ''function_name'': ''cross_section''}, ''name'': None, ''mirror'':
+        False}_length'
+      : 10.0
     settings:
       add_bbox: null
       add_pins:

@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.0](https://github.com/gdsfactory/ubc/pull/291)
+
+- update to gdsfactory 7.0.2
+
 ## [1.21.0](https://github.com/gdsfactory/ubc/pull/203)
 
 - use jupyterbook for docs

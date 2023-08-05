@@ -1,17 +1,19 @@
 # ---
 # jupyter:
 #   jupytext:
+#     custom_cell_magics: kql
 #     text_representation:
 #       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.14.5
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.11.2
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
 
+# %% [markdown]
 # # SAX circuit simulator
 #
 # [SAX](https://flaport.github.io/sax/) is a circuit solver written in JAX, writing your component models in SAX enables you not only to get the function values but the gradients, this is useful for circuit optimization.
@@ -21,24 +23,21 @@
 # You can install sax with pip (read the SAX install instructions [here](https://github.com/flaport/sax#installation))
 #
 # ```
-# pip install 'gdsfactory[sax]'
+# pip install 'gplugins[sax]'
 # ```
 
-# +
+# %%
 from pprint import pprint
-import numpy as np
-import matplotlib.pyplot as plt
 
-import jax.numpy as jnp
 import gdsfactory as gf
-import gdsfactory.simulation.sax as gs
+import gplugins.gtidy3d as gt
+import gplugins.sax as gs
+import jax.numpy as jnp
+import matplotlib.pyplot as plt
+import numpy as np
 import sax
 
-import gdsfactory.simulation.gtidy3d as gt
-
-gf.config.set_plot_options(show_subports=False)
-# -
-
+# %% [markdown]
 # ## Scatter *dictionaries*
 #
 # The core datastructure for specifying scatter parameters in SAX is a dictionary... more specifically a dictionary which maps a port combination (2-tuple) to a scatter parameter (or an array of scatter parameters when considering multiple wavelengths for example). Such a specific dictionary mapping is called ann `SDict` in SAX (`SDict ≈ Dict[Tuple[str,str], float]`).
@@ -53,6 +52,7 @@ gf.config.set_plot_options(show_subports=False)
 # o1            o4
 # ```
 
+# %%
 nm = 1e-3
 coupling = 0.5
 kappa = coupling**0.5
@@ -69,9 +69,10 @@ coupler_dict = {
 }
 coupler_dict
 
+# %% [markdown]
 #  it can still be tedious to specify every port in the circuit manually. SAX therefore offers the `reciprocal` function, which auto-fills the reverse connection if the forward connection exist. For example:
 
-# +
+# %%
 coupler_dict = sax.reciprocal(
     {
         ("o1", "o4"): tau,
@@ -83,16 +84,14 @@ coupler_dict = sax.reciprocal(
 
 coupler_dict
 
-
-# -
-
+# %% [markdown]
 # ## Parametrized Models
 #
 # Constructing such an `SDict` is easy, however, usually we're more interested in having parametrized models for our components. To parametrize the coupler `SDict`, just wrap it in a function to obtain a SAX `Model`, which is a keyword-only function mapping to an `SDict`:
 #
 
 
-# +
+# %%
 def coupler(coupling=0.5) -> sax.SDict:
     kappa = coupling**0.5
     tau = (1 - coupling) ** 0.5
@@ -109,9 +108,7 @@ def coupler(coupling=0.5) -> sax.SDict:
 coupler(coupling=0.3)
 
 
-# -
-
-
+# %%
 def waveguide(wl=1.55, wl0=1.55, neff=2.34, ng=3.4, length=10.0, loss=0.0) -> sax.SDict:
     dwl = wl - wl0
     dneff_dwl = (ng - neff) / wl0
@@ -125,12 +122,15 @@ def waveguide(wl=1.55, wl0=1.55, neff=2.34, ng=3.4, length=10.0, loss=0.0) -> sa
     )
 
 
+# %% [markdown]
 # ### Waveguide model
 #
 # You can create a dispersive waveguide model in SAX.
 
+# %% [markdown]
 # Lets compute the effective index `neff` and group index `ng` for a 1550nm 500nm straight waveguide
 
+# %%
 strip = gt.modes.Waveguide(
     wavelength=1.55,
     core_width=0.5,
@@ -140,27 +140,37 @@ strip = gt.modes.Waveguide(
     clad_material="sio2",
     group_index_step=10 * nm,
 )
-strip.plot_field(mode_index=0, field_type="Ex")  # TE
+strip.plot_field(field_name="Ex", mode_index=0)  # TE
 
-neff = strip.neffs[0].real
-neff
 
+# %%
+neff = strip.n_eff[0]
+print(neff)
+
+# %%
 ng = strip.n_group[0]
+print(ng)
 
+# %%
 straight_sc = gf.partial(gs.models.straight, neff=neff, ng=ng)
 
+# %%
 gs.plot_model(straight_sc)
 plt.ylim(-1, 1)
 
+# %%
 gs.plot_model(straight_sc, phase=True)
 
+# %% [markdown]
 # ### Coupler model
 #
 # Lets define the model for an evanescent coupler
 
+# %%
 c = gf.components.coupler(length=10, gap=0.2)
-c
+c.plot()
 
+# %%
 nm = 1e-3
 cp = gt.modes.WaveguideCoupler(
     wavelength=1.55,
@@ -171,29 +181,37 @@ cp = gt.modes.WaveguideCoupler(
     core_material="si",
     clad_material="sio2",
 )
-cp.plot_field(mode_index=0, field_type="Ex")  # even mode
-cp.plot_field(mode_index=1, field_type="Ex")  # odd mode
+
+cp.plot_field(field_name="Ex", mode_index=0)  # even mode
+cp.plot_field(field_name="Ex", mode_index=1)  # odd mode
 
 
+# %% [markdown]
 # For a 200nm gap the effective index difference `dn` is `0.026`, which means that there is 100% power coupling over 29.4
 
+# %% [markdown]
 # If we ignore the coupling from the bend `coupling0 = 0` we know that for a 3dB coupling we need half of the `lc` length, which is the length needed to coupler `100%` of power.
 
+# %%
 coupler_sc = gf.partial(gs.models.coupler, dn=0.026, length=29.4 / 2, coupling0=0)
 gs.plot_model(coupler_sc)
 
+# %% [markdown]
 # ## SAX gdsfactory Compatibility
 # > From Layout to Circuit Model
 #
 # If you define your SAX S parameter models for your components, you can directly simulate your circuits from gdsfactory
 
+# %%
 mzi = gf.components.mzi(delta_length=10)
-mzi
+mzi.plot()
 
+# %%
 netlist = mzi.get_netlist()
 pprint(netlist["connections"])
 
 
+# %% [markdown]
 # The netlist has three different components:
 #
 # 1. straight
@@ -203,7 +221,7 @@ pprint(netlist["connections"])
 # You need models for each subcomponents to simulate the Component.
 
 
-# +
+# %%
 def straight(wl=1.5, length=10.0, neff=2.4) -> sax.SDict:
     return sax.reciprocal({("o1", "o2"): jnp.exp(2j * jnp.pi * neff * length / wl)})
 
@@ -228,11 +246,11 @@ models = {
     "mmi1x2": mmi1x2,
     "straight": straight,
 }
-# -
 
+# %%
 circuit, _ = sax.circuit(netlist=netlist, models=models)
 
-# +
+# %%
 circuit, _ = sax.circuit(netlist=netlist, models=models)
 wl = np.linspace(1.5, 1.6)
 S = circuit(wl=wl)
@@ -244,12 +262,12 @@ plt.xlabel("λ [nm]")
 plt.ylabel("T")
 plt.grid(True)
 plt.show()
-# -
 
+# %%
 mzi = gf.components.mzi(delta_length=20)  # Double the length, reduces FSR by 1/2
-mzi
+mzi.plot()
 
-# +
+# %%
 circuit, _ = sax.circuit(netlist=mzi.get_netlist(), models=models)
 
 wl = np.linspace(1.5, 1.6, 256)
@@ -262,20 +280,21 @@ plt.xlabel("λ [nm]")
 plt.ylabel("T")
 plt.grid(True)
 plt.show()
-# -
 
+# %% [markdown]
 # ## Heater model
 #
 # You can make a phase shifter model that depends on the applied volage. For that you need first to figure out what's the model associated to your phase shifter, and what is the parameter that you need to tune.
 
+# %%
 delta_length = 10
 mzi_component = gf.components.mzi_phase_shifter_top_heater_metal(
     delta_length=delta_length
 )
-fig = mzi_component.plot()
+mzi_component.plot()
 
 
-# +
+# %%
 def straight(wl=1.5, length=10.0, neff=2.4) -> sax.SDict:
     return sax.reciprocal({("o1", "o2"): jnp.exp(2j * jnp.pi * neff * length / wl)})
 
@@ -320,8 +339,8 @@ models = {
     "straight": straight,
     "straight_heater_metal_undercut": phase_shifter_heater,
 }
-# -
 
+# %%
 mzi_component = gf.components.mzi_phase_shifter_top_heater_metal(
     delta_length=delta_length
 )
@@ -330,7 +349,7 @@ mzi_circuit, _ = sax.circuit(netlist=netlist, models=models)
 S = mzi_circuit(wl=1.55)
 S
 
-# +
+# %%
 wl = np.linspace(1.5, 1.6, 256)
 S = mzi_circuit(wl=wl)
 
@@ -341,26 +360,30 @@ plt.xlabel("λ [nm]")
 plt.ylabel("T")
 plt.grid(True)
 plt.show()
-# -
 
+# %% [markdown]
 # Now you can tune the phase shift applied to one of the arms.
 #
 # How do you find out what's the name of the netlist component that you want to tune?
 #
 # You can backannotate the netlist and read the labels on the backannotated netlist or you can plot the netlist
 
+# %%
 mzi_component.plot_netlist()
 
+# %% [markdown]
 # As you can see the top phase shifter instance `sxt` is hard to see on the netlist.
 # You can also reconstruct the component using the netlist and look at the labels in klayout.
 
+# %%
 mzi_yaml = mzi_component.get_netlist_yaml()
 mzi_component2 = gf.read.from_yaml(mzi_yaml)
 fig = mzi_component2.plot(label_aliases=True)
 
+# %% [markdown]
 # The best way to get a deterministic name of the `instance` is naming the reference on your Pcell.
 
-# +
+# %%
 voltages = np.linspace(-1, 1, num=5)
 voltages = [-0.5, 0, 0.5]
 
@@ -378,9 +401,7 @@ for voltage in voltages:
 plt.title("MZI vs voltage")
 plt.legend()
 
-
-# -
-
+# %% [markdown]
 # ## Variable splitter
 #
 # You can build a variable splitter by adding a delta length between two 50% power splitters
@@ -390,7 +411,7 @@ plt.legend()
 # For example adding a 60um delta length you can build a 90% power splitter
 
 
-# +
+# %%
 @gf.cell
 def variable_splitter(delta_length: float, splitter=gf.c.mmi2x2):
     return gf.c.mzi2x2_2x2(splitter=splitter, delta_length=delta_length)
@@ -398,9 +419,9 @@ def variable_splitter(delta_length: float, splitter=gf.c.mmi2x2):
 
 nm = 1e-3
 c = variable_splitter(delta_length=60 * nm, cache=False)
-c
+c.plot()
 
-# +
+# %%
 models = {
     "bend_euler": gs.models.bend,
     "mmi2x2": gs.models.mmi2x2,
@@ -419,25 +440,28 @@ plt.xlabel("λ [nm]")
 plt.ylabel("T")
 plt.grid(True)
 plt.show()
-# -
 
+# %% [markdown]
 # ## Coupler sim
 #
 # Lets compare one coupler versus two coupler
 
+# %%
 c = gf.components.coupler(length=29.4, gap=0.2)
-c
+c.plot()
 
+# %%
 coupler50 = gf.partial(gs.models.coupler, dn=0.026, length=29.4 / 2, coupling0=0)
 gs.plot_model(coupler50)
 
 
+# %% [markdown]
 # As you can see the 50% coupling is only at one wavelength (1550nm)
 #
 # You can chain two couplers to increase the wavelength range for 50% operation.
 
 
-# +
+# %%
 @gf.cell
 def broadband_coupler(delta_length=0, splitter=gf.c.coupler):
     return gf.c.mzi2x2_2x2(
@@ -446,9 +470,9 @@ def broadband_coupler(delta_length=0, splitter=gf.c.coupler):
 
 
 c = broadband_coupler(delta_length=120 * nm, cache=False)
-c
+c.plot()
 
-# +
+# %%
 c = broadband_coupler(delta_length=164 * nm, cache=False)
 models = {
     "bend_euler": gs.models.bend,
@@ -470,6 +494,6 @@ plt.xlabel("λ [nm]")
 plt.ylabel("T")
 plt.legend()
 plt.grid(True)
-# -
 
+# %% [markdown]
 # As you can see two couplers have more broadband response

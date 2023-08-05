@@ -4,11 +4,10 @@ import gdsfactory as gf
 
 import ubcpdk
 import ubcpdk.components as pdk
-
 from ubcpdk import tech
-from ubcpdk.tech import LAYER
-from ubcpdk.samples.write_mask import write_mask_gds_with_metadata, add_gc, pack, size
 from ubcpdk.cutback_2x2 import cutback_2x2
+from ubcpdk.samples.write_mask import add_gc, pack, size, write_mask_gds_with_metadata
+from ubcpdk.tech import LAYER
 
 
 def test_mask1():
@@ -177,9 +176,9 @@ def test_mask7():
 if __name__ == "__main__":
     # gf.clear_cache()
     # m, tm = test_mask1()  # dbr and mzi
-    m, tm = test_mask2()  # spirals
+    # m, tm = test_mask2()  # spirals
     # m, tm = test_mask3()  # coupler and crossing
-    # m, tm = test_mask4()  # heated mzis
+    m, tm = test_mask4()  # heated mzis
     # m, tm = test_mask5()  # heated rings
     # m, tm = test_mask6()  # 1x2 mmis
     # m, tm = test_mask7()  # 2x2mmis

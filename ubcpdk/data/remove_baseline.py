@@ -1,4 +1,5 @@
 import numpy as np
+
 from ubcpdk.data.read_mat import read_mat
 
 
@@ -17,6 +18,7 @@ def remove_baseline(wavelength: np.ndarray, power: np.ndarray, deg: int = 4):
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
+
     import ubcpdk
 
     w, p = read_mat(ubcpdk.PATH.mzi1)

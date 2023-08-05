@@ -1,9 +1,9 @@
 """MPB mode simulations."""
 
 import gdsfactory as gf
-import gdsfactory.simulation.modes as gm
-from ubcpdk.config import PATH
+import gplugins.modes as gm
 
+from ubcpdk.config import PATH
 
 nm = 1e-3
 
