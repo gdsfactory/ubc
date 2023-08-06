@@ -31,7 +31,7 @@ jobs:
           SIMCLOUD_APIKEY: ${{ secrets.SIMCLOUD_APIKEY }}
           DISPLAY: 1.0
           DOCS: True
-          GDSFACTORY_LAYOUT_PLOTTER: klayout
+          GDSFACTORY_DISPLAY_TYPE: klayout
         shell: bash -l {0}
         run: |
           make dev

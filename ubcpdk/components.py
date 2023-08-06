@@ -449,7 +449,7 @@ def get_input_labels(
     layer_label: Tuple[int, int] = (10, 0),
     gc_port_name: str = "o1",
     port_index: int = 1,
-    get_input_label_text_function: Callable = get_input_label_text,
+    get_input_label_text: Callable = get_input_label_text,
 ) -> List[Label]:
     """Return list of labels for all component ports.
 
@@ -805,7 +805,7 @@ def add_pads(
     c0 = gf.get_component(component)
     text = f"elec_{username}-{clean_name(c0.name)}_G"
     add_label = gf.partial(add_label_electrical, text=text)
-    return add_pads_rf(component=c0, decorator=add_label)
+    return add_pads_rf(component=c0, decorator=add_label, **kwargs)
 
 
 if __name__ == "__main__":
