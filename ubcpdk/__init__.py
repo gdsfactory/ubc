@@ -1,5 +1,6 @@
 """UBC Siepic Ebeam PDK from edx course."""
 import pathlib
+import warnings
 
 import gdsfactory as gf
 from gdsfactory.config import logger
@@ -13,6 +14,15 @@ from ubcpdk import tech
 from ubcpdk import data
 
 from ubcpdk.tech import cross_sections
+
+warnings.warn(
+    """
+The latest versions of ubcpdk work with Python 3.10 and above.
+If you are using Python 3.9 or below, please install ubcpdk==1.21.3
+However we recommend you to upgrade to Python 3.10 or above so you can use the latest ubcpdk and gdsfactory features.
+""",
+    stacklevel=2,
+)
 
 
 __version__ = "1.21.3"
