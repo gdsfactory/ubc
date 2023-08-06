@@ -40,8 +40,23 @@ s = gt.get_simulation_grating_coupler(
 )
 f = gt.plot_simulation(s)
 
+
 # %%
-offsets = np.arange(-15, 6, 5)
+def log(x):
+    return 20 * np.log10(x)
+
+
+# %%
+sp = gt.write_sparameters_grating_coupler(
+    c,
+    is_3d=False,
+    fiber_angle_deg=fiber_angle_deg,
+    fiber_xoffset=0,
+    filepath=PATH.sparameters / "gc_te1550.npz",
+)
+
+# %%
+offsets = np.arange(-5, 5 + 1, 5)
 offsets
 
 # %%
@@ -52,16 +67,12 @@ jobs = [
         fiber_angle_deg=fiber_angle_deg,
         fiber_xoffset=fiber_xoffset,
         dirpath=PATH.sparameters,
+        filepath=PATH.sparameters
+        / f"{c.name}_{fiber_angle_deg:.1f}deg_{fiber_xoffset:.1f}um.npz",
     )
     for fiber_xoffset in offsets
 ]
 sps = gt.write_sparameters_grating_coupler_batch(jobs)
-
-
-# %%
-def log(x):
-    return 20 * np.log10(x)
-
 
 # %%
 for offset in offsets:
@@ -70,7 +81,7 @@ for offset in offsets:
         is_3d=False,
         fiber_angle_deg=fiber_angle_deg,
         fiber_xoffset=offset,
-        dirpath=PATH.sparameters,
+        filepath=PATH.sparameters / f"gc_{offset}.npz",
     )
     plt.plot(
         sp["wavelengths"],
