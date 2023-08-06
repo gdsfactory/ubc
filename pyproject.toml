@@ -15,7 +15,7 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory==7.0.2",
+  "gdsfactory>=7.1.0,<7.2.0",
   "gplugins[tidy3d]>=0.0.3,<0.1.0"
 ]
 description = "ubcpdk pdk"
@@ -30,15 +30,13 @@ version = "1.21.3"
 dev = [
   "pytest",
   "pytest-cov",
-  "pytest_regressions"
+  "pytest_regressions",
+  "pre-commit"
 ]
 docs = [
   "autodoc_pydantic",
   "jupytext",
   "jupyter-book==0.15.1"
-]
-full = [
-  "femwell"
 ]
 
 [tool.black]

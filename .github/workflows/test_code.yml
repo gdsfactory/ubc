@@ -32,8 +32,7 @@ jobs:
           cache-dependency-path: pyproject.toml
       - name: Install dependencies
         run: |
-          pip install .
-          pip install pytest pytest_regressions
+          make dev
       - name: Test with pytest
         run: pytest tests/
   test_code_coverage:
@@ -50,11 +49,9 @@ jobs:
           cache-dependency-path: pyproject.toml
       - name: Install dependencies
         run: |
-          pip install -e .
+          make dev
       - name: Test with pytest
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest klayout lytest scikit-image pytest-cov pytest_regressions
           pytest --cov=ubcpdk tests/
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -80,9 +77,7 @@ jobs:
           cache-dependency-path: pyproject.toml
       - name: Install dependencies
         run: |
-          make plugins
-          pip install -e .[docs] --upgrade
-          pip install numpy --upgrade
+          make dev
           pip freeze > requirements.txt
       - uses: actions/upload-artifact@v3
         with:

@@ -1,11 +1,10 @@
 install:
-	pip install -e .
+	pip install -e .[dev,docs]
 	pip install pre-commit
 	pre-commit install
 	python install_tech.py
 
-dev:
-	pip install -e .[dev,docs]
+dev: install
 
 update-pre:
 	pre-commit autoupdate
@@ -42,4 +41,4 @@ release:
 docs:
 	jb build docs
 
-.PHONY: drc doc docs
+.PHONY: drc doc docs install

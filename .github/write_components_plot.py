@@ -74,7 +74,7 @@ Cells
   import ubcpdk
 
   c = ubcpdk.components.{name}({kwargs})
-  c.plot_matplotlib()
+  c.plot_klayout()
 
 """
             )
