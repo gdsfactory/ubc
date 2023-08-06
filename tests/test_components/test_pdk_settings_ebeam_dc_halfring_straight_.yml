@@ -29,6 +29,7 @@ settings:
       - port 4
     - - o4
       - port 3
+    model: ebeam_dc_halfring_straight
     properties:
       Lc: 0.0
       gap: 0.0

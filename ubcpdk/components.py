@@ -412,7 +412,6 @@ ring_single_heater = gf.partial(
 def get_input_label_text(
     port: Port,
     gc: ComponentReference,
-    gc_index: Optional[int] = None,
     component_name: Optional[str] = None,
     username: str = CONFIG.username,
 ) -> str:
@@ -421,7 +420,6 @@ def get_input_label_text(
     Args:
         port: component port.
         gc: grating coupler reference.
-        gc_index: grating coupler index.
         component_name: optional component name.
         username: for the label.
     """
@@ -449,7 +447,7 @@ def get_input_labels(
     layer_label: Tuple[int, int] = (10, 0),
     gc_port_name: str = "o1",
     port_index: int = 1,
-    get_input_label_text: Callable = get_input_label_text,
+    get_input_label_text_function: Callable = get_input_label_text,
 ) -> List[Label]:
     """Return list of labels for all component ports.
 
@@ -466,8 +464,8 @@ def get_input_labels(
     gc = io_gratings[port_index]
     port = ordered_ports[1]
 
-    text = get_input_label_text(
-        port=port, gc=gc, gc_index=port_index, component_name=component_name
+    text = get_input_label_text_function(
+        port=port, gc=gc, component_name=component_name
     )
     layer, texttype = gf.get_layer(layer_label)
     label = Label(
@@ -711,6 +709,7 @@ def ebeam_dc_halfring_straight(
                 "Lc": length_x * um,
             },
             component_type=["optical"],
+            model=model,
         )
     return c
 
@@ -846,4 +845,4 @@ if __name__ == "__main__":
     # c = ebeam_crossing4_2ports()
     # c = mzi()
     # c = add_fiber_array(c)
-    c.show(show_ports=False)
+    c.show(show_ports=True)

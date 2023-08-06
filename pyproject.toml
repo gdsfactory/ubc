@@ -16,7 +16,7 @@ classifiers = [
 ]
 dependencies = [
   "gdsfactory>=7.1.0,<7.2.0",
-  "gplugins[tidy3d]>=0.0.3,<0.1.0"
+  "gplugins[tidy3d,sax,schematic]>=0.0.3,<0.1.0"
 ]
 description = "ubcpdk pdk"
 keywords = ["python"]
@@ -83,7 +83,7 @@ python_files = ["tests/*.py"]
 testpaths = ["tests"]
 
 [tool.ruff]
-extend-exclude = ["docs/notebooks"]
+fix = true
 ignore = [
   "E501",  # line too long, handled by black
   "B008",  # do not perform function calls in argument defaults

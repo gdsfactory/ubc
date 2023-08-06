@@ -44,13 +44,14 @@ import gplugins as sim
 import gplugins.gtidy3d as gt
 
 import ubcpdk.components as pdk
+from ubcpdk.config import PATH
 
 # %%
 c = pdk.ebeam_y_1550()
 c.plot()
 
 # %%
-sp = gt.write_sparameters(c)
+sp = gt.write_sparameters(c, filepath=PATH.sparameters / "ebeam_y_1550_20634f71.npz")
 
 # %%
 sim.plot.plot_sparameters(sp)

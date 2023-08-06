@@ -11,6 +11,7 @@ ubcpdk/tests/test_components.gds/gds_diff/
 .dvc/
 
 # C extensions
+*.ipynb
 *.so
 *.sqlite3
 *.png
