@@ -25,8 +25,8 @@
 # ## MEEP FDTD
 
 # +
-import gdsfactory.simulation.gmeep as gm
-import gdsfactory.simulation as sim
+import gplugins.gmeep as gm
+import gplugins as sim
 import gdsfactory as gf
 
 import ubcpdk as pdk
@@ -130,7 +130,7 @@ gm.plot.plot_sparameters(df, keys=("s31m",), with_simpler_input_keys=True)
 # ## 3D rendering
 
 # +
-from gdsfactory.simulation.add_simulation_markers import add_simulation_markers
+from gplugins.add_simulation_markers import add_simulation_markers
 import ubcpdk as pdk
 
 y = pdk.components.ebeam_y_1550()
@@ -163,8 +163,8 @@ import jax.numpy as jnp
 import sax
 
 import gdsfactory as gf
-import gdsfactory.simulation.sax as gsax
-import gdsfactory.simulation.gmeep as gm
+import gplugins.sax as gsax
+import gplugins.gmeep as gm
 
 import ubcpdk as pdk
 

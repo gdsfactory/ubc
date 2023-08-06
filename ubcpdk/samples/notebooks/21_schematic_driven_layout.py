@@ -25,7 +25,7 @@
 from bokeh.io import output_notebook
 
 import gdsfactory as gf
-from gdsfactory.schematic_editor import SchematicEditor
+from gplugins.schematic_editor import SchematicEditor
 from gdsfactory.config import rich_output
 
 # %env BOKEH_ALLOW_WS_ORIGIN=localhost:8888
@@ -161,7 +161,7 @@ c.ports
 # %%
 import numpy as np
 import matplotlib.pyplot as plt
-import gdsfactory.simulation.sax as gs
+import gplugins.sax as gs
 import jax.numpy as jnp
 import sax
 

@@ -27,13 +27,6 @@
 #
 # We will be using SAX which is open source and tidy3d which requires you to create an account to run simulations in tidy3d cloud.
 #
-#
-# ```
-# set PIP_FIND_LINKS="https://whls.blob.core.windows.net/unstable/index.html"
-# pip install sax jax sklearn
-# pip install "jaxlib[cuda111]" -f https://whls.blob.core.windows.net/unstable/index.html --use-deprecated legacy-resolver
-# pip install "gdsfactory[tidy3d,sax]"
-# ```
 
 # %% [markdown]
 # ## tidy3d FDTD simulations
@@ -47,15 +40,16 @@
 # ![cloud_model](https://i.imgur.com/5VTCPLR.png)
 
 # %%
-import gdsfactory.simulation as sim
+import gplugins as sim
 import gdsfactory as gf
-import gdsfactory.simulation.gtidy3d as gt
+import gplugins.gtidy3d as gt
 import ubcpdk.components as pdk
+from ubcpdk.config import PATH
 
 
 # %%
 c = pdk.ebeam_y_1550()
-c
+c.plot()
 
 # %%
 sp = gt.write_sparameters(c)
@@ -72,7 +66,7 @@ sim.plot.plot_loss1x2(sp)
 
 # %%
 mzi10 = gf.components.mzi(splitter=c, delta_length=10)
-mzi10
+mzi10.plot()
 
 # %%
 import matplotlib.pyplot as plt
@@ -81,7 +75,7 @@ import jax.numpy as jnp
 import sax
 
 import gdsfactory as gf
-import gdsfactory.simulation.sax as gsax
+import gplugins.sax as gsax
 
 
 # %%
@@ -121,7 +115,7 @@ plt.show()
 
 # %%
 mzi20 = gf.components.mzi(splitter=c, delta_length=20)
-mzi20
+mzi20.plot()
 
 # %%
 netlist = mzi20.get_netlist()
@@ -144,5 +138,3 @@ plt.xlabel("λ [nm]")
 plt.ylabel("T")
 plt.grid(True)
 plt.show()
-
-# %%
