@@ -33,7 +33,6 @@ import ubcpdk
 import ubcpdk.components as pdk
 from ubcpdk.config import PATH
 
-
 # %%
 c = pdk.ebeam_y_1550()
 c.plot()
@@ -63,6 +62,7 @@ sim.plot.plot_imbalance1x2(sp)
 
 # %%
 import gplugins as sim
+
 import ubcpdk.components as pdk
 
 # %%
@@ -95,7 +95,6 @@ for f in [
 # The resolution is in pixels/um so you need to run with at least `resolution=100` for 1/100 um/pixel (10 nm/ pixel).
 
 # %%
-import gdsfactory as gf
 import gplugins.gmeep as gm
 
 # %%

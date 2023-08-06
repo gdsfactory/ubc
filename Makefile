@@ -7,8 +7,8 @@ install:
 dev:
 	pip install -e .[dev,docs]
 
-update:
-	pre-commit autoupdate --bleeding-edge
+update-pre:
+	pre-commit autoupdate
 
 watch:
 	gf watch ubcpdk

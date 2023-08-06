@@ -6,14 +6,9 @@ from gdsfactory.config import logger
 from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
 
+from ubcpdk import components, data, tech
 from ubcpdk.config import CONFIG, PATH, module
-from ubcpdk.tech import LAYER, strip, LAYER_STACK, LAYER_VIEWS
-from ubcpdk import components
-from ubcpdk import tech
-from ubcpdk import data
-
-from ubcpdk.tech import cross_sections
-
+from ubcpdk.tech import LAYER, LAYER_STACK, LAYER_VIEWS, cross_sections, strip
 
 __version__ = "1.21.3"
 

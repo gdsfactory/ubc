@@ -10,7 +10,6 @@ import pathlib
 
 from omegaconf import OmegaConf
 
-
 default_config = io.StringIO(
     """
 username: JoaquinMatres

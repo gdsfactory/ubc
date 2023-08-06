@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
@@ -40,12 +39,11 @@
 # ![cloud_model](https://i.imgur.com/5VTCPLR.png)
 
 # %%
-import gplugins as sim
 import gdsfactory as gf
+import gplugins as sim
 import gplugins.gtidy3d as gt
-import ubcpdk.components as pdk
-from ubcpdk.config import PATH
 
+import ubcpdk.components as pdk
 
 # %%
 c = pdk.ebeam_y_1550()
@@ -69,13 +67,12 @@ mzi10 = gf.components.mzi(splitter=c, delta_length=10)
 mzi10.plot()
 
 # %%
-import matplotlib.pyplot as plt
-import numpy as np
-import jax.numpy as jnp
-import sax
-
 import gdsfactory as gf
 import gplugins.sax as gsax
+import jax.numpy as jnp
+import matplotlib.pyplot as plt
+import numpy as np
+import sax
 
 
 # %%

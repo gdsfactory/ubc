@@ -32,6 +32,7 @@
 
 # + attributes={"classes": [], "id": "", "n": "2"}
 import matplotlib.pyplot as plt
+
 import ubcpdk
 
 # + attributes={"classes": [], "id": "", "n": "3"}

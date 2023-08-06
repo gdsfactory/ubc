@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
@@ -29,15 +28,14 @@
 
 # %%
 from pprint import pprint
-import numpy as np
-import matplotlib.pyplot as plt
 
-import jax.numpy as jnp
 import gdsfactory as gf
-import gplugins.sax as gs
-import sax
-
 import gplugins.gtidy3d as gt
+import gplugins.sax as gs
+import jax.numpy as jnp
+import matplotlib.pyplot as plt
+import numpy as np
+import sax
 
 # %% [markdown]
 # ## Scatter *dictionaries*
@@ -186,7 +184,6 @@ cp = gt.modes.WaveguideCoupler(
 
 cp.plot_field(field_name="Ex", mode_index=0)  # even mode
 cp.plot_field(field_name="Ex", mode_index=1)  # odd mode
-
 
 
 # %% [markdown]

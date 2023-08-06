@@ -23,10 +23,10 @@
 # ## tidy3d
 
 # %%
-import numpy as np
-import matplotlib.pyplot as plt
-
 import gplugins.gtidy3d as gt
+import matplotlib.pyplot as plt
+import numpy as np
+
 import ubcpdk.components as pdk
 from ubcpdk.config import PATH
 
@@ -66,7 +66,11 @@ def log(x):
 # %%
 for offset in offsets:
     sp = gt.write_sparameters_grating_coupler(
-        c, is_3d=False, fiber_angle_deg=fiber_angle_deg, fiber_xoffset=offset, dirpath=PATH.sparameters
+        c,
+        is_3d=False,
+        fiber_angle_deg=fiber_angle_deg,
+        fiber_xoffset=offset,
+        dirpath=PATH.sparameters,
     )
     plt.plot(
         sp["wavelengths"],

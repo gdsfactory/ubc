@@ -68,6 +68,7 @@
 # %%
 import matplotlib.pyplot as plt
 import numpy as np
+
 import ubcpdk
 from ubcpdk.simulation.circuits.mzi_spectrum import mzi_spectrum
 

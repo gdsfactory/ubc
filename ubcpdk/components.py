@@ -1,30 +1,31 @@
 """Cells imported from the PDK."""
 from functools import partial
+
 import gdsfactory as gf
+from gdsfactory import Component
 from gdsfactory.typings import (
     Callable,
     ComponentReference,
     ComponentSpec,
     CrossSectionSpec,
+    Label,
     LayerSpec,
     List,
     Optional,
     Port,
     Tuple,
-    Label,
 )
-from gdsfactory import Component
 
-from ubcpdk.config import CONFIG
-from ubcpdk.import_gds import import_gds, import_gc
 from ubcpdk import tech
+from ubcpdk.config import CONFIG
+from ubcpdk.import_gds import import_gc, import_gds
 from ubcpdk.tech import (
-    strip,
-    LAYER_STACK,
     LAYER,
+    LAYER_STACK,
     add_pins_bbox_siepic,
     add_pins_bbox_siepic_remove_layers,
     add_pins_siepic_metal,
+    strip,
 )
 
 um = 1e-6
@@ -432,7 +433,7 @@ def get_input_label_text(
         "TM",
     ], f"Not valid polarization {polarization.upper()!r} in [TE, TM]"
     assert (
-        isinstance(wavelength, (int, float)) and 1.0 < wavelength < 2.0
+        isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0
     ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
 
     name = component_name or port.parent.metadata_child.get("name")

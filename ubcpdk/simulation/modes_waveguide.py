@@ -2,8 +2,8 @@
 
 import gdsfactory as gf
 import gplugins.modes as gm
-from ubcpdk.config import PATH
 
+from ubcpdk.config import PATH
 
 nm = 1e-3
 

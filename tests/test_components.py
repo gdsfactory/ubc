@@ -1,11 +1,11 @@
 import pathlib
-import pytest
-from pytest_regressions.data_regression import DataRegressionFixture
 
+import pytest
 from gdsfactory.component import Component
 from gdsfactory.difftest import difftest
-from ubcpdk import cells
+from pytest_regressions.data_regression import DataRegressionFixture
 
+from ubcpdk import cells
 
 skip_test = {
     "add_siepic_labels",

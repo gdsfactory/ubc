@@ -4,11 +4,10 @@ import gdsfactory as gf
 
 import ubcpdk
 import ubcpdk.components as pdk
-
 from ubcpdk import tech
-from ubcpdk.tech import LAYER
-from ubcpdk.samples.write_mask import write_mask_gds_with_metadata, add_gc, pack, size
 from ubcpdk.cutback_2x2 import cutback_2x2
+from ubcpdk.samples.write_mask import add_gc, pack, size, write_mask_gds_with_metadata
+from ubcpdk.tech import LAYER
 
 
 def test_mask1():
