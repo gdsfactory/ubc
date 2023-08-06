@@ -24,7 +24,7 @@ license = {file = "LICENSE"}
 name = "ubcpdk"
 readme = "README.md"
 requires-python = ">=3.10"
-version = "1.21.3"
+version = "1.21.4"
 
 [project.optional-dependencies]
 dev = [
