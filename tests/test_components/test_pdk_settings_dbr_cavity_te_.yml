@@ -1,29 +1,4 @@
 name: dbr_cavity_add_fiber_ar_f2ab6ad2
-ports:
-  opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o1:
-    center:
-    - -17.9
-    - 63.5
-    layer:
-    - 1
-    - 0
-    name: opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o1
-    orientation: 0.0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
-  opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o2:
-    center:
-    - -17.9
-    - -63.5
-    layer:
-    - 1
-    - 0
-    name: opt-mirror_948d7eaf_gc_te1550-dbr_cavity-o2
-    orientation: 0.0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
 settings:
   changed:
     component:

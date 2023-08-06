@@ -1,29 +1,4 @@
 name: mirror_d2cc2b58_gc_te15_311df1af
-ports:
-  o1:
-    center:
-    - 0.0
-    - 0.0
-    layer:
-    - 1
-    - 0
-    name: o1
-    orientation: 180.0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
-  opt_in_TE_1550_device_JoaquinMatres:
-    center:
-    - 25.0
-    - 0.0
-    layer:
-    - 1
-    - 0
-    name: opt_in_TE_1550_device_JoaquinMatres
-    orientation: null
-    port_type: opt_in_TE_1550_device_JoaquinMatres
-    shear_angle: null
-    width: 9
 settings:
   changed: {}
   child:

@@ -1,29 +1,4 @@
 name: straight_add_fiber_arra_448312f9
-ports:
-  opt-mirror_948d7eaf_gc_te1550-straight-o1:
-    center:
-    - -16.2
-    - 58.5
-    layer:
-    - 1
-    - 0
-    name: opt-mirror_948d7eaf_gc_te1550-straight-o1
-    orientation: 0.0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
-  opt-mirror_948d7eaf_gc_te1550-straight-o2:
-    center:
-    - -16.2
-    - -68.5
-    layer:
-    - 1
-    - 0
-    name: opt-mirror_948d7eaf_gc_te1550-straight-o2
-    orientation: 0.0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
 settings:
   changed: {}
   child:

@@ -1,17 +1,4 @@
 name: ebeam_terminator_te1550
-ports:
-  o1:
-    center:
-    - 0.0
-    - 0.0
-    layer:
-    - 1
-    - 0
-    name: o1
-    orientation: 0
-    port_type: optical
-    shear_angle: null
-    width: 0.5
 settings:
   changed: {}
   child: null
