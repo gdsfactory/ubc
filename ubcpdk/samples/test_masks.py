@@ -31,7 +31,7 @@ def test_masks_2023_v1():
         m13.test_mask4,
         m13.test_mask5,
     ]:
-        m, tm = mask()
+        mask()
 
     for gdspath in dirpath.glob("*.gds"):
         shutil.copyfile(gdspath, dirpath_gds / f"{gdspath.name}")

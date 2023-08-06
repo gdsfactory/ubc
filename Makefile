@@ -35,4 +35,7 @@ build:
 docs:
 	jb build docs
 
+mask:
+	python ubcpdk/samples/test_masks.py
+
 .PHONY: drc doc docs install

@@ -1,5 +1,6 @@
 """Sample mask for the edx course Q1 2023."""
 
+from pathlib import Path
 
 import gdsfactory as gf
 from gdsfactory.components.bend_euler import bend_euler
@@ -133,7 +134,7 @@ def rings_proximity(
     num_rings=5,
     sep_resonators=2,
     radius=10.0,
-):
+) -> gf.Component:
     """A sequence of multiple rings, with the first one having a heater."""
     c = gf.Component()
     gap = 0.2  # TODO: make variable
@@ -164,7 +165,7 @@ def disks_proximity(
     num_rings=5,
     sep_resonators=5,
     radius=10.0,
-):
+) -> gf.Component:
     c = gf.Component()
     gap = 0.2
     width = 0.5
@@ -194,7 +195,7 @@ def disks_proximity(
 def bend_gc_array(
     gc_spec: ComponentSpec = pdk.gc_te1550(),
     bend_spec: ComponentSpec = gf.components.bend_euler(),
-):
+) -> gf.Component:
     """Two gc's with opposite bends.
 
     Not completely needed, was originally intended to make routing easier.
@@ -221,7 +222,7 @@ def resonator_proximity_io(
     grating_buffer=50.0,
     waveguide_buffer=2.5,
     gc_bus_buffer=10,
-):
+) -> gf.Component:
     """Resonator proximity experiment with fiber array.
 
     Arguments:
@@ -287,7 +288,7 @@ def resonator_proximity_io(
     return c
 
 
-def needs_fixing():
+def needs_fixing() -> Path:
     """Ring resonators with thermal cross-talk.
 
     Old cell; does not pass verification
@@ -327,7 +328,7 @@ def needs_fixing():
     return write_mask_gds_with_metadata(c)
 
 
-def test_mask1():
+def test_mask1() -> Path:
     """Ring resonators with thermal cross-talk.
 
     Old cell; does not pass verification
@@ -371,7 +372,7 @@ def crosstalk_experiment_parametrized_mask(
     fill_margin=2,
     fill_size=(0.5, 0.5),
     padding=20,
-):
+) -> gf.Component:
     """Ring resonators with thermal cross-talk.
 
     name: for labels
@@ -539,7 +540,7 @@ def crosstalk_experiment_parametrized_mask(
     return m
 
 
-def test_mask3():
+def test_mask3() -> Path:
     """Rings with thermal crosstalk, close rings"""
     m = crosstalk_experiment_parametrized_mask(
         name="EBeam_JoaquinMatres_Simon_1",
@@ -550,7 +551,7 @@ def test_mask3():
     return write_mask_gds_with_metadata(m)
 
 
-def test_mask4():
+def test_mask4() -> Path:
     """Rings with thermal crosstalk, far rings"""
     m = crosstalk_experiment_parametrized_mask(
         name="EBeam_JoaquinMatres_Simon_2",
@@ -561,7 +562,7 @@ def test_mask4():
     return write_mask_gds_with_metadata(m)
 
 
-def test_mask5():
+def test_mask5() -> Path:
     """Rings with thermal crosstalk, metal fill"""
     m = crosstalk_experiment_parametrized_mask(
         name="EBeam_JoaquinMatres_Simon_3",
@@ -573,7 +574,7 @@ def test_mask5():
     return write_mask_gds_with_metadata(m)
 
 
-def test_mask6():
+def test_mask6() -> Path:
     """Rings with thermal crosstalk, silicon fill"""
     m = crosstalk_experiment_parametrized_mask(
         name="EBeam_JoaquinMatres_Simon_4",
@@ -588,8 +589,8 @@ def test_mask6():
 
 
 if __name__ == "__main__":
-    # m, _ = test_mask1()
-    # m, _ = test_mask3()
-    # m, _ = test_mask4()
-    m, _ = test_mask5()
-    m.show()
+    # m = test_mask1()
+    # m = test_mask3()
+    # m = test_mask4()
+    m = test_mask5()
+    gf.show(m)

@@ -16,12 +16,12 @@ pack = partial(
 )
 
 
-def write_mask_gds_with_metadata(m) -> tuple[Path, Path]:
+def write_mask_gds_with_metadata(m) -> Path:
     """Returns"""
     gdspath = PATH.mask / f"{m.name}.gds"
     m.write_gds_with_metadata(gdspath=gdspath)
     metadata_path = gdspath.with_suffix(".yml")
-    tm = OmegaConf.load(metadata_path)
+    OmegaConf.load(metadata_path)
     gf.labels.write_labels.write_labels_gdstk(
         gdspath=gdspath, layer_label=LAYER.LABEL, debug=True
     )
@@ -31,4 +31,4 @@ def write_mask_gds_with_metadata(m) -> tuple[Path, Path]:
     #     labels_path=labels_path, mask_metadata=mask_metadata
     # )
     # test_metadata_path.write_text(OmegaConf.to_yaml(tm))
-    return m, tm
+    return gdspath

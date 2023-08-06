@@ -769,6 +769,7 @@ add_pads_dc = gf.partial(
 def add_fiber_array_pads_rf(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,
+    orientation: float = 0,
     **kwargs,
 ) -> Component:
     """Returns fiber array with label and electrical pads.
@@ -776,6 +777,7 @@ def add_fiber_array_pads_rf(
     Args:
         component: to add fiber array and pads.
         username: for the label.
+        orientation: for adding pads.
         kwargs: for add_fiber_array.
     """
     c0 = gf.get_component(component)
@@ -784,7 +786,9 @@ def add_fiber_array_pads_rf(
     rename_ports_and_add_label = gf.compose(
         add_label, gf.port.auto_rename_ports_electrical
     )
-    c1 = add_pads_rf(component=c0, decorator=rename_ports_and_add_label)
+    c1 = add_pads_rf(
+        component=c0, decorator=rename_ports_and_add_label, orientation=orientation
+    )
     return add_fiber_array(component=c1, **kwargs)
 
 

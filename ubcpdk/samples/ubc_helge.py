@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import gdsfactory as gf
 
 import ubcpdk
@@ -9,7 +11,7 @@ add_gc = ubcpdk.components.add_fiber_array
 nm = 1e-3
 
 
-def test_mask1():
+def test_mask1() -> Path:
     """DBR filters."""
 
     @gf.cell
@@ -53,7 +55,7 @@ def test_mask1():
     return write_mask_gds_with_metadata(m)
 
 
-def test_mask2():
+def test_mask2() -> Path:
     """Ring with different couplings."""
     e = [
         add_gc(ubcpdk.components.straight(), component_name=f"straight_{i}")
@@ -80,5 +82,5 @@ def test_mask2():
 
 
 if __name__ == "__main__":
-    m, _ = test_mask2()
-    m.show()
+    m = test_mask1()
+    gf.show(m)
