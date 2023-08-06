@@ -7,15 +7,19 @@ chapters:
   - file: tech
   - file: components
   - file: components_plot
-  - file: tutorial
+  - file: layout
     sections:
         - file: notebooks/00_layout
+        - file: notebooks/21_schematic_driven_layout
+  - file: simulations
+    sections:
         - file: notebooks/11_sparameters
         - file: notebooks/11_sparameters_gratings
         - file: notebooks/12_sim_plugins_tidy3d
         - file: notebooks/13_sim_plugins
         - file: notebooks/14_sax_tidy3d
-        - file: notebooks/21_schematic_driven_layout
+  - file: data_analysis
+    sections:
         - file: notebooks/31_data_analysis_mzi
         - file: notebooks/32_data_analysis_ring
         - file: notebooks/33_data_analysis_dbr
