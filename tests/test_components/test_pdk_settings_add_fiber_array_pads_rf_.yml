@@ -4,9 +4,11 @@ settings:
   child: null
   default:
     component: ring_single_heater
+    orientation: 0
     username: JoaquinMatres
   full:
     component: ring_single_heater
+    orientation: 0
     username: JoaquinMatres
   function_name: add_fiber_array_pads_rf
   info:
