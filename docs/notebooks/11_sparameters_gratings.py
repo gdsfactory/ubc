@@ -68,25 +68,29 @@ jobs = [
         fiber_xoffset=fiber_xoffset,
         dirpath=PATH.sparameters,
         filepath=PATH.sparameters
-        / f"{c.name}_{fiber_angle_deg:.1f}deg_{fiber_xoffset:.1f}um.npz",
+        / f"gc_{fiber_angle_deg:.1f}deg_{fiber_xoffset:.1f}um.npz",
     )
     for fiber_xoffset in offsets
 ]
 sps = gt.write_sparameters_grating_coupler_batch(jobs)
 
 # %%
-for offset in offsets:
+sps[0].result()
+
+# %%
+for fiber_xoffset in offsets:
     sp = gt.write_sparameters_grating_coupler(
         c,
         is_3d=False,
         fiber_angle_deg=fiber_angle_deg,
-        fiber_xoffset=offset,
-        filepath=PATH.sparameters / f"gc_{offset}.npz",
+        fiber_xoffset=fiber_xoffset,
+        filepath=PATH.sparameters
+        / f"gc_{fiber_angle_deg:.1f}deg_{fiber_xoffset:.1f}um.npz",
     )
     plt.plot(
         sp["wavelengths"],
         20 * np.log10(np.abs(sp["o2@0,o1@0"])),
-        label=str(offset),
+        label=str(fiber_xoffset),
     )
 
 plt.xlabel("wavelength (um")
