@@ -16,7 +16,7 @@ classifiers = [
 ]
 dependencies = [
   "gdsfactory[cad]==7.3.0",
-  "gplugins[tidy3d,sax,schematic]>=0.0.3,<0.1.0"
+  "gplugins[tidy3d,sax,schematic]>=0.0.3,<0.3.0"
 ]
 description = "ubcpdk pdk"
 keywords = ["python"]
