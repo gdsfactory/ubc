@@ -14,7 +14,7 @@ It provides a fully python driven flow alternative for the most advanced users t
 
 ## Installation
 
-### Installation for new gdsfactory users
+### Installation for users
 
 Use python3.10 or python3.11. We recommend [VSCode](https://code.visualstudio.com/) as an IDE.
 

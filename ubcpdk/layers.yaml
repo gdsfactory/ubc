@@ -1,537 +1,257 @@
 LayerViews:
   Waveguide:
     layer: [1, 0]
+    layer_in_name: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#ff9d9d', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 1.0, g: 0.615686274509804, b: 0.615686274509804, alpha: null,
-                _tuple: [1.0, 0.615686274509804, 0.615686274509804, null]}]}}]
+    color: "#ff9d9d"
+    hatch_pattern: dotted
   Waveguide2:
     layer: [31, 0]
     layer_in_name: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#ff9d9d', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 1.0, g: 0.615686274509804, b: 0.615686274509804, alpha: null,
-                _tuple: [1.0, 0.615686274509804, 0.615686274509804, null]}]}}]
+    color: "#ff9d9d"
+    hatch_pattern: dotted
   SLAB150:
     layer: [2, 0]
     layer_in_name: true
     transparent: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#00ffff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 1.0, b: 1.0, alpha: null, _tuple: [0.0, 1.0,
-                  1.0, null]}]}}]
+    color: "cyan"
+    hatch_pattern: coarsely dotted
   M1_HEATER:
     layer: [11, 0]
     layer_in_name: true
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#ebc634', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.9215686274509803, g: 0.7764705882352941, b: 0.20392156862745098,
-                alpha: null, _tuple: [0.9215686274509803, 0.7764705882352941, 0.20392156862745098,
-                  null]}]}}]
+    color: "#ebc634"
+    hatch_pattern: hollow
   M2_ROUTER:
     layer: [12, 0]
     layer_in_name: true
-    frame_color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#008080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.5019607843137255, b: 0.5019607843137255, alpha: null,
-                _tuple: [0.0, 0.5019607843137255, 0.5019607843137255, null]}]}}]
-    fill_color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#800057', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.5019607843137255, g: 0.0, b: 0.3411764705882353, alpha: null,
-                _tuple: [0.5019607843137255, 0.0, 0.3411764705882353, null]}]}}]
+    frame_color: "teal"
+    fill_color: "#800057"
+    hatch_pattern: dotted
   M_Open:
-    layer: [11, 0]
+    layer: [13, 0]
     layer_in_name: true
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0, 0.0,
-                  0.0, null]}]}}]
-  SLAB90:
-    layer: [3, 0]
+    color: "black"
+    hatch_pattern: hollow
+  MH:
+    layer: [47, 0]
     layer_in_name: true
     transparent: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#805000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.5019607843137255, g: 0.3137254901960784, b: 0.0, alpha: null,
-                _tuple: [0.5019607843137255, 0.3137254901960784, 0.0, null]}]}}]
-  SHALLOWETCH:
-    layer: [2, 6]
-    layer_in_name: true
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0, 0.0,
-                  1.0, null]}]}}]
-  DEEPETCH:
-    layer: [3, 6]
-    layer_in_name: true
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#cc0000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.8, g: 0.0, b: 0.0, alpha: null, _tuple: [0.8, 0.0,
-                  0.0, null]}]}}]
+    color: "#ff8000"
   DEEPTRENCH:
     layer: [4, 0]
     layer_in_name: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#9999cc', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.6, g: 0.6, b: 0.8, alpha: null, _tuple: [0.6, 0.6,
-                  0.8, null]}]}}]
+    color: "#9999cc"
+    hatch_pattern: left-hatched
   OXIDE_ETCH:
     layer: [6, 0]
     layer_in_name: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0, 0.0,
-                  0.0, null]}]}}]
+    color: "black"
   TEXT:
     layer: [10, 0]
     layer_in_name: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0, 0.0,
-                  1.0, null]}]}}]
+    color: "blue"
   TE:
     layer: [203, 0]
     layer_in_name: true
     transparent: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0, 0.0,
-                  1.0, null]}]}}]
+    color: "blue"
   TM:
     layer: [204, 0]
     layer_in_name: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#ff0000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 1.0, g: 0.0, b: 0.0, alpha: null, _tuple: [1.0, 0.0,
-                  0.0, null]}]}}]
+    color: "red"
   LABEL_INSTANCES:
     layer: [206, 0]
     layer_in_name: true
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0, 0.0,
-                  1.0, null]}]}}]
+    color: "blue"
   FLOORPLAN:
     layer: [99, 0]
     layer_in_name: true
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0, 0.0,
-                  0.0, null]}]}}]
+    color: "black"
   Lumerical:
     layer: [733, 0]
     width: 3
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#800057', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.5019607843137255, g: 0.0, b: 0.3411764705882353, alpha: null,
-                _tuple: [0.5019607843137255, 0.0, 0.3411764705882353, null]}]}}]
+    color: "#800057"
   DevRec:
     layer: [68, 0]
     visible: false
     transparent: true
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#004080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.25098039215686274, b: 0.5019607843137255,
-                alpha: null, _tuple: [0.0, 0.25098039215686274, 0.5019607843137255,
-                  null]}]}}]
+    color: "#004080"
+    hatch_pattern: hollow
   PinRec:
     layer: [1, 10]
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#404040', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.25098039215686274, g: 0.25098039215686274, b: 0.25098039215686274,
-                alpha: null, _tuple: [0.25098039215686274, 0.25098039215686274, 0.25098039215686274,
-                  null]}]}}]
+    color: "#404040"
   FbrTgt:
     layer: [81, 0]
     width: 2
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#004080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.25098039215686274, b: 0.5019607843137255,
-                alpha: null, _tuple: [0.0, 0.25098039215686274, 0.5019607843137255,
-                  null]}]}}]
+    color: "#004080"
   Text:
     layer: [66, 0]
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0, 0.0,
-                  1.0, null]}]}}]
+    color: "blue"
   Errors:
     layer: [69, 0]
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0, 0.0,
-                  1.0, null]}]}}]
+    color: "blue"
   PinRecM:
     layer: [1, 11]
     width: 1
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#004080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 0.0, g: 0.25098039215686274, b: 0.5019607843137255,
-                alpha: null, _tuple: [0.0, 0.25098039215686274, 0.5019607843137255,
-                  null]}]}}]
+    color: "#004080"
   XSECTION:
     group_members:
       XS_BOX:
         layer: [300, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
         width: 1
+        color: "#f3ff80"
+        hatch_pattern: solid
       XS_SI:
         layer: [301, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0,
-                      0.0, 0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0,
-                      0.0, 0.0, null]}]}}]
         width: 1
+        color: "black"
+        hatch_pattern: solid
       XS_SIN:
         layer: [319, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0,
-                      0.0, 0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0,
-                      0.0, 0.0, null]}]}}]
         width: 1
+        color: "black"
+        hatch_pattern: solid
       XS_N:
         layer: [320, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#008ca5', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.5490196078431373, b: 0.6470588235294118,
-                    alpha: null, _tuple: [0.0, 0.5490196078431373, 0.6470588235294118,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#008ca5', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.5490196078431373, b: 0.6470588235294118,
-                    alpha: null, _tuple: [0.0, 0.5490196078431373, 0.6470588235294118,
-                      null]}]}}]
         width: 1
+        color: "#008ca5"
+        hatch_pattern: solid
       XS_NPP:
         layer: [321, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#004ca5', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.2980392156862745, b: 0.6470588235294118,
-                    alpha: null, _tuple: [0.0, 0.2980392156862745, 0.6470588235294118,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#004ca5', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.2980392156862745, b: 0.6470588235294118,
-                    alpha: null, _tuple: [0.0, 0.2980392156862745, 0.6470588235294118,
-                      null]}]}}]
         width: 1
+        color: "#004ca5"
+        hatch_pattern: solid
       XS_P:
         layer: [330, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#00f233', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.9490196078431372, b: 0.2, alpha: null,
-                    _tuple: [0.0, 0.9490196078431372, 0.2, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#00f233', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.9490196078431372, b: 0.2, alpha: null,
-                    _tuple: [0.0, 0.9490196078431372, 0.2, null]}]}}]
         width: 1
+        color: "#00f233"
+        hatch_pattern: solid
       XS_PDPP:
         layer: [327, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#00f233', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.9490196078431372, b: 0.2, alpha: null,
-                    _tuple: [0.0, 0.9490196078431372, 0.2, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#00f233', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.9490196078431372, b: 0.2, alpha: null,
-                    _tuple: [0.0, 0.9490196078431372, 0.2, null]}]}}]
         width: 1
+        color: "#00f233"
+        hatch_pattern: solid
       XS_PPP:
         layer: [331, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#00b233', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.6980392156862745, b: 0.2, alpha: null,
-                    _tuple: [0.0, 0.6980392156862745, 0.2, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#00b233', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.6980392156862745, b: 0.2, alpha: null,
-                    _tuple: [0.0, 0.6980392156862745, 0.2, null]}]}}]
         width: 1
+        color: "#00b233"
+        hatch_pattern: solid
       XS_SI_SLAB:
         layer: [313, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#80a8ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.6588235294117647, b: 1.0,
-                    alpha: null, _tuple: [0.5019607843137255, 0.6588235294117647,
-                      1.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#80a8ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.6588235294117647, b: 1.0,
-                    alpha: null, _tuple: [0.5019607843137255, 0.6588235294117647,
-                      1.0, null]}]}}]
         width: 1
+        color: "#80a8ff"
       XS_OVERLAY:
         layer: [311, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0,
-                      0.0, 1.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0,
-                      0.0, 1.0, null]}]}}]
         width: 1
+        color: "blue"
       XS_OX_SI:
         layer: [302, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
         width: 1
+        color: "#f3ff80"
       XS_GE:
         layer: [315, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#004ca5', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.2980392156862745, b: 0.6470588235294118,
-                    alpha: null, _tuple: [0.0, 0.2980392156862745, 0.6470588235294118,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#004ca5', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.2980392156862745, b: 0.6470588235294118,
-                    alpha: null, _tuple: [0.0, 0.2980392156862745, 0.6470588235294118,
-                      null]}]}}]
         width: 1
+        color: "#004ca5"
       XS_VIAC:
         layer: [303, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#808080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.5019607843137255, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.5019607843137255, 0.5019607843137255,
-                      0.5019607843137255, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#808080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.5019607843137255, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.5019607843137255, 0.5019607843137255,
-                      0.5019607843137255, null]}]}}]
         width: 1
+        color: "grey"
       XS_M1:
         layer: [304, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#008000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.5019607843137255, b: 0.0, alpha: null,
-                    _tuple: [0.0, 0.5019607843137255, 0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#008000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.5019607843137255, b: 0.0, alpha: null,
-                    _tuple: [0.0, 0.5019607843137255, 0.0, null]}]}}]
         width: 1
+        color: "green"
       XS_OXIDE_M1:
         layer: [305, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
         width: 1
+        color: "#f3ff80"
       XS_MH:
         layer: [306, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#008000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.5019607843137255, b: 0.0, alpha: null,
-                    _tuple: [0.0, 0.5019607843137255, 0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#008000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.5019607843137255, b: 0.0, alpha: null,
-                    _tuple: [0.0, 0.5019607843137255, 0.0, null]}]}}]
         width: 1
+        color: "green"
       XS_OXIDE_M2:
         layer: [307, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
         width: 1
+        color: "#f3ff80"
       XS_OXIDE_MH:
         layer: [317, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
         width: 1
+        color: "#f3ff80"
       XS_OXIDE_ML:
         layer: [309, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#f3ff80', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.9529411764705882, g: 1.0, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.9529411764705882, 1.0, 0.5019607843137255,
-                      null]}]}}]
         width: 1
+        color: "#f3ff80"
       XS_M2:
         layer: [399, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#805000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.3137254901960784, b: 0.0,
-                    alpha: null, _tuple: [0.5019607843137255, 0.3137254901960784,
-                      0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#805000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.3137254901960784, b: 0.0,
-                    alpha: null, _tuple: [0.5019607843137255, 0.3137254901960784,
-                      0.0, null]}]}}]
         width: 1
+        color: "#805000"
       XS_VIA2:
         layer: [310, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#808080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.5019607843137255, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.5019607843137255, 0.5019607843137255,
-                      0.5019607843137255, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#808080', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.5019607843137255, b: 0.5019607843137255,
-                    alpha: null, _tuple: [0.5019607843137255, 0.5019607843137255,
-                      0.5019607843137255, null]}]}}]
         width: 1
+        color: "grey"
       XS_SIN2:
         layer: [305, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#805000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.3137254901960784, b: 0.0,
-                    alpha: null, _tuple: [0.5019607843137255, 0.3137254901960784,
-                      0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#805000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.5019607843137255, g: 0.3137254901960784, b: 0.0,
-                    alpha: null, _tuple: [0.5019607843137255, 0.3137254901960784,
-                      0.0, null]}]}}]
         width: 1
+        color: "#805000"
   DRC_MARKER:
     layer: [205, 0]
     layer_in_name: true
     transparent: true
     width: 3
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#ff0000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 1.0, g: 0.0, b: 0.0, alpha: null, _tuple: [1.0, 0.0,
-                  0.0, null]}]}}]
+    color: "red"
   ERROR_MARKER:
     layer: [207, 0]
     layer_in_name: true
     transparent: true
     width: 3
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#ff0000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 1.0, g: 0.0, b: 0.0, alpha: null, _tuple: [1.0, 0.0,
-                  0.0, null]}]}}]
+    color: "red"
   SHOW_PORTS:
     layer: [1, 12]
     layer_in_name: true
-    color: !!python/object/new:pydantic_extra_types.color.Color
-      state: [null, {_original: '#ff80a8', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-            state: [null, {r: 1.0, g: 0.5019607843137255, b: 0.6588235294117647, alpha: null,
-                _tuple: [1.0, 0.5019607843137255, 0.6588235294117647, null]}]}}]
+    color: "#ff80a8"
   simulation:
     group_members:
       SIM_REGION:
         layer: [100, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0,
-                      0.0, 0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#000000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 0.0, alpha: null, _tuple: [0.0,
-                      0.0, 0.0, null]}]}}]
+        color: "black"
       MONITOR:
         layer: [101, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0,
-                      0.0, 1.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#0000ff', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 0.0, g: 0.0, b: 1.0, alpha: null, _tuple: [0.0,
-                      0.0, 1.0, null]}]}}]
+        color: "blue"
       SOURCE:
         layer: [110, 0]
         layer_in_name: true
-        frame_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#ff0000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 1.0, g: 0.0, b: 0.0, alpha: null, _tuple: [1.0,
-                      0.0, 0.0, null]}]}}]
-        fill_color: !!python/object/new:pydantic_extra_types.color.Color
-          state: [null, {_original: '#ff0000', _rgba: !!python/object/new:pydantic_extra_types.color.RGBA {
-                state: [null, {r: 1.0, g: 0.0, b: 0.0, alpha: null, _tuple: [1.0,
-                      0.0, 0.0, null]}]}}]
+        color: "red"

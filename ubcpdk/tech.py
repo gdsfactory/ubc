@@ -288,7 +288,7 @@ class Tech(BaseModel):
 
 TECH = Tech()
 LAYER_STACK = get_layer_stack()
-LAYER_VIEWS = gf.technology.LayerViews.from_lyp(PATH.lyp)
+LAYER_VIEWS = gf.technology.LayerViews(PATH.lyp_yaml)
 
 
 strip_wg_simulation_info = dict(
@@ -357,10 +357,12 @@ __all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
 
 
 if __name__ == "__main__":
-    LAYER_VIEWS = gf.technology.LayerViews(filepath=PATH.lyp)
-    LAYER_VIEWS.to_yaml(PATH.layers_yaml)
+    # LAYER_VIEWS = gf.technology.LayerViews(filepath=PATH.lyp)
+    # LAYER_VIEWS.to_yaml(PATH.layers_yaml)
+    # LAYER_VIEWS = gf.technology.LayerViews(PATH.lyp_yaml)
+    LAYER_VIEWS.to_lyp(PATH.lyp)
     # c = gf.c.mzi()
     # c = gf.c.straight(length=1, cross_section=strip)
     # c = gf.c.bend_euler(cross_section=strip)
-    # c = gf.c.mzi(delta_length=10, cross_section=strip)
-    # c.show(show_ports=False)
+    c = gf.c.mzi(delta_length=10, cross_section=strip)
+    c.show(show_ports=False)

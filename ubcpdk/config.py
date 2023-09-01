@@ -40,6 +40,7 @@ class Path:
     interconnect_cml_path = module / "simulation" / "lumerical" / "EBeam.cml"
     modes = repo / "modes"
     mask = module / "samples" / "build"
+    lyp_yaml = module / "layers.yaml"
 
     mzi = data / "mzi"
     mzi1 = mzi / "ZiheGao_MZI1_272_Scan1.mat"
