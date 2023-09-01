@@ -222,71 +222,68 @@ def get_layer_stack(
         box_thickness: bottom oxide thickness in um.
     """
 
-    class GenericLayerStack(LayerStack):
-        substrate = LayerLevel(
-            layer=LAYER.WAFER,
-            thickness=substrate_thickness,
-            zmin=-substrate_thickness - box_thickness,
-            material="si",
-            info={"mesh_order": 99},
+    return LayerStack(
+        layers=dict(
+            substrate=LayerLevel(
+                layer=LAYER.WAFER,
+                thickness=substrate_thickness,
+                zmin=-substrate_thickness - box_thickness,
+                material="si",
+                info={"mesh_order": 99},
+            ),
+            box=LayerLevel(
+                layer=LAYER.WAFER,
+                thickness=box_thickness,
+                zmin=-box_thickness,
+                material="sio2",
+                info={"mesh_order": 99},
+            ),
+            clad=LayerLevel(
+                layer=LAYER.WAFER,
+                thickness=zmin_heater + thickness_heater,
+                zmin=0,
+                material="sio2",
+                info={"mesh_order": 100},
+            ),
+            core=LayerLevel(
+                layer=LAYER.WG,
+                thickness=thickness_wg,
+                zmin=0.0,
+                material="si",
+                info={"mesh_order": 1},
+                sidewall_angle=10,
+                width_to_z=0.5,
+            ),
+            core2=LayerLevel(
+                layer=LAYER.WG2,
+                thickness=thickness_wg,
+                zmin=0.0,
+                material="si",
+                info={"mesh_order": 1},
+                sidewall_angle=10,
+                width_to_z=0.5,
+            ),
+            heater=LayerLevel(
+                layer=LAYER.M1_HEATER,
+                thickness=750e-3,
+                zmin=zmin_heater,
+                material="TiN",
+                info={"mesh_order": 1},
+            ),
+            metal2=LayerLevel(
+                layer=LAYER.M2_ROUTER,
+                thickness=thickness_metal2,
+                zmin=zmin_heater + thickness_heater,
+                material="Aluminum",
+                info={"mesh_order": 2},
+            ),
         )
-        box = LayerLevel(
-            layer=LAYER.WAFER,
-            thickness=box_thickness,
-            zmin=-box_thickness,
-            material="sio2",
-            info={"mesh_order": 99},
-        )
-        clad = LayerLevel(
-            layer=LAYER.WAFER,
-            thickness=zmin_heater + thickness_heater,
-            zmin=0,
-            material="sio2",
-            info={"mesh_order": 100},
-        )
-        core = LayerLevel(
-            layer=LAYER.WG,
-            thickness=thickness_wg,
-            zmin=0.0,
-            material="si",
-            info={"mesh_order": 1},
-            sidewall_angle=10,
-            width_to_z=0.5,
-        )
-        core2 = LayerLevel(
-            layer=LAYER.WG2,
-            thickness=thickness_wg,
-            zmin=0.0,
-            material="si",
-            info={"mesh_order": 1},
-            sidewall_angle=10,
-            width_to_z=0.5,
-        )
-        heater = LayerLevel(
-            layer=LAYER.M1_HEATER,
-            thickness=750e-3,
-            zmin=zmin_heater,
-            material="TiN",
-            info={"mesh_order": 1},
-        )
-        metal2 = LayerLevel(
-            layer=LAYER.M2_ROUTER,
-            thickness=thickness_metal2,
-            zmin=zmin_heater + thickness_heater,
-            material="Aluminum",
-            info={"mesh_order": 2},
-        )
-
-    return GenericLayerStack()
+    )
 
 
 class Tech(BaseModel):
-    name: str = "ubc"
-    layer: LayerMapUbc = LAYER
-
     fiber_array_spacing: float = 250.0
-    WG = {"width": 0.5}
-    DEVREC = {"width": 0.5}
+    wg_width: float = 0.5
 
 
 TECH = Tech()

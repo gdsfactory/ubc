@@ -9,6 +9,9 @@ dev: install
 update-pre:
 	pre-commit autoupdate
 
+tech:
+	python install_tech.py
+
 test:
 	pytest -s
 

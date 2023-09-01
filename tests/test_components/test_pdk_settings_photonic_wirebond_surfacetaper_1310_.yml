@@ -1,4 +1,4 @@
-name: photonic_wirebond_surfa_b165631b
+name: photonic_wirebond_surfacetaper_1310$1
 settings:
   changed: {}
   child: null
@@ -10,4 +10,4 @@ settings:
     model: photonic_wirebond_surfacetaper_1310
   info_version: 2
   module: ubcpdk.components
-  name: photonic_wirebond_surfa_b165631b
+  name: photonic_wirebond_surfacetaper_1310

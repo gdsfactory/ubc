@@ -1,4 +1,4 @@
-name: straight_add_fiber_arra_448312f9
+name: straight_add_fiber_array_8b85b61f_add_fiber_array
 settings:
   changed: {}
   child:
@@ -352,7 +352,7 @@ settings:
       width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_arra_ecda88e7
+    name: straight_add_fiber_array_8b85b61f
   default:
     component:
       function: straight
@@ -527,4 +527,4 @@ settings:
     width: 0.5
   info_version: 2
   module: ubcpdk.components
-  name: straight_add_fiber_arra_448312f9
+  name: straight_add_fiber_array_8b85b61f_add_fiber_array

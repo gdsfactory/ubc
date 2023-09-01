@@ -1,4 +1,4 @@
-name: dbr_cavity_add_fiber_ar_f2ab6ad2
+name: dbr_cavity_add_fiber_array_8a21ac4c_add_fiber_array_37b25c57
 settings:
   changed:
     component:
@@ -86,7 +86,7 @@ settings:
         wavelength: 1.55
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: dbr_cavity_add_fiber_ar_1328381f
+    name: dbr_cavity_add_fiber_array_8a21ac4c
   default:
     component:
       function: straight
@@ -131,4 +131,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: dbr_cavity_add_fiber_ar_f2ab6ad2
+  name: dbr_cavity_add_fiber_array_8a21ac4c_add_fiber_array_37b25c57

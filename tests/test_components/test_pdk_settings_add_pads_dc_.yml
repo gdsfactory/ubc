@@ -1,4 +1,4 @@
-name: ring_single_heater_171f_5dab5bcc
+name: ring_single_heater_171f554b_add_electrical_pads_top_dc_c0e05349
 settings:
   changed:
     component: ring_single_heater
@@ -181,4 +181,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.routing.add_electrical_pads_top_dc
-  name: ring_single_heater_171f_5dab5bcc
+  name: ring_single_heater_171f554b_add_electrical_pads_top_dc_c0e05349

@@ -46,10 +46,10 @@ info1310te = dict(polarization="te", wavelength=1.31)
 info1550tm = dict(polarization="tm", wavelength=1.55)
 info1310tm = dict(polarization="tm", wavelength=1.31)
 thermal_phase_shifter_names = [
-    "thermal_phase_shifter_m_6480beac",
-    "thermal_phase_shifter_t_22d678c3",
-    "thermal_phase_shifter_t_75acd1c1",
-    "thermal_phase_shifter_t_ab7ae757",
+    "thermal_phase_shifter_multimode_500um",
+    "thermal_phase_shifter_te_1310_500um",
+    "thermal_phase_shifter_te_1310_500um_lowloss",
+    "thermal_phase_shifter_te_1550_500um_lowloss",
 ]
 
 prefix_te1550 = f"opt_in_TE_1550_device_{CONFIG.username}"
@@ -813,14 +813,14 @@ def add_pads(
 
 if __name__ == "__main__":
     # gf.clear_cache()
-    c = add_fiber_array(mzi())
+    # c = add_fiber_array(mzi())
     # c = taper()
 
     # c = add_fiber_array_pads_rf()
     # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
 
     # c = add_pads()
-    c = add_pads_rf()
+    # c = add_pads_rf()
     # c = coupler()
     # c = dbr(decorator=None)
     # c = dbr_cavity()
@@ -844,7 +844,7 @@ if __name__ == "__main__":
     # c = ring_single_heater()
     # c = ring_with_crossing()
     # c = spiral()
-    # c = thermal_phase_shifter0()
+    c = thermal_phase_shifter0()
     # c = straight_one_pin()
     # c = ebeam_crossing4_2ports()
     # c = mzi()

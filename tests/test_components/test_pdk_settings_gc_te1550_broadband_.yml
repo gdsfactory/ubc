@@ -1,4 +1,4 @@
-name: mirror_a38c0f84_gc_te15_79b73d72
+name: mirror_a38c0f84_gc_te1550_broadband
 settings:
   changed: {}
   child:
@@ -43,4 +43,4 @@ settings:
     wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: mirror_a38c0f84_gc_te15_79b73d72
+  name: mirror_a38c0f84_gc_te1550_broadband
