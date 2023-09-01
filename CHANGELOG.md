@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased](https://github.com/gdsfactory/ubc/compare/v2.1.0...main)
+
+## [2.1.0](https://github.com/gdsfactory/ubc/compare/v2.1.0...v2.0.0)
+
+- update to gdsfactory 7.4.2
+
 ## [2.0.0](https://github.com/gdsfactory/ubc/pull/291)
 
 - update to gdsfactory 7.0.2
