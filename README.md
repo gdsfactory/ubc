@@ -24,6 +24,7 @@ Once you have python installed, open Anaconda Prompt as Administrator and then i
 
 ![anaconda prompt](https://i.imgur.com/eKk2bbs.png)
 ```
+conda install -c conda-forge gdsfactory -y
 pip install ubcpdk --upgrade
 ```
 
