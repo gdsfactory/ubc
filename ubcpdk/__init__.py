@@ -1,6 +1,7 @@
 """UBC Siepic Ebeam PDK from edx course."""
 import pathlib
 
+from gdsfactory.config import PATH as GPATH
 from gdsfactory.config import logger
 from gdsfactory.generic_tech import get_generic_pdk
 from gdsfactory.get_factories import get_cells
@@ -33,14 +34,14 @@ PDK = Pdk(
     name="ubcpdk",
     cells=cells,
     cross_sections=cross_sections,
-    layers=LAYER.dict(),
+    layers=dict(LAYER),
     base_pdk=get_generic_pdk(),
     layer_stack=LAYER_STACK,
     layer_views=LAYER_VIEWS,
-    sparameters_path=PATH.sparameters,
-    interconnect_cml_path=PATH.interconnect_cml_path,
-    # default_decorator=tech.add_pins_bbox_siepic,
 )
+
+GPATH.sparameters = PATH.sparameters
+GPATH.interconnect = PATH.interconnect_cml_path
 PDK.register_cells_yaml(dirpath=pathlib.Path(__file__).parent.absolute())
 PDK.activate()
 

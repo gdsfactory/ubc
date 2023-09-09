@@ -2,7 +2,11 @@
 
 ## [Unreleased](https://github.com/gdsfactory/ubc/compare/v2.1.0...main)
 
-## [2.1.0](https://github.com/gdsfactory/ubc/compare/v2.1.0...v2.0.0)
+## [2.1.1](https://github.com/gdsfactory/ubc/compare/v2.1.0...v2.1.1)
+
+- update to gdsfactory 7.4.6
+
+## [2.1.0](https://github.com/gdsfactory/ubc/compare/v2.0.0...v2.1.0)
 
 - update to gdsfactory 7.4.2
 
