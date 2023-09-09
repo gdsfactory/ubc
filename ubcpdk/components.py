@@ -31,12 +31,12 @@ from ubcpdk.tech import (
 um = 1e-6
 
 
-straight = gf.partial(
+straight = partial(
     gf.components.straight,
     cross_section="strip",
 )
-bend_euler = gf.partial(gf.components.bend_euler, cross_section="strip", npoints=100)
-bend_s = gf.partial(
+bend_euler = partial(gf.components.bend_euler, cross_section="strip", npoints=100)
+bend_s = partial(
     gf.components.bend_s,
     cross_section="strip",
 )
@@ -381,7 +381,7 @@ def gc_tm1550() -> gf.Component:
     return c
 
 
-mzi = gf.partial(
+mzi = partial(
     gf.components.mzi,
     splitter=ebeam_y_1550,
     bend=bend_euler,
@@ -389,21 +389,21 @@ mzi = gf.partial(
     cross_section="strip",
 )
 
-mzi_heater = gf.partial(
+mzi_heater = partial(
     gf.components.mzi_phase_shifter,
     splitter=ebeam_y_1550,
 )
 
-via_stack_heater_mtop = gf.partial(
+via_stack_heater_mtop = partial(
     gf.components.via_stack,
     size=(10, 10),
     layers=(LAYER.M1_HEATER, LAYER.M2_ROUTER),
     vias=(None, None),
 )
-ring_double_heater = gf.partial(
+ring_double_heater = partial(
     gf.components.ring_double_heater, via_stack=via_stack_heater_mtop
 )
-ring_single_heater = gf.partial(
+ring_single_heater = partial(
     gf.components.ring_single_heater,
     via_stack=via_stack_heater_mtop,
 )
@@ -639,14 +639,14 @@ coupler_ring = gf.components.coupler_ring
 mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
 coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
-ring_single = gf.partial(
+ring_single = partial(
     gf.components.ring_single,
     bend=bend,
     coupler_ring=coupler_ring,
     cross_section="strip",
 )
 
-spiral = gf.partial(gf.components.spiral_external_io)
+spiral = partial(gf.components.spiral_external_io)
 
 
 @gf.cell
@@ -752,13 +752,13 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
     return component
 
 
-pad_array = gf.partial(gf.components.pad_array, pad=pad, spacing=(125, 125))
-add_pads_rf = gf.partial(
+pad_array = partial(gf.components.pad_array, pad=pad, spacing=(125, 125))
+add_pads_rf = partial(
     gf.routing.add_electrical_pads_top,
     component="ring_single_heater",
     pad_array=pad_array,
 )
-add_pads_dc = gf.partial(
+add_pads_dc = partial(
     gf.routing.add_electrical_pads_top_dc,
     component="ring_single_heater",
     pad_array=pad_array,
@@ -782,7 +782,7 @@ def add_fiber_array_pads_rf(
     """
     c0 = gf.get_component(component)
     text = f"elec_{username}-{clean_name(c0.name)}_G"
-    add_label = gf.partial(add_label_electrical, text=text)
+    add_label = partial(add_label_electrical, text=text)
     rename_ports_and_add_label = gf.compose(
         add_label, gf.port.auto_rename_ports_electrical
     )
@@ -807,7 +807,7 @@ def add_pads(
     """
     c0 = gf.get_component(component)
     text = f"elec_{username}-{clean_name(c0.name)}_G"
-    add_label = gf.partial(add_label_electrical, text=text)
+    add_label = partial(add_label_electrical, text=text)
     return add_pads_rf(component=c0, decorator=add_label, **kwargs)
 
 

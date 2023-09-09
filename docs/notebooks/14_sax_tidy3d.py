@@ -27,6 +27,7 @@
 # ```
 
 # %%
+from functools import partial
 from pprint import pprint
 
 import gdsfactory as gf
@@ -152,7 +153,7 @@ ng = strip.n_group[0]
 print(ng)
 
 # %%
-straight_sc = gf.partial(gs.models.straight, neff=neff, ng=ng)
+straight_sc = partial(gs.models.straight, neff=neff, ng=ng)
 
 # %%
 gs.plot_model(straight_sc)
@@ -193,7 +194,7 @@ cp.plot_field(field_name="Ex", mode_index=1)  # odd mode
 # If we ignore the coupling from the bend `coupling0 = 0` we know that for a 3dB coupling we need half of the `lc` length, which is the length needed to coupler `100%` of power.
 
 # %%
-coupler_sc = gf.partial(gs.models.coupler, dn=0.026, length=29.4 / 2, coupling0=0)
+coupler_sc = partial(gs.models.coupler, dn=0.026, length=29.4 / 2, coupling0=0)
 gs.plot_model(coupler_sc)
 
 # %% [markdown]
@@ -451,7 +452,7 @@ c = gf.components.coupler(length=29.4, gap=0.2)
 c.plot()
 
 # %%
-coupler50 = gf.partial(gs.models.coupler, dn=0.026, length=29.4 / 2, coupling0=0)
+coupler50 = partial(gs.models.coupler, dn=0.026, length=29.4 / 2, coupling0=0)
 gs.plot_model(coupler50)
 
 

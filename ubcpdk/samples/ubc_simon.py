@@ -1,5 +1,6 @@
 """Sample mask for the edx course Q1 2023."""
 
+from functools import partial
 from pathlib import Path
 
 import gdsfactory as gf
@@ -14,7 +15,7 @@ import ubcpdk.components as pdk
 from ubcpdk.samples.write_mask import write_mask_gds_with_metadata
 from ubcpdk.tech import LAYER
 
-via_stack_heater_m3_mini = gf.partial(via_stack_heater_m3, size=(4, 4))
+via_stack_heater_m3_mini = partial(via_stack_heater_m3, size=(4, 4))
 
 
 size = (440, 470)

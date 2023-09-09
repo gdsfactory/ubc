@@ -1,5 +1,6 @@
 """Sample mask for the edx course Q1 2023."""
 
+from functools import partial
 from pathlib import Path
 
 import gdsfactory as gf
@@ -98,7 +99,7 @@ def test_mask3() -> Path:
 
 def test_mask4() -> Path:
     """MZI interferometers."""
-    mzi = gf.partial(gf.components.mzi, splitter=ubcpdk.components.ebeam_y_1550)
+    mzi = partial(gf.components.mzi, splitter=ubcpdk.components.ebeam_y_1550)
     mzis = [mzi(delta_length=delta_length) for delta_length in [10, 40, 100]]
     mzis_gc = [pdk.add_fiber_array(mzi) for mzi in mzis]
 

@@ -325,13 +325,13 @@ strip_heater_metal = partial(
 )
 
 strip_simple = gf.cross_section.cross_section
-strip_bbox_only = gf.partial(
+strip_bbox_only = partial(
     gf.cross_section.cross_section,
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
 )
 
-strip_bbox = gf.partial(
+strip_bbox = partial(
     strip,
     add_bbox=add_bbox_siepic,
 )

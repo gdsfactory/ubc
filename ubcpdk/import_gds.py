@@ -1,3 +1,5 @@
+from functools import partial
+
 import gdsfactory as gf
 from gdsfactory.component import Component
 from gdsfactory.typings import LayerSpec
@@ -157,7 +159,7 @@ def add_ports_from_siepic_pins(
     return c
 
 
-add_ports_from_siepic_pins = gf.partial(
+add_ports_from_siepic_pins = partial(
     add_ports_from_siepic_pins,
     pin_layer_optical=LAYER.PORT,
     pin_layer_electrical=LAYER.PORTE,
