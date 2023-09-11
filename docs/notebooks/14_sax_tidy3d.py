@@ -322,7 +322,15 @@ def phase_shifter_heater(
     length: float = 10,
     loss: float = 0.0,
 ) -> sax.SDict:
-    """Returns simple phase shifter model"""
+    """Returns simple phase shifter model.
+
+    Args:
+        wl: wavelength.
+        neff: effective index.
+        voltage: voltage.
+        length: length.
+        loss: loss in dB/cm.
+    """
     deltaphi = voltage * jnp.pi
     phase = 2 * jnp.pi * neff * length / wl + deltaphi
     amplitude = jnp.asarray(10 ** (-loss * length / 20), dtype=complex)
