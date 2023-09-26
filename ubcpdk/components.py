@@ -618,26 +618,27 @@ def dbr(
     dbr = c << _dbr
     s.connect("o2", dbr.ports["o1"])
     c.add_port("o1", port=s.ports["o1"])
-    c = add_pins_bbox_siepic(c)
-    return c
+    return add_pins_bbox_siepic(c)
+
+
+bend = gf.components.bend_euler
+coupler = partial(gf.components.coupler, decorator=tech.add_bbox_siepic)
+coupler_ring = gf.components.coupler_ring
+mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
+coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
 
 @gf.cell
-def dbr_cavity(**kwargs) -> gf.Component:
-    d = dbr(**kwargs)
-    return gf.components.cavity(component=d, coupler=coupler)
+def dbr_cavity(dbr=dbr, coupler=coupler) -> gf.Component:
+    dbr = gf.get_component(dbr)
+    coupler = gf.get_component(coupler)
+    return gf.components.cavity(component=dbr, coupler=coupler)
 
 
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     component = gf.get_component(component, **kwargs)
     return add_fiber_array(component=component)
 
-
-bend = gf.components.bend_euler
-coupler = gf.components.coupler
-coupler_ring = gf.components.coupler_ring
-mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
-coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
 ring_single = partial(
     gf.components.ring_single,
@@ -812,41 +813,5 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    # gf.clear_cache()
-    # c = add_fiber_array(mzi())
-    # c = taper()
-
-    # c = add_fiber_array_pads_rf()
-    # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
-
-    # c = add_pads()
-    # c = add_pads_rf()
-    # c = coupler()
-    # c = dbr(decorator=None)
-    # c = dbr_cavity()
-    # c = dbr_cavity_te()
-
-    # c = ebeam_adiabatic_tm1550()
-    # c = ebeam_bdc_te1550()
-    # c = ebeam_crossing4()
-    # c = ebeam_dc_halfring_straight()
-    # c = ebeam_dc_te1550()
-    # c = ebeam_y_1550()
-    # c = ebeam_y_adiabatic_tapers()
-
-    # c = gc_te1310()
-    # c = gc_te1550()
-    # c = gc_tm1550()
-    # c = mmi1x2()
-    # c = mzi_heater()
-    # c = pad()
-    # c = ring_single()
-    # c = ring_single_heater()
-    # c = ring_with_crossing()
-    # c = spiral()
-    c = thermal_phase_shifter0()
-    # c = straight_one_pin()
-    # c = ebeam_crossing4_2ports()
-    # c = mzi()
-    # c = add_fiber_array(c)
+    c = coupler()
     c.show(show_ports=True)

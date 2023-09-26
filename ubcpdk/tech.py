@@ -10,7 +10,7 @@ from functools import partial
 import gdsfactory as gf
 from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
-from gdsfactory.cross_section import get_cross_section_factories
+from gdsfactory.cross_section import get_cross_sections
 from gdsfactory.technology import LayerLevel, LayerStack
 from gdsfactory.typings import Callable, Layer, LayerSpec, LayerSpecs, Optional
 from pydantic import BaseModel
@@ -305,14 +305,17 @@ strip_wg_simulation_info = dict(
 cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
 cladding_offsets_optical_siepic = (0,)  # for SiEPIC verification
 
+
+############################
+# Cross-sections functions
+############################
+
 strip = partial(
     gf.cross_section.cross_section,
-    add_pins=add_pins_siepic,
-    # add_bbox=add_bbox_siepic,
+    add_pins_function_name="add_pins_siepic",
+    add_pins_function_module="ubcpdk.tech",
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
-    # bbox_layers=cladding_layers_optical_siepic,
-    # bbox_offsets=cladding_offsets_optical_siepic,
 )
 strip_heater_metal = partial(
     gf.cross_section.strip_heater_metal,
@@ -321,7 +324,8 @@ strip_heater_metal = partial(
     layer_heater=LAYER.M1_HEATER,
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
-    add_pins=add_pins_siepic,
+    add_pins_function_name="add_pins_siepic",
+    add_pins_function_module="ubcpdk.tech",
 )
 
 strip_simple = gf.cross_section.cross_section
@@ -331,10 +335,7 @@ strip_bbox_only = partial(
     cladding_offsets=cladding_offsets_optical_siepic,
 )
 
-strip_bbox = partial(
-    strip,
-    add_bbox=add_bbox_siepic,
-)
+strip_bbox = strip
 
 metal_routing = partial(
     gf.cross_section.cross_section,
@@ -343,6 +344,8 @@ metal_routing = partial(
     port_names=gf.cross_section.port_names_electrical,
     port_types=gf.cross_section.port_types_electrical,
     radius=None,
+    add_pins_function_name="add_pins_siepic_metal",
+    add_pins_function_module="ubcpdk.tech",
 )
 heater_metal = partial(
     metal_routing,
@@ -350,10 +353,17 @@ heater_metal = partial(
     layer=LAYER.M1_HEATER,
 )
 
-cross_sections = get_cross_section_factories(sys.modules[__name__])
+############################
+# Cross-sections
+############################
 
+xs_sc = strip()
+xs_sc_heater_metal = strip_heater_metal()
+xs_sc_bbox = strip_bbox()
+xs_metal_routing = metal_routing()
+xs_heater_metal = heater_metal()
 
-__all__ = ("add_pins_siepic", "add_pins_bbox_siepic")
+cross_sections = get_cross_sections(sys.modules[__name__])
 
 
 if __name__ == "__main__":

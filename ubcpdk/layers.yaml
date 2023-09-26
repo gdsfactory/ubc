@@ -81,7 +81,7 @@ LayerViews:
     color: "#800057"
   DevRec:
     layer: [68, 0]
-    visible: false
+    visible: true
     transparent: true
     width: 1
     color: "#004080"
