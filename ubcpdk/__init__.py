@@ -9,7 +9,7 @@ from gdsfactory.pdk import Pdk
 
 from ubcpdk import components, data, tech
 from ubcpdk.config import CONFIG, PATH, module
-from ubcpdk.tech import LAYER, LAYER_STACK, LAYER_VIEWS, cross_sections, strip
+from ubcpdk.tech import LAYER, LAYER_STACK, LAYER_VIEWS, cross_sections
 
 __version__ = "2.1.1"
 
@@ -19,7 +19,7 @@ __all__ = [
     "PATH",
     "components",
     "tech",
-    "strip",
+    "xs_sc",
     "LAYER",
     "__version__",
     "cells",

@@ -1,4 +1,4 @@
-name: straight_add_fiber_array_8b85b61f_add_fiber_array
+name: straight_add_fiber_array_c0aaeaa4_add_fiber_array
 settings:
   changed: {}
   child:
@@ -6,7 +6,7 @@ settings:
       component:
         function: straight
         settings:
-          cross_section: strip
+          cross_section: xs_sc
       fanout_length: 0.0
       get_input_label_text_function:
         function: get_input_label_text
@@ -23,146 +23,28 @@ settings:
       changed: {}
       child: null
       default:
-        cross_section: strip
+        add_pins: true
+        cross_section: xs_sc
+        layer: null
         length: 10.0
         npoints: 2
-        with_bbox: true
+        width: null
       full:
-        cross_section: strip
+        add_pins: true
+        cross_section: xs_sc
+        layer: null
         length: 10.0
         npoints: 2
-        with_bbox: true
+        width: null
       function_name: straight
       info:
-        cross_section: strip
-        function_name: cross_section
+        cross_section: xs_sc
         length: 10.0
         route_info:
           length: 10.0
-          type:
-            auto_widen: false
-            auto_widen_minimum_length: 200.0
-            bbox_layers: []
-            bbox_offsets: []
-            cladding_layers:
-            - DEVREC
-            cladding_offsets:
-            - 0.0
-            cladding_simplify: null
-            end_straight_length: 0.01
-            gap: 3.0
-            info:
-              function_name: cross_section
-              settings:
-                add_bbox: null
-                add_pins:
-                  function: add_pins_siepic
-                auto_widen: false
-                auto_widen_minimum_length: 200.0
-                bbox_layers: null
-                bbox_offsets: null
-                cladding_layers:
-                - DEVREC
-                cladding_offsets:
-                - 0
-                cladding_simplify: null
-                decorator: null
-                end_straight_length: 0.01
-                gap: 3.0
-                info: null
-                layer: WG
-                min_length: 0.01
-                mirror: false
-                name: null
-                offset: 0
-                port_names:
-                - o1
-                - o2
-                port_types:
-                - optical
-                - optical
-                radius: 10.0
-                sections: null
-                snap_to_grid: null
-                start_straight_length: 0.01
-                taper_length: 10.0
-                width: 0.5
-                width_wide: null
-            layer: WG
-            min_length: 0.01
-            mirror: false
-            name: null
-            offset: 0.0
-            port_names:
-            - o1
-            - o2
-            port_types:
-            - optical
-            - optical
-            radius: 10.0
-            sections: []
-            simplify: null
-            snap_to_grid: null
-            start_straight_length: 0.01
-            taper_length: 10.0
-            vias: []
-            width: 0.5
-            width_wide: null
+          type: xs_sc
           weight: 10.0
-          ? '{''layer'': ''WG'', ''width'': 0.5, ''offset'': 0.0, ''radius'': 10.0,
-            ''width_wide'': None, ''simplify'': None, ''auto_widen'': False, ''auto_widen_minimum_length'':
-            200.0, ''taper_length'': 10.0, ''bbox_layers'': [], ''bbox_offsets'':
-            [], ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0.0], ''cladding_simplify'':
-            None, ''sections'': [], ''port_names'': [''o1'', ''o2''], ''port_types'':
-            [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
-            0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''info'':
-            {''settings'': {''width'': 0.5, ''offset'': 0, ''layer'': ''WG'', ''width_wide'':
-            None, ''auto_widen'': False, ''auto_widen_minimum_length'': 200.0, ''taper_length'':
-            10.0, ''radius'': 10.0, ''sections'': None, ''port_names'': [''o1'', ''o2''],
-            ''port_types'': [''optical'', ''optical''], ''gap'': 3.0, ''min_length'':
-            0.01, ''start_straight_length'': 0.01, ''end_straight_length'': 0.01,
-            ''snap_to_grid'': None, ''bbox_layers'': None, ''bbox_offsets'': None,
-            ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0], ''cladding_simplify'':
-            None, ''info'': None, ''decorator'': None, ''add_pins'': {''function'':
-            ''add_pins_siepic''}, ''add_bbox'': None, ''mirror'': False, ''name'':
-            None}, ''function_name'': ''cross_section''}, ''name'': None, ''mirror'':
-            False, ''vias'': []}_length'
-          : 10.0
-        settings:
-          add_bbox: null
-          add_pins:
-            function: add_pins_siepic
-          auto_widen: false
-          auto_widen_minimum_length: 200.0
-          bbox_layers: null
-          bbox_offsets: null
-          cladding_layers:
-          - DEVREC
-          cladding_offsets:
-          - 0
-          cladding_simplify: null
-          decorator: null
-          end_straight_length: 0.01
-          gap: 3.0
-          info: null
-          layer: WG
-          min_length: 0.01
-          mirror: false
-          name: null
-          offset: 0
-          port_names:
-          - o1
-          - o2
-          port_types:
-          - optical
-          - optical
-          radius: 10.0
-          sections: null
-          snap_to_grid: null
-          start_straight_length: 0.01
-          taper_length: 10.0
-          width: 0.5
-          width_wide: null
+          xs_sc_length: 10.0
         width: 0.5
       info_version: 2
       module: gdsfactory.components.straight
@@ -171,7 +53,7 @@ settings:
       component:
         function: straight
       component_name: null
-      cross_section: strip
+      cross_section: xs_sc
       gc_port_labels: null
       gc_port_name: o1
       get_input_labels_function:
@@ -184,7 +66,7 @@ settings:
         settings:
           polarization: te
           taper_angle: 35
-      layer_label: LABEL
+      layer_label: null
       select_ports:
         function: select_ports
         settings:
@@ -193,9 +75,9 @@ settings:
       component:
         function: straight
         settings:
-          cross_section: strip
+          cross_section: xs_sc
       component_name: null
-      cross_section: strip
+      cross_section: xs_sc
       fanout_length: 0.0
       gc_port_labels: null
       gc_port_name: o1
@@ -216,8 +98,7 @@ settings:
       with_loopback: false
     function_name: add_fiber_array
     info:
-      cross_section: strip
-      function_name: cross_section
+      cross_section: xs_sc
       grating_coupler:
         library: Design kits/ebeam
         model: ebeam_gc_te1550
@@ -226,140 +107,20 @@ settings:
       length: 10.0
       route_info:
         length: 10.0
-        type:
-          auto_widen: false
-          auto_widen_minimum_length: 200.0
-          bbox_layers: []
-          bbox_offsets: []
-          cladding_layers:
-          - DEVREC
-          cladding_offsets:
-          - 0.0
-          cladding_simplify: null
-          end_straight_length: 0.01
-          gap: 3.0
-          info:
-            function_name: cross_section
-            settings:
-              add_bbox: null
-              add_pins:
-                function: add_pins_siepic
-              auto_widen: false
-              auto_widen_minimum_length: 200.0
-              bbox_layers: null
-              bbox_offsets: null
-              cladding_layers:
-              - DEVREC
-              cladding_offsets:
-              - 0
-              cladding_simplify: null
-              decorator: null
-              end_straight_length: 0.01
-              gap: 3.0
-              info: null
-              layer: WG
-              min_length: 0.01
-              mirror: false
-              name: null
-              offset: 0
-              port_names:
-              - o1
-              - o2
-              port_types:
-              - optical
-              - optical
-              radius: 10.0
-              sections: null
-              snap_to_grid: null
-              start_straight_length: 0.01
-              taper_length: 10.0
-              width: 0.5
-              width_wide: null
-          layer: WG
-          min_length: 0.01
-          mirror: false
-          name: null
-          offset: 0.0
-          port_names:
-          - o1
-          - o2
-          port_types:
-          - optical
-          - optical
-          radius: 10.0
-          sections: []
-          simplify: null
-          snap_to_grid: null
-          start_straight_length: 0.01
-          taper_length: 10.0
-          vias: []
-          width: 0.5
-          width_wide: null
+        type: xs_sc
         weight: 10.0
-        ? '{''layer'': ''WG'', ''width'': 0.5, ''offset'': 0.0, ''radius'': 10.0,
-          ''width_wide'': None, ''simplify'': None, ''auto_widen'': False, ''auto_widen_minimum_length'':
-          200.0, ''taper_length'': 10.0, ''bbox_layers'': [], ''bbox_offsets'': [],
-          ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0.0], ''cladding_simplify'':
-          None, ''sections'': [], ''port_names'': [''o1'', ''o2''], ''port_types'':
-          [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
-          0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''info'': {''settings'':
-          {''width'': 0.5, ''offset'': 0, ''layer'': ''WG'', ''width_wide'': None,
-          ''auto_widen'': False, ''auto_widen_minimum_length'': 200.0, ''taper_length'':
-          10.0, ''radius'': 10.0, ''sections'': None, ''port_names'': [''o1'', ''o2''],
-          ''port_types'': [''optical'', ''optical''], ''gap'': 3.0, ''min_length'':
-          0.01, ''start_straight_length'': 0.01, ''end_straight_length'': 0.01, ''snap_to_grid'':
-          None, ''bbox_layers'': None, ''bbox_offsets'': None, ''cladding_layers'':
-          [''DEVREC''], ''cladding_offsets'': [0], ''cladding_simplify'': None, ''info'':
-          None, ''decorator'': None, ''add_pins'': {''function'': ''add_pins_siepic''},
-          ''add_bbox'': None, ''mirror'': False, ''name'': None}, ''function_name'':
-          ''cross_section''}, ''name'': None, ''mirror'': False, ''vias'': []}_length'
-        : 10.0
-      settings:
-        add_bbox: null
-        add_pins:
-          function: add_pins_siepic
-        auto_widen: false
-        auto_widen_minimum_length: 200.0
-        bbox_layers: null
-        bbox_offsets: null
-        cladding_layers:
-        - DEVREC
-        cladding_offsets:
-        - 0
-        cladding_simplify: null
-        decorator: null
-        end_straight_length: 0.01
-        gap: 3.0
-        info: null
-        layer: WG
-        min_length: 0.01
-        mirror: false
-        name: null
-        offset: 0
-        port_names:
-        - o1
-        - o2
-        port_types:
-        - optical
-        - optical
-        radius: 10.0
-        sections: null
-        snap_to_grid: null
-        start_straight_length: 0.01
-        taper_length: 10.0
-        width: 0.5
-        width_wide: null
+        xs_sc_length: 10.0
       width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_array_8b85b61f
+    name: straight_add_fiber_array_c0aaeaa4
   default:
     component:
       function: straight
       settings:
-        cross_section: strip
+        cross_section: xs_sc
     component_name: null
-    cross_section: strip
+    cross_section: xs_sc
     fanout_length: 0.0
     gc_port_name: o1
     get_input_labels_function:
@@ -375,9 +136,9 @@ settings:
     component:
       function: straight
       settings:
-        cross_section: strip
+        cross_section: xs_sc
     component_name: null
-    cross_section: strip
+    cross_section: xs_sc
     fanout_length: 0.0
     gc_port_name: o1
     get_input_labels_function:
@@ -391,8 +152,7 @@ settings:
     with_loopback: false
   function_name: add_fiber_array
   info:
-    cross_section: strip
-    function_name: cross_section
+    cross_section: xs_sc
     grating_coupler:
       library: Design kits/ebeam
       model: ebeam_gc_te1550
@@ -401,130 +161,10 @@ settings:
     length: 10.0
     route_info:
       length: 10.0
-      type:
-        auto_widen: false
-        auto_widen_minimum_length: 200.0
-        bbox_layers: []
-        bbox_offsets: []
-        cladding_layers:
-        - DEVREC
-        cladding_offsets:
-        - 0.0
-        cladding_simplify: null
-        end_straight_length: 0.01
-        gap: 3.0
-        info:
-          function_name: cross_section
-          settings:
-            add_bbox: null
-            add_pins:
-              function: add_pins_siepic
-            auto_widen: false
-            auto_widen_minimum_length: 200.0
-            bbox_layers: null
-            bbox_offsets: null
-            cladding_layers:
-            - DEVREC
-            cladding_offsets:
-            - 0
-            cladding_simplify: null
-            decorator: null
-            end_straight_length: 0.01
-            gap: 3.0
-            info: null
-            layer: WG
-            min_length: 0.01
-            mirror: false
-            name: null
-            offset: 0
-            port_names:
-            - o1
-            - o2
-            port_types:
-            - optical
-            - optical
-            radius: 10.0
-            sections: null
-            snap_to_grid: null
-            start_straight_length: 0.01
-            taper_length: 10.0
-            width: 0.5
-            width_wide: null
-        layer: WG
-        min_length: 0.01
-        mirror: false
-        name: null
-        offset: 0.0
-        port_names:
-        - o1
-        - o2
-        port_types:
-        - optical
-        - optical
-        radius: 10.0
-        sections: []
-        simplify: null
-        snap_to_grid: null
-        start_straight_length: 0.01
-        taper_length: 10.0
-        vias: []
-        width: 0.5
-        width_wide: null
+      type: xs_sc
       weight: 10.0
-      ? '{''layer'': ''WG'', ''width'': 0.5, ''offset'': 0.0, ''radius'': 10.0, ''width_wide'':
-        None, ''simplify'': None, ''auto_widen'': False, ''auto_widen_minimum_length'':
-        200.0, ''taper_length'': 10.0, ''bbox_layers'': [], ''bbox_offsets'': [],
-        ''cladding_layers'': [''DEVREC''], ''cladding_offsets'': [0.0], ''cladding_simplify'':
-        None, ''sections'': [], ''port_names'': [''o1'', ''o2''], ''port_types'':
-        [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
-        0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''info'': {''settings'':
-        {''width'': 0.5, ''offset'': 0, ''layer'': ''WG'', ''width_wide'': None, ''auto_widen'':
-        False, ''auto_widen_minimum_length'': 200.0, ''taper_length'': 10.0, ''radius'':
-        10.0, ''sections'': None, ''port_names'': [''o1'', ''o2''], ''port_types'':
-        [''optical'', ''optical''], ''gap'': 3.0, ''min_length'': 0.01, ''start_straight_length'':
-        0.01, ''end_straight_length'': 0.01, ''snap_to_grid'': None, ''bbox_layers'':
-        None, ''bbox_offsets'': None, ''cladding_layers'': [''DEVREC''], ''cladding_offsets'':
-        [0], ''cladding_simplify'': None, ''info'': None, ''decorator'': None, ''add_pins'':
-        {''function'': ''add_pins_siepic''}, ''add_bbox'': None, ''mirror'': False,
-        ''name'': None}, ''function_name'': ''cross_section''}, ''name'': None, ''mirror'':
-        False, ''vias'': []}_length'
-      : 10.0
-    settings:
-      add_bbox: null
-      add_pins:
-        function: add_pins_siepic
-      auto_widen: false
-      auto_widen_minimum_length: 200.0
-      bbox_layers: null
-      bbox_offsets: null
-      cladding_layers:
-      - DEVREC
-      cladding_offsets:
-      - 0
-      cladding_simplify: null
-      decorator: null
-      end_straight_length: 0.01
-      gap: 3.0
-      info: null
-      layer: WG
-      min_length: 0.01
-      mirror: false
-      name: null
-      offset: 0
-      port_names:
-      - o1
-      - o2
-      port_types:
-      - optical
-      - optical
-      radius: 10.0
-      sections: null
-      snap_to_grid: null
-      start_straight_length: 0.01
-      taper_length: 10.0
-      width: 0.5
-      width_wide: null
+      xs_sc_length: 10.0
     width: 0.5
   info_version: 2
   module: ubcpdk.components
-  name: straight_add_fiber_array_8b85b61f_add_fiber_array
+  name: straight_add_fiber_array_c0aaeaa4_add_fiber_array

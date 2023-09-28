@@ -2,8 +2,36 @@ name: dbr_cavity
 settings:
   changed: {}
   child: null
-  default: {}
-  full: {}
+  default:
+    coupler:
+      function: coupler
+      settings:
+        cross_section:
+          function: cross_section
+          settings:
+            add_pins_function_module: ubcpdk.tech
+            add_pins_function_name: add_pins_siepic
+            cladding_layers:
+            - DEVREC
+            cladding_offsets:
+            - 0
+    dbr:
+      function: dbr
+  full:
+    coupler:
+      function: coupler
+      settings:
+        cross_section:
+          function: cross_section
+          settings:
+            add_pins_function_module: ubcpdk.tech
+            add_pins_function_name: add_pins_siepic
+            cladding_layers:
+            - DEVREC
+            cladding_offsets:
+            - 0
+    dbr:
+      function: dbr
   function_name: dbr_cavity
   info: {}
   info_version: 2
