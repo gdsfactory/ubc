@@ -31,8 +31,8 @@ from functools import partial
 from pprint import pprint
 
 import gdsfactory as gf
-import gplugins.gtidy3d as gt
 import gplugins.sax as gs
+import gplugins.tidy3d as gt
 import jax.numpy as jnp
 import matplotlib.pyplot as plt
 import numpy as np
