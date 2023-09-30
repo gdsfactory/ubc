@@ -23,7 +23,7 @@
 # ## tidy3d
 
 # %%
-import gplugins.gtidy3d as gt
+import gplugins.tidy3d as gt
 import matplotlib.pyplot as plt
 import numpy as np
 

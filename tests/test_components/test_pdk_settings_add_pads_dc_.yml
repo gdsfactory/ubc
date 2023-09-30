@@ -51,8 +51,8 @@ settings:
         function: bend_euler
       coupler_ring:
         function: coupler_ring
-      cross_section: strip
-      cross_section_waveguide_heater: strip_heater_metal
+      cross_section: xs_sc
+      cross_section_waveguide_heater: xs_sc_heater_metal
       gap: 0.2
       length_x: 4.0
       length_y: 0.6
@@ -85,8 +85,8 @@ settings:
         function: bend_euler
       coupler_ring:
         function: coupler_ring
-      cross_section: strip
-      cross_section_waveguide_heater: strip_heater_metal
+      cross_section: xs_sc
+      cross_section_waveguide_heater: xs_sc_heater_metal
       gap: 0.2
       length_x: 4.0
       length_y: 0.6
@@ -116,15 +116,16 @@ settings:
     name: ring_single_heater_171f554b
   default:
     component:
-      function: straight_heater_metal_undercut
+      function: straight
       settings:
-        with_undercut: false
+        cross_section: xs_metal_routing
+        length: 200.0
     get_bundle_function:
       function: get_bundle
       settings:
         bend:
           function: wire_corner
-        cross_section: metal_routing
+        cross_section: xs_metal_routing
     pad_array: pad_array
     port_names: null
     select_ports:
@@ -141,7 +142,7 @@ settings:
       settings:
         bend:
           function: wire_corner
-        cross_section: metal_routing
+        cross_section: xs_metal_routing
     pad_array:
       function: pad_array
       settings:

@@ -1,24 +1,24 @@
-name: mzi_55c1098f
+name: mzi_df0f11f6
 settings:
   changed:
     bend:
       function: bend_euler
       settings:
-        cross_section: strip
+        cross_section: xs_sc
         npoints: 100
     splitter:
       function: ebeam_y_1550
     straight:
       function: straight
       settings:
-        cross_section: strip
+        cross_section: xs_sc
   child: null
   default:
     add_optical_ports_arms: false
     bend:
       function: bend_euler
     combiner: null
-    cross_section: strip
+    cross_section: xs_sc
     cross_section_x_bot: null
     cross_section_x_top: null
     delta_length: 10.0
@@ -42,10 +42,10 @@ settings:
     bend:
       function: bend_euler
       settings:
-        cross_section: strip
+        cross_section: xs_sc
         npoints: 100
     combiner: null
-    cross_section: strip
+    cross_section: xs_sc
     cross_section_x_bot: null
     cross_section_x_top: null
     delta_length: 10.0
@@ -62,7 +62,7 @@ settings:
     straight:
       function: straight
       settings:
-        cross_section: strip
+        cross_section: xs_sc
     straight_x_bot: null
     straight_x_top: null
     straight_y: null
@@ -71,4 +71,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_55c1098f
+  name: mzi_df0f11f6

@@ -25,7 +25,6 @@ from ubcpdk.tech import (
     add_pins_bbox_siepic,
     add_pins_bbox_siepic_remove_layers,
     add_pins_siepic_metal,
-    strip,
 )
 
 um = 1e-6
@@ -33,12 +32,12 @@ um = 1e-6
 
 straight = partial(
     gf.components.straight,
-    cross_section="strip",
+    cross_section="xs_sc",
 )
-bend_euler = partial(gf.components.bend_euler, cross_section="strip", npoints=100)
+bend_euler = partial(gf.components.bend_euler, cross_section="xs_sc", npoints=100)
 bend_s = partial(
     gf.components.bend_s,
-    cross_section="strip",
+    cross_section="xs_sc",
 )
 
 info1550te = dict(polarization="te", wavelength=1.55)
@@ -386,7 +385,7 @@ mzi = partial(
     splitter=ebeam_y_1550,
     bend=bend_euler,
     straight=straight,
-    cross_section="strip",
+    cross_section="xs_sc",
 )
 
 mzi_heater = partial(
@@ -488,7 +487,7 @@ def add_fiber_array(
     optical_routing_type: int = 0,
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
-    cross_section: CrossSectionSpec = "strip",
+    cross_section: CrossSectionSpec = "xs_sc",
     layer_label: LayerSpec = LAYER.TEXT,
     **kwargs,
 ) -> Component:
@@ -561,7 +560,6 @@ def dbg(
         n=n,
         l1=l1,
         l2=l2,
-        add_pins=None,
         cross_section=tech.strip_simple,
     )
     s1 = c << s
@@ -592,6 +590,8 @@ def dbr(
     n: int = 100,
     l1: float = L,
     l2: float = L,
+    cross_section: CrossSectionSpec = tech.strip_simple,
+    **kwargs,
 ) -> gf.Component:
     """Returns distributed bragg reflector.
 
@@ -604,28 +604,36 @@ def dbr(
     """
     c = gf.Component()
 
+    xs = gf.get_cross_section(cross_section, **kwargs)
+
     # add_pins_left = partial(add_pins_siepic, prefix="o1")
-    s = c << gf.components.straight(length=l1, cross_section=tech.strip_simple)
+    s = c << gf.components.straight(length=l1, cross_section=xs)
     _dbr = gf.components.dbr(
         w1=w0 - dw / 2,
         w2=w0 + dw / 2,
         n=n,
         l1=l1,
         l2=l2,
-        cross_section=tech.strip_simple,
+        cross_section=xs,
         decorator=None,
     )
     dbr = c << _dbr
     s.connect("o2", dbr.ports["o1"])
     c.add_port("o1", port=s.ports["o1"])
-    c = add_pins_bbox_siepic(c)
-    return c
+    return add_pins_bbox_siepic(c)
+
+
+bend = gf.components.bend_euler
+coupler = partial(gf.components.coupler, decorator=tech.add_bbox_siepic)
+coupler_ring = gf.components.coupler_ring
+mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
+coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
 
 @gf.cell
-def dbr_cavity(**kwargs) -> gf.Component:
-    d = dbr(**kwargs)
-    return gf.components.cavity(component=d, coupler=coupler)
+def dbr_cavity(dbr=dbr, coupler=coupler) -> gf.Component:
+    dbr = gf.get_component(dbr)
+    return gf.components.cavity(component=dbr, coupler=coupler)
 
 
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
@@ -633,17 +641,11 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     return add_fiber_array(component=component)
 
 
-bend = gf.components.bend_euler
-coupler = gf.components.coupler
-coupler_ring = gf.components.coupler_ring
-mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
-coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
-
 ring_single = partial(
     gf.components.ring_single,
     bend=bend,
     coupler_ring=coupler_ring,
-    cross_section="strip",
+    cross_section="xs_sc",
 )
 
 spiral = partial(gf.components.spiral_external_io)
@@ -654,7 +656,7 @@ def ebeam_dc_halfring_straight(
     gap: float = 0.2,
     radius: float = 5.0,
     length_x: float = 4.0,
-    cross_section="strip",
+    cross_section="xs_sc",
     siepic: bool = True,
     model: str = "ebeam_dc_halfring_straight",
     **kwargs,
@@ -724,7 +726,7 @@ ring_with_crossing = partial(
     component=ebeam_crossing4_2ports,
     port_name="o4",
     bend=bend_euler,
-    cross_section=strip,
+    cross_section="xs_sc",
 )
 
 
@@ -812,41 +814,5 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    # gf.clear_cache()
-    # c = add_fiber_array(mzi())
-    # c = taper()
-
-    # c = add_fiber_array_pads_rf()
-    # c = add_fiber_array_pads_rf(c, optical_routing_type=2)
-
-    # c = add_pads()
-    # c = add_pads_rf()
-    # c = coupler()
-    # c = dbr(decorator=None)
-    # c = dbr_cavity()
-    # c = dbr_cavity_te()
-
-    # c = ebeam_adiabatic_tm1550()
-    # c = ebeam_bdc_te1550()
-    # c = ebeam_crossing4()
-    # c = ebeam_dc_halfring_straight()
-    # c = ebeam_dc_te1550()
-    # c = ebeam_y_1550()
-    # c = ebeam_y_adiabatic_tapers()
-
-    # c = gc_te1310()
-    # c = gc_te1550()
-    # c = gc_tm1550()
-    # c = mmi1x2()
-    # c = mzi_heater()
-    # c = pad()
-    # c = ring_single()
-    # c = ring_single_heater()
-    # c = ring_with_crossing()
-    # c = spiral()
-    c = thermal_phase_shifter0()
-    # c = straight_one_pin()
-    # c = ebeam_crossing4_2ports()
-    # c = mzi()
-    # c = add_fiber_array(c)
+    c = dbg(n=4)
     c.show(show_ports=True)

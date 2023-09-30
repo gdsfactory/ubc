@@ -1,13 +1,11 @@
-name: coupler_50c22d89
+name: coupler_fee1ceb0
 settings:
   changed:
     cross_section:
       function: cross_section
       settings:
-        add_bbox:
-          function: add_bbox_siepic
-        add_pins:
-          function: add_pins_siepic
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
         cladding_layers:
         - DEVREC
         cladding_offsets:
@@ -18,7 +16,7 @@ settings:
       function: coupler_straight
     coupler_symmetric:
       function: coupler_symmetric
-    cross_section: strip
+    cross_section: xs_sc
     dx: 10.0
     dy: 4.0
     gap: 0.236
@@ -31,10 +29,8 @@ settings:
     cross_section:
       function: cross_section
       settings:
-        add_bbox:
-          function: add_bbox_siepic
-        add_pins:
-          function: add_pins_siepic
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
         cladding_layers:
         - DEVREC
         cladding_offsets:
@@ -49,4 +45,4 @@ settings:
     min_bend_radius: 11.857
   info_version: 2
   module: gdsfactory.components.coupler
-  name: coupler_50c22d89
+  name: coupler_fee1ceb0

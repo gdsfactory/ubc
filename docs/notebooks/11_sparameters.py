@@ -25,7 +25,7 @@
 
 # +
 import gplugins as sim
-import gplugins.gtidy3d as gt
+import gplugins.tidy3d as gt
 
 import ubcpdk.components as pdk
 from ubcpdk.config import PATH

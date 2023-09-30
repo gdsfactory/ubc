@@ -31,8 +31,8 @@ from functools import partial
 from pprint import pprint
 
 import gdsfactory as gf
-import gplugins.gtidy3d as gt
 import gplugins.sax as gs
+import gplugins.tidy3d as gt
 import jax.numpy as jnp
 import matplotlib.pyplot as plt
 import numpy as np
@@ -338,6 +338,10 @@ def phase_shifter_heater(
     return sax.reciprocal(
         {
             ("o1", "o2"): transmission,
+            ("l_e1", "r_e1"): 0.0,
+            ("l_e2", "r_e2"): 0.0,
+            ("l_e3", "r_e3"): 0.0,
+            ("l_e4", "r_e4"): 0.0,
         }
     )
 
