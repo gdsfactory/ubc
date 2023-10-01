@@ -38,7 +38,7 @@ def test_mask1() -> Path:
     c = pack(e)
     m = c[0]
     m.name = "EBeam_JoaquinMatres_11"
-    m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    _ = m << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
     return write_mask_gds_with_metadata(m)
 
 
