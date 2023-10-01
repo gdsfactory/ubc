@@ -1,4 +1,4 @@
-name: straight_add_fiber_array_c0aaeaa4_add_fiber_array
+name: straight_add_fiber_array_35903362_add_fiber_array
 settings:
   changed: {}
   child:
@@ -15,7 +15,7 @@ settings:
       grating_coupler:
         function: gc_te1550
       layer_label:
-      - 66
+      - 10
       - 0
       optical_routing_type: 0
       with_loopback: false
@@ -88,7 +88,7 @@ settings:
       grating_coupler:
         function: gc_te1550
       layer_label:
-      - 66
+      - 10
       - 0
       optical_routing_type: 0
       select_ports:
@@ -113,7 +113,7 @@ settings:
       width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_array_c0aaeaa4
+    name: straight_add_fiber_array_35903362
   default:
     component:
       function: straight
@@ -128,7 +128,7 @@ settings:
     grating_coupler:
       function: gc_te1550
     layer_label:
-    - 66
+    - 10
     - 0
     optical_routing_type: 0
     with_loopback: false
@@ -146,7 +146,7 @@ settings:
     grating_coupler:
       function: gc_te1550
     layer_label:
-    - 66
+    - 10
     - 0
     optical_routing_type: 0
     with_loopback: false
@@ -167,4 +167,4 @@ settings:
     width: 0.5
   info_version: 2
   module: ubcpdk.components
-  name: straight_add_fiber_array_c0aaeaa4_add_fiber_array
+  name: straight_add_fiber_array_35903362_add_fiber_array

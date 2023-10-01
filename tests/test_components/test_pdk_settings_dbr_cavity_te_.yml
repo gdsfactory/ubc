@@ -1,4 +1,4 @@
-name: dbr_cavity_add_fiber_array_8a21ac4c_add_fiber_array_37b25c57
+name: dbr_cavity_add_fiber_array_2f157efc_add_fiber_array_37b25c57
 settings:
   changed:
     component:
@@ -17,7 +17,7 @@ settings:
       grating_coupler:
         function: gc_te1550
       layer_label:
-      - 66
+      - 10
       - 0
       optical_routing_type: 0
       with_loopback: false
@@ -97,7 +97,7 @@ settings:
       grating_coupler:
         function: gc_te1550
       layer_label:
-      - 66
+      - 10
       - 0
       optical_routing_type: 0
       select_ports:
@@ -114,7 +114,7 @@ settings:
         wavelength: 1.55
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: dbr_cavity_add_fiber_array_8a21ac4c
+    name: dbr_cavity_add_fiber_array_2f157efc
   default:
     component:
       function: straight
@@ -129,7 +129,7 @@ settings:
     grating_coupler:
       function: gc_te1550
     layer_label:
-    - 66
+    - 10
     - 0
     optical_routing_type: 0
     with_loopback: false
@@ -146,7 +146,7 @@ settings:
     grating_coupler:
       function: gc_te1550
     layer_label:
-    - 66
+    - 10
     - 0
     optical_routing_type: 0
     with_loopback: false
@@ -159,4 +159,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: dbr_cavity_add_fiber_array_8a21ac4c_add_fiber_array_37b25c57
+  name: dbr_cavity_add_fiber_array_2f157efc_add_fiber_array_37b25c57

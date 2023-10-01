@@ -75,6 +75,7 @@ LayerViews:
     layer: [99, 0]
     layer_in_name: true
     color: "black"
+    hatch_pattern: hollow
   Lumerical:
     layer: [733, 0]
     width: 3

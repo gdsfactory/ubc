@@ -30,15 +30,13 @@ class LayerMapUbc(BaseModel):
     PAD_OPEN: Layer = (13, 0)
 
     DEVREC: Layer = (68, 0)
-    LABEL: Layer = (66, 0)
     PORT: Layer = (1, 10)  # PinRec
     PORTE: Layer = (1, 11)  # PinRecM
     FLOORPLAN: Layer = (99, 0)
 
     TE: Layer = (203, 0)
     TM: Layer = (204, 0)
-    TEXT: Layer = (66, 0)
-    LABEL_INSTANCE: Layer = (66, 0)
+    TEXT: Layer = (10, 0)
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
     SLAB150: Layer = (2, 0)

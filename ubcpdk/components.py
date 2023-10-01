@@ -601,6 +601,8 @@ def dbr(
         n: number of elements.
         l1: length teeth1.
         l2: length teeth2.
+        cross_section: spec.
+        kwargs: cross_section settings.
     """
     c = gf.Component()
 
@@ -631,8 +633,8 @@ coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
 
 @gf.cell
-def dbr_cavity(dbr=dbr, coupler=coupler) -> gf.Component:
-    dbr = gf.get_component(dbr)
+def dbr_cavity(dbr=dbr, coupler=coupler, **kwargs) -> gf.Component:
+    dbr = dbr(**kwargs)
     return gf.components.cavity(component=dbr, coupler=coupler)
 
 
@@ -749,7 +751,7 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
         raise ValueError(f"No port {port_name!r} in {list(component.ports.keys())}")
 
     component.add_label(
-        text=text, position=component.ports[port_name].center, layer=LAYER.LABEL
+        text=text, position=component.ports[port_name].center, layer=LAYER.TEXT
     )
     return component
 
@@ -814,5 +816,5 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    c = dbg(n=4)
+    c = add_fiber_array()
     c.show(show_ports=True)
