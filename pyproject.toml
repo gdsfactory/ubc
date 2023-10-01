@@ -115,3 +115,31 @@ mypkg = ["*.csv", "*.yaml"]
 
 [tool.setuptools.packages]
 find = {}
+
+[tool.tbump]
+
+[[tool.tbump.file]]
+src = "README.md"
+
+[[tool.tbump.file]]
+src = "pyproject.toml"
+
+[[tool.tbump.file]]
+src = "ubcpdk/__init__.py"
+
+[[tool.tbump.file]]
+src = "ubcpdk/klayout/tech/pymacros/set_menus.lym"
+
+[tool.tbump.git]
+message_template = "Bump to {new_version}"
+tag_template = "v{new_version}"
+
+[tool.tbump.version]
+current = "2.1.1"
+regex = '''
+  (?P<major>\d+)
+  \.
+  (?P<minor>\d+)
+  \.
+  (?P<patch>\d+)
+  '''
