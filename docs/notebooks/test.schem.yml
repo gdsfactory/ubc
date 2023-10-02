@@ -1,3 +1,4 @@
+schema: null
 instances:
   mmi1:
     component: mmi1x2
@@ -26,3 +27,4 @@ nets:
 - ['mmi1,o3', 's2,o1']
 - ['mmi2,o1', 's2,o2']
 ports: {o1: 'mmi1,o1', o2: 'mmi2,o3', o3: 'mmi2,o4'}
+schema_version: 1
