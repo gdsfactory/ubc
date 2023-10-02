@@ -9,9 +9,9 @@ gds_run/
 ubcpdk/tests/test_components.gds/gds_run/
 ubcpdk/tests/test_components.gds/gds_diff/
 .dvc/
+.virtual_documents
 
 # C extensions
-*.ipynb
 *.so
 *.sqlite3
 *.png

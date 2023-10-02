@@ -136,7 +136,7 @@ def ebeam_crossing4() -> gf.Component:
 
 
 @gf.cell
-def straight_one_pin(length=1, cross_section=tech.strip_bbox_only) -> gf.Component:
+def straight_one_pin(length=1, cross_section=tech.strip_bbox) -> gf.Component:
     c = gf.Component()
     add_pins_left = partial(tech.add_pins_siepic, prefix="o1", pin_length=0.1)
     s = c << gf.components.straight(length=length, cross_section=cross_section)
@@ -626,10 +626,9 @@ def dbr(
 
 
 bend = gf.components.bend_euler
-coupler = partial(gf.components.coupler, decorator=tech.add_bbox_siepic)
+coupler = partial(gf.components.coupler, cross_section=tech.xs_sc_bbox)
 coupler_ring = gf.components.coupler_ring
 mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
-coupler = partial(gf.components.coupler, cross_section=tech.strip_bbox)
 
 
 @gf.cell
@@ -816,5 +815,8 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    c = add_fiber_array()
+    # c = add_fiber_array(mzi)
+    c = coupler()
+    c = dbr_cavity_te()
+    # c = dbr_cavity()
     c.show(show_ports=True)

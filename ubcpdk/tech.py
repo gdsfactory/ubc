@@ -81,7 +81,7 @@ def add_labels_to_ports_optical(
 def add_bbox_siepic(
     component: Component,
     bbox_layer: LayerSpec = "DEVREC",
-    remove_layers: LayerSpecs = ("PORT", "PORTE"),
+    remove_layers: LayerSpecs | None = None,
 ) -> Component:
     """Add bounding box device recognition layer.
 
@@ -96,7 +96,7 @@ def add_bbox_siepic(
     remove_layers = remove_layers or []
     remove_layers = list(remove_layers) + [bbox_layer]
     remove_layers = [get_layer(layer) for layer in remove_layers]
-    component = component.remove_layers(layers=remove_layers, recursive=False)
+    component = component.remove_layers(layers=remove_layers, recursive=True)
 
     if bbox_layer:
         component.add_padding(default=0, layers=(bbox_layer,))
@@ -313,6 +313,11 @@ strip = partial(
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
 )
+strip_unclad = partial(
+    gf.cross_section.cross_section,
+    add_pins_function_name="add_pins_siepic",
+    add_pins_function_module="ubcpdk.tech",
+)
 strip_heater_metal = partial(
     gf.cross_section.strip_heater_metal,
     layer="WG",
@@ -325,13 +330,13 @@ strip_heater_metal = partial(
 )
 
 strip_simple = gf.cross_section.cross_section
-strip_bbox_only = partial(
+strip_bbox = partial(
     gf.cross_section.cross_section,
-    cladding_layers=cladding_layers_optical_siepic,
-    cladding_offsets=cladding_offsets_optical_siepic,
+    bbox_layers=cladding_layers_optical_siepic,
+    bbox_offsets=cladding_offsets_optical_siepic,
+    add_pins_function_name="add_pins_siepic",
+    add_pins_function_module="ubcpdk.tech",
 )
-
-strip_bbox = strip
 
 metal_routing = partial(
     gf.cross_section.cross_section,
@@ -358,6 +363,7 @@ xs_sc_heater_metal = strip_heater_metal()
 xs_sc_bbox = strip_bbox()
 xs_metal_routing = metal_routing()
 xs_heater_metal = heater_metal()
+xs_sc_unclad = strip_unclad()
 
 cross_sections = get_cross_sections(sys.modules[__name__])
 
