@@ -32,5 +32,5 @@ parts:
         title: Plugins
       - url: https://gdsfactory.github.io/gdsfactory
         title: gdsfactory
-      - url: https://github.com/gdsfactory/gdsfactory-photonics-training
+      - url: https://gdsfactory.github.io/gdsfactory-photonics-training/
         title: gdsfactory-photonics-training

@@ -34,8 +34,6 @@ class LayerMapUbc(BaseModel):
     PORTE: Layer = (1, 11)  # PinRecM
     FLOORPLAN: Layer = (99, 0)
 
-    TE: Layer = (203, 0)
-    TM: Layer = (204, 0)
     TEXT: Layer = (10, 0)
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
