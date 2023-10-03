@@ -626,9 +626,17 @@ def dbr(
 
 
 bend = gf.components.bend_euler
-coupler = partial(gf.components.coupler, cross_section=tech.xs_sc_bbox)
+coupler = partial(
+    gf.components.coupler,
+    cross_section=tech.xs_sc_simple,
+    decorator=tech.add_pins_bbox_siepic,
+)
 coupler_ring = gf.components.coupler_ring
-mmi1x2 = partial(gf.components.mmi1x2, cross_section=tech.strip_bbox)
+mmi1x2 = partial(
+    gf.components.mmi1x2,
+    cross_section=tech.xs_sc_simple,
+    decorator=tech.add_pins_bbox_siepic,
+)
 
 
 @gf.cell
@@ -815,8 +823,9 @@ def add_pads(
 
 
 if __name__ == "__main__":
+    # c = mmi1x2()
     # c = add_fiber_array(mzi)
-    c = coupler()
+    # c = coupler()
     c = dbr_cavity_te()
     # c = dbr_cavity()
     c.show(show_ports=True)
