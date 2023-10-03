@@ -1,3 +1,8 @@
+## [2.2.2](https://github.com/gdsfactory/gdsfactory/releases/tag/v2.2.2) - 2023-10-02
+
+No significant changes.
+
+
 # Changelog
 
 ## [Unreleased](https://github.com/gdsfactory/ubc/compare/v2.1.1...main)

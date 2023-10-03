@@ -11,7 +11,7 @@ from ubcpdk import components, data, tech
 from ubcpdk.config import CONFIG, PATH, module
 from ubcpdk.tech import LAYER, LAYER_STACK, LAYER_VIEWS, cross_sections
 
-__version__ = "2.2.1"
+__version__ = "2.2.2"
 
 __all__ = [
     "CONFIG",
