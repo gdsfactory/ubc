@@ -364,6 +364,7 @@ xs_sc_bbox = strip_bbox()
 xs_metal_routing = metal_routing()
 xs_heater_metal = heater_metal()
 xs_sc_unclad = strip_unclad()
+xs_sc_simple = strip_simple()
 
 cross_sections = get_cross_sections(sys.modules[__name__])
 
