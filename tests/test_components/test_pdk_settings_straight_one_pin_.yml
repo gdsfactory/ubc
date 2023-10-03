@@ -6,18 +6,22 @@ settings:
     cross_section:
       function: cross_section
       settings:
-        cladding_layers:
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
+        bbox_layers:
         - DEVREC
-        cladding_offsets:
+        bbox_offsets:
         - 0
     length: 1
   full:
     cross_section:
       function: cross_section
       settings:
-        cladding_layers:
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
+        bbox_layers:
         - DEVREC
-        cladding_offsets:
+        bbox_offsets:
         - 0
     length: 1
   function_name: straight_one_pin
