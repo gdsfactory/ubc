@@ -1,4 +1,4 @@
-name: ring_single_dut_3c15e902
+name: ring_single_dut_61f5f94e
 settings:
   changed:
     bend:
@@ -8,6 +8,8 @@ settings:
         npoints: 100
     component:
       function: ebeam_crossing4_2ports
+    coupler:
+      function: ebeam_dc_halfring_straight
     cross_section: xs_sc
     port_name: o4
   child: null
@@ -35,7 +37,7 @@ settings:
     component:
       function: ebeam_crossing4_2ports
     coupler:
-      function: coupler_ring
+      function: ebeam_dc_halfring_straight
     cross_section: xs_sc
     gap: 0.2
     length_x: 4
@@ -48,4 +50,4 @@ settings:
     component: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_3c15e902
+  name: ring_single_dut_61f5f94e

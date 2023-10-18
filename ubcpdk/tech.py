@@ -172,7 +172,7 @@ def add_pins_bbox_siepic(
     c = component
     if remove_layers or component.name.startswith(("mmi", "dbr")):
         remove_layers = (layer_pin, bbox_layer, "TEXT")
-        c = component.remove_layers(layers=remove_layers)
+        c = c.remove_layers(layers=remove_layers)
 
     if bbox_layer not in c.layers:
         c.add_padding(default=padding, layers=(bbox_layer,))

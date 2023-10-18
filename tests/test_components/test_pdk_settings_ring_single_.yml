@@ -1,6 +1,8 @@
-name: ring_single
+name: ring_single_909e601c
 settings:
-  changed: {}
+  changed:
+    coupler_ring:
+      function: ebeam_dc_halfring_straight
   child: null
   default:
     bend:
@@ -16,7 +18,7 @@ settings:
     bend:
       function: bend_euler
     coupler_ring:
-      function: coupler_ring
+      function: ebeam_dc_halfring_straight
     cross_section: xs_sc
     gap: 0.2
     length_x: 4.0
@@ -26,4 +28,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single
-  name: ring_single
+  name: ring_single_909e601c
