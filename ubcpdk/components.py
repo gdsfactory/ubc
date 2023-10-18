@@ -5,9 +5,9 @@ import gdsfactory as gf
 from gdsfactory import Component
 from gdsfactory.typings import (
     Callable,
+    ComponentFactory,
     ComponentReference,
     ComponentSpec,
-    ComponentFactory,
     CrossSectionSpec,
     Label,
     LayerSpec,
@@ -20,7 +20,6 @@ from gdsfactory.typings import (
 from ubcpdk import tech
 from ubcpdk.config import CONFIG
 from ubcpdk.import_gds import import_gc, import_gds
-from ubcpdk import tech
 from ubcpdk.tech import (
     LAYER,
     LAYER_STACK,
