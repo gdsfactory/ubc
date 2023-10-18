@@ -19,7 +19,6 @@ __all__ = [
     "PATH",
     "components",
     "tech",
-    "xs_sc",
     "LAYER",
     "__version__",
     "cells",
