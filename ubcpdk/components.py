@@ -7,6 +7,7 @@ from gdsfactory.typings import (
     Callable,
     ComponentReference,
     ComponentSpec,
+    ComponentFactory,
     CrossSectionSpec,
     Label,
     LayerSpec,
@@ -19,6 +20,7 @@ from gdsfactory.typings import (
 from ubcpdk import tech
 from ubcpdk.config import CONFIG
 from ubcpdk.import_gds import import_gc, import_gds
+from ubcpdk import tech
 from ubcpdk.tech import (
     LAYER,
     LAYER_STACK,
@@ -631,7 +633,11 @@ coupler = partial(
     cross_section=tech.xs_sc_simple,
     decorator=tech.add_pins_bbox_siepic,
 )
-coupler_ring = gf.components.coupler_ring
+coupler_ring = partial(
+    gf.components.coupler_ring,
+    cross_section=tech.xs_sc_unclad,
+    decorator=tech.add_pins_bbox_siepic,
+)
 mmi1x2 = partial(
     gf.components.mmi1x2,
     cross_section=tech.xs_sc_simple,
@@ -650,13 +656,6 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     return add_fiber_array(component=component)
 
 
-ring_single = partial(
-    gf.components.ring_single,
-    bend=bend,
-    coupler_ring=coupler_ring,
-    cross_section="xs_sc",
-)
-
 spiral = partial(gf.components.spiral_external_io)
 
 
@@ -665,9 +664,10 @@ def ebeam_dc_halfring_straight(
     gap: float = 0.2,
     radius: float = 5.0,
     length_x: float = 4.0,
-    cross_section="xs_sc",
+    cross_section="xs_sc_simple",
     siepic: bool = True,
     model: str = "ebeam_dc_halfring_straight",
+    bend: ComponentFactory = bend_euler,
     **kwargs,
 ) -> gf.Component:
     r"""Return a ring coupler.
@@ -691,16 +691,17 @@ def ebeam_dc_halfring_straight(
 
 
     """
+    x = gf.get_cross_section(cross_section=cross_section, **kwargs)
+
     c = gf.Component()
     coupler_ring = c << gf.components.coupler_ring(
         gap=gap,
         radius=radius,
         length_x=length_x,
-        bend=bend_euler,
-        cross_section=cross_section,
-        **kwargs,
+        bend=bend,
+        cross_section=x,
+        decorator=add_pins_bbox_siepic,
     )
-    x = gf.get_cross_section(cross_section=cross_section, **kwargs)
     thickness = LAYER_STACK.get_layer_to_thickness()
     c.add_ports(coupler_ring.ports)
 
@@ -725,6 +726,13 @@ def ebeam_dc_halfring_straight(
     return c
 
 
+ring_single = partial(
+    gf.components.ring_single,
+    bend=bend,
+    coupler_ring=ebeam_dc_halfring_straight,
+)
+
+
 ebeam_dc_te1550 = partial(
     gf.components.coupler, decorator=add_pins_bbox_siepic_remove_layers
 )
@@ -733,6 +741,7 @@ spiral = partial(gf.components.spiral_external_io)
 ring_with_crossing = partial(
     gf.components.ring_single_dut,
     component=ebeam_crossing4_2ports,
+    coupler=ebeam_dc_halfring_straight,
     port_name="o4",
     bend=bend_euler,
     cross_section="xs_sc",
@@ -743,8 +752,8 @@ pad = partial(
     gf.components.pad,
     size=(75, 75),
     layer=LAYER.M2_ROUTER,
-    bbox_layers=[LAYER.PAD_OPEN],
-    bbox_offsets=[-1.8],
+    bbox_layers=(LAYER.PAD_OPEN,),
+    bbox_offsets=(-1.8,),
     decorator=add_pins_siepic_metal,
 )
 
@@ -823,9 +832,12 @@ def add_pads(
 
 
 if __name__ == "__main__":
+    c = ring_with_crossing()
     # c = mmi1x2()
     # c = add_fiber_array(mzi)
-    # c = coupler()
-    c = dbr_cavity_te()
+    # c = coupler_ring()
+    # c = dbr_cavity_te()
     # c = dbr_cavity()
+    # c = ring_single()
+    # c = ebeam_dc_halfring_straight()
     c.show(show_ports=True)
