@@ -78,9 +78,13 @@ def add_labels_to_ports_optical(
     return component
 
 
+margin = 0.5
 add_bbox_siepic = partial(gf.add_padding, layers=(LAYER.DEVREC,), default=0)
 add_bbox_siepic_top_bot = partial(
-    gf.add_padding, layers=(LAYER.DEVREC,), default=0, top=0.5, bottom=0.5
+    gf.add_padding, layers=(LAYER.DEVREC,), default=0, top=margin, bottom=margin
+)
+add_bbox_siepic_bot_right = partial(
+    gf.add_padding, layers=(LAYER.DEVREC,), default=0, right=margin, bottom=margin
 )
 
 
@@ -332,9 +336,7 @@ metal_routing = partial(
     add_pins_function_module="ubcpdk.tech",
 )
 heater_metal = partial(
-    metal_routing,
-    width=4,
-    layer=LAYER.M1_HEATER,
+    metal_routing, width=4, layer=LAYER.M1_HEATER, add_pins_function_name=None
 )
 
 ############################

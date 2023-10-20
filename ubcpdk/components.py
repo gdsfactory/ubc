@@ -30,11 +30,15 @@ from ubcpdk.tech import (
 
 um = 1e-6
 
-
-@gf.cell
-def bend_euler(**kwargs):
-    return gf.components.bend_euler(cross_section=tech.xs_sc_devrec, npoints=100)
-
+# bend_euler = partial(
+#     gf.components.bend_euler,
+#     cross_section="xs_sc_devrec",
+# )
+bend_euler = partial(
+    gf.components.bend_euler,
+    cross_section="xs_sc",
+    add_bbox=tech.add_bbox_siepic_bot_right,
+)
 
 straight = partial(
     gf.components.straight,
@@ -695,7 +699,7 @@ def ebeam_dc_halfring_straight(
     x = gf.get_cross_section(cross_section=cross_section, **kwargs)
 
     c = gf.Component()
-    coupler_ring = c << gf.components.coupler_ring(
+    ref = c << coupler_ring(
         gap=gap,
         radius=radius,
         length_x=length_x,
@@ -704,7 +708,7 @@ def ebeam_dc_halfring_straight(
         add_bbox=add_pins_bbox_siepic,
     )
     thickness = LAYER_STACK.get_layer_to_thickness()
-    c.add_ports(coupler_ring.ports)
+    c.add_ports(ref.ports)
 
     if siepic:
         c.info.update(
@@ -733,18 +737,29 @@ ring_single = partial(
     cross_section=tech.xs_sc,
     bend=bend_euler,
     straight=straight,
+    pass_cross_section_to_bend=False,
+)
+ring_double = partial(
+    gf.components.ring_double,
+    coupler_ring=coupler_ring,
+    cross_section=tech.xs_sc,
+    bend=bend_euler,
+    straight=straight,
 )
 ring_double_heater = partial(
     gf.components.ring_double_heater,
     coupler_ring=coupler_ring,
     via_stack=via_stack_heater_mtop,
     cross_section=tech.xs_sc,
+    straight=straight,
+    length_y=0.2,
 )
 ring_single_heater = partial(
     gf.components.ring_single_heater,
     via_stack=via_stack_heater_mtop,
     cross_section=tech.xs_sc,
     coupler_ring=coupler_ring,
+    straight=straight,
 )
 
 
@@ -756,10 +771,11 @@ spiral = partial(gf.components.spiral_external_io)
 ring_with_crossing = partial(
     gf.components.ring_single_dut,
     component=ebeam_crossing4_2ports,
-    coupler=ebeam_dc_halfring_straight,
+    coupler=coupler_ring,
     port_name="o4",
     bend=bend_euler,
     cross_section="xs_sc",
+    straight=straight,
 )
 
 
@@ -853,7 +869,11 @@ if __name__ == "__main__":
     # c = coupler_ring()
     # c = dbr_cavity_te()
     # c = dbr_cavity()
-    c = ring_single()
+    # c = ring_single(radius=12)
+    # c = ring_double(radius=12, length_x=2, length_y=2)
+    # c = bend_euler()
+    # c = mzi()
     # c = ring_double_heater()
     # c = ebeam_dc_halfring_straight()
-    c.show(show_ports=True)
+    c = ring_with_crossing()
+    c.show(show_ports=False)
