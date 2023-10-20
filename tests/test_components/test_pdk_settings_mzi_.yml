@@ -1,16 +1,20 @@
-name: mzi_df0f11f6
+name: mzi_ca44f52c
 settings:
   changed:
-    bend:
-      function: bend_euler
-      settings:
-        cross_section: xs_sc
-        npoints: 100
     splitter:
       function: ebeam_y_1550
     straight:
       function: straight
       settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
         cross_section: xs_sc
   child: null
   default:
@@ -41,9 +45,6 @@ settings:
     add_optical_ports_arms: false
     bend:
       function: bend_euler
-      settings:
-        cross_section: xs_sc
-        npoints: 100
     combiner: null
     cross_section: xs_sc
     cross_section_x_bot: null
@@ -62,6 +63,15 @@ settings:
     straight:
       function: straight
       settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
         cross_section: xs_sc
     straight_x_bot: null
     straight_x_top: null
@@ -71,4 +81,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_df0f11f6
+  name: mzi_ca44f52c

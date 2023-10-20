@@ -1,8 +1,18 @@
-name: straight
+name: straight_8c41fd35
 settings:
-  changed: {}
+  changed:
+    add_bbox:
+      function: add_padding
+      settings:
+        bottom: 0.5
+        default: 0
+        layers:
+        - - 68
+          - 0
+        top: 0.5
   child: null
   default:
+    add_bbox: null
     add_pins: true
     cross_section: xs_sc
     layer: null
@@ -10,6 +20,15 @@ settings:
     npoints: 2
     width: null
   full:
+    add_bbox:
+      function: add_padding
+      settings:
+        bottom: 0.5
+        default: 0
+        layers:
+        - - 68
+          - 0
+        top: 0.5
     add_pins: true
     cross_section: xs_sc
     layer: null
@@ -28,4 +47,4 @@ settings:
     width: 0.5
   info_version: 2
   module: gdsfactory.components.straight
-  name: straight
+  name: straight_8c41fd35

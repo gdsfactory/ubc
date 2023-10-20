@@ -1,9 +1,22 @@
-name: mzi_ab5edfa6
+name: mzi_2dc854ba
 settings:
   changed:
     length_x: 200
     splitter:
       function: ebeam_y_1550
+    straight:
+      function: straight
+      settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
+        cross_section: xs_sc
     straight_x_top: straight_heater_metal
   child: null
   default:
@@ -51,6 +64,17 @@ settings:
       function: ebeam_y_1550
     straight:
       function: straight
+      settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
+        cross_section: xs_sc
     straight_x_bot: null
     straight_x_top: straight_heater_metal
     straight_y: null
@@ -59,4 +83,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.mzi
-  name: mzi_ab5edfa6
+  name: mzi_2dc854ba

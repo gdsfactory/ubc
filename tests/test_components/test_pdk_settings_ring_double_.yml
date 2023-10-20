@@ -1,4 +1,4 @@
-name: ring_double_heater_13f0172f
+name: ring_double_1628c13a
 settings:
   changed:
     coupler_ring:
@@ -66,7 +66,6 @@ settings:
       start_straight_length: 0.01
       taper_length: 10.0
       width_wide: null
-    length_y: 0.2
     straight:
       function: straight
       settings:
@@ -80,62 +79,20 @@ settings:
               - 0
             top: 0.5
         cross_section: xs_sc
-    via_stack:
-      function: via_stack
-      settings:
-        layers:
-        - - 11
-          - 0
-        - - 12
-          - 0
-        size:
-        - 10
-        - 10
-        vias:
-        - null
-        - null
   child: null
   default:
     bend:
       function: bend_euler
     coupler_ring:
       function: coupler_ring
-    coupler_ring_top: null
     cross_section: xs_sc
-    cross_section_heater: xs_heater_metal
-    cross_section_waveguide_heater: xs_sc_heater_metal
     gap: 0.2
     gap_top: null
-    length_x: 1.0
+    length_x: 0.01
     length_y: 0.01
-    port_orientation: null
     radius: 10.0
     straight:
       function: straight
-    straight_heater:
-      function: straight
-    via_stack:
-      function: via_stack
-      settings:
-        layers:
-        - HEATER
-        - M2
-        - M3
-        size:
-        - 4
-        - 4
-        vias:
-        - null
-        - function: via
-          settings:
-            enclosure: 2
-            layer: VIA1
-        - function: via
-          settings:
-            layer: VIA2
-    via_stack_offset:
-    - 1
-    - 0
   full:
     bend:
       function: bend_euler
@@ -174,7 +131,6 @@ settings:
           start_straight_length: 0.01
           taper_length: 10.0
           width_wide: null
-    coupler_ring_top: null
     cross_section:
       add_pins_function_module: ubcpdk.tech
       add_pins_function_name: add_pins_siepic
@@ -205,13 +161,10 @@ settings:
       start_straight_length: 0.01
       taper_length: 10.0
       width_wide: null
-    cross_section_heater: xs_heater_metal
-    cross_section_waveguide_heater: xs_sc_heater_metal
     gap: 0.2
     gap_top: null
-    length_x: 1.0
-    length_y: 0.2
-    port_orientation: null
+    length_x: 0.01
+    length_y: 0.01
     radius: 10.0
     straight:
       function: straight
@@ -226,27 +179,8 @@ settings:
               - 0
             top: 0.5
         cross_section: xs_sc
-    straight_heater:
-      function: straight
-    via_stack:
-      function: via_stack
-      settings:
-        layers:
-        - - 11
-          - 0
-        - - 12
-          - 0
-        size:
-        - 10
-        - 10
-        vias:
-        - null
-        - null
-    via_stack_offset:
-    - 1
-    - 0
-  function_name: ring_double_heater
+  function_name: ring_double
   info: {}
   info_version: 2
-  module: gdsfactory.components.ring_double_heater
-  name: ring_double_heater_13f0172f
+  module: gdsfactory.components.ring_double
+  name: ring_double_1628c13a

@@ -1,11 +1,22 @@
-name: straight_add_fiber_array_35903362_add_fiber_array
+name: straight_8c41fd35_add_fiber_array_8234b5f5_add_fiber_array
 settings:
   changed: {}
   child:
     changed:
+      bend:
+        function: bend_euler
       component:
         function: straight
         settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
           cross_section: xs_sc
       fanout_length: 0.0
       get_input_label_text_function:
@@ -18,11 +29,34 @@ settings:
       - 10
       - 0
       optical_routing_type: 0
+      straight:
+        function: straight
+        settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
+          cross_section: xs_sc
       with_loopback: false
     child:
-      changed: {}
+      changed:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
       child: null
       default:
+        add_bbox: null
         add_pins: true
         cross_section: xs_sc
         layer: null
@@ -30,6 +64,15 @@ settings:
         npoints: 2
         width: null
       full:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
         add_pins: true
         cross_section: xs_sc
         layer: null
@@ -48,7 +91,7 @@ settings:
         width: 0.5
       info_version: 2
       module: gdsfactory.components.straight
-      name: straight
+      name: straight_8c41fd35
     default:
       component:
         function: straight
@@ -72,9 +115,20 @@ settings:
         settings:
           port_type: optical
     full:
+      bend:
+        function: bend_euler
       component:
         function: straight
         settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
           cross_section: xs_sc
       component_name: null
       cross_section: xs_sc
@@ -95,6 +149,19 @@ settings:
         function: select_ports
         settings:
           port_type: optical
+      straight:
+        function: straight
+        settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
+          cross_section: xs_sc
       with_loopback: false
     function_name: add_fiber_array
     info:
@@ -113,11 +180,20 @@ settings:
       width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_add_fiber_array_35903362
+    name: straight_8c41fd35_add_fiber_array_8234b5f5
   default:
     component:
       function: straight
       settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
         cross_section: xs_sc
     component_name: null
     cross_section: xs_sc
@@ -131,11 +207,33 @@ settings:
     - 10
     - 0
     optical_routing_type: 0
+    straight:
+      function: straight
+      settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
+        cross_section: xs_sc
     with_loopback: false
   full:
     component:
       function: straight
       settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
         cross_section: xs_sc
     component_name: null
     cross_section: xs_sc
@@ -149,6 +247,19 @@ settings:
     - 10
     - 0
     optical_routing_type: 0
+    straight:
+      function: straight
+      settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
+        cross_section: xs_sc
     with_loopback: false
   function_name: add_fiber_array
   info:
@@ -167,4 +278,4 @@ settings:
     width: 0.5
   info_version: 2
   module: ubcpdk.components
-  name: straight_add_fiber_array_35903362_add_fiber_array
+  name: straight_8c41fd35_add_fiber_array_8234b5f5_add_fiber_array

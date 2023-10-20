@@ -3,24 +3,12 @@ settings:
   changed: {}
   child: null
   default:
-    bend:
-      function: bend_euler
-      settings:
-        cross_section: xs_sc
-        npoints: 100
-    cross_section: xs_sc_simple
     gap: 0.2
     length_x: 4.0
     model: ebeam_dc_halfring_straight
     radius: 5.0
     siepic: true
   full:
-    bend:
-      function: bend_euler
-      settings:
-        cross_section: xs_sc
-        npoints: 100
-    cross_section: xs_sc_simple
     gap: 0.2
     length_x: 4.0
     model: ebeam_dc_halfring_straight
