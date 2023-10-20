@@ -3,9 +3,30 @@ settings:
   changed:
     angle: 180
   child: null
-  default: {}
+  default:
+    add_bbox: null
+    add_pins: true
+    angle: 90.0
+    cross_section: xs_sc
+    direction: ccw
+    layer: null
+    npoints: null
+    p: 0.5
+    radius: null
+    width: null
+    with_arc_floorplan: true
   full:
+    add_bbox: null
+    add_pins: true
     angle: 180
+    cross_section: xs_sc
+    direction: ccw
+    layer: null
+    npoints: null
+    p: 0.5
+    radius: null
+    width: null
+    with_arc_floorplan: true
   function_name: bend_euler
   info:
     dy: 0.0
@@ -15,10 +36,10 @@ settings:
     route_info:
       length: 42.817
       n_bend_90: 2.0
-      type: xs_sc_devrec
+      type: xs_sc
       weight: 42.817
-      xs_sc_devrec_length: 42.817
+      xs_sc_length: 42.817
     width: 0.5
   info_version: 2
-  module: ubcpdk.components
+  module: gdsfactory.components.bend_euler
   name: bend_euler_angle180
