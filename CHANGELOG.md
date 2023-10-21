@@ -1,14 +1,15 @@
+# Changelog
+
+<!-- towncrier release notes start -->
+
 ## [2.3.0](https://github.com/gdsfactory/gdsfactory/releases/tag/v2.3.0) - 2023-10-21
 
-No significant changes.
-
+* add bbox (#324) @joamatab
+* update to latest version (#323) @joamatab
 
 ## [2.2.2](https://github.com/gdsfactory/gdsfactory/releases/tag/v2.2.2) - 2023-10-02
 
-No significant changes.
-
-
-# Changelog
+- No significant changes.
 
 ## [Unreleased](https://github.com/gdsfactory/ubc/compare/v2.1.1...main)
 
