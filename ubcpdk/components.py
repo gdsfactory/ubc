@@ -752,7 +752,6 @@ ring_single_heater = partial(
     via_stack=via_stack_heater_mtop,
     cross_section=tech.xs_sc,
     straight=straight,
-    bend=bend,
 )
 
 
@@ -856,7 +855,7 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    c = ring_double(length_y=10)
+    # c = ring_double(length_y=10)
     # c = ring_with_crossing()
     # c = mmi1x2()
     # c = add_fiber_array(mzi)
@@ -870,7 +869,7 @@ if __name__ == "__main__":
     # c = spiral()
     # c = mzi_heater()
     # c = ring_double_heater()
-    # c = ring_single_heater()
+    c = ring_single_heater()
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
     # c = ring_single()

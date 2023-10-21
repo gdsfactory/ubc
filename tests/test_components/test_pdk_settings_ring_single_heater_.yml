@@ -1,8 +1,6 @@
-name: ring_single_heater_4fd094a9
+name: ring_single_heater_60c28d4a
 settings:
   changed:
-    bend:
-      function: bend_euler_sc
     coupler_ring:
       function: coupler_ring
       settings:
@@ -136,7 +134,7 @@ settings:
     - 0
   full:
     bend:
-      function: bend_euler_sc
+      function: bend_euler
     bend_coupler:
       function: bend_euler
     coupler_ring:
@@ -244,4 +242,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single_heater
-  name: ring_single_heater_4fd094a9
+  name: ring_single_heater_60c28d4a
