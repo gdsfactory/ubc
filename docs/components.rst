@@ -17,9 +17,9 @@ Cells summary
    add_pins_bbox_siepic_remove_layers
    add_pins_siepic_metal
    bend
-   bend_euler
+   bend_euler180_sc
+   bend_euler_sc
    bend_s
-   coupler
    coupler_ring
    dbg
    dbr
@@ -33,7 +33,6 @@ Cells summary
    ebeam_crossing4
    ebeam_crossing4_2ports
    ebeam_dc_halfring_straight
-   ebeam_dc_te1550
    ebeam_splitter_adiabatic_swg_te1550
    ebeam_splitter_swg_assist_te1310
    ebeam_splitter_swg_assist_te1550
@@ -59,6 +58,7 @@ Cells summary
    pad_array
    photonic_wirebond_surfacetaper_1310
    photonic_wirebond_surfacetaper_1550
+   ring_double
    ring_double_heater
    ring_single
    ring_single_heater
