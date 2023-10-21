@@ -736,7 +736,6 @@ ring_double = partial(
     gf.components.ring_double,
     coupler_ring=coupler_ring,
     cross_section=tech.xs_sc,
-    bend=bend,
     straight=straight,
 )
 ring_double_heater = partial(
@@ -857,6 +856,7 @@ def add_pads(
 
 
 if __name__ == "__main__":
+    c = ring_double(length_y=10)
     # c = ring_with_crossing()
     # c = mmi1x2()
     # c = add_fiber_array(mzi)
@@ -873,5 +873,5 @@ if __name__ == "__main__":
     # c = ring_single_heater()
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
-    c = ring_single()
+    # c = ring_single()
     c.show(show_ports=False)
