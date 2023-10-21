@@ -1,6 +1,8 @@
-name: ring_double_1628c13a
+name: ring_double_a555db4c
 settings:
   changed:
+    bend:
+      function: bend_euler_sc
     coupler_ring:
       function: coupler_ring
       settings:
@@ -95,7 +97,7 @@ settings:
       function: straight
   full:
     bend:
-      function: bend_euler
+      function: bend_euler_sc
     coupler_ring:
       function: coupler_ring
       settings:
@@ -183,4 +185,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_double
-  name: ring_double_1628c13a
+  name: ring_double_a555db4c

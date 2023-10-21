@@ -1,6 +1,8 @@
-name: ring_single_dut_69406b3c
+name: ring_single_dut_7aeb906a
 settings:
   changed:
+    bend:
+      function: bend_euler_sc
     component:
       function: ebeam_crossing4_2ports
     coupler:
@@ -73,7 +75,7 @@ settings:
     with_component: true
   full:
     bend:
-      function: bend_euler
+      function: bend_euler_sc
     component:
       function: ebeam_crossing4_2ports
     coupler:
@@ -136,4 +138,4 @@ settings:
     component: {}
   info_version: 2
   module: gdsfactory.components.ring_single_dut
-  name: ring_single_dut_69406b3c
+  name: ring_single_dut_7aeb906a

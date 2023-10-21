@@ -1,6 +1,8 @@
-name: ring_single_7305e1f1
+name: ring_single_68329927
 settings:
   changed:
+    bend:
+      function: bend_euler_sc
     coupler_ring:
       function: coupler_ring
       settings:
@@ -98,7 +100,7 @@ settings:
       function: straight
   full:
     bend:
-      function: bend_euler
+      function: bend_euler_sc
     bend_coupler:
       function: bend_euler
     coupler_ring:
@@ -188,4 +190,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_single
-  name: ring_single_7305e1f1
+  name: ring_single_68329927

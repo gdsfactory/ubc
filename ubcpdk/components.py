@@ -29,24 +29,15 @@ from ubcpdk.tech import (
 
 um = 1e-6
 
-# bend_euler = partial(
-#     gf.components.bend_euler,
-#     cross_section="xs_sc_devrec",
-# )
-# bend_euler = partial(
-#     gf.components.bend_euler,
-#     cross_section="xs_sc",
-#     add_bbox=tech.add_bbox_siepic_bot_right,
-# )
-
 
 @gf.cell
-def bend_euler(**kwargs) -> Component:
+def bend_euler_sc(**kwargs) -> Component:
     kwargs.pop("cross_section", None)
     return gf.components.bend_euler(cross_section="xs_sc_devrec", **kwargs)
 
 
-bend_euler180 = partial(bend_euler, angle=180)
+bend_euler180_sc = partial(bend_euler_sc, angle=180)
+bend = bend_euler_sc
 
 straight = partial(
     gf.components.straight,
@@ -401,14 +392,14 @@ def gc_tm1550() -> gf.Component:
 mzi = partial(
     gf.components.mzi,
     splitter=ebeam_y_1550,
-    bend=bend_euler,
+    bend=bend_euler_sc,
     straight=straight,
     cross_section="xs_sc",
 )
 
 mzi_heater = partial(
     gf.components.mzi_phase_shifter,
-    bend=bend_euler,
+    bend=bend_euler_sc,
     straight=straight,
     splitter=ebeam_y_1550,
 )
@@ -641,8 +632,6 @@ def dbr(
     return add_pins_bbox_siepic(c)
 
 
-bend = bend_euler
-
 coupler = partial(
     gf.components.coupler,
     cross_section=tech.xs_sc_simple,
@@ -672,7 +661,7 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     return add_fiber_array(component=component)
 
 
-spiral = partial(gf.components.spiral_external_io)
+spiral = partial(gf.components.spiral_external_io, cross_section=tech.xs_sc_devrec)
 
 ebeam_dc_halfring_straight = coupler_ring
 
@@ -739,7 +728,7 @@ ring_single = partial(
     gf.components.ring_single,
     coupler_ring=coupler_ring,
     cross_section=tech.xs_sc,
-    bend=bend_euler,
+    bend=bend,
     straight=straight,
     pass_cross_section_to_bend=False,
 )
@@ -747,7 +736,7 @@ ring_double = partial(
     gf.components.ring_double,
     coupler_ring=coupler_ring,
     cross_section=tech.xs_sc,
-    bend=bend_euler,
+    bend=bend,
     straight=straight,
 )
 ring_double_heater = partial(
@@ -764,7 +753,7 @@ ring_single_heater = partial(
     via_stack=via_stack_heater_mtop,
     cross_section=tech.xs_sc,
     straight=straight,
-    bend=bend_euler,
+    bend=bend,
 )
 
 
@@ -778,7 +767,7 @@ ring_with_crossing = partial(
     component=ebeam_crossing4_2ports,
     coupler=coupler_ring,
     port_name="o4",
-    bend=bend_euler,
+    bend=bend,
     cross_section="xs_sc",
     straight=straight,
 )
@@ -878,7 +867,8 @@ if __name__ == "__main__":
     # c = ring_double(radius=12, length_x=2, length_y=2)
     # c = bend_euler()
     # c = mzi()
-    c = mzi_heater()
+    c = spiral()
+    # c = mzi_heater()
     # c = ring_double_heater()
     # c = ring_single_heater()
     # c = ebeam_dc_halfring_straight()

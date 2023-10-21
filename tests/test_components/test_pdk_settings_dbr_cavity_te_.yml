@@ -1,4 +1,4 @@
-name: dbr_cavity_add_fiber_array_9ce1999d_add_fiber_array_37b25c57
+name: dbr_cavity_add_fiber_array_2e3389fa_add_fiber_array_37b25c57
 settings:
   changed:
     component:
@@ -7,7 +7,7 @@ settings:
   child:
     changed:
       bend:
-        function: bend_euler
+        function: bend_euler_sc
       component:
         component: dbr_cavity
         settings: {}
@@ -144,7 +144,7 @@ settings:
           port_type: optical
     full:
       bend:
-        function: bend_euler
+        function: bend_euler_sc
       component:
         component: dbr_cavity
         settings: {}
@@ -190,7 +190,7 @@ settings:
         wavelength: 1.55
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: dbr_cavity_add_fiber_array_9ce1999d
+    name: dbr_cavity_add_fiber_array_2e3389fa
   default:
     component:
       function: straight
@@ -270,4 +270,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: dbr_cavity_add_fiber_array_9ce1999d_add_fiber_array_37b25c57
+  name: dbr_cavity_add_fiber_array_2e3389fa_add_fiber_array_37b25c57

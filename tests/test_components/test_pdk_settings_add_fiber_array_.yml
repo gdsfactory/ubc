@@ -1,10 +1,10 @@
-name: straight_8c41fd35_add_fiber_array_8234b5f5_add_fiber_array
+name: straight_8c41fd35_add_fiber_array_3c7e0cfe_add_fiber_array
 settings:
   changed: {}
   child:
     changed:
       bend:
-        function: bend_euler
+        function: bend_euler_sc
       component:
         function: straight
         settings:
@@ -116,7 +116,7 @@ settings:
           port_type: optical
     full:
       bend:
-        function: bend_euler
+        function: bend_euler_sc
       component:
         function: straight
         settings:
@@ -180,7 +180,7 @@ settings:
       width: 0.5
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: straight_8c41fd35_add_fiber_array_8234b5f5
+    name: straight_8c41fd35_add_fiber_array_3c7e0cfe
   default:
     component:
       function: straight
@@ -278,4 +278,4 @@ settings:
     width: 0.5
   info_version: 2
   module: ubcpdk.components
-  name: straight_8c41fd35_add_fiber_array_8234b5f5_add_fiber_array
+  name: straight_8c41fd35_add_fiber_array_3c7e0cfe_add_fiber_array
