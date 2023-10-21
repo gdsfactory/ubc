@@ -8,10 +8,8 @@ settings:
       settings:
         add_pins_function_module: ubcpdk.tech
         add_pins_function_name: add_pins_siepic
-        bbox_layers:
-        - DEVREC
-        bbox_offsets:
-        - 0
+        bbox_layers: null
+        bbox_offsets: null
     length: 1
   full:
     cross_section:
@@ -19,10 +17,8 @@ settings:
       settings:
         add_pins_function_module: ubcpdk.tech
         add_pins_function_name: add_pins_siepic
-        bbox_layers:
-        - DEVREC
-        bbox_offsets:
-        - 0
+        bbox_layers: null
+        bbox_offsets: null
     length: 1
   function_name: straight_one_pin
   info: {}

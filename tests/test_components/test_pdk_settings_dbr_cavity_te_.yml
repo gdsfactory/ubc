@@ -1,4 +1,4 @@
-name: dbr_cavity_add_fiber_array_2f157efc_add_fiber_array_37b25c57
+name: dbr_cavity_add_fiber_array_2e3389fa_add_fiber_array_37b25c57
 settings:
   changed:
     component:
@@ -6,6 +6,8 @@ settings:
       settings: {}
   child:
     changed:
+      bend:
+        function: bend_euler_sc
       component:
         component: dbr_cavity
         settings: {}
@@ -20,6 +22,19 @@ settings:
       - 10
       - 0
       optical_routing_type: 0
+      straight:
+        function: straight
+        settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
+          cross_section: xs_sc
       with_loopback: false
     child:
       changed: {}
@@ -128,6 +143,8 @@ settings:
         settings:
           port_type: optical
     full:
+      bend:
+        function: bend_euler_sc
       component:
         component: dbr_cavity
         settings: {}
@@ -150,6 +167,19 @@ settings:
         function: select_ports
         settings:
           port_type: optical
+      straight:
+        function: straight
+        settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
+          cross_section: xs_sc
       with_loopback: false
     function_name: add_fiber_array
     info:
@@ -160,11 +190,20 @@ settings:
         wavelength: 1.55
     info_version: 2
     module: gdsfactory.routing.add_fiber_array
-    name: dbr_cavity_add_fiber_array_2f157efc
+    name: dbr_cavity_add_fiber_array_2e3389fa
   default:
     component:
       function: straight
       settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
         cross_section: xs_sc
     component_name: null
     cross_section: xs_sc
@@ -178,6 +217,19 @@ settings:
     - 10
     - 0
     optical_routing_type: 0
+    straight:
+      function: straight
+      settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
+        cross_section: xs_sc
     with_loopback: false
   full:
     component:
@@ -195,6 +247,19 @@ settings:
     - 10
     - 0
     optical_routing_type: 0
+    straight:
+      function: straight
+      settings:
+        add_bbox:
+          function: add_padding
+          settings:
+            bottom: 0.5
+            default: 0
+            layers:
+            - - 68
+              - 0
+            top: 0.5
+        cross_section: xs_sc
     with_loopback: false
   function_name: add_fiber_array
   info:
@@ -205,4 +270,4 @@ settings:
       wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: dbr_cavity_add_fiber_array_2f157efc_add_fiber_array_37b25c57
+  name: dbr_cavity_add_fiber_array_2e3389fa_add_fiber_array_37b25c57

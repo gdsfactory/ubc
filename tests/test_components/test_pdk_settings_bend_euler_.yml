@@ -1,9 +1,9 @@
-name: bend_euler_npoints100
+name: bend_euler
 settings:
-  changed:
-    npoints: 100
+  changed: {}
   child: null
   default:
+    add_bbox: null
     add_pins: true
     angle: 90.0
     cross_section: xs_sc
@@ -15,12 +15,13 @@ settings:
     width: null
     with_arc_floorplan: true
   full:
+    add_bbox: null
     add_pins: true
     angle: 90.0
     cross_section: xs_sc
     direction: ccw
     layer: null
-    npoints: 100
+    npoints: null
     p: 0.5
     radius: null
     width: null
@@ -40,4 +41,4 @@ settings:
     width: 0.5
   info_version: 2
   module: gdsfactory.components.bend_euler
-  name: bend_euler_npoints100
+  name: bend_euler

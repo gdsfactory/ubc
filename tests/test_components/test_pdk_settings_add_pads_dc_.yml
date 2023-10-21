@@ -1,4 +1,4 @@
-name: ring_single_heater_171f554b_add_electrical_pads_top_dc_c0e05349
+name: ring_single_heater_4fd094a9_add_electrical_pads_top_dc_c0e05349
 settings:
   changed:
     component: ring_single_heater
@@ -31,6 +31,86 @@ settings:
         - 125
   child:
     changed:
+      bend:
+        function: bend_euler_sc
+      coupler_ring:
+        function: coupler_ring
+        settings:
+          add_bbox:
+            function: add_pins_bbox_siepic
+          cross_section:
+            add_pins_function_module: gdsfactory.add_pins
+            add_pins_function_name: null
+            auto_widen: false
+            auto_widen_minimum_length: 200.0
+            bbox_layers: null
+            bbox_offsets: null
+            components_along_path: []
+            end_straight_length: 0.01
+            gap: 3.0
+            info: {}
+            min_length: 0.01
+            radius: 10.0
+            sections:
+            - hidden: false
+              insets: null
+              layer: WG
+              name: _default
+              offset: 0.0
+              port_names:
+              - o1
+              - o2
+              port_types:
+              - optical
+              - optical
+              simplify: null
+              width: 0.5
+            start_straight_length: 0.01
+            taper_length: 10.0
+            width_wide: null
+      cross_section:
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
+        auto_widen: false
+        auto_widen_minimum_length: 200.0
+        bbox_layers: null
+        bbox_offsets: null
+        components_along_path: []
+        end_straight_length: 0.01
+        gap: 3.0
+        info: {}
+        min_length: 0.01
+        radius: 10.0
+        sections:
+        - hidden: false
+          insets: null
+          layer: WG
+          name: _default
+          offset: 0.0
+          port_names:
+          - o1
+          - o2
+          port_types:
+          - optical
+          - optical
+          simplify: null
+          width: 0.5
+        start_straight_length: 0.01
+        taper_length: 10.0
+        width_wide: null
+      straight:
+        function: straight
+        settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
+          cross_section: xs_sc
       via_stack:
         function: via_stack
         settings:
@@ -49,6 +129,8 @@ settings:
     default:
       bend:
         function: bend_euler
+      bend_coupler:
+        function: bend_euler
       coupler_ring:
         function: coupler_ring
       cross_section: xs_sc
@@ -58,6 +140,8 @@ settings:
       length_y: 0.6
       port_orientation: null
       radius: 10.0
+      straight:
+        function: straight
       via_stack:
         function: via_stack
         settings:
@@ -82,16 +166,93 @@ settings:
       - 0
     full:
       bend:
+        function: bend_euler_sc
+      bend_coupler:
         function: bend_euler
       coupler_ring:
         function: coupler_ring
-      cross_section: xs_sc
+        settings:
+          add_bbox:
+            function: add_pins_bbox_siepic
+          cross_section:
+            add_pins_function_module: gdsfactory.add_pins
+            add_pins_function_name: null
+            auto_widen: false
+            auto_widen_minimum_length: 200.0
+            bbox_layers: null
+            bbox_offsets: null
+            components_along_path: []
+            end_straight_length: 0.01
+            gap: 3.0
+            info: {}
+            min_length: 0.01
+            radius: 10.0
+            sections:
+            - hidden: false
+              insets: null
+              layer: WG
+              name: _default
+              offset: 0.0
+              port_names:
+              - o1
+              - o2
+              port_types:
+              - optical
+              - optical
+              simplify: null
+              width: 0.5
+            start_straight_length: 0.01
+            taper_length: 10.0
+            width_wide: null
+      cross_section:
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
+        auto_widen: false
+        auto_widen_minimum_length: 200.0
+        bbox_layers: null
+        bbox_offsets: null
+        components_along_path: []
+        end_straight_length: 0.01
+        gap: 3.0
+        info: {}
+        min_length: 0.01
+        radius: 10.0
+        sections:
+        - hidden: false
+          insets: null
+          layer: WG
+          name: _default
+          offset: 0.0
+          port_names:
+          - o1
+          - o2
+          port_types:
+          - optical
+          - optical
+          simplify: null
+          width: 0.5
+        start_straight_length: 0.01
+        taper_length: 10.0
+        width_wide: null
       cross_section_waveguide_heater: xs_sc_heater_metal
       gap: 0.2
       length_x: 4.0
       length_y: 0.6
       port_orientation: null
       radius: 10.0
+      straight:
+        function: straight
+        settings:
+          add_bbox:
+            function: add_padding
+            settings:
+              bottom: 0.5
+              default: 0
+              layers:
+              - - 68
+                - 0
+              top: 0.5
+          cross_section: xs_sc
       via_stack:
         function: via_stack
         settings:
@@ -113,7 +274,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.components.ring_single_heater
-    name: ring_single_heater_171f554b
+    name: ring_single_heater_4fd094a9
   default:
     component:
       function: straight
@@ -182,4 +343,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.routing.add_electrical_pads_top_dc
-  name: ring_single_heater_171f554b_add_electrical_pads_top_dc_c0e05349
+  name: ring_single_heater_4fd094a9_add_electrical_pads_top_dc_c0e05349

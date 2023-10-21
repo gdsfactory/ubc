@@ -12,7 +12,7 @@ from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 from gdsfactory.cross_section import get_cross_sections
 from gdsfactory.technology import LayerLevel, LayerStack
-from gdsfactory.typings import Callable, Layer, LayerSpec, LayerSpecs, Optional
+from gdsfactory.typings import Callable, Layer, LayerSpec, Optional
 from pydantic import BaseModel
 
 from ubcpdk.config import PATH
@@ -78,29 +78,14 @@ def add_labels_to_ports_optical(
     return component
 
 
-def add_bbox_siepic(
-    component: Component,
-    bbox_layer: LayerSpec = "DEVREC",
-    remove_layers: LayerSpecs | None = None,
-) -> Component:
-    """Add bounding box device recognition layer.
-
-    Args:
-        component: to add bbox.
-        bbox_layer: bounding box.
-        remove_layers: remove other layers.
-    """
-    from gdsfactory.pdk import get_layer
-
-    bbox_layer = get_layer(bbox_layer)
-    remove_layers = remove_layers or []
-    remove_layers = list(remove_layers) + [bbox_layer]
-    remove_layers = [get_layer(layer) for layer in remove_layers]
-    component = component.remove_layers(layers=remove_layers, recursive=True)
-
-    if bbox_layer:
-        component.add_padding(default=0, layers=(bbox_layer,))
-    return component
+margin = 0.5
+add_bbox_siepic = partial(gf.add_padding, layers=(LAYER.DEVREC,), default=0)
+add_bbox_siepic_top_bot = partial(
+    gf.add_padding, layers=(LAYER.DEVREC,), default=0, top=margin, bottom=margin
+)
+add_bbox_siepic_bot_right = partial(
+    gf.add_padding, layers=(LAYER.DEVREC,), default=0, right=margin, bottom=margin
+)
 
 
 def add_pins_siepic(
@@ -298,8 +283,10 @@ strip_wg_simulation_info = dict(
     properties=dict(annotate=False),
 )
 
-cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
-cladding_offsets_optical_siepic = (0,)  # for SiEPIC verification
+# cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
+# cladding_offsets_optical_siepic = (0.5,)  # for SiEPIC verification
+cladding_layers_optical_siepic = None
+cladding_offsets_optical_siepic = None
 
 
 ############################
@@ -349,9 +336,7 @@ metal_routing = partial(
     add_pins_function_module="ubcpdk.tech",
 )
 heater_metal = partial(
-    metal_routing,
-    width=4,
-    layer=LAYER.M1_HEATER,
+    metal_routing, width=4, layer=LAYER.M1_HEATER, add_pins_function_name=None
 )
 
 ############################
@@ -365,6 +350,7 @@ xs_metal_routing = metal_routing()
 xs_heater_metal = heater_metal()
 xs_sc_unclad = strip_unclad()
 xs_sc_simple = strip_simple()
+xs_sc_devrec = strip(cladding_layers=("DEVREC",), cladding_offsets=(0.5,))
 
 cross_sections = get_cross_sections(sys.modules[__name__])
 

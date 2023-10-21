@@ -5,7 +5,6 @@ import gdsfactory as gf
 from gdsfactory import Component
 from gdsfactory.typings import (
     Callable,
-    ComponentFactory,
     ComponentReference,
     ComponentSpec,
     CrossSectionSpec,
@@ -31,11 +30,20 @@ from ubcpdk.tech import (
 um = 1e-6
 
 
+@gf.cell
+def bend_euler_sc(**kwargs) -> Component:
+    kwargs.pop("cross_section", None)
+    return gf.components.bend_euler(cross_section="xs_sc_devrec", **kwargs)
+
+
+bend_euler180_sc = partial(bend_euler_sc, angle=180)
+bend = bend_euler_sc
+
 straight = partial(
     gf.components.straight,
     cross_section="xs_sc",
+    add_bbox=tech.add_bbox_siepic_top_bot,
 )
-bend_euler = partial(gf.components.bend_euler, cross_section="xs_sc", npoints=100)
 bend_s = partial(
     gf.components.bend_s,
     cross_section="xs_sc",
@@ -384,13 +392,15 @@ def gc_tm1550() -> gf.Component:
 mzi = partial(
     gf.components.mzi,
     splitter=ebeam_y_1550,
-    bend=bend_euler,
+    bend=bend_euler_sc,
     straight=straight,
     cross_section="xs_sc",
 )
 
 mzi_heater = partial(
     gf.components.mzi_phase_shifter,
+    bend=bend_euler_sc,
+    straight=straight,
     splitter=ebeam_y_1550,
 )
 
@@ -399,13 +409,6 @@ via_stack_heater_mtop = partial(
     size=(10, 10),
     layers=(LAYER.M1_HEATER, LAYER.M2_ROUTER),
     vias=(None, None),
-)
-ring_double_heater = partial(
-    gf.components.ring_double_heater, via_stack=via_stack_heater_mtop
-)
-ring_single_heater = partial(
-    gf.components.ring_single_heater,
-    via_stack=via_stack_heater_mtop,
 )
 
 
@@ -490,6 +493,7 @@ def add_fiber_array(
     grating_coupler: ComponentSpec = gc_te1550,
     cross_section: CrossSectionSpec = "xs_sc",
     layer_label: LayerSpec = LAYER.TEXT,
+    straight: ComponentSpec = straight,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
@@ -513,6 +517,8 @@ def add_fiber_array(
     c = gf.Component()
 
     component = gf.routing.add_fiber_array(
+        straight=straight,
+        bend=bend,
         component=component,
         component_name=component_name,
         grating_coupler=grating_coupler,
@@ -626,7 +632,6 @@ def dbr(
     return add_pins_bbox_siepic(c)
 
 
-bend = gf.components.bend_euler
 coupler = partial(
     gf.components.coupler,
     cross_section=tech.xs_sc_simple,
@@ -634,8 +639,9 @@ coupler = partial(
 )
 coupler_ring = partial(
     gf.components.coupler_ring,
-    cross_section=tech.xs_sc_unclad,
-    decorator=tech.add_pins_bbox_siepic,
+    cross_section=tech.xs_sc_simple,
+    add_bbox=tech.add_pins_bbox_siepic,
+    # decorator=tech.add_pins_bbox_siepic,
 )
 mmi1x2 = partial(
     gf.components.mmi1x2,
@@ -655,7 +661,9 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     return add_fiber_array(component=component)
 
 
-spiral = partial(gf.components.spiral_external_io)
+spiral = partial(gf.components.spiral_external_io, cross_section=tech.xs_sc_devrec)
+
+ebeam_dc_halfring_straight = coupler_ring
 
 
 @gf.cell
@@ -663,10 +671,8 @@ def ebeam_dc_halfring_straight(
     gap: float = 0.2,
     radius: float = 5.0,
     length_x: float = 4.0,
-    cross_section="xs_sc_simple",
     siepic: bool = True,
     model: str = "ebeam_dc_halfring_straight",
-    bend: ComponentFactory = bend_euler,
     **kwargs,
 ) -> gf.Component:
     r"""Return a ring coupler.
@@ -690,21 +696,14 @@ def ebeam_dc_halfring_straight(
 
 
     """
-    x = gf.get_cross_section(cross_section=cross_section, **kwargs)
 
     c = gf.Component()
-    coupler_ring = c << gf.components.coupler_ring(
-        gap=gap,
-        radius=radius,
-        length_x=length_x,
-        bend=bend,
-        cross_section=x,
-        decorator=add_pins_bbox_siepic,
-    )
+    ref = c << coupler_ring(gap=gap, radius=radius, length_x=length_x, **kwargs)
     thickness = LAYER_STACK.get_layer_to_thickness()
-    c.add_ports(coupler_ring.ports)
+    c.add_ports(ref.ports)
 
     if siepic:
+        x = tech.xs_sc_simple
         c.info.update(
             layout_model_port_pairs=(
                 ("o1", "port 1"),
@@ -727,8 +726,34 @@ def ebeam_dc_halfring_straight(
 
 ring_single = partial(
     gf.components.ring_single,
+    coupler_ring=coupler_ring,
+    cross_section=tech.xs_sc,
     bend=bend,
-    coupler_ring=ebeam_dc_halfring_straight,
+    straight=straight,
+    pass_cross_section_to_bend=False,
+)
+ring_double = partial(
+    gf.components.ring_double,
+    coupler_ring=coupler_ring,
+    cross_section=tech.xs_sc,
+    bend=bend,
+    straight=straight,
+)
+ring_double_heater = partial(
+    gf.components.ring_double_heater,
+    coupler_ring=coupler_ring,
+    via_stack=via_stack_heater_mtop,
+    cross_section=tech.xs_sc,
+    straight=straight,
+    length_y=0.2,
+)
+ring_single_heater = partial(
+    gf.components.ring_single_heater,
+    coupler_ring=coupler_ring,
+    via_stack=via_stack_heater_mtop,
+    cross_section=tech.xs_sc,
+    straight=straight,
+    bend=bend,
 )
 
 
@@ -740,10 +765,11 @@ spiral = partial(gf.components.spiral_external_io)
 ring_with_crossing = partial(
     gf.components.ring_single_dut,
     component=ebeam_crossing4_2ports,
-    coupler=ebeam_dc_halfring_straight,
+    coupler=coupler_ring,
     port_name="o4",
-    bend=bend_euler,
+    bend=bend,
     cross_section="xs_sc",
+    straight=straight,
 )
 
 
@@ -831,12 +857,21 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    c = ring_with_crossing()
+    # c = ring_with_crossing()
     # c = mmi1x2()
     # c = add_fiber_array(mzi)
     # c = coupler_ring()
     # c = dbr_cavity_te()
     # c = dbr_cavity()
-    # c = ring_single()
+    # c = ring_single(radius=12)
+    # c = ring_double(radius=12, length_x=2, length_y=2)
+    # c = bend_euler()
+    # c = mzi()
+    # c = spiral()
+    # c = mzi_heater()
+    # c = ring_double_heater()
+    # c = ring_single_heater()
     # c = ebeam_dc_halfring_straight()
-    c.show(show_ports=True)
+    # c = ring_with_crossing()
+    c = ring_single()
+    c.show(show_ports=False)
