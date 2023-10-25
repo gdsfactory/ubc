@@ -15,7 +15,7 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory[cad]==7.8.10",
+  "gdsfactory[cad]==7.8.11",
   "gplugins[tidy3d,sax,schematic]>=0.8.4,<0.9.0"
 ]
 description = "ubcpdk pdk"
