@@ -1,4 +1,4 @@
-name: mirror_cd7472ae_gc_te1310_broadband
+name: gc_te1310_broadband
 settings:
   changed: {}
   child:
@@ -43,4 +43,4 @@ settings:
     wavelength: 1.31
   info_version: 2
   module: ubcpdk.components
-  name: mirror_cd7472ae_gc_te1310_broadband
+  name: gc_te1310_broadband

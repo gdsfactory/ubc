@@ -16,7 +16,7 @@ length_x = 0.1
 
 
 @gf.cell
-def EBeam_JoaquinMatres_1() -> pathlib.Path:
+def EBeam_YourUserName_ring_double10() -> pathlib.Path:
     gaps = [100, 150, 200]
     radiuses = [10]
 
@@ -34,7 +34,7 @@ def EBeam_JoaquinMatres_1() -> pathlib.Path:
 
 
 @gf.cell
-def EBeam_JoaquinMatres_2() -> pathlib.Path:
+def EBeam_YourUserName_ring_double30() -> pathlib.Path:
     gaps = [150, 200, 250]
     radiuses = [30]
     rings = [
@@ -52,7 +52,7 @@ def EBeam_JoaquinMatres_2() -> pathlib.Path:
 
 
 @gf.cell
-def EBeam_JoaquinMatres_3() -> pathlib.Path:
+def EBeam_YourUserName_ring_double3() -> pathlib.Path:
     gaps = [100, 150]
     radiuses = [3]
     rings = [
@@ -70,5 +70,6 @@ def EBeam_JoaquinMatres_3() -> pathlib.Path:
 
 
 if __name__ == "__main__":
-    c = EBeam_JoaquinMatres_3()
+    c = EBeam_YourUserName_ring_double3()
+    c.write_gds("extra/EBeam_YourUserName_ring_double3.gds")
     c.show()

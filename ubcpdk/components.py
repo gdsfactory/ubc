@@ -440,7 +440,7 @@ def get_input_label_text(
     name = component_name or port.parent.metadata_child.get("name")
     name = clean_name(name)
     # return f"opt_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}-{gc_index}-{port.name}"
-    return f"opt_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}"
+    return f"opt_in_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}"
 
 
 def get_input_labels(
@@ -481,7 +481,7 @@ def get_input_labels(
     return [label]
 
 
-@gf.cell
+@gf.cell_with_child
 def add_fiber_array(
     component: ComponentSpec = straight,
     component_name: Optional[str] = None,

@@ -1,4 +1,4 @@
-name: ring_double_heater_13f0172f
+name: ring_double_heater_3978285c
 settings:
   changed:
     coupler_ring:
@@ -25,6 +25,7 @@ settings:
             layer: WG
             name: _default
             offset: 0.0
+            offset_function: null
             port_names:
             - o1
             - o2
@@ -33,6 +34,7 @@ settings:
             - optical
             simplify: null
             width: 0.5
+            width_function: null
           start_straight_length: 0.01
           taper_length: 10.0
           width_wide: null
@@ -55,6 +57,7 @@ settings:
         layer: WG
         name: _default
         offset: 0.0
+        offset_function: null
         port_names:
         - o1
         - o2
@@ -63,6 +66,7 @@ settings:
         - optical
         simplify: null
         width: 0.5
+        width_function: null
       start_straight_length: 0.01
       taper_length: 10.0
       width_wide: null
@@ -120,7 +124,7 @@ settings:
         layers:
         - HEATER
         - M2
-        - M3
+        - MTOP
         size:
         - 4
         - 4
@@ -163,6 +167,7 @@ settings:
             layer: WG
             name: _default
             offset: 0.0
+            offset_function: null
             port_names:
             - o1
             - o2
@@ -171,6 +176,7 @@ settings:
             - optical
             simplify: null
             width: 0.5
+            width_function: null
           start_straight_length: 0.01
           taper_length: 10.0
           width_wide: null
@@ -194,6 +200,7 @@ settings:
         layer: WG
         name: _default
         offset: 0.0
+        offset_function: null
         port_names:
         - o1
         - o2
@@ -202,6 +209,7 @@ settings:
         - optical
         simplify: null
         width: 0.5
+        width_function: null
       start_straight_length: 0.01
       taper_length: 10.0
       width_wide: null
@@ -249,4 +257,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.components.ring_double_heater
-  name: ring_double_heater_13f0172f
+  name: ring_double_heater_3978285c

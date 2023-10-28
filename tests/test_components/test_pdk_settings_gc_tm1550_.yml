@@ -1,4 +1,4 @@
-name: mirror_355ecc08_gc_tm1550
+name: gc_tm1550
 settings:
   changed: {}
   child:
@@ -43,4 +43,4 @@ settings:
     wavelength: 1.55
   info_version: 2
   module: ubcpdk.components
-  name: mirror_355ecc08_gc_tm1550
+  name: gc_tm1550
