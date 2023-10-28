@@ -15,7 +15,7 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory[cad]==7.8.10",
+  "gdsfactory[cad]==7.8.12",
   "gplugins[tidy3d,sax,schematic]>=0.8.4,<0.9.0"
 ]
 description = "ubcpdk pdk"
@@ -159,11 +159,11 @@ regex = '''
 [tool.towncrier]
 directory = ".changelog.d"
 filename = "CHANGELOG.md"
-issue_format = "[#{issue}](https://github.com/gdsfactory/gdsfactory/issues/{issue})"
+issue_format = "[#{issue}](https://github.com/gdsfactory/ubc/issues/{issue})"
 package = "gdsfactory"
 start_string = "<!-- towncrier release notes start -->\n"
 template = ".changelog.d/changelog_template.jinja"
-title_format = "## [{version}](https://github.com/gdsfactory/gdsfactory/releases/tag/v{version}) - {project_date}"
+title_format = "## [{version}](https://github.com/gdsfactory/ubc/releases/tag/v{version}) - {project_date}"
 underlines = ["", "", ""]
 
 [[tool.towncrier.type]]

@@ -1,4 +1,4 @@
-name: mirror_b611a4d8_gc_te1310
+name: gc_te1310
 settings:
   changed: {}
   child:
@@ -43,4 +43,4 @@ settings:
     wavelength: 1.31
   info_version: 2
   module: ubcpdk.components
-  name: mirror_b611a4d8_gc_te1310
+  name: gc_te1310

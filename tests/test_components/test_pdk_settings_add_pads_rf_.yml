@@ -1,4 +1,4 @@
-name: ring_single_heater_60c28d4a_add_electrical_pads_top_c0e05349
+name: ring_single_heater_e488dd8d_add_electrical_pads_top_c0e05349
 settings:
   changed:
     component: ring_single_heater
@@ -55,6 +55,7 @@ settings:
               layer: WG
               name: _default
               offset: 0.0
+              offset_function: null
               port_names:
               - o1
               - o2
@@ -63,6 +64,7 @@ settings:
               - optical
               simplify: null
               width: 0.5
+              width_function: null
             start_straight_length: 0.01
             taper_length: 10.0
             width_wide: null
@@ -85,6 +87,7 @@ settings:
           layer: WG
           name: _default
           offset: 0.0
+          offset_function: null
           port_names:
           - o1
           - o2
@@ -93,6 +96,7 @@ settings:
           - optical
           simplify: null
           width: 0.5
+          width_function: null
         start_straight_length: 0.01
         taper_length: 10.0
         width_wide: null
@@ -146,7 +150,7 @@ settings:
           layers:
           - HEATER
           - M2
-          - M3
+          - MTOP
           size:
           - 4
           - 4
@@ -191,6 +195,7 @@ settings:
               layer: WG
               name: _default
               offset: 0.0
+              offset_function: null
               port_names:
               - o1
               - o2
@@ -199,6 +204,7 @@ settings:
               - optical
               simplify: null
               width: 0.5
+              width_function: null
             start_straight_length: 0.01
             taper_length: 10.0
             width_wide: null
@@ -221,6 +227,7 @@ settings:
           layer: WG
           name: _default
           offset: 0.0
+          offset_function: null
           port_names:
           - o1
           - o2
@@ -229,6 +236,7 @@ settings:
           - optical
           simplify: null
           width: 0.5
+          width_function: null
         start_straight_length: 0.01
         taper_length: 10.0
         width_wide: null
@@ -272,7 +280,7 @@ settings:
     info: {}
     info_version: 2
     module: gdsfactory.components.ring_single_heater
-    name: ring_single_heater_60c28d4a
+    name: ring_single_heater_e488dd8d
   default:
     component:
       function: straight
@@ -334,4 +342,4 @@ settings:
   info: {}
   info_version: 2
   module: gdsfactory.routing.add_electrical_pads_top
-  name: ring_single_heater_60c28d4a_add_electrical_pads_top_c0e05349
+  name: ring_single_heater_e488dd8d_add_electrical_pads_top_c0e05349

@@ -13,6 +13,7 @@ ubcpdk/tests/test_components.gds/gds_diff/
 
 # C extensions
 *.so
+*.json
 *.sqlite3
 *.png
 *.db
