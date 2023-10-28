@@ -4,18 +4,16 @@
 
 ## [2.3.3](https://github.com/gdsfactory/ubc/releases/tag/v2.3.3) - 2023-10-28
 
-No significant changes.
-
+- update to latest gdsfactory and fix labels [#327](https://github.com/gdsfactory/ubc/pull/327)
+- **Full Changelog**: https://github.com/gdsfactory/ubc/compare/v2.3.2...v2.3.3
 
 ## [2.3.2](https://github.com/gdsfactory/gdsfactory/releases/tag/v2.3.2) - 2023-10-21
 
-No significant changes.
-
+- fix ring_heater_single
 
 ## [2.3.1](https://github.com/gdsfactory/gdsfactory/releases/tag/v2.3.1) - 2023-10-21
 
-No significant changes.
-
+- No significant changes.
 
 ## [2.3.0](https://github.com/gdsfactory/gdsfactory/releases/tag/v2.3.0) - 2023-10-21
 
