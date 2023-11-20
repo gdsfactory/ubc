@@ -1,15 +1,40 @@
-name: coupler_fee1ceb0
+name: coupler_0482171d
 settings:
   changed:
     cross_section:
-      function: cross_section
-      settings:
-        add_pins_function_module: ubcpdk.tech
-        add_pins_function_name: add_pins_siepic
-        cladding_layers:
-        - DEVREC
-        cladding_offsets:
-        - 0
+      add_pins_function_module: gdsfactory.add_pins
+      add_pins_function_name: null
+      auto_widen: false
+      auto_widen_minimum_length: 200.0
+      bbox_layers: null
+      bbox_offsets: null
+      components_along_path: []
+      end_straight_length: 0.01
+      gap: 3.0
+      info: {}
+      min_length: 0.01
+      radius: 10.0
+      sections:
+      - hidden: false
+        insets: null
+        layer: WG
+        name: _default
+        offset: 0.0
+        offset_function: null
+        port_names:
+        - o1
+        - o2
+        port_types:
+        - optical
+        - optical
+        simplify: null
+        width: 0.5
+        width_function: null
+      start_straight_length: 0.01
+      taper_length: 10.0
+      width_wide: null
+    decorator:
+      function: add_pins_bbox_siepic
   child: null
   default:
     coupler_straight:
@@ -27,14 +52,39 @@ settings:
     coupler_symmetric:
       function: coupler_symmetric
     cross_section:
-      function: cross_section
-      settings:
-        add_pins_function_module: ubcpdk.tech
-        add_pins_function_name: add_pins_siepic
-        cladding_layers:
-        - DEVREC
-        cladding_offsets:
-        - 0
+      add_pins_function_module: gdsfactory.add_pins
+      add_pins_function_name: null
+      auto_widen: false
+      auto_widen_minimum_length: 200.0
+      bbox_layers: null
+      bbox_offsets: null
+      components_along_path: []
+      end_straight_length: 0.01
+      gap: 3.0
+      info: {}
+      min_length: 0.01
+      radius: 10.0
+      sections:
+      - hidden: false
+        insets: null
+        layer: WG
+        name: _default
+        offset: 0.0
+        offset_function: null
+        port_names:
+        - o1
+        - o2
+        port_types:
+        - optical
+        - optical
+        simplify: null
+        width: 0.5
+        width_function: null
+      start_straight_length: 0.01
+      taper_length: 10.0
+      width_wide: null
+    decorator:
+      function: add_pins_bbox_siepic
     dx: 10.0
     dy: 4.0
     gap: 0.236
@@ -45,4 +95,4 @@ settings:
     min_bend_radius: 11.857
   info_version: 2
   module: gdsfactory.components.coupler
-  name: coupler_fee1ceb0
+  name: coupler_0482171d

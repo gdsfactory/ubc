@@ -1,38 +1,7 @@
 name: gc_te1550_broadband
 settings:
   changed: {}
-  child:
-    changed:
-      component:
-        component: ebeam_gc_te1550_broadband
-        settings: {}
-    child: {}
-    default:
-      p1:
-      - 0
-      - 1
-      p2:
-      - 0
-      - 0
-    full:
-      component:
-        component: ebeam_gc_te1550_broadband
-        settings: {}
-      p1:
-      - 0
-      - 1
-      p2:
-      - 0
-      - 0
-    function_name: mirror
-    info:
-      library: Design kits/ebeam
-      model: ebeam_gc_te1550_broadband
-      polarization: te
-      wavelength: 1.55
-    info_version: 2
-    module: gdsfactory.functions
-    name: mirror_a38c0f84
+  child: null
   default: {}
   full: {}
   function_name: gc_te1550_broadband
