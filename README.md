@@ -37,6 +37,7 @@ For developers you need to `git clone` the GitHub repository, fork it, git add, 
 ```
 git clone https://github.com/gdsfactory/ubc.git
 cd ubc
+conda install -c conda-forge gdstk -y
 pip install -e . pre-commit
 pre-commit install
 python install_tech.py
