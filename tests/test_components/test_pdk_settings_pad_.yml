@@ -1,11 +1,18 @@
-name: pad_f2c8bc83
+name: pad_4a34b26e
 settings:
   changed:
     bbox_layers:
     - - 13
       - 0
     bbox_offsets:
-    - 1.8
+    - -1.8
+    decorator:
+      function: add_pins_siepic
+      settings:
+        layer_pin:
+        - 1
+        - 11
+        port_type: placement
     layer:
     - 12
     - 0
@@ -27,7 +34,14 @@ settings:
     - - 13
       - 0
     bbox_offsets:
-    - 1.8
+    - -1.8
+    decorator:
+      function: add_pins_siepic
+      settings:
+        layer_pin:
+        - 1
+        - 11
+        port_type: placement
     layer:
     - 12
     - 0
@@ -46,4 +60,4 @@ settings:
     - 75.0
   info_version: 2
   module: gdsfactory.components.pad
-  name: pad_f2c8bc83
+  name: pad_4a34b26e

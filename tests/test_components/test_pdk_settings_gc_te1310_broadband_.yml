@@ -1,38 +1,7 @@
 name: gc_te1310_broadband
 settings:
   changed: {}
-  child:
-    changed:
-      component:
-        component: ebeam_gc_te1310_broadband
-        settings: {}
-    child: {}
-    default:
-      p1:
-      - 0
-      - 1
-      p2:
-      - 0
-      - 0
-    full:
-      component:
-        component: ebeam_gc_te1310_broadband
-        settings: {}
-      p1:
-      - 0
-      - 1
-      p2:
-      - 0
-      - 0
-    function_name: mirror
-    info:
-      library: Design kits/ebeam
-      model: ebeam_gc_te1310_broadband
-      polarization: te
-      wavelength: 1.31
-    info_version: 2
-    module: gdsfactory.functions
-    name: mirror_cd7472ae
+  child: null
   default: {}
   full: {}
   function_name: gc_te1310_broadband
