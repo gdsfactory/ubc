@@ -29,15 +29,15 @@ def layout_check(
     ly = pya.Layout()
 
     # load SiEPIC technology
+    tech = kdb.Technology()
+    tech.load(str(klayout_tech_path))
+    tech.create_technology("UBCPDK")
     ly.TECHNOLOGY = get_technology_by_name("UBCPDK")
 
     ly.read(str(gdspath))
     if len(ly.top_cells()) != 1:
         raise ValueError("Layout can only have one top cell")
     topcell = ly.top_cell()
-
-    tech = kdb.Technology()
-    tech.load(str(klayout_tech_path))
 
     # perform verification
     file_lyrdb = str(gdspath) + ".lyrdb"
