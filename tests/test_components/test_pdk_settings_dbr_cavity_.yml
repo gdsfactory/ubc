@@ -8,8 +8,8 @@ settings:
     module: gdsfactory.components.coupler
     settings:
       cross_section:
-        add_pins_function_module: gdsfactory.add_pins
-        add_pins_function_name: null
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
         auto_widen: false
         auto_widen_minimum_length: 200.0
         bbox_layers: null
@@ -20,7 +20,7 @@ settings:
         info: {}
         min_length: 0.01
         radius: 10.0
-        radius_min: null
+        radius_min: 5.0
         sections:
         - hidden: false
           insets: null
@@ -40,7 +40,7 @@ settings:
         start_straight_length: 0.01
         taper_length: 10.0
         width_wide: null
-      decorator:
+      post_process:
         function: add_pins_bbox_siepic
   dbr:
     function: dbr

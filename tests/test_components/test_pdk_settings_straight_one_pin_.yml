@@ -11,4 +11,5 @@ settings:
       add_pins_function_name: add_pins_siepic
       bbox_layers: null
       bbox_offsets: null
+      radius_min: 5
   length: 1

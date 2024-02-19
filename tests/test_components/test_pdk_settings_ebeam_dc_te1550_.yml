@@ -3,19 +3,19 @@ info:
   length: 10.186
   min_bend_radius: 11.857
 module: gdsfactory.components.coupler
-name: coupler_fcfc891f
+name: coupler_17b65cbd
 settings:
   coupler_straight:
     function: coupler_straight
   coupler_symmetric:
     function: coupler_symmetric
   cross_section: xs_sc
-  decorator:
-    function: add_pins_bbox_siepic
-    module: ubcpdk.tech
-    settings:
-      remove_layers: true
   dx: 10.0
   dy: 4.0
   gap: 0.236
   length: 20.0
+  post_process:
+    function: add_pins_bbox_siepic
+    module: ubcpdk.tech
+    settings:
+      remove_layers: true

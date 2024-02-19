@@ -1,7 +1,7 @@
 function: ring_double_heater
 info: {}
 module: gdsfactory.components.ring_double_heater
-name: ring_double_heater_38b8e07a
+name: ring_double_heater_ef2a39cb
 settings:
   bend:
     function: bend_euler
@@ -12,8 +12,8 @@ settings:
       add_bbox:
         function: add_pins_bbox_siepic
       cross_section:
-        add_pins_function_module: gdsfactory.add_pins
-        add_pins_function_name: null
+        add_pins_function_module: ubcpdk.tech
+        add_pins_function_name: add_pins_siepic
         auto_widen: false
         auto_widen_minimum_length: 200.0
         bbox_layers: null
@@ -24,7 +24,7 @@ settings:
         info: {}
         min_length: 0.01
         radius: 10.0
-        radius_min: null
+        radius_min: 5.0
         sections:
         - hidden: false
           insets: null
@@ -58,7 +58,7 @@ settings:
     info: {}
     min_length: 0.01
     radius: 10.0
-    radius_min: null
+    radius_min: 5.0
     sections:
     - hidden: false
       insets: null

@@ -501,6 +501,7 @@ def add_fiber_array(
     cross_section: CrossSectionSpec = "xs_sc",
     layer_label: LayerSpec = LAYER.TEXT,
     straight: ComponentSpec = straight,
+    post_process: Callable | None = None,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
@@ -519,6 +520,8 @@ def add_fiber_array(
         grating_coupler: grating coupler instance, function or list of functions.
         cross_section: spec.
         layer_label: for label.
+        straight: straight component.
+        post_process: function to post process the component.
 
     """
     c = gf.Component()
@@ -543,6 +546,8 @@ def add_fiber_array(
     ref.rotate(-90)
     c.add_ports(ref.ports)
     c.copy_child_info(component)
+    if post_process:
+        c = post_process(c)
     return c
 
 
@@ -850,6 +855,11 @@ def add_pads(
 
 
 if __name__ == "__main__":
+    import ubcpdk.components as uc
+
+    c = uc.ring_single_heater()
+    c = uc.add_fiber_array_pads_rf(c)
+
     # c = ring_double(length_y=10)
     # c = ring_with_crossing()
     # c = mmi1x2()
@@ -865,7 +875,7 @@ if __name__ == "__main__":
     # c = mzi_heater()
     # c = ring_double_heater()
     # c = ring_single_heater()
-    c = gc_te1310()
+    # c = gc_te1310()
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
     # c = ring_single()

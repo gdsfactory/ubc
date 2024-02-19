@@ -3,15 +3,15 @@ info:
   length: 10.186
   min_bend_radius: 11.857
 module: gdsfactory.components.coupler
-name: coupler_3aefe116
+name: coupler_4abc60df
 settings:
   coupler_straight:
     function: coupler_straight
   coupler_symmetric:
     function: coupler_symmetric
   cross_section:
-    add_pins_function_module: gdsfactory.add_pins
-    add_pins_function_name: null
+    add_pins_function_module: ubcpdk.tech
+    add_pins_function_name: add_pins_siepic
     auto_widen: false
     auto_widen_minimum_length: 200.0
     bbox_layers: null
@@ -22,7 +22,7 @@ settings:
     info: {}
     min_length: 0.01
     radius: 10.0
-    radius_min: null
+    radius_min: 5.0
     sections:
     - hidden: false
       insets: null
@@ -42,9 +42,9 @@ settings:
     start_straight_length: 0.01
     taper_length: 10.0
     width_wide: null
-  decorator:
-    function: add_pins_bbox_siepic
   dx: 10.0
   dy: 4.0
   gap: 0.236
   length: 20.0
+  post_process:
+    function: add_pins_bbox_siepic

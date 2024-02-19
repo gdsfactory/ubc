@@ -19,6 +19,7 @@ settings:
     - 0
   - - 12
     - 0
+  post_process: null
   size:
   - 10
   - 10

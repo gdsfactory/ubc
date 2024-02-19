@@ -1,7 +1,7 @@
 function: add_electrical_pads_top_dc
 info: {}
 module: gdsfactory.routing.add_electrical_pads_top_dc
-name: ring_single_heater_add_electrical_pads_top_dc_c229db85
+name: ring_single_heater_add_electrical_pads_top_dc_cc2475fe
 settings:
   component: ring_single_heater
   get_bundle_function:
@@ -24,7 +24,10 @@ settings:
             - 0
           bbox_offsets:
           - -1.8
-          decorator:
+          layer:
+          - 12
+          - 0
+          post_process:
             function: add_pins_siepic
             module: ubcpdk.tech
             settings:
@@ -32,9 +35,6 @@ settings:
               - 1
               - 11
               port_type: placement
-          layer:
-          - 12
-          - 0
           size:
           - 75
           - 75
@@ -42,6 +42,7 @@ settings:
       - 125
       - 125
   port_names: null
+  post_proces: null
   select_ports:
     function: select_ports
     module: gdsfactory.port
