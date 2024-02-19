@@ -1,10 +1,9 @@
 install:
 	pip install -e .[dev,docs]
-	pip install pre-commit
-	pre-commit install
 	python install_tech.py
 
 dev: install
+	pre-commit install
 
 update-pre:
 	pre-commit autoupdate

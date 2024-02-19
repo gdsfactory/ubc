@@ -26,7 +26,7 @@ jobs:
           GDSFACTORY_DISPLAY_TYPE: klayout
         shell: bash -l {0}
         run: |
-          make dev
+          make install
           make docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
