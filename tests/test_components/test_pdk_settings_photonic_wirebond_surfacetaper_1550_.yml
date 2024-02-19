@@ -1,13 +1,7 @@
+function: photonic_wirebond_surfacetaper_1550
+info:
+  library: Design kits/ebeam
+  model: photonic_wirebond_surfacetaper_1550
+module: ubcpdk.components
 name: photonic_wirebond_surfacetaper_1550
-settings:
-  changed: {}
-  child: null
-  default: {}
-  full: {}
-  function_name: photonic_wirebond_surfacetaper_1550
-  info:
-    library: Design kits/ebeam
-    model: photonic_wirebond_surfacetaper_1550
-  info_version: 2
-  module: ubcpdk.components
-  name: photonic_wirebond_surfacetaper_1550
+settings: {}

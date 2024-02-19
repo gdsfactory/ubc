@@ -704,23 +704,13 @@ def ebeam_dc_halfring_straight(
 
     if siepic:
         x = tech.xs_sc_simple
-        c.info.update(
-            layout_model_port_pairs=(
-                ("o1", "port 1"),
-                ("o2", "port 2"),
-                ("o3", "port 4"),
-                ("o4", "port 3"),
-            ),
-            properties={
-                "gap": gap * um,
-                "radius": radius * um,
-                "wg_thickness": thickness[LAYER.WG] * um,
-                "wg_width": x.width * um,
-                "Lc": length_x * um,
-            },
-            component_type=["optical"],
-            model=model,
-        )
+        c.info["model"] = model
+        c.info["gap"] = gap
+        c.info["radius"] = radius
+        c.info["wg_thickness"] = thickness[LAYER.WG]
+        c.info["wg_width"] = x.width
+        c.info["Lc"] = length_x
+
     return c
 
 

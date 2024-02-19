@@ -15,9 +15,8 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory[cad]==7.8.18",
-  "gplugins[tidy3d,sax,schematic]>=0.8.4,<0.9.0",
-  'siepic==0.5.3'
+  "gdsfactory==7.11.2",
+  "gplugins[tidy3d,sax,schematic]>=0.9.13,<0.10"
 ]
 description = "ubcpdk pdk"
 keywords = ["python"]
@@ -39,26 +38,6 @@ docs = [
   "jupytext",
   "jupyter-book==0.15.1"
 ]
-
-[tool.black]
-exclude = '''  # Specify the files/dirs that should be ignored by the black formatter
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | env
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
-include = '\.pyi?$'
-line-length = 88
-target-version = ['py310']
 
 [tool.mypy]
 python_version = "3.10"

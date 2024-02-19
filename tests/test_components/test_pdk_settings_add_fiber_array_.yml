@@ -1,102 +1,54 @@
-name: straight_8c41fd35_add_fiber_array_3c7e0cfe_add_fiber_array
+function: add_fiber_array
+info:
+  length: 10.0
+  route_info_length: 10.0
+  route_info_type: xs_sc
+  route_info_weight: 10.0
+  route_info_xs_sc_length: 10.0
+  width: 0.5
+module: ubcpdk.components
+name: add_fiber_array_add_fiber_array
 settings:
-  changed: {}
-  child: null
-  default:
-    component:
-      function: straight
-      settings:
-        add_bbox:
-          function: add_padding
-          settings:
-            bottom: 0.5
-            default: 0
-            layers:
-            - - 68
-              - 0
-            top: 0.5
-        cross_section: xs_sc
-    component_name: null
-    cross_section: xs_sc
-    fanout_length: 0.0
-    gc_port_name: o1
-    get_input_labels_function:
-      function: get_input_labels
-    grating_coupler:
-      function: gc_te1550
-    layer_label:
-    - 10
-    - 0
-    optical_routing_type: 0
-    straight:
-      function: straight
-      settings:
-        add_bbox:
-          function: add_padding
-          settings:
-            bottom: 0.5
-            default: 0
-            layers:
-            - - 68
-              - 0
-            top: 0.5
-        cross_section: xs_sc
-    with_loopback: false
-  full:
-    component:
-      function: straight
-      settings:
-        add_bbox:
-          function: add_padding
-          settings:
-            bottom: 0.5
-            default: 0
-            layers:
-            - - 68
-              - 0
-            top: 0.5
-        cross_section: xs_sc
-    component_name: null
-    cross_section: xs_sc
-    fanout_length: 0.0
-    gc_port_name: o1
-    get_input_labels_function:
-      function: get_input_labels
-    grating_coupler:
-      function: gc_te1550
-    layer_label:
-    - 10
-    - 0
-    optical_routing_type: 0
-    straight:
-      function: straight
-      settings:
-        add_bbox:
-          function: add_padding
-          settings:
-            bottom: 0.5
-            default: 0
-            layers:
-            - - 68
-              - 0
-            top: 0.5
-        cross_section: xs_sc
-    with_loopback: false
-  function_name: add_fiber_array
-  info:
-    cross_section: xs_sc
-    grating_coupler:
-      library: Design kits/ebeam
-      model: ebeam_gc_te1550
-      polarization: te
-      wavelength: 1.55
-    length: 10.0
-    route_info:
-      length: 10.0
-      type: xs_sc
-      weight: 10.0
-      xs_sc_length: 10.0
-    width: 0.5
-  info_version: 2
-  module: ubcpdk.components
-  name: straight_8c41fd35_add_fiber_array_3c7e0cfe_add_fiber_array
+  component:
+    function: straight
+    module: gdsfactory.components.straight
+    settings:
+      add_bbox:
+        function: add_padding
+        module: gdsfactory.add_padding
+        settings:
+          bottom: 0.5
+          default: 0
+          layers:
+          - - 68
+            - 0
+          top: 0.5
+      cross_section: xs_sc
+  component_name: null
+  cross_section: xs_sc
+  fanout_length: 0.0
+  gc_port_name: o1
+  get_input_labels_function:
+    function: get_input_labels
+  grating_coupler:
+    function: gc_te1550
+  layer_label:
+  - 10
+  - 0
+  optical_routing_type: 0
+  straight:
+    function: straight
+    module: gdsfactory.components.straight
+    settings:
+      add_bbox:
+        function: add_padding
+        module: gdsfactory.add_padding
+        settings:
+          bottom: 0.5
+          default: 0
+          layers:
+          - - 68
+            - 0
+          top: 0.5
+      cross_section: xs_sc
+  with_loopback: false

@@ -1,103 +1,51 @@
-name: coupler_ring_84558c9a
+function: coupler_ring
+info: {}
+module: gdsfactory.components.coupler_ring
+name: coupler_ring_08b15e76
 settings:
-  changed:
-    add_bbox:
-      function: add_pins_bbox_siepic
-    cross_section:
-      add_pins_function_module: gdsfactory.add_pins
-      add_pins_function_name: null
-      auto_widen: false
-      auto_widen_minimum_length: 200.0
-      bbox_layers: null
-      bbox_offsets: null
-      components_along_path: []
-      end_straight_length: 0.01
-      gap: 3.0
-      info: {}
-      min_length: 0.01
-      radius: 10.0
-      sections:
-      - hidden: false
-        insets: null
-        layer: WG
-        name: _default
-        offset: 0.0
-        offset_function: null
-        port_names:
-        - o1
-        - o2
-        port_types:
-        - optical
-        - optical
-        simplify: null
-        width: 0.5
-        width_function: null
-      start_straight_length: 0.01
-      taper_length: 10.0
-      width_wide: null
-  child: null
-  default:
-    add_bbox: null
-    bend:
-      function: bend_euler
-    coupler90:
-      function: coupler90
-    coupler_straight:
-      function: coupler_straight
-    cross_section: xs_sc
-    cross_section_bend: null
-    gap: 0.2
-    length_extension: 3
-    length_x: 4.0
-    radius: 5.0
-  full:
-    add_bbox:
-      function: add_pins_bbox_siepic
-    bend:
-      function: bend_euler
-    coupler90:
-      function: coupler90
-    coupler_straight:
-      function: coupler_straight
-    cross_section:
-      add_pins_function_module: gdsfactory.add_pins
-      add_pins_function_name: null
-      auto_widen: false
-      auto_widen_minimum_length: 200.0
-      bbox_layers: null
-      bbox_offsets: null
-      components_along_path: []
-      end_straight_length: 0.01
-      gap: 3.0
-      info: {}
-      min_length: 0.01
-      radius: 10.0
-      sections:
-      - hidden: false
-        insets: null
-        layer: WG
-        name: _default
-        offset: 0.0
-        offset_function: null
-        port_names:
-        - o1
-        - o2
-        port_types:
-        - optical
-        - optical
-        simplify: null
-        width: 0.5
-        width_function: null
-      start_straight_length: 0.01
-      taper_length: 10.0
-      width_wide: null
-    cross_section_bend: null
-    gap: 0.2
-    length_extension: 3
-    length_x: 4.0
-    radius: 5.0
-  function_name: coupler_ring
-  info: {}
-  info_version: 2
-  module: gdsfactory.components.coupler_ring
-  name: coupler_ring_84558c9a
+  add_bbox:
+    function: add_pins_bbox_siepic
+  bend:
+    function: bend_euler
+  coupler90:
+    function: coupler90
+  coupler_straight:
+    function: coupler_straight
+  cross_section:
+    add_pins_function_module: gdsfactory.add_pins
+    add_pins_function_name: null
+    auto_widen: false
+    auto_widen_minimum_length: 200.0
+    bbox_layers: null
+    bbox_offsets: null
+    components_along_path: []
+    end_straight_length: 0.01
+    gap: 3.0
+    info: {}
+    min_length: 0.01
+    radius: 10.0
+    radius_min: null
+    sections:
+    - hidden: false
+      insets: null
+      layer: WG
+      name: _default
+      offset: 0.0
+      offset_function: null
+      port_names:
+      - o1
+      - o2
+      port_types:
+      - optical
+      - optical
+      simplify: null
+      width: 0.5
+      width_function: null
+    start_straight_length: 0.01
+    taper_length: 10.0
+    width_wide: null
+  cross_section_bend: null
+  gap: 0.2
+  length_extension: 3
+  length_x: 4.0
+  radius: 5.0

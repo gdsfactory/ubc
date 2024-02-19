@@ -1,39 +1,16 @@
+function: ebeam_dc_halfring_straight
+info:
+  Lc: 4.0
+  gap: 0.2
+  model: ebeam_dc_halfring_straight
+  radius: 5.0
+  wg_thickness: 0.22
+  wg_width: 0.5
+module: ubcpdk.components
 name: ebeam_dc_halfring_straight
 settings:
-  changed: {}
-  child: null
-  default:
-    gap: 0.2
-    length_x: 4.0
-    model: ebeam_dc_halfring_straight
-    radius: 5.0
-    siepic: true
-  full:
-    gap: 0.2
-    length_x: 4.0
-    model: ebeam_dc_halfring_straight
-    radius: 5.0
-    siepic: true
-  function_name: ebeam_dc_halfring_straight
-  info:
-    component_type:
-    - optical
-    layout_model_port_pairs:
-    - - o1
-      - port 1
-    - - o2
-      - port 2
-    - - o3
-      - port 4
-    - - o4
-      - port 3
-    model: ebeam_dc_halfring_straight
-    properties:
-      Lc: 0.0
-      gap: 0.0
-      radius: 0.0
-      wg_thickness: 0.0
-      wg_width: 0.0
-  info_version: 2
-  module: ubcpdk.components
-  name: ebeam_dc_halfring_straight
+  gap: 0.2
+  length_x: 4.0
+  model: ebeam_dc_halfring_straight
+  radius: 5.0
+  siepic: true

@@ -1,15 +1,9 @@
+function: gc_te1310
+info:
+  library: Design kits/ebeam
+  model: ebeam_gc_te1310
+  polarization: te
+  wavelength: 1.31
+module: ubcpdk.components
 name: gc_te1310
-settings:
-  changed: {}
-  child: null
-  default: {}
-  full: {}
-  function_name: gc_te1310
-  info:
-    library: Design kits/ebeam
-    model: ebeam_gc_te1310
-    polarization: te
-    wavelength: 1.31
-  info_version: 2
-  module: ubcpdk.components
-  name: gc_te1310
+settings: {}

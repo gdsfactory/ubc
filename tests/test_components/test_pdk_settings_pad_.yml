@@ -1,63 +1,34 @@
-name: pad_4a34b26e
+function: pad
+info:
+  layer:
+  - 12
+  - 0
+  size:
+  - 75
+  - 75
+  xsize: 75
+  ysize: 75
+module: gdsfactory.components.pad
+name: pad_1b1ab63c
 settings:
-  changed:
-    bbox_layers:
-    - - 13
-      - 0
-    bbox_offsets:
-    - -1.8
-    decorator:
-      function: add_pins_siepic
-      settings:
-        layer_pin:
-        - 1
-        - 11
-        port_type: placement
-    layer:
-    - 12
+  bbox_layers:
+  - - 13
     - 0
-    size:
-    - 75
-    - 75
-  child: null
-  default:
-    bbox_layers: null
-    bbox_offsets: null
-    layer: MTOP
-    port_inclusion: 0
-    port_orientation: null
-    size:
-    - 100.0
-    - 100.0
-  full:
-    bbox_layers:
-    - - 13
-      - 0
-    bbox_offsets:
-    - -1.8
-    decorator:
-      function: add_pins_siepic
-      settings:
-        layer_pin:
-        - 1
-        - 11
-        port_type: placement
-    layer:
-    - 12
-    - 0
-    port_inclusion: 0
-    port_orientation: null
-    size:
-    - 75
-    - 75
-  function_name: pad
-  info:
-    layer:
-    - 12
-    - 0
-    size:
-    - 75.0
-    - 75.0
-  info_version: 2
-  module: gdsfactory.components.pad
-  name: pad_4a34b26e
+  bbox_offsets:
+  - -1.8
+  decorator:
+    function: add_pins_siepic
+    module: ubcpdk.tech
+    settings:
+      layer_pin:
+      - 1
+      - 11
+      port_type: placement
+  layer:
+  - 12
+  - 0
+  port_inclusion: 0
+  port_orientation: null
+  size:
+  - 75
+  - 75

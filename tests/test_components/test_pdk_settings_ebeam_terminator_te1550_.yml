@@ -1,13 +1,7 @@
+function: ebeam_terminator_te1550
+info:
+  library: Design kits/ebeam
+  model: ebeam_terminator_te1550
+module: ubcpdk.components
 name: ebeam_terminator_te1550
-settings:
-  changed: {}
-  child: null
-  default: {}
-  full: {}
-  function_name: ebeam_terminator_te1550
-  info:
-    library: Design kits/ebeam
-    model: ebeam_terminator_te1550
-  info_version: 2
-  module: ubcpdk.components
-  name: ebeam_terminator_te1550
+settings: {}

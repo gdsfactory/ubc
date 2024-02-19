@@ -1,72 +1,36 @@
-name: pad_array_71569d1c
+function: pad_array
+info:
+  xsize: 75
+  ysize: 75
+module: gdsfactory.components.pad
+name: pad_array_ccd03f0e
 settings:
-  changed:
-    pad:
-      function: pad
-      settings:
-        bbox_layers:
-        - - 13
-          - 0
-        bbox_offsets:
-        - -1.8
-        decorator:
-          function: add_pins_siepic
-          settings:
-            layer_pin:
-            - 1
-            - 11
-            port_type: placement
-        layer:
-        - 12
+  columns: 6
+  orientation: 270
+  pad:
+    function: pad
+    module: gdsfactory.components.pad
+    settings:
+      bbox_layers:
+      - - 13
         - 0
-        size:
-        - 75
-        - 75
-    spacing:
-    - 125
-    - 125
-  child: null
-  default:
-    columns: 6
-    orientation: 270
-    pad: pad
-    rows: 1
-    spacing:
-    - 150.0
-    - 150.0
-  full:
-    columns: 6
-    orientation: 270
-    pad:
-      function: pad
-      settings:
-        bbox_layers:
-        - - 13
-          - 0
-        bbox_offsets:
-        - -1.8
-        decorator:
-          function: add_pins_siepic
-          settings:
-            layer_pin:
-            - 1
-            - 11
-            port_type: placement
-        layer:
-        - 12
-        - 0
-        size:
-        - 75
-        - 75
-    rows: 1
-    spacing:
-    - 125
-    - 125
-  function_name: pad_array
-  info:
-    size:
-    - 75
-    - 75
-  info_version: 2
-  module: gdsfactory.components.pad
-  name: pad_array_71569d1c
+      bbox_offsets:
+      - -1.8
+      decorator:
+        function: add_pins_siepic
+        module: ubcpdk.tech
+        settings:
+          layer_pin:
+          - 1
+          - 11
+          port_type: placement
+      layer:
+      - 12
+      - 0
+      size:
+      - 75
+      - 75
+  rows: 1
+  spacing:
+  - 125
+  - 125

@@ -1,13 +1,7 @@
+function: ebeam_adiabatic_tm1550
+info:
+  library: Design kits/ebeam
+  model: ebeam_adiabatic_tm1550
+module: ubcpdk.components
 name: ebeam_adiabatic_tm1550
-settings:
-  changed: {}
-  child: null
-  default: {}
-  full: {}
-  function_name: ebeam_adiabatic_tm1550
-  info:
-    library: Design kits/ebeam
-    model: ebeam_adiabatic_tm1550
-  info_version: 2
-  module: ubcpdk.components
-  name: ebeam_adiabatic_tm1550
+settings: {}

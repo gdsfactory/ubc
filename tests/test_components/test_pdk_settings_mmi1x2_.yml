@@ -1,102 +1,51 @@
-name: mmi1x2_0482171d
+function: mmi1x2
+info: {}
+module: gdsfactory.components.mmi1x2
+name: mmi1x2_3aefe116
 settings:
-  changed:
-    cross_section:
-      add_pins_function_module: gdsfactory.add_pins
-      add_pins_function_name: null
-      auto_widen: false
-      auto_widen_minimum_length: 200.0
-      bbox_layers: null
-      bbox_offsets: null
-      components_along_path: []
-      end_straight_length: 0.01
-      gap: 3.0
-      info: {}
-      min_length: 0.01
-      radius: 10.0
-      sections:
-      - hidden: false
-        insets: null
-        layer: WG
-        name: _default
-        offset: 0.0
-        offset_function: null
-        port_names:
-        - o1
-        - o2
-        port_types:
-        - optical
-        - optical
-        simplify: null
-        width: 0.5
-        width_function: null
-      start_straight_length: 0.01
-      taper_length: 10.0
-      width_wide: null
-    decorator:
-      function: add_pins_bbox_siepic
-  child: null
-  default:
-    cross_section: xs_sc
-    gap_mmi: 0.25
-    length_mmi: 5.5
-    length_taper: 10.0
-    straight:
-      function: straight
-    taper:
-      function: taper
-    width: null
-    width_mmi: 2.5
-    width_taper: 1.0
-    with_bbox: true
-  full:
-    cross_section:
-      add_pins_function_module: gdsfactory.add_pins
-      add_pins_function_name: null
-      auto_widen: false
-      auto_widen_minimum_length: 200.0
-      bbox_layers: null
-      bbox_offsets: null
-      components_along_path: []
-      end_straight_length: 0.01
-      gap: 3.0
-      info: {}
-      min_length: 0.01
-      radius: 10.0
-      sections:
-      - hidden: false
-        insets: null
-        layer: WG
-        name: _default
-        offset: 0.0
-        offset_function: null
-        port_names:
-        - o1
-        - o2
-        port_types:
-        - optical
-        - optical
-        simplify: null
-        width: 0.5
-        width_function: null
-      start_straight_length: 0.01
-      taper_length: 10.0
-      width_wide: null
-    decorator:
-      function: add_pins_bbox_siepic
-    gap_mmi: 0.25
-    length_mmi: 5.5
-    length_taper: 10.0
-    straight:
-      function: straight
-    taper:
-      function: taper
-    width: null
-    width_mmi: 2.5
-    width_taper: 1.0
-    with_bbox: true
-  function_name: mmi1x2
-  info: {}
-  info_version: 2
-  module: gdsfactory.components.mmi1x2
-  name: mmi1x2_0482171d
+  cross_section:
+    add_pins_function_module: gdsfactory.add_pins
+    add_pins_function_name: null
+    auto_widen: false
+    auto_widen_minimum_length: 200.0
+    bbox_layers: null
+    bbox_offsets: null
+    components_along_path: []
+    end_straight_length: 0.01
+    gap: 3.0
+    info: {}
+    min_length: 0.01
+    radius: 10.0
+    radius_min: null
+    sections:
+    - hidden: false
+      insets: null
+      layer: WG
+      name: _default
+      offset: 0.0
+      offset_function: null
+      port_names:
+      - o1
+      - o2
+      port_types:
+      - optical
+      - optical
+      simplify: null
+      width: 0.5
+      width_function: null
+    start_straight_length: 0.01
+    taper_length: 10.0
+    width_wide: null
+  decorator:
+    function: add_pins_bbox_siepic
+  gap_mmi: 0.25
+  length_mmi: 5.5
+  length_taper: 10.0
+  straight:
+    function: straight
+  taper:
+    function: taper
+  width: null
+  width_mmi: 2.5
+  width_taper: 1.0
+  with_bbox: true
