@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/gdsfactory/gdsfactory:main
     steps:
+      - uses: actions/checkout@v4
       - name: Installing the library
         env:
           TIDY3D_USER: ${{ secrets.TIDY3D_EMAIL }}
