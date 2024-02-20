@@ -42,7 +42,7 @@ settings:
       - 125
       - 125
   port_names: null
-  post_proces: null
+  post_process: null
   select_ports:
     function: select_ports
     module: gdsfactory.port

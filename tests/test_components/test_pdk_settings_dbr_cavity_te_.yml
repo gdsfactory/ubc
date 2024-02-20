@@ -60,6 +60,7 @@ settings:
   - 10
   - 0
   optical_routing_type: 0
+  post_process: null
   straight:
     function: straight
     module: gdsfactory.components.straight
