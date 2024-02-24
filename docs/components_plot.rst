@@ -187,6 +187,21 @@ bend_s
 
 
 
+coupler
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.coupler
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.coupler(gap=0.236, length=20.0, dy=4.0, dx=10.0)
+  c.plot()
+
+
+
 coupler_ring
 ----------------------------------------------------
 
@@ -378,6 +393,21 @@ ebeam_dc_halfring_straight
   import ubcpdk
 
   c = ubcpdk.components.ebeam_dc_halfring_straight(gap=0.2, radius=5.0, length_x=4.0, siepic=True, model='ebeam_dc_halfring_straight')
+  c.plot()
+
+
+
+ebeam_dc_te1550
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.ebeam_dc_te1550
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.ebeam_dc_te1550(gap=0.236, length=20.0, dy=4.0, dx=10.0, cross_section='xs_sc')
   c.plot()
 
 
@@ -692,7 +722,7 @@ mzi
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi(delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='xs_sc', mirror_bot=False, add_optical_ports_arms=False)
+  c = ubcpdk.components.mzi(delta_length=10.0, length_y=2.0, length_x=0.1, with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='xs_sc', mirror_bot=False, add_optical_ports_arms=False, add_electrical_ports_bot=True)
   c.plot()
 
 
@@ -707,7 +737,22 @@ mzi_heater
 
   import ubcpdk
 
-  c = ubcpdk.components.mzi_heater(delta_length=10.0, length_y=2.0, length_x=200, straight_x_top='straight_heater_metal', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='xs_sc', mirror_bot=False, add_optical_ports_arms=False)
+  c = ubcpdk.components.mzi_heater(delta_length=10.0, length_y=2.0, length_x=200, straight_x_top='straight_heater_metal', with_splitter=True, port_e1_splitter='o2', port_e0_splitter='o3', port_e1_combiner='o2', port_e0_combiner='o3', nbends=2, cross_section='xs_sc', mirror_bot=False, add_optical_ports_arms=False, add_electrical_ports_bot=True)
+  c.plot()
+
+
+
+pad
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.pad
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.pad(size=(75, 75), layer=(12, 0), bbox_layers=((13, 0),), bbox_offsets=(-1.8,), port_inclusion=0)
   c.plot()
 
 
@@ -842,7 +887,7 @@ spiral
 
   import ubcpdk
 
-  c = ubcpdk.components.spiral(N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0, cross_section='xs_sc', with_inner_ports=False, y_straight_outer_offset=0.0, inner_loop_spacing_offset=0.0)
+  c = ubcpdk.components.spiral(N=6, x_inner_length_cutback=300.0, x_inner_offset=0.0, y_straight_inner_top=0.0, xspacing=3.0, yspacing=3.0, cross_section='xs_sc', with_inner_ports=False, y_straight_outer_offset=0.0, inner_loop_spacing_offset=0.0, mirror_straight=False)
   c.plot()
 
 
@@ -977,5 +1022,5 @@ via_stack_heater_mtop
 
   import ubcpdk
 
-  c = ubcpdk.components.via_stack_heater_mtop(size=(10, 10), layers=((11, 0), (12, 0)), vias=(None, None), correct_size=True)
+  c = ubcpdk.components.via_stack_heater_mtop(size=(10, 10), layers=((11, 0), (12, 0)), vias=(None, None), correct_size=True, slot_horizontal=False, slot_vertical=False)
   c.plot()

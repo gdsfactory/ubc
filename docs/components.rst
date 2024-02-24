@@ -20,6 +20,7 @@ Cells summary
    bend_euler180_sc
    bend_euler_sc
    bend_s
+   coupler
    coupler_ring
    dbg
    dbr
@@ -33,6 +34,7 @@ Cells summary
    ebeam_crossing4
    ebeam_crossing4_2ports
    ebeam_dc_halfring_straight
+   ebeam_dc_te1550
    ebeam_splitter_adiabatic_swg_te1550
    ebeam_splitter_swg_assist_te1310
    ebeam_splitter_swg_assist_te1550
@@ -55,6 +57,7 @@ Cells summary
    mmi1x2
    mzi
    mzi_heater
+   pad
    pad_array
    photonic_wirebond_surfacetaper_1310
    photonic_wirebond_surfacetaper_1550
