@@ -24,7 +24,7 @@ license = {file = "LICENSE"}
 name = "ubcpdk"
 readme = "README.md"
 requires-python = ">=3.10"
-version = "2.3.4"
+version = "2.3.5"
 
 [project.optional-dependencies]
 dev = [
@@ -127,7 +127,7 @@ message_template = "Bump to {new_version}"
 tag_template = "v{new_version}"
 
 [tool.tbump.version]
-current = "2.3.4"
+current = "2.3.5"
 regex = '''
   (?P<major>\d+)
   \.
