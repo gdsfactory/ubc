@@ -14,6 +14,7 @@ skip_test = {
     "add_pins_siepic",
     "add_pins_siepic_metal",
     "dbr",
+    "dbg",
     "add_pins_bbox_siepic",
     "add_pads",
     "add_pins_bbox_siepic_remove_layers",

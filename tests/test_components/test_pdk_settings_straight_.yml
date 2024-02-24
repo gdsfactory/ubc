@@ -1,50 +1,28 @@
-name: straight_8c41fd35
+function: straight
+info:
+  length: 10.0
+  route_info_length: 10.0
+  route_info_type: xs_sc
+  route_info_weight: 10.0
+  route_info_xs_sc_length: 10.0
+  width: 0.5
+module: gdsfactory.components.straight
+name: straight_6cf27063
 settings:
-  changed:
-    add_bbox:
-      function: add_padding
-      settings:
-        bottom: 0.5
-        default: 0
-        layers:
-        - - 68
-          - 0
-        top: 0.5
-  child: null
-  default:
-    add_bbox: null
-    add_pins: true
-    cross_section: xs_sc
-    layer: null
-    length: 10.0
-    npoints: 2
-    width: null
-  full:
-    add_bbox:
-      function: add_padding
-      settings:
-        bottom: 0.5
-        default: 0
-        layers:
-        - - 68
-          - 0
-        top: 0.5
-    add_pins: true
-    cross_section: xs_sc
-    layer: null
-    length: 10.0
-    npoints: 2
-    width: null
-  function_name: straight
-  info:
-    cross_section: xs_sc
-    length: 10.0
-    route_info:
-      length: 10.0
-      type: xs_sc
-      weight: 10.0
-      xs_sc_length: 10.0
-    width: 0.5
-  info_version: 2
-  module: gdsfactory.components.straight
-  name: straight_8c41fd35
+  add_bbox:
+    function: add_padding
+    module: gdsfactory.add_padding
+    settings:
+      bottom: 0.5
+      default: 0
+      layers:
+      - - 68
+        - 0
+      top: 0.5
+  add_pins: true
+  cross_section: xs_sc
+  layer: null
+  length: 10.0
+  npoints: 2
+  post_process: null
+  width: null

@@ -173,13 +173,16 @@ def import_gds(gdspath, **kwargs):
         gdsdir=PATH.gds,
         library="Design kits/ebeam",
         model=gdspath.split(".")[0],
-        decorator=add_ports_from_siepic_pins,
+        post_process=add_ports_from_siepic_pins,
         **kwargs,
     )
 
 
-def import_gc(gdspath, **kwargs):
+def import_gc(gdspath, info=None, **kwargs):
     c = import_gds(gdspath, **kwargs)
+
+    if info is not None:
+        c.info.update(info)
     return gf.functions.mirror(component=c)
 
 

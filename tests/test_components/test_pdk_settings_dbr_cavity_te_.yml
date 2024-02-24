@@ -1,87 +1,79 @@
-name: dbr_cavity_add_fiber_array_2e3389fa_add_fiber_array_37b25c57
+function: add_fiber_array
+info: {}
+module: ubcpdk.components
+name: add_fiber_array_add_fiber_array_componentdbr_cavity
 settings:
-  changed:
-    component:
-      component: dbr_cavity
-      settings: {}
-  child: null
-  default:
-    component:
-      function: straight
-      settings:
-        add_bbox:
-          function: add_padding
-          settings:
-            bottom: 0.5
-            default: 0
-            layers:
-            - - 68
-              - 0
-            top: 0.5
-        cross_section: xs_sc
-    component_name: null
-    cross_section: xs_sc
-    fanout_length: 0.0
-    gc_port_name: o1
-    get_input_labels_function:
-      function: get_input_labels
-    grating_coupler:
-      function: gc_te1550
-    layer_label:
-    - 10
-    - 0
-    optical_routing_type: 0
-    straight:
-      function: straight
-      settings:
-        add_bbox:
-          function: add_padding
-          settings:
-            bottom: 0.5
-            default: 0
-            layers:
-            - - 68
-              - 0
-            top: 0.5
-        cross_section: xs_sc
-    with_loopback: false
-  full:
-    component:
-      component: dbr_cavity
-      settings: {}
-    component_name: null
-    cross_section: xs_sc
-    fanout_length: 0.0
-    gc_port_name: o1
-    get_input_labels_function:
-      function: get_input_labels
-    grating_coupler:
-      function: gc_te1550
-    layer_label:
-    - 10
-    - 0
-    optical_routing_type: 0
-    straight:
-      function: straight
-      settings:
-        add_bbox:
-          function: add_padding
-          settings:
-            bottom: 0.5
-            default: 0
-            layers:
-            - - 68
-              - 0
-            top: 0.5
-        cross_section: xs_sc
-    with_loopback: false
-  function_name: add_fiber_array
-  info:
-    grating_coupler:
-      library: Design kits/ebeam
-      model: ebeam_gc_te1550
-      polarization: te
-      wavelength: 1.55
-  info_version: 2
-  module: ubcpdk.components
-  name: dbr_cavity_add_fiber_array_2e3389fa_add_fiber_array_37b25c57
+  component:
+    function: dbr_cavity
+    module: ubcpdk.components
+    settings:
+      coupler:
+        function: coupler
+        module: gdsfactory.components.coupler
+        settings:
+          cross_section:
+            add_pins_function_module: ubcpdk.tech
+            add_pins_function_name: add_pins_siepic
+            auto_widen: false
+            auto_widen_minimum_length: 200.0
+            bbox_layers: null
+            bbox_offsets: null
+            components_along_path: []
+            end_straight_length: 0.01
+            gap: 3.0
+            info: {}
+            min_length: 0.01
+            radius: 10.0
+            radius_min: 5.0
+            sections:
+            - hidden: false
+              insets: null
+              layer: WG
+              name: _default
+              offset: 0.0
+              offset_function: null
+              port_names:
+              - o1
+              - o2
+              port_types:
+              - optical
+              - optical
+              simplify: null
+              width: 0.5
+              width_function: null
+            start_straight_length: 0.01
+            taper_length: 10.0
+            width_wide: null
+          post_process:
+            function: add_pins_bbox_siepic
+      dbr:
+        function: dbr
+  component_name: null
+  cross_section: xs_sc
+  fanout_length: 0.0
+  gc_port_name: o1
+  get_input_labels_function:
+    function: get_input_labels
+  grating_coupler:
+    function: gc_te1550
+  layer_label:
+  - 10
+  - 0
+  optical_routing_type: 0
+  post_process: null
+  straight:
+    function: straight
+    module: gdsfactory.components.straight
+    settings:
+      add_bbox:
+        function: add_padding
+        module: gdsfactory.add_padding
+        settings:
+          bottom: 0.5
+          default: 0
+          layers:
+          - - 68
+            - 0
+          top: 0.5
+      cross_section: xs_sc
+  with_loopback: false

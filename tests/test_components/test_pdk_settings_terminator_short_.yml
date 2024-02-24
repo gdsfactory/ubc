@@ -1,11 +1,5 @@
+function: terminator_short
+info: {}
+module: ubcpdk.components
 name: terminator_short
-settings:
-  changed: {}
-  child: null
-  default: {}
-  full: {}
-  function_name: terminator_short
-  info: {}
-  info_version: 2
-  module: ubcpdk.components
-  name: terminator_short
+settings: {}

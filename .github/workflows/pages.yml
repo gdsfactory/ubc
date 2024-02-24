@@ -1,29 +1,22 @@
 name: Sphinx docs to gh-pages
 
 on:
+  pull_request:
   push:
     branches:
       - main
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-docs:
     runs-on: ubuntu-latest
-    name: Sphinx docs to gh-pages
+    container: ghcr.io/gdsfactory/gdsfactory:main
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-          cache: "pip"
-          cache-dependency-path: pyproject.toml
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ~/.gdsfactory/
-          key: 0.0.1
-          restore-keys: 0.0.1
+      - uses: actions/checkout@v4
       - name: Installing the library
         env:
           TIDY3D_USER: ${{ secrets.TIDY3D_EMAIL }}
@@ -34,7 +27,7 @@ jobs:
           GDSFACTORY_DISPLAY_TYPE: klayout
         shell: bash -l {0}
         run: |
-          make dev
+          make install
           make docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
@@ -43,6 +36,7 @@ jobs:
 
   deploy-docs:
     needs: build-docs
+    if: ${{ github.ref == 'refs/heads/main' }}
     permissions:
       pages: write
       id-token: write

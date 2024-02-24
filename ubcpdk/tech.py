@@ -292,19 +292,19 @@ cladding_offsets_optical_siepic = None
 ############################
 # Cross-sections functions
 ############################
-
-strip = partial(
+cross_section = partial(
     gf.cross_section.cross_section,
     add_pins_function_name="add_pins_siepic",
     add_pins_function_module="ubcpdk.tech",
+    radius_min=5,
+)
+
+strip = partial(
+    cross_section,
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
 )
-strip_unclad = partial(
-    gf.cross_section.cross_section,
-    add_pins_function_name="add_pins_siepic",
-    add_pins_function_module="ubcpdk.tech",
-)
+strip_unclad = strip_simple = cross_section
 strip_heater_metal = partial(
     gf.cross_section.strip_heater_metal,
     layer="WG",
@@ -316,24 +316,19 @@ strip_heater_metal = partial(
     add_pins_function_module="ubcpdk.tech",
 )
 
-strip_simple = gf.cross_section.cross_section
 strip_bbox = partial(
-    gf.cross_section.cross_section,
+    cross_section,
     bbox_layers=cladding_layers_optical_siepic,
     bbox_offsets=cladding_offsets_optical_siepic,
-    add_pins_function_name="add_pins_siepic",
-    add_pins_function_module="ubcpdk.tech",
 )
 
 metal_routing = partial(
-    gf.cross_section.cross_section,
+    cross_section,
     layer=LAYER.M2_ROUTER,
     width=10.0,
     port_names=gf.cross_section.port_names_electrical,
     port_types=gf.cross_section.port_types_electrical,
     radius=None,
-    add_pins_function_name="add_pins_siepic_metal",
-    add_pins_function_module="ubcpdk.tech",
 )
 heater_metal = partial(
     metal_routing, width=4, layer=LAYER.M1_HEATER, add_pins_function_name=None

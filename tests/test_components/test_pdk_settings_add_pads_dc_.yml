@@ -1,101 +1,53 @@
-name: ring_single_heater_e488dd8d_add_electrical_pads_top_dc_c0e05349
+function: add_electrical_pads_top_dc
+info: {}
+module: gdsfactory.routing.add_electrical_pads_top_dc
+name: ring_single_heater_add_electrical_pads_top_dc_cc2475fe
 settings:
-  changed:
-    component: ring_single_heater
-    pad_array:
-      function: pad_array
-      settings:
-        pad:
-          function: pad
-          settings:
-            bbox_layers:
-            - - 13
-              - 0
-            bbox_offsets:
-            - -1.8
-            decorator:
-              function: add_pins_siepic
-              settings:
-                layer_pin:
-                - 1
-                - 11
-                port_type: placement
-            layer:
-            - 12
+  component: ring_single_heater
+  get_bundle_function:
+    function: get_bundle
+    module: gdsfactory.routing.get_bundle
+    settings:
+      bend:
+        function: wire_corner
+      cross_section: xs_metal_routing
+  pad_array:
+    function: pad_array
+    module: gdsfactory.components.pad
+    settings:
+      pad:
+        function: pad
+        module: gdsfactory.components.pad
+        settings:
+          bbox_layers:
+          - - 13
             - 0
-            size:
-            - 75
-            - 75
-        spacing:
-        - 125
-        - 125
-  child: null
-  default:
-    component:
-      function: straight
-      settings:
-        cross_section: xs_metal_routing
-        length: 200.0
-    get_bundle_function:
-      function: get_bundle
-      settings:
-        bend:
-          function: wire_corner
-        cross_section: xs_metal_routing
-    pad_array: pad_array
-    port_names: null
-    select_ports:
-      function: select_ports
-      settings:
-        port_type: electrical
-    spacing:
-    - 0.0
-    - 100.0
-  full:
-    component: ring_single_heater
-    get_bundle_function:
-      function: get_bundle
-      settings:
-        bend:
-          function: wire_corner
-        cross_section: xs_metal_routing
-    pad_array:
-      function: pad_array
-      settings:
-        pad:
-          function: pad
-          settings:
-            bbox_layers:
-            - - 13
-              - 0
-            bbox_offsets:
-            - -1.8
-            decorator:
-              function: add_pins_siepic
-              settings:
-                layer_pin:
-                - 1
-                - 11
-                port_type: placement
-            layer:
-            - 12
-            - 0
-            size:
-            - 75
-            - 75
-        spacing:
-        - 125
-        - 125
-    port_names: null
-    select_ports:
-      function: select_ports
-      settings:
-        port_type: electrical
-    spacing:
-    - 0.0
-    - 100.0
-  function_name: add_electrical_pads_top_dc
-  info: {}
-  info_version: 2
-  module: gdsfactory.routing.add_electrical_pads_top_dc
-  name: ring_single_heater_e488dd8d_add_electrical_pads_top_dc_c0e05349
+          bbox_offsets:
+          - -1.8
+          layer:
+          - 12
+          - 0
+          post_process:
+            function: add_pins_siepic
+            module: ubcpdk.tech
+            settings:
+              layer_pin:
+              - 1
+              - 11
+              port_type: placement
+          size:
+          - 75
+          - 75
+      spacing:
+      - 125
+      - 125
+  port_names: null
+  post_process: null
+  select_ports:
+    function: select_ports
+    module: gdsfactory.port
+    settings:
+      port_type: electrical
+  spacing:
+  - 0.0
+  - 100.0

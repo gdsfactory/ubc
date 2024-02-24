@@ -10,6 +10,7 @@ ubcpdk/tests/test_components.gds/gds_run/
 ubcpdk/tests/test_components.gds/gds_diff/
 .dvc/
 .virtual_documents
+tests/ref/*.oas
 
 # C extensions
 *.so

@@ -9,10 +9,12 @@ instances:
     settings: {gap_mmi: 0.7}
   s1:
     component: straight
-    settings: {length: 20}
+    settings: {length: 20, npoints: 2, layer: null, width: null, add_pins: true, cross_section: xs_sc,
+      add_bbox: null, post_process: null}
   s2:
     component: straight
-    settings: {length: 40}
+    settings: {length: 40, npoints: 2, layer: null, width: null, add_pins: true, cross_section: xs_sc,
+      add_bbox: null, post_process: null}
 placements:
   mmi1: {x: null, y: null, port: null, rotation: 0.0, dx: -22.832156230736544, dy: -0.9358105716724547,
     mirror: null}

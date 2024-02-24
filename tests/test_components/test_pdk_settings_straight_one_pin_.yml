@@ -1,27 +1,15 @@
+function: straight_one_pin
+info: {}
+module: ubcpdk.components
 name: straight_one_pin
 settings:
-  changed: {}
-  child: null
-  default:
-    cross_section:
-      function: cross_section
-      settings:
-        add_pins_function_module: ubcpdk.tech
-        add_pins_function_name: add_pins_siepic
-        bbox_layers: null
-        bbox_offsets: null
-    length: 1
-  full:
-    cross_section:
-      function: cross_section
-      settings:
-        add_pins_function_module: ubcpdk.tech
-        add_pins_function_name: add_pins_siepic
-        bbox_layers: null
-        bbox_offsets: null
-    length: 1
-  function_name: straight_one_pin
-  info: {}
-  info_version: 2
-  module: ubcpdk.components
-  name: straight_one_pin
+  cross_section:
+    function: cross_section
+    module: gdsfactory.cross_section
+    settings:
+      add_pins_function_module: ubcpdk.tech
+      add_pins_function_name: add_pins_siepic
+      bbox_layers: null
+      bbox_offsets: null
+      radius_min: 5
+  length: 1
