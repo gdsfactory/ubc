@@ -1,4 +1,4 @@
-name: Sphinx docs to gh-pages
+name: build docs
 
 on:
   pull_request:
@@ -30,7 +30,7 @@ jobs:
           make install
           make docs
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "./docs/_build/html/"
 
