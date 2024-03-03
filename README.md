@@ -24,7 +24,6 @@ Once you have python installed, open Anaconda Prompt as Administrator and then i
 
 ![anaconda prompt](https://i.imgur.com/eKk2bbs.png)
 ```
-conda install -c conda-forge gdstk -y
 pip install ubcpdk --upgrade
 ```
 
@@ -37,7 +36,6 @@ For developers you need to `git clone` the GitHub repository, fork it, git add, 
 ```
 git clone https://github.com/gdsfactory/ubc.git
 cd ubc
-conda install -c conda-forge gdstk -y
 pip install -e . pre-commit
 pre-commit install
 python install_tech.py
