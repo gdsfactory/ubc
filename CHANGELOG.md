@@ -4,15 +4,13 @@
 
 ## [2.4.0](https://github.com/gdsfactory/ubc/releases/tag/v2.4.0) - 2024-03-03
 
-No significant changes.
-
+- Update gdsfactory 7.15.2 [#359](https://github.com/gdsfactory/ubc/pull/359)
 
 ## [2.3.5](https://github.com/gdsfactory/ubc/releases/tag/v2.3.5) - 2024-02-24
 
 - update to latest gdsfactory [#351](https://github.com/gdsfactory/ubc/pull/351)
 - Bump actions/deploy-pages from 2 to 4 [#344](https://github.com/gdsfactory/ubc/pull/344)
 - add verification [#335](https://github.com/gdsfactory/ubc/pull/335)
-
 
 ## [2.3.4](https://github.com/gdsfactory/ubc/releases/tag/v2.3.4) - 2023-11-19
 
