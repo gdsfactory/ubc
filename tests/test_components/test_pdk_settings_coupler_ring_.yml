@@ -1,10 +1,8 @@
 function: coupler_ring
 info: {}
 module: gdsfactory.components.coupler_ring
-name: coupler_ring_3a87bf6f
+name: coupler_ring_4abc60df
 settings:
-  add_bbox:
-    function: add_pins_bbox_siepic
   bend:
     function: bend_euler
   coupler90:
@@ -46,6 +44,9 @@ settings:
     width_wide: null
   cross_section_bend: null
   gap: 0.2
+  info: null
   length_extension: 3
   length_x: 4.0
+  post_process:
+    function: add_pins_bbox_siepic
   radius: 5.0

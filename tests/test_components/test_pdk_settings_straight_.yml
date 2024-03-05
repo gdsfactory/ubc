@@ -7,9 +7,13 @@ info:
   route_info_xs_sc_length: 10.0
   width: 0.5
 module: gdsfactory.components.straight
-name: straight_6cf27063
+name: straight_901ddba2
 settings:
-  add_bbox:
+  cross_section: xs_sc
+  info: null
+  length: 10.0
+  npoints: 2
+  post_process:
     function: add_padding
     module: gdsfactory.add_padding
     settings:
@@ -19,10 +23,3 @@ settings:
       - - 68
         - 0
       top: 0.5
-  add_pins: true
-  cross_section: xs_sc
-  layer: null
-  length: 10.0
-  npoints: 2
-  post_process: null
-  width: null

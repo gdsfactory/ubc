@@ -37,15 +37,13 @@ settings:
     taper_length: 10.0
     width_wide: null
   gap_mmi: 0.25
+  info: null
   length_mmi: 5.5
   length_taper: 10.0
   post_process:
     function: add_pins_bbox_siepic
-  straight:
-    function: straight
   taper:
     function: taper
   width: null
   width_mmi: 2.5
   width_taper: 1.0
-  with_bbox: true

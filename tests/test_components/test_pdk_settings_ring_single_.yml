@@ -1,7 +1,7 @@
 function: ring_single
 info: {}
 module: gdsfactory.components.ring_single
-name: ring_single_7c86ae28
+name: ring_single_a02af6db
 settings:
   bend:
     function: bend_euler_sc
@@ -11,8 +11,6 @@ settings:
     function: coupler_ring
     module: gdsfactory.components.coupler_ring
     settings:
-      add_bbox:
-        function: add_pins_bbox_siepic
       cross_section:
         add_pins_function_module: ubcpdk.tech
         add_pins_function_name: add_pins_siepic
@@ -46,6 +44,8 @@ settings:
         start_straight_length: 0.01
         taper_length: 10.0
         width_wide: null
+      post_process:
+        function: add_pins_bbox_siepic
   cross_section:
     add_pins_function_module: ubcpdk.tech
     add_pins_function_name: add_pins_siepic
@@ -88,7 +88,8 @@ settings:
     function: straight
     module: gdsfactory.components.straight
     settings:
-      add_bbox:
+      cross_section: xs_sc
+      post_process:
         function: add_padding
         module: gdsfactory.add_padding
         settings:
@@ -98,4 +99,3 @@ settings:
           - - 68
             - 0
           top: 0.5
-      cross_section: xs_sc

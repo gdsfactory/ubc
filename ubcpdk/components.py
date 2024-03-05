@@ -42,7 +42,7 @@ bend = bend_euler_sc
 straight = partial(
     gf.components.straight,
     cross_section="xs_sc",
-    add_bbox=tech.add_bbox_siepic_top_bot,
+    post_process=tech.add_bbox_siepic_top_bot,
 )
 bend_s = partial(
     gf.components.bend_s,
@@ -651,7 +651,7 @@ coupler = partial(
 coupler_ring = partial(
     gf.components.coupler_ring,
     cross_section=tech.xs_sc_simple,
-    add_bbox=tech.add_pins_bbox_siepic,
+    post_process=tech.add_pins_bbox_siepic,
 )
 mmi1x2 = partial(
     gf.components.mmi1x2,
@@ -855,10 +855,10 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    import ubcpdk.components as uc
+    c = mzi_heater()
 
-    c = uc.ring_single_heater()
-    c = uc.add_fiber_array_pads_rf(c)
+    # c = uc.ring_single_heater()
+    # c = uc.add_fiber_array_pads_rf(c)
 
     # c = ring_double(length_y=10)
     # c = ring_with_crossing()
