@@ -65,7 +65,8 @@ settings:
     function: straight
     module: gdsfactory.components.straight
     settings:
-      add_bbox:
+      cross_section: xs_sc
+      post_process:
         function: add_padding
         module: gdsfactory.add_padding
         settings:
@@ -75,5 +76,4 @@ settings:
           - - 68
             - 0
           top: 0.5
-      cross_section: xs_sc
   with_loopback: false

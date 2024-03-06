@@ -42,7 +42,7 @@ bend = bend_euler_sc
 straight = partial(
     gf.components.straight,
     cross_section="xs_sc",
-    add_bbox=tech.add_bbox_siepic_top_bot,
+    post_process=tech.add_bbox_siepic_top_bot,
 )
 bend_s = partial(
     gf.components.bend_s,
@@ -60,10 +60,7 @@ thermal_phase_shifter_names = [
     "thermal_phase_shifter_te_1550_500um_lowloss",
 ]
 
-prefix_te1550 = f"opt_in_TE_1550_device_{CONFIG.username}"
-prefix_tm1550 = f"opt_in_TM_1550_device_{CONFIG.username}"
-prefix_te1310 = f"opt_in_TE_1310_device_{CONFIG.username}"
-prefix_tm1130 = f"opt_in_TM_1310_device_{CONFIG.username}"
+prefix_te1550 = prefix_tm1550 = prefix_te1310 = prefix_tm1130 = "o2"
 
 
 # @gf.cell
@@ -651,7 +648,7 @@ coupler = partial(
 coupler_ring = partial(
     gf.components.coupler_ring,
     cross_section=tech.xs_sc_simple,
-    add_bbox=tech.add_pins_bbox_siepic,
+    post_process=tech.add_pins_bbox_siepic,
 )
 mmi1x2 = partial(
     gf.components.mmi1x2,
@@ -855,10 +852,9 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    import ubcpdk.components as uc
-
-    c = uc.ring_single_heater()
-    c = uc.add_fiber_array_pads_rf(c)
+    # c = mzi_heater()
+    # c = uc.ring_single_heater()
+    # c = uc.add_fiber_array_pads_rf(c)
 
     # c = ring_double(length_y=10)
     # c = ring_with_crossing()
@@ -875,8 +871,8 @@ if __name__ == "__main__":
     # c = mzi_heater()
     # c = ring_double_heater()
     # c = ring_single_heater()
-    # c = gc_te1310()
+    c = ebeam_y_1550()
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
     # c = ring_single()
-    c.show(show_ports=False)
+    c.show(show_ports=True)
