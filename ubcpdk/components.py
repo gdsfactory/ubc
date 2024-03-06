@@ -60,10 +60,7 @@ thermal_phase_shifter_names = [
     "thermal_phase_shifter_te_1550_500um_lowloss",
 ]
 
-prefix_te1550 = f"opt_in_TE_1550_device_{CONFIG.username}"
-prefix_tm1550 = f"opt_in_TM_1550_device_{CONFIG.username}"
-prefix_te1310 = f"opt_in_TE_1310_device_{CONFIG.username}"
-prefix_tm1130 = f"opt_in_TM_1310_device_{CONFIG.username}"
+prefix_te1550 = prefix_tm1550 = prefix_te1310 = prefix_tm1130 = "o2"
 
 
 # @gf.cell
@@ -855,8 +852,7 @@ def add_pads(
 
 
 if __name__ == "__main__":
-    c = mzi_heater()
-
+    # c = mzi_heater()
     # c = uc.ring_single_heater()
     # c = uc.add_fiber_array_pads_rf(c)
 
@@ -875,8 +871,8 @@ if __name__ == "__main__":
     # c = mzi_heater()
     # c = ring_double_heater()
     # c = ring_single_heater()
-    # c = gc_te1310()
+    c = ebeam_y_1550()
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
     # c = ring_single()
-    c.show(show_ports=False)
+    c.show(show_ports=True)
