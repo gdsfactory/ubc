@@ -45,6 +45,7 @@ straight = partial(
     cross_section="xs_sc",
     post_process=(tech.add_bbox_siepic_top_bot,),
 )
+straight_heater_metal = gf.c.straight_heater_metal
 bend_s = partial(
     gf.components.bend_s,
     cross_section="xs_sc",
