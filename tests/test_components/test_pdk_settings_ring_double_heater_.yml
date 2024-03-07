@@ -1,7 +1,7 @@
 function: ring_double_heater
 info: {}
 module: gdsfactory.components.ring_double_heater
-name: ring_double_heater_084a38b9
+name: ring_double_heater_30105b49
 settings:
   bend:
     function: bend_euler
@@ -92,7 +92,7 @@ settings:
     settings:
       cross_section: xs_sc
       post_process:
-        function: add_padding
+      - function: add_padding
         module: gdsfactory.add_padding
         settings:
           bottom: 0.5

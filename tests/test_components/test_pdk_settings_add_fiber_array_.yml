@@ -15,7 +15,7 @@ settings:
     settings:
       cross_section: xs_sc
       post_process:
-        function: add_padding
+      - function: add_padding
         module: gdsfactory.add_padding
         settings:
           bottom: 0.5
@@ -32,6 +32,7 @@ settings:
     function: get_input_labels
   grating_coupler:
     function: gc_te1550
+  info: null
   layer_label:
   - 10
   - 0
@@ -43,7 +44,7 @@ settings:
     settings:
       cross_section: xs_sc
       post_process:
-        function: add_padding
+      - function: add_padding
         module: gdsfactory.add_padding
         settings:
           bottom: 0.5

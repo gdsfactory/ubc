@@ -11,6 +11,7 @@ from gdsfactory.typings import (
     Label,
     LayerSpec,
     List,
+    Metadata,
     Optional,
     Port,
     Tuple,
@@ -42,7 +43,7 @@ bend = bend_euler_sc
 straight = partial(
     gf.components.straight,
     cross_section="xs_sc",
-    post_process=tech.add_bbox_siepic_top_bot,
+    post_process=(tech.add_bbox_siepic_top_bot,),
 )
 bend_s = partial(
     gf.components.bend_s,
@@ -61,12 +62,6 @@ thermal_phase_shifter_names = [
 ]
 
 prefix_te1550 = prefix_tm1550 = prefix_te1310 = prefix_tm1130 = "o2"
-
-
-# @gf.cell
-# def Packaging_FibreArray_8ch() -> gf.Component:
-#     """Return Packaging_FibreArray_8ch fixed cell."""
-#     return import_gds("Packaging_FibreArray_8ch.gds")
 
 
 def clean_name(name: str) -> str:
@@ -498,7 +493,8 @@ def add_fiber_array(
     cross_section: CrossSectionSpec = "xs_sc",
     layer_label: LayerSpec = LAYER.TEXT,
     straight: ComponentSpec = straight,
-    post_process: Callable | None = None,
+    post_process: Callable | list[Callable] | None = None,
+    info: Metadata | None = None,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
@@ -519,6 +515,7 @@ def add_fiber_array(
         layer_label: for label.
         straight: straight component.
         post_process: function to post process the component.
+        info: metadata.
 
     """
     c = gf.Component()
@@ -543,8 +540,9 @@ def add_fiber_array(
     ref.rotate(-90)
     c.add_ports(ref.ports)
     c.copy_child_info(component)
-    if post_process:
-        c = post_process(c)
+
+    c.post_process(post_process)
+    c.info.update(info or {})
     return c
 
 

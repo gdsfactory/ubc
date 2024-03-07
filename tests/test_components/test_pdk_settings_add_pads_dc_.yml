@@ -11,6 +11,7 @@ settings:
       bend:
         function: wire_corner
       cross_section: xs_metal_routing
+  info: null
   pad_array:
     function: pad_array
     module: gdsfactory.components.pad

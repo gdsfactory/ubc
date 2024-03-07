@@ -1,7 +1,7 @@
 function: ring_double
 info: {}
 module: gdsfactory.components.ring_double
-name: ring_double_23a77142
+name: ring_double_b0e5609f
 settings:
   bend:
     function: bend_euler
@@ -88,7 +88,7 @@ settings:
     settings:
       cross_section: xs_sc
       post_process:
-        function: add_padding
+      - function: add_padding
         module: gdsfactory.add_padding
         settings:
           bottom: 0.5
