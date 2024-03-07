@@ -5,6 +5,7 @@ name: ring_single_heater_add_electrical_pads_top_cc2475fe
 settings:
   component: ring_single_heater
   direction: top
+  info: null
   layer: MTOP
   pad_array:
     function: pad_array

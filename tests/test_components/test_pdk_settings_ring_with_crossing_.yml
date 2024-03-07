@@ -1,7 +1,7 @@
 function: ring_single_dut
 info: {}
 module: gdsfactory.components.ring_single_dut
-name: ring_single_dut_eae863cb
+name: ring_single_dut_ec96572d
 settings:
   bend:
     function: bend_euler_sc
@@ -58,7 +58,7 @@ settings:
     settings:
       cross_section: xs_sc
       post_process:
-        function: add_padding
+      - function: add_padding
         module: gdsfactory.add_padding
         settings:
           bottom: 0.5

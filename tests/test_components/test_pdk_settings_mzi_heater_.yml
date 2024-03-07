@@ -1,7 +1,7 @@
 function: mzi
 info: {}
 module: gdsfactory.components.mzi
-name: mzi_a3e473ed
+name: mzi_5a8609eb
 settings:
   add_electrical_ports_bot: true
   add_optical_ports_arms: false
@@ -13,6 +13,7 @@ settings:
   cross_section_x_top: null
   delta_length: 10.0
   extend_ports_straight_x: null
+  info: null
   length_x: 200
   length_y: 2.0
   mirror_bot: false
@@ -30,7 +31,7 @@ settings:
     settings:
       cross_section: xs_sc
       post_process:
-        function: add_padding
+      - function: add_padding
         module: gdsfactory.add_padding
         settings:
           bottom: 0.5

@@ -1,7 +1,7 @@
 function: ring_single
 info: {}
 module: gdsfactory.components.ring_single
-name: ring_single_a02af6db
+name: ring_single_f7a07c6e
 settings:
   bend:
     function: bend_euler_sc
@@ -90,7 +90,7 @@ settings:
     settings:
       cross_section: xs_sc
       post_process:
-        function: add_padding
+      - function: add_padding
         module: gdsfactory.add_padding
         settings:
           bottom: 0.5
