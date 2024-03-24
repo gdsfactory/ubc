@@ -9,27 +9,18 @@ info:
   xsize: 75
   ysize: 75
 module: gdsfactory.components.pad
-name: pad_a56a8c7f
+name: pad_0210fbc6
 settings:
   bbox_layers:
   - - 13
     - 0
   bbox_offsets:
   - -1.8
-  info: null
   layer:
   - 12
   - 0
   port_inclusion: 0
   port_orientation: null
-  post_process:
-    function: add_pins_siepic
-    module: ubcpdk.tech
-    settings:
-      layer_pin:
-      - 1
-      - 11
-      port_type: placement
   size:
   - 75
   - 75

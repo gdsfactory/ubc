@@ -1,25 +1,14 @@
 function: straight
 info:
-  length: 10.0
-  route_info_length: 10.0
+  length: 1.0
+  route_info_length: 1.0
   route_info_type: xs_sc
-  route_info_weight: 10.0
-  route_info_xs_sc_length: 10.0
+  route_info_weight: 1.0
+  route_info_xs_sc_length: 1.0
   width: 0.5
-module: gdsfactory.components.straight
-name: straight_af6b139c
+module: ubcpdk.components
+name: straight
 settings:
   cross_section: xs_sc
-  info: null
-  length: 10.0
+  length: 1.0
   npoints: 2
-  post_process:
-  - function: add_padding
-    module: gdsfactory.add_padding
-    settings:
-      bottom: 0.5
-      default: 0
-      layers:
-      - - 68
-        - 0
-      top: 0.5

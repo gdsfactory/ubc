@@ -167,13 +167,13 @@ add_ports_from_siepic_pins = partial(
 )
 
 
+@gf.cell(autoname=False, post_process=(add_ports_from_siepic_pins,))
 def import_gds(gdspath, **kwargs):
     return gf.import_gds(
         gdspath,
         gdsdir=PATH.gds,
         library="Design kits/ebeam",
         model=gdspath.split(".")[0],
-        post_process=add_ports_from_siepic_pins,
         **kwargs,
     )
 

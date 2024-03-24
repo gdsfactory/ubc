@@ -173,9 +173,6 @@ def add_pins_bbox_siepic(
     return c
 
 
-add_pins_bbox_siepic_remove_layers = partial(add_pins_bbox_siepic, remove_layers=True)
-
-
 add_pins_bbox_siepic_metal = partial(
     add_pins_bbox_siepic, port_type="placement", layer_pin=LAYER.PORTE
 )
@@ -294,8 +291,6 @@ cladding_offsets_optical_siepic = None
 ############################
 cross_section = partial(
     gf.cross_section.cross_section,
-    add_pins_function_name="add_pins_siepic",
-    add_pins_function_module="ubcpdk.tech",
     radius_min=5,
 )
 
@@ -312,8 +307,6 @@ strip_heater_metal = partial(
     layer_heater=LAYER.M1_HEATER,
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
-    add_pins_function_name="add_pins_siepic",
-    add_pins_function_module="ubcpdk.tech",
 )
 
 strip_bbox = partial(
@@ -330,9 +323,7 @@ metal_routing = partial(
     port_types=gf.cross_section.port_types_electrical,
     radius=None,
 )
-heater_metal = partial(
-    metal_routing, width=4, layer=LAYER.M1_HEATER, add_pins_function_name=None
-)
+heater_metal = partial(metal_routing, width=4, layer=LAYER.M1_HEATER)
 
 ############################
 # Cross-sections

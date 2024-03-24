@@ -11,7 +11,6 @@ from gdsfactory.typings import (
     Label,
     LayerSpec,
     List,
-    Metadata,
     Optional,
     Port,
     Tuple,
@@ -24,8 +23,6 @@ from ubcpdk.tech import (
     LAYER,
     LAYER_STACK,
     add_pins_bbox_siepic,
-    add_pins_bbox_siepic_remove_layers,
-    add_pins_siepic_metal,
 )
 
 um = 1e-6
@@ -40,12 +37,15 @@ def bend_euler_sc(**kwargs) -> Component:
 bend_euler180_sc = partial(bend_euler_sc, angle=180)
 bend = bend_euler_sc
 
-straight = partial(
-    gf.components.straight,
-    cross_section="xs_sc",
-    post_process=(tech.add_bbox_siepic_top_bot,),
-)
-straight_heater_metal = gf.c.straight_heater_metal
+
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+def straight(length: float = 1.0, npoints: int = 2, cross_section="xs_sc"):
+    return gf.components.straight(
+        length=length, npoints=npoints, cross_section=cross_section
+    )
+
+
+straight_heater_metal = partial(gf.c.straight_heater_metal, straight=straight)
 bend_s = partial(
     gf.components.bend_s,
     cross_section="xs_sc",
@@ -494,8 +494,6 @@ def add_fiber_array(
     cross_section: CrossSectionSpec = "xs_sc",
     layer_label: LayerSpec = LAYER.TEXT,
     straight: ComponentSpec = straight,
-    post_process: Callable | list[Callable] | None = None,
-    info: Metadata | None = None,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
@@ -515,8 +513,6 @@ def add_fiber_array(
         cross_section: spec.
         layer_label: for label.
         straight: straight component.
-        post_process: function to post process the component.
-        info: metadata.
 
     """
     c = gf.Component()
@@ -542,8 +538,6 @@ def add_fiber_array(
     c.add_ports(ref.ports)
     c.copy_child_info(component)
 
-    c.post_process(post_process)
-    c.info.update(info or {})
     return c
 
 
@@ -639,21 +633,19 @@ def dbr(
     return add_pins_bbox_siepic(c)
 
 
-coupler = partial(
-    gf.components.coupler,
-    cross_section=tech.xs_sc_simple,
-    post_process=tech.add_pins_bbox_siepic,
-)
-coupler_ring = partial(
-    gf.components.coupler_ring,
-    cross_section=tech.xs_sc_simple,
-    post_process=tech.add_pins_bbox_siepic,
-)
-mmi1x2 = partial(
-    gf.components.mmi1x2,
-    cross_section=tech.xs_sc_simple,
-    post_process=tech.add_pins_bbox_siepic,
-)
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+def coupler(**kwargs) -> gf.Component:
+    return gf.components.coupler(**kwargs)
+
+
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+def coupler_ring(**kwargs) -> gf.Component:
+    return gf.components.coupler_ring(**kwargs)
+
+
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+def mmi1x2(**kwargs) -> gf.Component:
+    return gf.components.mmi1x2(**kwargs)
 
 
 @gf.cell
@@ -752,7 +744,7 @@ ring_single_heater = partial(
 
 
 ebeam_dc_te1550 = partial(
-    gf.components.coupler, post_process=add_pins_bbox_siepic_remove_layers
+    gf.components.coupler,
 )
 taper = partial(gf.components.taper)
 spiral = partial(gf.components.spiral_external_io)
@@ -773,7 +765,6 @@ pad = partial(
     layer=LAYER.M2_ROUTER,
     bbox_layers=(LAYER.PAD_OPEN,),
     bbox_offsets=(-1.8,),
-    post_process=add_pins_siepic_metal,
 )
 
 
@@ -820,14 +811,9 @@ def add_fiber_array_pads_rf(
         kwargs: for add_fiber_array.
     """
     c0 = gf.get_component(component)
-    text = f"elec_{username}-{clean_name(c0.name)}_G"
-    add_label = partial(add_label_electrical, text=text)
-    rename_ports_and_add_label = gf.compose(
-        add_label, gf.port.auto_rename_ports_electrical
-    )
-    c1 = add_pads_rf(
-        component=c0, post_process=rename_ports_and_add_label, orientation=orientation
-    )
+    # text = f"elec_{username}-{clean_name(c0.name)}_G"
+    # add_label = partial(add_label_electrical, text=text)
+    c1 = add_pads_rf(component=c0, orientation=orientation)
     return add_fiber_array(component=c1, **kwargs)
 
 
@@ -845,13 +831,13 @@ def add_pads(
         kwargs: for add_fiber_array.
     """
     c0 = gf.get_component(component)
-    text = f"elec_{username}-{clean_name(c0.name)}_G"
-    add_label = partial(add_label_electrical, text=text)
-    return add_pads_rf(component=c, post_process=add_label, **kwargs)
+    # text = f"elec_{username}-{clean_name(c0.name)}_G"
+    # add_label = partial(add_label_electrical, text=text)
+    return add_pads_rf(component=c0, **kwargs)
 
 
 if __name__ == "__main__":
-    # c = mzi_heater()
+    # c = straight()
     # c = uc.ring_single_heater()
     # c = uc.add_fiber_array_pads_rf(c)
 
@@ -867,11 +853,11 @@ if __name__ == "__main__":
     # c = bend_euler()
     # c = mzi()
     # c = spiral()
-    # c = mzi_heater()
+    c = pad_array()
     # c = ring_double_heater()
     # c = ring_single_heater()
-    c = ebeam_y_1550()
+    # c = ebeam_y_1550()
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
     # c = ring_single()
-    c.show(show_ports=True)
+    c.show(show_ports=False)

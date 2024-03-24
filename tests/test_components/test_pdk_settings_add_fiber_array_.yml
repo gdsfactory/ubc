@@ -1,29 +1,16 @@
 function: add_fiber_array
 info:
-  length: 10.0
-  route_info_length: 10.0
+  length: 1.0
+  route_info_length: 1.0
   route_info_type: xs_sc
-  route_info_weight: 10.0
-  route_info_xs_sc_length: 10.0
+  route_info_weight: 1.0
+  route_info_xs_sc_length: 1.0
   width: 0.5
 module: ubcpdk.components
 name: add_fiber_array_add_fiber_array
 settings:
   component:
     function: straight
-    module: gdsfactory.components.straight
-    settings:
-      cross_section: xs_sc
-      post_process:
-      - function: add_padding
-        module: gdsfactory.add_padding
-        settings:
-          bottom: 0.5
-          default: 0
-          layers:
-          - - 68
-            - 0
-          top: 0.5
   component_name: null
   cross_section: xs_sc
   fanout_length: 0.0
@@ -32,25 +19,10 @@ settings:
     function: get_input_labels
   grating_coupler:
     function: gc_te1550
-  info: null
   layer_label:
   - 10
   - 0
   optical_routing_type: 0
-  post_process: null
   straight:
     function: straight
-    module: gdsfactory.components.straight
-    settings:
-      cross_section: xs_sc
-      post_process:
-      - function: add_padding
-        module: gdsfactory.add_padding
-        settings:
-          bottom: 0.5
-          default: 0
-          layers:
-          - - 68
-            - 0
-          top: 0.5
   with_loopback: false

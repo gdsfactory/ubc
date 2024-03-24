@@ -1,7 +1,7 @@
 function: mzi
 info: {}
 module: gdsfactory.components.mzi
-name: mzi_0e264d4b
+name: mzi_f5c6fc9f
 settings:
   add_electrical_ports_bot: true
   add_optical_ports_arms: false
@@ -13,33 +13,19 @@ settings:
   cross_section_x_top: null
   delta_length: 10.0
   extend_ports_straight_x: null
-  info: null
   length_x: 0.1
   length_y: 2.0
+  min_length: 0.01
   mirror_bot: false
   nbends: 2
   port_e0_combiner: o3
   port_e0_splitter: o3
   port_e1_combiner: o2
   port_e1_splitter: o2
-  post_process: null
   splitter:
     function: ebeam_y_1550
   straight:
     function: straight
-    module: gdsfactory.components.straight
-    settings:
-      cross_section: xs_sc
-      post_process:
-      - function: add_padding
-        module: gdsfactory.add_padding
-        settings:
-          bottom: 0.5
-          default: 0
-          layers:
-          - - 68
-            - 0
-          top: 0.5
   straight_x_bot: null
   straight_x_top: null
   straight_y: null

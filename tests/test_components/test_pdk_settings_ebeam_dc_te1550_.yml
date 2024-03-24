@@ -3,7 +3,7 @@ info:
   length: 10.186
   min_bend_radius: 11.857
 module: gdsfactory.components.coupler
-name: coupler_17b65cbd
+name: coupler
 settings:
   coupler_straight:
     function: coupler_straight
@@ -13,10 +13,4 @@ settings:
   dx: 10.0
   dy: 4.0
   gap: 0.236
-  info: null
   length: 20.0
-  post_process:
-    function: add_pins_bbox_siepic
-    module: ubcpdk.tech
-    settings:
-      remove_layers: true

@@ -1,62 +1,17 @@
 function: ring_double_heater
 info: {}
 module: gdsfactory.components.ring_double_heater
-name: ring_double_heater_30105b49
+name: ring_double_heater_dde86d0f
 settings:
   bend:
     function: bend_euler
   coupler_ring:
     function: coupler_ring
-    module: gdsfactory.components.coupler_ring
-    settings:
-      cross_section:
-        add_pins_function_module: ubcpdk.tech
-        add_pins_function_name: add_pins_siepic
-        auto_widen: false
-        auto_widen_minimum_length: 200.0
-        bbox_layers: null
-        bbox_offsets: null
-        components_along_path: []
-        end_straight_length: 0.01
-        gap: 3.0
-        info: {}
-        min_length: 0.01
-        radius: 10.0
-        radius_min: 5.0
-        sections:
-        - hidden: false
-          insets: null
-          layer: WG
-          name: _default
-          offset: 0.0
-          offset_function: null
-          port_names:
-          - o1
-          - o2
-          port_types:
-          - optical
-          - optical
-          simplify: null
-          width: 0.5
-          width_function: null
-        start_straight_length: 0.01
-        taper_length: 10.0
-        width_wide: null
-      post_process:
-        function: add_pins_bbox_siepic
   coupler_ring_top: null
   cross_section:
-    add_pins_function_module: ubcpdk.tech
-    add_pins_function_name: add_pins_siepic
-    auto_widen: false
-    auto_widen_minimum_length: 200.0
     bbox_layers: null
     bbox_offsets: null
     components_along_path: []
-    end_straight_length: 0.01
-    gap: 3.0
-    info: {}
-    min_length: 0.01
     radius: 10.0
     radius_min: 5.0
     sections:
@@ -75,9 +30,6 @@ settings:
       simplify: null
       width: 0.5
       width_function: null
-    start_straight_length: 0.01
-    taper_length: 10.0
-    width_wide: null
   cross_section_heater: xs_heater_metal
   cross_section_waveguide_heater: xs_sc_heater_metal
   gap: 0.2
@@ -88,19 +40,6 @@ settings:
   radius: 10.0
   straight:
     function: straight
-    module: gdsfactory.components.straight
-    settings:
-      cross_section: xs_sc
-      post_process:
-      - function: add_padding
-        module: gdsfactory.add_padding
-        settings:
-          bottom: 0.5
-          default: 0
-          layers:
-          - - 68
-            - 0
-          top: 0.5
   straight_heater:
     function: straight
   via_stack:

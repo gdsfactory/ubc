@@ -1,0 +1,244 @@
+connections: {}
+instances:
+  component_sequence_1:
+    component: component_sequence
+    info: {}
+    settings:
+      port_name1: o1
+      port_name2: o2
+      ports_map: null
+      sequence: _-UHUHUHUHUHUHUHUH-_
+      start_orientation: 0.0
+      symbol_to_component:
+        '-':
+        - function: straight
+          module: ubcpdk.components
+          settings:
+            cross_section: xs_sc_heater_metal
+            length: 15.9
+            npoints: 2
+        - o1
+        - o2
+        H:
+        - function: straight
+          module: ubcpdk.components
+          settings:
+            cross_section: xs_sc_heater_metal
+            length: 6.0
+            npoints: 2
+        - o1
+        - o2
+        U:
+        - function: straight
+          module: ubcpdk.components
+          settings:
+            cross_section: xs_sc_heater_metal
+            length: 30.0
+            npoints: 2
+        - o1
+        - o2
+        _:
+        - function: straight
+          module: gdsfactory.components.straight
+          settings:
+            cross_section: xs_sc
+            length: 0.1
+            npoints: 2
+        - o1
+        - o2
+  taper_1:
+    component: taper
+    info:
+      length: 5.0
+      width1: 10.0
+      width2: 4.0
+    settings:
+      cross_section:
+        bbox_layers: null
+        bbox_offsets: null
+        components_along_path: []
+        radius: null
+        radius_min: 5.0
+        sections:
+        - hidden: false
+          insets: null
+          layer:
+          - 11
+          - 0
+          name: _default
+          offset: 0.0
+          offset_function: null
+          port_names:
+          - e1
+          - e2
+          port_types:
+          - electrical
+          - electrical
+          simplify: null
+          width: 4.0
+          width_function: null
+      length: 5.0
+      port: null
+      port_order_name:
+      - o1
+      - o2
+      port_order_types:
+      - optical
+      - optical
+      width1: 10.0
+      width2: 4.0
+      with_two_ports: true
+  taper_2:
+    component: taper
+    info:
+      length: 5.0
+      width1: 10.0
+      width2: 4.0
+    settings:
+      cross_section:
+        bbox_layers: null
+        bbox_offsets: null
+        components_along_path: []
+        radius: null
+        radius_min: 5.0
+        sections:
+        - hidden: false
+          insets: null
+          layer:
+          - 11
+          - 0
+          name: _default
+          offset: 0.0
+          offset_function: null
+          port_names:
+          - e1
+          - e2
+          port_types:
+          - electrical
+          - electrical
+          simplify: null
+          width: 4.0
+          width_function: null
+      length: 5.0
+      port: null
+      port_order_name:
+      - o1
+      - o2
+      port_order_types:
+      - optical
+      - optical
+      width1: 10.0
+      width2: 4.0
+      with_two_ports: true
+  via_stack_1:
+    component: via_stack
+    info:
+      layer:
+      - 12
+      - 0
+      size:
+      - 10
+      - 10
+      xsize: 10
+      ysize: 10
+    settings:
+      correct_size: true
+      layer_offsets: null
+      layer_port: null
+      layers:
+      - - 11
+        - 0
+      - - 12
+        - 0
+      size:
+      - 10
+      - 10
+      slot_horizontal: false
+      slot_vertical: false
+      vias:
+      - null
+      - null
+  via_stack_2:
+    component: via_stack
+    info:
+      layer:
+      - 12
+      - 0
+      size:
+      - 10
+      - 10
+      xsize: 10
+      ysize: 10
+    settings:
+      correct_size: true
+      layer_offsets: null
+      layer_port: null
+      layers:
+      - - 11
+        - 0
+      - - 12
+        - 0
+      size:
+      - 10
+      - 10
+      slot_horizontal: false
+      slot_vertical: false
+      vias:
+      - null
+      - null
+name: straight_heater_metal_undercut_with_undercutFalse
+placements:
+  component_sequence_1:
+    mirror: 0
+    rotation: 0
+    x: 0.0
+    y: 0.0
+  taper_1:
+    mirror: 0
+    rotation: 0
+    x: -4.905
+    y: 0.0
+  taper_2:
+    mirror: 0
+    rotation: 180
+    x: 324.905
+    y: 0.0
+  via_stack_1:
+    mirror: 0
+    rotation: 0
+    x: -9.905
+    y: 0.0
+  via_stack_2:
+    mirror: 0
+    rotation: 0
+    x: 329.905
+    y: 0.0
+ports:
+  l_e1: via_stack_1,e1
+  l_e2: via_stack_1,e2
+  l_e3: via_stack_1,e3
+  l_e4: via_stack_1,e4
+  o1: component_sequence_1,o1
+  o2: component_sequence_1,o2
+  r_e1: via_stack_2,e1
+  r_e2: via_stack_2,e2
+  r_e3: via_stack_2,e3
+  r_e4: via_stack_2,e4
+warnings:
+  optical:
+    unconnected_ports:
+    - message: 4 unconnected optical ports!
+      ports:
+      - taper_1,o1
+      - taper_1,o2
+      - taper_2,o1
+      - taper_2,o2
+      values:
+      - - -4.905
+        - 0.0
+      - - 0.095
+        - 0.0
+      - - 324.905
+        - 0.0
+      - - 319.905
+        - 0.0
