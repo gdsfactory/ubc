@@ -1,7 +1,7 @@
 function: coupler_ring
 info: {}
 module: gdsfactory.components.coupler_ring
-name: coupler_ring_4abc60df
+name: coupler_ring
 settings:
   bend:
     function: bend_euler
@@ -9,44 +9,9 @@ settings:
     function: coupler90
   coupler_straight:
     function: coupler_straight
-  cross_section:
-    add_pins_function_module: ubcpdk.tech
-    add_pins_function_name: add_pins_siepic
-    auto_widen: false
-    auto_widen_minimum_length: 200.0
-    bbox_layers: null
-    bbox_offsets: null
-    components_along_path: []
-    end_straight_length: 0.01
-    gap: 3.0
-    info: {}
-    min_length: 0.01
-    radius: 10.0
-    radius_min: 5.0
-    sections:
-    - hidden: false
-      insets: null
-      layer: WG
-      name: _default
-      offset: 0.0
-      offset_function: null
-      port_names:
-      - o1
-      - o2
-      port_types:
-      - optical
-      - optical
-      simplify: null
-      width: 0.5
-      width_function: null
-    start_straight_length: 0.01
-    taper_length: 10.0
-    width_wide: null
+  cross_section: xs_sc
   cross_section_bend: null
   gap: 0.2
-  info: null
   length_extension: 3
   length_x: 4.0
-  post_process:
-    function: add_pins_bbox_siepic
   radius: 5.0

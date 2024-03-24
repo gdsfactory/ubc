@@ -182,7 +182,7 @@ bend_s
 
   import ubcpdk
 
-  c = ubcpdk.components.bend_s(size=(11.0, 1.8), npoints=99, cross_section='xs_sc', with_bbox=True, add_pins=True)
+  c = ubcpdk.components.bend_s(size=(11.0, 1.8), npoints=99, cross_section='xs_sc')
   c.plot()
 
 
@@ -707,7 +707,7 @@ mmi1x2
 
   import ubcpdk
 
-  c = ubcpdk.components.mmi1x2(width_taper=1.0, length_taper=10.0, length_mmi=5.5, width_mmi=2.5, gap_mmi=0.25, with_bbox=True)
+  c = ubcpdk.components.mmi1x2(width_taper=1.0, length_taper=10.0, length_mmi=5.5, width_mmi=2.5, gap_mmi=0.25)
   c.plot()
 
 
@@ -902,7 +902,22 @@ straight
 
   import ubcpdk
 
-  c = ubcpdk.components.straight(length=10.0, npoints=2, add_pins=True, cross_section='xs_sc')
+  c = ubcpdk.components.straight(length=10.0, npoints=2, cross_section='xs_sc', post_process=(functools.partial(<function add_padding at 0x7f87372dd440>, layers=((68, 0),), default=0, top=0.5, bottom=0.5),))
+  c.plot()
+
+
+
+straight_heater_metal
+----------------------------------------------------
+
+.. autofunction:: ubcpdk.components.straight_heater_metal
+
+.. plot::
+  :include-source:
+
+  import ubcpdk
+
+  c = ubcpdk.components.straight_heater_metal(length=320.0, length_undercut_spacing=6.0, length_undercut=30.0, length_straight=0.1, length_straight_input=15.0, cross_section='xs_sc', cross_section_heater='xs_heater_metal', cross_section_waveguide_heater='xs_sc_heater_metal', cross_section_heater_undercut='xs_sc_heater_metal_undercut', with_undercut=False, via_stack='via_stack_heater_mtop', heater_taper_length=5.0)
   c.plot()
 
 
@@ -932,7 +947,7 @@ taper
 
   import ubcpdk
 
-  c = ubcpdk.components.taper(length=10.0, width1=0.5, with_bbox=True, with_two_ports=True, cross_section='xs_sc', port_order_name=('o1', 'o2'), port_order_types=('optical', 'optical'), add_pins=True)
+  c = ubcpdk.components.taper(length=10.0, width1=0.5, with_two_ports=True, cross_section='xs_sc', port_order_name=('o1', 'o2'), port_order_types=('optical', 'optical'))
   c.plot()
 
 

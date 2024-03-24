@@ -68,6 +68,7 @@ Cells summary
    ring_with_crossing
    spiral
    straight
+   straight_heater_metal
    straight_one_pin
    taper
    terminator_short

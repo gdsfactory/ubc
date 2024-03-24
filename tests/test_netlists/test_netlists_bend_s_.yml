@@ -1,0 +1,35 @@
+connections: {}
+instances:
+  bezier_1:
+    component: bezier
+    info:
+      end_angle: 0
+      length: 11.206
+      min_bend_radius: 13.012
+      start_angle: 0
+    settings:
+      bend_radius_error_type: null
+      control_points:
+      - - 0
+        - 0
+      - - 5.5
+        - 0
+      - - 5.5
+        - 1.8
+      - - 11.0
+        - 1.8
+      cross_section: xs_sc
+      end_angle: null
+      npoints: 99
+      start_angle: null
+      with_manhattan_facing_angles: true
+name: bend_s
+placements:
+  bezier_1:
+    mirror: 0
+    rotation: 0
+    x: 0.0
+    y: 0.0
+ports:
+  o1: bezier_1,o1
+  o2: bezier_1,o2

@@ -7,8 +7,6 @@ settings:
     function: cross_section
     module: gdsfactory.cross_section
     settings:
-      add_pins_function_module: ubcpdk.tech
-      add_pins_function_name: add_pins_siepic
       bbox_layers: null
       bbox_offsets: null
       radius_min: 5

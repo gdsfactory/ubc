@@ -3,10 +3,9 @@ info:
   xsize: 75
   ysize: 75
 module: gdsfactory.components.pad
-name: pad_array_2e24007e
+name: pad_array_25dc0e38
 settings:
   columns: 6
-  info: null
   orientation: 270
   pad:
     function: pad
@@ -20,18 +19,9 @@ settings:
       layer:
       - 12
       - 0
-      post_process:
-        function: add_pins_siepic
-        module: ubcpdk.tech
-        settings:
-          layer_pin:
-          - 1
-          - 11
-          port_type: placement
       size:
       - 75
       - 75
-  post_process: null
   rows: 1
   spacing:
   - 125
