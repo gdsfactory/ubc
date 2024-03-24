@@ -3,8 +3,9 @@
 from gdsfactory.config import PATH as GPATH
 from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
+from gplugins.sax.models import get_models
 
-from ubcpdk import components, data, tech
+from ubcpdk import components, data, models, tech
 from ubcpdk.config import CONFIG, PATH
 from ubcpdk.tech import LAYER, LAYER_STACK, LAYER_VIEWS, cross_sections
 
@@ -29,6 +30,7 @@ PDK = Pdk(
     name="ubcpdk",
     cells=cells,
     cross_sections=cross_sections,
+    models=get_models(models),
     layers=dict(LAYER),
     layer_stack=LAYER_STACK,
     layer_views=LAYER_VIEWS,
@@ -40,6 +42,6 @@ PDK.activate()
 
 
 if __name__ == "__main__":
-    f = PDK.cells
-    for k, _v in f.items():
-        print(k)
+    m = get_models(models)
+    for model in m.keys():
+        print(model)
