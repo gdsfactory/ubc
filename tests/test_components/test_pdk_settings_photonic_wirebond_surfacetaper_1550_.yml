@@ -1,7 +1,7 @@
-function: photonic_wirebond_surfacetaper_1550
+function: ''
 info:
   library: Design kits/ebeam
   model: photonic_wirebond_surfacetaper_1550
-module: ubcpdk.components
+module: ''
 name: photonic_wirebond_surfacetaper_1550
 settings: {}

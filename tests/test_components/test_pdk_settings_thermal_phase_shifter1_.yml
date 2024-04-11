@@ -1,7 +1,7 @@
-function: thermal_phase_shifter1
+function: ''
 info:
   library: Design kits/ebeam
   model: thermal_phase_shifters
-module: ubcpdk.components
-name: thermal_phase_shifter1
+module: ''
+name: thermal_phase_shifter_te_1310_500um
 settings: {}

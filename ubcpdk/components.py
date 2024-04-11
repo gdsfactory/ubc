@@ -1,5 +1,5 @@
 """Cells imported from the PDK."""
-from functools import partial
+from functools import cache, partial
 
 import gdsfactory as gf
 from gdsfactory import Component
@@ -69,7 +69,6 @@ def clean_name(name: str) -> str:
     return name.replace("_", ".")
 
 
-@gf.cell
 def thermal_phase_shifter0() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
@@ -77,7 +76,6 @@ def thermal_phase_shifter0() -> gf.Component:
     )
 
 
-@gf.cell
 def thermal_phase_shifter1() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
@@ -85,7 +83,6 @@ def thermal_phase_shifter1() -> gf.Component:
     )
 
 
-@gf.cell
 def thermal_phase_shifter2() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
@@ -93,7 +90,6 @@ def thermal_phase_shifter2() -> gf.Component:
     )
 
 
-@gf.cell
 def thermal_phase_shifter3() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
@@ -101,37 +97,31 @@ def thermal_phase_shifter3() -> gf.Component:
     )
 
 
-@gf.cell
 def ebeam_BondPad() -> gf.Component:
     """Return ebeam_BondPad fixed cell."""
     return import_gds("ebeam_BondPad.gds")
 
 
-@gf.cell
 def ebeam_adiabatic_te1550() -> gf.Component:
     """Return ebeam_adiabatic_te1550 fixed cell."""
     return import_gds("ebeam_adiabatic_te1550.gds")
 
 
-@gf.cell
 def ebeam_adiabatic_tm1550() -> gf.Component:
     """Return ebeam_adiabatic_tm1550 fixed cell."""
     return import_gds("ebeam_adiabatic_tm1550.gds")
 
 
-@gf.cell
 def ebeam_bdc_te1550() -> gf.Component:
     """Return ebeam_bdc_te1550 fixed cell."""
     return import_gds("ebeam_bdc_te1550.gds")
 
 
-@gf.cell
 def ebeam_bdc_tm1550() -> gf.Component:
     """Return ebeam_bdc_tm1550 fixed cell."""
     return import_gds("ebeam_bdc_tm1550.gds")
 
 
-@gf.cell
 def ebeam_crossing4() -> gf.Component:
     """Return ebeam_crossing4 fixed cell."""
     return import_gds("ebeam_crossing4.gds")
@@ -164,86 +154,72 @@ def ebeam_crossing4_2ports() -> gf.Component:
     return c
 
 
-@gf.cell
 def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
     """Return ebeam_splitter_adiabatic_swg_te1550 fixed cell."""
     return import_gds("ebeam_splitter_adiabatic_swg_te1550.gds")
 
 
-@gf.cell
 def ebeam_splitter_swg_assist_te1310() -> gf.Component:
     """Return ebeam_splitter_swg_assist_te1310 fixed cell."""
     return import_gds("ebeam_splitter_swg_assist_te1310.gds")
 
 
-@gf.cell
 def ebeam_splitter_swg_assist_te1550() -> gf.Component:
     """Return ebeam_splitter_swg_assist_te1550 fixed cell."""
     return import_gds("ebeam_splitter_swg_assist_te1550.gds")
 
 
-@gf.cell
 def ebeam_swg_edgecoupler() -> gf.Component:
     """Return ebeam_swg_edgecoupler fixed cell."""
     return import_gds("ebeam_swg_edgecoupler.gds")
 
 
-@gf.cell
 def ebeam_terminator_te1310() -> gf.Component:
     """Return ebeam_terminator_te1310 fixed cell."""
     return import_gds("ebeam_terminator_te1310.gds")
 
 
-@gf.cell
 def ebeam_terminator_te1550() -> gf.Component:
     """Return ebeam_terminator_te1550 fixed cell."""
     return import_gds("ebeam_terminator_te1550.gds")
 
 
-@gf.cell
 def ebeam_terminator_tm1550() -> gf.Component:
     """Return ebeam_terminator_tm1550 fixed cell."""
     return import_gds("ebeam_terminator_tm1550.gds")
 
 
-@gf.cell
 def ebeam_y_1550() -> gf.Component:
     """Return ebeam_y_1550 fixed cell."""
     return import_gds("ebeam_y_1550.gds")
 
 
-@gf.cell
 def ebeam_y_adiabatic() -> gf.Component:
     """Return ebeam_y_adiabatic fixed cell."""
     return import_gds("ebeam_y_adiabatic.gds")
 
 
-@gf.cell
 def ebeam_y_adiabatic_tapers() -> gf.Component:
     """Return ebeam_y_adiabatic fixed cell."""
     y = import_gds("ebeam_y_adiabatic.gds")
     return gf.add_tapers(y)
 
 
-@gf.cell
 def ebeam_y_adiabatic_1310() -> gf.Component:
     """Return ebeam_y_adiabatic_1310 fixed cell."""
     return import_gds("ebeam_y_adiabatic_1310.gds")
 
 
-@gf.cell
 def metal_via() -> gf.Component:
     """Return metal_via fixed cell."""
     return import_gds("metal_via.gds")
 
 
-@gf.cell
 def photonic_wirebond_surfacetaper_1310() -> gf.Component:
     """Return photonic_wirebond_surfacetaper_1310 fixed cell."""
     return import_gds("photonic_wirebond_surfacetaper_1310.gds")
 
 
-@gf.cell
 def photonic_wirebond_surfacetaper_1550() -> gf.Component:
     """Return photonic_wirebond_surfacetaper_1550 fixed cell."""
     return import_gds("photonic_wirebond_surfacetaper_1550.gds")
@@ -635,7 +611,7 @@ def dbr(
 
 @gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def coupler(**kwargs) -> gf.Component:
-    return gf.components.coupler(**kwargs)
+    return gf.components.coupler(**kwargs).flatten()
 
 
 @gf.cell(post_process=(tech.add_pins_bbox_siepic,))
@@ -648,12 +624,13 @@ def mmi1x2(**kwargs) -> gf.Component:
     return gf.components.mmi1x2(**kwargs)
 
 
-@gf.cell
+@cache
 def dbr_cavity(dbr=dbr, coupler=coupler, **kwargs) -> gf.Component:
     dbr = dbr(**kwargs)
     return gf.components.cavity(component=dbr, coupler=coupler)
 
 
+@cache
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     component = gf.get_component(component, **kwargs)
     return add_fiber_array(component=component)
@@ -795,7 +772,7 @@ add_pads_dc = partial(
 )
 
 
-@gf.cell
+@cache
 def add_fiber_array_pads_rf(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,
@@ -817,7 +794,7 @@ def add_fiber_array_pads_rf(
     return add_fiber_array(component=c1, **kwargs)
 
 
-@gf.cell
+@cache
 def add_pads(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,

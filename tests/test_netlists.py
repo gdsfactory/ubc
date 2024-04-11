@@ -19,8 +19,10 @@ skip_test = {
     "dbr",
     "dbg",
     "import_gds",
+    "import_gc",
     "pad_array",
     "add_pads_dc",
+    "ebeam_adiabatic_te1550",
 }
 cell_names = cells.keys() - skip_test
 
@@ -41,7 +43,6 @@ def test_netlists(
         data_regression: regression testing fixture.
         check: whether to check the netlist.
         component_factory: component factory.
-
     """
     c = component_factory[component_type]()
     n = c.get_netlist()

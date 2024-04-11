@@ -38,7 +38,7 @@ instances:
       l2: 0.079406
       n: 100
       w0: 0.5
-name: dbr_cavity
+name: dbr_cavity_2afc46e9
 placements:
   coupler_1:
     mirror: 0

@@ -19,6 +19,7 @@ skip_test = {
     "add_pads",
     "add_pins_bbox_siepic_remove_layers",
     "import_gds",
+    "import_gc",
     "mzi",
 }
 cell_names = set(cells.keys()) - set(skip_test)

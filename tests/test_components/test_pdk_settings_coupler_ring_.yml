@@ -1,17 +1,5 @@
 function: coupler_ring
 info: {}
-module: gdsfactory.components.coupler_ring
-name: coupler_ring
-settings:
-  bend:
-    function: bend_euler
-  coupler90:
-    function: coupler90
-  coupler_straight:
-    function: coupler_straight
-  cross_section: xs_sc
-  cross_section_bend: null
-  gap: 0.2
-  length_extension: 3
-  length_x: 4.0
-  radius: 5.0
+module: ubcpdk.components
+name: coupler_ring$1
+settings: {}

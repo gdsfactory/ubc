@@ -21,7 +21,7 @@ instances:
         - o2
         H:
         - function: straight
-          module: gdsfactory.components.straight
+          module: ubcpdk.components
           settings:
             cross_section: xs_sc_heater_metal
             length: 6.0
@@ -30,7 +30,7 @@ instances:
         - o2
         U:
         - function: straight
-          module: gdsfactory.components.straight
+          module: ubcpdk.components
           settings:
             cross_section: xs_sc_heater_metal
             length: 30.0

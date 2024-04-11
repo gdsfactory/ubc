@@ -54,7 +54,7 @@ def add_ports(component: Component) -> Component:
     guess port orientaton from port location.
     """
     c = component
-    n = sum(1 for label in c.get_labels() if label.text.startswith("opt"))
+    n = sum(bool(label.text.startswith("opt")) for label in c.get_labels())
     for label in c.get_labels():
         if label.text.startswith("opt"):
             port_name = label.text
@@ -167,7 +167,6 @@ add_ports_from_siepic_pins = partial(
 )
 
 
-# @gf.cell(autoname=False, copy_if_cached=False)
 @cache
 def import_gds(gdspath, **kwargs):
     c = gf.import_gds(
@@ -181,6 +180,7 @@ def import_gds(gdspath, **kwargs):
     return c
 
 
+@cache
 def import_gc(gdspath, info=None, **kwargs):
     c = import_gds(gdspath, **kwargs)
 

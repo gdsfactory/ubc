@@ -212,7 +212,7 @@ instances:
           width_function: null
       length: 3
       npoints: 2
-name: coupler_ring
+name: coupler_ring$1
 placements:
   coupler90_1:
     mirror: true

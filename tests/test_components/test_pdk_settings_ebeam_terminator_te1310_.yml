@@ -1,7 +1,7 @@
-function: ebeam_terminator_te1310
+function: ''
 info:
   library: Design kits/ebeam
   model: ebeam_terminator_te1310
-module: ubcpdk.components
+module: ''
 name: ebeam_terminator_te1310
 settings: {}
