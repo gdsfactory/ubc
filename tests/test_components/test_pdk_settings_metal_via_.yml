@@ -1,7 +1,7 @@
-function: metal_via
+function: ''
 info:
   library: Design kits/ebeam
   model: metal_via
-module: ubcpdk.components
-name: metal_via
+module: ''
+name: metal_via_15
 settings: {}

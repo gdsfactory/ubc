@@ -1,7 +1,7 @@
-function: ebeam_BondPad
+function: ''
 info:
   library: Design kits/ebeam
   model: ebeam_BondPad
-module: ubcpdk.components
+module: ''
 name: ebeam_BondPad
 settings: {}

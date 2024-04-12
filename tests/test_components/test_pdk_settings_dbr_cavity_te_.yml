@@ -1,16 +1,30 @@
 function: add_fiber_array
 info: {}
 module: ubcpdk.components
-name: add_fiber_array_add_fiber_array_componentdbr_cavity
+name: add_fiber_array_add_fiber_array_d1dbd359
 settings:
   component:
-    function: dbr_cavity
-    module: ubcpdk.components
+    function: cavity
+    module: gdsfactory.components.cavity
     settings:
+      component:
+        function: dbr
+        module: ubcpdk.components
+        settings:
+          cross_section:
+            function: cross_section
+            module: gdsfactory.cross_section
+            settings:
+              radius_min: 5
+          dw: 0.1
+          l1: 0.079406
+          l2: 0.079406
+          n: 100
+          w0: 0.5
       coupler:
         function: coupler
-      dbr:
-        function: dbr
+      gap: 0.2
+      length: 0.1
   component_name: null
   cross_section: xs_sc
   fanout_length: 0.0

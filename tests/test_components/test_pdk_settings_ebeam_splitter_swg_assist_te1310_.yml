@@ -1,7 +1,7 @@
-function: ebeam_splitter_swg_assist_te1310
+function: ''
 info:
   library: Design kits/ebeam
   model: ebeam_splitter_swg_assist_te1310
-module: ubcpdk.components
+module: ''
 name: ebeam_splitter_swg_assist_te1310
 settings: {}

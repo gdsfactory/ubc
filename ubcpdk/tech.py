@@ -155,7 +155,7 @@ def add_pins_bbox_siepic(
         remove_layers: removes old layers.
     """
     c = component
-    if remove_layers or component.name.startswith(("mmi", "dbr")):
+    if remove_layers:
         remove_layers = (layer_pin, bbox_layer, "TEXT")
         c = c.remove_layers(layers=remove_layers)
 

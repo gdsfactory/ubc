@@ -1,7 +1,7 @@
-function: ebeam_y_adiabatic
+function: ''
 info:
   library: Design kits/ebeam
   model: ebeam_y_adiabatic
-module: ubcpdk.components
+module: ''
 name: ebeam_y_adiabatic
 settings: {}

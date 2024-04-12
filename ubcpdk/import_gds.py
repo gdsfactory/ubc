@@ -1,4 +1,4 @@
-from functools import partial
+from functools import cache, partial
 
 import gdsfactory as gf
 from gdsfactory.component import Component
@@ -54,7 +54,7 @@ def add_ports(component: Component) -> Component:
     guess port orientaton from port location.
     """
     c = component
-    n = sum(1 for label in c.get_labels() if label.text.startswith("opt"))
+    n = sum(bool(label.text.startswith("opt")) for label in c.get_labels())
     for label in c.get_labels():
         if label.text.startswith("opt"):
             port_name = label.text
@@ -167,17 +167,20 @@ add_ports_from_siepic_pins = partial(
 )
 
 
-@gf.cell(autoname=False, post_process=(add_ports_from_siepic_pins,))
+@cache
 def import_gds(gdspath, **kwargs):
-    return gf.import_gds(
+    c = gf.import_gds(
         gdspath,
         gdsdir=PATH.gds,
         library="Design kits/ebeam",
         model=gdspath.split(".")[0],
         **kwargs,
     )
+    add_ports_from_siepic_pins(c)
+    return c
 
 
+@cache
 def import_gc(gdspath, info=None, **kwargs):
     c = import_gds(gdspath, **kwargs)
 
@@ -193,7 +196,8 @@ if __name__ == "__main__":
 
     # gdsname = "ebeam_crossing4.gds"
     gdsname = "ebeam_y_1550.gds"
-    c = import_gds(gdsname)
-    print(c.ports)
-
+    c = gf.Component("my_component")
+    wg1 = c << import_gds(gdsname)
+    wg2 = c << import_gds(gdsname)
+    wg2.move((100, 0))
     c.show(show_ports=False)

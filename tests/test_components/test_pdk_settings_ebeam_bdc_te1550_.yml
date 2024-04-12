@@ -1,7 +1,7 @@
-function: ebeam_bdc_te1550
+function: ''
 info:
   library: Design kits/ebeam
   model: ebeam_bdc_te1550
-module: ubcpdk.components
+module: ''
 name: ebeam_bdc_te1550
 settings: {}

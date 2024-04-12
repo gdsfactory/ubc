@@ -7,7 +7,7 @@ info:
   route_info_xs_sc_length: 1.0
   width: 0.5
 module: ubcpdk.components
-name: add_fiber_array_add_fiber_array
+name: add_fiber_array_add_fiber_array__ubcpdkpcomponents
 settings:
   component:
     function: straight

@@ -7,10 +7,9 @@ instances:
       model: ebeam_gc_te1310
     settings:
       component:
-        function: import_gds
-        module: ubcpdk.import_gds
-        settings:
-          gdspath: ebeam_gc_te1310.gds
+        function: ''
+        module: ''
+        settings: {}
       p1:
       - 0
       - 1
