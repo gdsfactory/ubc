@@ -1,7 +1,7 @@
 function: add_fiber_array
 info: {}
 module: ubcpdk.components
-name: add_fiber_array_add_fiber_array_89bfd8a3
+name: add_fiber_array_add_fiber_array_d1dbd359
 settings:
   component:
     function: cavity

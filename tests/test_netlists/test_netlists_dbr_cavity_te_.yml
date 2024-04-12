@@ -58,7 +58,7 @@ instances:
         function: straight
       text: null
       with_loopback: false
-name: add_fiber_array_add_fiber_array_89bfd8a3
+name: add_fiber_array_add_fiber_array_d1dbd359
 placements:
   add_fiber_array_1:
     mirror: 0

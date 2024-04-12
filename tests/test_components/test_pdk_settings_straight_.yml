@@ -7,7 +7,7 @@ info:
   route_info_xs_sc_length: 1.0
   width: 0.5
 module: ubcpdk.components
-name: straight
+name: straight__ubcpdkpcomponents
 settings:
   cross_section: xs_sc
   length: 1.0

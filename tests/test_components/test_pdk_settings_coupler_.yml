@@ -2,15 +2,6 @@ function: coupler
 info:
   length: 10.186
   min_bend_radius: 11.857
-module: gdsfactory.components.coupler
-name: coupler
-settings:
-  coupler_straight:
-    function: coupler_straight
-  coupler_symmetric:
-    function: coupler_symmetric
-  cross_section: xs_sc
-  dx: 10.0
-  dy: 4.0
-  gap: 0.236
-  length: 20.0
+module: ubcpdk.components
+name: coupler__ubcpdkpcomponents
+settings: {}

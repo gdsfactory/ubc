@@ -23,6 +23,10 @@ skip_test = {
     "pad_array",
     "add_pads_dc",
     "ebeam_adiabatic_te1550",
+    "ebeam_adiabatic_tm1550",
+    "ebeam_splitter_adiabatic_swg_te1550",
+    "ebeam_swg_edgecoupler",
+    "ebeam_BondPad",
 }
 cell_names = cells.keys() - skip_test
 

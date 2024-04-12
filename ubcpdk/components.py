@@ -38,7 +38,7 @@ bend_euler180_sc = partial(bend_euler_sc, angle=180)
 bend = bend_euler_sc
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
 def straight(length: float = 1.0, npoints: int = 2, cross_section="xs_sc"):
     return gf.components.straight(
         length=length, npoints=npoints, cross_section=cross_section
@@ -457,7 +457,7 @@ def get_input_labels(
     return [label]
 
 
-@gf.cell_with_child
+@gf.cell_with_child(include_module=True)
 def add_fiber_array(
     component: ComponentSpec = straight,
     component_name: Optional[str] = None,
@@ -609,17 +609,17 @@ def dbr(
     return add_pins_bbox_siepic(c)
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
 def coupler(**kwargs) -> gf.Component:
     return gf.components.coupler(**kwargs).flatten()
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
 def coupler_ring(**kwargs) -> gf.Component:
-    return gf.components.coupler_ring(**kwargs)
+    return gf.components.coupler_ring(**kwargs).flatten()
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
 def mmi1x2(**kwargs) -> gf.Component:
     return gf.components.mmi1x2(**kwargs)
 
@@ -814,6 +814,8 @@ def add_pads(
 
 
 if __name__ == "__main__":
+    c = straight_heater_metal()
+    # c.pprint_ports()
     # c = straight()
     # c = uc.ring_single_heater()
     # c = uc.add_fiber_array_pads_rf(c)
@@ -830,7 +832,7 @@ if __name__ == "__main__":
     # c = bend_euler()
     # c = mzi()
     # c = spiral()
-    c = pad_array()
+    # c = pad_array()
     # c = ring_double_heater()
     # c = ring_single_heater()
     # c = ebeam_y_1550()

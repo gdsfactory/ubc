@@ -39,7 +39,7 @@ instances:
         - o2
         _:
         - function: straight
-          module: gdsfactory.components.straight
+          module: ubcpdk.components
           settings:
             cross_section: xs_sc
             length: 0.1
