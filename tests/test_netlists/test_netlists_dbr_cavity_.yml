@@ -48,12 +48,12 @@ placements:
   dbr_1:
     mirror: 0
     rotation: 180
-    x: -10.079
+    x: -10.158
     y: 2.35
   dbr_2:
     mirror: 0
     rotation: 0
-    x: 10.179
+    x: 10.258
     y: 2.35
 ports:
   o1: coupler_1,o1

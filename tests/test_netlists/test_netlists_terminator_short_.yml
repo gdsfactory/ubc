@@ -14,10 +14,10 @@ instances:
           radius_min: 5
       length: 10.0
       port: null
-      port_order_name:
+      port_names:
       - o1
       - o2
-      port_order_types:
+      port_types:
       - optical
       - optical
       width1: 0.5
