@@ -1,27 +1,41 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 9260cbc9c84c06022993bfbcc42fdbf0305c5b8e
+    rev: v4.6.0
     hooks:
+      - id: check-yaml
+        exclude: ^(conda\.recipe/meta\.yaml|conda_build/templates/.*\.yaml|docs/click/meta\.yaml|conda/meta\.yaml|conda/construct.yaml|.*\.pic\.yml|conda/constructor/Miniforge3/construct.yaml)
       - id: end-of-file-fixer
       - id: trailing-whitespace
-      - id: requirements-txt-fixer
-
-  - repo: https://github.com/psf/black
-    rev: 25d886f52c2bbbb58386ac8050f4e67952507bc7
-    hooks:
-      - id: black
-
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "6a0ba1854991b693612486cc84a2254de82d071d"
-    hooks:
-      - id: ruff
-  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: v2.10.0
-    hooks:
-      - id: pretty-format-toml
-        args: [--autofix]
   - repo: https://github.com/kynan/nbstripout
-    rev: e4c5b4dcbab4afa0b88b7a9243db42b1a8d95dde
+    rev: 0.7.1
     hooks:
       - id: nbstripout
         files: ".ipynb"
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        additional_dependencies:
+          - tomli
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.4.1"
+    hooks:
+      - id: ruff
+        args: [ --fix, --exit-non-zero-on-fix ]
+      - id: ruff-format
+
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.13.0
+    hooks:
+      - id: pretty-format-toml
+        args: [--autofix]
+
+  - repo: https://github.com/aristanetworks/j2lint.git
+    rev: v1.1.0
+    hooks:
+      - id: j2lint
+        types: [file]
+        files: \.(j2|yml|yaml)$
+        exclude: .github/.*
