@@ -1,4 +1,6 @@
-connections: {}
+connections:
+  taper_1,o1: via_stack_1,e3
+  taper_2,o1: via_stack_2,e1
 instances:
   component_sequence_1:
     component: component_sequence
@@ -79,12 +81,12 @@ instances:
           width_function: null
       length: 5.0
       port: null
-      port_order_name:
+      port_names:
       - o1
       - o2
-      port_order_types:
-      - optical
-      - optical
+      port_types:
+      - electrical
+      - electrical
       width1: 10.0
       width2: 4.0
       with_two_ports: true
@@ -121,12 +123,12 @@ instances:
           width_function: null
       length: 5.0
       port: null
-      port_order_name:
+      port_names:
       - o1
       - o2
-      port_order_types:
-      - optical
-      - optical
+      port_types:
+      - electrical
+      - electrical
       width1: 10.0
       width2: 4.0
       with_two_ports: true
@@ -216,29 +218,23 @@ placements:
 ports:
   l_e1: via_stack_1,e1
   l_e2: via_stack_1,e2
-  l_e3: via_stack_1,e3
+  l_e3: taper_1,o1
   l_e4: via_stack_1,e4
   o1: component_sequence_1,o1
   o2: component_sequence_1,o2
-  r_e1: via_stack_2,e1
+  r_e1: taper_2,o1
   r_e2: via_stack_2,e2
   r_e3: via_stack_2,e3
   r_e4: via_stack_2,e4
 warnings:
-  optical:
+  electrical:
     unconnected_ports:
-    - message: 4 unconnected optical ports!
+    - message: 2 unconnected electrical ports!
       ports:
-      - taper_1,o1
       - taper_1,o2
-      - taper_2,o1
       - taper_2,o2
       values:
-      - - -4.905
-        - 0.0
       - - 0.095
-        - 0.0
-      - - 324.905
         - 0.0
       - - 319.905
         - 0.0
