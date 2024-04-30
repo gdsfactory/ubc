@@ -60,10 +60,10 @@ def add_ports(component: Component) -> Component:
             port_name = label.text
             port = gf.Port(
                 name=port_name,
-                midpoint=label.position,
+                center=label.origin,
                 width=port_width,
                 orientation=guess_port_orientaton(
-                    position=label.position,
+                    position=label.origin,
                     name=c.name,
                     label=label.text,
                     n=n,
