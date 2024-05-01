@@ -34,6 +34,7 @@ instances:
       fanout_length: 0.0
       gc_port_labels: null
       gc_port_name: o1
+      gc_port_name_fiber: o2
       get_input_label_text_function:
         function: get_input_label_text
       get_input_labels_function:
