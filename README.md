@@ -28,7 +28,7 @@ Then you need to restart Klayout to make sure the new technology installed appea
 
 ### Installation for developers
 
-For developers you need to `git clone` the GitHub repository, fork it, git add, git commit, git push and merge request your changes.
+For developers you need to fork, `git clone` the GitHub repository, git add, git commit, git push and merge request your changes.
 
 ```
 git clone https://github.com/gdsfactory/ubc.git
