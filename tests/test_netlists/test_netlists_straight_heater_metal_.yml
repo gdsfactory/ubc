@@ -9,7 +9,7 @@ instances:
       port_name1: o1
       port_name2: o2
       ports_map: null
-      sequence: _-UHUHUHUHUHUHUHUH-_
+      sequence: _-UHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHUH-_
       start_orientation: 0.0
       symbol_to_component:
         '-':
@@ -17,7 +17,7 @@ instances:
           module: ubcpdk.components
           settings:
             cross_section: xs_sc_heater_metal
-            length: 15.9
+            length: 2.4
             npoints: 2
         - o1
         - o2
@@ -26,7 +26,7 @@ instances:
           module: ubcpdk.components
           settings:
             cross_section: xs_sc_heater_metal
-            length: 6.0
+            length: 0
             npoints: 2
         - o1
         - o2
@@ -35,7 +35,7 @@ instances:
           module: ubcpdk.components
           settings:
             cross_section: xs_sc_heater_metal
-            length: 30.0
+            length: 5
             npoints: 2
         - o1
         - o2
@@ -188,7 +188,7 @@ instances:
       vias:
       - null
       - null
-name: straight_heater_metal_undercut_with_undercutFalse
+name: straight_heater_metal_undercut_539ff9ab
 placements:
   component_sequence_1:
     mirror: 0
@@ -198,22 +198,22 @@ placements:
   taper_1:
     mirror: 0
     rotation: 0
-    x: -4.905
+    x: -4.9
     y: 0.0
   taper_2:
     mirror: 0
     rotation: 180
-    x: 324.905
+    x: 324.9
     y: 0.0
   via_stack_1:
     mirror: 0
     rotation: 0
-    x: -9.905
+    x: -9.9
     y: 0.0
   via_stack_2:
     mirror: 0
     rotation: 0
-    x: 329.905
+    x: 329.9
     y: 0.0
 ports:
   l_e1: via_stack_1,e1
@@ -234,7 +234,7 @@ warnings:
       - taper_1,o2
       - taper_2,o2
       values:
-      - - 0.095
+      - - 0.1
         - 0.0
-      - - 319.905
+      - - 319.9
         - 0.0
