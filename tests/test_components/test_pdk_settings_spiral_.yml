@@ -1,8 +1,8 @@
-function: spiral_external_io
+function: spiral
 info:
   length: 9003.302
-module: gdsfactory.components.spiral_external_io
-name: spiral_external_io
+module: gdsfactory.components.spiral
+name: spiral
 settings:
   N: 6
   bend:

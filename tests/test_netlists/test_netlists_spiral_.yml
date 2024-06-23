@@ -2656,7 +2656,7 @@ instances:
           width_function: null
       length: 50.0
       npoints: 2
-name: spiral_external_io
+name: spiral
 placements:
   bend_euler_1:
     mirror: 0

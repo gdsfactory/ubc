@@ -12,7 +12,7 @@ import gdsfactory as gf
 from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 from gdsfactory.cross_section import get_cross_sections
-from gdsfactory.technology import LayerLevel, LayerStack
+from gdsfactory.technology import LayerLevel, LayerMap, LayerStack
 from gdsfactory.typings import Callable, Layer, LayerSpec, Optional
 from pydantic import BaseModel
 
@@ -22,7 +22,7 @@ nm = 1e-3
 pin_length = 10 * nm
 
 
-class LayerMapUbc(BaseModel):
+class LayerMapUbc(LayerMap):
     WG: Layer = (1, 0)
     WG2: Layer = (31, 0)
     M1_HEATER: Layer = (11, 0)
@@ -41,12 +41,8 @@ class LayerMapUbc(BaseModel):
     SLAB150: Layer = (2, 0)
     WAFER: Layer = (99999, 0)
 
-    class Config:
-        frozen = True
-        extra = "forbid"
 
-
-LAYER = LayerMapUbc()
+LAYER = LayerMapUbc
 
 
 def add_labels_to_ports_optical(
@@ -72,7 +68,7 @@ def add_labels_to_ports_optical(
         clockwise: if True, sort ports clockwise, False: counter-clockwise.
     """
     suffix = "o3_0" if len(component.ports) == 4 else "o2_0"
-    ports = component.get_ports_list(port_type=port_type, suffix=suffix, **kwargs)
+    ports = component.ports.filter(port_type=port_type, suffix=suffix, **kwargs)
     for port in ports:
         component.add_label(text=port.name, position=port.center, layer=label_layer)
 
@@ -122,7 +118,7 @@ def add_pins_siepic(
         port_type: select ports with port_type (optical, electrical, vertical_te).
         clockwise: if True, sort ports clockwise, False: counter-clockwise.
     """
-    for p in component.get_ports_list(port_type=port_type, **kwargs):
+    for p in component.ports.filter(port_type=port_type, **kwargs):
         function(component=component, port=p, layer=layer_pin, pin_length=pin_length)
 
     return component
@@ -326,18 +322,15 @@ metal_routing = partial(
 )
 heater_metal = partial(metal_routing, width=4, layer=LAYER.M1_HEATER)
 
-############################
-# Cross-sections
-############################
+xs_sc = strip
+xs_sc_heater_metal = strip_heater_metal
+xs_sc_bbox = strip_bbox
+xs_metal_routing = metal_routing
+xs_heater_metal = heater_metal
+xs_sc_unclad = strip_unclad
+xs_sc_simple = strip_simple
+xs_sc_devrec = partial(strip, cladding_layers=("DEVREC",), cladding_offsets=(0.5,))
 
-xs_sc = strip()
-xs_sc_heater_metal = strip_heater_metal()
-xs_sc_bbox = strip_bbox()
-xs_metal_routing = metal_routing()
-xs_heater_metal = heater_metal()
-xs_sc_unclad = strip_unclad()
-xs_sc_simple = strip_simple()
-xs_sc_devrec = strip(cladding_layers=("DEVREC",), cladding_offsets=(0.5,))
 
 cross_sections = get_cross_sections(sys.modules[__name__])
 

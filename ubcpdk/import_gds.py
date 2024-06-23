@@ -145,8 +145,6 @@ def import_gds(gdspath, **kwargs):
     c = gf.import_gds(
         gdspath,
         gdsdir=PATH.gds,
-        library="Design kits/ebeam",
-        model=gdspath.split(".")[0],
         **kwargs,
     )
     add_ports_from_siepic_pins(c)
@@ -173,5 +171,5 @@ if __name__ == "__main__":
     c = gf.Component("my_component")
     wg1 = c << import_gds(gdsname)
     wg2 = c << import_gds(gdsname)
-    wg2.move((100, 0))
+    wg2.dmove((100, 0))
     c.show(show_ports=False)

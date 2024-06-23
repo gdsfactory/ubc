@@ -41,7 +41,7 @@ PDK = Pdk(
     cells=cells,
     cross_sections=cross_sections,
     models=models,
-    layers=dict(LAYER),
+    layers=LAYER,
     layer_stack=LAYER_STACK,
     layer_views=LAYER_VIEWS,
 )

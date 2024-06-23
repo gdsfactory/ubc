@@ -5,16 +5,12 @@ from functools import cache, partial
 import gdsfactory as gf
 from gdsfactory import Component
 from gdsfactory.typings import (
-    Callable,
     ComponentReference,
     ComponentSpec,
     CrossSectionSpec,
-    Label,
     LayerSpec,
-    List,
     Optional,
     Port,
-    Tuple,
 )
 
 from ubcpdk import tech
@@ -39,14 +35,14 @@ bend_euler180_sc = partial(bend_euler_sc, angle=180)
 bend = bend_euler_sc
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def straight(length: float = 1.0, npoints: int = 2, cross_section="xs_sc"):
     return gf.components.straight(
         length=length, npoints=npoints, cross_section=cross_section
     )
 
 
-straight_heater_metal = partial(gf.c.straight_heater_metal, straight=straight)
+straight_heater_metal = gf.c.straight_heater_metal
 bend_s = partial(
     gf.components.bend_s,
     cross_section="xs_sc",
@@ -414,56 +410,17 @@ def get_input_label_text(
         isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0
     ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
 
-    name = component_name or port.parent.metadata_child.get("name")
+    name = component_name
     name = clean_name(name)
     # return f"opt_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}-{gc_index}-{port.name}"
     return f"opt_in_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}"
 
 
-def get_input_labels(
-    io_gratings: List[ComponentReference],
-    ordered_ports: List[Port],
-    component_name: str,
-    layer_label: Tuple[int, int] = (10, 0),
-    gc_port_name: str = "o1",
-    port_index: int = 1,
-    get_input_label_text_function: Callable = get_input_label_text,
-) -> List[Label]:
-    """Return list of labels for all component ports.
-
-    Args:
-        io_gratings: list of grating_coupler references.
-        ordered_ports: list of ports.
-        component_name: name.
-        layer_label: for the label.
-        gc_port_name: grating_coupler port.
-        port_index: index of the port.
-        get_input_label_text_function: function.
-
-    """
-    gc = io_gratings[port_index]
-    port = ordered_ports[1]
-
-    text = get_input_label_text_function(
-        port=port, gc=gc, component_name=component_name
-    )
-    layer, texttype = gf.get_layer(layer_label)
-    label = Label(
-        text=text,
-        origin=gc.ports[gc_port_name].center,
-        anchor="o",
-        layer=layer,
-        texttype=texttype,
-    )
-    return [label]
-
-
-@gf.cell_with_child(include_module=True)
+@gf.cell
 def add_fiber_array(
     component: ComponentSpec = straight,
     component_name: Optional[str] = None,
     gc_port_name: str = "o1",
-    get_input_labels_function: Callable = get_input_labels,
     with_loopback: bool = False,
     optical_routing_type: int = 0,
     fanout_length: float = 0.0,
@@ -482,7 +439,6 @@ def add_fiber_array(
         component: to connect.
         component_name: for the label.
         gc_port_name: grating coupler input port name 'o1'.
-        get_input_labels_function: function to get input labels for grating couplers.
         with_loopback: True, adds loopback structures.
         optical_routing_type: None: autoselection, 0: no extension.
         fanout_length: None  # if None, automatic calculation of fanout length.
@@ -501,8 +457,6 @@ def add_fiber_array(
         component_name=component_name,
         grating_coupler=grating_coupler,
         gc_port_name=gc_port_name,
-        get_input_labels_function=get_input_labels_function,
-        get_input_label_text_function=get_input_label_text,
         with_loopback=with_loopback,
         optical_routing_type=optical_routing_type,
         layer_label=layer_label,
@@ -511,7 +465,7 @@ def add_fiber_array(
         **kwargs,
     )
     ref = c << component
-    ref.rotate(-90)
+    ref.drotate(-90)
     c.add_ports(ref.ports)
     c.copy_child_info(component)
     return c
@@ -609,17 +563,17 @@ def dbr(
     return add_pins_bbox_siepic(c)
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def coupler(**kwargs) -> gf.Component:
     return gf.components.coupler(**kwargs).flatten()
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def coupler_ring(**kwargs) -> gf.Component:
     return gf.components.coupler_ring(**kwargs).flatten()
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,), include_module=True)
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def mmi1x2(**kwargs) -> gf.Component:
     return gf.components.mmi1x2(**kwargs)
 
@@ -636,7 +590,7 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     return add_fiber_array(component=component)
 
 
-spiral = partial(gf.components.spiral_external_io, cross_section=tech.xs_sc_devrec)
+spiral = partial(gf.components.spiral, cross_section=tech.xs_sc_devrec)
 
 ebeam_dc_halfring_straight = coupler_ring
 
@@ -724,7 +678,7 @@ ebeam_dc_te1550 = partial(
     gf.components.coupler,
 )
 taper = partial(gf.components.taper)
-spiral = partial(gf.components.spiral_external_io)
+spiral = partial(gf.components.spiral)
 ring_with_crossing = partial(
     gf.components.ring_single_dut,
     component=ebeam_crossing4_2ports,
@@ -751,7 +705,8 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
     Returns same component so it needs to be used as a decorator.
     """
     if port_name not in component.ports:
-        raise ValueError(f"No port {port_name!r} in {list(component.ports.keys())}")
+        port_names = [port.name for port in component.ports]
+        raise ValueError(f"No port {port_name!r} in {port_names}")
 
     component.add_label(
         text=text, position=component.ports[port_name].center, layer=LAYER.TEXT
@@ -841,4 +796,4 @@ if __name__ == "__main__":
     # c = ring_with_crossing()
     # c = ring_single()
     c.pprint_ports()
-    c.show(show_ports=False)
+    c.show()
