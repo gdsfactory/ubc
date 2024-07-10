@@ -1,5 +1,3 @@
-function: terminator_short
 info: {}
-module: ubcpdk.components
 name: terminator_short
 settings: {}

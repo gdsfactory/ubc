@@ -1,5 +1,3 @@
-function: coupler_ring
 info: {}
-module: ubcpdk.components
-name: coupler_ring__ubcpdkpcomponents
+name: coupler_ring
 settings: {}

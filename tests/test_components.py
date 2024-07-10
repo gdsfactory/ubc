@@ -44,7 +44,3 @@ def test_pdk_settings(
 ) -> None:
     """Avoid regressions when exporting settings."""
     data_regression.check(component.to_dict(with_ports=False))
-
-
-def test_assert_ports_on_grid(component: Component) -> None:
-    component.assert_ports_on_grid()

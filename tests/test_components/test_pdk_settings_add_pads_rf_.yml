@@ -1,39 +1,11 @@
-function: add_electrical_pads_top
 info: {}
-module: gdsfactory.routing.add_electrical_pads_top
-name: ring_single_heater_add_electrical_pads_top_984bbf2d
+name: add_electrical_pads_top_4fb71fc8
 settings:
   component: ring_single_heater
   direction: top
   layer: MTOP
-  pad_array:
-    function: pad_array
-    module: gdsfactory.components.pad
-    settings:
-      pad:
-        function: pad
-        module: gdsfactory.components.pad
-        settings:
-          bbox_layers:
-          - - 13
-            - 0
-          bbox_offsets:
-          - -1.8
-          layer:
-          - 12
-          - 0
-          size:
-          - 75
-          - 75
-      spacing:
-      - 125
-      - 125
-  port_names: null
-  select_ports:
-    function: select_ports
-    module: gdsfactory.port
-    settings:
-      port_type: electrical
+  pad_array: Fpad_array_Mgdsfactorypcomponentsppad_SPFpad_Mgdsfactorypcomponentsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8_S125_125
+  select_ports: Fselect_ports_Mgdsfactorypport_SPTelectrical
   spacing:
-  - 0.0
-  - 100.0
+  - 0
+  - 100

@@ -15,7 +15,7 @@ from gdsfactory.typings import (
 
 from ubcpdk import tech
 from ubcpdk.config import CONFIG
-from ubcpdk.import_gds import import_gc, import_gds
+from ubcpdk.import_gds import import_gds
 from ubcpdk.tech import (
     LAYER,
     LAYER_STACK,
@@ -226,8 +226,9 @@ def photonic_wirebond_surfacetaper_1550() -> gf.Component:
 def gc_te1310() -> gf.Component:
     """Return ebeam_gc_te1310 fixed cell."""
     c = gf.Component()
-    gc = import_gc("ebeam_gc_te1310.gds")
+    gc = import_gds("ebeam_gc_te1310.gds")
     gc_ref = c << gc
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -246,8 +247,9 @@ def gc_te1310() -> gf.Component:
 def gc_te1310_8deg() -> gf.Component:
     """Return ebeam_gc_te1310_8deg fixed cell."""
     c = gf.Component()
-    gc = import_gc("ebeam_gc_te1310_8deg.gds")
+    gc = import_gds("ebeam_gc_te1310_8deg.gds")
     gc_ref = c << gc
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -266,8 +268,9 @@ def gc_te1310_8deg() -> gf.Component:
 def gc_te1310_broadband() -> gf.Component:
     """Return ebeam_gc_te1310_broadband fixed cell."""
     c = gf.Component()
-    gc = import_gc("ebeam_gc_te1310_broadband.gds")
+    gc = import_gds("ebeam_gc_te1310_broadband.gds")
     gc_ref = c << gc
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -286,8 +289,9 @@ def gc_te1310_broadband() -> gf.Component:
 def gc_te1550() -> gf.Component:
     """Return ebeam_gc_te1550 fixed cell."""
     c = gf.Component()
-    gc = import_gc("ebeam_gc_te1550.gds")
+    gc = import_gds("ebeam_gc_te1550.gds")
     gc_ref = c << gc
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -306,8 +310,9 @@ def gc_te1550() -> gf.Component:
 def gc_te1550_90nmSlab() -> gf.Component:
     """Return ebeam_gc_te1550_90nmSlab fixed cell."""
     c = gf.Component()
-    gc = import_gc("ebeam_gc_te1550_90nmSlab.gds")
+    gc = import_gds("ebeam_gc_te1550_90nmSlab.gds")
     gc_ref = c << gc
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -326,8 +331,9 @@ def gc_te1550_90nmSlab() -> gf.Component:
 def gc_te1550_broadband() -> gf.Component:
     """Return ebeam_gc_te1550_broadband fixed cell."""
     c = gf.Component()
-    gc = import_gc("ebeam_gc_te1550_broadband.gds")
+    gc = import_gds("ebeam_gc_te1550_broadband.gds")
     gc_ref = c << gc
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -346,8 +352,9 @@ def gc_te1550_broadband() -> gf.Component:
 def gc_tm1550() -> gf.Component:
     """Return ebeam_gc_tm1550 fixed cell."""
     c = gf.Component()
-    gc = import_gc("ebeam_gc_tm1550.gds")
+    gc = import_gds("ebeam_gc_tm1550.gds")
     gc_ref = c << gc
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_tm1550
@@ -570,7 +577,7 @@ def coupler(**kwargs) -> gf.Component:
 
 @gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def coupler_ring(**kwargs) -> gf.Component:
-    return gf.components.coupler_ring(**kwargs).flatten()
+    return gf.components.coupler_ring(**kwargs).dup()
 
 
 @gf.cell(post_process=(tech.add_pins_bbox_siepic,))
@@ -763,13 +770,15 @@ def add_pads(
         kwargs: for add_fiber_array.
     """
     c0 = gf.get_component(component)
-    # text = f"elec_{username}-{clean_name(c0.name)}_G"
-    # add_label = partial(add_label_electrical, text=text)
+    text = f"elec_{username}-{clean_name(c0.name)}_G"
+    c0._locked = False
+    c0 = add_label_electrical(c0, text=text)
     return add_pads_rf(component=c0, **kwargs)
 
 
 if __name__ == "__main__":
-    c = straight_heater_metal()
+    # c = straight_heater_metal()
+    c = ring_single_heater()
     c.pprint_ports()
     # c.pprint_ports()
     # c = straight()
@@ -779,7 +788,7 @@ if __name__ == "__main__":
     # c = ring_double(length_y=10)
     # c = ring_with_crossing()
     # c = mmi1x2()
-    c = add_fiber_array(straight_heater_metal)
+    # c = add_fiber_array(straight_heater_metal)
     # c = coupler_ring()
     # c = dbr_cavity_te()
     # c = dbr_cavity()
@@ -795,5 +804,4 @@ if __name__ == "__main__":
     # c = ebeam_dc_halfring_straight()
     # c = ring_with_crossing()
     # c = ring_single()
-    c.pprint_ports()
     c.show()

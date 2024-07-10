@@ -1,7 +1,3 @@
-function: ''
-info:
-  library: Design kits/ebeam
-  model: ebeam_y_adiabatic_1310
-module: ''
+info: {}
 name: ebeam_y_adiabatic_1310
 settings: {}

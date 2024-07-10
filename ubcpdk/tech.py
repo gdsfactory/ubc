@@ -129,7 +129,7 @@ add_pins_siepic_metal = partial(
 )
 
 
-def add_pins_bbox_siepic(
+def _add_pins_bbox_siepic(
     component: Component,
     function: Callable = add_pin_path,
     port_type: str = "optical",
@@ -154,10 +154,12 @@ def add_pins_bbox_siepic(
     c = component
     if remove_layers:
         remove_layers = (layer_pin, bbox_layer, "TEXT")
-        c = c.remove_layers(layers=remove_layers)
+        c.remove_layers(layers=remove_layers)
 
     if bbox_layer not in c.layers:
-        c.add_padding(default=padding, layers=(bbox_layer,))
+        polygon = gf.kdb.DPolygon(c.dbbox())
+        bbox_layer_index = gf.get_layer(bbox_layer)
+        c.shapes(bbox_layer_index).insert(polygon)
 
     if layer_pin not in c.layers:
         c = add_pins_siepic(
@@ -170,6 +172,7 @@ def add_pins_bbox_siepic(
     return c
 
 
+add_pins_bbox_siepic = partial(gf.container, function=_add_pins_bbox_siepic)
 add_pins_bbox_siepic_metal = partial(
     add_pins_bbox_siepic, port_type="placement", layer_pin=LAYER.PORTE
 )
@@ -339,9 +342,9 @@ if __name__ == "__main__":
     # LAYER_VIEWS = gf.technology.LayerViews(filepath=PATH.lyp)
     # LAYER_VIEWS.to_yaml(PATH.layers_yaml)
     # LAYER_VIEWS = gf.technology.LayerViews(PATH.lyp_yaml)
-    LAYER_VIEWS.to_lyp(PATH.lyp)
+    # LAYER_VIEWS.to_lyp(PATH.lyp)
     # c = gf.c.mzi()
     # c = gf.c.straight(length=1, cross_section=strip)
     # c = gf.c.bend_euler(cross_section=strip)
     c = gf.c.mzi(delta_length=10, cross_section=strip)
-    c.show(show_ports=False)
+    c.show()
