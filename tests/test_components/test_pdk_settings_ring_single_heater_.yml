@@ -1,9 +1,9 @@
 info: {}
-name: ring_double_heater_G0p2_9ec0cb14
+name: ring_double_heater_G0p2_9606c000
 settings:
   bend: bend_euler
   coupler_ring: coupler_ring
-  cross_section: Fcross_section_Mgdsfactorypcross_section_SRM5_CLNone_CONone
+  cross_section: strip
   cross_section_heater: heater_metal
   cross_section_waveguide_heater: strip_heater_metal
   gap: 0.2

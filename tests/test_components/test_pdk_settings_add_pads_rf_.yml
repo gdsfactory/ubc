@@ -1,10 +1,10 @@
 info: {}
-name: add_electrical_pads_top_4fb71fc8
+name: add_electrical_pads_top_9db44bb1
 settings:
   component: ring_single_heater
   direction: top
   layer: MTOP
-  pad_array: Fpad_array_Mgdsfactorypcomponentsppad_SPFpad_Mgdsfactorypcomponentsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8_S125_125
+  pad_array: pad_array
   select_ports: Fselect_ports_Mgdsfactorypport_SPTelectrical
   spacing:
   - 0

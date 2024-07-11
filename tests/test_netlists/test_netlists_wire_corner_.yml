@@ -1,0 +1,6 @@
+instances: {}
+name: wire_corner_CSFcross_se_91be9cfe
+nets: []
+placements: {}
+ports:
+  e1: e2
