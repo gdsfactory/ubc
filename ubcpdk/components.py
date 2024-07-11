@@ -619,15 +619,19 @@ ring_double = partial(
 ring_double_heater = partial(
     gf.components.ring_double_heater,
     via_stack=via_stack_heater_mtop,
-    cross_section=tech.xs_sc,
     straight=straight,
     length_y=0.2,
+    cross_section_heater="heater_metal",
+    cross_section_waveguide_heater="strip_heater_metal",
+    cross_section="strip",
 )
 ring_single_heater = partial(
     gf.components.ring_single_heater,
     via_stack=via_stack_heater_mtop,
-    cross_section=tech.xs_sc,
     straight=straight,
+    cross_section_heater="heater_metal",
+    cross_section_waveguide_heater="strip_heater_metal",
+    cross_section="strip",
 )
 
 
@@ -641,7 +645,6 @@ ring_with_crossing = partial(
     port_name="o4",
     bend=bend,
     cross_section="xs_sc",
-    straight=straight,
 )
 
 
@@ -673,7 +676,7 @@ pad_array = partial(gf.components.pad_array, pad=pad, spacing=(125, 125))
 add_pads_rf = partial(
     gf.routing.add_electrical_pads_top,
     component="ring_single_heater",
-    pad_array=pad_array,
+    pad_array="pad_array",
 )
 add_pads_top = partial(
     gf.routing.add_pads_top,
@@ -757,9 +760,9 @@ if __name__ == "__main__":
     # c = mzi()
     # c = spiral()
     # c = pad_array()
-    # c = ring_double_heater()
+    c = ring_double_heater()
     # c = ebeam_y_1550()
     # c = ring_with_crossing()
     # c = ring_single()
-    c = coupler()
+    # c = coupler()
     c.show()

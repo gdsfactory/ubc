@@ -1,5 +1,5 @@
 instances:
-  pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960:
+  pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710:
     component: pad_array
     info: {}
     settings:
@@ -14,13 +14,13 @@ instances:
       spacing:
       - 125
       - 125
-  ring_double_heater_G0p2_9ec0cb14_-500_8480:
+  ring_double_heater_G0p2_9606c000_-500_8855:
     component: ring_double_heater
     info: {}
     settings:
       bend: bend_euler
       coupler_ring: coupler_ring
-      cross_section: Fcross_section_Mgdsfactorypcross_section_SRM5_CLNone_CONone
+      cross_section: strip
       cross_section_heater: heater_metal
       cross_section_waveguide_heater: strip_heater_metal
       gap: 0.2
@@ -33,43 +33,43 @@ instances:
       - 1
       - 0
       with_drop: false
-name: add_electrical_pads_top_4fb71fc8
+name: add_electrical_pads_top_9db44bb1
 nets: []
 placements:
-  pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960:
+  pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710:
     mirror: false
     rotation: 0
     x: -438
-    y: 171.96
-  ring_double_heater_G0p2_9ec0cb14_-500_8480:
+    y: 172.71
+  ring_double_heater_G0p2_9606c000_-500_8855:
     mirror: false
     rotation: 0
     x: 0
     y: 0
 ports:
-  e1: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e18
-  e2: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e17
-  e3: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e16
-  e4: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e15
-  e5: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e14
-  e6: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e13
-  e7: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e12
-  e8: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_171960,e11
-  o1: ring_double_heater_G0p2_9ec0cb14_-500_8480,o1
-  o2: ring_double_heater_G0p2_9ec0cb14_-500_8480,o2
+  e1: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e18
+  e2: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e17
+  e3: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e16
+  e4: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e15
+  e5: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e14
+  e6: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e13
+  e7: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e12
+  e8: pad_array_PFpad_Mgdsfac_8b9cee9b_-500_172710,e11
+  o1: ring_double_heater_G0p2_9606c000_-500_8855,o1
+  o2: ring_double_heater_G0p2_9606c000_-500_8855,o2
 warnings:
   electrical:
     unconnected_ports:
     - message: 8 unconnected electrical ports!
       ports:
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,l_e1
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,l_e2
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,l_e3
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,l_e4
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,r_e1
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,r_e2
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,r_e3
-      - ring_double_heater_G0p2_9ec0cb14_-500_8480,r_e4
+      - ring_double_heater_G0p2_9606c000_-500_8855,l_e1
+      - ring_double_heater_G0p2_9606c000_-500_8855,l_e2
+      - ring_double_heater_G0p2_9606c000_-500_8855,l_e3
+      - ring_double_heater_G0p2_9606c000_-500_8855,l_e4
+      - ring_double_heater_G0p2_9606c000_-500_8855,r_e1
+      - ring_double_heater_G0p2_9606c000_-500_8855,r_e2
+      - ring_double_heater_G0p2_9606c000_-500_8855,r_e3
+      - ring_double_heater_G0p2_9606c000_-500_8855,r_e4
       values:
       - - -12000
         - 0

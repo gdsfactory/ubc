@@ -20,6 +20,7 @@ from ubcpdk.config import PATH
 
 nm = 1e-3
 pin_length = 10 * nm
+heater_width = 4
 
 
 class LayerMapUbc(LayerMap):
@@ -301,7 +302,7 @@ strip_unclad = strip_simple = cross_section
 strip_heater_metal = partial(
     gf.cross_section.strip_heater_metal,
     layer="WG",
-    heater_width=2.5,
+    heater_width=heater_width,
     layer_heater=LAYER.M1_HEATER,
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
@@ -321,7 +322,7 @@ metal_routing = partial(
     port_types=gf.cross_section.port_types_electrical,
     radius=None,
 )
-heater_metal = partial(metal_routing, width=4, layer=LAYER.M1_HEATER)
+heater_metal = partial(metal_routing, width=heater_width, layer=LAYER.M1_HEATER)
 
 xs_sc = strip
 xs_sc_heater_metal = strip_heater_metal
