@@ -1,5 +1,3 @@
-function: ebeam_crossing4_2ports
 info: {}
-module: ubcpdk.components
 name: ebeam_crossing4_2ports
 settings: {}

@@ -14,11 +14,10 @@ from gdsfactory.typings import (
 )
 
 from ubcpdk import tech
-from ubcpdk.config import CONFIG
+from ubcpdk.config import CONFIG, PATH
 from ubcpdk.import_gds import import_gds
 from ubcpdk.tech import (
     LAYER,
-    LAYER_STACK,
     add_pins_bbox_siepic,
 )
 
@@ -42,6 +41,7 @@ def straight(length: float = 1.0, npoints: int = 2, cross_section="xs_sc"):
     )
 
 
+wire_corner = partial(gf.c.wire_corner, cross_section=tech.xs_metal_routing)
 straight_heater_metal = gf.c.straight_heater_metal
 bend_s = partial(
     gf.components.bend_s,
@@ -69,59 +69,59 @@ def clean_name(name: str) -> str:
 def thermal_phase_shifter0() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
-        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[0]
+        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[0]
     )
 
 
 def thermal_phase_shifter1() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
-        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[1]
+        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[1]
     )
 
 
 def thermal_phase_shifter2() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
-        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[2]
+        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[2]
     )
 
 
 def thermal_phase_shifter3() -> gf.Component:
     """Return thermal_phase_shifters fixed cell."""
     return import_gds(
-        "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[3]
+        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[3]
     )
 
 
 def ebeam_BondPad() -> gf.Component:
     """Return ebeam_BondPad fixed cell."""
-    return import_gds("ebeam_BondPad.gds")
+    return import_gds(PATH.gds / "ebeam_BondPad.gds")
 
 
 def ebeam_adiabatic_te1550() -> gf.Component:
     """Return ebeam_adiabatic_te1550 fixed cell."""
-    return import_gds("ebeam_adiabatic_te1550.gds")
+    return import_gds(PATH.gds / "ebeam_adiabatic_te1550.gds")
 
 
 def ebeam_adiabatic_tm1550() -> gf.Component:
     """Return ebeam_adiabatic_tm1550 fixed cell."""
-    return import_gds("ebeam_adiabatic_tm1550.gds")
+    return import_gds(PATH.gds / "ebeam_adiabatic_tm1550.gds")
 
 
 def ebeam_bdc_te1550() -> gf.Component:
     """Return ebeam_bdc_te1550 fixed cell."""
-    return import_gds("ebeam_bdc_te1550.gds")
+    return import_gds(PATH.gds / "ebeam_bdc_te1550.gds")
 
 
 def ebeam_bdc_tm1550() -> gf.Component:
     """Return ebeam_bdc_tm1550 fixed cell."""
-    return import_gds("ebeam_bdc_tm1550.gds")
+    return import_gds(PATH.gds / "ebeam_bdc_tm1550.gds")
 
 
 def ebeam_crossing4() -> gf.Component:
     """Return ebeam_crossing4 fixed cell."""
-    return import_gds("ebeam_crossing4.gds")
+    return import_gds(PATH.gds / "ebeam_crossing4.gds")
 
 
 @gf.cell
@@ -153,82 +153,82 @@ def ebeam_crossing4_2ports() -> gf.Component:
 
 def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
     """Return ebeam_splitter_adiabatic_swg_te1550 fixed cell."""
-    return import_gds("ebeam_splitter_adiabatic_swg_te1550.gds")
+    return import_gds(PATH.gds / "ebeam_splitter_adiabatic_swg_te1550.gds")
 
 
 def ebeam_splitter_swg_assist_te1310() -> gf.Component:
     """Return ebeam_splitter_swg_assist_te1310 fixed cell."""
-    return import_gds("ebeam_splitter_swg_assist_te1310.gds")
+    return import_gds(PATH.gds / "ebeam_splitter_swg_assist_te1310.gds")
 
 
 def ebeam_splitter_swg_assist_te1550() -> gf.Component:
     """Return ebeam_splitter_swg_assist_te1550 fixed cell."""
-    return import_gds("ebeam_splitter_swg_assist_te1550.gds")
+    return import_gds(PATH.gds / "ebeam_splitter_swg_assist_te1550.gds")
 
 
 def ebeam_swg_edgecoupler() -> gf.Component:
     """Return ebeam_swg_edgecoupler fixed cell."""
-    return import_gds("ebeam_swg_edgecoupler.gds")
+    return import_gds(PATH.gds / "ebeam_swg_edgecoupler.gds")
 
 
 def ebeam_terminator_te1310() -> gf.Component:
     """Return ebeam_terminator_te1310 fixed cell."""
-    return import_gds("ebeam_terminator_te1310.gds")
+    return import_gds(PATH.gds / "ebeam_terminator_te1310.gds")
 
 
 def ebeam_terminator_te1550() -> gf.Component:
     """Return ebeam_terminator_te1550 fixed cell."""
-    return import_gds("ebeam_terminator_te1550.gds")
+    return import_gds(PATH.gds / "ebeam_terminator_te1550.gds")
 
 
 def ebeam_terminator_tm1550() -> gf.Component:
     """Return ebeam_terminator_tm1550 fixed cell."""
-    return import_gds("ebeam_terminator_tm1550.gds")
+    return import_gds(PATH.gds / "ebeam_terminator_tm1550.gds")
 
 
 def ebeam_y_1550() -> gf.Component:
     """Return ebeam_y_1550 fixed cell."""
-    return import_gds("ebeam_y_1550.gds")
+    return import_gds(PATH.gds / "ebeam_y_1550.gds")
 
 
 def ebeam_y_adiabatic() -> gf.Component:
     """Return ebeam_y_adiabatic fixed cell."""
-    return import_gds("ebeam_y_adiabatic.gds")
+    return import_gds(PATH.gds / "ebeam_y_adiabatic.gds")
 
 
 def ebeam_y_adiabatic_tapers() -> gf.Component:
     """Return ebeam_y_adiabatic fixed cell."""
-    y = import_gds("ebeam_y_adiabatic.gds")
+    y = import_gds(PATH.gds / "ebeam_y_adiabatic.gds")
     return gf.add_tapers(y)
 
 
 def ebeam_y_adiabatic_1310() -> gf.Component:
     """Return ebeam_y_adiabatic_1310 fixed cell."""
-    return import_gds("ebeam_y_adiabatic_1310.gds")
+    return import_gds(PATH.gds / "ebeam_y_adiabatic_1310.gds")
 
 
 def metal_via() -> gf.Component:
     """Return metal_via fixed cell."""
-    return import_gds("metal_via.gds")
+    return import_gds(PATH.gds / "metal_via.gds")
 
 
 def photonic_wirebond_surfacetaper_1310() -> gf.Component:
     """Return photonic_wirebond_surfacetaper_1310 fixed cell."""
-    return import_gds("photonic_wirebond_surfacetaper_1310.gds")
+    return import_gds(PATH.gds / "photonic_wirebond_surfacetaper_1310.gds")
 
 
 def photonic_wirebond_surfacetaper_1550() -> gf.Component:
     """Return photonic_wirebond_surfacetaper_1550 fixed cell."""
-    return import_gds("photonic_wirebond_surfacetaper_1550.gds")
+    return import_gds(PATH.gds / "photonic_wirebond_surfacetaper_1550.gds")
 
 
 @gf.cell
 def gc_te1310() -> gf.Component:
     """Return ebeam_gc_te1310 fixed cell."""
     c = gf.Component()
-    gc = import_gds("ebeam_gc_te1310.gds")
+    gc = import_gds(PATH.gds / "ebeam_gc_te1310.gds")
     gc_ref = c << gc
-    gc_ref.mirror()
+    gc_ref.dmirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -238,8 +238,10 @@ def gc_te1310() -> gf.Component:
         center=(25, 0),
         layer=(1, 0),
         width=9,
+        orientation=0,
     )
     c.info.update(info1310te)
+    c.flatten()
     return c
 
 
@@ -247,9 +249,9 @@ def gc_te1310() -> gf.Component:
 def gc_te1310_8deg() -> gf.Component:
     """Return ebeam_gc_te1310_8deg fixed cell."""
     c = gf.Component()
-    gc = import_gds("ebeam_gc_te1310_8deg.gds")
+    gc = import_gds(PATH.gds / "ebeam_gc_te1310_8deg.gds")
     gc_ref = c << gc
-    gc_ref.mirror()
+    gc_ref.dmirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -259,6 +261,7 @@ def gc_te1310_8deg() -> gf.Component:
         center=(25, 0),
         layer=(1, 0),
         width=9,
+        orientation=0,
     )
     c.info.update(info1310te)
     return c
@@ -268,9 +271,9 @@ def gc_te1310_8deg() -> gf.Component:
 def gc_te1310_broadband() -> gf.Component:
     """Return ebeam_gc_te1310_broadband fixed cell."""
     c = gf.Component()
-    gc = import_gds("ebeam_gc_te1310_broadband.gds")
+    gc = import_gds(PATH.gds / "ebeam_gc_te1310_broadband.gds")
     gc_ref = c << gc
-    gc_ref.mirror()
+    gc_ref.dmirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -280,6 +283,7 @@ def gc_te1310_broadband() -> gf.Component:
         center=(25, 0),
         layer=(1, 0),
         width=9,
+        orientation=0,
     )
     c.info.update(info1310te)
     return c
@@ -289,9 +293,9 @@ def gc_te1310_broadband() -> gf.Component:
 def gc_te1550() -> gf.Component:
     """Return ebeam_gc_te1550 fixed cell."""
     c = gf.Component()
-    gc = import_gds("ebeam_gc_te1550.gds")
+    gc = import_gds(PATH.gds / "ebeam_gc_te1550.gds")
     gc_ref = c << gc
-    gc_ref.mirror()
+    gc_ref.dmirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -301,6 +305,7 @@ def gc_te1550() -> gf.Component:
         center=(25, 0),
         layer=(1, 0),
         width=9,
+        orientation=0,
     )
     c.info.update(info1550te)
     return c
@@ -310,9 +315,9 @@ def gc_te1550() -> gf.Component:
 def gc_te1550_90nmSlab() -> gf.Component:
     """Return ebeam_gc_te1550_90nmSlab fixed cell."""
     c = gf.Component()
-    gc = import_gds("ebeam_gc_te1550_90nmSlab.gds")
+    gc = import_gds(PATH.gds / "ebeam_gc_te1550_90nmSlab.gds")
     gc_ref = c << gc
-    gc_ref.mirror()
+    gc_ref.dmirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -322,6 +327,7 @@ def gc_te1550_90nmSlab() -> gf.Component:
         center=(25, 0),
         layer=(1, 0),
         width=9,
+        orientation=0,
     )
     c.info.update(info1550te)
     return c
@@ -331,9 +337,9 @@ def gc_te1550_90nmSlab() -> gf.Component:
 def gc_te1550_broadband() -> gf.Component:
     """Return ebeam_gc_te1550_broadband fixed cell."""
     c = gf.Component()
-    gc = import_gds("ebeam_gc_te1550_broadband.gds")
+    gc = import_gds(PATH.gds / "ebeam_gc_te1550_broadband.gds")
     gc_ref = c << gc
-    gc_ref.mirror()
+    gc_ref.dmirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -343,6 +349,7 @@ def gc_te1550_broadband() -> gf.Component:
         center=(25, 0),
         layer=(1, 0),
         width=9,
+        orientation=0,
     )
     c.info.update(info1550te)
     return c
@@ -352,9 +359,9 @@ def gc_te1550_broadband() -> gf.Component:
 def gc_tm1550() -> gf.Component:
     """Return ebeam_gc_tm1550 fixed cell."""
     c = gf.Component()
-    gc = import_gds("ebeam_gc_tm1550.gds")
+    gc = import_gds(PATH.gds / "ebeam_gc_tm1550.gds")
     gc_ref = c << gc
-    gc_ref.mirror()
+    gc_ref.dmirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_tm1550
@@ -364,6 +371,7 @@ def gc_tm1550() -> gf.Component:
         center=(25, 0),
         layer=(1, 0),
         width=9,
+        orientation=0,
     )
     c.info.update(info1550tm)
     return c
@@ -576,11 +584,6 @@ def coupler(**kwargs) -> gf.Component:
 
 
 @gf.cell(post_process=(tech.add_pins_bbox_siepic,))
-def coupler_ring(**kwargs) -> gf.Component:
-    return gf.components.coupler_ring(**kwargs).dup()
-
-
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def mmi1x2(**kwargs) -> gf.Component:
     return gf.components.mmi1x2(**kwargs)
 
@@ -597,19 +600,27 @@ def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     return add_fiber_array(component=component)
 
 
-spiral = partial(gf.components.spiral, cross_section=tech.xs_sc_devrec)
-
-ebeam_dc_halfring_straight = coupler_ring
-
-
 @gf.cell
+def spiral(
+    length: float = 100,
+    spacing: float = 3.0,
+    n_loops: int = 6,
+) -> gf.Component:
+    return gf.c.spiral(
+        length=length,
+        spacing=spacing,
+        n_loops=n_loops,
+        bend=bend_euler_sc,
+        straight=straight,
+    )
+
+
+@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
 def ebeam_dc_halfring_straight(
     gap: float = 0.2,
     radius: float = 5.0,
     length_x: float = 4.0,
-    siepic: bool = True,
     model: str = "ebeam_dc_halfring_straight",
-    **kwargs,
 ) -> gf.Component:
     r"""Return a ring coupler.
 
@@ -618,8 +629,6 @@ def ebeam_dc_halfring_straight(
         radius: of the bends.
         length_x: length of the parallel coupled straight waveguides.
         cross_section: cross_section spec.
-        siepic: if True adds siepic.
-        kwargs: cross_section settings for bend and coupler.
 
     .. code::
 
@@ -634,39 +643,32 @@ def ebeam_dc_halfring_straight(
     """
 
     c = gf.Component()
-    ref = c << coupler_ring(gap=gap, radius=radius, length_x=length_x, **kwargs)
-    thickness = LAYER_STACK.get_layer_to_thickness()
+    ref = c << gf.c.coupler_ring(gap=gap, radius=radius, length_x=length_x)
     c.add_ports(ref.ports)
 
-    if siepic:
-        x = tech.xs_sc_simple
-        c.info["model"] = model
-        c.info["gap"] = gap
-        c.info["radius"] = radius
-        c.info["wg_thickness"] = thickness[LAYER.WG]
-        c.info["wg_width"] = x.width
-        c.info["Lc"] = length_x
-
+    c.info["model"] = model
+    c.info["gap"] = gap
+    c.info["radius"] = radius
+    c.info["wg_thickness"] = 0.22
+    c.info["wg_width"] = 0.5
+    c.info["Lc"] = length_x
     return c
 
 
 ring_single = partial(
     gf.components.ring_single,
-    coupler_ring=coupler_ring,
+    coupler_ring=ebeam_dc_halfring_straight,
     cross_section=tech.xs_sc,
     bend=bend,
-    straight=straight,
-    pass_cross_section_to_bend=False,
 )
 ring_double = partial(
     gf.components.ring_double,
-    coupler_ring=coupler_ring,
+    coupler_ring=ebeam_dc_halfring_straight,
     cross_section=tech.xs_sc,
-    straight=straight,
 )
 ring_double_heater = partial(
     gf.components.ring_double_heater,
-    coupler_ring=coupler_ring,
+    coupler_ring=ebeam_dc_halfring_straight,
     via_stack=via_stack_heater_mtop,
     cross_section=tech.xs_sc,
     straight=straight,
@@ -674,7 +676,7 @@ ring_double_heater = partial(
 )
 ring_single_heater = partial(
     gf.components.ring_single_heater,
-    coupler_ring=coupler_ring,
+    coupler_ring=ebeam_dc_halfring_straight,
     via_stack=via_stack_heater_mtop,
     cross_section=tech.xs_sc,
     straight=straight,
@@ -685,11 +687,10 @@ ebeam_dc_te1550 = partial(
     gf.components.coupler,
 )
 taper = partial(gf.components.taper)
-spiral = partial(gf.components.spiral)
 ring_with_crossing = partial(
     gf.components.ring_single_dut,
     component=ebeam_crossing4_2ports,
-    coupler=coupler_ring,
+    coupler=ebeam_dc_halfring_straight,
     port_name="o4",
     bend=bend,
     cross_section="xs_sc",
@@ -727,10 +728,13 @@ add_pads_rf = partial(
     component="ring_single_heater",
     pad_array=pad_array,
 )
-add_pads_dc = partial(
-    gf.routing.add_electrical_pads_top_dc,
-    component="ring_single_heater",
-    pad_array=pad_array,
+add_pads_top = partial(
+    gf.routing.add_pads_top,
+    component=straight_heater_metal,
+)
+add_pads_bot = partial(
+    gf.routing.add_pads_bot,
+    component=straight_heater_metal,
 )
 
 
@@ -778,8 +782,15 @@ def add_pads(
 
 if __name__ == "__main__":
     # c = straight_heater_metal()
-    c = ring_single_heater()
-    c.pprint_ports()
+    # c = thermal_phase_shifter0()
+    # c = straight_one_pin()
+    # c = ebeam_adiabatic_te1550()
+    # c = ebeam_bdc_te1550()
+    # c = gc_tm1550()
+    # c = spiral()
+    # c = add_pads_top()
+
+    # c.pprint_ports()
     # c.pprint_ports()
     # c = straight()
     # c = uc.ring_single_heater()
@@ -799,9 +810,9 @@ if __name__ == "__main__":
     # c = spiral()
     # c = pad_array()
     # c = ring_double_heater()
-    # c = ring_single_heater()
+    # c = ebeam_dc_halfring_straight()
     # c = ebeam_y_1550()
     # c = ebeam_dc_halfring_straight()
-    # c = ring_with_crossing()
+    c = ring_with_crossing()
     # c = ring_single()
     c.show()

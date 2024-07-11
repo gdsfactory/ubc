@@ -1,24 +1,34 @@
+from collections.abc import Callable
 from functools import cache
+from pathlib import Path
 
 import gdsfactory as gf
 import kfactory as kf
 from gdsfactory.component import Component
 from gdsfactory.read.import_gds import kcell_to_component
+from kfactory import KCLayout
 
-from ubcpdk.config import PATH
 from ubcpdk.tech import LAYER
 
 
 @cache
 def import_gds(
-    name, port_type="optical", layer_pin=LAYER.PORT, layer_port=LAYER.WG
+    gdspath: str | Path,
+    cellname: str | None = None,
+    port_type="optical",
+    layer_pin=LAYER.PORT,
+    layer_port=LAYER.WG,
+    post_process: Callable[[Component], Component] | None = None,
 ) -> Component:
     """Returns klayout cell from GDS."""
-    kcl = kf.KCLayout(name=name)
-    kcl.read(PATH.gds / name)
-    top_cell = kcl.top_cell()
-    c = kf.KCell(top_cell.name)
-    c.copy_tree(top_cell)
+    temp_kcl = KCLayout(name=str(gdspath))
+    temp_kcl.read(gdspath)
+    cellname = cellname or temp_kcl.top_cell().name
+    kcell = temp_kcl[cellname]
+    c = kcell_to_component(kcell)
+    if post_process:
+        post_process(c)
+
     for shape in c.shapes(layer_pin).each(kf.kdb.Shapes.SPaths):
         path = shape.path
         p1, p2 = list(path.each_point())

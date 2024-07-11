@@ -1,13 +1,5 @@
-function: straight_one_pin
 info: {}
-module: ubcpdk.components
-name: straight_one_pin
+name: straight_one_pin_L1_CSF_71a19f79
 settings:
-  cross_section:
-    function: cross_section
-    module: gdsfactory.cross_section
-    settings:
-      bbox_layers: null
-      bbox_offsets: null
-      radius_min: 5
+  cross_section: Fcross_section_Mgdsfactorypcross_section_SRM5_BLNone_BONone
   length: 1

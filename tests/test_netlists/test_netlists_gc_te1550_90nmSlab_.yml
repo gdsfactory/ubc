@@ -1,27 +1,15 @@
-connections: {}
 instances:
-  mirror_1:
-    component: mirror
-    info:
-      library: Design kits/ebeam
-      model: ebeam_gc_te1550_90nmSlab
-    settings:
-      component:
-        function: ''
-        module: ''
-        settings: {}
-      p1:
-      - 0
-      - 1
-      p2:
-      - 0
-      - 0
+  ebeam_gc_te1550_90nmSlab_20475_0:
+    component: null
+    info: {}
+    settings: {}
 name: gc_te1550_90nmSlab
+nets: []
 placements:
-  mirror_1:
-    mirror: 0
-    rotation: 0
-    x: 0.0
-    y: 0.0
+  ebeam_gc_te1550_90nmSlab_20475_0:
+    mirror: true
+    rotation: 180
+    x: 0
+    y: 0
 ports:
-  o1: mirror_1,o1
+  o1: ebeam_gc_te1550_90nmSlab_20475_0,o1

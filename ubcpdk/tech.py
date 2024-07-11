@@ -118,7 +118,7 @@ def add_pins_siepic(
         port_type: select ports with port_type (optical, electrical, vertical_te).
         clockwise: if True, sort ports clockwise, False: counter-clockwise.
     """
-    for p in component.ports.filter(port_type=port_type, **kwargs):
+    for p in gf.port.get_ports_list(component, port_type=port_type, **kwargs):
         function(component=component, port=p, layer=layer_pin, pin_length=pin_length)
 
     return component
@@ -136,7 +136,6 @@ def _add_pins_bbox_siepic(
     layer_pin: Layer = LAYER.PORT,
     pin_length: float = pin_length,
     bbox_layer: Layer = LAYER.DEVREC,
-    padding: float = 0,
     remove_layers: bool = False,
 ) -> Component:
     """Add bounding box device recognition layer.
@@ -148,7 +147,6 @@ def _add_pins_bbox_siepic(
         layer_pin: for pin.
         pin_length: in um.
         bbox_layer: bounding box layer.
-        padding: around device.
         remove_layers: removes old layers.
     """
     c = component
