@@ -1,28 +1,17 @@
-function: add_fiber_array
 info:
-  length: 1.0
-  route_info_length: 1.0
-  route_info_type: xs_sc
-  route_info_weight: 1.0
-  route_info_xs_sc_length: 1.0
+  length: 1
+  route_info_length: 1
+  route_info_type: xs_34e31a19
+  route_info_weight: 1
+  route_info_xs_34e31a19_length: 1
   width: 0.5
-module: ubcpdk.components
-name: add_fiber_array_add_fiber_array__ubcpdkpcomponents
+name: add_fiber_array_Cstraig_d8738009
 settings:
-  component:
-    function: straight
-  component_name: null
+  component: straight
   cross_section: xs_sc
-  fanout_length: 0.0
+  fanout_length: 0
   gc_port_name: o1
-  get_input_labels_function:
-    function: get_input_labels
-  grating_coupler:
-    function: gc_te1550
-  layer_label:
-  - 10
-  - 0
-  optical_routing_type: 0
-  straight:
-    function: straight
+  grating_coupler: gc_te1550
+  optical_routing_type: 1
+  straight: straight
   with_loopback: false

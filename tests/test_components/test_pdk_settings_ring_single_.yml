@@ -1,40 +1,10 @@
-function: ring_single
 info: {}
-module: gdsfactory.components.ring_single
-name: ring_single_382b19ee
+name: ring_single_G0p2_R10_LX_8bd4db3e
 settings:
-  bend:
-    function: bend_euler_sc
-  bend_coupler:
-    function: bend_euler
-  coupler_ring:
-    function: coupler_ring
-  cross_section:
-    bbox_layers: null
-    bbox_offsets: null
-    components_along_path: []
-    radius: 10.0
-    radius_min: 5.0
-    sections:
-    - hidden: false
-      insets: null
-      layer: WG
-      name: _default
-      offset: 0.0
-      offset_function: null
-      port_names:
-      - o1
-      - o2
-      port_types:
-      - optical
-      - optical
-      simplify: null
-      width: 0.5
-      width_function: null
+  bend: bend_euler
+  coupler_ring: coupler_ring
+  cross_section: Fcross_section_Mgdsfactorypcross_section_SRM5_CLNone_CONone
   gap: 0.2
-  length_x: 4.0
+  length_x: 4
   length_y: 0.6
-  pass_cross_section_to_bend: false
-  radius: 10.0
-  straight:
-    function: straight
+  radius: 10

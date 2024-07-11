@@ -1,5 +1,5 @@
-connections: {}
 instances: {}
-name: coupler__ubcpdkpcomponents
+name: coupler
+nets: []
 placements: {}
 ports: {}

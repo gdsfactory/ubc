@@ -1,7 +1,5 @@
-function: coupler
 info:
   length: 10.186
   min_bend_radius: 11.857
-module: ubcpdk.components
-name: coupler__ubcpdkpcomponents
+name: coupler
 settings: {}

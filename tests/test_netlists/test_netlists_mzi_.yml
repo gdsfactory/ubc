@@ -1,6 +1,6 @@
 instances:
-  bend_euler_sc_CSxs_sc_12775_-7375:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_12775_-7375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -14,8 +14,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: xs_sc
-  bend_euler_sc_CSxs_sc_12775_7375:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_12775_7375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -29,8 +29,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: xs_sc
-  bend_euler_sc_CSxs_sc_22025_-25125:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_22025_-25125:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -44,8 +44,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: xs_sc
-  bend_euler_sc_CSxs_sc_22025_20125:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_22025_20125:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -59,8 +59,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: xs_sc
-  bend_euler_sc_CSxs_sc_32875_-25125:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_32875_-25125:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -74,8 +74,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: xs_sc
-  bend_euler_sc_CSxs_sc_32875_20125:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_32875_20125:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -89,8 +89,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: xs_sc
-  bend_euler_sc_CSxs_sc_42125_-7375:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_42125_-7375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -104,8 +104,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: xs_sc
-  bend_euler_sc_CSxs_sc_42125_7375:
-    component: bend_euler_sc
+  bend_euler_CSxs_sc_42125_7375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -205,77 +205,77 @@ instances:
       cross_section: xs_sc
       length: 2
       npoints: 2
-name: mzi_DL10_LY2_LX0p1_Bben_af47b106
+name: mzi_DL10_LY2_LX0p1_Bben_fda89704
 nets:
-- p1: bend_euler_sc_CSxs_sc_12775_-7375,o1
+- p1: bend_euler_CSxs_sc_12775_-7375,o1
   p2: cp1,o3
-- p1: bend_euler_sc_CSxs_sc_12775_-7375,o2
+- p1: bend_euler_CSxs_sc_12775_-7375,o2
   p2: syl,o1
-- p1: bend_euler_sc_CSxs_sc_12775_7375,o1
+- p1: bend_euler_CSxs_sc_12775_7375,o1
   p2: cp1,o2
-- p1: bend_euler_sc_CSxs_sc_12775_7375,o2
+- p1: bend_euler_CSxs_sc_12775_7375,o2
   p2: sytl,o1
-- p1: bend_euler_sc_CSxs_sc_22025_-25125,o1
+- p1: bend_euler_CSxs_sc_22025_-25125,o1
   p2: syl,o2
-- p1: bend_euler_sc_CSxs_sc_22025_-25125,o2
+- p1: bend_euler_CSxs_sc_22025_-25125,o2
   p2: sxb,o1
-- p1: bend_euler_sc_CSxs_sc_22025_20125,o1
+- p1: bend_euler_CSxs_sc_22025_20125,o1
   p2: sxt,o1
-- p1: bend_euler_sc_CSxs_sc_22025_20125,o2
+- p1: bend_euler_CSxs_sc_22025_20125,o2
   p2: sytl,o2
-- p1: bend_euler_sc_CSxs_sc_32875_-25125,o1
+- p1: bend_euler_CSxs_sc_32875_-25125,o1
   p2: sxb,o2
-- p1: bend_euler_sc_CSxs_sc_32875_-25125,o2
+- p1: bend_euler_CSxs_sc_32875_-25125,o2
   p2: straight_L7_N2_CSxs_sc_37500_-16250,o1
-- p1: bend_euler_sc_CSxs_sc_32875_20125,o1
+- p1: bend_euler_CSxs_sc_32875_20125,o1
   p2: straight_L2_N2_CSxs_sc_37500_13750,o2
-- p1: bend_euler_sc_CSxs_sc_32875_20125,o2
+- p1: bend_euler_CSxs_sc_32875_20125,o2
   p2: sxt,o2
-- p1: bend_euler_sc_CSxs_sc_42125_-7375,o1
+- p1: bend_euler_CSxs_sc_42125_-7375,o1
   p2: cp2,o3
-- p1: bend_euler_sc_CSxs_sc_42125_-7375,o2
+- p1: bend_euler_CSxs_sc_42125_-7375,o2
   p2: straight_L7_N2_CSxs_sc_37500_-16250,o2
-- p1: bend_euler_sc_CSxs_sc_42125_7375,o1
+- p1: bend_euler_CSxs_sc_42125_7375,o1
   p2: straight_L2_N2_CSxs_sc_37500_13750,o1
-- p1: bend_euler_sc_CSxs_sc_42125_7375,o2
+- p1: bend_euler_CSxs_sc_42125_7375,o2
   p2: cp2,o2
 placements:
-  bend_euler_sc_CSxs_sc_12775_-7375:
+  bend_euler_CSxs_sc_12775_-7375:
     mirror: true
     rotation: 0
     x: 7.4
     y: -2.75
-  bend_euler_sc_CSxs_sc_12775_7375:
+  bend_euler_CSxs_sc_12775_7375:
     mirror: false
     rotation: 0
     x: 7.4
     y: 2.75
-  bend_euler_sc_CSxs_sc_22025_-25125:
+  bend_euler_CSxs_sc_22025_-25125:
     mirror: false
     rotation: 270
     x: 17.4
     y: -19.75
-  bend_euler_sc_CSxs_sc_22025_20125:
+  bend_euler_CSxs_sc_22025_20125:
     mirror: false
     rotation: 180
     x: 27.4
     y: 24.75
-  bend_euler_sc_CSxs_sc_32875_-25125:
+  bend_euler_CSxs_sc_32875_-25125:
     mirror: false
     rotation: 0
     x: 27.5
     y: -29.75
-  bend_euler_sc_CSxs_sc_32875_20125:
+  bend_euler_CSxs_sc_32875_20125:
     mirror: false
     rotation: 90
     x: 37.5
     y: 14.75
-  bend_euler_sc_CSxs_sc_42125_-7375:
+  bend_euler_CSxs_sc_42125_-7375:
     mirror: false
     rotation: 180
     x: 47.5
     y: -2.75
-  bend_euler_sc_CSxs_sc_42125_7375:
+  bend_euler_CSxs_sc_42125_7375:
     mirror: false
     rotation: 270
     x: 37.5

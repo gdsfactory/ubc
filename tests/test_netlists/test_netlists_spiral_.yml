@@ -1,6 +1,6 @@
 instances:
-  bend_euler_sc_CSstrip_-14625_15375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-14625_15375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -14,8 +14,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-25375_15375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-25375_15375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -29,8 +29,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-25375_1625:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-25375_1625:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -44,8 +44,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-28375_-1375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-28375_-1375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -59,8 +59,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-28375_18375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-28375_18375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -74,8 +74,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-31375_-4375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-31375_-4375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -89,8 +89,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-31375_21375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-31375_21375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -104,8 +104,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-34375_-7375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-34375_-7375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -119,8 +119,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-34375_24375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-34375_24375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -134,8 +134,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-37375_-10375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-37375_-10375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -149,8 +149,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-37375_27375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-37375_27375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -164,8 +164,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-40375_-13375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-40375_-13375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -179,8 +179,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-40375_30375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-40375_30375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -194,8 +194,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-43375_-16375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-43375_-16375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -209,8 +209,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-43375_33375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-43375_33375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -224,8 +224,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_-5375_4625:
-    component: bend_euler_sc
+  bend_euler_CSstrip_-5375_4625:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -239,8 +239,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_105375_18375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_105375_18375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -254,8 +254,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_105375_4625:
-    component: bend_euler_sc
+  bend_euler_CSstrip_105375_4625:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -269,8 +269,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_108375_1625:
-    component: bend_euler_sc
+  bend_euler_CSstrip_108375_1625:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -284,8 +284,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_108375_21375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_108375_21375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -299,8 +299,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_111375_-1375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_111375_-1375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -314,8 +314,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_111375_24375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_111375_24375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -329,8 +329,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_114375_-4375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_114375_-4375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -344,8 +344,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_114375_27375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_114375_27375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -359,8 +359,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_117375_-7375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_117375_-7375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -374,8 +374,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_117375_30375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_117375_30375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -389,8 +389,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_120375_-10375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_120375_-10375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -404,8 +404,8 @@ instances:
       route_info_xs_38f6dd83_length: 16.637
     settings:
       cross_section: strip
-  bend_euler_sc_CSstrip_120375_33375:
-    component: bend_euler_sc
+  bend_euler_CSstrip_120375_33375:
+    component: bend_euler
     info:
       dy: 10
       length: 16.637
@@ -772,251 +772,251 @@ instances:
       npoints: 2
 name: spiral_L100_S3_NL6
 nets:
-- p1: bend_euler_sc_CSstrip_-14625_15375,o1
-  p2: bend_euler_sc_CSstrip_-5375_4625,o2
-- p1: bend_euler_sc_CSstrip_-14625_15375,o2
-  p2: bend_euler_sc_CSstrip_-25375_15375,o1
-- p1: bend_euler_sc_CSstrip_-25375_15375,o2
+- p1: bend_euler_CSstrip_-14625_15375,o1
+  p2: bend_euler_CSstrip_-5375_4625,o2
+- p1: bend_euler_CSstrip_-14625_15375,o2
+  p2: bend_euler_CSstrip_-25375_15375,o1
+- p1: bend_euler_CSstrip_-25375_15375,o2
   p2: straight_L3_N2_CSstrip_-30000_8500,o1
-- p1: bend_euler_sc_CSstrip_-25375_1625,o1
+- p1: bend_euler_CSstrip_-25375_1625,o1
   p2: straight_L3_N2_CSstrip_-30000_8500,o2
-- p1: bend_euler_sc_CSstrip_-25375_1625,o2
+- p1: bend_euler_CSstrip_-25375_1625,o2
   p2: straight_L123_N2_CSstrip_41500_-3000,o1
-- p1: bend_euler_sc_CSstrip_-28375_-1375,o1
+- p1: bend_euler_CSstrip_-28375_-1375,o1
   p2: straight_L9_N2_CSstrip_-33000_8500,o2
-- p1: bend_euler_sc_CSstrip_-28375_-1375,o2
+- p1: bend_euler_CSstrip_-28375_-1375,o2
   p2: straight_L129_N2_CSstrip_41500_-6000,o1
-- p1: bend_euler_sc_CSstrip_-28375_18375,o1
+- p1: bend_euler_CSstrip_-28375_18375,o1
   p2: straight_L123_N2_CSstrip_38500_23000,o2
-- p1: bend_euler_sc_CSstrip_-28375_18375,o2
+- p1: bend_euler_CSstrip_-28375_18375,o2
   p2: straight_L9_N2_CSstrip_-33000_8500,o1
-- p1: bend_euler_sc_CSstrip_-31375_-4375,o1
+- p1: bend_euler_CSstrip_-31375_-4375,o1
   p2: straight_L15_N2_CSstrip_-36000_8500,o2
-- p1: bend_euler_sc_CSstrip_-31375_-4375,o2
+- p1: bend_euler_CSstrip_-31375_-4375,o2
   p2: straight_L135_N2_CSstrip_41500_-9000,o1
-- p1: bend_euler_sc_CSstrip_-31375_21375,o1
+- p1: bend_euler_CSstrip_-31375_21375,o1
   p2: straight_L129_N2_CSstrip_38500_26000,o2
-- p1: bend_euler_sc_CSstrip_-31375_21375,o2
+- p1: bend_euler_CSstrip_-31375_21375,o2
   p2: straight_L15_N2_CSstrip_-36000_8500,o1
-- p1: bend_euler_sc_CSstrip_-34375_-7375,o1
+- p1: bend_euler_CSstrip_-34375_-7375,o1
   p2: straight_L21_N2_CSstrip_-39000_8500,o2
-- p1: bend_euler_sc_CSstrip_-34375_-7375,o2
+- p1: bend_euler_CSstrip_-34375_-7375,o2
   p2: straight_L141_N2_CSstrip_41500_-12000,o1
-- p1: bend_euler_sc_CSstrip_-34375_24375,o1
+- p1: bend_euler_CSstrip_-34375_24375,o1
   p2: straight_L135_N2_CSstrip_38500_29000,o2
-- p1: bend_euler_sc_CSstrip_-34375_24375,o2
+- p1: bend_euler_CSstrip_-34375_24375,o2
   p2: straight_L21_N2_CSstrip_-39000_8500,o1
-- p1: bend_euler_sc_CSstrip_-37375_-10375,o1
+- p1: bend_euler_CSstrip_-37375_-10375,o1
   p2: straight_L27_N2_CSstrip_-42000_8500,o2
-- p1: bend_euler_sc_CSstrip_-37375_-10375,o2
+- p1: bend_euler_CSstrip_-37375_-10375,o2
   p2: straight_L147_N2_CSstrip_41500_-15000,o1
-- p1: bend_euler_sc_CSstrip_-37375_27375,o1
+- p1: bend_euler_CSstrip_-37375_27375,o1
   p2: straight_L141_N2_CSstrip_38500_32000,o2
-- p1: bend_euler_sc_CSstrip_-37375_27375,o2
+- p1: bend_euler_CSstrip_-37375_27375,o2
   p2: straight_L27_N2_CSstrip_-42000_8500,o1
-- p1: bend_euler_sc_CSstrip_-40375_-13375,o1
+- p1: bend_euler_CSstrip_-40375_-13375,o1
   p2: straight_L33_N2_CSstrip_-45000_8500,o2
-- p1: bend_euler_sc_CSstrip_-40375_-13375,o2
+- p1: bend_euler_CSstrip_-40375_-13375,o2
   p2: straight_L153_N2_CSstrip_41500_-18000,o1
-- p1: bend_euler_sc_CSstrip_-40375_30375,o1
+- p1: bend_euler_CSstrip_-40375_30375,o1
   p2: straight_L147_N2_CSstrip_38500_35000,o2
-- p1: bend_euler_sc_CSstrip_-40375_30375,o2
+- p1: bend_euler_CSstrip_-40375_30375,o2
   p2: straight_L33_N2_CSstrip_-45000_8500,o1
-- p1: bend_euler_sc_CSstrip_-43375_-16375,o1
+- p1: bend_euler_CSstrip_-43375_-16375,o1
   p2: straight_L39_N2_CSstrip_-48000_8500,o2
-- p1: bend_euler_sc_CSstrip_-43375_-16375,o2
+- p1: bend_euler_CSstrip_-43375_-16375,o2
   p2: straight_L159_N2_CSstrip_41500_-21000,o1
-- p1: bend_euler_sc_CSstrip_-43375_33375,o1
+- p1: bend_euler_CSstrip_-43375_33375,o1
   p2: straight_L153_N2_CSstrip_38500_38000,o2
-- p1: bend_euler_sc_CSstrip_-43375_33375,o2
+- p1: bend_euler_CSstrip_-43375_33375,o2
   p2: straight_L39_N2_CSstrip_-48000_8500,o1
-- p1: bend_euler_sc_CSstrip_-5375_4625,o1
+- p1: bend_euler_CSstrip_-5375_4625,o1
   p2: straight_L100_N2_CSstrip_50000_0,o1
-- p1: bend_euler_sc_CSstrip_105375_18375,o1
+- p1: bend_euler_CSstrip_105375_18375,o1
   p2: straight_L3_N2_CSstrip_110000_11500,o2
-- p1: bend_euler_sc_CSstrip_105375_18375,o2
+- p1: bend_euler_CSstrip_105375_18375,o2
   p2: straight_L123_N2_CSstrip_38500_23000,o1
-- p1: bend_euler_sc_CSstrip_105375_4625,o1
+- p1: bend_euler_CSstrip_105375_4625,o1
   p2: straight_L100_N2_CSstrip_50000_0,o2
-- p1: bend_euler_sc_CSstrip_105375_4625,o2
+- p1: bend_euler_CSstrip_105375_4625,o2
   p2: straight_L3_N2_CSstrip_110000_11500,o1
-- p1: bend_euler_sc_CSstrip_108375_1625,o1
+- p1: bend_euler_CSstrip_108375_1625,o1
   p2: straight_L123_N2_CSstrip_41500_-3000,o2
-- p1: bend_euler_sc_CSstrip_108375_1625,o2
+- p1: bend_euler_CSstrip_108375_1625,o2
   p2: straight_L9_N2_CSstrip_113000_11500,o1
-- p1: bend_euler_sc_CSstrip_108375_21375,o1
+- p1: bend_euler_CSstrip_108375_21375,o1
   p2: straight_L9_N2_CSstrip_113000_11500,o2
-- p1: bend_euler_sc_CSstrip_108375_21375,o2
+- p1: bend_euler_CSstrip_108375_21375,o2
   p2: straight_L129_N2_CSstrip_38500_26000,o1
-- p1: bend_euler_sc_CSstrip_111375_-1375,o1
+- p1: bend_euler_CSstrip_111375_-1375,o1
   p2: straight_L129_N2_CSstrip_41500_-6000,o2
-- p1: bend_euler_sc_CSstrip_111375_-1375,o2
+- p1: bend_euler_CSstrip_111375_-1375,o2
   p2: straight_L15_N2_CSstrip_116000_11500,o1
-- p1: bend_euler_sc_CSstrip_111375_24375,o1
+- p1: bend_euler_CSstrip_111375_24375,o1
   p2: straight_L15_N2_CSstrip_116000_11500,o2
-- p1: bend_euler_sc_CSstrip_111375_24375,o2
+- p1: bend_euler_CSstrip_111375_24375,o2
   p2: straight_L135_N2_CSstrip_38500_29000,o1
-- p1: bend_euler_sc_CSstrip_114375_-4375,o1
+- p1: bend_euler_CSstrip_114375_-4375,o1
   p2: straight_L135_N2_CSstrip_41500_-9000,o2
-- p1: bend_euler_sc_CSstrip_114375_-4375,o2
+- p1: bend_euler_CSstrip_114375_-4375,o2
   p2: straight_L21_N2_CSstrip_119000_11500,o1
-- p1: bend_euler_sc_CSstrip_114375_27375,o1
+- p1: bend_euler_CSstrip_114375_27375,o1
   p2: straight_L21_N2_CSstrip_119000_11500,o2
-- p1: bend_euler_sc_CSstrip_114375_27375,o2
+- p1: bend_euler_CSstrip_114375_27375,o2
   p2: straight_L141_N2_CSstrip_38500_32000,o1
-- p1: bend_euler_sc_CSstrip_117375_-7375,o1
+- p1: bend_euler_CSstrip_117375_-7375,o1
   p2: straight_L141_N2_CSstrip_41500_-12000,o2
-- p1: bend_euler_sc_CSstrip_117375_-7375,o2
+- p1: bend_euler_CSstrip_117375_-7375,o2
   p2: straight_L27_N2_CSstrip_122000_11500,o1
-- p1: bend_euler_sc_CSstrip_117375_30375,o1
+- p1: bend_euler_CSstrip_117375_30375,o1
   p2: straight_L27_N2_CSstrip_122000_11500,o2
-- p1: bend_euler_sc_CSstrip_117375_30375,o2
+- p1: bend_euler_CSstrip_117375_30375,o2
   p2: straight_L147_N2_CSstrip_38500_35000,o1
-- p1: bend_euler_sc_CSstrip_120375_-10375,o1
+- p1: bend_euler_CSstrip_120375_-10375,o1
   p2: straight_L147_N2_CSstrip_41500_-15000,o2
-- p1: bend_euler_sc_CSstrip_120375_-10375,o2
+- p1: bend_euler_CSstrip_120375_-10375,o2
   p2: straight_L33_N2_CSstrip_125000_11500,o1
-- p1: bend_euler_sc_CSstrip_120375_33375,o1
+- p1: bend_euler_CSstrip_120375_33375,o1
   p2: straight_L33_N2_CSstrip_125000_11500,o2
-- p1: bend_euler_sc_CSstrip_120375_33375,o2
+- p1: bend_euler_CSstrip_120375_33375,o2
   p2: straight_L153_N2_CSstrip_38500_38000,o1
 placements:
-  bend_euler_sc_CSstrip_-14625_15375:
+  bend_euler_CSstrip_-14625_15375:
     mirror: false
     rotation: 90
     x: -10
     y: 10
-  bend_euler_sc_CSstrip_-25375_15375:
+  bend_euler_CSstrip_-25375_15375:
     mirror: false
     rotation: 180
     x: -20
     y: 20
-  bend_euler_sc_CSstrip_-25375_1625:
+  bend_euler_CSstrip_-25375_1625:
     mirror: false
     rotation: 270
     x: -30
     y: 7
-  bend_euler_sc_CSstrip_-28375_-1375:
+  bend_euler_CSstrip_-28375_-1375:
     mirror: false
     rotation: 270
     x: -33
     y: 4
-  bend_euler_sc_CSstrip_-28375_18375:
+  bend_euler_CSstrip_-28375_18375:
     mirror: false
     rotation: 180
     x: -23
     y: 23
-  bend_euler_sc_CSstrip_-31375_-4375:
+  bend_euler_CSstrip_-31375_-4375:
     mirror: false
     rotation: 270
     x: -36
     y: 1
-  bend_euler_sc_CSstrip_-31375_21375:
+  bend_euler_CSstrip_-31375_21375:
     mirror: false
     rotation: 180
     x: -26
     y: 26
-  bend_euler_sc_CSstrip_-34375_-7375:
+  bend_euler_CSstrip_-34375_-7375:
     mirror: false
     rotation: 270
     x: -39
     y: -2
-  bend_euler_sc_CSstrip_-34375_24375:
+  bend_euler_CSstrip_-34375_24375:
     mirror: false
     rotation: 180
     x: -29
     y: 29
-  bend_euler_sc_CSstrip_-37375_-10375:
+  bend_euler_CSstrip_-37375_-10375:
     mirror: false
     rotation: 270
     x: -42
     y: -5
-  bend_euler_sc_CSstrip_-37375_27375:
+  bend_euler_CSstrip_-37375_27375:
     mirror: false
     rotation: 180
     x: -32
     y: 32
-  bend_euler_sc_CSstrip_-40375_-13375:
+  bend_euler_CSstrip_-40375_-13375:
     mirror: false
     rotation: 270
     x: -45
     y: -8
-  bend_euler_sc_CSstrip_-40375_30375:
+  bend_euler_CSstrip_-40375_30375:
     mirror: false
     rotation: 180
     x: -35
     y: 35
-  bend_euler_sc_CSstrip_-43375_-16375:
+  bend_euler_CSstrip_-43375_-16375:
     mirror: false
     rotation: 270
     x: -48
     y: -11
-  bend_euler_sc_CSstrip_-43375_33375:
+  bend_euler_CSstrip_-43375_33375:
     mirror: false
     rotation: 180
     x: -38
     y: 38
-  bend_euler_sc_CSstrip_-5375_4625:
+  bend_euler_CSstrip_-5375_4625:
     mirror: true
     rotation: 180
     x: 0
     y: 0
-  bend_euler_sc_CSstrip_105375_18375:
+  bend_euler_CSstrip_105375_18375:
     mirror: false
     rotation: 90
     x: 110
     y: 13
-  bend_euler_sc_CSstrip_105375_4625:
+  bend_euler_CSstrip_105375_4625:
     mirror: false
     rotation: 0
     x: 100
     y: 0
-  bend_euler_sc_CSstrip_108375_1625:
+  bend_euler_CSstrip_108375_1625:
     mirror: false
     rotation: 0
     x: 103
     y: -3
-  bend_euler_sc_CSstrip_108375_21375:
+  bend_euler_CSstrip_108375_21375:
     mirror: false
     rotation: 90
     x: 113
     y: 16
-  bend_euler_sc_CSstrip_111375_-1375:
+  bend_euler_CSstrip_111375_-1375:
     mirror: false
     rotation: 0
     x: 106
     y: -6
-  bend_euler_sc_CSstrip_111375_24375:
+  bend_euler_CSstrip_111375_24375:
     mirror: false
     rotation: 90
     x: 116
     y: 19
-  bend_euler_sc_CSstrip_114375_-4375:
+  bend_euler_CSstrip_114375_-4375:
     mirror: false
     rotation: 0
     x: 109
     y: -9
-  bend_euler_sc_CSstrip_114375_27375:
+  bend_euler_CSstrip_114375_27375:
     mirror: false
     rotation: 90
     x: 119
     y: 22
-  bend_euler_sc_CSstrip_117375_-7375:
+  bend_euler_CSstrip_117375_-7375:
     mirror: false
     rotation: 0
     x: 112
     y: -12
-  bend_euler_sc_CSstrip_117375_30375:
+  bend_euler_CSstrip_117375_30375:
     mirror: false
     rotation: 90
     x: 122
     y: 25
-  bend_euler_sc_CSstrip_120375_-10375:
+  bend_euler_CSstrip_120375_-10375:
     mirror: false
     rotation: 0
     x: 115
     y: -15
-  bend_euler_sc_CSstrip_120375_33375:
+  bend_euler_CSstrip_120375_33375:
     mirror: false
     rotation: 90
     x: 125
