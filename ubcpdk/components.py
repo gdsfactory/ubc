@@ -412,7 +412,7 @@ _mzi_heater = partial(
 
 
 @gf.cell
-def mzi_heater(delta_length=10.0, length_x=500) -> gf.Component:
+def mzi_heater(delta_length=10.0, length_x=320) -> gf.Component:
     """Returns MZI with heater.
 
     Args:
@@ -617,7 +617,7 @@ def mmi1x2(**kwargs) -> gf.Component:
     return gf.components.mmi1x2(**kwargs)
 
 
-@cache
+@gf.cell
 def dbr_cavity(dbr=dbr, coupler=coupler, **kwargs) -> gf.Component:
     dbr = dbr(**kwargs)
     return gf.components.cavity(component=dbr, coupler=coupler)
