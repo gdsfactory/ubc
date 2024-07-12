@@ -41,12 +41,16 @@ def straight(
     )
 
 
-wire_corner = partial(gf.c.wire_corner, cross_section=tech.xs_metal_routing)
-straight_heater_metal = gf.c.straight_heater_metal
-bend_s = partial(
-    gf.components.bend_s,
-    cross_section="xs_sc",
-)
+@gf.cell
+def wire_corner(cross_section="metal_routing", **kwargs) -> Component:
+    return gf.c.wire_corner(cross_section=cross_section, **kwargs)
+
+
+@gf.cell
+def straight_heater_metal(length: float = 320.0, cross_section="strip") -> gf.Component:
+    c = gf.c.straight_heater_metal(length=length, cross_section=cross_section)
+    return c
+
 
 info1550te = dict(polarization="te", wavelength=1.55)
 info1310te = dict(polarization="te", wavelength=1.31)
@@ -148,39 +152,47 @@ def ebeam_crossing4_2ports() -> gf.Component:
 
     c.add_port(name="o1", port=x.ports["o1"])
     c.add_port(name="o4", port=x.ports["o3"])
+    c.flatten()
     return c
 
 
+@gf.cell
 def ebeam_splitter_adiabatic_swg_te1550() -> gf.Component:
     """Return ebeam_splitter_adiabatic_swg_te1550 fixed cell."""
     return import_gds(PATH.gds / "ebeam_splitter_adiabatic_swg_te1550.gds")
 
 
+@gf.cell
 def ebeam_splitter_swg_assist_te1310() -> gf.Component:
     """Return ebeam_splitter_swg_assist_te1310 fixed cell."""
     return import_gds(PATH.gds / "ebeam_splitter_swg_assist_te1310.gds")
 
 
+@gf.cell
 def ebeam_splitter_swg_assist_te1550() -> gf.Component:
     """Return ebeam_splitter_swg_assist_te1550 fixed cell."""
     return import_gds(PATH.gds / "ebeam_splitter_swg_assist_te1550.gds")
 
 
+@gf.cell
 def ebeam_swg_edgecoupler() -> gf.Component:
     """Return ebeam_swg_edgecoupler fixed cell."""
     return import_gds(PATH.gds / "ebeam_swg_edgecoupler.gds")
 
 
+@gf.cell
 def ebeam_terminator_te1310() -> gf.Component:
     """Return ebeam_terminator_te1310 fixed cell."""
     return import_gds(PATH.gds / "ebeam_terminator_te1310.gds")
 
 
+@gf.cell
 def ebeam_terminator_te1550() -> gf.Component:
     """Return ebeam_terminator_te1550 fixed cell."""
     return import_gds(PATH.gds / "ebeam_terminator_te1550.gds")
 
 
+@gf.cell
 def ebeam_terminator_tm1550() -> gf.Component:
     """Return ebeam_terminator_tm1550 fixed cell."""
     return import_gds(PATH.gds / "ebeam_terminator_tm1550.gds")
@@ -191,26 +203,31 @@ def ebeam_y_1550() -> gf.Component:
     return import_gds(PATH.gds / "ebeam_y_1550.gds")
 
 
+@gf.cell
 def ebeam_y_adiabatic() -> gf.Component:
     """Return ebeam_y_adiabatic fixed cell."""
     return import_gds(PATH.gds / "ebeam_y_adiabatic.gds")
 
 
+@gf.cell
 def ebeam_y_adiabatic_1310() -> gf.Component:
     """Return ebeam_y_adiabatic_1310 fixed cell."""
     return import_gds(PATH.gds / "ebeam_y_adiabatic_1310.gds")
 
 
+@gf.cell
 def metal_via() -> gf.Component:
     """Return metal_via fixed cell."""
     return import_gds(PATH.gds / "metal_via.gds")
 
 
+@gf.cell
 def photonic_wirebond_surfacetaper_1310() -> gf.Component:
     """Return photonic_wirebond_surfacetaper_1310 fixed cell."""
     return import_gds(PATH.gds / "photonic_wirebond_surfacetaper_1310.gds")
 
 
+@gf.cell
 def photonic_wirebond_surfacetaper_1550() -> gf.Component:
     """Return photonic_wirebond_surfacetaper_1550 fixed cell."""
     return import_gds(PATH.gds / "photonic_wirebond_surfacetaper_1550.gds")
@@ -382,15 +399,27 @@ mzi = partial(
     splitter=ebeam_y_1550,
     bend=bend_euler,
     straight=straight,
-    cross_section="xs_sc",
+    cross_section="strip",
 )
 
-mzi_heater = partial(
+_mzi_heater = partial(
     gf.components.mzi_phase_shifter,
-    bend=bend_euler,
-    straight=straight,
-    splitter=ebeam_y_1550,
+    bend="bend_euler",
+    straight="straight",
+    splitter="ebeam_y_1550",
+    straight_x_top="straight_heater_metal",
 )
+
+
+@gf.cell
+def mzi_heater(delta_length=10.0, length_x=500) -> gf.Component:
+    """Returns MZI with heater.
+
+    Args:
+        delta_length: extra length for mzi arms.
+    """
+    c = _mzi_heater(delta_length=delta_length, length_x=length_x)
+    return c
 
 
 @gf.cell
@@ -441,7 +470,7 @@ def add_fiber_array(
     optical_routing_type: int = 1,
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
-    cross_section: CrossSectionSpec = "xs_sc",
+    cross_section: CrossSectionSpec = "strip",
     straight: ComponentSpec = straight,
     **kwargs,
 ) -> Component:
@@ -525,12 +554,13 @@ def dbg(
 
 
 @gf.cell
-def terminator_short(**kwargs) -> gf.Component:
+def terminator_short(width2=0.1) -> gf.Component:
     c = gf.Component()
-    s = gf.components.taper(**kwargs, cross_section=tech.strip_simple)
+    s = gf.components.taper(cross_section="strip", width2=width2)
     s1 = c << s
     c.add_port("o1", port=s1.ports["o1"])
     c = add_pins_bbox_siepic(c)
+    c.flatten()
     return c
 
 
@@ -681,7 +711,7 @@ def ring_double(
         radius=radius,
         length_x=length_x,
         length_y=length_y,
-        cross_section="xs_sc_devrec",
+        cross_section="strip",
         bend=bend,
         coupler_ring=coupler_ring,
     )
@@ -717,7 +747,7 @@ ring_with_crossing = partial(
     component=ebeam_crossing4_2ports,
     port_name="o4",
     bend=bend,
-    cross_section="xs_sc",
+    cross_section="strip",
 )
 
 
@@ -819,7 +849,7 @@ if __name__ == "__main__":
     # c.pprint_ports()
     # c.pprint_ports()
     # c = straight()
-    c = ring_single_heater()
+    # c = terminator_short()
     # c = add_fiber_array_pads_rf(c)
 
     # c = ring_double(length_y=10)
@@ -836,7 +866,9 @@ if __name__ == "__main__":
     # c = spiral()
     # c = pad_array()
     # c = bend_euler()
-    # c = ebeam_y_1550()
+    c = ebeam_y_1550()
+    c = ebeam_y_1550()
+    # c = mzi_heater()
     # c = ring_with_crossing()
     # c = ring_single()
     # c = ring_double()

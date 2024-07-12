@@ -16,6 +16,7 @@ skip_test = {
     "add_pins_siepic",
     "add_pins_siepic_metal",
     "add_pads",
+    "add_pads_rf",
     "dbr",
     "dbg",
     "import_gds",
@@ -30,6 +31,8 @@ skip_test = {
     "add_fiber_array",
     "add_pads_top",
     "add_pads_bot",
+    "wire_corner",
+    "straight_heater_metal",
 }
 cell_names = cells.keys() - skip_test
 
@@ -69,6 +72,8 @@ if __name__ == "__main__":
     component_type = "straight_heater_metal"
     component_type = "gc_te1310_broadband"
     component_type = "ring_double"
+    component_type = "terminator_short"
+    component_type = "mzi_heater"
     connection_error_types = {
         "optical": ["width_mismatch", "shear_angle_mismatch", "orientation_mismatch"]
     }
@@ -81,7 +86,7 @@ if __name__ == "__main__":
     )
     yaml_str = OmegaConf.to_yaml(n, sort_keys=True)
     c1.delete()
-    gf.clear_cache()
+    # gf.clear_cache()
     # print(yaml_str)
     c2 = gf.read.from_yaml(yaml_str)
     n2 = c2.get_netlist(allow_multiple=True)

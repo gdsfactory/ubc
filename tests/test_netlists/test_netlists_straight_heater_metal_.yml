@@ -926,7 +926,7 @@ instances:
       size:
       - 10
       - 10
-name: straight_heater_metal_u_ba1ec95a
+name: straight_heater_metal_L_32c21700
 nets:
 - p1: -1,e1
   p2: taper_L5_W10_W4_PNone_W_9659be32_-2400_0,e2

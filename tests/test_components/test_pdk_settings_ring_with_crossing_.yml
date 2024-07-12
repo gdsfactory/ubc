@@ -1,10 +1,10 @@
 info: {}
-name: ring_single_dut_Cebeam__50ff1b6e
+name: ring_single_dut_Cebeam__d2ca7275
 settings:
   bend: bend_euler
   component: ebeam_crossing4_2ports
   coupler: coupler_ring
-  cross_section: xs_sc
+  cross_section: strip
   gap: 0.2
   length_x: 4
   length_y: 0

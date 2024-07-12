@@ -1,5 +1,5 @@
 instances:
-  bend_euler_CSxs_sc_R5_-6875_18275:
+  bend_euler_CSstrip_R5_-6875_18275:
     component: bend_euler
     info:
       dy: 5
@@ -13,9 +13,9 @@ instances:
       route_info_weight: 8.318
       route_info_xs_38f6dd83_length: 8.318
     settings:
-      cross_section: xs_sc
+      cross_section: strip
       radius: 5
-  bend_euler_CSxs_sc_R5_2875_18275:
+  bend_euler_CSstrip_R5_2875_18275:
     component: bend_euler
     info:
       dy: 5
@@ -29,16 +29,16 @@ instances:
       route_info_weight: 8.318
       route_info_xs_38f6dd83_length: 8.318
     settings:
-      cross_section: xs_sc
+      cross_section: strip
       radius: 5
-  coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475:
+  coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475:
     component: coupler_ring
     info: {}
     settings:
       bend: bend_euler
       coupler90: coupler90
       coupler_straight: coupler_straight
-      cross_section: xs_sc
+      cross_section: strip
       gap: 0.2
       length_extension: 3
       length_x: 4
@@ -47,7 +47,7 @@ instances:
     component: ebeam_crossing4_2ports
     info: {}
     settings: {}
-  straight_L4_N2_CSxs_sc_-2000_20400:
+  straight_L4_N2_CSstrip_-2000_20400:
     component: straight
     info:
       length: 4
@@ -57,10 +57,10 @@ instances:
       route_info_xs_38f6dd83_length: 4
       width: 0.5
     settings:
-      cross_section: xs_sc
+      cross_section: strip
       length: 4
       npoints: 2
-  straight_L9p70000000000_a51dc8c9_-9000_10550:
+  straight_L9p70000000000_c887c097_-9000_10550:
     component: straight
     info:
       length: 9.7
@@ -70,33 +70,33 @@ instances:
       route_info_xs_38f6dd83_length: 9.7
       width: 0.5
     settings:
-      cross_section: xs_sc
+      cross_section: strip
       length: 9.7
       npoints: 2
-name: ring_single_dut_Cebeam__50ff1b6e
+name: ring_single_dut_Cebeam__d2ca7275
 nets:
-- p1: bend_euler_CSxs_sc_R5_-6875_18275,o1
-  p2: straight_L4_N2_CSxs_sc_-2000_20400,o1
-- p1: bend_euler_CSxs_sc_R5_-6875_18275,o2
-  p2: straight_L9p70000000000_a51dc8c9_-9000_10550,o1
-- p1: bend_euler_CSxs_sc_R5_2875_18275,o1
+- p1: bend_euler_CSstrip_R5_-6875_18275,o1
+  p2: straight_L4_N2_CSstrip_-2000_20400,o1
+- p1: bend_euler_CSstrip_R5_-6875_18275,o2
+  p2: straight_L9p70000000000_c887c097_-9000_10550,o1
+- p1: bend_euler_CSstrip_R5_2875_18275,o1
   p2: ebeam_crossing4_2ports_5000_10600,o4
-- p1: bend_euler_CSxs_sc_R5_2875_18275,o2
-  p2: straight_L4_N2_CSxs_sc_-2000_20400,o2
-- p1: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o2
-  p2: straight_L9p70000000000_a51dc8c9_-9000_10550,o2
+- p1: bend_euler_CSstrip_R5_2875_18275,o2
+  p2: straight_L4_N2_CSstrip_-2000_20400,o2
+- p1: coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o2
+  p2: straight_L9p70000000000_c887c097_-9000_10550,o2
 placements:
-  bend_euler_CSxs_sc_R5_-6875_18275:
+  bend_euler_CSstrip_R5_-6875_18275:
     mirror: false
     rotation: 180
     x: -4
     y: 20.4
-  bend_euler_CSxs_sc_R5_2875_18275:
+  bend_euler_CSstrip_R5_2875_18275:
     mirror: false
     rotation: 90
     x: 5
     y: 15.4
-  coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475:
+  coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475:
     mirror: false
     rotation: 0
     x: 0
@@ -106,25 +106,25 @@ placements:
     rotation: 90
     x: 5
     y: 10.6
-  straight_L4_N2_CSxs_sc_-2000_20400:
+  straight_L4_N2_CSstrip_-2000_20400:
     mirror: false
     rotation: 0
     x: -4
     y: 20.4
-  straight_L9p70000000000_a51dc8c9_-9000_10550:
+  straight_L9p70000000000_c887c097_-9000_10550:
     mirror: false
     rotation: 270
     x: -9
     y: 15.4
 ports:
-  o1: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o1
-  o2: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o4
+  o1: coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o1
+  o2: coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o4
 warnings:
   optical:
     unconnected_ports:
     - message: 2 unconnected optical ports!
       ports:
-      - coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o3
+      - coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o3
       - ebeam_crossing4_2ports_5000_10600,o1
       values:
       - - 5000

@@ -1,54 +1,5 @@
-instances:
-  ebeam_crossing4_0_0:
-    component: null
-    info: {}
-    settings: {}
-  straight_one_pin_L1_CSF_a51960c0_0_-5300:
-    component: straight_one_pin
-    info: {}
-    settings:
-      cross_section: Fcross_section_Mgdsfactorypcross_section_SRM5_BLDEVREC_BO0p5
-      length: 1
-  straight_one_pin_L1_CSF_a51960c0_0_5300:
-    component: straight_one_pin
-    info: {}
-    settings:
-      cross_section: Fcross_section_Mgdsfactorypcross_section_SRM5_BLDEVREC_BO0p5
-      length: 1
+instances: {}
 name: ebeam_crossing4_2ports
-nets:
-- p1: ebeam_crossing4_0_0,o2
-  p2: straight_one_pin_L1_CSF_a51960c0_0_5300,o1
-- p1: ebeam_crossing4_0_0,o4
-  p2: straight_one_pin_L1_CSF_a51960c0_0_-5300,o1
-placements:
-  ebeam_crossing4_0_0:
-    mirror: false
-    rotation: 0
-    x: 0
-    y: 0
-  straight_one_pin_L1_CSF_a51960c0_0_-5300:
-    mirror: false
-    rotation: 270
-    x: 0
-    y: -4.8
-  straight_one_pin_L1_CSF_a51960c0_0_5300:
-    mirror: false
-    rotation: 90
-    x: 0
-    y: 4.8
-ports:
-  o1: ebeam_crossing4_0_0,o1
-  o4: ebeam_crossing4_0_0,o3
-warnings:
-  optical:
-    unconnected_ports:
-    - message: 2 unconnected optical ports!
-      ports:
-      - straight_one_pin_L1_CSF_a51960c0_0_5300,o2
-      - straight_one_pin_L1_CSF_a51960c0_0_-5300,o2
-      values:
-      - - 0
-        - 5800
-      - - 0
-        - -5800
+nets: []
+placements: {}
+ports: {}

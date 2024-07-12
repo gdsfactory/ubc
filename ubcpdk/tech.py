@@ -324,17 +324,6 @@ metal_routing = partial(
     radius=None,
 )
 heater_metal = partial(metal_routing, width=heater_width, layer=LAYER.M1_HEATER)
-
-xs_sc = strip
-xs_sc_heater_metal = strip_heater_metal
-xs_sc_bbox = strip_bbox
-xs_metal_routing = metal_routing
-xs_heater_metal = heater_metal
-xs_sc_unclad = strip_unclad
-xs_sc_simple = strip_simple
-xs_sc_devrec = partial(strip, cladding_layers=("DEVREC",), cladding_offsets=(0.5,))
-
-
 cross_sections = get_cross_sections(sys.modules[__name__])
 
 

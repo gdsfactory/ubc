@@ -49,7 +49,9 @@ def import_gds(
             port_type=port_type,
         )
     c.auto_rename_ports()
-    return kcell_to_component(c)
+    c = kcell_to_component(c)
+    c.function_name = cellname
+    return c
 
 
 if __name__ == "__main__":

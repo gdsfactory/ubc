@@ -1,15 +1,5 @@
-instances:
-  Unnamed_0_5000_0:
-    component: null
-    info: {}
-    settings: {}
-name: terminator_short
+instances: {}
+name: terminator_short_W0p1
 nets: []
-placements:
-  Unnamed_0_5000_0:
-    mirror: false
-    rotation: 0
-    x: 0
-    y: 0
-ports:
-  o1: Unnamed_0_5000_0,o1
+placements: {}
+ports: {}

@@ -1,6 +1,6 @@
 info:
   dy: 10
   length: 10
-name: wire_corner_CSFcross_se_91be9cfe
+name: wire_corner_CSmetal_routing
 settings:
-  cross_section: Fcross_section_Mgdsfactorypcross_section_SRM5_LM2_ROUTER_W10_PNe1_e2_PTelectrical_electrical_RNone
+  cross_section: metal_routing

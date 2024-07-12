@@ -1,21 +1,5 @@
 info: {}
-name: mzi_DL10_LY2_LX200_Bben_391bf0ab
+name: mzi_heater_DL10_LX500
 settings:
-  add_optical_ports_arms: false
-  auto_rename_ports: true
-  bend: bend_euler
-  cross_section: strip
   delta_length: 10
-  length_x: 200
-  length_y: 2
-  min_length: 0.01
-  mirror_bot: false
-  nbends: 2
-  port_e0_combiner: o3
-  port_e0_splitter: o3
-  port_e1_combiner: o2
-  port_e1_splitter: o2
-  splitter: ebeam_y_1550
-  straight: straight
-  straight_x_top: straight_heater_metal
-  with_splitter: true
+  length_x: 500
