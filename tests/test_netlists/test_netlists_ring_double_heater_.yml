@@ -64,43 +64,25 @@ instances:
       cross_section: heater_metal
       length: 1
       npoints: 2
-  via_stack_S10_10_LM1_HE_f3e2bc80_-7000_0:
-    component: via_stack
+  via_stack_heater_mtop_S10_10_-7000_0:
+    component: via_stack_heater_mtop
     info:
       xsize: 10
       ysize: 10
     settings:
-      correct_size: true
-      layers:
-      - M1_HEATER
-      - M2_ROUTER
       size:
       - 10
       - 10
-      slot_horizontal: false
-      slot_vertical: false
-      vias:
-      - null
-      - null
-  via_stack_S10_10_LM1_HE_f3e2bc80_6000_0:
-    component: via_stack
+  via_stack_heater_mtop_S10_10_6000_0:
+    component: via_stack_heater_mtop
     info:
       xsize: 10
       ysize: 10
     settings:
-      correct_size: true
-      layers:
-      - M1_HEATER
-      - M2_ROUTER
       size:
       - 10
       - 10
-      slot_horizontal: false
-      slot_vertical: false
-      vias:
-      - null
-      - null
-name: ring_double_heater_G0p2_7039e197
+name: ring_double_heater_G0p2_2d50a6d4
 nets:
 - p1: coupler_ring_G0p2_R10_L_f54abb4f_-500_16900,e1
   p2: straight_L1_N2_CSheater_metal_-500_20900,e1
@@ -148,29 +130,29 @@ placements:
     rotation: 0
     x: -1
     y: 20.9
-  via_stack_S10_10_LM1_HE_f3e2bc80_-7000_0:
+  via_stack_heater_mtop_S10_10_-7000_0:
     mirror: false
     rotation: 0
     x: -7
     y: 0
-  via_stack_S10_10_LM1_HE_f3e2bc80_6000_0:
+  via_stack_heater_mtop_S10_10_6000_0:
     mirror: false
     rotation: 0
     x: 6
     y: 0
 ports:
-  l_e1: via_stack_S10_10_LM1_HE_f3e2bc80_-7000_0,e1
-  l_e2: via_stack_S10_10_LM1_HE_f3e2bc80_-7000_0,e2
-  l_e3: via_stack_S10_10_LM1_HE_f3e2bc80_-7000_0,e3
-  l_e4: via_stack_S10_10_LM1_HE_f3e2bc80_-7000_0,e4
+  l_e1: via_stack_heater_mtop_S10_10_-7000_0,e1
+  l_e2: via_stack_heater_mtop_S10_10_-7000_0,e2
+  l_e3: via_stack_heater_mtop_S10_10_-7000_0,e3
+  l_e4: via_stack_heater_mtop_S10_10_-7000_0,e4
   o1: coupler_ring_G0p2_R10_L_f54abb4f_-500_4700,o1
   o2: coupler_ring_G0p2_R10_L_f54abb4f_-500_4700,o4
   o3: coupler_ring_G0p2_R10_L_f54abb4f_-500_16900,o4
   o4: coupler_ring_G0p2_R10_L_f54abb4f_-500_16900,o1
-  r_e1: via_stack_S10_10_LM1_HE_f3e2bc80_6000_0,e1
-  r_e2: via_stack_S10_10_LM1_HE_f3e2bc80_6000_0,e2
-  r_e3: via_stack_S10_10_LM1_HE_f3e2bc80_6000_0,e3
-  r_e4: via_stack_S10_10_LM1_HE_f3e2bc80_6000_0,e4
+  r_e1: via_stack_heater_mtop_S10_10_6000_0,e1
+  r_e2: via_stack_heater_mtop_S10_10_6000_0,e2
+  r_e3: via_stack_heater_mtop_S10_10_6000_0,e3
+  r_e4: via_stack_heater_mtop_S10_10_6000_0,e4
 warnings:
   electrical:
     unconnected_ports:

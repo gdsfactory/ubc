@@ -37,6 +37,7 @@ class LayerMapUbc(LayerMap):
     FLOORPLAN: Layer = (99, 0)
 
     TEXT: Layer = (10, 0)
+    LABEL_INSTANCE: Layer = (10, 0)
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
     SLAB150: Layer = (2, 0)

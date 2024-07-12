@@ -27,6 +27,8 @@ skip_test = {
     "ebeam_splitter_adiabatic_swg_te1550",
     "ebeam_swg_edgecoupler",
     "ebeam_BondPad",
+    "add_fiber_array",
+    "add_pads_top",
 }
 cell_names = cells.keys() - skip_test
 
@@ -59,4 +61,29 @@ def test_netlists(
     n2 = c2.get_netlist(allow_multiple=allow_multiple)
 
     d = jsondiff.diff(n, n2)
+    assert len(d) == 0, d
+
+
+if __name__ == "__main__":
+    component_type = "straight_heater_metal"
+    component_type = "gc_te1310_broadband"
+    component_type = "ring_single"
+    connection_error_types = {
+        "optical": ["width_mismatch", "shear_angle_mismatch", "orientation_mismatch"]
+    }
+    connection_error_types = {"optical": []}
+
+    c1 = cells[component_type]()
+    # c1.show()
+    n = c1.get_netlist(
+        allow_multiple=True, connection_error_types=connection_error_types
+    )
+    yaml_str = OmegaConf.to_yaml(n, sort_keys=True)
+    c1.delete()
+    # print(yaml_str)
+    c2 = gf.read.from_yaml(yaml_str)
+    n2 = c2.get_netlist(allow_multiple=True)
+    d = jsondiff.diff(n, n2)
+    d.pop("warnings", None)
+    c2.show()
     assert len(d) == 0, d

@@ -34,7 +34,9 @@ bend = bend_euler
 
 
 @gf.cell(post_process=(tech.add_pins_bbox_siepic,))
-def straight(length: float = 1.0, npoints: int = 2, cross_section="xs_sc", **kwargs):
+def straight(
+    length: float = 1.0, npoints: int = 2, cross_section="xs_sc", **kwargs
+) -> Component:
     return gf.components.straight(
         length=length, npoints=npoints, cross_section=cross_section, **kwargs
     )
@@ -257,6 +259,7 @@ def gc_te1310_8deg() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1310te)
+    c.flatten()
     return c
 
 
@@ -279,6 +282,7 @@ def gc_te1310_broadband() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1310te)
+    c.flatten()
     return c
 
 
@@ -301,6 +305,7 @@ def gc_te1550() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1550te)
+    c.flatten()
     return c
 
 
@@ -323,6 +328,7 @@ def gc_te1550_90nmSlab() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1550te)
+    c.flatten()
     return c
 
 
@@ -345,6 +351,7 @@ def gc_te1550_broadband() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1550te)
+    c.flatten()
     return c
 
 
@@ -367,6 +374,7 @@ def gc_tm1550() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1550tm)
+    c.flatten()
     return c
 
 
@@ -385,12 +393,14 @@ mzi_heater = partial(
     splitter=ebeam_y_1550,
 )
 
-via_stack_heater_mtop = partial(
-    gf.components.via_stack,
-    size=(10, 10),
-    layers=(LAYER.M1_HEATER, LAYER.M2_ROUTER),
-    vias=(None, None),
-)
+
+@gf.cell
+def via_stack_heater_mtop(size=(10, 10)) -> gf.Component:
+    return gf.components.via_stack(
+        size=size,
+        layers=(LAYER.M1_HEATER, LAYER.M2_ROUTER),
+        vias=(None, None),
+    )
 
 
 def get_input_label_text(
@@ -618,7 +628,7 @@ ring_double = partial(
 )
 ring_double_heater = partial(
     gf.components.ring_double_heater,
-    via_stack=via_stack_heater_mtop,
+    via_stack="via_stack_heater_mtop",
     straight=straight,
     length_y=0.2,
     cross_section_heater="heater_metal",
@@ -627,7 +637,7 @@ ring_double_heater = partial(
 )
 ring_single_heater = partial(
     gf.components.ring_single_heater,
-    via_stack=via_stack_heater_mtop,
+    via_stack="via_stack_heater_mtop",
     straight=straight,
     cross_section_heater="heater_metal",
     cross_section_waveguide_heater="strip_heater_metal",

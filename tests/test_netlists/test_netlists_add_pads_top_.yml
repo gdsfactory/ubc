@@ -1,25 +1,25 @@
 instances:
-  Unnamed_61_160000_92250:
+  Unnamed_80_160000_92250:
     component: null
     info:
       resistance: 0
     settings: {}
-name: Unnamed_60
+name: Unnamed_79
 nets: []
 placements:
-  Unnamed_61_160000_92250:
+  Unnamed_80_160000_92250:
     mirror: true
     rotation: 0
     x: 0
     y: 0
 ports:
-  e1: Unnamed_61_160000_92250,e1
-  e2: Unnamed_61_160000_92250,e2
-  e3: Unnamed_61_160000_92250,e3
-  e4: Unnamed_61_160000_92250,e4
-  e5: Unnamed_61_160000_92250,e5
-  e6: Unnamed_61_160000_92250,e6
-  e7: Unnamed_61_160000_92250,e7
-  e8: Unnamed_61_160000_92250,e8
-  o1: Unnamed_61_160000_92250,o1
-  o2: Unnamed_61_160000_92250,o2
+  e1: Unnamed_80_160000_92250,e1
+  e2: Unnamed_80_160000_92250,e2
+  e3: Unnamed_80_160000_92250,e3
+  e4: Unnamed_80_160000_92250,e4
+  e5: Unnamed_80_160000_92250,e5
+  e6: Unnamed_80_160000_92250,e6
+  e7: Unnamed_80_160000_92250,e7
+  e8: Unnamed_80_160000_92250,e8
+  o1: Unnamed_80_160000_92250,o1
+  o2: Unnamed_80_160000_92250,o2

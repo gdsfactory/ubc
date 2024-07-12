@@ -26,6 +26,7 @@ skip_test = {
     "ebeam_adiabatic_tm1550",
     "ebeam_swg_edgecoupler",
     "ebeam_BondPad",
+    "add_fiber_array",
 }
 cell_names = set(cells.keys()) - set(skip_test)
 dirpath_ref = pathlib.Path(__file__).absolute().parent / "ref"

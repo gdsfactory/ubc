@@ -1,15 +1,5 @@
-instances:
-  ebeam_gc_te1310_broadband_24475_-117:
-    component: null
-    info: {}
-    settings: {}
+instances: {}
 name: gc_te1310_broadband
 nets: []
-placements:
-  ebeam_gc_te1310_broadband_24475_-117:
-    mirror: true
-    rotation: 180
-    x: 0
-    y: 0
-ports:
-  o1: ebeam_gc_te1310_broadband_24475_-117,o1
+placements: {}
+ports: {}

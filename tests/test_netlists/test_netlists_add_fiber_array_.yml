@@ -1,5 +1,5 @@
 instances:
-  Unnamed_212_-35625_-500:
+  Unnamed_152_-35625_-500:
     component: null
     info:
       length: 1
@@ -12,11 +12,11 @@ instances:
 name: add_fiber_array_Cstraig_d8738009
 nets: []
 placements:
-  Unnamed_212_-35625_-500:
+  Unnamed_152_-35625_-500:
     mirror: false
     rotation: 270
     x: 0
     y: 0
 ports:
-  e1: Unnamed_212_-35625_-500,e1
-  e2: Unnamed_212_-35625_-500,e2
+  e1: Unnamed_152_-35625_-500,e1
+  e2: Unnamed_152_-35625_-500,e2
