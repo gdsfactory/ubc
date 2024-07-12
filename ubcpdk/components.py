@@ -608,6 +608,13 @@ def spiral(
     spacing: float = 3.0,
     n_loops: int = 6,
 ) -> gf.Component:
+    """Returns spiral component.
+
+    Args:
+        length: length.
+        spacing: spacing.
+        n_loops: number of loops.
+    """
     return gf.c.spiral(
         length=length,
         spacing=spacing,
@@ -617,15 +624,67 @@ def spiral(
     )
 
 
-ring_single = partial(
-    gf.components.ring_single,
-    cross_section=tech.xs_sc,
+coupler90 = partial(gf.components.coupler90, bend=bend_euler, straight=straight)
+coupler_straight = partial(
+    gf.components.coupler_straight, gap=0.2, cross_section="strip"
+)
+
+
+@gf.cell
+def coupler_ring(
+    gap: float = 0.2,
+    radius: float = 10.0,
+    length_x: float = 4.0,
+    length_extension: float = 3,
     bend=bend,
-)
-ring_double = partial(
-    gf.components.ring_double,
-    cross_section=tech.xs_sc,
-)
+    cross_section="strip",
+    **kwargs,
+) -> Component:
+    return gf.components.coupler_ring(
+        gap=gap,
+        radius=radius,
+        length_x=length_x,
+        length_extension=length_extension,
+        bend=bend,
+        cross_section=cross_section,
+        **kwargs,
+    )
+
+
+@gf.cell
+def ring_single(
+    gap: float = 0.2,
+    radius: float = 10.0,
+    length_x: float = 4.0,
+    length_y: float = 0.6,
+) -> Component:
+    return gf.components.ring_single(
+        gap=gap,
+        radius=radius,
+        length_x=length_x,
+        length_y=length_y,
+        cross_section="strip",
+        bend=bend,
+    )
+
+
+@gf.cell
+def ring_double(
+    gap: float = 0.2,
+    radius: float = 10.0,
+    length_x: float = 4.0,
+    length_y: float = 0.6,
+) -> Component:
+    return gf.components.ring_double(
+        gap=gap,
+        radius=radius,
+        length_x=length_x,
+        length_y=length_y,
+        cross_section="strip",
+        bend=bend,
+    )
+
+
 ring_double_heater = partial(
     gf.components.ring_double_heater,
     via_stack="via_stack_heater_mtop",

@@ -1,14 +1,12 @@
-function: straight
 info:
-  length: 1.0
-  route_info_length: 1.0
-  route_info_type: xs_sc
-  route_info_weight: 1.0
-  route_info_xs_sc_length: 1.0
+  length: 1
+  route_info_length: 1
+  route_info_type: xs_34e31a19
+  route_info_weight: 1
+  route_info_xs_34e31a19_length: 1
   width: 0.5
-module: ubcpdk.components
-name: straight__ubcpdkpcomponents
+name: straight_L1_N2_CSxs_sc
 settings:
   cross_section: xs_sc
-  length: 1.0
+  length: 1
   npoints: 2

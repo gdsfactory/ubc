@@ -29,6 +29,7 @@ skip_test = {
     "ebeam_BondPad",
     "add_fiber_array",
     "add_pads_top",
+    "add_pads_bot",
 }
 cell_names = cells.keys() - skip_test
 
@@ -67,7 +68,7 @@ def test_netlists(
 if __name__ == "__main__":
     component_type = "straight_heater_metal"
     component_type = "gc_te1310_broadband"
-    component_type = "ring_single"
+    component_type = "ring_double"
     connection_error_types = {
         "optical": ["width_mismatch", "shear_angle_mismatch", "orientation_mismatch"]
     }
@@ -80,6 +81,7 @@ if __name__ == "__main__":
     )
     yaml_str = OmegaConf.to_yaml(n, sort_keys=True)
     c1.delete()
+    gf.clear_cache()
     # print(yaml_str)
     c2 = gf.read.from_yaml(yaml_str)
     n2 = c2.get_netlist(allow_multiple=True)

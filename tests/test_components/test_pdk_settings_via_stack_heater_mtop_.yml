@@ -1,17 +1,8 @@
 info:
   xsize: 10
   ysize: 10
-name: via_stack_S10_10_LM1_HE_f3e2bc80
+name: via_stack_heater_mtop_S10_10
 settings:
-  correct_size: true
-  layers:
-  - M1_HEATER
-  - M2_ROUTER
   size:
   - 10
   - 10
-  slot_horizontal: false
-  slot_vertical: false
-  vias:
-  - null
-  - null
