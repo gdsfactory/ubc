@@ -1,5 +1,5 @@
 instances:
-  bend_euler_R5_CSxs_sc_-6875_18275:
+  bend_euler_CSxs_sc_R5_-6875_18275:
     component: bend_euler
     info:
       dy: 5
@@ -15,7 +15,7 @@ instances:
     settings:
       cross_section: xs_sc
       radius: 5
-  bend_euler_R5_CSxs_sc_2875_18275:
+  bend_euler_CSxs_sc_R5_2875_18275:
     component: bend_euler
     info:
       dy: 5
@@ -31,7 +31,7 @@ instances:
     settings:
       cross_section: xs_sc
       radius: 5
-  coupler_ring_G0p2_R5_LX_4f8af539_-2000_2725:
+  coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475:
     component: coupler_ring
     info: {}
     settings:
@@ -52,9 +52,9 @@ instances:
     info:
       length: 4
       route_info_length: 4
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 4
-      route_info_xs_34e31a19_length: 4
+      route_info_xs_38f6dd83_length: 4
       width: 0.5
     settings:
       cross_section: xs_sc
@@ -65,9 +65,9 @@ instances:
     info:
       length: 9.7
       route_info_length: 9.7
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 9.7
-      route_info_xs_34e31a19_length: 9.7
+      route_info_xs_38f6dd83_length: 9.7
       width: 0.5
     settings:
       cross_section: xs_sc
@@ -75,28 +75,28 @@ instances:
       npoints: 2
 name: ring_single_dut_Cebeam__50ff1b6e
 nets:
-- p1: bend_euler_R5_CSxs_sc_-6875_18275,o1
+- p1: bend_euler_CSxs_sc_R5_-6875_18275,o1
   p2: straight_L4_N2_CSxs_sc_-2000_20400,o1
-- p1: bend_euler_R5_CSxs_sc_-6875_18275,o2
+- p1: bend_euler_CSxs_sc_R5_-6875_18275,o2
   p2: straight_L9p70000000000_a51dc8c9_-9000_10550,o1
-- p1: bend_euler_R5_CSxs_sc_2875_18275,o1
+- p1: bend_euler_CSxs_sc_R5_2875_18275,o1
   p2: ebeam_crossing4_2ports_5000_10600,o4
-- p1: bend_euler_R5_CSxs_sc_2875_18275,o2
+- p1: bend_euler_CSxs_sc_R5_2875_18275,o2
   p2: straight_L4_N2_CSxs_sc_-2000_20400,o2
-- p1: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2725,o2
+- p1: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o2
   p2: straight_L9p70000000000_a51dc8c9_-9000_10550,o2
 placements:
-  bend_euler_R5_CSxs_sc_-6875_18275:
+  bend_euler_CSxs_sc_R5_-6875_18275:
     mirror: false
     rotation: 180
     x: -4
     y: 20.4
-  bend_euler_R5_CSxs_sc_2875_18275:
+  bend_euler_CSxs_sc_R5_2875_18275:
     mirror: false
     rotation: 90
     x: 5
     y: 15.4
-  coupler_ring_G0p2_R5_LX_4f8af539_-2000_2725:
+  coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475:
     mirror: false
     rotation: 0
     x: 0
@@ -117,14 +117,14 @@ placements:
     x: -9
     y: 15.4
 ports:
-  o1: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2725,o1
-  o2: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2725,o4
+  o1: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o1
+  o2: coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o4
 warnings:
   optical:
     unconnected_ports:
     - message: 2 unconnected optical ports!
       ports:
-      - coupler_ring_G0p2_R5_LX_4f8af539_-2000_2725,o3
+      - coupler_ring_G0p2_R5_LX_4f8af539_-2000_2475,o3
       - ebeam_crossing4_2ports_5000_10600,o1
       values:
       - - 5000

@@ -280,10 +280,10 @@ strip_wg_simulation_info = dict(
     properties=dict(annotate=False),
 )
 
-# cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
-# cladding_offsets_optical_siepic = (0.5,)  # for SiEPIC verification
-cladding_layers_optical_siepic = None
-cladding_offsets_optical_siepic = None
+cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
+cladding_offsets_optical_siepic = (0.5,)  # for SiEPIC verification
+# cladding_layers_optical_siepic = None
+# cladding_offsets_optical_siepic = None
 
 
 ############################

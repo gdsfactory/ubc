@@ -9,6 +9,7 @@ info:
   route_info_type: xs_38f6dd83
   route_info_weight: 42.817
   route_info_xs_38f6dd83_length: 42.817
-name: bend_euler_A180
+name: bend_euler_CSstrip_A180
 settings:
   angle: 180
+  cross_section: strip

@@ -24,18 +24,17 @@ um = 1e-6
 
 
 @gf.cell
-def bend_euler(**kwargs) -> Component:
-    kwargs.pop("cross_section", None)
-    return gf.components.bend_euler(cross_section="xs_sc_devrec", **kwargs)
+def bend_euler(cross_section="strip", **kwargs) -> Component:
+    return gf.components.bend_euler(cross_section=cross_section, **kwargs)
 
 
 bend_euler180 = partial(bend_euler, angle=180)
 bend = bend_euler
 
 
-@gf.cell(post_process=(tech.add_pins_bbox_siepic,))
+@gf.cell
 def straight(
-    length: float = 1.0, npoints: int = 2, cross_section="xs_sc", **kwargs
+    length: float = 1.0, npoints: int = 2, cross_section="strip", **kwargs
 ) -> Component:
     return gf.components.straight(
         length=length, npoints=npoints, cross_section=cross_section, **kwargs
@@ -434,7 +433,6 @@ def get_input_label_text(
     return f"opt_in_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}"
 
 
-@gf.cell
 def add_fiber_array(
     component: ComponentSpec = straight,
     component_name: Optional[str] = None,
@@ -466,7 +464,7 @@ def add_fiber_array(
     """
     c = gf.Component()
 
-    component = gf.routing.add_fiber_array(
+    ref = c << gf.routing.add_fiber_array(
         straight=straight,
         bend=bend,
         component=component,
@@ -479,7 +477,6 @@ def add_fiber_array(
         cross_section=cross_section,
         **kwargs,
     )
-    ref = c << component
     ref.drotate(-90)
     c.add_ports(ref.ports)
     c.copy_child_info(component)
@@ -640,7 +637,7 @@ def coupler_ring(
     cross_section="strip",
     **kwargs,
 ) -> Component:
-    return gf.components.coupler_ring(
+    c = gf.components.coupler_ring(
         gap=gap,
         radius=radius,
         length_x=length_x,
@@ -648,7 +645,10 @@ def coupler_ring(
         bend=bend,
         cross_section=cross_section,
         **kwargs,
-    )
+    ).dup()
+    c = add_pins_bbox_siepic(c)
+    c.flatten()
+    return c
 
 
 @gf.cell
@@ -665,6 +665,7 @@ def ring_single(
         length_y=length_y,
         cross_section="strip",
         bend=bend,
+        coupler_ring=coupler_ring,
     )
 
 
@@ -680,8 +681,9 @@ def ring_double(
         radius=radius,
         length_x=length_x,
         length_y=length_y,
-        cross_section="strip",
+        cross_section="xs_sc_devrec",
         bend=bend,
+        coupler_ring=coupler_ring,
     )
 
 
@@ -693,6 +695,7 @@ ring_double_heater = partial(
     cross_section_heater="heater_metal",
     cross_section_waveguide_heater="strip_heater_metal",
     cross_section="strip",
+    coupler_ring=coupler_ring,
 )
 ring_single_heater = partial(
     gf.components.ring_single_heater,
@@ -701,6 +704,7 @@ ring_single_heater = partial(
     cross_section_heater="heater_metal",
     cross_section_waveguide_heater="strip_heater_metal",
     cross_section="strip",
+    coupler_ring=coupler_ring,
 )
 
 
@@ -776,6 +780,9 @@ def add_fiber_array_pads_rf(
     # text = f"elec_{username}-{clean_name(c0.name)}_G"
     # add_label = partial(add_label_electrical, text=text)
     c1 = add_pads_rf(component=c0, orientation=orientation)
+
+    # ports_names = [port.name for port in c0.ports if port.orientation == orientation]
+    # c1 = add_pads_top(component=c0, port_names=ports_names)
     return add_fiber_array(component=c1, **kwargs)
 
 
@@ -812,8 +819,8 @@ if __name__ == "__main__":
     # c.pprint_ports()
     # c.pprint_ports()
     # c = straight()
-    # c = uc.ring_single_heater()
-    # c = uc.add_fiber_array_pads_rf(c)
+    c = ring_single_heater()
+    # c = add_fiber_array_pads_rf(c)
 
     # c = ring_double(length_y=10)
     # c = ring_with_crossing()
@@ -824,14 +831,15 @@ if __name__ == "__main__":
     # c = dbr_cavity_te()
     # c = dbr_cavity()
     # c = ring_single(radius=12)
-    # c = ring_double(radius=12, length_x=2, length_y=2)
     # c = bend_euler()
     # c = mzi()
     # c = spiral()
     # c = pad_array()
-    c = ring_double_heater()
+    # c = bend_euler()
     # c = ebeam_y_1550()
     # c = ring_with_crossing()
     # c = ring_single()
-    # c = coupler()
+    # c = ring_double()
+    # c = ring_double(radius=12, length_x=2, length_y=2)
+    # c = straight()
     c.show()

@@ -132,9 +132,9 @@ instances:
     info:
       length: 2
       route_info_length: 2
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 2
-      route_info_xs_34e31a19_length: 2
+      route_info_xs_38f6dd83_length: 2
       width: 0.5
     settings:
       cross_section: xs_sc
@@ -145,9 +145,9 @@ instances:
     info:
       length: 7
       route_info_length: 7
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 7
-      route_info_xs_34e31a19_length: 7
+      route_info_xs_38f6dd83_length: 7
       width: 0.5
     settings:
       cross_section: xs_sc
@@ -158,9 +158,9 @@ instances:
     info:
       length: 0.1
       route_info_length: 0.1
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 0.1
-      route_info_xs_34e31a19_length: 0.1
+      route_info_xs_38f6dd83_length: 0.1
       width: 0.5
     settings:
       cross_section: xs_sc
@@ -171,9 +171,9 @@ instances:
     info:
       length: 0.1
       route_info_length: 0.1
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 0.1
-      route_info_xs_34e31a19_length: 0.1
+      route_info_xs_38f6dd83_length: 0.1
       width: 0.5
     settings:
       cross_section: xs_sc
@@ -184,9 +184,9 @@ instances:
     info:
       length: 7
       route_info_length: 7
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 7
-      route_info_xs_34e31a19_length: 7
+      route_info_xs_38f6dd83_length: 7
       width: 0.5
     settings:
       cross_section: xs_sc
@@ -197,9 +197,9 @@ instances:
     info:
       length: 2
       route_info_length: 2
-      route_info_type: xs_34e31a19
+      route_info_type: xs_38f6dd83
       route_info_weight: 2
-      route_info_xs_34e31a19_length: 2
+      route_info_xs_38f6dd83_length: 2
       width: 0.5
     settings:
       cross_section: xs_sc
