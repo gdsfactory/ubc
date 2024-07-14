@@ -74,6 +74,7 @@ if __name__ == "__main__":
     component_type = "ring_double"
     component_type = "terminator_short"
     component_type = "mzi_heater"
+    component_type = "dbr_cavity"
     connection_error_types = {
         "optical": ["width_mismatch", "shear_angle_mismatch", "orientation_mismatch"]
     }

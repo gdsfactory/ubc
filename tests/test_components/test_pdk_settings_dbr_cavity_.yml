@@ -1,23 +1,5 @@
-function: cavity
 info: {}
-module: gdsfactory.components.cavity
-name: dbr_cavity_2afc46e9
+name: dbr_cavity_Ddbr_Ccoupler
 settings:
-  component:
-    function: dbr
-    module: ubcpdk.components
-    settings:
-      cross_section:
-        function: cross_section
-        module: gdsfactory.cross_section
-        settings:
-          radius_min: 5
-      dw: 0.1
-      l1: 0.079406
-      l2: 0.079406
-      n: 100
-      w0: 0.5
-  coupler:
-    function: coupler
-  gap: 0.2
-  length: 0.1
+  coupler: coupler
+  dbr: dbr

@@ -1,8 +1,5 @@
-connections:
-  coupler_1,o2: dbr_1,o1
-  coupler_1,o3: dbr_2,o1
 instances:
-  coupler_1:
+  coupler_L0p1_G0p2_50_350:
     component: coupler
     info:
       length: 10.19
@@ -10,51 +7,48 @@ instances:
     settings:
       gap: 0.2
       length: 0.1
-  dbr_1:
+  dbr_W0p5_D0p1_N100_L0p0_c9156e45_-17997_2350:
     component: dbr
     info: {}
     settings:
-      cross_section:
-        function: cross_section
-        module: gdsfactory.cross_section
-        settings:
-          radius_min: 5
+      cross_section: strip
       dw: 0.1
-      l1: 0.079406
-      l2: 0.079406
+      l1: 0.079
+      l2: 0.079
       n: 100
       w0: 0.5
-  dbr_2:
+  dbr_W0p5_D0p1_N100_L0p0_c9156e45_18096_2350:
     component: dbr
     info: {}
     settings:
-      cross_section:
-        function: cross_section
-        module: gdsfactory.cross_section
-        settings:
-          radius_min: 5
+      cross_section: strip
       dw: 0.1
-      l1: 0.079406
-      l2: 0.079406
+      l1: 0.079
+      l2: 0.079
       n: 100
       w0: 0.5
-name: dbr_cavity_2afc46e9
+name: dbr_cavity_Ddbr_Ccoupler
+nets:
+- p1: coupler_L0p1_G0p2_50_350,o2
+  p2: dbr_W0p5_D0p1_N100_L0p0_c9156e45_-17997_2350,o1
+- p1: coupler_L0p1_G0p2_50_350,o3
+  p2: dbr_W0p5_D0p1_N100_L0p0_c9156e45_18096_2350,o1
 placements:
-  coupler_1:
-    mirror: 0
+  coupler_L0p1_G0p2_50_350:
+    mirror: false
     rotation: 0
-    x: 0.0
-    y: 0.0
-  dbr_1:
-    mirror: 0
+    x: 0
+    y: 0
+  dbr_W0p5_D0p1_N100_L0p0_c9156e45_-17997_2350:
+    mirror: false
     rotation: 180
-    x: -10.158
+    x: -10.089
     y: 2.35
-  dbr_2:
-    mirror: 0
+  dbr_W0p5_D0p1_N100_L0p0_c9156e45_18096_2350:
+    mirror: false
     rotation: 0
-    x: 10.258
+    x: 10.189
     y: 2.35
 ports:
-  o1: coupler_1,o1
-  o2: coupler_1,o4
+  o1: coupler_L0p1_G0p2_50_350,o1
+  o2: coupler_L0p1_G0p2_50_350,o4

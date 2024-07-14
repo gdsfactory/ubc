@@ -1,5 +1,5 @@
 info: {}
-name: mzi_heater_DL10_LX500
+name: mzi_heater_DL10_LX320
 settings:
   delta_length: 10
-  length_x: 500
+  length_x: 320

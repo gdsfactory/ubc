@@ -32,11 +32,26 @@ bend_euler180 = partial(bend_euler, angle=180)
 bend = bend_euler
 
 
-@gf.cell
 def straight(
-    length: float = 1.0, npoints: int = 2, cross_section="strip", **kwargs
+    length: float = 10.0,
+    npoints: int = 2,
+    cross_section: CrossSectionSpec = "strip",
+    **kwargs,
 ) -> Component:
-    return gf.components.straight(
+    """Returns a Straight waveguide.
+
+    Args:
+        length: straight length (um).
+        npoints: number of points.
+        cross_section: specification (CrossSection, string or dict).
+        kwargs: additional cross_section arguments.
+
+    .. code::
+
+        o1 -------------- o2
+                length
+    """
+    return gf.c.straight(
         length=length, npoints=npoints, cross_section=cross_section, **kwargs
     )
 
@@ -398,7 +413,7 @@ mzi = partial(
     gf.components.mzi,
     splitter=ebeam_y_1550,
     bend=bend_euler,
-    straight=straight,
+    straight="straight",
     cross_section="strip",
 )
 
@@ -471,7 +486,8 @@ def add_fiber_array(
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
     cross_section: CrossSectionSpec = "strip",
-    straight: ComponentSpec = straight,
+    straight: ComponentSpec = "straight",
+    taper: ComponentSpec | None = None,
     **kwargs,
 ) -> Component:
     """Returns component with grating couplers and labels on each port.
@@ -489,6 +505,8 @@ def add_fiber_array(
         grating_coupler: grating coupler instance, function or list of functions.
         cross_section: spec.
         straight: straight component.
+        taper: taper component.
+        kwargs: cross_section settings.
 
     """
     c = gf.Component()
@@ -504,6 +522,7 @@ def add_fiber_array(
         optical_routing_type=optical_routing_type,
         fanout_length=fanout_length,
         cross_section=cross_section,
+        taper=taper,
         **kwargs,
     )
     ref.drotate(-90)
@@ -533,14 +552,14 @@ def dbg(
         l2: length teeth2.
     """
     c = gf.Component()
-    s = gf.components.straight(length=l1, cross_section=tech.strip_simple)
+    s = gf.components.straight(length=l1, cross_section="strip")
     g = c << gf.components.dbr(
         w1=w0 - dw / 2,
         w2=w0 + dw / 2,
         n=n,
         l1=l1,
         l2=l2,
-        cross_section=tech.strip_simple,
+        cross_section="strip",
     )
     s1 = c << s
     s2 = c << s
@@ -571,7 +590,7 @@ def dbr(
     n: int = 100,
     l1: float = L,
     l2: float = L,
-    cross_section: CrossSectionSpec = tech.strip_simple,
+    cross_section: CrossSectionSpec = "strip",
     **kwargs,
 ) -> gf.Component:
     """Returns distributed bragg reflector.
@@ -618,7 +637,7 @@ def mmi1x2(**kwargs) -> gf.Component:
 
 
 @gf.cell
-def dbr_cavity(dbr=dbr, coupler=coupler, **kwargs) -> gf.Component:
+def dbr_cavity(dbr=dbr, coupler="coupler", **kwargs) -> gf.Component:
     dbr = dbr(**kwargs)
     return gf.components.cavity(component=dbr, coupler=coupler)
 
