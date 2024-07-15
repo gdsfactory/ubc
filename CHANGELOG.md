@@ -2,6 +2,11 @@
 
 <!-- towncrier release notes start -->
 
+## [2.6.0](https://github.com/gdsfactory/ubc/releases/tag/v2.6.0) - 2024-07-15
+
+No significant changes.
+
+
 ## [2.5.0](https://github.com/gdsfactory/ubc/releases/tag/v2.5.0) - 2024-03-24
 
 - Update gdsfactory to latest version 7.23 [#370](https://github.com/gdsfactory/ubc/pull/370)
