@@ -4,8 +4,9 @@
 
 ## [2.5.0](https://github.com/gdsfactory/ubc/releases/tag/v2.5.0) - 2024-03-24
 
-No significant changes.
-
+- Update gdsfactory to latest version 7.23 [#370](https://github.com/gdsfactory/ubc/pull/370)
+- simpler pdk init [#363](https://github.com/gdsfactory/ubc/pull/363)
+- add models [#362](https://github.com/gdsfactory/ubc/pull/362)
 
 ## [2.4.1](https://github.com/gdsfactory/ubc/releases/tag/v2.4.1) - 2024-03-05
 
