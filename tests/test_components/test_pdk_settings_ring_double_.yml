@@ -1,38 +1,7 @@
-function: ring_double
 info: {}
-module: gdsfactory.components.ring_double
-name: ring_double_a459ac5d
+name: ring_double_G0p2_R10_LX4_LY0p6
 settings:
-  bend:
-    function: bend_euler
-  coupler_ring:
-    function: coupler_ring
-  cross_section:
-    bbox_layers: null
-    bbox_offsets: null
-    components_along_path: []
-    radius: 10.0
-    radius_min: 5.0
-    sections:
-    - hidden: false
-      insets: null
-      layer: WG
-      name: _default
-      offset: 0.0
-      offset_function: null
-      port_names:
-      - o1
-      - o2
-      port_types:
-      - optical
-      - optical
-      simplify: null
-      width: 0.5
-      width_function: null
   gap: 0.2
-  gap_top: null
-  length_x: 0.01
-  length_y: 0.01
-  radius: 10.0
-  straight:
-    function: straight
+  length_x: 4
+  length_y: 0.6
+  radius: 10

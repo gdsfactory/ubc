@@ -1,32 +1,5 @@
-function: mzi
 info: {}
-module: gdsfactory.components.mzi
-name: mzi_a1fe9d55
+name: mzi_heater_DL10_LX320
 settings:
-  add_electrical_ports_bot: true
-  add_optical_ports_arms: false
-  bend:
-    function: bend_euler_sc
-  combiner: null
-  cross_section: xs_sc
-  cross_section_x_bot: null
-  cross_section_x_top: null
-  delta_length: 10.0
-  extend_ports_straight_x: null
-  length_x: 200
-  length_y: 2.0
-  min_length: 0.01
-  mirror_bot: false
-  nbends: 2
-  port_e0_combiner: o3
-  port_e0_splitter: o3
-  port_e1_combiner: o2
-  port_e1_splitter: o2
-  splitter:
-    function: ebeam_y_1550
-  straight:
-    function: straight
-  straight_x_bot: null
-  straight_x_top: straight_heater_metal
-  straight_y: null
-  with_splitter: true
+  delta_length: 10
+  length_x: 320

@@ -1,29 +1,8 @@
-function: via_stack
 info:
-  layer:
-  - 12
-  - 0
-  size:
-  - 10
-  - 10
   xsize: 10
   ysize: 10
-module: gdsfactory.components.via_stack
-name: via_stack_627f28a4
+name: via_stack_heater_mtop_S10_10
 settings:
-  correct_size: true
-  layer_offsets: null
-  layer_port: null
-  layers:
-  - - 11
-    - 0
-  - - 12
-    - 0
   size:
   - 10
   - 10
-  slot_horizontal: false
-  slot_vertical: false
-  vias:
-  - null
-  - null

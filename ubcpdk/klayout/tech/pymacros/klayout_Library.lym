@@ -60,8 +60,8 @@ try:
     import ubcpdk
     import gdsfactory as gf
     from gdsfactory.routing.manhattan import route_manhattan
-    from gdsfactory.routing.get_bundle import get_bundle
-    from gdsfactory.routing import get_route_electrical, get_route_electrical_m2, get_route_electrical_multilayer, get_route_sbend, get_routes_bend180
+    from gdsfactory.routing.route_bundle import route_bundle
+    from gdsfactory.routing import route_single_electrical, route_single_electrical_m2, route_single_electrical_multilayer, route_single_sbend, route_singles_bend180
 except Exception as e:
     pya.MessageBox.info('import error', str(e), pya.MessageBox.Ok)
 
@@ -73,12 +73,12 @@ for layer in gf.LAYER:
 pcells_in_layout = {}
 routers = {
     'route_manhattan': route_manhattan,
-    'get_bundle': get_bundle,
-    'get_route_electrical': get_route_electrical,
-    'get_route_electrical_m2': get_route_electrical_m2,
-    'get_route_electrical_multilayer': get_route_electrical_multilayer,
-    'get_route_sbend': get_route_sbend,
-    'get_routes_bend180': get_routes_bend180,
+    'route_bundle': route_bundle,
+    'route_single_electrical': route_single_electrical,
+    'route_single_electrical_m2': route_single_electrical_m2,
+    'route_single_electrical_multilayer': route_single_electrical_multilayer,
+    'route_single_sbend': route_single_sbend,
+    'route_singles_bend180': route_singles_bend180,
 }
 
 # PCell class that creates the PCell
@@ -171,9 +171,9 @@ class PCellFactory(pya.PCellDeclarationHelper):
                         if cell.pcell_parameter('name') == c.name:
                             center_ = cell.bbox().center()
             c_name = c.name
-            c = c.move(c.center, (center_.x * layout.dbu, center_.y * layout.dbu)) # Move the component to the center of the cell
+            c = c.dmove(c.center, (center_.dx* layout.dbu, center_.dy* layout.dbu)) # Move the component to the center of the cell
             c.name = c_name
-            component2_ = component2_.move(component2_.center, (center.x * layout.dbu, center.y * layout.dbu)) # Move the component to the center of the cell
+            component2_ = component2_.dmove(component2_.center, (center.dx* layout.dbu, center.dy* layout.dbu)) # Move the component to the center of the cell
 
             port1 = c.ports[port1]
             port2 = component2_.ports[port2]

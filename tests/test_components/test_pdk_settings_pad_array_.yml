@@ -1,28 +1,14 @@
-function: pad_array
-info:
-  xsize: 75
-  ysize: 75
-module: gdsfactory.components.pad
-name: pad_array_25dc0e38
+info: {}
+name: pad_array_PFpad_Mgdsfac_c2f3ae49
 settings:
   columns: 6
-  orientation: 270
-  pad:
-    function: pad
-    module: gdsfactory.components.pad
-    settings:
-      bbox_layers:
-      - - 13
-        - 0
-      bbox_offsets:
-      - -1.8
-      layer:
-      - 12
-      - 0
-      size:
-      - 75
-      - 75
+  layer: MTOP
+  pad: Fpad_Mgdsfactorypcomponentsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8
+  port_orientation: 0
   rows: 1
+  size:
+  - 100
+  - 100
   spacing:
   - 125
   - 125

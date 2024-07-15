@@ -1,7 +1,3 @@
-function: ''
-info:
-  library: Design kits/ebeam
-  model: thermal_phase_shifters
-module: ''
+info: {}
 name: thermal_phase_shifter_te_1310_500um
 settings: {}

@@ -1,57 +1,22 @@
-connections: {}
 instances:
-  add_fiber_array_1:
-    component: add_fiber_array
+  Unnamed_152_-35625_-500:
+    component: null
     info:
-      length: 1.0
-      route_info_length: 1.0
-      route_info_type: xs_sc
-      route_info_weight: 1.0
-      route_info_xs_sc_length: 1.0
+      length: 1
+      route_info_length: 1
+      route_info_type: xs_34e31a19
+      route_info_weight: 1
+      route_info_xs_34e31a19_length: 1
       width: 0.5
-    settings:
-      bend:
-        function: bend_euler_sc
-      component:
-        function: straight
-      component_name: null
-      cross_section: xs_sc
-      dev_id: null
-      fanout_length: 0.0
-      gc_port_labels: null
-      gc_port_name: o1
-      gc_port_name_fiber: o2
-      get_input_label_text_function:
-        function: get_input_label_text
-      get_input_labels_function:
-        function: get_input_labels
-      grating_coupler:
-        function: gc_te1550
-      id_placement: center
-      id_placement_offset:
-      - 0
-      - 0
-      io_rotation: null
-      layer_label:
-      - 10
-      - 0
-      optical_routing_type: 0
-      select_ports:
-        function: select_ports
-        module: gdsfactory.port
-        settings:
-          port_type: optical
-      straight:
-        function: straight
-      text: null
-      with_loopback: false
-name: add_fiber_array_add_fiber_array__ubcpdkpcomponents
+    settings: {}
+name: add_fiber_array_Cstraig_d8738009
+nets: []
 placements:
-  add_fiber_array_1:
-    mirror: 0
+  Unnamed_152_-35625_-500:
+    mirror: false
     rotation: 270
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 ports:
-  o1: add_fiber_array_1,o1
-  o2: add_fiber_array_1,o2
+  e1: Unnamed_152_-35625_-500,e1
+  e2: Unnamed_152_-35625_-500,e2

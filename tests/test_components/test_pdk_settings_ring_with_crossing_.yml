@@ -1,20 +1,13 @@
-function: ring_single_dut
 info: {}
-module: gdsfactory.components.ring_single_dut
-name: ring_single_dut_26538df6
+name: ring_single_dut_Cebeam__d2ca7275
 settings:
-  bend:
-    function: bend_euler_sc
-  component:
-    function: ebeam_crossing4_2ports
-  coupler:
-    function: coupler_ring
-  cross_section: xs_sc
+  bend: bend_euler
+  component: ebeam_crossing4_2ports
+  coupler: coupler_ring
+  cross_section: strip
   gap: 0.2
   length_x: 4
   length_y: 0
   port_name: o4
-  radius: 5.0
-  straight:
-    function: straight
+  radius: 5
   with_component: true

@@ -1,9 +1,5 @@
-function: gc_te1310_broadband
 info:
-  library: Design kits/ebeam
-  model: ebeam_gc_te1310_broadband
   polarization: te
   wavelength: 1.31
-module: ubcpdk.components
 name: gc_te1310_broadband
 settings: {}

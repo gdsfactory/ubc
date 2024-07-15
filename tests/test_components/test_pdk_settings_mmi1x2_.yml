@@ -1,5 +1,3 @@
-function: mmi1x2
 info: {}
-module: ubcpdk.components
-name: mmi1x2__ubcpdkpcomponents
+name: mmi1x2
 settings: {}

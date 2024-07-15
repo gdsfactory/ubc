@@ -15,8 +15,8 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory~=7.26.1",
-  "gplugins[tidy3d,sax,schematic]>=0.13,<0.14"
+  "gdsfactory~=8.5.1",
+  "gplugins[sax]>=1,<2"
 ]
 description = "ubcpdk pdk"
 keywords = ["python"]

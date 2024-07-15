@@ -1,7 +1,3 @@
-function: ''
-info:
-  library: Design kits/ebeam
-  model: ebeam_adiabatic_te1550
-module: ''
+info: {}
 name: ebeam_adiabatic_te1550
 settings: {}

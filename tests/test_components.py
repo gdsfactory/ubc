@@ -17,6 +17,8 @@ skip_test = {
     "dbg",
     "add_pins_bbox_siepic",
     "add_pads",
+    "add_pads_bot",
+    "add_pads_top",
     "add_pins_bbox_siepic_remove_layers",
     "import_gds",
     "import_gc",
@@ -24,6 +26,7 @@ skip_test = {
     "ebeam_adiabatic_tm1550",
     "ebeam_swg_edgecoupler",
     "ebeam_BondPad",
+    "add_fiber_array",
 }
 cell_names = set(cells.keys()) - set(skip_test)
 dirpath_ref = pathlib.Path(__file__).absolute().parent / "ref"
@@ -44,7 +47,3 @@ def test_pdk_settings(
 ) -> None:
     """Avoid regressions when exporting settings."""
     data_regression.check(component.to_dict(with_ports=False))
-
-
-def test_assert_ports_on_grid(component: Component) -> None:
-    component.assert_ports_on_grid()

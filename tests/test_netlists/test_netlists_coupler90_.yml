@@ -1,0 +1,48 @@
+instances:
+  bend_euler_CSstrip_R10_5375_5325:
+    component: bend_euler
+    info:
+      dy: 10
+      length: 16.637
+      min_bend_radius: 7.061
+      radius: 10
+      route_info_length: 16.637
+      route_info_min_bend_radius: 7.061
+      route_info_n_bend_90: 1
+      route_info_type: xs_38f6dd83
+      route_info_weight: 16.637
+      route_info_xs_38f6dd83_length: 16.637
+    settings:
+      cross_section: strip
+      radius: 10
+  straight_L10_N2_CSstrip_5000_0:
+    component: straight
+    info:
+      length: 10
+      route_info_length: 10
+      route_info_type: xs_38f6dd83
+      route_info_weight: 10
+      route_info_xs_38f6dd83_length: 10
+      width: 0.5
+    settings:
+      cross_section: strip
+      length: 10
+      npoints: 2
+name: coupler90_G0p2_R10_Bben_11d57add
+nets: []
+placements:
+  bend_euler_CSstrip_R10_5375_5325:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0.7
+  straight_L10_N2_CSstrip_5000_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports:
+  o1: straight_L10_N2_CSstrip_5000_0,o1
+  o2: bend_euler_CSstrip_R10_5375_5325,o1
+  o3: bend_euler_CSstrip_R10_5375_5325,o2
+  o4: straight_L10_N2_CSstrip_5000_0,o2

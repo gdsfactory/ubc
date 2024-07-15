@@ -1,7 +1,3 @@
-function: ''
-info:
-  library: Design kits/ebeam
-  model: metal_via
-module: ''
-name: metal_via_15
+info: {}
+name: metal_via
 settings: {}

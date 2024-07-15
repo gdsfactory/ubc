@@ -1,62 +1,18 @@
-function: ring_double_heater
 info: {}
-module: gdsfactory.components.ring_double_heater
-name: ring_double_heater_dde86d0f
+name: ring_double_heater_G0p2_2d50a6d4
 settings:
-  bend:
-    function: bend_euler
-  coupler_ring:
-    function: coupler_ring
-  coupler_ring_top: null
-  cross_section:
-    bbox_layers: null
-    bbox_offsets: null
-    components_along_path: []
-    radius: 10.0
-    radius_min: 5.0
-    sections:
-    - hidden: false
-      insets: null
-      layer: WG
-      name: _default
-      offset: 0.0
-      offset_function: null
-      port_names:
-      - o1
-      - o2
-      port_types:
-      - optical
-      - optical
-      simplify: null
-      width: 0.5
-      width_function: null
-  cross_section_heater: xs_heater_metal
-  cross_section_waveguide_heater: xs_sc_heater_metal
+  bend: bend_euler
+  coupler_ring: coupler_ring
+  cross_section: strip
+  cross_section_heater: heater_metal
+  cross_section_waveguide_heater: strip_heater_metal
   gap: 0.2
-  gap_top: null
-  length_x: 1.0
+  length_x: 1
   length_y: 0.2
-  port_orientation: null
-  radius: 10.0
-  straight:
-    function: straight
-  straight_heater:
-    function: straight
-  via_stack:
-    function: via_stack
-    module: gdsfactory.components.via_stack
-    settings:
-      layers:
-      - - 11
-        - 0
-      - - 12
-        - 0
-      size:
-      - 10
-      - 10
-      vias:
-      - null
-      - null
+  radius: 10
+  straight: straight
+  via_stack: via_stack_heater_mtop
   via_stack_offset:
   - 1
   - 0
+  with_drop: true

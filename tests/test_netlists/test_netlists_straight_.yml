@@ -1,5 +1,5 @@
-connections: {}
 instances: {}
-name: straight__ubcpdkpcomponents
+name: straight_L10_N2_CSstrip
+nets: []
 placements: {}
 ports: {}

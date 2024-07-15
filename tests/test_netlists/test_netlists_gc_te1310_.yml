@@ -1,27 +1,5 @@
-connections: {}
-instances:
-  mirror_1:
-    component: mirror
-    info:
-      library: Design kits/ebeam
-      model: ebeam_gc_te1310
-    settings:
-      component:
-        function: ''
-        module: ''
-        settings: {}
-      p1:
-      - 0
-      - 1
-      p2:
-      - 0
-      - 0
+instances: {}
 name: gc_te1310
-placements:
-  mirror_1:
-    mirror: 0
-    rotation: 0
-    x: 0.0
-    y: 0.0
-ports:
-  o1: mirror_1,o1
+nets: []
+placements: {}
+ports: {}

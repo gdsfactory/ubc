@@ -32,7 +32,7 @@ LayerViews:
   M_Open:
     layer: [13, 0]
     layer_in_name: true
-    color: "black"
+    color: "gray"
     hatch_pattern: hollow
   MH:
     layer: [47, 0]
@@ -50,7 +50,7 @@ LayerViews:
     layer: [6, 0]
     layer_in_name: true
     width: 1
-    color: "black"
+    color: "gray"
   TEXT:
     layer: [10, 0]
     layer_in_name: true
@@ -74,7 +74,7 @@ LayerViews:
   FLOORPLAN:
     layer: [99, 0]
     layer_in_name: true
-    color: "black"
+    color: "gray"
     hatch_pattern: hollow
   Lumerical:
     layer: [733, 0]
@@ -118,13 +118,13 @@ LayerViews:
         layer: [301, 0]
         layer_in_name: true
         width: 1
-        color: "black"
+        color: "gray"
         hatch_pattern: solid
       XS_SIN:
         layer: [319, 0]
         layer_in_name: true
         width: 1
-        color: "black"
+        color: "gray"
         hatch_pattern: solid
       XS_N:
         layer: [320, 0]
@@ -247,7 +247,7 @@ LayerViews:
       SIM_REGION:
         layer: [100, 0]
         layer_in_name: true
-        color: "black"
+        color: "gray"
       MONITOR:
         layer: [101, 0]
         layer_in_name: true

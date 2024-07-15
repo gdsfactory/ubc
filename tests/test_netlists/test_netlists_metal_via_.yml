@@ -1,5 +1,5 @@
-connections: {}
 instances: {}
-name: metal_via_15
+name: metal_via
+nets: []
 placements: {}
 ports: {}

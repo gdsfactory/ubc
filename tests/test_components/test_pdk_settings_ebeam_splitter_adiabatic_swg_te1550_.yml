@@ -1,7 +1,3 @@
-function: ''
-info:
-  library: Design kits/ebeam
-  model: ebeam_splitter_adiabatic_swg_te1550
-module: ''
-name: ebeam_splitter_adiabatic_swg_te1550
+info: {}
+name: ebeam_splitter_adiabati_c6483e92
 settings: {}

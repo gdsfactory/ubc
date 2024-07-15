@@ -12,7 +12,7 @@ import gdsfactory as gf
 from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 from gdsfactory.cross_section import get_cross_sections
-from gdsfactory.technology import LayerLevel, LayerStack
+from gdsfactory.technology import LayerLevel, LayerMap, LayerStack
 from gdsfactory.typings import Callable, Layer, LayerSpec, Optional
 from pydantic import BaseModel
 
@@ -20,9 +20,10 @@ from ubcpdk.config import PATH
 
 nm = 1e-3
 pin_length = 10 * nm
+heater_width = 4
 
 
-class LayerMapUbc(BaseModel):
+class LayerMapUbc(LayerMap):
     WG: Layer = (1, 0)
     WG2: Layer = (31, 0)
     M1_HEATER: Layer = (11, 0)
@@ -36,17 +37,14 @@ class LayerMapUbc(BaseModel):
     FLOORPLAN: Layer = (99, 0)
 
     TEXT: Layer = (10, 0)
+    LABEL_INSTANCE: Layer = (10, 0)
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
     SLAB150: Layer = (2, 0)
     WAFER: Layer = (99999, 0)
 
-    class Config:
-        frozen = True
-        extra = "forbid"
 
-
-LAYER = LayerMapUbc()
+LAYER = LayerMapUbc
 
 
 def add_labels_to_ports_optical(
@@ -72,7 +70,7 @@ def add_labels_to_ports_optical(
         clockwise: if True, sort ports clockwise, False: counter-clockwise.
     """
     suffix = "o3_0" if len(component.ports) == 4 else "o2_0"
-    ports = component.get_ports_list(port_type=port_type, suffix=suffix, **kwargs)
+    ports = component.ports.filter(port_type=port_type, suffix=suffix, **kwargs)
     for port in ports:
         component.add_label(text=port.name, position=port.center, layer=label_layer)
 
@@ -122,7 +120,7 @@ def add_pins_siepic(
         port_type: select ports with port_type (optical, electrical, vertical_te).
         clockwise: if True, sort ports clockwise, False: counter-clockwise.
     """
-    for p in component.get_ports_list(port_type=port_type, **kwargs):
+    for p in gf.port.get_ports_list(component, port_type=port_type, **kwargs):
         function(component=component, port=p, layer=layer_pin, pin_length=pin_length)
 
     return component
@@ -133,14 +131,13 @@ add_pins_siepic_metal = partial(
 )
 
 
-def add_pins_bbox_siepic(
+def _add_pins_bbox_siepic(
     component: Component,
     function: Callable = add_pin_path,
     port_type: str = "optical",
     layer_pin: Layer = LAYER.PORT,
     pin_length: float = pin_length,
     bbox_layer: Layer = LAYER.DEVREC,
-    padding: float = 0,
     remove_layers: bool = False,
 ) -> Component:
     """Add bounding box device recognition layer.
@@ -152,16 +149,17 @@ def add_pins_bbox_siepic(
         layer_pin: for pin.
         pin_length: in um.
         bbox_layer: bounding box layer.
-        padding: around device.
         remove_layers: removes old layers.
     """
     c = component
     if remove_layers:
         remove_layers = (layer_pin, bbox_layer, "TEXT")
-        c = c.remove_layers(layers=remove_layers)
+        c.remove_layers(layers=remove_layers)
 
     if bbox_layer not in c.layers:
-        c.add_padding(default=padding, layers=(bbox_layer,))
+        polygon = gf.kdb.DPolygon(c.dbbox())
+        bbox_layer_index = gf.get_layer(bbox_layer)
+        c.shapes(bbox_layer_index).insert(polygon)
 
     if layer_pin not in c.layers:
         c = add_pins_siepic(
@@ -174,6 +172,7 @@ def add_pins_bbox_siepic(
     return c
 
 
+add_pins_bbox_siepic = partial(gf.container, function=_add_pins_bbox_siepic)
 add_pins_bbox_siepic_metal = partial(
     add_pins_bbox_siepic, port_type="placement", layer_pin=LAYER.PORTE
 )
@@ -281,10 +280,10 @@ strip_wg_simulation_info = dict(
     properties=dict(annotate=False),
 )
 
-# cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
-# cladding_offsets_optical_siepic = (0.5,)  # for SiEPIC verification
-cladding_layers_optical_siepic = None
-cladding_offsets_optical_siepic = None
+cladding_layers_optical_siepic = ("DEVREC",)  # for SiEPIC verification
+cladding_offsets_optical_siepic = (0.5,)  # for SiEPIC verification
+# cladding_layers_optical_siepic = None
+# cladding_offsets_optical_siepic = None
 
 
 ############################
@@ -304,7 +303,7 @@ strip_unclad = strip_simple = cross_section
 strip_heater_metal = partial(
     gf.cross_section.strip_heater_metal,
     layer="WG",
-    heater_width=2.5,
+    heater_width=heater_width,
     layer_heater=LAYER.M1_HEATER,
     cladding_layers=cladding_layers_optical_siepic,
     cladding_offsets=cladding_offsets_optical_siepic,
@@ -324,21 +323,7 @@ metal_routing = partial(
     port_types=gf.cross_section.port_types_electrical,
     radius=None,
 )
-heater_metal = partial(metal_routing, width=4, layer=LAYER.M1_HEATER)
-
-############################
-# Cross-sections
-############################
-
-xs_sc = strip()
-xs_sc_heater_metal = strip_heater_metal()
-xs_sc_bbox = strip_bbox()
-xs_metal_routing = metal_routing()
-xs_heater_metal = heater_metal()
-xs_sc_unclad = strip_unclad()
-xs_sc_simple = strip_simple()
-xs_sc_devrec = strip(cladding_layers=("DEVREC",), cladding_offsets=(0.5,))
-
+heater_metal = partial(metal_routing, width=heater_width, layer=LAYER.M1_HEATER)
 cross_sections = get_cross_sections(sys.modules[__name__])
 
 
@@ -351,4 +336,4 @@ if __name__ == "__main__":
     # c = gf.c.straight(length=1, cross_section=strip)
     # c = gf.c.bend_euler(cross_section=strip)
     c = gf.c.mzi(delta_length=10, cross_section=strip)
-    c.show(show_ports=False)
+    c.show()

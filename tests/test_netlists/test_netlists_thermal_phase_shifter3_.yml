@@ -1,5 +1,5 @@
-connections: {}
 instances: {}
 name: thermal_phase_shifter_te_1550_500um_lowloss
+nets: []
 placements: {}
 ports: {}

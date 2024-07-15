@@ -1,43 +1,5 @@
-connections: {}
-instances:
-  taper_1:
-    component: taper
-    info:
-      length: 10.0
-      width1: 0.5
-      width2: 0.5
-    settings:
-      cross_section:
-        function: cross_section
-        module: gdsfactory.cross_section
-        settings:
-          radius_min: 5
-      length: 10.0
-      port: null
-      port_names:
-      - o1
-      - o2
-      port_types:
-      - optical
-      - optical
-      width1: 0.5
-      width2: null
-      with_two_ports: true
-name: terminator_short
-placements:
-  taper_1:
-    mirror: 0
-    rotation: 0
-    x: 0.0
-    y: 0.0
-ports:
-  o1: taper_1,o1
-warnings:
-  optical:
-    unconnected_ports:
-    - message: 1 unconnected optical ports!
-      ports:
-      - taper_1,o2
-      values:
-      - - 10.0
-        - 0.0
+instances: {}
+name: terminator_short_W0p1
+nets: []
+placements: {}
+ports: {}
