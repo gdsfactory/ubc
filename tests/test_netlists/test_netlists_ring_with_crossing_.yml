@@ -31,18 +31,17 @@ instances:
     settings:
       cross_section: strip
       radius: 5
-  coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475:
+  coupler_ring_G0p2_R5_LX_ba10ec54_-2000_2475:
     component: coupler_ring
     info: {}
     settings:
       bend: bend_euler
-      coupler90: coupler90
-      coupler_straight: coupler_straight
       cross_section: strip
       gap: 0.2
       length_extension: 3
       length_x: 4
       radius: 5
+      straight: straight
   ebeam_crossing4_2ports_5000_10600:
     component: ebeam_crossing4_2ports
     info: {}
@@ -83,7 +82,7 @@ nets:
   p2: ebeam_crossing4_2ports_5000_10600,o4
 - p1: bend_euler_CSstrip_R5_2875_18275,o2
   p2: straight_L4_N2_CSstrip_-2000_20400,o2
-- p1: coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o2
+- p1: coupler_ring_G0p2_R5_LX_ba10ec54_-2000_2475,o2
   p2: straight_L9p70000000000_c887c097_-9000_10550,o2
 placements:
   bend_euler_CSstrip_R5_-6875_18275:
@@ -96,7 +95,7 @@ placements:
     rotation: 90
     x: 5
     y: 15.4
-  coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475:
+  coupler_ring_G0p2_R5_LX_ba10ec54_-2000_2475:
     mirror: false
     rotation: 0
     x: 0
@@ -117,14 +116,14 @@ placements:
     x: -9
     y: 15.4
 ports:
-  o1: coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o1
-  o2: coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o4
+  o1: coupler_ring_G0p2_R5_LX_ba10ec54_-2000_2475,o1
+  o2: coupler_ring_G0p2_R5_LX_ba10ec54_-2000_2475,o4
 warnings:
   optical:
     unconnected_ports:
     - message: 2 unconnected optical ports!
       ports:
-      - coupler_ring_G0p2_R5_LX_ea9dedfe_-2000_2475,o3
+      - coupler_ring_G0p2_R5_LX_ba10ec54_-2000_2475,o3
       - ebeam_crossing4_2ports_5000_10600,o1
       values:
       - - 5000

@@ -15,7 +15,7 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory~=8.5.1",
+  "gdsfactory~=8.5.6",
   "gplugins[sax]>=1,<2"
 ]
 description = "ubcpdk pdk"
