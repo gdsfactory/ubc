@@ -1,5 +1,5 @@
 instances:
-  coupler_ring_G0p2_R10_L_4c94bf2e_-2000_17022:
+  coupler_ring_G0p2_R10_L_13fd066c_-2000_17022:
     component: coupler_ring
     info: {}
     settings:
@@ -9,7 +9,8 @@ instances:
       length_extension: 3
       length_x: 4
       radius: 10
-  coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977:
+      straight: straight
+  coupler_ring_G0p2_R10_L_13fd066c_-2000_4977:
     component: coupler_ring
     info: {}
     settings:
@@ -19,6 +20,7 @@ instances:
       length_extension: 3
       length_x: 4
       radius: 10
+      straight: straight
   straight_L0p6_N2_CSstrip_-14000_11000:
     component: straight
     info:
@@ -47,21 +49,21 @@ instances:
       npoints: 2
 name: ring_double_G0p2_R10_LX4_LY0p6
 nets:
-- p1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_17022,o2
+- p1: coupler_ring_G0p2_R10_L_13fd066c_-2000_17022,o2
   p2: straight_L0p6_N2_CSstrip_10000_11000,o1
-- p1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_17022,o3
+- p1: coupler_ring_G0p2_R10_L_13fd066c_-2000_17022,o3
   p2: straight_L0p6_N2_CSstrip_-14000_11000,o2
-- p1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o2
+- p1: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o2
   p2: straight_L0p6_N2_CSstrip_-14000_11000,o1
-- p1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o3
+- p1: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o3
   p2: straight_L0p6_N2_CSstrip_10000_11000,o2
 placements:
-  coupler_ring_G0p2_R10_L_4c94bf2e_-2000_17022:
+  coupler_ring_G0p2_R10_L_13fd066c_-2000_17022:
     mirror: false
     rotation: 180
     x: -4
     y: 22
-  coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977:
+  coupler_ring_G0p2_R10_L_13fd066c_-2000_4977:
     mirror: false
     rotation: 0
     x: 0
@@ -77,7 +79,7 @@ placements:
     x: 10
     y: 11.3
 ports:
-  o1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o1
-  o2: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o4
-  o3: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_17022,o4
-  o4: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_17022,o1
+  o1: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o1
+  o2: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o4
+  o3: coupler_ring_G0p2_R10_L_13fd066c_-2000_17022,o4
+  o4: coupler_ring_G0p2_R10_L_13fd066c_-2000_17022,o1

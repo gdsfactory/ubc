@@ -31,7 +31,7 @@ instances:
     settings:
       cross_section: strip
       radius: 10
-  coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977:
+  coupler_ring_G0p2_R10_L_13fd066c_-2000_4977:
     component: coupler_ring
     info: {}
     settings:
@@ -41,6 +41,7 @@ instances:
       length_extension: 3
       length_x: 4
       radius: 10
+      straight: straight
   straight_L0p6_N2_CSstrip_-14000_11000:
     component: straight
     info:
@@ -90,9 +91,9 @@ nets:
   p2: straight_L0p6_N2_CSstrip_10000_11000,o1
 - p1: bend_euler_CSstrip_R10_5375_16675,o2
   p2: straight_L4_N2_CSstrip_-2000_21300,o1
-- p1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o2
+- p1: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o2
   p2: straight_L0p6_N2_CSstrip_-14000_11000,o1
-- p1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o3
+- p1: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o3
   p2: straight_L0p6_N2_CSstrip_10000_11000,o2
 placements:
   bend_euler_CSstrip_R10_-9375_16675:
@@ -105,7 +106,7 @@ placements:
     rotation: 90
     x: 10
     y: 11.3
-  coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977:
+  coupler_ring_G0p2_R10_L_13fd066c_-2000_4977:
     mirror: false
     rotation: 0
     x: 0
@@ -126,5 +127,5 @@ placements:
     x: 0
     y: 21.3
 ports:
-  o1: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o1
-  o2: coupler_ring_G0p2_R10_L_4c94bf2e_-2000_4977,o4
+  o1: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o1
+  o2: coupler_ring_G0p2_R10_L_13fd066c_-2000_4977,o4
