@@ -4,7 +4,7 @@
 
 ## [2.6.0](https://github.com/gdsfactory/ubc/releases/tag/v2.6.0) - 2024-07-15
 
-No significant changes.
+- update to gdsfactory8
 
 
 ## [2.5.0](https://github.com/gdsfactory/ubc/releases/tag/v2.5.0) - 2024-03-24
