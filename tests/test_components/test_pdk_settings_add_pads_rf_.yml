@@ -1,11 +1,3 @@
 info: {}
-name: add_electrical_pads_top_9db44bb1
-settings:
-  component: ring_single_heater
-  direction: top
-  layer: MTOP
-  pad_array: pad_array
-  select_ports: Fselect_ports_Mgdsfactorypport_SPTelectrical
-  spacing:
-  - 0
-  - 100
+name: Unnamed_22
+settings: {}

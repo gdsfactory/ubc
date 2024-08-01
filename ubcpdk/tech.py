@@ -41,7 +41,7 @@ class LayerMapUbc(LayerMap):
     SHOW_PORTS: Layer = (1, 13)
     PADDING: Layer = (67, 0)
     SLAB150: Layer = (2, 0)
-    WAFER: Layer = (99999, 0)
+    WAFER: Layer = (999, 0)
 
 
 LAYER = LayerMapUbc

@@ -17,6 +17,7 @@ skip_test = {
     "dbg",
     "add_pins_bbox_siepic",
     "add_pads",
+    "add_pads_rf",
     "add_pads_bot",
     "add_pads_top",
     "add_pins_bbox_siepic_remove_layers",

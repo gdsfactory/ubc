@@ -7,7 +7,7 @@ instances:
     settings:
       gap: 0.2
       length: 0.1
-  dbr_W0p5_D0p1_N100_L0p0_c9156e45_-17997_2350:
+  dbr_W0p5_D0p1_N100_L0p0_c9156e45_18096_2350:
     component: dbr
     info: {}
     settings:
@@ -17,7 +17,7 @@ instances:
       l2: 0.079
       n: 100
       w0: 0.5
-  dbr_W0p5_D0p1_N100_L0p0_c9156e45_18096_2350:
+  dbr_W0p5_D0p1_N100_L0p0_c9156e45_m17997_2350:
     component: dbr
     info: {}
     settings:
@@ -30,7 +30,7 @@ instances:
 name: dbr_cavity_Ddbr_Ccoupler
 nets:
 - p1: coupler_L0p1_G0p2_50_350,o2
-  p2: dbr_W0p5_D0p1_N100_L0p0_c9156e45_-17997_2350,o1
+  p2: dbr_W0p5_D0p1_N100_L0p0_c9156e45_m17997_2350,o1
 - p1: coupler_L0p1_G0p2_50_350,o3
   p2: dbr_W0p5_D0p1_N100_L0p0_c9156e45_18096_2350,o1
 placements:
@@ -39,15 +39,15 @@ placements:
     rotation: 0
     x: 0
     y: 0
-  dbr_W0p5_D0p1_N100_L0p0_c9156e45_-17997_2350:
-    mirror: false
-    rotation: 180
-    x: -10.089
-    y: 2.35
   dbr_W0p5_D0p1_N100_L0p0_c9156e45_18096_2350:
     mirror: false
     rotation: 0
     x: 10.189
+    y: 2.35
+  dbr_W0p5_D0p1_N100_L0p0_c9156e45_m17997_2350:
+    mirror: false
+    rotation: 180
+    x: -10.089
     y: 2.35
 ports:
   o1: coupler_L0p1_G0p2_50_350,o1
