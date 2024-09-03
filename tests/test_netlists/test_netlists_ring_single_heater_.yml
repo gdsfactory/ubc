@@ -1,5 +1,5 @@
 instances:
-  bend_euler_CSstrip_heat_75ea66dd_6000_16710:
+  bend_euler_CSstrip_heat_75ea66dd_10000_10710:
     component: bend_euler
     info:
       dy: 10
@@ -15,7 +15,7 @@ instances:
     settings:
       cross_section: strip_heater_metal
       radius: 10
-  bend_euler_CSstrip_heat_75ea66dd_m7000_16710:
+  bend_euler_CSstrip_heat_75ea66dd_m1000_20710:
     component: bend_euler
     info:
       dy: 10
@@ -31,7 +31,7 @@ instances:
     settings:
       cross_section: strip_heater_metal
       radius: 10
-  coupler_ring_G0p2_R10_L_94547a52_m500_4702:
+  coupler_ring_G0p2_R10_L_94547a52_0_0:
     component: coupler_ring
     info: {}
     settings:
@@ -42,7 +42,7 @@ instances:
       length_extension: 3
       length_x: 1
       radius: 10
-  straight_L0p01_N2_CSstr_b7a6e359_10000_10705:
+  straight_L0p01_N2_CSstr_b7a6e359_10000_10710:
     component: straight
     info:
       length: 0.01
@@ -55,7 +55,7 @@ instances:
       cross_section: strip_heater_metal
       length: 0.01
       npoints: 2
-  straight_L0p01_N2_CSstr_b7a6e359_m11000_10705:
+  straight_L0p01_N2_CSstr_b7a6e359_m11000_10700:
     component: straight
     info:
       length: 0.01
@@ -68,7 +68,7 @@ instances:
       cross_section: strip_heater_metal
       length: 0.01
       npoints: 2
-  straight_L1_N2_CSstrip__f1c4f592_m500_20710:
+  straight_L1_N2_CSstrip__f1c4f592_0_20710:
     component: straight
     info:
       length: 1
@@ -101,57 +101,57 @@ instances:
       - 10
 name: ring_double_heater_G0p2_8e96fef6
 nets:
-- p1: bend_euler_CSstrip_heat_75ea66dd_6000_16710,e1
-  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10705,e1
-- p1: bend_euler_CSstrip_heat_75ea66dd_6000_16710,e2
-  p2: straight_L1_N2_CSstrip__f1c4f592_m500_20710,e1
-- p1: bend_euler_CSstrip_heat_75ea66dd_6000_16710,o1
-  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10705,o1
-- p1: bend_euler_CSstrip_heat_75ea66dd_6000_16710,o2
-  p2: straight_L1_N2_CSstrip__f1c4f592_m500_20710,o1
-- p1: bend_euler_CSstrip_heat_75ea66dd_m7000_16710,e1
-  p2: straight_L1_N2_CSstrip__f1c4f592_m500_20710,e2
-- p1: bend_euler_CSstrip_heat_75ea66dd_m7000_16710,e2
-  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10705,e2
-- p1: bend_euler_CSstrip_heat_75ea66dd_m7000_16710,o1
-  p2: straight_L1_N2_CSstrip__f1c4f592_m500_20710,o2
-- p1: bend_euler_CSstrip_heat_75ea66dd_m7000_16710,o2
-  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10705,o2
-- p1: coupler_ring_G0p2_R10_L_94547a52_m500_4702,e2
-  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10705,e1
-- p1: coupler_ring_G0p2_R10_L_94547a52_m500_4702,e3
-  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10705,e2
-- p1: coupler_ring_G0p2_R10_L_94547a52_m500_4702,o2
-  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10705,o1
-- p1: coupler_ring_G0p2_R10_L_94547a52_m500_4702,o3
-  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10705,o2
+- p1: bend_euler_CSstrip_heat_75ea66dd_10000_10710,e1
+  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10710,e1
+- p1: bend_euler_CSstrip_heat_75ea66dd_10000_10710,e2
+  p2: straight_L1_N2_CSstrip__f1c4f592_0_20710,e1
+- p1: bend_euler_CSstrip_heat_75ea66dd_10000_10710,o1
+  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10710,o1
+- p1: bend_euler_CSstrip_heat_75ea66dd_10000_10710,o2
+  p2: straight_L1_N2_CSstrip__f1c4f592_0_20710,o1
+- p1: bend_euler_CSstrip_heat_75ea66dd_m1000_20710,e1
+  p2: straight_L1_N2_CSstrip__f1c4f592_0_20710,e2
+- p1: bend_euler_CSstrip_heat_75ea66dd_m1000_20710,e2
+  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10700,e2
+- p1: bend_euler_CSstrip_heat_75ea66dd_m1000_20710,o1
+  p2: straight_L1_N2_CSstrip__f1c4f592_0_20710,o2
+- p1: bend_euler_CSstrip_heat_75ea66dd_m1000_20710,o2
+  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10700,o2
+- p1: coupler_ring_G0p2_R10_L_94547a52_0_0,e2
+  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10700,e1
+- p1: coupler_ring_G0p2_R10_L_94547a52_0_0,e3
+  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10710,e2
+- p1: coupler_ring_G0p2_R10_L_94547a52_0_0,o2
+  p2: straight_L0p01_N2_CSstr_b7a6e359_m11000_10700,o1
+- p1: coupler_ring_G0p2_R10_L_94547a52_0_0,o3
+  p2: straight_L0p01_N2_CSstr_b7a6e359_10000_10710,o2
 placements:
-  bend_euler_CSstrip_heat_75ea66dd_6000_16710:
+  bend_euler_CSstrip_heat_75ea66dd_10000_10710:
     mirror: false
     rotation: 90
     x: 10
     y: 10.71
-  bend_euler_CSstrip_heat_75ea66dd_m7000_16710:
+  bend_euler_CSstrip_heat_75ea66dd_m1000_20710:
     mirror: false
     rotation: 180
     x: -1
     y: 20.71
-  coupler_ring_G0p2_R10_L_94547a52_m500_4702:
+  coupler_ring_G0p2_R10_L_94547a52_0_0:
     mirror: false
     rotation: 0
     x: 0
     y: 0
-  straight_L0p01_N2_CSstr_b7a6e359_10000_10705:
+  straight_L0p01_N2_CSstr_b7a6e359_10000_10710:
     mirror: false
     rotation: 270
     x: 10
     y: 10.71
-  straight_L0p01_N2_CSstr_b7a6e359_m11000_10705:
+  straight_L0p01_N2_CSstr_b7a6e359_m11000_10700:
     mirror: false
     rotation: 90
     x: -11
     y: 10.7
-  straight_L1_N2_CSstrip__f1c4f592_m500_20710:
+  straight_L1_N2_CSstrip__f1c4f592_0_20710:
     mirror: false
     rotation: 180
     x: 0
@@ -171,8 +171,8 @@ ports:
   l_e2: via_stack_heater_mtop_S10_10_m7000_0,e2
   l_e3: via_stack_heater_mtop_S10_10_m7000_0,e3
   l_e4: via_stack_heater_mtop_S10_10_m7000_0,e4
-  o1: coupler_ring_G0p2_R10_L_94547a52_m500_4702,o1
-  o2: coupler_ring_G0p2_R10_L_94547a52_m500_4702,o4
+  o1: coupler_ring_G0p2_R10_L_94547a52_0_0,o1
+  o2: coupler_ring_G0p2_R10_L_94547a52_0_0,o4
   r_e1: via_stack_heater_mtop_S10_10_6000_0,e1
   r_e2: via_stack_heater_mtop_S10_10_6000_0,e2
   r_e3: via_stack_heater_mtop_S10_10_6000_0,e3
@@ -182,8 +182,8 @@ warnings:
     unconnected_ports:
     - message: 2 unconnected electrical ports!
       ports:
-      - coupler_ring_G0p2_R10_L_94547a52_m500_4702,e4
-      - coupler_ring_G0p2_R10_L_94547a52_m500_4702,e1
+      - coupler_ring_G0p2_R10_L_94547a52_0_0,e4
+      - coupler_ring_G0p2_R10_L_94547a52_0_0,e1
       values:
       - - -1000
         - 700

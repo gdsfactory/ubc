@@ -1,5 +1,5 @@
 instances:
-  bend_euler_CSstrip_R10_5375_16675:
+  bend_euler_CSstrip_R10_10000_11300:
     component: bend_euler
     info:
       dy: 10
@@ -15,7 +15,7 @@ instances:
     settings:
       cross_section: strip
       radius: 10
-  bend_euler_CSstrip_R10_m9375_16675:
+  bend_euler_CSstrip_R10_m4000_21300:
     component: bend_euler
     info:
       dy: 10
@@ -31,7 +31,7 @@ instances:
     settings:
       cross_section: strip
       radius: 10
-  coupler_ring_G0p2_R10_L_13fd066c_m2000_4977:
+  coupler_ring_G0p2_R10_L_13fd066c_0_0:
     component: coupler_ring
     info: {}
     settings:
@@ -42,7 +42,7 @@ instances:
       length_x: 4
       radius: 10
       straight: straight
-  straight_L0p6_N2_CSstrip_10000_11000:
+  straight_L0p6_N2_CSstrip_10000_11300:
     component: straight
     info:
       length: 0.6
@@ -55,7 +55,7 @@ instances:
       cross_section: strip
       length: 0.6
       npoints: 2
-  straight_L0p6_N2_CSstrip_m14000_11000:
+  straight_L0p6_N2_CSstrip_m14000_10700:
     component: straight
     info:
       length: 0.6
@@ -68,7 +68,7 @@ instances:
       cross_section: strip
       length: 0.6
       npoints: 2
-  straight_L4_N2_CSstrip_m2000_21300:
+  straight_L4_N2_CSstrip_0_21300:
     component: straight
     info:
       length: 4
@@ -83,49 +83,49 @@ instances:
       npoints: 2
 name: ring_single_G0p2_R10_LX4_LY0p6
 nets:
-- p1: bend_euler_CSstrip_R10_5375_16675,o1
-  p2: straight_L0p6_N2_CSstrip_10000_11000,o1
-- p1: bend_euler_CSstrip_R10_5375_16675,o2
-  p2: straight_L4_N2_CSstrip_m2000_21300,o1
-- p1: bend_euler_CSstrip_R10_m9375_16675,o1
-  p2: straight_L4_N2_CSstrip_m2000_21300,o2
-- p1: bend_euler_CSstrip_R10_m9375_16675,o2
-  p2: straight_L0p6_N2_CSstrip_m14000_11000,o2
-- p1: coupler_ring_G0p2_R10_L_13fd066c_m2000_4977,o2
-  p2: straight_L0p6_N2_CSstrip_m14000_11000,o1
-- p1: coupler_ring_G0p2_R10_L_13fd066c_m2000_4977,o3
-  p2: straight_L0p6_N2_CSstrip_10000_11000,o2
+- p1: bend_euler_CSstrip_R10_10000_11300,o1
+  p2: straight_L0p6_N2_CSstrip_10000_11300,o1
+- p1: bend_euler_CSstrip_R10_10000_11300,o2
+  p2: straight_L4_N2_CSstrip_0_21300,o1
+- p1: bend_euler_CSstrip_R10_m4000_21300,o1
+  p2: straight_L4_N2_CSstrip_0_21300,o2
+- p1: bend_euler_CSstrip_R10_m4000_21300,o2
+  p2: straight_L0p6_N2_CSstrip_m14000_10700,o2
+- p1: coupler_ring_G0p2_R10_L_13fd066c_0_0,o2
+  p2: straight_L0p6_N2_CSstrip_m14000_10700,o1
+- p1: coupler_ring_G0p2_R10_L_13fd066c_0_0,o3
+  p2: straight_L0p6_N2_CSstrip_10000_11300,o2
 placements:
-  bend_euler_CSstrip_R10_5375_16675:
+  bend_euler_CSstrip_R10_10000_11300:
     mirror: false
     rotation: 90
     x: 10
     y: 11.3
-  bend_euler_CSstrip_R10_m9375_16675:
+  bend_euler_CSstrip_R10_m4000_21300:
     mirror: false
     rotation: 180
     x: -4
     y: 21.3
-  coupler_ring_G0p2_R10_L_13fd066c_m2000_4977:
+  coupler_ring_G0p2_R10_L_13fd066c_0_0:
     mirror: false
     rotation: 0
     x: 0
     y: 0
-  straight_L0p6_N2_CSstrip_10000_11000:
+  straight_L0p6_N2_CSstrip_10000_11300:
     mirror: false
     rotation: 270
     x: 10
     y: 11.3
-  straight_L0p6_N2_CSstrip_m14000_11000:
+  straight_L0p6_N2_CSstrip_m14000_10700:
     mirror: false
     rotation: 90
     x: -14
     y: 10.7
-  straight_L4_N2_CSstrip_m2000_21300:
+  straight_L4_N2_CSstrip_0_21300:
     mirror: false
     rotation: 180
     x: 0
     y: 21.3
 ports:
-  o1: coupler_ring_G0p2_R10_L_13fd066c_m2000_4977,o1
-  o2: coupler_ring_G0p2_R10_L_13fd066c_m2000_4977,o4
+  o1: coupler_ring_G0p2_R10_L_13fd066c_0_0,o1
+  o2: coupler_ring_G0p2_R10_L_13fd066c_0_0,o4
