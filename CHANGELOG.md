@@ -4,7 +4,8 @@
 
 ## [2.6.2](https://github.com/gdsfactory/ubc/releases/tag/v2.6.2) - 2024-09-04
 
-No significant changes.
+- remove old mmi2x2 [#400](https://github.com/gdsfactory/ubc/pull/400)
+- update gdsfactory 862 [#399](https://github.com/gdsfactory/ubc/pull/399)
 
 
 ## [2.6.1](https://github.com/gdsfactory/ubc/releases/tag/v2.6.1) - 2024-07-27
