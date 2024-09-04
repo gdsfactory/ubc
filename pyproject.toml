@@ -10,7 +10,6 @@ authors = [
 ]
 classifiers = [
   "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Operating System :: OS Independent"
@@ -24,7 +23,7 @@ keywords = ["python"]
 license = {file = "LICENSE"}
 name = "ubcpdk"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 version = "2.6.1"
 
 [project.optional-dependencies]
@@ -44,7 +43,7 @@ docs = [
 ignore-words-list = "te, te/tm, te, ba, fpr, fpr_spacing, ro, nd, donot, schem"
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.11"
 strict = true
 
 [tool.pydocstyle]
