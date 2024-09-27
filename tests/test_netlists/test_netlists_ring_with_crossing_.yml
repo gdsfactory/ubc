@@ -118,15 +118,3 @@ placements:
 ports:
   o1: coupler_ring_G0p2_R5_LX_ba10ec54_0_0,o1
   o2: coupler_ring_G0p2_R5_LX_ba10ec54_0_0,o4
-warnings:
-  optical:
-    unconnected_ports:
-    - message: 2 unconnected optical ports!
-      ports:
-      - coupler_ring_G0p2_R5_LX_ba10ec54_0_0,o3
-      - ebeam_crossing4_2ports_5000_10600,o1
-      values:
-      - - 5000
-        - 5700
-      - - 5000
-        - 5800

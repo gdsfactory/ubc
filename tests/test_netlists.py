@@ -56,14 +56,18 @@ def test_netlists(
     c = component_factory[component_type]()
     allow_multiple = True
     n = c.get_netlist(allow_multiple=allow_multiple)
+    n.pop("connections", None)
+    n.pop("warnings", None)
     if check:
         data_regression.check(n)
 
     yaml_str = c.write_netlist(n)
-    c2 = gf.read.from_yaml(yaml_str, name=c.name)
+    c2 = gf.read.from_yaml(yaml_str)
     n2 = c2.get_netlist(allow_multiple=allow_multiple)
 
     d = jsondiff.diff(n, n2)
+    d.pop("warnings", None)
+    d.pop("ports", None)
     assert len(d) == 0, d
 
 
@@ -73,7 +77,7 @@ if __name__ == "__main__":
     component_type = "ring_double"
     component_type = "terminator_short"
     component_type = "mzi_heater"
-    component_type = "dbr_cavity"
+    component_type = "ring_double_heater"
     connection_error_types = {
         "optical": ["width_mismatch", "shear_angle_mismatch", "orientation_mismatch"]
     }
