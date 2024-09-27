@@ -5,29 +5,19 @@ Can overwrite config with an optional `config.yml` file in the current working d
 
 __all__ = ["PATH", "CONFIG"]
 
-import io
 import pathlib
 
-from omegaconf import OmegaConf
-
-default_config = io.StringIO(
-    """
-username: JoaquinMatres
-"""
-)
-
+from gdsfactory.config import CONF
 
 cwd = pathlib.Path.cwd()
 cwd_config = cwd / "config.yml"
-config_base = OmegaConf.load(default_config)
 module = pathlib.Path(__file__).parent.absolute()
 repo = module.parent
 
-try:
-    config_cwd = OmegaConf.load(cwd_config)
-except Exception:
-    config_cwd = OmegaConf.create()
-CONFIG = OmegaConf.merge(config_base, config_cwd)
+CONFIG = CONF
+
+if not hasattr(CONFIG, "username"):
+    CONFIG.username = "JoaquinMatres"
 
 
 class Path:
