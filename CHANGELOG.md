@@ -2,6 +2,11 @@
 
 <!-- towncrier release notes start -->
 
+## [2.6.3](https://github.com/gdsfactory/ubc/releases/tag/v2.6.3) - 2024-09-28
+
+No significant changes.
+
+
 ## [2.6.2](https://github.com/gdsfactory/ubc/releases/tag/v2.6.2) - 2024-09-04
 
 - remove old mmi2x2 [#400](https://github.com/gdsfactory/ubc/pull/400)
