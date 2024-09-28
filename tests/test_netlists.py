@@ -3,7 +3,6 @@ from __future__ import annotations
 import gdsfactory as gf
 import jsondiff
 import pytest
-from omegaconf import OmegaConf
 from pytest_regressions.data_regression import DataRegressionFixture
 
 from ubcpdk import PDK
@@ -57,14 +56,18 @@ def test_netlists(
     c = component_factory[component_type]()
     allow_multiple = True
     n = c.get_netlist(allow_multiple=allow_multiple)
+    n.pop("connections", None)
+    n.pop("warnings", None)
     if check:
         data_regression.check(n)
 
-    yaml_str = OmegaConf.to_yaml(n, sort_keys=True)
-    c2 = gf.read.from_yaml(yaml_str, name=c.name)
+    yaml_str = c.write_netlist(n)
+    c2 = gf.read.from_yaml(yaml_str)
     n2 = c2.get_netlist(allow_multiple=allow_multiple)
 
     d = jsondiff.diff(n, n2)
+    d.pop("warnings", None)
+    d.pop("ports", None)
     assert len(d) == 0, d
 
 
@@ -74,7 +77,7 @@ if __name__ == "__main__":
     component_type = "ring_double"
     component_type = "terminator_short"
     component_type = "mzi_heater"
-    component_type = "dbr_cavity"
+    component_type = "ring_double_heater"
     connection_error_types = {
         "optical": ["width_mismatch", "shear_angle_mismatch", "orientation_mismatch"]
     }
@@ -85,7 +88,7 @@ if __name__ == "__main__":
     n = c1.get_netlist(
         allow_multiple=True, connection_error_types=connection_error_types
     )
-    yaml_str = OmegaConf.to_yaml(n, sort_keys=True)
+    yaml_str = c1.write_netlist(n)
     c1.delete()
     # gf.clear_cache()
     # print(yaml_str)

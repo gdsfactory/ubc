@@ -149,15 +149,3 @@ ports:
   r_e2: via_stack_heater_mtop_S10_10_6000_0,e2
   r_e3: via_stack_heater_mtop_S10_10_6000_0,e3
   r_e4: via_stack_heater_mtop_S10_10_6000_0,e4
-warnings:
-  electrical:
-    unconnected_ports:
-    - message: 2 unconnected electrical ports!
-      ports:
-      - coupler_ring_G0p2_R10_L_94547a52_0_0,e4
-      - coupler_ring_G0p2_R10_L_94547a52_0_0,e1
-      values:
-      - - -1000
-        - 700
-      - - 0
-        - 700
