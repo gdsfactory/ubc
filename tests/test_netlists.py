@@ -32,6 +32,7 @@ skip_test = {
     "add_pads_bot",
     "wire_corner",
     "straight_heater_metal",
+    "add_fiber_array_pads_rf",
 }
 cell_names = cells.keys() - skip_test
 

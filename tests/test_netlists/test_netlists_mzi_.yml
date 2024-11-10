@@ -1,5 +1,5 @@
 instances:
-  bend_euler_CSstrip_17400_m19750:
+  b1:
     component: bend_euler
     info:
       dy: 10
@@ -9,12 +9,13 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
-  bend_euler_CSstrip_27400_24750:
+  b2:
     component: bend_euler
     info:
       dy: 10
@@ -24,12 +25,13 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
-  bend_euler_CSstrip_27500_m29750:
+  b3:
     component: bend_euler
     info:
       dy: 10
@@ -39,12 +41,13 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
-  bend_euler_CSstrip_37500_12750:
+  b4:
     component: bend_euler
     info:
       dy: 10
@@ -54,12 +57,13 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
-  bend_euler_CSstrip_37500_14750:
+  b5:
     component: bend_euler
     info:
       dy: 10
@@ -69,12 +73,13 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
-  bend_euler_CSstrip_47500_m2750:
+  b6:
     component: bend_euler
     info:
       dy: 10
@@ -84,12 +89,13 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
-  bend_euler_CSstrip_7400_2750:
+  b7:
     component: bend_euler
     info:
       dy: 10
@@ -99,12 +105,13 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
-  bend_euler_CSstrip_7400_m2750:
+  b8:
     component: bend_euler
     info:
       dy: 10
@@ -114,9 +121,10 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 16.637
-      route_info_xs_38f6dd83_length: 16.637
+      route_info_xs_c8b8e980_length: 16.637
+      width: 0.5
     settings:
       cross_section: strip
   cp1:
@@ -127,40 +135,14 @@ instances:
     component: ebeam_y_1550
     info: {}
     settings: {}
-  straight_L2_N2_CSstrip_37500_12750:
-    component: straight
-    info:
-      length: 2
-      route_info_length: 2
-      route_info_type: xs_38f6dd83
-      route_info_weight: 2
-      route_info_xs_38f6dd83_length: 2
-      width: 0.5
-    settings:
-      cross_section: strip
-      length: 2
-      npoints: 2
-  straight_L7_N2_CSstrip_37500_m19750:
-    component: straight
-    info:
-      length: 7
-      route_info_length: 7
-      route_info_type: xs_38f6dd83
-      route_info_weight: 7
-      route_info_xs_38f6dd83_length: 7
-      width: 0.5
-    settings:
-      cross_section: strip
-      length: 7
-      npoints: 2
   sxb:
     component: straight
     info:
       length: 0.1
       route_info_length: 0.1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 0.1
-      route_info_xs_38f6dd83_length: 0.1
+      route_info_xs_c8b8e980_length: 0.1
       width: 0.5
     settings:
       cross_section: strip
@@ -171,22 +153,35 @@ instances:
     info:
       length: 0.1
       route_info_length: 0.1
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 0.1
-      route_info_xs_38f6dd83_length: 0.1
+      route_info_xs_c8b8e980_length: 0.1
       width: 0.5
     settings:
       cross_section: strip
       length: 0.1
+      npoints: 2
+  sybr:
+    component: straight
+    info:
+      length: 7
+      route_info_length: 7
+      route_info_type: xs_c8b8e980
+      route_info_weight: 7
+      route_info_xs_c8b8e980_length: 7
+      width: 0.5
+    settings:
+      cross_section: strip
+      length: 7
       npoints: 2
   syl:
     component: straight
     info:
       length: 7
       route_info_length: 7
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 7
-      route_info_xs_38f6dd83_length: 7
+      route_info_xs_c8b8e980_length: 7
       width: 0.5
     settings:
       cross_section: strip
@@ -197,9 +192,22 @@ instances:
     info:
       length: 2
       route_info_length: 2
-      route_info_type: xs_38f6dd83
+      route_info_type: xs_c8b8e980
       route_info_weight: 2
-      route_info_xs_38f6dd83_length: 2
+      route_info_xs_c8b8e980_length: 2
+      width: 0.5
+    settings:
+      cross_section: strip
+      length: 2
+      npoints: 2
+  sytr:
+    component: straight
+    info:
+      length: 2
+      route_info_length: 2
+      route_info_type: xs_c8b8e980
+      route_info_weight: 2
+      route_info_xs_c8b8e980_length: 2
       width: 0.5
     settings:
       cross_section: strip
@@ -207,78 +215,78 @@ instances:
       npoints: 2
 name: mzi_DL10_LY2_LX0p1_Bben_24f01e91
 nets:
-- p1: bend_euler_CSstrip_17400_m19750,o1
-  p2: syl,o2
-- p1: bend_euler_CSstrip_17400_m19750,o2
-  p2: sxb,o1
-- p1: bend_euler_CSstrip_27400_24750,o1
-  p2: sxt,o1
-- p1: bend_euler_CSstrip_27400_24750,o2
-  p2: sytl,o2
-- p1: bend_euler_CSstrip_27500_m29750,o1
-  p2: sxb,o2
-- p1: bend_euler_CSstrip_27500_m29750,o2
-  p2: straight_L7_N2_CSstrip_37500_m19750,o1
-- p1: bend_euler_CSstrip_37500_12750,o1
-  p2: straight_L2_N2_CSstrip_37500_12750,o1
-- p1: bend_euler_CSstrip_37500_12750,o2
-  p2: cp2,o2
-- p1: bend_euler_CSstrip_37500_14750,o1
-  p2: straight_L2_N2_CSstrip_37500_12750,o2
-- p1: bend_euler_CSstrip_37500_14750,o2
-  p2: sxt,o2
-- p1: bend_euler_CSstrip_47500_m2750,o1
-  p2: cp2,o3
-- p1: bend_euler_CSstrip_47500_m2750,o2
-  p2: straight_L7_N2_CSstrip_37500_m19750,o2
-- p1: bend_euler_CSstrip_7400_2750,o1
+- p1: b1,o1
   p2: cp1,o2
-- p1: bend_euler_CSstrip_7400_2750,o2
+- p1: b1,o2
   p2: sytl,o1
-- p1: bend_euler_CSstrip_7400_m2750,o1
+- p1: b2,o1
+  p2: sxt,o1
+- p1: b2,o2
+  p2: sytl,o2
+- p1: b3,o1
+  p2: sytr,o2
+- p1: b3,o2
+  p2: sxt,o2
+- p1: b4,o1
+  p2: sytr,o1
+- p1: b4,o2
+  p2: cp2,o2
+- p1: b5,o1
   p2: cp1,o3
-- p1: bend_euler_CSstrip_7400_m2750,o2
+- p1: b5,o2
   p2: syl,o1
+- p1: b6,o1
+  p2: syl,o2
+- p1: b6,o2
+  p2: sxb,o1
+- p1: b7,o1
+  p2: sxb,o2
+- p1: b7,o2
+  p2: sybr,o1
+- p1: b8,o1
+  p2: cp2,o3
+- p1: b8,o2
+  p2: sybr,o2
 placements:
-  bend_euler_CSstrip_17400_m19750:
-    mirror: false
-    rotation: 270
-    x: 17.4
-    y: -19.75
-  bend_euler_CSstrip_27400_24750:
-    mirror: false
-    rotation: 180
-    x: 27.4
-    y: 24.75
-  bend_euler_CSstrip_27500_m29750:
-    mirror: false
-    rotation: 0
-    x: 27.5
-    y: -29.75
-  bend_euler_CSstrip_37500_12750:
-    mirror: false
-    rotation: 270
-    x: 37.5
-    y: 12.75
-  bend_euler_CSstrip_37500_14750:
-    mirror: false
-    rotation: 90
-    x: 37.5
-    y: 14.75
-  bend_euler_CSstrip_47500_m2750:
-    mirror: false
-    rotation: 180
-    x: 47.5
-    y: -2.75
-  bend_euler_CSstrip_7400_2750:
+  b1:
     mirror: false
     rotation: 0
     x: 7.4
     y: 2.75
-  bend_euler_CSstrip_7400_m2750:
+  b2:
+    mirror: false
+    rotation: 180
+    x: 27.4
+    y: 24.75
+  b3:
+    mirror: false
+    rotation: 90
+    x: 37.5
+    y: 14.75
+  b4:
+    mirror: false
+    rotation: 270
+    x: 37.5
+    y: 12.75
+  b5:
     mirror: true
     rotation: 0
     x: 7.4
+    y: -2.75
+  b6:
+    mirror: false
+    rotation: 270
+    x: 17.4
+    y: -19.75
+  b7:
+    mirror: false
+    rotation: 0
+    x: 27.5
+    y: -29.75
+  b8:
+    mirror: false
+    rotation: 180
+    x: 47.5
     y: -2.75
   cp1:
     mirror: false
@@ -290,16 +298,6 @@ placements:
     rotation: 180
     x: 54.9
     y: 0
-  straight_L2_N2_CSstrip_37500_12750:
-    mirror: false
-    rotation: 90
-    x: 37.5
-    y: 12.75
-  straight_L7_N2_CSstrip_37500_m19750:
-    mirror: false
-    rotation: 90
-    x: 37.5
-    y: -19.75
   sxb:
     mirror: false
     rotation: 0
@@ -310,6 +308,11 @@ placements:
     rotation: 0
     x: 27.4
     y: 24.75
+  sybr:
+    mirror: false
+    rotation: 90
+    x: 37.5
+    y: -19.75
   syl:
     mirror: false
     rotation: 270
@@ -319,6 +322,11 @@ placements:
     mirror: false
     rotation: 90
     x: 17.4
+    y: 12.75
+  sytr:
+    mirror: false
+    rotation: 90
+    x: 37.5
     y: 12.75
 ports:
   o1: cp1,o1

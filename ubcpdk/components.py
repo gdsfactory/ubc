@@ -482,7 +482,6 @@ def add_fiber_array(
     component_name: Optional[str] = None,
     gc_port_name: str = "o1",
     with_loopback: bool = False,
-    optical_routing_type: int = 1,
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
     cross_section: CrossSectionSpec = "strip",
@@ -500,7 +499,6 @@ def add_fiber_array(
         component_name: for the label.
         gc_port_name: grating coupler input port name 'o1'.
         with_loopback: True, adds loopback structures.
-        optical_routing_type: None: autoselection, 0: no extension.
         fanout_length: None  # if None, automatic calculation of fanout length.
         grating_coupler: grating coupler instance, function or list of functions.
         cross_section: spec.
@@ -519,7 +517,6 @@ def add_fiber_array(
         grating_coupler=grating_coupler,
         gc_port_name=gc_port_name,
         with_loopback=with_loopback,
-        optical_routing_type=optical_routing_type,
         fanout_length=fanout_length,
         cross_section=cross_section,
         taper=taper,
@@ -642,7 +639,7 @@ def dbr_cavity(dbr=dbr, coupler="coupler", **kwargs) -> gf.Component:
     return gf.components.cavity(component=dbr, coupler=coupler)
 
 
-@cache
+@gf.cell
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     component = gf.get_component(component, **kwargs)
     return add_fiber_array(component=component)
@@ -877,7 +874,7 @@ if __name__ == "__main__":
     # c = add_fiber_array(straight_heater_metal)
     # c.pprint_ports()
     # c = coupler_ring()
-    # c = dbr_cavity_te()
+    c = dbr_cavity_te()
     # c = dbr_cavity()
     # c = ring_single(radius=12)
     # c = bend_euler()
@@ -885,8 +882,6 @@ if __name__ == "__main__":
     # c = spiral()
     # c = pad_array()
     # c = bend_euler()
-    c = ebeam_y_1550()
-    c = ebeam_y_1550()
     # c = mzi_heater()
     # c = ring_with_crossing()
     # c = ring_single()

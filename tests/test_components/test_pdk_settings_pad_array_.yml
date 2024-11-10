@@ -1,6 +1,7 @@
 info: {}
-name: pad_array_PFpad_Mgdsfac_c2f3ae49
+name: pad_array_PFpad_Mgdsfac_1ba46877
 settings:
+  centered_ports: false
   columns: 6
   layer: MTOP
   pad: Fpad_Mgdsfactorypcomponentsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8
