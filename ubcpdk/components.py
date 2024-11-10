@@ -787,7 +787,7 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
         raise ValueError(f"No port {port_name!r} in {port_names}")
 
     component.add_label(
-        text=text, position=component.ports[port_name].center, layer=LAYER.TEXT
+        text=text, position=component.ports[port_name].dcenter, layer=LAYER.TEXT
     )
     return component
 
