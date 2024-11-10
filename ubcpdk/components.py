@@ -9,7 +9,6 @@ from gdsfactory.typings import (
     ComponentSpec,
     CrossSectionSpec,
     Optional,
-    Port,
 )
 
 from ubcpdk import tech
@@ -433,8 +432,7 @@ def mzi_heater(delta_length=10.0, length_x=320) -> gf.Component:
     Args:
         delta_length: extra length for mzi arms.
     """
-    c = _mzi_heater(delta_length=delta_length, length_x=length_x)
-    return c
+    return _mzi_heater(delta_length=delta_length, length_x=length_x)
 
 
 @gf.cell
@@ -447,7 +445,6 @@ def via_stack_heater_mtop(size=(10, 10)) -> gf.Component:
 
 
 def get_input_label_text(
-    port: Port,
     gc: ComponentReference,
     component_name: Optional[str] = None,
     username: str = CONFIG.username,
@@ -455,7 +452,6 @@ def get_input_label_text(
     """Return label for port and a grating coupler.
 
     Args:
-        port: component port.
         gc: grating coupler reference.
         component_name: optional component name.
         username: for the label.
@@ -482,7 +478,6 @@ def add_fiber_array(
     component_name: Optional[str] = None,
     gc_port_name: str = "o1",
     with_loopback: bool = False,
-    optical_routing_type: int = 1,
     fanout_length: float = 0.0,
     grating_coupler: ComponentSpec = gc_te1550,
     cross_section: CrossSectionSpec = "strip",
@@ -500,7 +495,6 @@ def add_fiber_array(
         component_name: for the label.
         gc_port_name: grating coupler input port name 'o1'.
         with_loopback: True, adds loopback structures.
-        optical_routing_type: None: autoselection, 0: no extension.
         fanout_length: None  # if None, automatic calculation of fanout length.
         grating_coupler: grating coupler instance, function or list of functions.
         cross_section: spec.
@@ -519,7 +513,6 @@ def add_fiber_array(
         grating_coupler=grating_coupler,
         gc_port_name=gc_port_name,
         with_loopback=with_loopback,
-        optical_routing_type=optical_routing_type,
         fanout_length=fanout_length,
         cross_section=cross_section,
         taper=taper,
@@ -528,6 +521,11 @@ def add_fiber_array(
     ref.drotate(-90)
     c.add_ports(ref.ports)
     c.copy_child_info(component)
+
+    component_name = component_name or component.name
+    grating_coupler = gf.get_component(grating_coupler)
+    label = get_input_label_text(gc=grating_coupler, component_name=component_name)
+    c.add_label(position=c.ports["o1"].dcenter, text=label, layer=LAYER.TEXT)
     return c
 
 
@@ -642,7 +640,7 @@ def dbr_cavity(dbr=dbr, coupler="coupler", **kwargs) -> gf.Component:
     return gf.components.cavity(component=dbr, coupler=coupler)
 
 
-@cache
+@gf.cell
 def dbr_cavity_te(component="dbr_cavity", **kwargs) -> gf.Component:
     component = gf.get_component(component, **kwargs)
     return add_fiber_array(component=component)
@@ -789,7 +787,7 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
         raise ValueError(f"No port {port_name!r} in {port_names}")
 
     component.add_label(
-        text=text, position=component.ports[port_name].center, layer=LAYER.TEXT
+        text=text, position=component.ports[port_name].dcenter, layer=LAYER.TEXT
     )
     return component
 
@@ -815,6 +813,8 @@ def add_fiber_array_pads_rf(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,
     orientation: float = 0,
+    pad_yspacing: float = 50,
+    component_name: Optional[str] = None,
     **kwargs,
 ) -> Component:
     """Returns fiber array with label and electrical pads.
@@ -823,16 +823,21 @@ def add_fiber_array_pads_rf(
         component: to add fiber array and pads.
         username: for the label.
         orientation: for adding pads.
+        pad_yspacing: for adding pads.
+        component_name: for the label.
         kwargs: for add_fiber_array.
     """
-    c0 = gf.get_component(component)
-    # text = f"elec_{username}-{clean_name(c0.name)}_G"
-    # add_label = partial(add_label_electrical, text=text)
-    c1 = add_pads_rf(component=c0, orientation=orientation)
 
+    c0 = gf.get_component(component)
+    component_name = component_name or c0.name
+    component_name = clean_name(component_name)
+    text = f"elec_{username}-{component_name}_G"
+    c1 = add_pads_rf(component=c0, orientation=orientation, spacing=(0, pad_yspacing))
+
+    add_label_electrical(component=c1, text=text)
     # ports_names = [port.name for port in c0.ports if port.orientation == orientation]
     # c1 = add_pads_top(component=c0, port_names=ports_names)
-    return add_fiber_array(component=c1, **kwargs)
+    return add_fiber_array(component=c1, component_name=component_name, **kwargs)
 
 
 @cache
@@ -885,12 +890,11 @@ if __name__ == "__main__":
     # c = spiral()
     # c = pad_array()
     # c = bend_euler()
-    c = ebeam_y_1550()
-    c = ebeam_y_1550()
     # c = mzi_heater()
     # c = ring_with_crossing()
     # c = ring_single()
     # c = ring_double()
     # c = ring_double(radius=12, length_x=2, length_y=2)
     # c = straight()
+    c = add_fiber_array_pads_rf(component_name="ring_single_heater")
     c.show()

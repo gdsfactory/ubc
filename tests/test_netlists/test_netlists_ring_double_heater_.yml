@@ -26,9 +26,9 @@ instances:
     info:
       length: 0.2
       route_info_length: 0.2
-      route_info_type: xs_263b49b5
+      route_info_type: xs_643222c6
       route_info_weight: 0.2
-      route_info_xs_263b49b5_length: 0.2
+      route_info_xs_643222c6_length: 0.2
       width: 0.5
     settings:
       cross_section: strip_heater_metal
@@ -39,9 +39,9 @@ instances:
     info:
       length: 0.2
       route_info_length: 0.2
-      route_info_type: xs_263b49b5
+      route_info_type: xs_643222c6
       route_info_weight: 0.2
-      route_info_xs_263b49b5_length: 0.2
+      route_info_xs_643222c6_length: 0.2
       width: 0.5
     settings:
       cross_section: strip_heater_metal

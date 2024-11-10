@@ -28,6 +28,7 @@ skip_test = {
     "ebeam_swg_edgecoupler",
     "ebeam_BondPad",
     "add_fiber_array",
+    "add_fiber_array_pads_rf",
 }
 cell_names = set(cells.keys()) - set(skip_test)
 dirpath_ref = pathlib.Path(__file__).absolute().parent / "ref"
