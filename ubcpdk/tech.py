@@ -13,7 +13,7 @@ from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 from gdsfactory.cross_section import get_cross_sections
 from gdsfactory.technology import LayerLevel, LayerMap, LayerStack
-from gdsfactory.typings import Callable, Layer, LayerSpec, Optional
+from gdsfactory.typings import Callable, Layer, LayerSpec
 from pydantic import BaseModel
 
 from ubcpdk.config import PATH
@@ -50,7 +50,7 @@ LAYER = LayerMapUbc
 def add_labels_to_ports_optical(
     component: Component,
     label_layer: LayerSpec = LAYER.TEXT,
-    port_type: Optional[str] = "optical",
+    port_type: str | None = "optical",
     **kwargs,
 ) -> Component:
     """Add labels to component ports.

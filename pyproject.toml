@@ -5,26 +5,20 @@ build-backend = "flit_core.buildapi"
 requires = ["flit_core >=3.2,<4"]
 
 [project]
-authors = [
-  {name = "gdsfactory", email = "contact@gdsfactory.com"}
-]
+authors = [{name = "gdsfactory", email = "contact@gdsfactory.com"}]
 classifiers = [
   "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Operating System :: OS Independent"
 ]
-dependencies = [
-  "gdsfactory~=8.18.0",
-  "gplugins[sax]>=1,<2"
-]
+dependencies = ["gdsfactory~=9.0.0", "gplugins[sax,tidy3d]~=1.3.0", "jsondiff"]
 description = "ubcpdk pdk"
 keywords = ["python"]
 license = {file = "LICENSE"}
 name = "ubcpdk"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11,<3.13"
 version = "2.7.0"
 
 [project.optional-dependencies]
@@ -32,13 +26,10 @@ dev = [
   "pytest",
   "pytest-cov",
   "pytest_regressions",
+  "pytest-github-actions-annotate-failures",
   "pre-commit"
 ]
-docs = [
-  "autodoc_pydantic",
-  "jupytext",
-  "jupyter-book==1.0.3"
-]
+docs = ["autodoc_pydantic", "jupytext", "jupyter-book==1.0.3"]
 
 [tool.codespell]
 ignore-words-list = "te, te/tm, te, ba, fpr, fpr_spacing, ro, nd, donot, schem"

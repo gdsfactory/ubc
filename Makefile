@@ -2,8 +2,10 @@ install:
 	pip install -e .[dev,docs]
 	python install_tech.py
 
-dev: install
-	pre-commit install
+dev:
+	uv venv -p 3.12
+	uv sync --all-extras
+	uv run pre-commit install
 
 update-pre:
 	pre-commit autoupdate
@@ -13,6 +15,9 @@ tech:
 
 test:
 	pytest -s
+
+uv-test:
+	uv run pytest -s
 
 cov:
 	pytest --cov=ubcpdk

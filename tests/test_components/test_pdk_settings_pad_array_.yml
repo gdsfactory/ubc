@@ -1,15 +1,15 @@
 info: {}
-name: pad_array_PFpad_Mgdsfac_1ba46877
+name: pad_array_PFpad_Mgdsfac_f7490298
 settings:
+  auto_rename_ports: false
   centered_ports: false
+  column_pitch: 125
   columns: 6
   layer: MTOP
-  pad: Fpad_Mgdsfactorypcomponentsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8
+  pad: Fpad_Mgdsfactorypcomponentsppadsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8
   port_orientation: 0
+  row_pitch: 125
   rows: 1
   size:
   - 100
   - 100
-  spacing:
-  - 125
-  - 125

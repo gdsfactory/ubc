@@ -3,12 +3,10 @@
 from functools import cache, partial
 
 import gdsfactory as gf
-from gdsfactory import Component
+from gdsfactory import Component, ComponentReference
 from gdsfactory.typings import (
-    ComponentReference,
     ComponentSpec,
     CrossSectionSpec,
-    Optional,
 )
 
 from ubcpdk import tech
@@ -29,6 +27,7 @@ def bend_euler(cross_section="strip", **kwargs) -> Component:
 
 bend_euler180 = partial(bend_euler, angle=180)
 bend = bend_euler
+bend_s = gf.c.bend_s
 
 
 def straight(
@@ -446,7 +445,7 @@ def via_stack_heater_mtop(size=(10, 10)) -> gf.Component:
 
 def get_input_label_text(
     gc: ComponentReference,
-    component_name: Optional[str] = None,
+    component_name: str | None = None,
     username: str = CONFIG.username,
 ) -> str:
     """Return label for port and a grating coupler.
@@ -475,7 +474,7 @@ def get_input_label_text(
 
 def add_fiber_array(
     component: ComponentSpec = straight,
-    component_name: Optional[str] = None,
+    component_name: str | None = None,
     gc_port_name: str = "o1",
     with_loopback: bool = False,
     fanout_length: float = 0.0,
@@ -792,7 +791,7 @@ def add_label_electrical(component: Component, text: str, port_name: str = "e2")
     return component
 
 
-pad_array = partial(gf.components.pad_array, pad=pad, spacing=(125, 125))
+pad_array = partial(gf.components.pad_array, pad=pad, column_pitch=125, row_pitch=125)
 add_pads_rf = partial(
     gf.routing.add_electrical_pads_top,
     component="ring_single_heater",
@@ -814,7 +813,7 @@ def add_fiber_array_pads_rf(
     username: str = CONFIG.username,
     orientation: float = 0,
     pad_yspacing: float = 50,
-    component_name: Optional[str] = None,
+    component_name: str | None = None,
     **kwargs,
 ) -> Component:
     """Returns fiber array with label and electrical pads.
@@ -855,7 +854,6 @@ def add_pads(
     """
     c0 = gf.get_component(component)
     text = f"elec_{username}-{clean_name(c0.name)}_G"
-    c0._locked = False
     c0 = add_label_electrical(c0, text=text)
     return add_pads_rf(component=c0, **kwargs)
 

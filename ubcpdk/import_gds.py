@@ -31,7 +31,9 @@ def import_gds(
 
     for shape in c.shapes(layer_pin).each(kf.kdb.Shapes.SPaths):
         path = shape.path
-        p1, p2 = list(path.each_point())
+        assert isinstance(path, kf.kdb.Path)
+        dpath = path.to_dtype(gf.kcl.dbu)
+        p1, p2 = list(dpath.each_point())
         v = p2 - p1
         if v.x < 0:
             orientation = 2
@@ -43,7 +45,7 @@ def import_gds(
             orientation = 3
 
         c.create_port(
-            width=path.width,
+            width=dpath.width,
             trans=kf.kdb.Trans(orientation, False, path.bbox().center().to_v()),
             layer=layer_port,
             port_type=port_type,
