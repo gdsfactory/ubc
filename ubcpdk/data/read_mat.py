@@ -1,9 +1,9 @@
 import numpy as np
-from gdsfactory.typings import PathType, Tuple
+from gdsfactory.typings import PathType
 from scipy.io import loadmat
 
 
-def read_mat(filename: PathType, port: int = 0) -> Tuple[np.ndarray, np.ndarray]:
+def read_mat(filename: PathType, port: int = 0) -> tuple[np.ndarray, np.ndarray]:
     """Reads .mat file and returns 2 np.arrays (wavelength, power).
 
     input: (.mat data download filename, port response)

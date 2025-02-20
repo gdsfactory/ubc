@@ -9,9 +9,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -25,9 +25,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -41,9 +41,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -57,9 +57,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -73,9 +73,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -89,9 +89,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -105,9 +105,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -121,9 +121,9 @@ instances:
       route_info_length: 16.637
       route_info_min_bend_radius: 7.061
       route_info_n_bend_90: 1
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 16.637
+      route_info_type: strip
       route_info_weight: 16.637
-      route_info_xs_c8b8e980_length: 16.637
       width: 0.5
     settings:
       cross_section: strip
@@ -140,17 +140,19 @@ instances:
     info:
       length: 320
       route_info_length: 320
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 320
+      route_info_type: strip
       route_info_weight: 320
-      route_info_xs_c8b8e980_length: 320
       width: 0.5
     settings:
       cross_section: strip
       length: 320
       npoints: 2
+      width: null
   sxt:
     component: straight_heater_metal
     info:
+      length: 320
       resistance: 0
     settings:
       cross_section: strip
@@ -160,53 +162,57 @@ instances:
     info:
       length: 7
       route_info_length: 7
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 7
+      route_info_type: strip
       route_info_weight: 7
-      route_info_xs_c8b8e980_length: 7
       width: 0.5
     settings:
       cross_section: strip
       length: 7
       npoints: 2
+      width: null
   syl:
     component: straight
     info:
       length: 7
       route_info_length: 7
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 7
+      route_info_type: strip
       route_info_weight: 7
-      route_info_xs_c8b8e980_length: 7
       width: 0.5
     settings:
       cross_section: strip
       length: 7
       npoints: 2
+      width: null
   sytl:
     component: straight
     info:
       length: 2
       route_info_length: 2
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 2
+      route_info_type: strip
       route_info_weight: 2
-      route_info_xs_c8b8e980_length: 2
       width: 0.5
     settings:
       cross_section: strip
       length: 2
       npoints: 2
+      width: null
   sytr:
     component: straight
     info:
       length: 2
       route_info_length: 2
-      route_info_type: xs_c8b8e980
+      route_info_strip_length: 2
+      route_info_type: strip
       route_info_weight: 2
-      route_info_xs_c8b8e980_length: 2
       width: 0.5
     settings:
       cross_section: strip
       length: 2
       npoints: 2
+      width: null
 name: mzi_heater_DL10_LX320
 nets:
 - p1: b1,o1
