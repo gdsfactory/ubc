@@ -11,35 +11,42 @@ It provides a fully python driven flow alternative for the most advanced users t
 
 ## Installation
 
+We recommend `uv`
+
+```bash
+# On macOS and Linux.
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+```bash
+# On Windows.
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
 ### Installation for users
 
-Use python3.10 or python3.11. We recommend [VSCode](https://code.visualstudio.com/) as an IDE.
+Use python 3.11, 3.12 or 3.13. We recommend [VSCode](https://code.visualstudio.com/) as an IDE.
 
-If you don't have python installed on your system you can [download anaconda](https://www.anaconda.com/download/)
-
-Once you have python installed, open Anaconda Prompt as Administrator and then install the latest gdsfactory using pip.
-
-![anaconda prompt](https://i.imgur.com/eKk2bbs.png)
 ```
-pip install ubcpdk --upgrade
+uv pip install cspdk --upgrade
 ```
 
 Then you need to restart Klayout to make sure the new technology installed appears.
 
-### Installation for developers
+### Installation for contributors
 
-For developers you need to fork, `git clone` the GitHub repository, git add, git commit, git push and merge request your changes.
 
-```
+Then you can install with:
+
+```bash
 git clone https://github.com/gdsfactory/ubc.git
 cd ubc
-pip install -e . pre-commit
-pre-commit install
-python install_tech.py
+uv venv --python 3.12
+uv sync --extra docs --extra dev
 ```
 
 ## Documentation
 
-- [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
 - [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
+- [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
 - [ubc1](https://github.com/gdsfactory/ubc1)
