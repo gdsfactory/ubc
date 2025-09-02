@@ -1,14 +1,28 @@
 from collections.abc import Callable
 from functools import cache
 from pathlib import Path
+from typing import Any
 
 import gdsfactory as gf
 import kfactory as kf
 from gdsfactory.component import Component
-from gdsfactory.read.import_gds import kcell_to_component
 from kfactory import KCLayout
 
 from ubcpdk.tech import LAYER
+
+
+def kcell_to_component(kcell: kf.kcell.ProtoTKCell[Any]) -> Component:
+    c = Component()
+    c.name = kcell.name
+    c.kdb_cell.copy_tree(kcell.kdb_cell)
+    c.copy_meta_info(kcell.kdb_cell)
+    c.get_meta_data()
+    c.add_ports(kcell.ports)
+
+    for ci in c.called_cells():
+        c.kcl[ci].get_meta_data()
+
+    return c
 
 
 @cache
@@ -20,7 +34,16 @@ def import_gds(
     layer_port=LAYER.WG,
     post_process: Callable[[Component], Component] | None = None,
 ) -> Component:
-    """Returns klayout cell from GDS."""
+    """Returns klayout cell from GDS.
+
+    Args:
+        gdspath: path to gds.
+        cellname: cell name. If None uses top cell.
+        port_type: port type.
+        layer_pin: layer where pins are drawn.
+        layer_port: layer where ports are drawn.
+        post_process: function to apply to component after import.
+    """
     temp_kcl = KCLayout(name=str(gdspath))
     temp_kcl.read(gdspath)
     cellname = cellname or temp_kcl.top_cell().name
@@ -29,6 +52,7 @@ def import_gds(
     if post_process:
         post_process(c)
 
+    layer_pin = gf.get_layer_info(layer_pin)
     for shape in c.shapes(layer_pin).each(kf.kdb.Shapes.SPaths):
         path = shape.path
         assert isinstance(path, kf.kdb.Path)
@@ -54,17 +78,3 @@ def import_gds(
     c = kcell_to_component(c)
     c.function_name = cellname
     return c
-
-
-if __name__ == "__main__":
-    # from gdsfactory.write_cells import get_import_gds_script
-    # script = get_import_gds_script(dirpath=PATH.gds, module="ubcpdk.components")
-    # print(script)
-
-    # gdsname = "ebeam_crossing4.gds"
-    gdsname = "ebeam_y_1550.gds"
-    c = gf.Component("my_component")
-    wg1 = c << import_gds(gdsname)
-    wg2 = c << import_gds(gdsname)
-    wg2.dmove((100, 0))
-    c.show()

@@ -48,7 +48,6 @@ PDK = Pdk(
 
 GPATH.sparameters = PATH.sparameters
 GPATH.interconnect = PATH.interconnect_cml_path
-PDK.activate()
 
 
 if __name__ == "__main__":

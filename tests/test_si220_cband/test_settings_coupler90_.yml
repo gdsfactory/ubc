@@ -1,0 +1,7 @@
+info: {}
+name: coupler90_gdsfactorypco_9253bfe3
+settings:
+  bend: bend_euler
+  cross_section: strip
+  gap: 0.2
+  straight: straight

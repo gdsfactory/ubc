@@ -1,0 +1,15 @@
+instances:
+  ebeam_gc_te1550_66000_0_A180_M:
+    component: ebeam_gc_te1550
+    info: {}
+    settings: {}
+name: gc_te1550
+nets: []
+placements:
+  ebeam_gc_te1550_66000_0_A180_M:
+    mirror: true
+    rotation: 180
+    x: 66
+    y: 0
+ports:
+  o1: ebeam_gc_te1550_66000_0_A180_M,o1

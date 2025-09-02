@@ -1,0 +1,17 @@
+info:
+  length: 10
+  width1: 0.5
+  width2: 0.5
+name: taper_gdsfactorypcompon_00f8e284
+settings:
+  cross_section: strip
+  length: 10
+  port_names:
+  - o1
+  - o2
+  port_types:
+  - optical
+  - optical
+  width1: 0.5
+  with_bbox: true
+  with_two_ports: true

@@ -16,8 +16,8 @@ tech:
 test:
 	pytest -s
 
-uv-test:
-	uv run pytest -s
+test-force:
+	uv run pytest -s --force-regen
 
 cov:
 	pytest --cov=ubcpdk

@@ -1,0 +1,7 @@
+info: {}
+name: add_fiber_array_pads_rf_1ec5681a
+settings:
+  component: ring_single_heater
+  orientation: 0
+  pad_yspacing: 50
+  username: JoaquinMatres

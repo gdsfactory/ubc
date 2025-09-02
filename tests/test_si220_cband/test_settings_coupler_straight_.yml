@@ -1,0 +1,6 @@
+info: {}
+name: coupler_straight_gdsfac_f695a250
+settings:
+  cross_section: strip
+  gap: 0.2
+  length: 10

@@ -1,0 +1,24 @@
+info:
+  size:
+  - 75
+  - 75
+  xsize: 75
+  ysize: 75
+name: pad_gdsfactorypcomponen_4e7e9a61
+settings:
+  bbox_layers:
+  - PAD_OPEN
+  bbox_offsets:
+  - -1.8
+  layer: M2_ROUTER
+  port_inclusion: 0
+  port_orientation: 0
+  port_orientations:
+  - 180
+  - 90
+  - 0
+  - -90
+  port_type: pad
+  size:
+  - 75
+  - 75

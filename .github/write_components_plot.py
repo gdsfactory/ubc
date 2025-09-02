@@ -71,9 +71,12 @@ Cells
 .. plot::
   :include-source:
 
-  import ubcpdk
+  from ubcpdk import PDK
+  from ubcpdk import components
 
-  c = ubcpdk.components.{name}({kwargs})
+  PDK.activate()
+
+  c = components.{name}({kwargs})
   c.plot()
 
 """

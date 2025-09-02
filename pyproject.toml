@@ -12,7 +12,11 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Operating System :: OS Independent"
 ]
-dependencies = ["gdsfactory~=9.0.0", "gplugins[sax,tidy3d]~=1.3.0", "jsondiff"]
+dependencies = [
+    "gdsfactory~=9.13.2",
+    "gplugins[sax,tidy3d]~=1.4.2",
+    "jsondiff"
+    ]
 description = "ubcpdk pdk"
 keywords = ["python"]
 license = {file = "LICENSE"}

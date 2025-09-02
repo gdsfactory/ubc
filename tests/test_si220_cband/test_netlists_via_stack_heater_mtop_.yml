@@ -1,0 +1,51 @@
+instances:
+  compass_gdsfactorypcomp_4e091ef5_0_0:
+    component: compass
+    info: {}
+    settings:
+      auto_rename_ports: true
+      layer: M1_HEATER
+      port_inclusion: 0
+      port_orientations:
+      - 180
+      - 90
+      - 0
+      - -90
+      port_type: null
+      size:
+      - 10
+      - 10
+  compass_gdsfactorypcomp_c994f878_0_0:
+    component: compass
+    info: {}
+    settings:
+      auto_rename_ports: false
+      layer: M2_ROUTER
+      port_inclusion: 0
+      port_orientations:
+      - 180
+      - 90
+      - 0
+      - -90
+      port_type: electrical
+      size:
+      - 10
+      - 10
+name: via_stack_heater_mtop_S10_10
+nets: []
+placements:
+  compass_gdsfactorypcomp_4e091ef5_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+  compass_gdsfactorypcomp_c994f878_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports:
+  e1: compass_gdsfactorypcomp_c994f878_0_0,e1
+  e2: compass_gdsfactorypcomp_c994f878_0_0,e2
+  e3: compass_gdsfactorypcomp_c994f878_0_0,e3
+  e4: compass_gdsfactorypcomp_c994f878_0_0,e4

@@ -262,6 +262,7 @@ def get_layer_stack(
 class Tech(BaseModel):
     fiber_array_spacing: float = 250.0
     wg_width: float = 0.5
+    gap_strip: float = 0.2
 
 
 TECH = Tech()

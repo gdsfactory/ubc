@@ -1,0 +1,14 @@
+instances:
+  BondPad11_50000_50000_A180:
+    component: BondPad$1$1
+    info: {}
+    settings: {}
+name: ebeam_BondPad
+nets: []
+placements:
+  BondPad11_50000_50000_A180:
+    mirror: false
+    rotation: 180
+    x: 50
+    y: 50
+ports: {}

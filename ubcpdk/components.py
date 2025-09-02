@@ -12,10 +12,7 @@ from gdsfactory.typings import (
 from ubcpdk import tech
 from ubcpdk.config import CONFIG, PATH
 from ubcpdk.import_gds import import_gds
-from ubcpdk.tech import (
-    LAYER,
-    add_pins_bbox_siepic,
-)
+from ubcpdk.tech import LAYER, add_pins_bbox_siepic, TECH
 
 um = 1e-6
 
@@ -69,46 +66,12 @@ info1550te = dict(polarization="te", wavelength=1.55)
 info1310te = dict(polarization="te", wavelength=1.31)
 info1550tm = dict(polarization="tm", wavelength=1.55)
 info1310tm = dict(polarization="tm", wavelength=1.31)
-thermal_phase_shifter_names = [
-    "thermal_phase_shifter_multimode_500um",
-    "thermal_phase_shifter_te_1310_500um",
-    "thermal_phase_shifter_te_1310_500um_lowloss",
-    "thermal_phase_shifter_te_1550_500um_lowloss",
-]
 
 prefix_te1550 = prefix_tm1550 = prefix_te1310 = prefix_tm1130 = "o2"
 
 
 def clean_name(name: str) -> str:
     return name.replace("_", ".")
-
-
-def thermal_phase_shifter0() -> gf.Component:
-    """Return thermal_phase_shifters fixed cell."""
-    return import_gds(
-        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[0]
-    )
-
-
-def thermal_phase_shifter1() -> gf.Component:
-    """Return thermal_phase_shifters fixed cell."""
-    return import_gds(
-        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[1]
-    )
-
-
-def thermal_phase_shifter2() -> gf.Component:
-    """Return thermal_phase_shifters fixed cell."""
-    return import_gds(
-        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[2]
-    )
-
-
-def thermal_phase_shifter3() -> gf.Component:
-    """Return thermal_phase_shifters fixed cell."""
-    return import_gds(
-        PATH.gds / "thermal_phase_shifters.gds", cellname=thermal_phase_shifter_names[3]
-    )
 
 
 def ebeam_BondPad() -> gf.Component:
@@ -252,7 +215,7 @@ def gc_te1310() -> gf.Component:
     c = gf.Component()
     gc = import_gds(PATH.gds / "ebeam_gc_te1310.gds")
     gc_ref = c << gc
-    gc_ref.dmirror()
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -275,7 +238,7 @@ def gc_te1310_8deg() -> gf.Component:
     c = gf.Component()
     gc = import_gds(PATH.gds / "ebeam_gc_te1310_8deg.gds")
     gc_ref = c << gc
-    gc_ref.dmirror()
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -298,7 +261,7 @@ def gc_te1310_broadband() -> gf.Component:
     c = gf.Component()
     gc = import_gds(PATH.gds / "ebeam_gc_te1310_broadband.gds")
     gc_ref = c << gc
-    gc_ref.dmirror()
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1310
@@ -311,7 +274,6 @@ def gc_te1310_broadband() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1310te)
-    c.flatten()
     return c
 
 
@@ -321,7 +283,7 @@ def gc_te1550() -> gf.Component:
     c = gf.Component()
     gc = import_gds(PATH.gds / "ebeam_gc_te1550.gds")
     gc_ref = c << gc
-    gc_ref.dmirror()
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -334,7 +296,6 @@ def gc_te1550() -> gf.Component:
         orientation=0,
     )
     c.info.update(info1550te)
-    c.flatten()
     return c
 
 
@@ -344,7 +305,7 @@ def gc_te1550_90nmSlab() -> gf.Component:
     c = gf.Component()
     gc = import_gds(PATH.gds / "ebeam_gc_te1550_90nmSlab.gds")
     gc_ref = c << gc
-    gc_ref.dmirror()
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -367,7 +328,7 @@ def gc_te1550_broadband() -> gf.Component:
     c = gf.Component()
     gc = import_gds(PATH.gds / "ebeam_gc_te1550_broadband.gds")
     gc_ref = c << gc
-    gc_ref.dmirror()
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_te1550
@@ -390,7 +351,7 @@ def gc_tm1550() -> gf.Component:
     c = gf.Component()
     gc = import_gds(PATH.gds / "ebeam_gc_tm1550.gds")
     gc_ref = c << gc
-    gc_ref.dmirror()
+    gc_ref.mirror()
     c.add_ports(gc_ref.ports)
     c.copy_child_info(gc)
     name = prefix_tm1550
@@ -462,9 +423,9 @@ def get_input_label_text(
         "TE",
         "TM",
     ], f"Not valid polarization {polarization.upper()!r} in [TE, TM]"
-    assert (
-        isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0
-    ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
+    assert isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0, (
+        f"{wavelength} is Not valid 1000 < wavelength < 2000"
+    )
 
     name = component_name
     name = clean_name(name)
@@ -472,6 +433,7 @@ def get_input_label_text(
     return f"opt_in_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}"
 
 
+@gf.cell
 def add_fiber_array(
     component: ComponentSpec = straight,
     component_name: str | None = None,
@@ -503,8 +465,9 @@ def add_fiber_array(
 
     """
     c = gf.Component()
+    component = gf.get_component(component)
 
-    ref = c << gf.routing.add_fiber_array(
+    component_with_grating_coupler = gf.routing.add_fiber_array(
         straight=straight,
         bend=bend,
         component=component,
@@ -517,7 +480,9 @@ def add_fiber_array(
         taper=taper,
         **kwargs,
     )
-    ref.drotate(-90)
+    component_with_grating_coupler.name = component.name + "_with_gc"
+    ref = c << component_with_grating_coupler
+    ref.rotate(-90)
     c.add_ports(ref.ports)
     c.copy_child_info(component)
 
@@ -622,10 +587,21 @@ def dbr(
 
 
 @gf.cell
-def coupler(**kwargs) -> gf.Component:
-    c = gf.components.coupler(**kwargs).dup()
-    c.flatten()
-    return c
+def coupler(length: float = 14.5, gap: float = TECH.gap_strip) -> gf.Component:
+    """Returns Symmetric coupler.
+
+    Args:
+        length: of coupling region in um.
+        gap: of coupling region in um.
+    """
+    return gf.c.coupler(
+        length=length,
+        gap=gap,
+        dy=4.0,
+        dx=10.0,
+        cross_section="strip",
+        allow_min_radius_violation=False,
+    )
 
 
 @gf.cell
@@ -678,7 +654,7 @@ def coupler_ring(
     gap: float = 0.2,
     radius: float = 10.0,
     length_x: float = 4.0,
-    length_extension: float = 3,
+    length_extension: float | None = None,
     bend=bend,
     cross_section="strip",
     **kwargs,
@@ -691,7 +667,7 @@ def coupler_ring(
         bend=bend,
         cross_section=cross_section,
         **kwargs,
-    ).dup()
+    ).copy()
     c = add_pins_bbox_siepic(c)
     c.flatten()
     return c
@@ -704,6 +680,7 @@ def ring_single(
     length_x: float = 4.0,
     length_y: float = 0.6,
 ) -> Component:
+    """Returns single ring resonator."""
     return gf.components.ring_single(
         gap=gap,
         radius=radius,
@@ -722,6 +699,7 @@ def ring_double(
     length_x: float = 4.0,
     length_y: float = 0.6,
 ) -> Component:
+    """Returns double ring resonator."""
     return gf.components.ring_double(
         gap=gap,
         radius=radius,
@@ -807,7 +785,7 @@ add_pads_bot = partial(
 )
 
 
-@cache
+@gf.cell
 def add_fiber_array_pads_rf(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,
@@ -832,17 +810,17 @@ def add_fiber_array_pads_rf(
     component_name = clean_name(component_name)
     text = f"elec_{username}-{component_name}_G"
     c1 = add_pads_rf(component=c0, orientation=orientation, spacing=(0, pad_yspacing))
+    c1.name = text
 
     add_label_electrical(component=c1, text=text)
-    # ports_names = [port.name for port in c0.ports if port.orientation == orientation]
-    # c1 = add_pads_top(component=c0, port_names=ports_names)
     return add_fiber_array(component=c1, component_name=component_name, **kwargs)
 
 
-@cache
+@gf.cell
 def add_pads(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,
+    label_port_name="l_e1",
     **kwargs,
 ) -> Component:
     """Returns fiber array with label and electrical pads.
@@ -852,47 +830,7 @@ def add_pads(
         username: for the label.
         kwargs: for add_fiber_array.
     """
-    c0 = gf.get_component(component)
+    c0 = gf.get_component(component).copy()
     text = f"elec_{username}-{clean_name(c0.name)}_G"
-    c0 = add_label_electrical(c0, text=text)
+    c0 = add_label_electrical(c0, text=text, port_name=label_port_name)
     return add_pads_rf(component=c0, **kwargs)
-
-
-if __name__ == "__main__":
-    # c = straight_heater_metal()
-    # c = thermal_phase_shifter0()
-    # c = straight_one_pin()
-    # c = ebeam_adiabatic_te1550()
-    # c = ebeam_bdc_te1550()
-    # c = gc_tm1550()
-    # c = spiral()
-    # c = add_pads_top()
-
-    # c.pprint_ports()
-    # c.pprint_ports()
-    # c = straight()
-    # c = terminator_short()
-    # c = add_fiber_array_pads_rf(c)
-
-    # c = ring_double(length_y=10)
-    # c = ring_with_crossing()
-    # c = straight_heater_metal()
-    # c = add_fiber_array(straight_heater_metal)
-    # c.pprint_ports()
-    # c = coupler_ring()
-    # c = dbr_cavity_te()
-    # c = dbr_cavity()
-    # c = ring_single(radius=12)
-    # c = bend_euler()
-    # c = mzi()
-    # c = spiral()
-    # c = pad_array()
-    # c = bend_euler()
-    # c = mzi_heater()
-    # c = ring_with_crossing()
-    # c = ring_single()
-    # c = ring_double()
-    # c = ring_double(radius=12, length_x=2, length_y=2)
-    # c = straight()
-    c = add_fiber_array_pads_rf(component_name="ring_single_heater")
-    c.show()
