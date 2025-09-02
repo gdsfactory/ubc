@@ -12,12 +12,13 @@ from ubcpdk.tech import LAYER
 
 
 def kcell_to_component(kcell: kf.kcell.ProtoTKCell[Any]) -> Component:
+    kcell.set_meta_data()
+
     c = Component()
     c.name = kcell.name
     c.kdb_cell.copy_tree(kcell.kdb_cell)
     c.copy_meta_info(kcell.kdb_cell)
     c.get_meta_data()
-    c.add_ports(kcell.ports)
 
     for ci in c.called_cells():
         c.kcl[ci].get_meta_data()
@@ -48,6 +49,7 @@ def import_gds(
     temp_kcl.read(gdspath)
     cellname = cellname or temp_kcl.top_cell().name
     kcell = temp_kcl[cellname]
+
     c = kcell_to_component(kcell)
     if post_process:
         post_process(c)
@@ -75,6 +77,13 @@ def import_gds(
             port_type=port_type,
         )
     c.auto_rename_ports()
-    c = kcell_to_component(c)
     c.function_name = cellname
     return c
+
+
+if __name__ == "__main__":
+    from ubcpdk.config import PATH
+
+    c = import_gds(PATH.gds / "ebeam_gc_te1310_8deg.gds")
+    c.pprint_ports()
+    c.show()
