@@ -26,6 +26,13 @@ class Path:
     samples = module / "samples"
     data = samples / "data"
     gds = module / "gds"
+
+    gds_ant = gds / "ANT"
+    gds_ebeam = gds / "EBeam"
+    gds_beta = gds / "EBeam_Beta"
+    gds_dream = gds / "EBeam_Dream"
+    gds_single = gds / "EBeam_SiN"
+
     sparameters = repo / "sparameters"
     interconnect_cml_path = module / "simulation" / "lumerical" / "EBeam.cml"
     modes = repo / "modes"
