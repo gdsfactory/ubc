@@ -46,9 +46,6 @@ def mmi1x2(
     )
 
 
-mmi1x2_rib = partial(mmi1x2, length_mmi=32.7, gap_mmi=1.64, cross_section="rib")
-
-
 @gf.cell
 def mmi2x2(
     width: float | None = None,
@@ -82,8 +79,6 @@ def mmi2x2(
         cross_section=cross_section,
     )
 
-
-mmi2x2_rib = partial(mmi2x2, length_mmi=44.8, gap_mmi=0.53, cross_section="rib")
 
 if __name__ == "__main__":
     c = mmi1x2()

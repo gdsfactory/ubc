@@ -4,7 +4,7 @@ from gdsfactory.config import PATH as GPATH
 from gdsfactory.get_factories import get_cells
 from gdsfactory.pdk import Pdk
 
-from ubcpdk import components, data, tech
+from ubcpdk import cells, data, tech
 from ubcpdk.config import CONFIG, PATH
 from ubcpdk.tech import LAYER, LAYER_STACK, LAYER_VIEWS, cross_sections
 
@@ -25,7 +25,7 @@ __all__ = [
     "CONFIG",
     "data",
     "PATH",
-    "components",
+    "cells",
     "tech",
     "LAYER",
     "cells",
@@ -35,10 +35,10 @@ __all__ = [
 ]
 
 
-cells = get_cells(components)
+_cells = get_cells(cells)
 PDK = Pdk(
     name="ubcpdk",
-    cells=cells,
+    cells=_cells,
     cross_sections=cross_sections,
     models=models,
     layers=LAYER,
@@ -48,9 +48,3 @@ PDK = Pdk(
 
 GPATH.sparameters = PATH.sparameters
 GPATH.interconnect = PATH.interconnect_cml_path
-
-
-if __name__ == "__main__":
-    m = get_models(models)
-    for model in m.keys():
-        print(model)

@@ -7,7 +7,7 @@ from ubcpdk.tech import TECH
 
 
 @gf.cell
-def coupler(length: float = 14.5, gap: float = TECH.gap_strip) -> gf.Component:
+def coupler(length: float = 14.5, gap: float = TECH.gap) -> gf.Component:
     """Returns Symmetric coupler.
 
     Args:
@@ -25,28 +25,10 @@ def coupler(length: float = 14.5, gap: float = TECH.gap_strip) -> gf.Component:
 
 
 @gf.cell
-def coupler_rib(length: float = 20, gap: float = TECH.gap_rib) -> gf.Component:
-    """Returns Symmetric coupler.
-
-    Args:
-        length: of coupling region in um.
-        gap: of coupling region in um.
-    """
-    return gf.c.coupler(
-        length=length,
-        gap=gap,
-        dy=3.5,
-        dx=16,
-        cross_section="rib",
-        allow_min_radius_violation=False,
-    )
-
-
-@gf.cell
 def coupler_ring(
     length_x: float = 4,
-    gap: float = TECH.gap_strip,
-    radius: float = TECH.radius_strip,
+    gap: float = TECH.gap,
+    radius: float = TECH.radius,
     bend: ComponentSpec = "bend_euler",
     straight: ComponentSpec = "straight",
     cross_section: str = "strip",
@@ -73,11 +55,3 @@ def coupler_ring(
         cross_section_bend=None,
         length_extension=length_extension,
     )
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-    c = coupler()
-    c.show()

@@ -23,6 +23,7 @@ if not hasattr(CONFIG, "username"):
 class Path:
     module = module
     repo = repo
+    cells = module / "cells"
     samples = module / "samples"
     data = samples / "data"
     gds = module / "gds"
@@ -32,6 +33,12 @@ class Path:
     gds_beta = gds / "EBeam_Beta"
     gds_dream = gds / "EBeam_Dream"
     gds_single = gds / "EBeam_SiN"
+
+    fixed_ant = cells/"fixed_ant.py"
+    fixed_ebeam = cells / "fixed_ebeam.py"
+    fixed_beta = cells / "fixed_beta.py"
+    fixed_dream = cells / "fixed_dream.py"
+    fixed_single = cells / "fixed_single.py"
 
     sparameters = repo / "sparameters"
     interconnect_cml_path = module / "simulation" / "lumerical" / "EBeam.cml"

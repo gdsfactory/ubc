@@ -26,7 +26,7 @@ def all_cells() -> gf.Component:
     cell_matrix = c << gf.pack(cells)[0]
     floorplan = c << gf.c.rectangle(
         size=(cell_matrix.xsize + 20, cell_matrix.ysize + 20),
-        layer=LAYER.m_dataExtent,
+        layer=LAYER.FLOORPLAN,
     )
     floorplan.dcenter = cell_matrix.dcenter
     return c

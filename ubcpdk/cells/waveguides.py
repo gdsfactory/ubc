@@ -26,44 +26,6 @@ def straight(
 
 
 @gf.cell
-def straight_strip(
-    length: float = 10,
-    cross_section: CrossSectionSpec = "strip",
-    width: float | None = None,
-    npoints: int = 2,
-) -> gf.Component:
-    """Returns a Straight waveguide.
-
-    Args:
-        length: straight length (um).
-        cross_section: specification (CrossSection, string or dict).
-        width: width of the waveguide. If None, it will use the width of the cross_section.
-        npoints: number of points.
-    """
-    return gf.c.straight(
-        length=length, cross_section=cross_section, width=width, npoints=npoints
-    )
-
-
-@gf.cell
-def straight_rib(
-    length: float = 10,
-    cross_section: CrossSectionSpec = "rib",
-    width: float | None = None,
-) -> gf.Component:
-    """Returns a Straight waveguide.
-
-    Args:
-        length: straight length (um).
-        cross_section: specification (CrossSection, string or dict).
-        width: width of the waveguide. If None, it will use the width of the cross_section.
-    """
-    return gf.c.straight(
-        length=length, cross_section=cross_section, width=width, npoints=2
-    )
-
-
-@gf.cell
 def bend_euler(
     radius: float | None = None,
     angle: float = 90,
@@ -240,13 +202,3 @@ def bend_s_metal(
         allow_min_radius_violation=allow_min_radius_violation,
         width=width,
     )
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-
-    c = bend_s_metal()
-    c.pprint_ports()
-    c.show()

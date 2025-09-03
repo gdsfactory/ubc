@@ -50,7 +50,7 @@ def straight_heater_meander(
     heater_width: float = 2.5,
     spacing: float = 2,
     cross_section: CrossSectionSpec = "strip",
-    layer_heater: LayerSpec = "HEATER",
+    layer_heater: LayerSpec = "M1_HEATER",
     via_stack: ComponentSpec | None = "via_stack_heater_mtop",
     n: int | None = 3,
     port_orientation1: float | None = None,
@@ -98,6 +98,6 @@ if __name__ == "__main__":
     from ubcpdk import PDK
 
     PDK.activate()
-    c = straight_heater_metal()
+    c = straight_heater_meander()
     c.pprint_ports()
     c.show()

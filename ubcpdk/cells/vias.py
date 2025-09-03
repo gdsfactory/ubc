@@ -22,7 +22,7 @@ def via_stack_heater_mtop(size: Size = (20.0, 10.0)) -> gf.Component:
     """
     return gf.c.via_stack(
         size=size,
-        layers=("HEATER", "PAD"),
+        layers=("M1_HEATER", "M2_ROUTER"),
         layer_offsets=None,
         vias=(None, None),
         layer_to_port_orientations=None,

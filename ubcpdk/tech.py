@@ -263,6 +263,11 @@ class Tech(BaseModel):
     fiber_array_spacing: float = 250.0
     wg_width: float = 0.5
     gap_strip: float = 0.2
+    gap: float = 0.2
+    radius: float = 10.0
+    radius_strip: float = 10.0
+    width: float = 0.5
+    width_metal: float = 1.5
 
 
 TECH = Tech()

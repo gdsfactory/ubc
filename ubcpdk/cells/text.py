@@ -11,7 +11,7 @@ def text_rectangular(
     text: str = "abc",
     size: float = 3,
     justify: str = "left",
-    layer: LayerSpec = "PAD",
+    layer: LayerSpec = "M2_ROUTER",
 ) -> gf.Component:
     """Pixel based font, guaranteed to be manhattan, without acute angles.
 
@@ -29,7 +29,7 @@ def text_rectangular(
 @gf.cell
 def text_rectangular_multi_layer(
     text: str = "abc",
-    layers: LayerSpecs = ("WG", "PAD"),
+    layers: LayerSpecs = ("WG", "M2_ROUTER"),
     text_factory: ComponentSpec = "text_rectangular",
     **kwargs: Any,
 ) -> gf.Component:
