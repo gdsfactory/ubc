@@ -116,6 +116,7 @@ def taper_SiN_750_3000() -> gf.Component:
     """Returns taper_SiN_750_3000 fixed cell."""
     return import_gds(gdsdir / "taper_SiN_750_3000.gds")
 
+
 if __name__ == "__main__":
     from ubcpdk import PDK
 

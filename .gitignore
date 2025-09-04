@@ -25,7 +25,9 @@ poetry.lock
 Pipfile
 modes/
 docs/_autosummary
+
 gds/EBeam_SiN/*.oas
+ubcpdk/gds/ANT/*.oas
 ubcpdk/gds/EBeam/*.oas
 ubcpdk/gds/EBeam_Beta/*.oas
 ubcpdk/gds/EBeam_SiN/*.oas

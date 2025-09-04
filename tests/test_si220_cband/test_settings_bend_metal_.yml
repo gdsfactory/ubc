@@ -1,0 +1,15 @@
+info:
+  dy: 10
+  length: 15.708
+  radius: 10
+  route_info_length: 15.708
+  route_info_metal_routing_length: 15.708
+  route_info_min_bend_radius: 10
+  route_info_n_bend_90: 1
+  route_info_type: metal_routing
+  route_info_weight: 15.708
+  width: 10
+name: bend_metal_RNone_A90_WN_0d3131db
+settings:
+  angle: 90
+  cross_section: metal_routing

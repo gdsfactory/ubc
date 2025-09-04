@@ -35,4 +35,5 @@ def all_cells() -> gf.Component:
 if __name__ == "__main__":
     PDK.activate()
     c = all_cells()
-    c.show()
+    gdspath = c.write_gds()
+    gf.show(gdspath)

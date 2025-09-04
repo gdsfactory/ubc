@@ -1,0 +1,11 @@
+info:
+  length: 682.759
+name: straight_heater_meander_dab24c04
+settings:
+  cross_section: strip
+  heater_width: 2.5
+  layer_heater: M1_HEATER
+  length: 320
+  n: 3
+  spacing: 2
+  via_stack: via_stack_heater_mtop

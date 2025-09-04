@@ -1,0 +1,18 @@
+info:
+  length: 1081.925
+name: spiral_racetrack_MRNone_05d4c3d3
+settings:
+  allow_min_radius_violation: false
+  bend: bend_euler
+  bend_s: bend_s
+  cross_section: strip
+  extra_90_deg_bend: false
+  spacings:
+  - 2
+  - 2
+  - 3
+  - 3
+  - 2
+  - 2
+  straight: straight
+  straight_length: 20

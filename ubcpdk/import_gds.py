@@ -11,17 +11,21 @@ from kfactory import KCLayout
 from ubcpdk.tech import LAYER
 
 
-def kcell_to_component(kcell: kf.kcell.ProtoTKCell[Any]) -> Component:
+def kcell_to_component(
+    kcell: kf.kcell.ProtoTKCell[Any], load_meta: bool = False
+) -> Component:
     kcell.set_meta_data()
 
-    for ci in kcell.called_cells():
-        kcell.kcl[ci].set_meta_data()
+    if load_meta:
+        for ci in kcell.called_cells():
+            kcell.kcl[ci].set_meta_data()
 
     c = Component()
     c.name = kcell.name
     c.kdb_cell.copy_tree(kcell.kdb_cell)
-    c.copy_meta_info(kcell.kdb_cell)
-    c.get_meta_data()
+    if load_meta:
+        c.copy_meta_info(kcell.kdb_cell)
+        c.get_meta_data()
 
     for ci in c.called_cells():
         c.kcl[ci].get_meta_data()
