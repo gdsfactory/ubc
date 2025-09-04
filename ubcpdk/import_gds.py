@@ -41,6 +41,8 @@ def import_gds(
     layer_pin=LAYER.PORT,
     layer_port=LAYER.WG,
     post_process: Callable[[Component], Component] | None = None,
+    convert_paths_to_polygons: bool = True,
+    auto_rename_ports: bool = True,
 ) -> Component:
     """Returns klayout cell from GDS.
 
@@ -51,6 +53,8 @@ def import_gds(
         layer_pin: layer where pins are drawn.
         layer_port: layer where ports are drawn.
         post_process: function to apply to component after import.
+        convert_paths_to_polygons: convert paths to polygons.
+        auto_rename_ports: rename ports.
     """
     temp_kcl = KCLayout(name=str(gdspath))
     temp_kcl.read(gdspath)
@@ -62,6 +66,7 @@ def import_gds(
         post_process(c)
 
     layer_pin = gf.get_layer_info(layer_pin)
+
     for shape in c.shapes(layer_pin).each(kf.kdb.Shapes.SPaths):
         path = shape.path
         assert isinstance(path, kf.kdb.Path)
@@ -78,12 +83,23 @@ def import_gds(
             orientation = 3
 
         c.create_port(
-            width=dpath.width,
+            width=gf.snap.snap_to_grid(path.width, nm=2),
             trans=kf.kdb.Trans(orientation, False, path.bbox().center().to_v()),
             layer=layer_port,
             port_type=port_type,
         )
-    c.auto_rename_ports()
+
+    if convert_paths_to_polygons:
+        for layer in c.kcl.layer_indexes():
+            paths = list(c.shapes(layer).each(kf.kdb.Shapes.SPaths))
+
+            for shape in paths:
+                poly = shape.path.polygon()
+                c.shapes(layer).erase(shape)
+                c.shapes(layer).insert(poly)
+
+    if auto_rename_ports:
+        c.auto_rename_ports()
     c.function_name = cellname
     return c
 

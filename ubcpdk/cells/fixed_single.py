@@ -121,5 +121,7 @@ if __name__ == "__main__":
     from ubcpdk import PDK
 
     PDK.activate()
-    c = crossing_SiN_1550()
+    c = ebeam_Polarizer_TM_1550_UQAM()
+    # gdspath = c.write_gds()
+    # gf.show(gdspath)
     c.show()
