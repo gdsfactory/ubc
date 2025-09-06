@@ -155,5 +155,5 @@ if __name__ == "__main__":
     from ubcpdk import PDK
 
     PDK.activate()
-    c = ebeam_y_adiabatic()
+    c = ebeam_y_1550()
     c.show()
