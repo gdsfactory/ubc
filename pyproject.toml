@@ -88,6 +88,7 @@ select = [
 "docs/notebooks/21_schematic_driven_layout.py" = ['E402']
 "docs/notebooks/31_data_analysis_mzi.py" = ['E402']
 "docs/notebooks/33_data_analysis_dbr.py" = ['E402']
+"ubcpdk/cells/__init__.py" = ["F403"]  # allowing star imports to aggregate cells
 
 [tool.setuptools.package-data]
 mypkg = ["*.csv", "*.yaml"]
