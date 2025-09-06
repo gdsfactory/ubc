@@ -34,7 +34,7 @@ with open(filepath, "w+") as f:
 Cells summary
 =============================
 
-.. currentmodule:: ubcpdk.components
+.. currentmodule:: ubcpdk.cells
 
 .. autosummary::
    :toctree: _autosummary/

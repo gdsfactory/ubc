@@ -40,7 +40,9 @@ build:
 	python -m build
 
 docs:
-	jb build docs
+	uv run python .github/write_components_plot.py
+	uv run python .github/write_components_autodoc.py
+	uv run jb build docs
 
 mask:
 	python ubcpdk/samples/test_masks.py

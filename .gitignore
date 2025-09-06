@@ -13,6 +13,9 @@ ubcpdk/tests/test_components.gds/gds_diff/
 tests/ref/*.oas
 ubcpdk/gds/*.oas
 
+docs/components.rst
+docs/components_plot.rst
+
 # C extensions
 *.so
 *.json

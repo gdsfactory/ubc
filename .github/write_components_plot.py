@@ -55,7 +55,7 @@ Cells
 {name}
 ----------------------------------------------------
 
-.. autofunction:: ubcpdk.components.{name}
+.. autofunction:: ubcpdk.cells.{name}
 
 """
             )
@@ -66,17 +66,16 @@ Cells
 {name}
 ----------------------------------------------------
 
-.. autofunction:: ubcpdk.components.{name}
+.. autofunction:: ubcpdk.cells.{name}
 
 .. plot::
   :include-source:
 
-  from ubcpdk import PDK
-  from ubcpdk import components
+  from ubcpdk import PDK, cells
 
   PDK.activate()
 
-  c = components.{name}({kwargs})
+  c = cells.{name}({kwargs})
   c.plot()
 
 """
