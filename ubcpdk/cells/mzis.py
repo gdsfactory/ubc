@@ -77,9 +77,37 @@ def mzi(
     )
 
 
+@gf.cell
+def mzi_heater(
+    delta_length: float = 10,
+    length_x: float = 200,
+    splitter: ComponentSpec = "ebeam_y_1550",
+    straight_x_top: ComponentSpec = "straight_heater_metal",
+    **kwargs,
+) -> gf.Component:
+    """Mzi with heater on the bottom arm.
+
+    Args:
+        length_x: horizontal length of the top arm (with heater).
+        delta_length: bottom arm vertical extra length.
+        splitter: splitter function.
+        straight_x_top: straight function for the top arm (with heater).
+        kwargs: other arguments for mzi.
+    """
+    c = gf.c.mzi_phase_shifter(
+        length_x=length_x,
+        delta_length=delta_length,
+        splitter=splitter,
+        straight_x_top=straight_x_top,
+        **kwargs,
+    )
+
+    return c
+
+
 if __name__ == "__main__":
     from ubcpdk import PDK
 
     PDK.activate()
-    c = mzi()
+    c = mzi_heater(length_x=100)
     c.show()

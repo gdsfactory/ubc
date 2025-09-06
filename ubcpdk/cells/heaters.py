@@ -14,6 +14,7 @@ def straight_heater_metal(
     with_undercut: bool = False,
     port_orientation1: int | None = None,
     port_orientation2: int | None = None,
+    cross_section: CrossSectionSpec = "strip",
 ) -> gf.Component:
     """Returns a thermal phase shifter.
 
@@ -28,6 +29,7 @@ def straight_heater_metal(
         with_undercut: isolation trenches for higher efficiency.
         port_orientation1: orientation of the first port. None for all orientations.
         port_orientation2: orientation of the second port. None for all orientations.
+        cross_section: for waveguide.
     """
     return gf.c.straight_heater_metal_undercut(
         length=length,
@@ -41,6 +43,7 @@ def straight_heater_metal(
         via_stack="via_stack_heater_mtop",
         heater_taper_length=5.0,
         ohms_per_square=None,
+        cross_section=cross_section,
     )
 
 
