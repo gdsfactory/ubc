@@ -34,7 +34,7 @@ class Path:
     gds_dream = gds / "EBeam_Dream"
     gds_single = gds / "EBeam_SiN"
 
-    fixed_ant = cells/"fixed_ant.py"
+    fixed_ant = cells / "fixed_ant.py"
     fixed_ebeam = cells / "fixed_ebeam.py"
     fixed_beta = cells / "fixed_beta.py"
     fixed_dream = cells / "fixed_dream.py"

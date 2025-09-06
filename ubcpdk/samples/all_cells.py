@@ -2,8 +2,7 @@
 
 import gdsfactory as gf
 
-from ubcpdk import LAYER
-from ubcpdk import PDK
+from ubcpdk import LAYER, PDK
 
 skip = {
     "all_cells",

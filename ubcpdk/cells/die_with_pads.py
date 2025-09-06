@@ -2,8 +2,6 @@
 
 import gdsfactory as gf
 from gdsfactory.typings import (
-    ComponentSpec,
-    CrossSectionSpec,
     Ints,
     LayerSpec,
     Size,

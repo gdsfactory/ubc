@@ -1,10 +1,6 @@
 """Grating couplers."""
 
-from functools import partial
-
 import gdsfactory as gf
-
-from ubcpdk.tech import LAYER
 
 
 @gf.cell

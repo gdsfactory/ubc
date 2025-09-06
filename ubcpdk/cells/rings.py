@@ -1,8 +1,7 @@
 """Ring Resonators."""
 
 import gdsfactory as gf
-from gdsfactory.typings import AngleInDegrees, ComponentSpec, CrossSectionSpec, Float2, CrossSectionSpec
-
+from gdsfactory.typings import AngleInDegrees, ComponentSpec, CrossSectionSpec, Float2
 
 from ubcpdk.tech import TECH
 
@@ -287,6 +286,7 @@ def ring_single_heater(
         length_extension=length_extension,
         via_stack_size=via_stack_size,
     )
+
 
 if __name__ == "__main__":
     from ubcpdk import PDK

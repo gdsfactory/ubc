@@ -43,7 +43,6 @@ script_prefix_dream = script_prefix + prefix_dream
 script_prefix_single = script_prefix + prefix_single
 
 
-
 def get_script(
     gdspath: PathType, module: str | None = None, skip: list[str] | None = None
 ) -> str:
@@ -128,9 +127,7 @@ def get_import_gds_script(
 
 
 if __name__ == "__main__":
-    s = get_import_gds_script(
-        PATH.gds_ant, skip=[], script_prefix=script_prefix_ant
-    )
+    s = get_import_gds_script(PATH.gds_ant, skip=[], script_prefix=script_prefix_ant)
     PATH.fixed_ant.write_text(s)
 
     s = get_import_gds_script(
@@ -138,9 +135,7 @@ if __name__ == "__main__":
     )
     PATH.fixed_ebeam.write_text(s)
 
-    s = get_import_gds_script(
-        PATH.gds_beta, skip=[], script_prefix=script_prefix_beta
-    )
+    s = get_import_gds_script(PATH.gds_beta, skip=[], script_prefix=script_prefix_beta)
     PATH.fixed_beta.write_text(s)
 
     s = get_import_gds_script(
@@ -152,4 +147,3 @@ if __name__ == "__main__":
         PATH.gds_single, skip=[], script_prefix=script_prefix_single
     )
     PATH.fixed_single.write_text(s)
-

@@ -1,19 +1,19 @@
 """This module contains cells that contain other cells."""
 
+from functools import partial
 from typing import Any
 
-from functools import partial
 import gdsfactory as gf
 from gdsfactory.component import Component, ComponentReference
 from gdsfactory.typings import (
+    AngleInDegrees,
     CellSpec,
     ComponentSpec,
     CrossSectionSpec,
-    Strs,
-    AngleInDegrees,
     Float2,
     LayerSpec,
 )
+
 from ubcpdk.config import CONFIG
 from ubcpdk.tech import LAYER
 
@@ -71,9 +71,9 @@ def get_input_label_text(
         "TE",
         "TM",
     ], f"Not valid polarization {polarization.upper()!r} in [TE, TM]"
-    assert isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0, (
-        f"{wavelength} is Not valid 1000 < wavelength < 2000"
-    )
+    assert (
+        isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0
+    ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
 
     name = component_name
     name = clean_name(name)

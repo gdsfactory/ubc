@@ -2,7 +2,7 @@ from functools import partial
 
 import gdsfactory as gf
 
-from ubcpdk import cells, PDK
+from ubcpdk import PDK, cells
 from ubcpdk.tech import LAYER
 
 size = (440, 470)

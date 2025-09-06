@@ -83,7 +83,7 @@ def import_gds(
             orientation = 3
 
         c.create_port(
-            width=gf.snap.snap_to_grid(path.width/1e3, nm=2),
+            width=gf.snap.snap_to_grid(path.width / 1e3, nm=2),
             trans=kf.kdb.Trans(orientation, False, path.bbox().center().to_v()),
             layer=layer_port,
             port_type=port_type,

@@ -3,8 +3,7 @@ from functools import partial
 
 import gdsfactory as gf
 
-import ubcpdk
-from ubcpdk import cells, PDK
+from ubcpdk import PDK, cells
 
 size = (605, 410)
 pack = partial(

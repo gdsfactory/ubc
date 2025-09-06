@@ -8,7 +8,7 @@ nm = 1e-3
 
 
 straight = partial(sm.straight, wl0=1.55, neff=2.4, ng=4.2)
-bend_euler_sc = bend_euler = partial(sm.bend, loss_dB_cm=3.)
+bend_euler_sc = bend_euler = partial(sm.bend, loss_dB_cm=3.0)
 
 ################
 # grating couplers

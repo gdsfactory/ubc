@@ -1,7 +1,5 @@
 """This module contains the building blocks for the CSPDK PDK."""
 
-from functools import partial
-
 import gdsfactory as gf
 from gdsfactory.typings import (
     CrossSectionSpec,

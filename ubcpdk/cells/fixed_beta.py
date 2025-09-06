@@ -1,10 +1,7 @@
-from pathlib import Path
-from functools import partial
 import gdsfactory as gf
 
 from ubcpdk.config import PATH
 from ubcpdk.import_gds import import_gds
-
 
 gdsdir = PATH.gds_beta
 

@@ -1,11 +1,9 @@
 """Tapers."""
 
-from functools import partial
-
 import gdsfactory as gf
 from gdsfactory.typings import CrossSectionSpec
 
-from ubcpdk.tech import LAYER, TECH
+from ubcpdk.tech import TECH
 
 
 @gf.cell
@@ -64,5 +62,3 @@ def taper_metal(
         port_types=("electrical", "electrical"),
         with_bbox=True,
     )
-
-
