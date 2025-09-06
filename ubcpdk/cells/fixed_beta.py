@@ -130,6 +130,24 @@ def siepic_o_pwbstlas_si_BB() -> gf.Component:
 
 
 @gf.cell
-def thermal_phase_shifters() -> gf.Component:
+def thermal_phase_shifter_multimode() -> gf.Component:
     """Returns thermal_phase_shifters fixed cell."""
-    return import_gds(gdsdir / "thermal_phase_shifters.gds")
+    return import_gds(gdsdir / "thermal_phase_shifter_multimode.gds")
+
+
+@gf.cell
+def thermal_phase_shifter_te_1310() -> gf.Component:
+    """Returns thermal_phase_shifters fixed cell."""
+    return import_gds(gdsdir / "thermal_phase_shifter_te_1310.gds")
+
+
+@gf.cell
+def thermal_phase_shifter_te_1310_50() -> gf.Component:
+    """Returns thermal_phase_shifters fixed cell."""
+    return import_gds(gdsdir / "thermal_phase_shifter_te_1310_50.gds")
+
+
+@gf.cell
+def thermal_phase_shifter_te_1550_50() -> gf.Component:
+    """Returns thermal_phase_shifters fixed cell."""
+    return import_gds(gdsdir / "thermal_phase_shifter_te_1550_50.gds")
