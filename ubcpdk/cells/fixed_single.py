@@ -28,12 +28,6 @@ def GC_SiN_TE_1550_8degOxide_BB() -> gf.Component:
 
 
 @gf.cell
-def ULaval() -> gf.Component:
-    """Returns ULaval fixed cell."""
-    return import_gds(gdsdir / "ULaval.gds")
-
-
-@gf.cell
 def ebeam_MMI_2x2_5050_te1310() -> gf.Component:
     """Returns ULaval fixed cell."""
     cell = "ebeam_MMI_2x2_5050_te1310.gds"
@@ -135,7 +129,7 @@ if __name__ == "__main__":
     from ubcpdk import PDK
 
     PDK.activate()
-    c= ebeam_YBranch_te1310()
+    c = ebeam_YBranch_te1310()
     # gdspath = c.write_gds()
     # gf.show(gdspath)
     c.pprint_ports()

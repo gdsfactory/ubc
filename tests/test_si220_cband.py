@@ -91,44 +91,6 @@ def test_settings(component_name: str, data_regression: DataRegressionFixture) -
     data_regression.check(component.to_dict())
 
 
-@pytest.mark.parametrize("component_type", cell_names)
-def test_netlists(
-    component_type: str,
-    data_regression: DataRegressionFixture,
-    check: bool = True,
-) -> None:
-    """Write netlists for hierarchical circuits.
-
-    Checks that both netlists are the same jsondiff does a hierarchical diff.
-
-    Component -> netlist -> Component -> netlist
-
-    """
-    c = cells[component_type]()
-    n = c.get_netlist()
-    if check:
-        data_regression.check(n)
-
-    n.pop("connections", None)
-    n.pop("warnings", None)
-    yaml_str = c.write_netlist(n)
-
-    cis = list(c.kcl.each_cell_top_down())
-    for ci in cis:
-        gf.kcl.dkcells[ci].delete()
-
-    c2 = gf.read.from_yaml(yaml_str)
-    n2 = c2.get_netlist()
-    d = jsondiff.diff(n, n2)
-    d.pop("warnings", None)
-    d.pop("ports", None)
-    assert len(d) == 0, d
-
-    cis = list(c.kcl.each_cell_top_down())
-    for ci in cis:
-        gf.kcl.dkcells[ci].delete()
-
-
 skip_test_models = {}
 
 

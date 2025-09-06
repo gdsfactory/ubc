@@ -10,9 +10,27 @@ gdsdir = PATH.gds_ebeam
 
 
 @gf.cell
-def GCs_BB() -> gf.Component:
+def GC_TE_1310_8degOxide_BB() -> gf.Component:
     """Returns GCs_BB fixed cell."""
-    return import_gds(gdsdir / "GCs_BB.gds")
+    return import_gds(gdsdir / "GC_TE_1310_8degOxide_BB.gds")
+
+
+@gf.cell
+def GC_TE_1550_8degOxide_BB() -> gf.Component:
+    """Returns GCs_BB fixed cell."""
+    return import_gds(gdsdir / "GC_TE_1550_8degOxide_BB.gds")
+
+
+@gf.cell
+def GC_TM_1310_8degOxide_BB() -> gf.Component:
+    """Returns GCs_BB fixed cell."""
+    return import_gds(gdsdir / "GC_TM_1310_8degOxide_BB.gds")
+
+
+@gf.cell
+def GC_TM_1550_8degOxide_BB() -> gf.Component:
+    """Returns GCs_BB fixed cell."""
+    return import_gds(gdsdir / "GC_TM_1550_8degOxide_BB.gds")
 
 
 @gf.cell
