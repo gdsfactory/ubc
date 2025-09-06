@@ -10,13 +10,13 @@ tech:
 	python install_tech.py
 
 test:
-	pytest -s
+	uv run pytest -s
 
 test-force:
 	uv run pytest -s --force-regen
 
 cov:
-	pytest --cov=ubcpdk
+	uv run pytest --cov=ubcpdk
 
 git-rm-merged:
 	git branch -D `git branch --merged | grep -v \* | xargs`
