@@ -1,22 +1,12 @@
 info: {}
-name: mzi_gdsfactorypcomponen_df0654bc
+name: mzi_DL10_Bbend_euler_Ss_a38bc3c2
 settings:
-  add_optical_ports_arms: false
-  auto_rename_ports: true
   bend: bend_euler
   cross_section: strip
   delta_length: 10
-  length_x: 0.1
-  length_y: 2
-  min_length: 0.01
-  mirror_bot: false
-  nbends: 2
-  port1: o1
-  port2: o2
-  port_e0_combiner: o3
-  port_e0_splitter: o3
-  port_e1_combiner: o2
-  port_e1_splitter: o2
-  splitter: ebeam_y_1550
+  port_e0_combiner: o4
+  port_e0_splitter: o4
+  port_e1_combiner: o3
+  port_e1_splitter: o3
+  splitter: coupler
   straight: straight
-  with_splitter: true

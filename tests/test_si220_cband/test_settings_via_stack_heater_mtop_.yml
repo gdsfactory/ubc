@@ -1,8 +1,8 @@
 info:
-  xsize: 10
+  xsize: 20
   ysize: 10
-name: via_stack_heater_mtop_S10_10
+name: via_stack_heater_mtop_S20_10
 settings:
   size:
-  - 10
+  - 20
   - 10

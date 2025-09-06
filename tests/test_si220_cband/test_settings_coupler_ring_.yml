@@ -1,8 +1,10 @@
 info: {}
-name: coupler_ring_G0p2_R10_L_95fe5177
+name: coupler_ring_LX4_G0p2_R_bc79a2ed
 settings:
   bend: bend_euler
   cross_section: strip
   gap: 0.2
+  length_extension: 10
   length_x: 4
   radius: 10
+  straight: straight

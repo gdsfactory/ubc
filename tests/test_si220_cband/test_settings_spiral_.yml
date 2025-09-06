@@ -1,7 +1,8 @@
 info:
   length: 2635.836
-name: spiral_L100_S3_NL6
+name: spiral_L100_CSstrip_S3_NL6
 settings:
+  cross_section: strip
   length: 100
   n_loops: 6
   spacing: 3

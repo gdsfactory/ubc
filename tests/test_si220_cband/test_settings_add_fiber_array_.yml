@@ -5,12 +5,11 @@ info:
   route_info_type: strip
   route_info_weight: 10
   width: 0.5
-name: add_fiber_array_Cstraig_017f14d9
+name: add_fiber_array_Cstraig_97619bb3
 settings:
   component: straight
   cross_section: strip
-  fanout_length: 0
   gc_port_name: o1
-  grating_coupler: gc_te1550
-  straight: straight
-  with_loopback: false
+  gc_rotation: -90
+  grating_coupler: grating_coupler_elliptical
+  radius_loopback: 10

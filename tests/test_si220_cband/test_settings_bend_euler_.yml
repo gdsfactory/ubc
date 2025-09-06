@@ -10,6 +10,9 @@ info:
   route_info_type: strip
   route_info_weight: 16.637
   width: 0.5
-name: bend_euler_CSstrip
+name: bend_euler_RNone_A90_P0_fbfa4d8c
 settings:
+  allow_min_radius_violation: false
+  angle: 90
   cross_section: strip
+  p: 0.5

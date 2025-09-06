@@ -14,7 +14,12 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   b2:
     component: bend_euler
     info:
@@ -30,7 +35,12 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   b3:
     component: bend_euler
     info:
@@ -46,7 +56,12 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   b4:
     component: bend_euler
     info:
@@ -62,7 +77,12 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   b5:
     component: bend_euler
     info:
@@ -78,7 +98,12 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   b6:
     component: bend_euler
     info:
@@ -94,7 +119,12 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   b7:
     component: bend_euler
     info:
@@ -110,7 +140,12 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   b8:
     component: bend_euler
     info:
@@ -126,15 +161,28 @@ instances:
       route_info_weight: 16.637
       width: 0.5
     settings:
+      allow_min_radius_violation: false
+      angle: 90
       cross_section: strip
+      p: 0.5
+      radius: null
+      width: null
   cp1:
-    component: ebeam_y_1550
-    info: {}
-    settings: {}
+    component: coupler
+    info:
+      min_bend_radius: 11.744
+      path_length: 34.88
+    settings:
+      gap: 0.2
+      length: 14.5
   cp2:
-    component: ebeam_y_1550
-    info: {}
-    settings: {}
+    component: coupler
+    info:
+      min_bend_radius: 11.744
+      path_length: 34.88
+    settings:
+      gap: 0.2
+      length: 14.5
   sxb:
     component: straight
     info:
@@ -219,10 +267,10 @@ instances:
       length: 2
       npoints: 2
       width: null
-name: mzi_gdsfactorypcomponen_df0654bc
+name: mzi_DL10_Bbend_euler_Ss_a38bc3c2
 nets:
 - p1: b1,o1
-  p2: cp1,o2
+  p2: cp1,o3
 - p1: b1,o2
   p2: sytl,o1
 - p1: b2,o1
@@ -236,9 +284,9 @@ nets:
 - p1: b4,o1
   p2: sytr,o1
 - p1: b4,o2
-  p2: cp2,o2
+  p2: cp2,o3
 - p1: b5,o1
-  p2: cp1,o3
+  p2: cp1,o4
 - p1: b5,o2
   p2: syl,o1
 - p1: b6,o1
@@ -250,50 +298,50 @@ nets:
 - p1: b7,o2
   p2: sybr,o1
 - p1: b8,o1
-  p2: cp2,o3
+  p2: cp2,o4
 - p1: b8,o2
   p2: sybr,o2
 placements:
   b1:
     mirror: false
     rotation: 0
-    x: 7.4
-    y: 2.75
+    x: 24.5
+    y: 2.35
   b2:
     mirror: false
     rotation: 180
-    x: 27.4
-    y: 24.75
+    x: 44.5
+    y: 24.35
   b3:
     mirror: false
     rotation: 90
-    x: 37.5
-    y: 14.75
+    x: 54.6
+    y: 14.35
   b4:
     mirror: false
     rotation: 270
-    x: 37.5
-    y: 12.75
+    x: 54.6
+    y: 12.35
   b5:
     mirror: true
     rotation: 0
-    x: 7.4
-    y: -2.75
+    x: 24.5
+    y: -1.65
   b6:
     mirror: false
     rotation: 270
-    x: 17.4
-    y: -19.75
+    x: 34.5
+    y: -18.65
   b7:
     mirror: false
     rotation: 0
-    x: 27.5
-    y: -29.75
+    x: 44.6
+    y: -28.65
   b8:
     mirror: false
     rotation: 180
-    x: 47.5
-    y: -2.75
+    x: 64.6
+    y: -1.65
   cp1:
     mirror: false
     rotation: 0
@@ -302,38 +350,40 @@ placements:
   cp2:
     mirror: true
     rotation: 180
-    x: 54.9
+    x: 89.1
     y: 0
   sxb:
     mirror: false
     rotation: 0
-    x: 27.4
-    y: -29.75
+    x: 44.5
+    y: -28.65
   sxt:
     mirror: false
     rotation: 0
-    x: 27.4
-    y: 24.75
+    x: 44.5
+    y: 24.35
   sybr:
     mirror: false
     rotation: 90
-    x: 37.5
-    y: -19.75
+    x: 54.6
+    y: -18.65
   syl:
     mirror: false
     rotation: 270
-    x: 17.4
-    y: -12.75
+    x: 34.5
+    y: -11.65
   sytl:
     mirror: false
     rotation: 90
-    x: 17.4
-    y: 12.75
+    x: 34.5
+    y: 12.35
   sytr:
     mirror: false
     rotation: 90
-    x: 37.5
-    y: 12.75
+    x: 54.6
+    y: 12.35
 ports:
   o1: cp1,o1
-  o2: cp2,o1
+  o2: cp1,o2
+  o3: cp2,o2
+  o4: cp2,o1
