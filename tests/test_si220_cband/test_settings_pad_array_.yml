@@ -1,12 +1,11 @@
 info: {}
-name: pad_array_gdsfactorypco_ad40a518
+name: pad_array_Ppad_C6_R1_CP_49f06d2d
 settings:
   auto_rename_ports: false
   centered_ports: false
   column_pitch: 125
   columns: 6
-  layer: MTOP
-  pad: Fpad_Mgdsfactorypcomponentsppadsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8
-  port_orientation: 0
+  pad: pad
+  port_orientation: 270
   row_pitch: 125
   rows: 1

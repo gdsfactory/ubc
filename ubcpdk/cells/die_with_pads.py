@@ -73,6 +73,7 @@ def pad(
     layer: LayerSpec = "MTOP",
     port_inclusion: float = 0,
     port_orientation: float = 0,
+    port_orientations: Ints | None = (180, 90, 0, -90),
 ) -> gf.Component:
     """Returns rectangular pad with ports.
 
@@ -90,6 +91,7 @@ def pad(
         layer=layer,
         port_inclusion=port_inclusion,
         port_orientation=port_orientation,
+        port_orientations=port_orientations,
         bbox_layers=(LAYER.PAD_OPEN,),
         bbox_offsets=(-1.8,),
     )

@@ -1,15 +1,12 @@
-info:
-  length: 10
-  route_info_length: 10
-  route_info_strip_length: 10
-  route_info_type: strip
-  route_info_weight: 10
-  width: 0.5
-name: add_fiber_array_Cstraig_97619bb3
+info: {}
+name: add_fiber_array_Cring_s_b3293ab5
 settings:
-  component: straight
+  component: ring_single
   cross_section: strip
+  fanout_length: 0
   gc_port_name: o1
-  gc_rotation: -90
-  grating_coupler: grating_coupler_elliptical
-  radius_loopback: 10
+  gc_rotation: 90
+  grating_coupler: ebeam_gc_te1550
+  mirror_grating_coupler: true
+  straight: straight
+  with_loopback: false

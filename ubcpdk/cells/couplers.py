@@ -1,7 +1,7 @@
 """Evanescent Couplers."""
 
 import gdsfactory as gf
-from gdsfactory.typings import ComponentSpec
+from gdsfactory.typings import ComponentSpec, CrossSectionSpec
 
 from ubcpdk.tech import TECH
 
@@ -32,6 +32,7 @@ def coupler_ring(
     bend: ComponentSpec = "bend_euler",
     straight: ComponentSpec = "straight",
     cross_section: str = "strip",
+    cross_section_bend: CrossSectionSpec | None = None,
     length_extension: float = 10,
 ) -> gf.Component:
     """Returns Coupler for ring.
@@ -43,6 +44,7 @@ def coupler_ring(
         bend: 90 degrees bend spec.
         straight: straight spec.
         cross_section: cross_section spec.
+        cross_section_bend: cross_section for the bend. Defaults to cross_section.
         length_extension: length extension for the coupler.
     """
     return gf.c.coupler_ring(
@@ -52,6 +54,6 @@ def coupler_ring(
         bend=bend,
         straight=straight,
         cross_section=cross_section,
-        cross_section_bend=None,
+        cross_section_bend=cross_section_bend,
         length_extension=length_extension,
     )
