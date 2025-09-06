@@ -1,0 +1,12 @@
+info: {}
+name: mzi_1x1_DL10_Bbend_eule_3ed2b238
+settings:
+  bend: bend_euler
+  cross_section: strip
+  delta_length: 10
+  port_e0_combiner: o3
+  port_e0_splitter: o3
+  port_e1_combiner: o2
+  port_e1_splitter: o2
+  splitter: ebeam_y_1550
+  straight: straight
