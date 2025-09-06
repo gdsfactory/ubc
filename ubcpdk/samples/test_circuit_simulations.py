@@ -7,7 +7,7 @@ from ubcpdk import PDK
 
 
 def test_mzi():
-    c = ubcpdk.components.mzi(delta_length=20)
+    c = ubcpdk.cells.mzi(delta_length=20)
     netlist = c.get_netlist()
     models = PDK.models
     circuit, _ = sax.circuit(netlist, models=models)  # type: ignore
@@ -18,7 +18,7 @@ def test_mzi():
 
 
 if __name__ == "__main__":
-    c = ubcpdk.components.mzi(delta_length=20)
+    c = ubcpdk.cells.mzi(delta_length=20)
     netlist = c.get_netlist()
     models = PDK.models
     circuit, _ = sax.circuit(netlist, models=models)  # type: ignore

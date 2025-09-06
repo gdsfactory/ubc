@@ -18,14 +18,14 @@ except ImportError:
     print("gplugins[sax] not installed, no simulation models available.")
     models = {}
 
+components = cells
 
 __version__ = "2.7.0"
-
 __all__ = [
     "CONFIG",
     "data",
     "PATH",
-    "cells",
+    "components",
     "tech",
     "LAYER",
     "cells",
