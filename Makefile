@@ -1,11 +1,7 @@
 install:
-	pip install -e .[dev,docs]
-	python install_tech.py
+	uv sync --extra docs --extra dev
 
-dev:
-	uv venv -p 3.12
-	uv sync --all-extras
-	uv run pre-commit install
+dev: install
 
 update-pre:
 	pre-commit autoupdate

@@ -1,50 +1,41 @@
 name: build docs
-
 on:
   pull_request:
   push:
     branches:
       - main
   workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   build-docs:
     runs-on: ubuntu-latest
-    container: ghcr.io/gdsfactory/gdsfactory:main
+    name: Sphinx docs to gh-pages
     steps:
       - uses: actions/checkout@v4
-      - name: Installing the library
-        env:
-          TIDY3D_USER: ${{ secrets.TIDY3D_EMAIL }}
-          TIDY3D_PASS: ${{ secrets.TIDY3D_PASSWORD }}
-          SIMCLOUD_APIKEY: ${{ secrets.SIMCLOUD_APIKEY }}
-          DISPLAY: 1.0
-          DOCS: True
-          GDSFACTORY_DISPLAY_TYPE: klayout
-        shell: bash -l {0}
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+      - name: Install dependencies
         run: |
           make install
+      - name: make docs
+        run: |
           make docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./docs/_build/html/"
-
   deploy-docs:
     needs: build-docs
     if: ${{ github.ref == 'refs/heads/main' }}
     permissions:
       pages: write
       id-token: write
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
