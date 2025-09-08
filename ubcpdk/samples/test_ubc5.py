@@ -1,15 +1,12 @@
 import gdsfactory as gf
 
 from ubcpdk import PDK, cells
-from ubcpdk.tech import LAYER
-
-size = (440, 470)
-add_gc = cells.add_fiber_array
 
 
 @gf.cell
 def EBeam_JoaquinMatres_5() -> gf.Component:
     """Ring resonators."""
+    size = (440, 470)
 
     rings = []
     for length_x in [4]:
@@ -19,7 +16,7 @@ def EBeam_JoaquinMatres_5() -> gf.Component:
 
     c = gf.Component()
     _ = c << gf.pack(rings, max_size=size, spacing=2)[0]
-    _ = c << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    _ = c << cells.die()
     return c
 
 

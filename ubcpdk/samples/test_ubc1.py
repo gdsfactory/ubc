@@ -1,15 +1,14 @@
 import gdsfactory as gf
 
 from ubcpdk import PDK, cells
-from ubcpdk.tech import LAYER
-
-size = (440, 470)
-add_gc = cells.add_fiber_array
 
 
 @gf.cell
 def EBeam_JoaquinMatres_1() -> gf.Component:
     """Add DBR cavities."""
+    size = (440, 470)
+    add_gc = cells.add_fiber_array
+
     e = [add_gc(cells.straight())]
     e += [add_gc(cells.mzi(delta_length=dl)) for dl in [9.32, 93.19]]
     e += [
@@ -20,7 +19,7 @@ def EBeam_JoaquinMatres_1() -> gf.Component:
 
     c = gf.Component()
     _ = c << gf.pack(e, max_size=size, spacing=2)[0]
-    _ = c << gf.components.rectangle(size=size, layer=LAYER.FLOORPLAN)
+    _ = c << cells.die()
     return c
 
 
