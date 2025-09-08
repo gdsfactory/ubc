@@ -4,13 +4,16 @@
 
 ## [3.0.0](https://github.com/gdsfactory/ubc/releases/tag/v3.0.0) - 2025-09-08
 
-No significant changes.
+- update ubcpdk2 and gdsfactory 9.14.0 [#442](https://github.com/gdsfactory/ubc/pull/442)
+- Update gdsfactory818 [#416](https://github.com/gdsfactory/ubc/pull/416)
+- update_gdsfactory9 [#432](https://github.com/gdsfactory/ubc/pull/432)
+- Update gdsfactory818 [#416](https://github.com/gdsfactory/ubc/pull/416)
+- Update gdsfactory889 [#404](https://github.com/gdsfactory/ubc/pull/404)
 
 
 ## [2.7.0](https://github.com/gdsfactory/ubc/releases/tag/v2.7.0) - 2024-11-10
 
-No significant changes.
-
+- update to gdsfactory 8.18.0
 
 ## [2.6.3](https://github.com/gdsfactory/ubc/releases/tag/v2.6.3) - 2024-09-28
 
