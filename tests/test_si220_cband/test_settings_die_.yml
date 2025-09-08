@@ -1,6 +1,7 @@
 info: {}
-name: die_S440_470
+name: die_S440_470_CFalse
 settings:
+  centered: false
   size:
   - 440
   - 470

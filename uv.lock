@@ -450,6 +450,26 @@ wheels = [
 ]
 
 [[package]]
+name = "doroutes"
+version = "0.2.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "kfactory" },
+    { name = "numpy" },
+    { name = "shapely" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/18/e9/9c99e730b5950cf4d339771876eea69b2b662785b292f054903bee3ba73a/doroutes-0.2.5-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:a40ccc7fe014edbd66a857e22cfdf6760f36d47a00ab21fa16299ac8aae56261", size = 1653846, upload-time = "2025-09-01T21:14:57.796Z" },
+    { url = "https://files.pythonhosted.org/packages/43/ca/d57d1abdd80b1d9b602252ed1d9c0eda086504d7de51c6c622af54b5d664/doroutes-0.2.5-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:eca02795fecc0f3971f91b917bc24da5017a2d54fa323904cadd6783b690f6af", size = 3709905, upload-time = "2025-09-01T21:14:59.06Z" },
+    { url = "https://files.pythonhosted.org/packages/d2/e9/5c51a79651dd13bc753cdf62a161a4ab90c763ba5337526ee4674f48f7f0/doroutes-0.2.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:52cfecc2b23fd16090c58bbf6538cd15cf90c3c2a000e7e3a24f2565258a7230", size = 4024162, upload-time = "2025-09-01T21:15:00.317Z" },
+    { url = "https://files.pythonhosted.org/packages/80/c3/6f186992d98c71be1932f05e9c9f7e74421ed1845b804c24218ad7b08c8f/doroutes-0.2.5-cp311-cp311-win_amd64.whl", hash = "sha256:354cd8534c3a127b157ebab314b3f739d740267228d39e83511ba5452cd3334c", size = 1436703, upload-time = "2025-09-01T21:15:01.563Z" },
+    { url = "https://files.pythonhosted.org/packages/b8/22/31357ec56a15463e8da88af368abe5181afcfe2e8659c7beb3ba2156746f/doroutes-0.2.5-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:ef77ee49a53b5a841ef19cf36352b282f649e6de605c3b84f428078a622d74e8", size = 1652169, upload-time = "2025-09-01T21:15:03.161Z" },
+    { url = "https://files.pythonhosted.org/packages/6d/ca/906da80f7269a50dce163248399061e5a21e7a26de0af24e0a894671f548/doroutes-0.2.5-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:14fc27144e1ff328a7d5e1e419aa6e7f162fa03b4146ab36b9ba8484000a3054", size = 3709831, upload-time = "2025-09-01T21:15:04.265Z" },
+    { url = "https://files.pythonhosted.org/packages/d9/17/7465597bfc22185a2185c613c2405f98c168027d7945f9a11cca8cfd8ff0/doroutes-0.2.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e4fc5b003a191e6fb3b9a77515487a912456474c216e72dd6082d0cb5bd9a069", size = 4024164, upload-time = "2025-09-01T21:15:05.407Z" },
+    { url = "https://files.pythonhosted.org/packages/3f/f5/36f3f0b04b3b2d01f89d65f3beca252bb0cb54930d9ae9c228a2c74f844b/doroutes-0.2.5-cp312-cp312-win_amd64.whl", hash = "sha256:dfb8134ed6602b9ef52f490551c1e3996f7f98d1e46bb41b9aeef914522d1a4b", size = 1436569, upload-time = "2025-09-01T21:15:06.575Z" },
+]
+
+[[package]]
 name = "etils"
 version = "1.12.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3254,6 +3274,7 @@ name = "ubcpdk"
 version = "2.7.0"
 source = { editable = "." }
 dependencies = [
+    { name = "doroutes" },
     { name = "gdsfactory" },
     { name = "gplugins", extra = ["sax", "tidy3d"] },
     { name = "jsondiff" },
@@ -3276,6 +3297,7 @@ docs = [
 [package.metadata]
 requires-dist = [
     { name = "autodoc-pydantic", marker = "extra == 'docs'" },
+    { name = "doroutes", specifier = ">=0.2.0" },
     { name = "gdsfactory", specifier = "~=9.14.0" },
     { name = "gplugins", extras = ["sax", "tidy3d"], specifier = "~=1.4.2" },
     { name = "jsondiff" },
