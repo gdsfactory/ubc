@@ -4,8 +4,7 @@
 
 ## [3.1.0](https://github.com/gdsfactory/ubc/releases/tag/v3.1.0) - 2025-09-08
 
-No significant changes.
-
+- improve models [#443](https://github.com/gdsfactory/ubc/pull/443)
 
 ## [3.0.0](https://github.com/gdsfactory/ubc/releases/tag/v3.0.0) - 2025-09-08
 
