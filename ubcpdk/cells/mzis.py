@@ -165,9 +165,40 @@ def mzi_heater(
     return c
 
 
+@gf.cell
+def mzi_heater_2x2(
+    delta_length: float = 10,
+    length_x: float = 200,
+    splitter: ComponentSpec = "mmi2x2",
+    combiner: ComponentSpec = "mmi2x2",
+    straight_x_top: ComponentSpec = "straight_heater_metal",
+    **kwargs,
+) -> gf.Component:
+    """Mzi 2x2 with heater on the top arm.
+
+    Args:
+        length_x: horizontal length of the top arm (with heater).
+        delta_length: bottom arm vertical extra length.
+        splitter: splitter function.
+        combiner: combiner function.
+        straight_x_top: straight function for the top arm (with heater).
+        kwargs: other arguments for mzi.
+    """
+    c = gf.c.mzi2x2_2x2(
+        length_x=length_x,
+        delta_length=delta_length,
+        splitter=splitter,
+        combiner=combiner,
+        straight_x_top=straight_x_top,
+        **kwargs,
+    )
+
+    return c
+
+
 if __name__ == "__main__":
     from ubcpdk import PDK
 
     PDK.activate()
-    c = mzi_1x1()
+    c = mzi_heater_2x2()
     c.show()
