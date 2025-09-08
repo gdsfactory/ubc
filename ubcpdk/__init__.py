@@ -11,6 +11,7 @@ from gdsfactory.typings import (
 
 from ubcpdk import cells, data, tech
 from ubcpdk.config import CONFIG, PATH
+from ubcpdk.models import get_models
 from ubcpdk.tech import (
     LAYER,
     LAYER_STACK,
@@ -18,16 +19,6 @@ from ubcpdk.tech import (
     cross_sections,
     routing_strategies,
 )
-
-try:
-    from gplugins.sax.models import get_models
-
-    from ubcpdk import models
-
-    models = get_models(models)
-except ImportError:
-    print("gplugins[sax] not installed, no simulation models available.")
-    models = {}
 
 components = cells
 
@@ -52,7 +43,7 @@ PDK = Pdk(
     name="ubcpdk",
     cells=_cells,
     cross_sections=cross_sections,
-    models=models,
+    models=get_models(),
     layers=LAYER,
     layer_stack=LAYER_STACK,
     layer_views=LAYER_VIEWS,
