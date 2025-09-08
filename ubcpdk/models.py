@@ -4,12 +4,13 @@ from __future__ import annotations
 
 import inspect
 from collections.abc import Callable
-from functools import partial
 
 import jax.numpy as jnp
 import sax
 import sax.models as sm
 from numpy.typing import NDArray
+
+sax.set_port_naming_strategy("optical")
 
 nm = 1e-3
 
@@ -88,18 +89,171 @@ def bend_euler(
 ###################
 # grating couplers
 ###################
-gc_te1550 = partial(sm.grating_coupler, loss=6, bandwidth=35 * nm, wl0=1.55)
-gc_te1550_broadband = partial(sm.grating_coupler, loss=6, bandwidth=50 * nm, wl0=1.55)
-gc_tm1550 = partial(sm.grating_coupler, loss=6, bandwidth=35 * nm, wl0=1.55)
-gc_te1310_broadband = partial(sm.grating_coupler, loss=6, bandwidth=50 * nm, wl0=1.31)
-gc_te1310 = partial(sm.grating_coupler, loss=6, bandwidth=35 * nm, wl0=1.31)
+
+
+def gc_te1550(
+    wl: float | NDArray = 1.55,
+    loss: float = 6,
+    bandwidth: float = 35 * nm,
+    wl0: float = 1.55,
+) -> sax.SDict:
+    """Grating coupler model for TE polarization at 1550 nm with custom parameters.
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.55 μm.
+        loss: Coupling loss in dB. Represents the insertion loss of the grating
+            coupler. Typical values are around 6 dB.
+        bandwidth: 3 dB bandwidth in micrometers. Defines the wavelength range
+            over which the coupler operates effectively. Typical values are
+            around 35 nm (0.035 μm).
+        wl0: Center wavelength in micrometers. The wavelength at which the
+            coupler is optimized. Defaults to 1.55 μm.
+    """
+    return sm.grating_coupler(wl=wl, loss=loss, bandwidth=bandwidth, wl0=wl0)
+
+
+def gc_te1550_broadband(
+    wl: float | NDArray = 1.55,
+    loss: float = 6,
+    bandwidth: float = 50 * nm,
+    wl0: float = 1.55,
+) -> sax.SDict:
+    """Grating coupler model for TE polarization at 1550 nm with custom parameters.
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.55 μm.
+        loss: Coupling loss in dB. Represents the insertion loss of the grating
+            coupler. Typical values are around 6 dB.
+        bandwidth: 3 dB bandwidth in micrometers. Defines the wavelength range
+            over which the coupler operates effectively. Typical values are
+            around 50 nm (0.05 μm).
+        wl0: Center wavelength in micrometers. The wavelength at which the
+            coupler is optimized. Defaults to 1.55 μm.
+    """
+    return sm.grating_coupler(wl=wl, loss=loss, bandwidth=bandwidth, wl0=wl0)
+
+
+def gc_tm1550(
+    wl: float | NDArray = 1.55,
+    loss: float = 6,
+    bandwidth: float = 35 * nm,
+    wl0: float = 1.55,
+) -> sax.SDict:
+    """Grating coupler model for TM polarization at 1550 nm with custom parameters.
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.55 μm.
+        loss: Coupling loss in dB. Represents the insertion loss of the grating
+            coupler. Typical values are around 6 dB.
+        bandwidth: 3 dB bandwidth in micrometers. Defines the wavelength range
+            over which the coupler operates effectively. Typical values are
+            around 35 nm (0.035 μm).
+        wl0: Center wavelength in micrometers. The wavelength at which the
+            coupler is optimized. Defaults to 1.55 μm.
+    """
+    return sm.grating_coupler(wl=wl, loss=loss, bandwidth=bandwidth, wl0=wl0)
+
+
+def gc_te1310_broadband(
+    wl: float | NDArray = 1.31,
+    loss: float = 6,
+    bandwidth: float = 50 * nm,
+    wl0: float = 1.31,
+) -> sax.SDict:
+    """Grating coupler model for TE polarization at 1310 nm with custom parameters.
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.31 μm.
+        loss: Coupling loss in dB. Represents the insertion loss of the grating
+            coupler. Typical values are around 6 dB.
+        bandwidth: 3 dB bandwidth in micrometers. Defines the wavelength range
+            over which the coupler operates effectively. Typical values are
+            around 50 nm (0.05 μm).
+        wl0: Center wavelength in micrometers. The wavelength at which the
+            coupler is optimized. Defaults to 1.31 μm.
+    """
+    return sm.grating_coupler(wl=wl, loss=loss, bandwidth=bandwidth, wl0=wl0)
+
+
+def gc_te1310(
+    wl: float | NDArray = 1.31,
+    loss: float = 6,
+    bandwidth: float = 35 * nm,
+    wl0: float = 1.31,
+) -> sax.SDict:
+    """Grating coupler model for TE polarization at 1310 nm with custom parameters.
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.31 μm.
+        loss: Coupling loss in dB. Represents the insertion loss of the grating
+            coupler. Typical values are around 6 dB.
+        bandwidth: 3 dB bandwidth in micrometers. Defines the wavelength range
+            over which the coupler operates effectively. Typical values are
+            around 35 nm (0.035 μm).
+        wl0: Center wavelength in micrometers. The wavelength at which the
+            coupler is optimized. Defaults to 1.31 μm.
+    """
+    return sm.grating_coupler(wl=wl, loss=loss, bandwidth=bandwidth, wl0=wl0)
+
 
 ################
 # MMIs
 ################
-mmi1x2 = partial(sm.mmi1x2, wl0=1.55, fwhm=0.2, loss_dB=0.3)
-mmi2x2 = partial(sm.mmi2x2, wl0=1.55, fwhm=0.2, loss_dB=0.3)
-ebeam_y_1550 = mmi1x2
+def mmi1x2(
+    wl: float | NDArray = 1.55,
+    fwhm: float = 0.2,
+    loss_dB: float = 0.3,
+) -> sax.SDict:
+    """1x2 MMI model for 1550 nm with custom parameters.
+
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.55 μm.
+        fwhm: Full-width half-maximum bandwidth in micrometers. Defines the
+            wavelength range over which the MMI operates effectively. Typical
+            values are around 0.2 μm (200 nm).
+        loss_dB: Excess loss in dB. Represents additional insertion loss of the
+            MMI beyond ideal splitting. Typical values are around 0.3 dB.
+    """
+    return sm.mmi1x2(wl=wl, fwhm=fwhm, loss_dB=loss_dB)
+
+
+def mmi2x2(
+    wl: float | NDArray = 1.55,
+    fwhm: float = 0.2,
+    loss_dB: float = 0.3,
+) -> sax.SDict:
+    """2x2 MMI model for 1550 nm with custom parameters.
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.55 μm.
+        fwhm: Full-width half-maximum bandwidth in micrometers. Defines the
+            wavelength range over which the MMI operates effectively. Typical
+            values are around 0.2 μm (200 nm).
+        loss_dB: Excess loss in dB. Represents additional insertion loss of the
+            MMI beyond ideal splitting. Typical values are around 0.3 dB.
+    """
+    return sm.mmi2x2(wl=wl, fwhm=fwhm, loss_dB=loss_dB)
+
+
+def ebeam_y_1550(
+    wl: float | NDArray = 1.55,
+    fwhm: float = 0.2,
+    loss_dB: float = 0.3,
+) -> sax.SDict:
+    """Y-branch model for 1550 nm with custom parameters.
+    Args:
+        wl: Wavelength in micrometers. Can be a scalar or array for multi-wavelength
+            simulations. Defaults to 1.55 μm.
+        fwhm: Full-width half-maximum bandwidth in micrometers. Defines the
+            wavelength range over which the Y-branch operates effectively. Typical
+            values are around 0.2 μm (200 nm).
+        loss_dB: Excess loss in dB. Represents additional insertion loss of the
+            Y-branch beyond ideal splitting. Typical values are around 0.3 dB.
+    """
+    return sm.mmi1x2(wl=wl, fwhm=fwhm, loss_dB=loss_dB)
+
+
 coupler = sm.coupler
 
 
@@ -146,17 +300,18 @@ def get_models() -> dict[str, Callable[..., sax.SDict]]:
     """Return a dictionary of all models in this module."""
     models = {}
     for name, func in list(globals().items()):
+        # Skip get_models itself and private functions
+        if name == "get_models" or name.startswith("_"):
+            continue
         if not callable(func):
             continue
-        _func = func
-        while isinstance(_func, partial):
-            _func = _func.func
         try:
-            sig = inspect.signature(_func)
-        except ValueError:
-            print(f"Could not get signature for {name}")
+            sig = inspect.signature(func)
+        except (ValueError, TypeError):
             continue
-        if str(sig.return_annotation).lower().split(".")[-1] == "sdict":
+        # Check for sax.SDict return type (case-insensitive)
+        return_anno = str(sig.return_annotation)
+        if "sdict" in return_anno.lower():
             models[name] = func
     return models
 
