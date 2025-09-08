@@ -1,0 +1,8 @@
+info: {}
+name: mzi_heater_2x2_DL10_LX2_faf6584c
+settings:
+  combiner: mmi2x2
+  delta_length: 10
+  length_x: 200
+  splitter: mmi2x2
+  straight_x_top: straight_heater_metal
