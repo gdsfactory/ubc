@@ -1,0 +1,14 @@
+instances:
+  Han_SWGA3dB1_0_0:
+    component: Han_SWGA3dB$1
+    info: {}
+    settings: {}
+name: ebeam_splitter_adiabati_c6483e92
+nets: []
+placements:
+  Han_SWGA3dB1_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports: {}

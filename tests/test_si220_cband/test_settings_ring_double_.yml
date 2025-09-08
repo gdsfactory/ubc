@@ -1,0 +1,9 @@
+info: {}
+name: ring_double_G0p2_GTNone_d0c42c3f
+settings:
+  cross_section: strip
+  gap: 0.2
+  length_extension: 10
+  length_x: 0.01
+  length_y: 0.01
+  radius: 10

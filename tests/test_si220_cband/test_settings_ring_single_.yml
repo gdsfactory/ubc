@@ -1,0 +1,9 @@
+info: {}
+name: ring_single_G0p2_R10_LX_9cef9b8c
+settings:
+  cross_section: strip
+  gap: 0.2
+  length_extension: 10
+  length_x: 4
+  length_y: 0.6
+  radius: 10

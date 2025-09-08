@@ -1,0 +1,8 @@
+info: {}
+name: text_rectangular_multi__7a8d810d
+settings:
+  layers:
+  - WG
+  - M2_ROUTER
+  text: abc
+  text_factory: text_rectangular

@@ -13,6 +13,9 @@ ubcpdk/tests/test_components.gds/gds_diff/
 tests/ref/*.oas
 ubcpdk/gds/*.oas
 
+docs/components.rst
+docs/components_plot.rst
+
 # C extensions
 *.so
 *.json
@@ -25,6 +28,14 @@ poetry.lock
 Pipfile
 modes/
 docs/_autosummary
+
+ubcpdk/gds/EBeam_SiN/*.oas
+ubcpdk/gds/ANT/*.oas
+ubcpdk/gds/EBeam/*.oas
+ubcpdk/gds/EBeam_Beta/*.oas
+ubcpdk/gds/EBeam_SiN/*.oas
+ubcpdk/gds/EBeam_Dream/*.oas
+
 
 # Distribution / packaging
 .Python

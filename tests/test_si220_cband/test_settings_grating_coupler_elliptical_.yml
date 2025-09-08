@@ -1,0 +1,8 @@
+info:
+  polarization: te
+  wavelength: 1.55
+name: grating_coupler_ellipti_2f8caedf
+settings:
+  cross_section: strip
+  grating_line_width: 0.315
+  wavelength: 1.55

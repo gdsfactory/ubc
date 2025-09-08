@@ -1,0 +1,18 @@
+instances:
+  elec_JoaquinMatresmringpdoublepheaterpgdsfpb6e3764f_G_with_gc_0_0_A270:
+    component: elec_JoaquinMatres-ring.double.heater.gdsf.b6e3764f_G_with_gc
+    info: {}
+    settings: {}
+name: add_fiber_array_pads_rf_1ec5681a
+nets: []
+placements:
+  elec_JoaquinMatresmringpdoublepheaterpgdsfpb6e3764f_G_with_gc_0_0_A270:
+    mirror: false
+    rotation: 270
+    x: 0
+    y: 0
+ports:
+  e1: elec_JoaquinMatresmringpdoublepheaterpgdsfpb6e3764f_G_with_gc_0_0_A270,e1
+  e2: elec_JoaquinMatresmringpdoublepheaterpgdsfpb6e3764f_G_with_gc_0_0_A270,e2
+  o1: elec_JoaquinMatresmringpdoublepheaterpgdsfpb6e3764f_G_with_gc_0_0_A270,o1
+  o2: elec_JoaquinMatresmringpdoublepheaterpgdsfpb6e3764f_G_with_gc_0_0_A270,o2

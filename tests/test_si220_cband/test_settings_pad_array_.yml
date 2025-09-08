@@ -1,0 +1,11 @@
+info: {}
+name: pad_array_Ppad_C6_R1_CP_49f06d2d
+settings:
+  auto_rename_ports: false
+  centered_ports: false
+  column_pitch: 125
+  columns: 6
+  pad: pad
+  port_orientation: 270
+  row_pitch: 125
+  rows: 1

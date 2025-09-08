@@ -1,0 +1,31 @@
+instances:
+  text_rectangular_Tabc_S_38250b67_0_0:
+    component: text_rectangular
+    info: {}
+    settings:
+      justify: left
+      layer: M2_ROUTER
+      size: 3
+      text: abc
+  text_rectangular_Tabc_S_ded20486_0_0:
+    component: text_rectangular
+    info: {}
+    settings:
+      justify: left
+      layer: WG
+      size: 3
+      text: abc
+name: text_rectangular_multi__7a8d810d
+nets: []
+placements:
+  text_rectangular_Tabc_S_38250b67_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+  text_rectangular_Tabc_S_ded20486_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports: {}

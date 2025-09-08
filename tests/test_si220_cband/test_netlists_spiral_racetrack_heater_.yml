@@ -1,0 +1,143 @@
+instances:
+  bend_euler_R30_A180_P0p_023a6fc5_54883_m38000:
+    component: bend_euler
+    info:
+      dy: 0
+      length: 128.453
+      min_bend_radius: 27.259
+      radius: 30
+      route_info_heater_metal_length: 128.453
+      route_info_length: 128.453
+      route_info_min_bend_radius: 27.259
+      route_info_n_bend_90: 2
+      route_info_type: heater_metal
+      route_info_weight: 128.453
+      width: 4
+    settings:
+      allow_min_radius_violation: false
+      angle: 180
+      cross_section: heater_metal
+      p: 0.5
+      radius: 30
+      width: null
+  spiral_racetrack_gdsfac_5d4cf290_0_0:
+    component: spiral_racetrack
+    info:
+      length: 3345.986
+    settings:
+      allow_min_radius_violation: false
+      bend: bend_euler
+      bend_s: bend_s
+      cross_section: strip
+      cross_section_s: null
+      extra_90_deg_bend: false
+      min_radius: 10
+      spacings:
+      - 4
+      - 4
+      - 4
+      - 4
+      - 4
+      - 4
+      - 4
+      - 4
+      straight: straight
+      straight_length: 100
+  straight_gdsfactorypcom_262b2f90_54883_22000_A180:
+    component: straight
+    info:
+      length: 100
+      route_info_heater_metal_length: 100
+      route_info_length: 100
+      route_info_type: heater_metal
+      route_info_weight: 100
+      width: 4
+    settings:
+      cross_section: heater_metal
+      length: 100
+      npoints: 2
+      width: null
+  straight_gdsfactorypcom_262b2f90_54883_m38000_A180:
+    component: straight
+    info:
+      length: 100
+      route_info_heater_metal_length: 100
+      route_info_length: 100
+      route_info_type: heater_metal
+      route_info_weight: 100
+      width: 4
+    settings:
+      cross_section: heater_metal
+      length: 100
+      npoints: 2
+      width: null
+  via_stack_heater_mtop_S20_10_m55117_22000:
+    component: via_stack_heater_mtop
+    info:
+      xsize: 20
+      ysize: 10
+    settings:
+      size:
+      - 20
+      - 10
+  via_stack_heater_mtop_S20_10_m55117_m38000:
+    component: via_stack_heater_mtop
+    info:
+      xsize: 20
+      ysize: 10
+    settings:
+      size:
+      - 20
+      - 10
+name: spiral_racetrack_heater_8f268b5e
+nets:
+- p1: bend_euler_R30_A180_P0p_023a6fc5_54883_m38000,e1
+  p2: straight_gdsfactorypcom_262b2f90_54883_m38000_A180,e1
+- p1: bend_euler_R30_A180_P0p_023a6fc5_54883_m38000,e2
+  p2: straight_gdsfactorypcom_262b2f90_54883_22000_A180,e1
+- p1: straight_gdsfactorypcom_262b2f90_54883_22000_A180,e2
+  p2: via_stack_heater_mtop_S20_10_m55117_22000,e3
+- p1: straight_gdsfactorypcom_262b2f90_54883_m38000_A180,e2
+  p2: via_stack_heater_mtop_S20_10_m55117_m38000,e3
+placements:
+  bend_euler_R30_A180_P0p_023a6fc5_54883_m38000:
+    mirror: false
+    rotation: 0
+    x: 54.883
+    y: -38
+  spiral_racetrack_gdsfac_5d4cf290_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+  straight_gdsfactorypcom_262b2f90_54883_22000_A180:
+    mirror: false
+    rotation: 180
+    x: 54.883
+    y: 22
+  straight_gdsfactorypcom_262b2f90_54883_m38000_A180:
+    mirror: false
+    rotation: 180
+    x: 54.883
+    y: -38
+  via_stack_heater_mtop_S20_10_m55117_22000:
+    mirror: false
+    rotation: 0
+    x: -55.117
+    y: 22
+  via_stack_heater_mtop_S20_10_m55117_m38000:
+    mirror: false
+    rotation: 0
+    x: -55.117
+    y: -38
+ports:
+  bot_e1: via_stack_heater_mtop_S20_10_m55117_m38000,e1
+  bot_e2: via_stack_heater_mtop_S20_10_m55117_m38000,e2
+  bot_e3: via_stack_heater_mtop_S20_10_m55117_m38000,e3
+  bot_e4: via_stack_heater_mtop_S20_10_m55117_m38000,e4
+  o1: spiral_racetrack_gdsfac_5d4cf290_0_0,o1
+  o2: spiral_racetrack_gdsfac_5d4cf290_0_0,o2
+  top_e1: via_stack_heater_mtop_S20_10_m55117_22000,e1
+  top_e2: via_stack_heater_mtop_S20_10_m55117_22000,e2
+  top_e3: via_stack_heater_mtop_S20_10_m55117_22000,e3
+  top_e4: via_stack_heater_mtop_S20_10_m55117_22000,e4

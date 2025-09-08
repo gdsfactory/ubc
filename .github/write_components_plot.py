@@ -1,6 +1,6 @@
 import inspect
 
-from ubcpdk import cells
+from ubcpdk import PDK
 from ubcpdk.config import PATH
 
 filepath = PATH.repo / "docs" / "components_plot.rst"
@@ -21,6 +21,8 @@ skip = {
 
 skip_plot: tuple[str, ...] = ("add_fiber_array_siepic",)
 skip_settings: tuple[str, ...] = ("flatten", "safe_cell_names")
+
+cells = PDK.cells
 
 
 with open(filepath, "w+") as f:
@@ -55,7 +57,7 @@ Cells
 {name}
 ----------------------------------------------------
 
-.. autofunction:: ubcpdk.components.{name}
+.. autofunction:: ubcpdk.cells.{name}
 
 """
             )
@@ -66,14 +68,16 @@ Cells
 {name}
 ----------------------------------------------------
 
-.. autofunction:: ubcpdk.components.{name}
+.. autofunction:: ubcpdk.cells.{name}
 
 .. plot::
   :include-source:
 
-  import ubcpdk
+  from ubcpdk import PDK, cells
 
-  c = ubcpdk.components.{name}({kwargs})
+  PDK.activate()
+
+  c = cells.{name}({kwargs})
   c.plot()
 
 """

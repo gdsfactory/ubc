@@ -1,0 +1,7 @@
+info: {}
+name: spiral_racetrack_heater_8f268b5e
+settings:
+  cross_section: strip
+  num: 8
+  spacing: 4
+  straight_length: 100

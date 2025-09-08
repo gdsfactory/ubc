@@ -1,0 +1,20 @@
+info: {}
+name: ring_single_heater_G0p2_ffdbd82e
+settings:
+  bend: bend_euler
+  coupler_ring: coupler_ring
+  cross_section: strip
+  cross_section_heater: heater_metal
+  cross_section_waveguide_heater: strip_heater_metal
+  gap: 0.2
+  length_x: 2
+  length_y: 0.01
+  radius: 10
+  straight: straight
+  via_stack: via_stack_heater_mtop
+  via_stack_offset:
+  - 1
+  - 0
+  via_stack_size:
+  - 4
+  - 4
