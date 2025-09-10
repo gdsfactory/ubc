@@ -80,6 +80,10 @@ LayerViews:
     layer: [733, 0]
     width: 3
     color: "#800057"
+  WAFER:
+    layer: [999, 0]
+    width: 3
+    color: "#800057"
   DevRec:
     layer: [68, 0]
     visible: true
