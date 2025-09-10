@@ -4,8 +4,8 @@
 
 ## [3.2.0](https://github.com/gdsfactory/ubc/releases/tag/v3.2.0) - 2025-09-10
 
-No significant changes.
-
+- add missing layer [#446](https://github.com/gdsfactory/ubc/pull/446)
+- better models [#445](https://github.com/gdsfactory/ubc/pull/445)
 
 ## [3.1.0](https://github.com/gdsfactory/ubc/releases/tag/v3.1.0) - 2025-09-08
 
