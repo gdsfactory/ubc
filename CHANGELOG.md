@@ -14,7 +14,6 @@
 - Update gdsfactory818 [#416](https://github.com/gdsfactory/ubc/pull/416)
 - Update gdsfactory889 [#404](https://github.com/gdsfactory/ubc/pull/404)
 
-
 ## [2.7.0](https://github.com/gdsfactory/ubc/releases/tag/v2.7.0) - 2024-11-10
 
 - update to gdsfactory 8.18.0
@@ -27,9 +26,6 @@
 
 - remove old mmi2x2 [#400](https://github.com/gdsfactory/ubc/pull/400)
 - update gdsfactory 862 [#399](https://github.com/gdsfactory/ubc/pull/399)
-
-## [2.6.1](https://github.com/gdsfactory/ubc/releases/tag/v2.6.1) - 2024-07-27
-
 
 ## [2.6.0](https://github.com/gdsfactory/ubc/releases/tag/v2.6.0) - 2024-07-15
 
