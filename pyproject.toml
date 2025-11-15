@@ -13,8 +13,8 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory~=9.14.0",
-  "gplugins[sax,tidy3d]~=1.4.2",
+  "gdsfactory~=9.21.0",
+  "gplugins[sax,tidy3d]~=2.0.0",
   "jsondiff",
   "doroutes>=0.2.0"
 ]
@@ -93,7 +93,7 @@ select = [
 "ubcpdk/models/__init__.py" = ["F403"]  # allowing star imports to aggregate cells
 
 [tool.setuptools.package-data]
-mypkg = ["*.csv", "*.yaml"]
+"*" = ["*.csv", "*.yaml", "*.yml", "*.gds", "*.lyp", "*.oas", "*.lyt", '*.nc', "*.json", "*.txt", "*.md", "*.png", "*.jpg", "*.jpeg", "*.svg", "*.GDS", "*.OAS"]
 
 [tool.setuptools.packages]
 find = {}
