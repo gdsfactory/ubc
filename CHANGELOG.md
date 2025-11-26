@@ -2,6 +2,11 @@
 
 <!-- towncrier release notes start -->
 
+## [3.3.0](https://github.com/gdsfactory/ubc/releases/tag/v3.3.0) - 2025-11-26
+
+No significant changes.
+
+
 ## [3.2.0](https://github.com/gdsfactory/ubc/releases/tag/v3.2.0) - 2025-09-10
 
 - add missing layer [#446](https://github.com/gdsfactory/ubc/pull/446)
