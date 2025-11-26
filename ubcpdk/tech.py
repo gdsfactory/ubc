@@ -6,6 +6,7 @@
 """
 
 import sys
+from abc.collections import Callable
 from functools import partial
 
 import gdsfactory as gf
@@ -14,7 +15,7 @@ from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 from gdsfactory.cross_section import get_cross_sections
 from gdsfactory.technology import LayerLevel, LayerMap, LayerStack
-from gdsfactory.typings import Callable, Layer, LayerSpec
+from gdsfactory.typings import Layer, LayerSpec
 from pydantic import BaseModel
 
 from ubcpdk.config import PATH
@@ -323,7 +324,7 @@ strip_bbox = partial(
 )
 
 metal_routing = partial(
-    cross_section,
+    gf.cross_section.metal_routing,
     layer=LAYER.M2_ROUTER,
     width=10.0,
     port_names=gf.cross_section.port_names_electrical,
