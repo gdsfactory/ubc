@@ -93,7 +93,7 @@ select = [
 "ubcpdk/models/__init__.py" = ["F403"]  # allowing star imports to aggregate cells
 
 [tool.setuptools.package-data]
-mypkg = ["*.csv", "*.yaml"]
+"*" = ["*.csv", "*.yaml", "*.yml", "*.gds", "*.lyp", "*.oas", "*.lyt", '*.nc', "*.json", "*.txt", "*.md", "*.png", "*.jpg", "*.jpeg", "*.svg", "*.GDS", "*.OAS"]
 
 [tool.setuptools.packages]
 find = {}
