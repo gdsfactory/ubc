@@ -1,0 +1,7 @@
+info:
+  length: 2.561
+name: wire_corner45_straight_W1p5_R1p5_CSmetal_routing
+settings:
+  cross_section: metal_routing
+  radius: 1.5
+  width: 1.5

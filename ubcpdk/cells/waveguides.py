@@ -4,6 +4,8 @@ import gdsfactory as gf
 from gdsfactory.cross_section import port_names_electrical, port_types_electrical
 from gdsfactory.typings import CrossSectionSpec, LayerSpec, Size
 
+from ubcpdk.tech import TECH
+
 
 @gf.cell
 def straight(
@@ -134,8 +136,8 @@ def wire_corner45(
 
 @gf.cell
 def wire_corner45_straight(
-    width: float | None = None,
-    radius: float | None = None,
+    width: float | None = TECH.width_metal,
+    radius: float | None = TECH.width_metal,
     cross_section: CrossSectionSpec = "metal_routing",
 ) -> gf.Component:
     """Returns 90 degrees electrical corner wire.

@@ -33,6 +33,8 @@ def all_cells() -> gf.Component:
 
 if __name__ == "__main__":
     PDK.activate()
-    c = all_cells()
-    gdspath = c.write_gds()
-    gf.show(gdspath)
+    c = gf.get_component("wire_corner45_straight")
+    # c = all_cells()
+    # gdspath = c.write_gds()
+    # gf.show(gdspath)
+    c.show()

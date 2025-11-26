@@ -1,5 +1,5 @@
 info: {}
-name: mzi_DL10_Bbend_euler_Ss_a38bc3c2
+name: mzi_DL10_Bbend_euler_Sstraight_Scoupler_CNone_PESo3_PES_a38bc3c2
 settings:
   bend: bend_euler
   cross_section: strip

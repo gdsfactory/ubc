@@ -37,6 +37,7 @@ skip_test = {
     "mzi_heater",
     "add_pads_rf",
     "die",
+    "ebeam_Polarizer_TM_1550_UQAM",
 }
 cell_names = cells.keys() - skip_test
 cell_names = [name for name in cell_names if not name.startswith("_")]

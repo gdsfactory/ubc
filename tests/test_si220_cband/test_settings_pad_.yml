@@ -4,7 +4,7 @@ info:
   - 90
   xsize: 90
   ysize: 90
-name: pad_S90_90_LMTOP_PI0_PO_29c1c036
+name: pad_S90_90_LMTOP_PI0_PO0_PO180_90_0_m90
 settings:
   layer: MTOP
   port_inclusion: 0

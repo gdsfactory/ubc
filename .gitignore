@@ -12,6 +12,7 @@ ubcpdk/tests/test_components.gds/gds_diff/
 .virtual_documents
 tests/ref/*.oas
 ubcpdk/gds/*.oas
+uv.lock
 
 docs/components.rst
 docs/components_plot.rst
