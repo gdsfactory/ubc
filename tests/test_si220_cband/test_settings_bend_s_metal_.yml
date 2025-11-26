@@ -9,7 +9,7 @@ info:
   route_info_type: metal_routing
   route_info_weight: 11.206
   start_angle: 0
-name: bend_s_metal_S11_1p8_CS_1499a630
+name: bend_s_metal_S11_1p8_CSmetal_routing_WNone_AMRVTrue
 settings:
   allow_min_radius_violation: true
   cross_section: metal_routing

@@ -2,7 +2,7 @@ info:
   length: 10
   width1: 1.5
   width2: 1.5
-name: taper_metal_L10_W1p5_WN_729f5848
+name: taper_metal_L10_W1p5_WNone_CSmetal_routing
 settings:
   cross_section: metal_routing
   length: 10

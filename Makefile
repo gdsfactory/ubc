@@ -12,7 +12,7 @@ tech:
 test:
 	uv run pytest -s
 
-test-force:
+test-force: install
 	uv run pytest -s --force-regen
 
 cov:

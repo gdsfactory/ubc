@@ -5,12 +5,11 @@ import gdsfactory as gf
 
 from ubcpdk import PDK, cells
 
-size = (605, 410)
+size = (440, 470)
 pack = partial(
-    gf.pack, max_size=size, add_ports_prefix=False, add_ports_suffix=False, spacing=2
+    gf.pack, max_size=size, add_ports_prefix=False, add_ports_suffix=True, spacing=2
 )
 add_gc = cells.add_fiber_array
-
 length_x = 0.1
 
 
@@ -78,5 +77,5 @@ def EBeam_YourUserName_ring_double3() -> pathlib.Path:
 if __name__ == "__main__":
     PDK.activate()
     c = EBeam_YourUserName_ring_double3()
-    c.write_gds("extra/EBeam_YourUserName_ring_double3.gds")
+    # c.write_gds("extra/EBeam_YourUserName_ring_double3.gds")
     c.show()
