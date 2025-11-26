@@ -1,13 +1,11 @@
 """This module contains cells that contain other cells."""
 
 from functools import partial
-from typing import Any
 
 import gdsfactory as gf
 from gdsfactory.component import Component, ComponentReference
 from gdsfactory.typings import (
     AngleInDegrees,
-    CellSpec,
     ComponentSpec,
     CrossSectionSpec,
     Float2,
@@ -147,6 +145,7 @@ def add_fiber_array(
 
 pack_doe = gf.c.pack_doe
 pack_doe_grid = gf.c.pack_doe_grid
+
 
 @gf.cell
 def add_fiber_array_pads_rf(
