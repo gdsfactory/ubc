@@ -14,7 +14,7 @@ length_x = 0.1
 
 
 @gf.cell
-def EBeam_YourUserName_ring_double10() -> pathlib.Path:
+def EBeam_YourUserName_ring_double10() -> gf.Component:
     gaps = [100, 150, 200]
     radiuses = [10]
 
@@ -31,8 +31,8 @@ def EBeam_YourUserName_ring_double10() -> pathlib.Path:
 
 
 @gf.cell
-def EBeam_YourUserName_ring_double30() -> pathlib.Path:
-    gaps = [150, 200, 250]
+def EBeam_YourUserName_ring_double30() -> gf.Component:
+    gaps = [150, 200]
     radiuses = [30]
     rings = [
         cells.ring_double(
@@ -53,7 +53,7 @@ def EBeam_YourUserName_ring_double30() -> pathlib.Path:
 
 
 @gf.cell
-def EBeam_YourUserName_ring_double3() -> pathlib.Path:
+def EBeam_YourUserName_ring_double3() -> gf.Component:
     gaps = [100, 150]
     radiuses = [5]
     rings = [
@@ -76,6 +76,6 @@ def EBeam_YourUserName_ring_double3() -> pathlib.Path:
 
 if __name__ == "__main__":
     PDK.activate()
-    c = EBeam_YourUserName_ring_double3()
+    c = EBeam_YourUserName_ring_double30()
     # c.write_gds("extra/EBeam_YourUserName_ring_double3.gds")
     c.show()
