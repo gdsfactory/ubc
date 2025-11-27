@@ -1,4 +1,4 @@
-# ubcpdk (SiEPIC Ebeam PDK) 3.3.1
+# ubcpdk (SiEPIC Ebeam PDK) 3.3.2
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/binder-sandbox/HEAD)
 [![pypi](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
