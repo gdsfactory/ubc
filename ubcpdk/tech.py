@@ -6,7 +6,7 @@
 """
 
 import sys
-from abc.collections import Callable
+from collections.abc import Callable
 from functools import partial
 
 import gdsfactory as gf
