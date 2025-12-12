@@ -201,7 +201,7 @@ def coupler_ring_coupling_area(
     r"""Ring coupler model.
 
     This is a semi-analytical model developed by GDSFactory.
-    GDSFactory does not guaranee the accuracy of this model.
+    GDSFactory does not guarantee the accuracy of this model.
     This model has not been validated by the foundry.
     Please use at your own discretion.
 
@@ -251,7 +251,7 @@ def coupler_ring(  # this is not the complete model!!!!
     r"""Ring coupler model.
 
     This is a semi-analytical model developed by GDSFactory.
-    GDSFactory does not guaranee the accuracy of this model.
+    GDSFactory does not guarantee the accuracy of this model.
     This model has not been validated by the foundry.
     Please use at your own discretion.
 
