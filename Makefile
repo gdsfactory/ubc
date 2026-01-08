@@ -1,6 +1,9 @@
 install:
 	uv sync --extra docs --extra dev
 
+rm-samples:
+	rm -rf ubcpdk/samples
+
 dev: install
 
 update-pre:
