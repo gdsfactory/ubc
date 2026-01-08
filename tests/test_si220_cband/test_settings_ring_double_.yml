@@ -1,4 +1,5 @@
-info: {}
+info:
+  radius: 10
 name: ring_double_G0p2_GTNone_GBNone_R10_LX0p01_LY0p01_CSstrip_LE10
 settings:
   cross_section: strip
