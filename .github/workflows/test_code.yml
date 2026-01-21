@@ -6,6 +6,13 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
+
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
@@ -28,3 +35,20 @@ jobs:
           make install
       - name: Test with pytest
         run: make test
+  # TODO: Provide a GFP key secret
+  #
+  # test_gfp:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v5
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v5
+  #       with:
+  #         python-version: '3.12'
+  #     - name: Install uv
+  #       uses: astral-sh/setup-uv@v7
+  #     - name: Install dependencies
+  #       run: |
+  #         make install
+  #     - name: Test with pytest
+  #       run: uv run gfp test
