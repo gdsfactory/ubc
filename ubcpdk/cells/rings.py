@@ -53,6 +53,60 @@ def ring_single(
                          │gap
                  o1──────▼─────────o2
     """
+    if length_y == 0 or length_x == 0:
+        # Handle zero-length straights specially to avoid port overlap issues
+        c = gf.Component()
+
+        settings = {
+            "gap": gap,
+            "radius": radius,
+            "length_x": length_x,
+            "cross_section": cross_section,
+            "bend": "bend_euler",
+            "straight": "straight",
+            "length_extension": length_extension,
+        }
+
+        coupler = gf.get_component("coupler_ring", settings=settings)
+        cb = c << coupler
+
+        b = gf.get_component("bend_euler", cross_section=cross_section, radius=radius)
+        bl = c << b  # Left bend
+        br = c << b  # Right bend
+
+        if length_y == 0 and length_x == 0:
+            # Both zero: connect bends directly to coupler and to each other
+            bl.connect(port="o2", other=cb.ports["o2"])
+            br.connect(port="o2", other=bl.ports["o1"])
+            br.connect(port="o1", other=cb.ports["o3"])
+        elif length_y == 0:
+            # Only length_y=0: skip vertical straights, keep horizontal
+            sx = gf.get_component(
+                "straight", length=length_x, cross_section=cross_section
+            )
+            st = c << sx
+            bl.connect(port="o2", other=cb.ports["o2"])
+            st.connect(port="o2", other=bl.ports["o1"])
+            br.connect(port="o2", other=st.ports["o1"])
+            br.connect(port="o1", other=cb.ports["o3"])
+        else:
+            # Only length_x=0: skip horizontal straight, keep vertical
+            sy = gf.get_component(
+                "straight", length=length_y, cross_section=cross_section
+            )
+            sl = c << sy
+            sr = c << sy
+            sl.connect(port="o1", other=cb.ports["o2"])
+            bl.connect(port="o2", other=sl.ports["o2"])
+            br.connect(port="o2", other=bl.ports["o1"])
+            sr.connect(port="o1", other=br.ports["o1"])
+            sr.connect(port="o2", other=cb.ports["o3"])
+
+        c.add_port("o2", port=cb.ports["o4"])
+        c.add_port("o1", port=cb.ports["o1"])
+        c.info["radius"] = coupler.info["radius"]
+        return c
+
     return gf.c.ring_single(
         gap=gap,
         radius=radius,
