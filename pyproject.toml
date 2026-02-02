@@ -35,7 +35,7 @@ dev = [
   "pytest-github-actions-annotate-failures",
   "pre-commit"
 ]
-docs = ["autodoc_pydantic", "jupytext", "jupyter-book==1.0.3"]
+docs = ["autodoc_pydantic", "jupytext", "jupyter-book==2.1.2"]
 
 [tool.codespell]
 ignore-words-list = "te, te/tm, te, ba, fpr, fpr_spacing, ro, nd, donot, schem"
