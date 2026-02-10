@@ -43,6 +43,13 @@ Cells
             continue
         print(name)
         sig = inspect.signature(cells[name])
+
+        # Check if function has required parameters (no default value)
+        has_required_params = any(
+            param.default == inspect.Parameter.empty
+            for param in sig.parameters.values()
+        )
+
         kwargs_list = []
         for p in sig.parameters:
             default = sig.parameters[p].default
@@ -57,7 +64,9 @@ Cells
             elif isinstance(default, int | float | str | tuple):
                 kwargs_list.append(f"{p}={repr(default)}")
         kwargs = ", ".join(kwargs_list)
-        if name in skip_plot:
+
+        # Skip plotting if function has required params or is in skip_plot list
+        if name in skip_plot or has_required_params:
             f.write(
                 f"""
 
