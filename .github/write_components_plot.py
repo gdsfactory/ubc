@@ -1,4 +1,5 @@
 import inspect
+from enum import Enum
 
 from ubcpdk import PDK
 from ubcpdk.config import PATH
@@ -42,15 +43,30 @@ Cells
             continue
         print(name)
         sig = inspect.signature(cells[name])
-        kwargs = ", ".join(
-            [
-                f"{p}={repr(sig.parameters[p].default)}"
-                for p in sig.parameters
-                if isinstance(sig.parameters[p].default, int | float | str | tuple)
-                and p not in skip_settings
-            ]
+
+        # Check if function has required parameters (no default value)
+        has_required_params = any(
+            param.default == inspect.Parameter.empty
+            for param in sig.parameters.values()
         )
-        if name in skip_plot:
+
+        kwargs_list = []
+        for p in sig.parameters:
+            default = sig.parameters[p].default
+            if p in skip_settings:
+                continue
+            # Handle enum types
+            if isinstance(default, Enum):
+                enum_class = type(default).__name__
+                enum_value = default.name
+                kwargs_list.append(f"{p}={enum_class}.{enum_value}")
+            # Handle basic types
+            elif isinstance(default, int | float | str | tuple):
+                kwargs_list.append(f"{p}={repr(default)}")
+        kwargs = ", ".join(kwargs_list)
+
+        # Skip plotting if function has required params or is in skip_plot list
+        if name in skip_plot or has_required_params:
             f.write(
                 f"""
 
@@ -74,6 +90,7 @@ Cells
   :include-source:
 
   from ubcpdk import PDK, cells
+  from ubcpdk.tech import LayerMapUbc
 
   PDK.activate()
 
