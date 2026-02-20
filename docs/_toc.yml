@@ -20,6 +20,7 @@ parts:
           - file: notebooks/12_sim_plugins_tidy3d
           - file: notebooks/13_sim_plugins
           - file: notebooks/14_sax_tidy3d
+          - file: notebooks/meep_ybranch
       - file: data_analysis
         sections:
           - file: notebooks/31_data_analysis_mzi
