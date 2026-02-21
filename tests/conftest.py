@@ -10,7 +10,7 @@ from gdsfactory.name import clean_name, get_name_short
 PROJECT_ROOT = pathlib.Path(__file__).parent.parent
 DIFF_DIR = PROJECT_ROOT / "test_diffs"
 
-_update_gds_refs = False
+_config = {"update_gds_refs": False}
 
 
 def pytest_addoption(parser):
@@ -25,14 +25,14 @@ def pytest_addoption(parser):
 
 def pytest_configure(config):
     """Read --update-gds-refs flag and create diff output directory."""
-    global _update_gds_refs
+
     DIFF_DIR.mkdir(exist_ok=True)
-    _update_gds_refs = config.getoption("--update-gds-refs", default=False)
+    _config["update_gds_refs"] = config.getoption("--update-gds-refs", default=False)
 
 
 def _render_gds_to_png(gds_path: pathlib.Path, png_path: pathlib.Path) -> None:
     """Render a GDS file to a PNG image using klayout's headless LayoutView."""
-    from klayout.lay import LayoutView
+    from klayout.lay import LayoutView  # noqa: PLC0415
 
     view = LayoutView()
     view.load_layout(str(gds_path))
@@ -41,17 +41,17 @@ def _render_gds_to_png(gds_path: pathlib.Path, png_path: pathlib.Path) -> None:
     view.save_image(str(png_path), 1024, 1024)
 
 
-def difftest(
+def difftest(  # noqa: C901
     component: gf.Component,
     test_name: str | None = None,
-    dirpath: pathlib.Path = pathlib.Path.cwd(),
+    dirpath: pathlib.Path = pathlib.Path.cwd(),  # noqa: B008
     xor: bool = True,
     dirpath_run: pathlib.Path | None = None,
     ignore_sliver_differences: bool | None = None,
     sliver_tolerance: int = 1,
 ) -> None:
     """Custom difftest that saves XOR diff images on failure instead of prompting."""
-    from gdsfactory.difftest import diff
+    from gdsfactory.difftest import diff  # noqa: PLC0415
 
     if test_name is None:
         test_name = component.name
@@ -95,7 +95,7 @@ def difftest(
     if not is_different:
         return
 
-    if _update_gds_refs:
+    if _config["update_gds_refs"]:
         shutil.copy(run_file, ref_file)
         print(f"  Updated reference: {ref_file}")
         return
@@ -105,7 +105,7 @@ def difftest(
     try:
         _render_gds_to_png(diff_gds, diff_png)
         image_msg = f"XOR diff image saved to: {diff_png}"
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         image_msg = f"Failed to render diff image: {e}"
 
     raise AssertionError(
