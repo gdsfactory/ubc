@@ -3,8 +3,6 @@
 import filecmp
 import pathlib
 import shutil
-import subprocess
-import sys
 
 import gdsfactory as gf
 from gdsfactory.name import clean_name, get_name_short
@@ -98,32 +96,9 @@ def difftest(
         return
 
     if _update_gds_refs:
-        # Open diff GDS in KLayout for interactive visual review
-        print(f"\nGDS mismatch for {test_name!r}")
-        print(f"  Reference: {ref_file}")
-        print(f"  Run file:  {run_file}")
-        print(f"  Diff GDS:  {diff_gds}")
-        try:
-            if sys.platform == "darwin":
-                subprocess.Popen(["open", str(diff_gds)])
-            elif sys.platform == "linux":
-                subprocess.Popen(["xdg-open", str(diff_gds)])
-            else:
-                subprocess.Popen(["klayout", str(diff_gds)])
-        except Exception as e:
-            print(f"  (Could not open KLayout: {e})")
-
-        answer = input("  Accept new reference? [y/N] ")
-        if answer.strip().lower() in ("y", "yes"):
-            shutil.copy(run_file, ref_file)
-            print(f"  Updated: {ref_file}")
-            return
-        raise AssertionError(
-            f"GDS mismatch for {test_name!r} — update rejected.\n"
-            f"  Reference: {ref_file}\n"
-            f"  Run file:  {run_file}\n"
-            f"  Diff GDS:  {diff_gds}"
-        )
+        shutil.copy(run_file, ref_file)
+        print(f"  Updated reference: {ref_file}")
+        return
 
     # Render diff GDS to PNG
     diff_png = DIFF_DIR / f"{filename}_diff.png"

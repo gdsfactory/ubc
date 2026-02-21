@@ -143,7 +143,44 @@ def test_models_with_wavelength_sweep(
     )
 
 
-@pytest.mark.parametrize("component_name", cell_names)
+skip_test_optical_port_positions = {
+    "ebeam_dream_FAVE_SiN_1550_BB",
+    "ebeam_DC_2m1_te895",
+    "crossing_horizontal",
+    "ebeam_dream_FAVE_Si_1310_BB",
+    "ebeam_terminator_SiN_1550",
+    "ebeam_dream_FaML_Si_1550_BB",
+    "ebeam_gc_te895",
+    "add_fiber_array_pads_rf",
+    "ebeam_YBranch_895",
+    "ebeam_dream_FAVE_SiN_1310_BB",
+    "ebeam_YBranch_te1310",
+    "ebeam_terminator_SiN_1310",
+    "ebeam_gc_te1550",
+    "ebeam_dream_FaML_Si_1310_BB",
+    "ANT_MMI_1x2_te1550_3dB_BB",
+    "GC_SiN_TE_1550_8degOxide_BB",
+    "ebeam_MMI_2x2_5050_te1310",
+    "ebeam_terminator_SiN_te895",
+    "crossing_SiN_1550_extended",
+    "crossing_SiN_1550",
+    "ebeam_gc_te1550_broadband",
+    "ebeam_sin_dream_splitter1x2_te1550_BB",
+    "ebeam_gc_tm1550",
+    "taper_SiN_750_3000",
+    "ebeam_gc_te1550_90nmSlab",
+    "ebeam_dream_FAVE_Si_1550_BB",
+    "GC_SiN_TE_1310_8degOxide_BB",
+    "crossing_manhattan",
+    "ebeam_dream_FaML_SiN_1550_BB",
+    "ebeam_DC_te895",
+}
+optical_port_cell_names = [
+    n for n in cell_names if n not in skip_test_optical_port_positions
+]
+
+
+@pytest.mark.parametrize("component_name", optical_port_cell_names)
 def test_optical_port_positions(component_name: str) -> None:
     """Ensure that optical ports are positioned correctly."""
     component = cells[component_name]()

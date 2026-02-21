@@ -1,6 +1,6 @@
 info:
   radius: 10
-name: ring_single_G0p2_R10_LX4_LY0p6_CSstrip_LE10
+name: ring_single_G0p2_R10_LX4_LY0p6_CSstrip_LE10_Bbend_euler_P0
 ports:
   o1:
     center:
@@ -21,9 +21,11 @@ ports:
     port_type: optical
     width: 0.5
 settings:
+  bend: bend_euler
   cross_section: strip
   gap: 0.2
   length_extension: 10
   length_x: 4
   length_y: 0.6
+  p: 0
   radius: 10
