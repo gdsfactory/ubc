@@ -1,5 +1,42 @@
 info: {}
 name: add_fiber_array_pads_rf_Cring_single_heater_UJoaquinMat_1ec5681a
+ports:
+  e1:
+    center:
+    - 72.71
+    - -61.5
+    layer: 49
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 90
+  e2:
+    center:
+    - 72.71
+    - 63.5
+    layer: 49
+    name: e2
+    orientation: 180
+    port_type: electrical
+    width: 90
+  o1:
+    center:
+    - -34.5
+    - 64.415
+    layer: 1
+    name: o1
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - -34.5
+    - -62.585
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings:
   component: ring_single_heater
   orientation: 0

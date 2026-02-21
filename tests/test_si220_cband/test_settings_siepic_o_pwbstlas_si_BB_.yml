@@ -1,3 +1,13 @@
 info: {}
 name: siepic_o_pwbstlas_si_BB
+ports:
+  o1:
+    center:
+    - 810
+    - 170.03
+    layer: 1
+    name: o1
+    orientation: 0
+    port_type: optical
+    width: 0.41
 settings: {}

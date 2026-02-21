@@ -1,6 +1,97 @@
 info:
   length: 682.759
 name: straight_heater_meander_L320_HW2p5_S2_CSstrip_LHM1_HEAT_dab24c04
+ports:
+  l_e1:
+    center:
+    - -30
+    - 2
+    layer: 49
+    name: l_e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  l_e2:
+    center:
+    - -20
+    - 7
+    layer: 49
+    name: l_e2
+    orientation: 90
+    port_type: electrical
+    width: 20
+  l_e3:
+    center:
+    - -10
+    - 2
+    layer: 49
+    name: l_e3
+    orientation: 0
+    port_type: electrical
+    width: 10
+  l_e4:
+    center:
+    - -20
+    - -3
+    layer: 49
+    name: l_e4
+    orientation: 270
+    port_type: electrical
+    width: 20
+  o1:
+    center:
+    - -15
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 121.666
+    - 4
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  r_e1:
+    center:
+    - 116.666
+    - 2
+    layer: 49
+    name: r_e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  r_e2:
+    center:
+    - 126.666
+    - 7
+    layer: 49
+    name: r_e2
+    orientation: 90
+    port_type: electrical
+    width: 20
+  r_e3:
+    center:
+    - 136.666
+    - 2
+    layer: 49
+    name: r_e3
+    orientation: 0
+    port_type: electrical
+    width: 10
+  r_e4:
+    center:
+    - 126.666
+    - -3
+    layer: 49
+    name: r_e4
+    orientation: 270
+    port_type: electrical
+    width: 20
 settings:
   cross_section: strip
   heater_width: 2.5
