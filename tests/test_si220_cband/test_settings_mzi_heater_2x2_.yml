@@ -1,5 +1,114 @@
 info: {}
 name: mzi_heater_2x2_DL10_LX200_Smmi2x2_Cmmi2x2_SXTstraight_h_faf6584c
+ports:
+  e1:
+    center:
+    - 57.6
+    - 23
+    layer: 49
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  e2:
+    center:
+    - 287.4
+    - 23
+    layer: 49
+    name: e2
+    orientation: 180
+    port_type: electrical
+    width: 10
+  e3:
+    center:
+    - 67.6
+    - 28
+    layer: 49
+    name: e3
+    orientation: 90
+    port_type: electrical
+    width: 20
+  e4:
+    center:
+    - 297.4
+    - 28
+    layer: 49
+    name: e4
+    orientation: 90
+    port_type: electrical
+    width: 20
+  e5:
+    center:
+    - 307.4
+    - 23
+    layer: 49
+    name: e5
+    orientation: 0
+    port_type: electrical
+    width: 10
+  e6:
+    center:
+    - 77.6
+    - 23
+    layer: 49
+    name: e6
+    orientation: 0
+    port_type: electrical
+    width: 10
+  e7:
+    center:
+    - 297.4
+    - 18
+    layer: 49
+    name: e7
+    orientation: 270
+    port_type: electrical
+    width: 20
+  e8:
+    center:
+    - 67.6
+    - 18
+    layer: 49
+    name: e8
+    orientation: 270
+    port_type: electrical
+    width: 20
+  o1:
+    center:
+    - -20
+    - -1
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - -20
+    - 1
+    layer: 1
+    name: o2
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o3:
+    center:
+    - 385
+    - 1
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  o4:
+    center:
+    - 385
+    - -1
+    layer: 1
+    name: o4
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings:
   combiner: mmi2x2
   delta_length: 10

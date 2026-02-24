@@ -6,6 +6,25 @@ info:
   route_info_weight: 10
   width: 10
 name: straight_metal_L10_CSmetal_routing_WNone
+ports:
+  e1:
+    center:
+    - 0
+    - 0
+    layer: 49
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  e2:
+    center:
+    - 10
+    - 0
+    layer: 49
+    name: e2
+    orientation: 0
+    port_type: electrical
+    width: 10
 settings:
   cross_section: metal_routing
   length: 10

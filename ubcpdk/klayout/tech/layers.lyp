@@ -154,8 +154,8 @@
   <source>6/0@1</source>
  </properties>
  <properties>
-  <frame-color>#0000ff</frame-color>
-  <fill-color>#0000ff</fill-color>
+  <frame-color>#808080</frame-color>
+  <fill-color>#808080</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
   <dither-pattern/>
@@ -205,8 +205,8 @@
   <source>204/0@1</source>
  </properties>
  <properties>
-  <frame-color>#0000ff</frame-color>
-  <fill-color>#0000ff</fill-color>
+  <frame-color>#808080</frame-color>
+  <fill-color>#808080</fill-color>
   <frame-brightness>0</frame-brightness>
   <fill-brightness>0</fill-brightness>
   <dither-pattern/>
@@ -254,6 +254,23 @@
   <animation>0</animation>
   <name>Lumerical</name>
   <source>733/0@1</source>
+ </properties>
+ <properties>
+  <frame-color>#800057</frame-color>
+  <fill-color>#800057</fill-color>
+  <frame-brightness>0</frame-brightness>
+  <fill-brightness>0</fill-brightness>
+  <dither-pattern/>
+  <line-style/>
+  <valid>true</valid>
+  <visible>true</visible>
+  <transparent>false</transparent>
+  <width>3</width>
+  <marked>false</marked>
+  <xfill>false</xfill>
+  <animation>0</animation>
+  <name>WAFER</name>
+  <source>999/0@1</source>
  </properties>
  <properties>
   <frame-color>#004080</frame-color>

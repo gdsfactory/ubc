@@ -1,5 +1,96 @@
 info: {}
 name: ring_single_heater_G0p2_R10_LX2_LY0p01_CRcoupler_ring_C_ffdbd82e
+ports:
+  l_e1:
+    center:
+    - -7
+    - 0
+    layer: 49
+    name: l_e1
+    orientation: 180
+    port_type: electrical
+    width: 4
+  l_e2:
+    center:
+    - -5
+    - 2
+    layer: 49
+    name: l_e2
+    orientation: 90
+    port_type: electrical
+    width: 4
+  l_e3:
+    center:
+    - -3
+    - 0
+    layer: 49
+    name: l_e3
+    orientation: 0
+    port_type: electrical
+    width: 4
+  l_e4:
+    center:
+    - -5
+    - -2
+    layer: 49
+    name: l_e4
+    orientation: 270
+    port_type: electrical
+    width: 4
+  o1:
+    center:
+    - -15
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 13
+    - 0
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  r_e1:
+    center:
+    - 1
+    - 0
+    layer: 49
+    name: r_e1
+    orientation: 180
+    port_type: electrical
+    width: 4
+  r_e2:
+    center:
+    - 3
+    - 2
+    layer: 49
+    name: r_e2
+    orientation: 90
+    port_type: electrical
+    width: 4
+  r_e3:
+    center:
+    - 5
+    - 0
+    layer: 49
+    name: r_e3
+    orientation: 0
+    port_type: electrical
+    width: 4
+  r_e4:
+    center:
+    - 3
+    - -2
+    layer: 49
+    name: r_e4
+    orientation: 270
+    port_type: electrical
+    width: 4
 settings:
   bend: bend_euler
   coupler_ring: coupler_ring

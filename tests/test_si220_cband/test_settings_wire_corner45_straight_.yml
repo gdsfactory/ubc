@@ -1,6 +1,25 @@
 info:
   length: 2.561
 name: wire_corner45_straight_W1p5_R1p5_CSmetal_routing
+ports:
+  e1:
+    center:
+    - 0
+    - 0
+    layer: 49
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 1.5
+  e2:
+    center:
+    - 1.5
+    - 1.5
+    layer: 49
+    name: e2
+    orientation: 90
+    port_type: electrical
+    width: 1.5
 settings:
   cross_section: metal_routing
   radius: 1.5

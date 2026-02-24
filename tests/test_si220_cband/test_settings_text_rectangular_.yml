@@ -1,5 +1,6 @@
 info: {}
 name: text_rectangular_Tabc_S3_Jleft_LM2_ROUTER
+ports: {}
 settings:
   justify: left
   layer: M2_ROUTER

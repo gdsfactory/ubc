@@ -1,3 +1,40 @@
 info: {}
 name: ebeam_DC_2m1_te895
+ports:
+  o1:
+    center:
+    - -14.56
+    - -2.285
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.45
+  o2:
+    center:
+    - -14.56
+    - 2.285
+    layer: 1
+    name: o2
+    orientation: 180
+    port_type: optical
+    width: 0.45
+  o3:
+    center:
+    - 14.56
+    - 2.285
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.45
+  o4:
+    center:
+    - 14.56
+    - -2.285
+    layer: 1
+    name: o4
+    orientation: 0
+    port_type: optical
+    width: 0.45
 settings: {}
