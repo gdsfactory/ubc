@@ -22,7 +22,7 @@ from ubcpdk.tech import (
 
 components = cells
 
-__version__ = "3.3.3"
+__version__ = "3.3.4"
 __all__ = [
     "CONFIG",
     "data",
