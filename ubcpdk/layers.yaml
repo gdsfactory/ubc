@@ -55,7 +55,7 @@ LayerViews:
     layer: [10, 0]
     layer_in_name: true
     width: 1
-    color: "blue"
+    color: "gray"
   TE:
     layer: [203, 0]
     layer_in_name: true
@@ -70,7 +70,7 @@ LayerViews:
   LABEL_INSTANCES:
     layer: [206, 0]
     layer_in_name: true
-    color: "blue"
+    color: "gray"
   FLOORPLAN:
     layer: [99, 0]
     layer_in_name: true
