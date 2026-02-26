@@ -1,3 +1,40 @@
 info: {}
 name: crossing_SiN_1550
+ports:
+  o1:
+    center:
+    - -14.75
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.75
+  o2:
+    center:
+    - 0
+    - 14.75
+    layer: 1
+    name: o2
+    orientation: 90
+    port_type: optical
+    width: 0.75
+  o3:
+    center:
+    - 14.75
+    - 0
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.75
+  o4:
+    center:
+    - 0
+    - -14.75
+    layer: 1
+    name: o4
+    orientation: 270
+    port_type: optical
+    width: 0.75
 settings: {}
