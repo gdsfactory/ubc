@@ -1,5 +1,96 @@
 info: {}
 name: add_pads_Cring_single_heater_UJoaquinMatres_LPNl_e1
+ports:
+  e1:
+    center:
+    - 436.5
+    - 122.71
+    layer: 49
+    name: e1
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e2:
+    center:
+    - 311.5
+    - 122.71
+    layer: 49
+    name: e2
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e3:
+    center:
+    - 186.5
+    - 122.71
+    layer: 49
+    name: e3
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e4:
+    center:
+    - 61.5
+    - 122.71
+    layer: 49
+    name: e4
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e5:
+    center:
+    - -63.5
+    - 122.71
+    layer: 49
+    name: e5
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e6:
+    center:
+    - -188.5
+    - 122.71
+    layer: 49
+    name: e6
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e7:
+    center:
+    - -313.5
+    - 122.71
+    layer: 49
+    name: e7
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e8:
+    center:
+    - -438.5
+    - 122.71
+    layer: 49
+    name: e8
+    orientation: 270
+    port_type: electrical
+    width: 90
+  o1:
+    center:
+    - -15
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 13
+    - 0
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings:
   component: ring_single_heater
   label_port_name: l_e1

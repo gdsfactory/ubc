@@ -5,6 +5,52 @@ info:
   xsize: 90
   ysize: 90
 name: pad_S90_90_LMTOP_PI0_PO0_PO180_90_0_m90
+ports:
+  e1:
+    center:
+    - -45
+    - 0
+    layer: 49
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 90
+  e2:
+    center:
+    - 0
+    - 45
+    layer: 49
+    name: e2
+    orientation: 90
+    port_type: electrical
+    width: 90
+  e3:
+    center:
+    - 45
+    - 0
+    layer: 49
+    name: e3
+    orientation: 0
+    port_type: electrical
+    width: 90
+  e4:
+    center:
+    - 0
+    - -45
+    layer: 49
+    name: e4
+    orientation: 270
+    port_type: electrical
+    width: 90
+  pad:
+    center:
+    - 0
+    - 0
+    layer: 49
+    name: pad
+    orientation: 0
+    port_type: pad
+    width: 90
 settings:
   layer: MTOP
   port_inclusion: 0

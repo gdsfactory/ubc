@@ -1,6 +1,25 @@
 info:
   length: 1081.925
 name: spiral_racetrack_MRNone_SL20_S2_2_3_3_2_2_Sstraight_Bbe_05d4c3d3
+ports:
+  o1:
+    center:
+    - 0
+    - 14
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 20
+    - -32
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings:
   allow_min_radius_violation: false
   bend: bend_euler

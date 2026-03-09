@@ -1,3 +1,31 @@
 info: {}
 name: ANT_MMI_1x2_te1550_3dB_BB
+ports:
+  o1:
+    center:
+    - -12.88
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.75
+  o2:
+    center:
+    - 12.88
+    - 0.975
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.75
+  o3:
+    center:
+    - 12.88
+    - -0.975
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.75
 settings: {}

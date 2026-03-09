@@ -1,3 +1,31 @@
 info: {}
 name: ebeam_YBranch_te1310
+ports:
+  o1:
+    center:
+    - -7.69
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.8
+  o2:
+    center:
+    - 15.5
+    - 1
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.8
+  o3:
+    center:
+    - 15.5
+    - -1
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.8
 settings: {}

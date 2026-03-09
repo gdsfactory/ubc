@@ -1,3 +1,13 @@
 info: {}
 name: ebeam_terminator_tm1550
+ports:
+  o1:
+    center:
+    - 0
+    - 0
+    layer: 1
+    name: o1
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings: {}

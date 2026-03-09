@@ -1,6 +1,25 @@
 info:
   length: 2635.836
 name: spiral_L100_CSstrip_S3_NL6
+ports:
+  o1:
+    center:
+    - 118
+    - -18
+    layer: 1
+    name: o1
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 121
+    - -21
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings:
   cross_section: strip
   length: 100

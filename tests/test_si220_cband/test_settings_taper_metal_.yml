@@ -3,6 +3,25 @@ info:
   width1: 1.5
   width2: 1.5
 name: taper_metal_L10_W1p5_WNone_CSmetal_routing
+ports:
+  e1:
+    center:
+    - 0
+    - 0
+    layer: 49
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 1.5
+  e2:
+    center:
+    - 10
+    - 0
+    layer: 49
+    name: e2
+    orientation: 0
+    port_type: electrical
+    width: 1.5
 settings:
   cross_section: metal_routing
   length: 10

@@ -2,6 +2,43 @@ info:
   xsize: 20
   ysize: 10
 name: via_stack_heater_mtop_S20_10
+ports:
+  e1:
+    center:
+    - -10
+    - 0
+    layer: 49
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  e2:
+    center:
+    - 0
+    - 5
+    layer: 49
+    name: e2
+    orientation: 90
+    port_type: electrical
+    width: 20
+  e3:
+    center:
+    - 10
+    - 0
+    layer: 49
+    name: e3
+    orientation: 0
+    port_type: electrical
+    width: 10
+  e4:
+    center:
+    - 0
+    - -5
+    layer: 49
+    name: e4
+    orientation: 270
+    port_type: electrical
+    width: 20
 settings:
   size:
   - 20

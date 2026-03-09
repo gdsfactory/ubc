@@ -1,5 +1,60 @@
 info: {}
 name: pad_array_Ppad_C6_R1_CP125_RP125_PO270_SNone_LNone_CPFa_49f06d2d
+ports:
+  e11:
+    center:
+    - 0
+    - -45
+    layer: 49
+    name: e11
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e12:
+    center:
+    - 125
+    - -45
+    layer: 49
+    name: e12
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e13:
+    center:
+    - 250
+    - -45
+    layer: 49
+    name: e13
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e14:
+    center:
+    - 375
+    - -45
+    layer: 49
+    name: e14
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e15:
+    center:
+    - 500
+    - -45
+    layer: 49
+    name: e15
+    orientation: 270
+    port_type: electrical
+    width: 90
+  e16:
+    center:
+    - 625
+    - -45
+    layer: 49
+    name: e16
+    orientation: 270
+    port_type: electrical
+    width: 90
 settings:
   auto_rename_ports: false
   centered_ports: false
