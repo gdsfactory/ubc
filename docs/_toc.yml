@@ -9,12 +9,10 @@ parts:
       - file: tech
       - file: components
       - file: components_plot
-      - file: layout
-        sections:
-          - file: notebooks/00_layout
-          - file: notebooks/21_schematic_driven_layout
+      - file: notebooks/00_layout
       - file: simulations
         sections:
+          - file: notebooks/meep_ybranch
           - file: notebooks/11_sparameters
           - file: notebooks/11_sparameters_gratings
           - file: notebooks/12_sim_plugins_tidy3d

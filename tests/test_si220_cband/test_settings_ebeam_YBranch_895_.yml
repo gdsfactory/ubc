@@ -1,3 +1,31 @@
 info: {}
 name: ebeam_YBranch_895
+ports:
+  o1:
+    center:
+    - 0
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.45
+  o2:
+    center:
+    - 15
+    - 2.75
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.45
+  o3:
+    center:
+    - 15
+    - -2.75
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.45
 settings: {}

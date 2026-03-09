@@ -1,3 +1,40 @@
 info: {}
 name: ebeam_splitter_swg_assist_te1310
+ports:
+  o1:
+    center:
+    - -63.001
+    - -2
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.35
+  o2:
+    center:
+    - -63.001
+    - 2
+    layer: 1
+    name: o2
+    orientation: 180
+    port_type: optical
+    width: 0.35
+  o3:
+    center:
+    - 63.001
+    - 2
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.35
+  o4:
+    center:
+    - 63.001
+    - -2
+    layer: 1
+    name: o4
+    orientation: 0
+    port_type: optical
+    width: 0.35
 settings: {}

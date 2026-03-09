@@ -397,8 +397,3 @@ if __name__ == "__main__":
     # LAYER_VIEWS.to_yaml(PATH.layers_yaml)
     # LAYER_VIEWS = gf.technology.LayerViews(PATH.lyp_yaml)
     LAYER_VIEWS.to_lyp(PATH.lyp)
-    # c = gf.c.mzi()
-    # c = gf.c.straight(length=1, cross_section=strip)
-    # c = gf.c.bend_euler(cross_section=strip)
-    c = gf.c.mzi(delta_length=10, cross_section=strip)
-    c.show()

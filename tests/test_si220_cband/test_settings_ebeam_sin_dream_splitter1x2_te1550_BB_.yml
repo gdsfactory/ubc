@@ -1,3 +1,31 @@
 info: {}
 name: ebeam_sin_dream_splitter1x2_te1550_BB
+ports:
+  o1:
+    center:
+    - 0
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.8
+  o2:
+    center:
+    - 45.418
+    - 2.25
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.8
+  o3:
+    center:
+    - 45.418
+    - -2.25
+    layer: 1
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.8
 settings: {}

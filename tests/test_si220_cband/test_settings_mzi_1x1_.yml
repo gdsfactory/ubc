@@ -1,5 +1,24 @@
 info: {}
 name: mzi_1x1_DL10_Bbend_euler_Sstraight_Sebeam_y_1550_CNone__3ed2b238
+ports:
+  o1:
+    center:
+    - -7.4
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 62.3
+    - 0
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings:
   bend: bend_euler
   cross_section: strip

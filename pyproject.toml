@@ -13,11 +13,11 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory~=9.34.0",
+  "gdsfactory~=9.39.0",
   "gplugins[sax,tidy3d]~=2.0.0",
   "jsondiff",
   "doroutes>=0.3.0",
-  "gdsfactoryplus==1.4.4",
+  "gdsfactoryplus",
   "pytz"
 ]
 description = "ubcpdk pdk"
@@ -26,7 +26,7 @@ license = {file = "LICENSE"}
 name = "ubcpdk"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-version = "3.3.2"
+version = "3.3.5"
 
 [project.optional-dependencies]
 dev = [
@@ -37,10 +37,24 @@ dev = [
   "pytest-github-actions-annotate-failures",
   "pre-commit"
 ]
-docs = ["autodoc_pydantic", "jupytext", "jupyter-book==1.0.3"]
+docs = ["autodoc_pydantic", "jupytext", "jupyter-book==1.0.3", "gsim"]
 
 [tool.codespell]
 ignore-words-list = "te, te/tm, te, ba, fpr, fpr_spacing, ro, nd, donot, schem"
+
+[tool.gdsfactoryplus]
+name = "ubcpdk"
+
+[tool.gdsfactoryplus.drc]
+timeout = 300
+
+[tool.gdsfactoryplus.pdk]
+name = "ubcpdk"
+
+[tool.gdsfactoryplus.sim.wls]
+max = 1.6
+min = 1.5
+num = 1000
 
 [tool.mypy]
 python_version = "3.11"
@@ -132,7 +146,7 @@ message_template = "Bump to {new_version}"
 tag_template = "v{new_version}"
 
 [tool.tbump.version]
-current = "3.3.2"
+current = "3.3.5"
 regex = '''
   (?P<major>\d+)
   \.

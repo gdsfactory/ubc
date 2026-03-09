@@ -1,5 +1,96 @@
 info: {}
 name: spiral_racetrack_heater_S4_N8_SL100_CSstrip
+ports:
+  bot_e1:
+    center:
+    - -65.117
+    - -38
+    layer: 49
+    name: bot_e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  bot_e2:
+    center:
+    - -55.117
+    - -33
+    layer: 49
+    name: bot_e2
+    orientation: 90
+    port_type: electrical
+    width: 20
+  bot_e3:
+    center:
+    - -45.117
+    - -38
+    layer: 49
+    name: bot_e3
+    orientation: 0
+    port_type: electrical
+    width: 10
+  bot_e4:
+    center:
+    - -55.117
+    - -43
+    layer: 49
+    name: bot_e4
+    orientation: 270
+    port_type: electrical
+    width: 20
+  o1:
+    center:
+    - 0
+    - 32
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 100
+    - -48
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  top_e1:
+    center:
+    - -65.117
+    - 22
+    layer: 49
+    name: top_e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  top_e2:
+    center:
+    - -55.117
+    - 27
+    layer: 49
+    name: top_e2
+    orientation: 90
+    port_type: electrical
+    width: 20
+  top_e3:
+    center:
+    - -45.117
+    - 22
+    layer: 49
+    name: top_e3
+    orientation: 0
+    port_type: electrical
+    width: 10
+  top_e4:
+    center:
+    - -55.117
+    - 17
+    layer: 49
+    name: top_e4
+    orientation: 270
+    port_type: electrical
+    width: 20
 settings:
   cross_section: strip
   num: 8

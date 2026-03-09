@@ -1,6 +1,9 @@
 install:
 	uv sync --extra docs --extra dev
 
+all:
+	uv run python ubcpdk/samples/all_cells.py
+
 rm-samples:
 	rm -rf ubcpdk/samples
 
@@ -15,8 +18,11 @@ tech:
 test:
 	uv run pytest -s
 
+test-ports:
+	uv run pytest -s tests/test_si220_cband.py::test_optical_port_positions
+
 test-force: install
-	uv run pytest -s --force-regen
+	uv run pytest -s --update-gds-refs --force-regen
 
 cov:
 	uv run pytest --cov=ubcpdk

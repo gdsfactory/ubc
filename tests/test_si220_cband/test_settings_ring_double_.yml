@@ -1,6 +1,43 @@
 info:
   radius: 10
 name: ring_double_G0p2_GTNone_GBNone_R10_LX0p01_LY0p01_CSstrip_LE10
+ports:
+  o1:
+    center:
+    - -10.01
+    - 0
+    layer: 1
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 10
+    - 0
+    layer: 1
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  o3:
+    center:
+    - -10.01
+    - 21.41
+    layer: 1
+    name: o3
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o4:
+    center:
+    - 10
+    - 21.41
+    layer: 1
+    name: o4
+    orientation: 0
+    port_type: optical
+    width: 0.5
 settings:
   cross_section: strip
   gap: 0.2
