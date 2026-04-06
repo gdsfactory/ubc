@@ -5,7 +5,7 @@ ports:
     center:
     - -79.3
     - 0
-    layer: 1
+    layer: WG
     name: o1
     orientation: 180
     port_type: optical

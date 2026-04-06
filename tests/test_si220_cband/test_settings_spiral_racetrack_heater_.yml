@@ -5,7 +5,7 @@ ports:
     center:
     - -65.117
     - -38
-    layer: 49
+    layer: M2_ROUTER
     name: bot_e1
     orientation: 180
     port_type: electrical
@@ -14,7 +14,7 @@ ports:
     center:
     - -55.117
     - -33
-    layer: 49
+    layer: M2_ROUTER
     name: bot_e2
     orientation: 90
     port_type: electrical
@@ -23,7 +23,7 @@ ports:
     center:
     - -45.117
     - -38
-    layer: 49
+    layer: M2_ROUTER
     name: bot_e3
     orientation: 0
     port_type: electrical
@@ -32,7 +32,7 @@ ports:
     center:
     - -55.117
     - -43
-    layer: 49
+    layer: M2_ROUTER
     name: bot_e4
     orientation: 270
     port_type: electrical
@@ -41,7 +41,7 @@ ports:
     center:
     - 0
     - 32
-    layer: 1
+    layer: WG
     name: o1
     orientation: 180
     port_type: optical
@@ -50,7 +50,7 @@ ports:
     center:
     - 100
     - -48
-    layer: 1
+    layer: WG
     name: o2
     orientation: 0
     port_type: optical
@@ -59,7 +59,7 @@ ports:
     center:
     - -65.117
     - 22
-    layer: 49
+    layer: M2_ROUTER
     name: top_e1
     orientation: 180
     port_type: electrical
@@ -68,7 +68,7 @@ ports:
     center:
     - -55.117
     - 27
-    layer: 49
+    layer: M2_ROUTER
     name: top_e2
     orientation: 90
     port_type: electrical
@@ -77,7 +77,7 @@ ports:
     center:
     - -45.117
     - 22
-    layer: 49
+    layer: M2_ROUTER
     name: top_e3
     orientation: 0
     port_type: electrical
@@ -86,7 +86,7 @@ ports:
     center:
     - -55.117
     - 17
-    layer: 49
+    layer: M2_ROUTER
     name: top_e4
     orientation: 270
     port_type: electrical

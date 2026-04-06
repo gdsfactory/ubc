@@ -5,7 +5,7 @@ ports:
     center:
     - 0
     - -45
-    layer: 49
+    layer: M2_ROUTER
     name: e11
     orientation: 270
     port_type: electrical
@@ -14,7 +14,7 @@ ports:
     center:
     - 125
     - -45
-    layer: 49
+    layer: M2_ROUTER
     name: e12
     orientation: 270
     port_type: electrical
@@ -23,7 +23,7 @@ ports:
     center:
     - 250
     - -45
-    layer: 49
+    layer: M2_ROUTER
     name: e13
     orientation: 270
     port_type: electrical
@@ -32,7 +32,7 @@ ports:
     center:
     - 375
     - -45
-    layer: 49
+    layer: M2_ROUTER
     name: e14
     orientation: 270
     port_type: electrical
@@ -41,7 +41,7 @@ ports:
     center:
     - 500
     - -45
-    layer: 49
+    layer: M2_ROUTER
     name: e15
     orientation: 270
     port_type: electrical
@@ -50,7 +50,7 @@ ports:
     center:
     - 625
     - -45
-    layer: 49
+    layer: M2_ROUTER
     name: e16
     orientation: 270
     port_type: electrical
