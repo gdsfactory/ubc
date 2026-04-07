@@ -7,7 +7,7 @@ ports:
     center:
     - -24.9
     - 0
-    layer: 49
+    layer: M2_ROUTER
     name: l_e1
     orientation: 180
     port_type: electrical
@@ -16,7 +16,7 @@ ports:
     center:
     - -14.9
     - 5
-    layer: 49
+    layer: M2_ROUTER
     name: l_e2
     orientation: 90
     port_type: electrical
@@ -25,7 +25,7 @@ ports:
     center:
     - -4.9
     - 0
-    layer: 49
+    layer: M2_ROUTER
     name: l_e3
     orientation: 0
     port_type: electrical
@@ -34,7 +34,7 @@ ports:
     center:
     - -14.9
     - -5
-    layer: 49
+    layer: M2_ROUTER
     name: l_e4
     orientation: 270
     port_type: electrical
@@ -43,7 +43,7 @@ ports:
     center:
     - 0
     - 0
-    layer: 1
+    layer: WG
     name: o1
     orientation: 180
     port_type: optical
@@ -52,7 +52,7 @@ ports:
     center:
     - 320
     - 0
-    layer: 1
+    layer: WG
     name: o2
     orientation: 0
     port_type: optical
@@ -61,7 +61,7 @@ ports:
     center:
     - 324.9
     - 0
-    layer: 49
+    layer: M2_ROUTER
     name: r_e1
     orientation: 180
     port_type: electrical
@@ -70,7 +70,7 @@ ports:
     center:
     - 334.9
     - 5
-    layer: 49
+    layer: M2_ROUTER
     name: r_e2
     orientation: 90
     port_type: electrical
@@ -79,7 +79,7 @@ ports:
     center:
     - 344.9
     - 0
-    layer: 49
+    layer: M2_ROUTER
     name: r_e3
     orientation: 0
     port_type: electrical
@@ -88,7 +88,7 @@ ports:
     center:
     - 334.9
     - -5
-    layer: 49
+    layer: M2_ROUTER
     name: r_e4
     orientation: 270
     port_type: electrical

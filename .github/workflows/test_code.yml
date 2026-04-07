@@ -1,53 +1,11 @@
 name: Test code
-
 on:
   pull_request:
   push:
-    branches:
-      - main
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
-env:
-  GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
+    branches: [main]
 
 jobs:
-  pre-commit:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-python@v5
-    - uses: pre-commit/action@v3.0.1
-  test_code:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-      - name: Install dependencies
-        run: |
-          make install
-      - name: Test with pytest
-        run: make test
-
-  test_gfp:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-      - name: Install dependencies
-        run: |
-          make install
-      - name: Test with pytest
-        run: uv run gfp test
+  test:
+    uses: doplaydo/pdk-ci-workflow/.github/workflows/test_code.yml@main
+    secrets:
+      GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
