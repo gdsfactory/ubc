@@ -194,11 +194,3 @@ def mzi_heater_2x2(
     )
 
     return c
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-    c = mzi_heater_2x2()
-    c.show()

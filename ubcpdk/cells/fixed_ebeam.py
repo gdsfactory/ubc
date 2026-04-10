@@ -146,11 +146,3 @@ def taper_si_simm_1310() -> gf.Component:
 def taper_si_simm_1550() -> gf.Component:
     """Returns taper_si_simm_1550 fixed cell."""
     return import_gds(gdsdir / "taper_si_simm_1550.gds")
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-    c = ebeam_y_1550()
-    c.show()

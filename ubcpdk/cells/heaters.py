@@ -95,12 +95,3 @@ def straight_heater_meander(
         n=n,
         radius=radius,
     )
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-    c = straight_heater_meander()
-    c.pprint_ports()
-    c.show()
