@@ -50,3 +50,26 @@ uv sync --extra docs --extra dev
 - [gdsfactory docs](https://gdsfactory.github.io/gdsfactory/)
 - [UBCpdk docs](https://gdsfactory.github.io/ubc/) and [code](https://github.com/gdsfactory/ubc)
 - [ubc1](https://github.com/gdsfactory/ubc1)
+
+## Pre-commit
+
+```bash
+make pre-commit
+```
+
+## Release
+
+1. Bump the version:
+
+```bash
+tbump 0.0.1
+```
+
+2. Push the tag:
+
+```bash
+git push --tags
+```
+This triggers the release workflow that builds wheels and uploads them.
+
+3. Create a pull request with the updated changelog since last release.
