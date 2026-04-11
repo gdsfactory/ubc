@@ -285,16 +285,3 @@ def ring_single_heater(
         length_extension=length_extension,
         via_stack_size=via_stack_size,
     )
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-
-    # c = add_fiber_array("ring_double")
-    # c =gf.get_component(gc)
-    # c = pack_doe()
-    c = ring_single_heater()
-    c.pprint_ports()
-    c.show()

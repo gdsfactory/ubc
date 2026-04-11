@@ -184,7 +184,14 @@ def bend_metal(
     width: float | None = None,
     cross_section: CrossSectionSpec = "metal_routing",
 ) -> gf.Component:
-    """Regular degree euler bend."""
+    """Regular degree euler bend.
+
+    Args:
+        radius: None.
+        angle: 90.
+        width: None.
+        cross_section: "metal_routing".
+    """
     if radius is None:
         if width:
             xs = gf.get_cross_section(cross_section=cross_section, width=width)

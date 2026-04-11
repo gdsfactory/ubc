@@ -69,9 +69,9 @@ def get_input_label_text(
         "TE",
         "TM",
     ], f"Not valid polarization {polarization.upper()!r} in [TE, TM]"
-    assert (
-        isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0
-    ), f"{wavelength} is Not valid 1000 < wavelength < 2000"
+    assert isinstance(wavelength, int | float) and 1.0 < wavelength < 2.0, (
+        f"{wavelength} is Not valid 1000 < wavelength < 2000"
+    )
 
     name = component_name
     name = clean_name(name)
@@ -244,16 +244,3 @@ def add_pads(
     text = f"elec_{username}-{clean_name(c0.name)}_G"
     c0 = add_label_electrical(c0, text=text, port_name=label_port_name)
     return add_pads_rf(component=c0, **kwargs)
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-
-    # c = add_fiber_array("ring_double")
-    # c =gf.get_component(gc)
-    # c = pack_doe()
-    c = add_pads()
-    c.pprint_ports()
-    c.show()

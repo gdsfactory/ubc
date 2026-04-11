@@ -97,7 +97,12 @@ def pad(
 
 @gf.cell
 def die(size: tuple[float, float] = (440, 470), centered: bool = False) -> gf.Component:
-    """A die."""
+    """A die.
+
+    Args:
+        size: (440, 470).
+        centered: False.
+    """
     c = gf.Component()
     _ = c << gf.c.rectangle(
         size=size, layer=LAYER.FLOORPLAN, centered=centered, port_type=None

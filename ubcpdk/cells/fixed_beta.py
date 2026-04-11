@@ -148,12 +148,3 @@ def thermal_phase_shifter_te_1310_50() -> gf.Component:
 def thermal_phase_shifter_te_1550_50() -> gf.Component:
     """Returns thermal_phase_shifters fixed cell."""
     return import_gds(gdsdir / "thermal_phase_shifter_te_1550_50.gds")
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-    c = thermal_phase_shifter_te_1310_()
-    # c = thermal_phase_shifter_multimode_()
-    c.show()

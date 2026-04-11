@@ -28,11 +28,3 @@ def grating_coupler_elliptical(
         n_periods=30,
         cross_section=cross_section,
     )
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-    c = grating_coupler_elliptical()
-    c.show()

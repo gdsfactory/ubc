@@ -120,14 +120,3 @@ def ebeam_terminator_SiN_te895() -> gf.Component:
 def taper_SiN_750_3000() -> gf.Component:
     """Returns taper_SiN_750_3000 fixed cell."""
     return import_gds(gdsdir / "taper_SiN_750_3000.gds")
-
-
-if __name__ == "__main__":
-    from ubcpdk import PDK
-
-    PDK.activate()
-    c = ebeam_YBranch_te1310()
-    # gdspath = c.write_gds()
-    # gf.show(gdspath)
-    c.pprint_ports()
-    c.show()

@@ -76,8 +76,3 @@ def mmi2x2(
         gap_mmi=gap_mmi,
         cross_section=cross_section,
     )
-
-
-if __name__ == "__main__":
-    c = mmi1x2()
-    c.show()

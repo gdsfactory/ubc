@@ -178,3 +178,4 @@ cython_debug/
 .DS_Store
 *Thumbs.db
 test_diffs/
+.pre-commit-config.yaml
