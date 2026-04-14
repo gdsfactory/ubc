@@ -1,5 +1,17 @@
 # ubcpdk (SiEPIC Ebeam PDK) 3.3.4
 
+<!-- BADGES:START -->
+[![Docs](https://github.com/gdsfactory/ubc/actions/workflows/pages.yml/badge.svg)](https://github.com/gdsfactory/ubc/actions/workflows/pages.yml)
+[![Tests](https://github.com/gdsfactory/ubc/actions/workflows/test_code.yml/badge.svg)](https://github.com/gdsfactory/ubc/actions/workflows/test_code.yml)
+[![DRC](https://github.com/gdsfactory/ubc/actions/workflows/drc.yml/badge.svg)](https://github.com/gdsfactory/ubc/actions/workflows/drc.yml)
+[![Model Regression](https://github.com/gdsfactory/ubc/actions/workflows/model_regression.yml/badge.svg)](https://github.com/gdsfactory/ubc/actions/workflows/model_regression.yml)
+[![Test Coverage](https://github.com/gdsfactory/ubc/raw/badges/coverage.svg)](https://github.com/gdsfactory/ubc/actions/workflows/test_coverage.yml)
+[![Model Coverage](https://github.com/gdsfactory/ubc/raw/badges/model_coverage.svg)](https://github.com/gdsfactory/ubc/actions/workflows/model_coverage.yml)
+[![Issues](https://github.com/gdsfactory/ubc/raw/badges/issues.svg)](https://github.com/gdsfactory/ubc/issues)
+[![PRs](https://github.com/gdsfactory/ubc/raw/badges/prs.svg)](https://github.com/gdsfactory/ubc/pulls)
+<!-- BADGES:END -->
+
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gdsfactory/binder-sandbox/HEAD)
 [![pypi](https://img.shields.io/pypi/v/ubcpdk)](https://pypi.org/project/ubcpdk/)
 [![mit](https://img.shields.io/github/license/gdsfactory/ubc)](https://choosealicense.com/licenses/mit/)
