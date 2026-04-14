@@ -6,7 +6,7 @@ import gdsfactory as gf
 from gdsfactory.typings import ComponentSpec, LayerSpec, LayerSpecs
 
 
-@gf.cell
+@gf.cell(tags={"type": "text"})
 def text_rectangular(
     text: str = "abc",
     size: float = 3,
@@ -26,7 +26,7 @@ def text_rectangular(
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "text"})
 def text_rectangular_multi_layer(
     text: str = "abc",
     layers: LayerSpecs = ("WG", "M2_ROUTER"),

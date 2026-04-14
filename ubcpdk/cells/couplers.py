@@ -6,7 +6,7 @@ from gdsfactory.typings import ComponentSpec, CrossSectionSpec
 from ubcpdk.tech import TECH
 
 
-@gf.cell
+@gf.cell(tags={"type": "couplers"})
 def coupler(length: float = 14.5, gap: float = TECH.gap) -> gf.Component:
     """Returns Symmetric coupler.
 
@@ -24,7 +24,7 @@ def coupler(length: float = 14.5, gap: float = TECH.gap) -> gf.Component:
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "couplers"})
 def coupler_ring(
     length_x: float = 4,
     gap: float = TECH.gap,

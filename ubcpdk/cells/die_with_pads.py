@@ -10,7 +10,7 @@ from gdsfactory.typings import (
 from ubcpdk.tech import LAYER
 
 
-@gf.cell
+@gf.cell(tags={"type": "die"})
 def compass(
     size: Size = (4, 2),
     layer: LayerSpec = "MTOP",
@@ -39,7 +39,7 @@ def compass(
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "die"})
 def rectangle(
     size: Size = (4, 2),
     layer: LayerSpec = "MTOP",
@@ -65,7 +65,7 @@ def rectangle(
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "die"})
 def pad(
     size: tuple[float, float] = (90.0, 90.0),
     layer: LayerSpec = "MTOP",
@@ -95,7 +95,7 @@ def pad(
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "die"})
 def die(size: tuple[float, float] = (440, 470), centered: bool = False) -> gf.Component:
     """A die.
 

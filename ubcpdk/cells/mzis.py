@@ -9,7 +9,7 @@ import gdsfactory as gf
 from gdsfactory.typings import ComponentSpec, CrossSectionSpec
 
 
-@gf.cell
+@gf.cell(tags={"type": "mzis"})
 def mzi_1x1(
     delta_length: float = 10,
     bend: ComponentSpec = "bend_euler",
@@ -69,7 +69,7 @@ def mzi_1x1(
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "mzis"})
 def mzi(
     delta_length: float = 10,
     bend: ComponentSpec = "bend_euler",
@@ -137,7 +137,7 @@ def mzi(
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "mzis"})
 def mzi_heater(
     delta_length: float = 10,
     length_x: float = 200,
@@ -165,7 +165,7 @@ def mzi_heater(
     return c
 
 
-@gf.cell
+@gf.cell(tags={"type": "mzis"})
 def mzi_heater_2x2(
     delta_length: float = 10,
     length_x: float = 200,

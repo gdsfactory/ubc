@@ -79,7 +79,7 @@ def get_input_label_text(
     return f"opt_in_{polarization.upper()}_{int(wavelength * 1000.0)}_device_{username}-{name}"
 
 
-@gf.cell
+@gf.cell(tags={"type": "containers"})
 def add_fiber_array(
     component: ComponentSpec = "ring_single",
     component_name: str | None = None,
@@ -147,7 +147,7 @@ pack_doe = gf.c.pack_doe
 pack_doe_grid = gf.c.pack_doe_grid
 
 
-@gf.cell
+@gf.cell(tags={"type": "containers"})
 def add_fiber_array_pads_rf(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,
@@ -178,7 +178,7 @@ def add_fiber_array_pads_rf(
     return add_fiber_array(component=c1, component_name=component_name, **kwargs)
 
 
-@gf.cell
+@gf.cell(tags={"type": "containers"})
 def pad_array(
     pad: ComponentSpec = "pad",
     columns: int = 6,
@@ -226,7 +226,7 @@ add_pads_rf = partial(
 )
 
 
-@gf.cell
+@gf.cell(tags={"type": "containers"})
 def add_pads(
     component: ComponentSpec = "ring_single_heater",
     username: str = CONFIG.username,

@@ -6,7 +6,7 @@ from gdsfactory.typings import CrossSectionSpec
 from ubcpdk.tech import TECH
 
 
-@gf.cell
+@gf.cell(tags={"type": "tapers"})
 def taper(
     length: float = 10.0,
     width1: float = TECH.width,
@@ -35,7 +35,7 @@ def taper(
     )
 
 
-@gf.cell
+@gf.cell(tags={"type": "tapers"})
 def taper_metal(
     length: float = 10.0,
     width1: float = TECH.width_metal,
