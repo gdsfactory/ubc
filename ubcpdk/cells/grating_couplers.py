@@ -3,7 +3,7 @@
 import gdsfactory as gf
 
 
-@gf.cell(tags={"type": "grating_couplers"})
+@gf.cell(tags=["grating_couplers"])
 def grating_coupler_elliptical(
     wavelength: float = 1.55,
     grating_line_width=0.315,

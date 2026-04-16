@@ -6,7 +6,7 @@ from gdsfactory.typings import AngleInDegrees, ComponentSpec, CrossSectionSpec, 
 from ubcpdk.tech import TECH
 
 
-@gf.cell(tags={"type": "rings"})
+@gf.cell(tags=["rings"])
 def ring_single(
     gap: float = TECH.gap_strip,
     radius: float = 10.0,
@@ -65,7 +65,7 @@ def ring_single(
     )
 
 
-@gf.cell(tags={"type": "rings"})
+@gf.cell(tags=["rings"])
 def ring_double(
     gap: float = TECH.gap_strip,
     gap_top: float | None = None,
@@ -110,7 +110,7 @@ def ring_double(
     )
 
 
-@gf.cell(tags={"type": "rings"})
+@gf.cell(tags=["rings"])
 def ring_double_heater(
     gap: float = 0.2,
     gap_top: float | None = None,
@@ -201,7 +201,7 @@ def ring_double_heater(
     )
 
 
-@gf.cell(tags={"type": "rings"})
+@gf.cell(tags=["rings"])
 def ring_single_heater(
     gap: float = 0.2,
     radius: float = 10.0,

@@ -8,7 +8,7 @@ from gdsfactory.typings import (
 )
 
 
-@gf.cell(tags={"type": "spirals"})
+@gf.cell(tags=["spirals"])
 def spiral(
     length: float = 100,
     cross_section: CrossSectionSpec = "strip",
@@ -33,7 +33,7 @@ def spiral(
     )
 
 
-@gf.cell(tags={"type": "spirals"})
+@gf.cell(tags=["spirals"])
 def spiral_racetrack(
     min_radius: float | None = None,
     straight_length: float = 20.0,
@@ -74,7 +74,7 @@ def spiral_racetrack(
     )
 
 
-@gf.cell(tags={"type": "spirals"})
+@gf.cell(tags=["spirals"])
 def spiral_racetrack_heater(
     spacing: float = 4.0,
     num: int = 8,
