@@ -7,5 +7,4 @@ on:
 jobs:
   test:
     uses: doplaydo/pdk-ci-workflow/.github/workflows/test_code.yml@main
-    secrets:
-      GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
+    secrets: inherit
