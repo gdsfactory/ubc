@@ -6,7 +6,7 @@ from gdsfactory.typings import (
 )
 
 
-@gf.cell
+@gf.cell(tags=["vias"])
 def via_stack_heater_mtop(size: Size = (20.0, 10.0)) -> gf.Component:
     """Rectangular via array stack.
 

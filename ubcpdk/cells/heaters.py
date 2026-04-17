@@ -4,7 +4,7 @@ import gdsfactory as gf
 from gdsfactory.typings import ComponentSpec, CrossSectionSpec, LayerSpec
 
 
-@gf.cell
+@gf.cell(tags=["heaters"])
 def straight_heater_metal(
     length: float = 320.0,
     length_undercut_spacing: float = 6.0,
@@ -47,7 +47,7 @@ def straight_heater_metal(
     )
 
 
-@gf.cell
+@gf.cell(tags=["heaters"])
 def straight_heater_meander(
     length: float = 320.0,
     heater_width: float = 2.5,
