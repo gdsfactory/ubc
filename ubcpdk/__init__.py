@@ -50,6 +50,7 @@ PDK = Pdk(
     connectivity=connectivity,
     routing_strategies=routing_strategies,
 )
+PDK.activate()
 
 GPATH.sparameters = PATH.sparameters
 GPATH.interconnect = PATH.interconnect_cml_path
