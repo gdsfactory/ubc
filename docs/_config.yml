@@ -40,6 +40,8 @@ repository:
 #   colab_url: "https://colab.research.google.com"
 
 sphinx:
+  local_extensions:
+    activate_pdk: _ext
   extra_extensions:
     - "sphinx.ext.autodoc"
     - "sphinx.ext.autodoc.typehints"
