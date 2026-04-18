@@ -38,6 +38,11 @@ __all__ = [
 
 connectivity = cast(list[ConnectivitySpec], [("M1_HEATER", "M1_HEATER", "M2_ROUTER")])
 
+layer_transitions = {
+    LAYER.WG: cells.taper,
+    LAYER.M2_ROUTER: cells.taper_metal,
+}
+
 _cells = get_cells(cells)
 PDK = Pdk(
     name="ubcpdk",
@@ -49,6 +54,7 @@ PDK = Pdk(
     layer_views=LAYER_VIEWS,
     connectivity=connectivity,
     routing_strategies=routing_strategies,
+    layer_transitions=layer_transitions,
 )
 
 GPATH.sparameters = PATH.sparameters
