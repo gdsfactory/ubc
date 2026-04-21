@@ -18,3 +18,7 @@ from .tapers import *
 from .text import *
 from .vias import *
 from .waveguides import *
+
+# `import_gds` leaks into this namespace via `from .fixed_* import *`.
+# Remove so `get_cells()` does not register it as a zero-arg cell factory.
+del import_gds  # noqa: F821
