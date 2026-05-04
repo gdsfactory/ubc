@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../build/schemas/couplers.json
+instances:
+  c1:
+    component: coupler
+    settings: {}
+  c2:
+    component: coupler
+    settings: {}
+connections: {}
+routes:
+  bundle1:
+    links:
+      c1,o3-4: c2,o3-4
+    routing_strategy: route_bundle
+    settings:
+      sort_ports: true
+nets: []
+ports: {}
+placements:
+  c2:
+    dx: 100
+    dy: 100

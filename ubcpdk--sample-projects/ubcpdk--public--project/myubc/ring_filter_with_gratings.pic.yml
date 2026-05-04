@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../build/schemas/ring_filter_with_gratings.json
+instances:
+  g1:
+    component: grating_coupler_elliptical
+    settings: {}
+  g2:
+    component: grating_coupler_elliptical
+    settings: {}
+  r1:
+    component: ring_single
+    settings: {}
+connections:
+  g2,o1: r1,o1
+  r1,o2: g1,o1
+routes: {}
+nets: []
+ports:
+  o1: g2,o2
+  o2: g1,o2
+placements: {}

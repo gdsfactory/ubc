@@ -1,0 +1,100 @@
+instances:
+  l1:
+    component: straight_metal
+    settings: {}
+  l2:
+    component: straight_metal
+    settings: {}
+  l3:
+    component: straight_metal
+    settings: {}
+  l4:
+    component: straight_metal
+    settings: {}
+  r1:
+    component: straight_metal
+    settings: {}
+  r2:
+    component: straight_metal
+    settings: {}
+  r3:
+    component: straight_metal
+    settings: {}
+  r4:
+    component: straight_metal
+    settings: {}
+  o4:
+    component: straight_metal
+    settings:
+      length: 20
+      width: 100
+  o2:
+    component: straight_metal
+    settings:
+      length: 20
+      width: 20
+  o1:
+    component: straight_metal
+    settings:
+      length: 20
+      width: 100
+  o3:
+    component: straight_metal
+    settings:
+      length: 100
+      width: 20
+connections: {}
+routes:
+  my_bundle:
+    links:
+      r1-4,e1: l1-4,e2
+    routing_strategy: route_astar_metal
+    settings: {}
+nets: []
+ports: {}
+placements:
+  l1:
+    'y': 100
+  l2:
+    'y': 0
+  l3:
+    'y': -100
+  l4:
+    'y': -200
+  r1:
+    x: 200
+    'y': 100
+  r2:
+    x: 200
+    'y': 0
+  r3:
+    x: 200
+    'y': -100
+  r4:
+    x: 200
+    'y': -200
+  o4:
+    dx: 95.702
+    dy: -64.505
+    rotation: 0
+    mirror: false
+  o2:
+    x: 120
+    'y': -60
+    dx: 13.433
+    dy: 151.943
+    rotation: 0
+    mirror: false
+  o1:
+    x: 50
+    'y': -150
+    dx: 46.107
+    dy: 172.411
+    rotation: 0
+    mirror: false
+  o3:
+    dx: 63.663
+    dy: -195.996
+    rotation: 0
+    mirror: false
+name: astar_bundle_electrical

@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../build/schemas/ports8_wrapper.json
+instances:
+  p8:
+    component: ports8
+    settings: {}
+connections: {}
+routes: {}
+nets: []
+ports: {}
+placements:
+  p8:
+    x: 0.0
+    y: 0.0
+    dx: -78.94686126708984
+    dy: -61.379093170166016

@@ -1,0 +1,231 @@
+transforms:
+  b3:
+    translation:
+      x: 63.026077
+      y: 318.56635
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  b1:
+    translation:
+      x: -353.7641
+      y: 54.77532
+      z: 3.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  b2:
+    translation:
+      x: -281.68756
+      y: 185.88574
+      z: 4.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  b4:
+    translation:
+      x: 292.57407
+      y: 162.33296
+      z: 5.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  c1:
+    translation:
+      x: -213.9877
+      y: -156.74902
+      z: 6.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  c2:
+    translation:
+      x: 125.00882
+      y: -190.86273
+      z: 7.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  h:
+    translation:
+      x: -80.21701
+      y: 251.78354
+      z: 8.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  e2:
+    translation:
+      x: -16.03121
+      y: 336.2146
+      z: 16.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  p1:
+    translation:
+      x: -152.25548
+      y: 480.57855
+      z: 10.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  o2:
+    translation:
+      x: -378.83423
+      y: -237.279
+      z: 11.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  o4:
+    translation:
+      x: 358.383
+      y: -170.54616
+      z: 12.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  o3:
+    translation:
+      x: 298.84152
+      y: -66.91399
+      z: 13.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  o1:
+    translation:
+      x: -386.66858
+      y: -132.86172
+      z: 14.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  e1:
+    translation:
+      x: -177.46358
+      y: 348.72876
+      z: 15.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  p2:
+    translation:
+      x: -28.780657
+      y: 478.97775
+      z: 1.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+component_ports:
+  bend_euler:
+    o2: n
+    o1: w
+  coupler:
+    o3: e
+    o4: e
+    o1: w
+    o2: w
+  straight_heater_metal:
+    o2: e
+    r_e3: e
+    o1: w
+    l_e1: w
+  pad:
+    e2: n
+    e3: e
+    pad: e
+    e4: s
+    e1: w
