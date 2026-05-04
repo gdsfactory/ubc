@@ -14,7 +14,7 @@ dependencies = [
   "meow-sim",
   "pytz",
   "scikit-learn",
-  "ubcpdk==3.3.3"
+  "ubcpdk==3.3.5"
 ]
 description = "My ubc demo project"
 keywords = ["cornerstone", "eda", "photonics", "python", "ubc"]
