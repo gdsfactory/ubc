@@ -339,7 +339,7 @@ cross_sections = get_cross_sections(sys.modules[__name__])
 ############################
 
 route_single = partial(gf.routing.route_single, cross_section="strip")
-route_bundle = partial(gf.routing.route_bundle, cross_section="strip")
+route_bundle = partial(gf.routing.route_bundle, cross_section="strip", sbend="bend_s")
 
 
 route_bundle_rib = partial(
