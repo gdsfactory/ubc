@@ -1,0 +1,5 @@
+info:
+  polarization: te
+  wavelength: 1.55
+name: gc_te1550
+settings: {}

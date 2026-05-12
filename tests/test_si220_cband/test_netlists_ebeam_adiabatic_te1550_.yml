@@ -1,0 +1,14 @@
+instances:
+  Adiabatic3dB_TE_FullEtch1_0_0:
+    component: Adiabatic3dB_TE_FullEtch$1
+    info: {}
+    settings: {}
+name: ebeam_adiabatic_te1550
+nets: []
+placements:
+  Adiabatic3dB_TE_FullEtch1_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports: {}

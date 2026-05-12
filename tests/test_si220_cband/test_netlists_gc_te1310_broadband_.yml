@@ -1,0 +1,15 @@
+instances:
+  ebeam_gc_te1310_broadband_98000_0_A180_M:
+    component: ebeam_gc_te1310_broadband
+    info: {}
+    settings: {}
+name: gc_te1310_broadband
+nets: []
+placements:
+  ebeam_gc_te1310_broadband_98000_0_A180_M:
+    mirror: true
+    rotation: 180
+    x: 98
+    y: 0
+ports:
+  o1: ebeam_gc_te1310_broadband_98000_0_A180_M,o1

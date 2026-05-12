@@ -1,0 +1,14 @@
+instances:
+  EC1_0_0:
+    component: EC$1
+    info: {}
+    settings: {}
+name: ebeam_swg_edgecoupler
+nets: []
+placements:
+  EC1_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports: {}

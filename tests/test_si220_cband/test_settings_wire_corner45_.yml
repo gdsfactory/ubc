@@ -1,0 +1,26 @@
+info:
+  length: 14.142
+name: wire_corner45_CSmetal_routing_R10_WNone_LNone_WCPTrue
+ports:
+  e1:
+    center:
+    - 0
+    - 0
+    layer: M2_ROUTER
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  e2:
+    center:
+    - 10
+    - 10
+    layer: M2_ROUTER
+    name: e2
+    orientation: 90
+    port_type: electrical
+    width: 10
+settings:
+  cross_section: metal_routing
+  radius: 10
+  with_corner90_ports: true

@@ -1,0 +1,34 @@
+info:
+  dy: 10
+  length: 15.708
+  radius: 10
+  route_info_length: 15.708
+  route_info_metal_routing_length: 15.708
+  route_info_min_bend_radius: 10
+  route_info_n_bend_90: 1
+  route_info_type: metal_routing
+  route_info_weight: 15.708
+  width: 10
+name: bend_metal_RNone_A90_WNone_CSmetal_routing
+ports:
+  e1:
+    center:
+    - 0
+    - 0
+    layer: M2_ROUTER
+    name: e1
+    orientation: 180
+    port_type: electrical
+    width: 10
+  e2:
+    center:
+    - 10
+    - 10
+    layer: M2_ROUTER
+    name: e2
+    orientation: 90
+    port_type: electrical
+    width: 10
+settings:
+  angle: 90
+  cross_section: metal_routing

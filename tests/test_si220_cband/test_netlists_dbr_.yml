@@ -1,0 +1,15 @@
+instances:
+  Unnamed_575_0_0:
+    component: Unnamed_575
+    info: {}
+    settings: {}
+name: dbr_W0p5_D0p1_N100_L0p0_c9156e45
+nets: []
+placements:
+  Unnamed_575_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports:
+  o1: Unnamed_575_0_0,o1

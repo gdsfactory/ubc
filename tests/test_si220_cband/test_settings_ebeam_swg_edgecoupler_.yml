@@ -1,0 +1,13 @@
+info: {}
+name: ebeam_swg_edgecoupler
+ports:
+  o1:
+    center:
+    - -79.3
+    - 0
+    layer: WG
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+settings: {}

@@ -1,0 +1,37 @@
+info: {}
+name: mmi1x2_WNone_WT1p5_LT20_LM31_WM6_GM1p64_CSstrip
+ports:
+  o1:
+    center:
+    - -20
+    - 0
+    layer: WG
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 51
+    - 1.57
+    layer: WG
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  o3:
+    center:
+    - 51
+    - -1.57
+    layer: WG
+    name: o3
+    orientation: 0
+    port_type: optical
+    width: 0.5
+settings:
+  cross_section: strip
+  gap_mmi: 1.64
+  length_mmi: 31
+  length_taper: 20
+  width_mmi: 6
+  width_taper: 1.5

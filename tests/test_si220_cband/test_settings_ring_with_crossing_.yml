@@ -1,0 +1,12 @@
+info: {}
+name: ring_single_dut_gdsfact_4cb12a7d
+settings:
+  bend: bend_euler
+  component: ebeam_crossing4_2ports
+  coupler: coupler_ring
+  cross_section: strip
+  gap: 0.2
+  length_x: 4
+  length_y: 0
+  port_name: o4
+  with_component: true

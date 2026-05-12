@@ -1,0 +1,9 @@
+info: {}
+name: dbr_W0p5_D0p1_N100_L0p0_c9156e45
+settings:
+  cross_section: strip
+  dw: 0.1
+  l1: 0.079
+  l2: 0.079
+  n: 100
+  w0: 0.5

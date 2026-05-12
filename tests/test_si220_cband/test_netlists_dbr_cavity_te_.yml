@@ -1,0 +1,16 @@
+instances:
+  dbr_cavity_Ddbr_Ccoupler_with_gc_0_0_A270:
+    component: dbr_cavity_Ddbr_Ccoupler_with_gc
+    info: {}
+    settings: {}
+name: dbr_cavity_te_Cdbr_cavity
+nets: []
+placements:
+  dbr_cavity_Ddbr_Ccoupler_with_gc_0_0_A270:
+    mirror: false
+    rotation: 270
+    x: 0
+    y: 0
+ports:
+  o1: dbr_cavity_Ddbr_Ccoupler_with_gc_0_0_A270,o1
+  o2: dbr_cavity_Ddbr_Ccoupler_with_gc_0_0_A270,o2
