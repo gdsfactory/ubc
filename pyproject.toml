@@ -42,6 +42,13 @@ docs = ["autodoc_pydantic", "jupytext", "jupyter-book==1.0.3", "gsim"]
 [tool.codespell]
 ignore-words-list = "te, te/tm, te, ba, fpr, fpr_spacing, ro, nd, donot, schem"
 
+[tool.elvis]
+connected-layers = [[[11, 0], [12, 0]]]
+short-layers = [[11, 0], [12, 0]]
+
+[tool.elvis.equivalent-ports]
+pad = ["e1", "e2", "e3", "e4", "pad"]
+
 [tool.gdsfactoryplus]
 name = "ubcpdk"
 
@@ -55,14 +62,6 @@ name = "ubcpdk"
 max = 1.6
 min = 1.5
 num = 1000
-
-
-[tool.elvis]
-short-layers = [[11, 0], [12, 0]]
-connected-layers = [[[11, 0], [12, 0]]]
-
-[tool.elvis.equivalent-ports]
-pad = ["e1", "e2", "e3", "e4", "pad"]
 
 [tool.mypy]
 python_version = "3.11"
