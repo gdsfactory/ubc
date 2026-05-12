@@ -1,0 +1,111 @@
+info: {}
+name: ring_single_heater_G0p2_R10_LX2_LY0p01_CRcoupler_ring_C_ffdbd82e
+ports:
+  l_e1:
+    center:
+    - -7
+    - 0
+    layer: M2_ROUTER
+    name: l_e1
+    orientation: 180
+    port_type: electrical
+    width: 4
+  l_e2:
+    center:
+    - -5
+    - 2
+    layer: M2_ROUTER
+    name: l_e2
+    orientation: 90
+    port_type: electrical
+    width: 4
+  l_e3:
+    center:
+    - -3
+    - 0
+    layer: M2_ROUTER
+    name: l_e3
+    orientation: 0
+    port_type: electrical
+    width: 4
+  l_e4:
+    center:
+    - -5
+    - -2
+    layer: M2_ROUTER
+    name: l_e4
+    orientation: 270
+    port_type: electrical
+    width: 4
+  o1:
+    center:
+    - -15
+    - 0
+    layer: WG
+    name: o1
+    orientation: 180
+    port_type: optical
+    width: 0.5
+  o2:
+    center:
+    - 13
+    - 0
+    layer: WG
+    name: o2
+    orientation: 0
+    port_type: optical
+    width: 0.5
+  r_e1:
+    center:
+    - 1
+    - 0
+    layer: M2_ROUTER
+    name: r_e1
+    orientation: 180
+    port_type: electrical
+    width: 4
+  r_e2:
+    center:
+    - 3
+    - 2
+    layer: M2_ROUTER
+    name: r_e2
+    orientation: 90
+    port_type: electrical
+    width: 4
+  r_e3:
+    center:
+    - 5
+    - 0
+    layer: M2_ROUTER
+    name: r_e3
+    orientation: 0
+    port_type: electrical
+    width: 4
+  r_e4:
+    center:
+    - 3
+    - -2
+    layer: M2_ROUTER
+    name: r_e4
+    orientation: 270
+    port_type: electrical
+    width: 4
+settings:
+  bend: bend_euler
+  coupler_ring: coupler_ring
+  cross_section: strip
+  cross_section_heater: heater_metal
+  cross_section_waveguide_heater: strip_heater_metal
+  gap: 0.2
+  length_x: 2
+  length_y: 0.01
+  radius: 10
+  straight: straight
+  via_stack: via_stack_heater_mtop
+  via_stack_offset:
+  - 1
+  - 0
+  via_stack_size:
+  - 4
+  - 4

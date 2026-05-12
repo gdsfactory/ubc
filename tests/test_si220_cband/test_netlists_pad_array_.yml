@@ -1,0 +1,36 @@
+instances:
+  pad_gdsfactorypcomponen_6c192452_0_0:
+    array:
+      column_pitch: 125
+      columns: 6
+      row_pitch: 125
+      rows: 1
+    component: pad
+    info:
+      size:
+      - 75
+      - 75
+      xsize: 75
+      ysize: 75
+    settings:
+      bbox_layers:
+      - PAD_OPEN
+      bbox_offsets:
+      - -1.8
+      layer: MTOP
+      port_inclusion: 0
+      port_orientation: 0
+      port_orientations: null
+      port_type: pad
+      size:
+      - 75
+      - 75
+name: pad_array_gdsfactorypco_ad40a518
+nets: []
+placements:
+  pad_gdsfactorypcomponen_6c192452_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports: {}

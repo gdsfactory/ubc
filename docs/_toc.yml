@@ -1,0 +1,34 @@
+# Table of contents
+# Learn more at https://jterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - caption: Introduction
+    chapters:
+      - file: tech
+      - file: components
+      - file: components_plot
+      - file: notebooks/00_layout
+      - file: simulations
+        sections:
+          - file: notebooks/meep_ybranch
+          - file: notebooks/11_sparameters
+          - file: notebooks/11_sparameters_gratings
+          - file: notebooks/12_sim_plugins_tidy3d
+          - file: notebooks/13_sim_plugins
+          - file: notebooks/14_sax_tidy3d
+      - file: data_analysis
+        sections:
+          - file: notebooks/31_data_analysis_mzi
+          - file: notebooks/32_data_analysis_ring
+          - file: notebooks/33_data_analysis_dbr
+  - caption: Reference
+    chapters:
+      - file: changelog
+      - url: https://gdsfactory.github.io/gplugins/
+        title: Plugins
+      - url: https://gdsfactory.github.io/gdsfactory
+        title: gdsfactory
+      - url: https://gdsfactory.github.io/gdsfactory-photonics-training/
+        title: gdsfactory-photonics-training

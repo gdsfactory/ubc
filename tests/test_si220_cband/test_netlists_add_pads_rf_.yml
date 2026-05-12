@@ -1,0 +1,94 @@
+instances:
+  pad_array_gdsfactorypco_d4925a84_m438000_160210:
+    component: pad_array
+    info: {}
+    settings:
+      auto_rename_ports: false
+      centered_ports: false
+      column_pitch: 125
+      columns: 8
+      layer: MTOP
+      pad: Fpad_Mgdsfactorypcomponentsppadsppad_SS75_75_LM2_ROUTER_BLPAD_OPEN_BOm1p8
+      port_orientation: 270
+      row_pitch: 125
+      rows: 1
+      size: null
+  ring_double_heater_gdsf_b6e3764f_0_0:
+    component: ring_double_heater
+    info: {}
+    settings:
+      bend: bend_euler
+      coupler_ring: coupler_ring
+      coupler_ring_top: null
+      cross_section: strip
+      cross_section_heater: heater_metal
+      cross_section_waveguide_heater: strip_heater_metal
+      gap: 0.2
+      gap_bot: null
+      gap_top: null
+      length_extension: null
+      length_x: 1
+      length_y: 0.01
+      port_orientation: null
+      radius: null
+      straight: straight
+      via_stack: via_stack_heater_mtop
+      via_stack_offset:
+      - 1
+      - 0
+      via_stack_size: null
+      with_drop: false
+name: Unnamed_590
+nets: []
+placements:
+  pad_array_gdsfactorypco_d4925a84_m438000_160210:
+    mirror: false
+    rotation: 0
+    x: -438
+    y: 160.21
+  ring_double_heater_gdsf_b6e3764f_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+ports:
+  e1: pad_array_gdsfactorypco_d4925a84_m438000_160210,e18
+  e2: pad_array_gdsfactorypco_d4925a84_m438000_160210,e17
+  e3: pad_array_gdsfactorypco_d4925a84_m438000_160210,e16
+  e4: pad_array_gdsfactorypco_d4925a84_m438000_160210,e15
+  e5: pad_array_gdsfactorypco_d4925a84_m438000_160210,e14
+  e6: pad_array_gdsfactorypco_d4925a84_m438000_160210,e13
+  e7: pad_array_gdsfactorypco_d4925a84_m438000_160210,e12
+  e8: pad_array_gdsfactorypco_d4925a84_m438000_160210,e11
+  o1: ring_double_heater_gdsf_b6e3764f_0_0,o1
+  o2: ring_double_heater_gdsf_b6e3764f_0_0,o2
+warnings:
+  electrical:
+    unconnected_ports:
+    - message: 8 unconnected electrical ports!
+      ports:
+      - ring_double_heater_gdsf_b6e3764f_0_0,l_e1
+      - ring_double_heater_gdsf_b6e3764f_0_0,l_e2
+      - ring_double_heater_gdsf_b6e3764f_0_0,l_e3
+      - ring_double_heater_gdsf_b6e3764f_0_0,l_e4
+      - ring_double_heater_gdsf_b6e3764f_0_0,r_e1
+      - ring_double_heater_gdsf_b6e3764f_0_0,r_e2
+      - ring_double_heater_gdsf_b6e3764f_0_0,r_e3
+      - ring_double_heater_gdsf_b6e3764f_0_0,r_e4
+      values:
+      - - -12
+        - 0
+      - - -7
+        - 5
+      - - -2
+        - 0
+      - - -7
+        - -5
+      - - 1
+        - 0
+      - - 6
+        - 5
+      - - 11
+        - 0
+      - - 6
+        - -5

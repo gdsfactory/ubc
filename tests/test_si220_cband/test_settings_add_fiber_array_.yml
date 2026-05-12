@@ -1,0 +1,12 @@
+info: {}
+name: add_fiber_array_Cring_s_b3293ab5
+settings:
+  component: ring_single
+  cross_section: strip
+  fanout_length: 0
+  gc_port_name: o1
+  gc_rotation: 90
+  grating_coupler: ebeam_gc_te1550
+  mirror_grating_coupler: true
+  straight: straight
+  with_loopback: false

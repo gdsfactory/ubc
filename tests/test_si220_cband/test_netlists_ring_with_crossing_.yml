@@ -1,0 +1,135 @@
+instances:
+  bend_euler_CSstrip_RNone_10000_20400_A90:
+    component: bend_euler
+    info:
+      dy: 10
+      length: 16.637
+      min_bend_radius: 7.061
+      radius: 10
+      route_info_length: 16.637
+      route_info_min_bend_radius: 7.061
+      route_info_n_bend_90: 1
+      route_info_strip_length: 16.637
+      route_info_type: strip
+      route_info_weight: 16.637
+      width: 0.5
+    settings:
+      cross_section: strip
+      radius: null
+  bend_euler_CSstrip_RNone_m4000_30400_A180:
+    component: bend_euler
+    info:
+      dy: 10
+      length: 16.637
+      min_bend_radius: 7.061
+      radius: 10
+      route_info_length: 16.637
+      route_info_min_bend_radius: 7.061
+      route_info_n_bend_90: 1
+      route_info_strip_length: 16.637
+      route_info_type: strip
+      route_info_weight: 16.637
+      width: 0.5
+    settings:
+      cross_section: strip
+      radius: null
+  coupler_ring_G0p2_RNone_7b027eee_0_0:
+    component: coupler_ring
+    info: {}
+    settings:
+      bend: bend_euler
+      cross_section: strip
+      gap: 0.2
+      length_extension: null
+      length_x: 4
+      radius: null
+  ebeam_crossing4_2ports_10000_15600_A90:
+    component: ebeam_crossing4_2ports
+    info: {}
+    settings: {}
+  straight_gdsfactorypcom_0b7b2ee2_m14000_20400_A270:
+    component: straight
+    info:
+      length: 9.7
+      route_info_length: 9.7
+      route_info_strip_length: 9.7
+      route_info_type: strip
+      route_info_weight: 9.7
+      width: 0.5
+    settings:
+      cross_section: strip
+      length: 9.7
+      npoints: 2
+      width: null
+  straight_gdsfactorypcom_a6eac62c_m4000_30400:
+    component: straight
+    info:
+      length: 4
+      route_info_length: 4
+      route_info_strip_length: 4
+      route_info_type: strip
+      route_info_weight: 4
+      width: 0.5
+    settings:
+      cross_section: strip
+      length: 4
+      npoints: 2
+      width: null
+name: ring_single_dut_gdsfact_4cb12a7d
+nets:
+- p1: bend_euler_CSstrip_RNone_10000_20400_A90,o1
+  p2: ebeam_crossing4_2ports_10000_15600_A90,o4
+- p1: bend_euler_CSstrip_RNone_10000_20400_A90,o2
+  p2: straight_gdsfactorypcom_a6eac62c_m4000_30400,o2
+- p1: bend_euler_CSstrip_RNone_m4000_30400_A180,o1
+  p2: straight_gdsfactorypcom_a6eac62c_m4000_30400,o1
+- p1: bend_euler_CSstrip_RNone_m4000_30400_A180,o2
+  p2: straight_gdsfactorypcom_0b7b2ee2_m14000_20400_A270,o1
+- p1: coupler_ring_G0p2_RNone_7b027eee_0_0,o2
+  p2: straight_gdsfactorypcom_0b7b2ee2_m14000_20400_A270,o2
+placements:
+  bend_euler_CSstrip_RNone_10000_20400_A90:
+    mirror: false
+    rotation: 90
+    x: 10
+    y: 20.4
+  bend_euler_CSstrip_RNone_m4000_30400_A180:
+    mirror: false
+    rotation: 180
+    x: -4
+    y: 30.4
+  coupler_ring_G0p2_RNone_7b027eee_0_0:
+    mirror: false
+    rotation: 0
+    x: 0
+    y: 0
+  ebeam_crossing4_2ports_10000_15600_A90:
+    mirror: false
+    rotation: 90
+    x: 10
+    y: 15.6
+  straight_gdsfactorypcom_0b7b2ee2_m14000_20400_A270:
+    mirror: false
+    rotation: 270
+    x: -14
+    y: 20.4
+  straight_gdsfactorypcom_a6eac62c_m4000_30400:
+    mirror: false
+    rotation: 0
+    x: -4
+    y: 30.4
+ports:
+  o1: coupler_ring_G0p2_RNone_7b027eee_0_0,o1
+  o2: coupler_ring_G0p2_RNone_7b027eee_0_0,o4
+warnings:
+  optical:
+    unconnected_ports:
+    - message: 2 unconnected optical ports!
+      ports:
+      - coupler_ring_G0p2_RNone_7b027eee_0_0,o3
+      - ebeam_crossing4_2ports_10000_15600_A90,o1
+      values:
+      - - 10
+        - 10.7
+      - - 10
+        - 10.8
