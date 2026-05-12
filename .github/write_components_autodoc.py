@@ -39,6 +39,7 @@ Cells summary
 
 .. autosummary::
    :toctree: _autosummary/
+   :no-index:
 
 """
     )
