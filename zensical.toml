@@ -1,0 +1,30 @@
+[project]
+nav = [
+  {"Home" = "index.md"},
+  {"Reference" = [
+    {"Changelog" = "changelog.md"}
+  ]},
+  {"Tutorial" = [
+    {"Data Analysis" = "data_analysis.md"},
+    {"Simulations" = "simulations.md"}
+  ]}
+]
+site_dir = "docs/_build/html"
+site_name = "ubcpdk pdk"
+site_url = "https://gdsfactory.github.io/ubc"
+
+[project.plugins.autorefs]
+
+[project.plugins.mkdocstrings]
+
+[project.plugins.mkdocstrings.handlers.python]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+show_root_toc_entry = false
+show_source = false
+
+[project.plugins.search]
+
+[project.theme]
+name = "material"
