@@ -119,7 +119,6 @@ def add_fiber_array(
         straight=straight,
         bend="bend_euler",
         component=component,
-        component_name=component_name,
         grating_coupler=grating_coupler,
         gc_port_name=gc_port_name,
         with_loopback=with_loopback,
