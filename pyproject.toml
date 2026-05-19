@@ -91,19 +91,19 @@ fix = true
 
 [tool.ruff.lint]
 ignore = [
-  "E501", # line too long, handled by black
-  "B008", # do not perform function calls in argument defaults
-  "C901", # too complex
-  "B905", # `zip()` without an explicit `strict=` parameter
-  "C408" # C408 Unnecessary `dict` call (rewrite as a literal)
+  "E501",  # line too long, handled by black
+  "B008",  # do not perform function calls in argument defaults
+  "C901",  # too complex
+  "B905",  # `zip()` without an explicit `strict=` parameter
+  "C408"  # C408 Unnecessary `dict` call (rewrite as a literal)
 ]
 select = [
-  "E", # pycodestyle errors
-  "W", # pycodestyle warnings
-  "F", # pyflakes
-  "I", # isort
-  "C", # flake8-comprehensions
-  "B", # flake8-bugbear
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "F",  # pyflakes
+  "I",  # isort
+  "C",  # flake8-comprehensions
+  "B",  # flake8-bugbear
   "UP"
 ]
 
@@ -115,8 +115,8 @@ select = [
 "docs/notebooks/21_schematic_driven_layout.py" = ['E402']
 "docs/notebooks/31_data_analysis_mzi.py" = ['E402']
 "docs/notebooks/33_data_analysis_dbr.py" = ['E402']
-"ubcpdk/cells/__init__.py" = ["F403"] # allowing star imports to aggregate cells
-"ubcpdk/models/__init__.py" = ["F403"] # allowing star imports to aggregate cells
+"ubcpdk/cells/__init__.py" = ["F403"]  # allowing star imports to aggregate cells
+"ubcpdk/models/__init__.py" = ["F403"]  # allowing star imports to aggregate cells
 
 [tool.setuptools.package-data]
 "*" = ["*.csv", "*.yaml", "*.yml", "*.gds", "*.lyp", "*.oas", "*.lyt", '*.nc', "*.json", "*.txt", "*.md", "*.png", "*.jpg", "*.jpeg", "*.svg", "*.GDS", "*.OAS"]
