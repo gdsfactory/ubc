@@ -46,12 +46,25 @@ build:
 	pip install build
 	python -m build
 
-docs:
-	uv run python .github/write_components_plot.py
-	uv run python .github/write_components_autodoc.py
-	uv run jb build docs
-
 mask:
 	python ubcpdk/samples/test_masks.py
 
-.PHONY: drc doc docs install
+docs-pdf:
+	uv run python .github/write_components_autodoc.py
+	uv run python .github/write_components_plot.py
+	cp CHANGELOG.md docs/changelog.md
+	uv run mkdocs build -f mkdocs-pdf.yml
+
+docs:
+	uv run python .github/write_components_autodoc.py
+	uv run python .github/write_components_plot.py
+	cp CHANGELOG.md docs/changelog.md
+	uv run --extra docs zensical build
+
+docs-serve:
+	uv run python .github/write_components_autodoc.py
+	uv run python .github/write_components_plot.py
+	cp CHANGELOG.md docs/changelog.md
+	uv run --extra docs zensical serve -a localhost:8080
+
+.PHONY: drc drc-sample doc docs docs-pdf build
