@@ -4,6 +4,8 @@ site_dir: build/pdf
 nav:
   - Home: index.md
   - Reference:
+      - Components: components.md
+      - Components Plot: components_plot.md
       - Changelog: changelog.md
   - Tutorial:
       - Data Analysis: data_analysis.md

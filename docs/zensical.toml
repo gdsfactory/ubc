@@ -1,7 +1,10 @@
 [project]
+docs_dir = "."
 nav = [
   {"Home" = "index.md"},
   {"Reference" = [
+    {"Components" = "components.md"},
+    {"Components Plot" = "components_plot.md"},
     {"Changelog" = "changelog.md"}
   ]},
   {"Tutorial" = [
@@ -9,7 +12,7 @@ nav = [
     {"Simulations" = "simulations.md"}
   ]}
 ]
-site_dir = "docs/_build/html"
+site_dir = "_build/html"
 site_name = "ubcpdk pdk"
 site_url = "https://gdsfactory.github.io/ubc"
 

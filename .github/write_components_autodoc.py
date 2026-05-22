@@ -3,7 +3,7 @@ import inspect
 from ubcpdk import PDK
 from ubcpdk.config import PATH
 
-filepath = PATH.repo / "docs" / "components.rst"
+filepath = PATH.repo / "docs" / "components.md"
 
 skip = {
     "LIBRARY",
