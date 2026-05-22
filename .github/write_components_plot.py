@@ -4,7 +4,7 @@ from enum import Enum
 from ubcpdk import PDK
 from ubcpdk.config import PATH
 
-filepath = PATH.repo / "docs" / "components_plot.rst"
+filepath = PATH.repo / "docs" / "components_plot.md"
 
 skip = {
     "LIBRARY",
@@ -70,10 +70,10 @@ Cells
             f.write(
                 f"""
 
-{name}
-----------------------------------------------------
+## {name}
 
-.. autofunction:: ubcpdk.cells.{name}
+
+::: ubcpdk.cells.{name}
 
 """
             )
@@ -81,21 +81,19 @@ Cells
             f.write(
                 f"""
 
-{name}
-----------------------------------------------------
+## {name}
 
-.. autofunction:: ubcpdk.cells.{name}
 
-.. plot::
-  :include-source:
+::: ubcpdk.cells.{name}
 
-  from ubcpdk import PDK, cells
-  from ubcpdk.tech import LayerMapUbc
+```python
+from ubcpdk import PDK, cells
+from ubcpdk.tech import LayerMapUbc
 
-  PDK.activate()
+PDK.activate()
 
-  c = cells.{name}({kwargs})
-  c.plot()
-
+c = cells.{name}({kwargs})
+c.plot()
+```
 """
             )
