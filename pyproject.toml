@@ -16,7 +16,7 @@ dependencies = [
   "gdsfactory~=9.43.0",
   "gplugins[sax,tidy3d]~=2.1.0",
   "jsondiff",
-  "doroutes~=0.6.0",
+  "doroutes~=1.0.0",
   "gdsfactoryplus",
   "pytz"
 ]
