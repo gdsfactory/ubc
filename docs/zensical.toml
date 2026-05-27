@@ -8,8 +8,6 @@ nav = [
     {"Changelog" = "changelog.md"}
   ]},
   {"Tutorial" = [
-    {"Data Analysis" = "data_analysis.md"},
-    {"Simulations" = "simulations.md"}
   ]}
 ]
 site_dir = "_build/html"

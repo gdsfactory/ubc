@@ -8,8 +8,6 @@ nav:
       - Components Plot: components_plot.md
       - Changelog: changelog.md
   - Tutorial:
-      - Data Analysis: data_analysis.md
-      - Simulations: simulations.md
 plugins:
   - search
   - autorefs
