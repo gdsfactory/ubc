@@ -32,8 +32,7 @@ def ring_single(
         bend: bend type for the ring. Defaults to "bend_euler".
         p: percentage of the bend that is euler. 1 means full euler, 0 means full circular.
 
-    .. code::
-
+    ```
                     xxxxxxxxxxxxx
                 xxxxx           xxxx
               xxx                   xxx
@@ -51,6 +50,7 @@ def ring_single(
                 xxx──────▲─────────xxx
                          │gap
                  o1──────▼─────────o2
+    ```
     """
     return gf.c.ring_single(
         gap=gap,
@@ -157,8 +157,7 @@ def ring_double_heater(
         with_drop: adds drop ports.
         length_extension: straight length extension at the end of the coupler bottom ports. None defaults to 3.0 + radius.
 
-    .. code::
-
+    ```
            o2──────▲─────────o3
                    │gap_top
            xx──────▼─────────xxx
@@ -177,6 +176,7 @@ def ring_double_heater(
             xxx──────▲─────────xxx
                      │gap
              o1──────▼─────────o4
+    ```
     """
     return gf.c.ring_single_heater(
         gap=gap,
@@ -246,8 +246,7 @@ def ring_single_heater(
         with_drop: adds drop ports.
         length_extension: straight length extension at the end of the coupler bottom ports. None defaults to 3.0 + radius.
 
-    .. code::
-
+    ```
                xxx          xx
             xxx               xxx
           xxx                   xxx
@@ -265,6 +264,7 @@ def ring_single_heater(
             xxx──────▲─────────xxx
                      │gap
              o1──────▼─────────o4
+    ```
     """
     return gf.c.ring_single_heater(
         gap=gap,
