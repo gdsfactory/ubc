@@ -1,5 +1,7 @@
 # ubcpdk (SiEPIC Ebeam PDK) 3.3.4
 
+The University of British Columbia's SiEPIC EBeam PDK is a 220nm SOI silicon photonics platform fabricated via electron-beam lithography, widely used in academia and multi-project-wafer runs.
+
 <!-- BADGES:START -->
 [![Docs](https://github.com/gdsfactory/ubc/actions/workflows/pages.yml/badge.svg)](https://github.com/gdsfactory/ubc/actions/workflows/pages.yml)
 [![Tests](https://github.com/gdsfactory/ubc/actions/workflows/test_code.yml/badge.svg)](https://github.com/gdsfactory/ubc/actions/workflows/test_code.yml)
