@@ -52,18 +52,21 @@ mask:
 docs-pdf:
 	uv run python .github/write_components_autodoc.py
 	uv run python .github/write_components_plot.py
+	uv run python .github/write_layer_stack.py
 	cp CHANGELOG.md docs/changelog.md
 	uv run mkdocs build -f mkdocs-pdf.yml
 
 docs:
 	uv run python .github/write_components_autodoc.py
 	uv run python .github/write_components_plot.py
+	uv run python .github/write_layer_stack.py
 	cp CHANGELOG.md docs/changelog.md
 	uv run --extra docs zensical build -f docs/zensical.toml
 
 docs-serve:
 	uv run python .github/write_components_autodoc.py
 	uv run python .github/write_components_plot.py
+	uv run python .github/write_layer_stack.py
 	cp CHANGELOG.md docs/changelog.md
 	uv run --extra docs zensical serve -f docs/zensical.toml -a localhost:8080
 
