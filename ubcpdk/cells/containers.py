@@ -109,6 +109,9 @@ def add_fiber_array(
         cross_section: spec.
         straight: straight component.
         taper: taper component.
+        mirror_grating_coupler: True mirrors the grating coupler before
+            connecting it to the routes.
+        gc_rotation: grating coupler rotation in degrees.
         kwargs: cross_section settings.
 
     """
@@ -237,6 +240,7 @@ def add_pads(
     Args:
         component: to add fiber array and pads.
         username: for the label.
+        label_port_name: electrical port name where the label is placed.
         kwargs: for add_fiber_array.
     """
     c0 = gf.get_component(component).copy()
