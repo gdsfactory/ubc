@@ -603,23 +603,6 @@ wheels = [
 ]
 
 [[package]]
-name = "doroutes"
-version = "1.1.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "kfactory" },
-    { name = "kwasm" },
-    { name = "numpy" },
-    { name = "shapely" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/fb/88/91f559c1e1fc1d1f7e30136bcacdcc22f83ae2c0ed9b5c06c4d5790b43d0/doroutes-1.1.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:ec6168f0b57bb4a7dd8b1d4581fd371873b3921f86037fe03c6a6af7839457c2", size = 3325645, upload-time = "2026-06-04T10:06:12.47Z" },
-    { url = "https://files.pythonhosted.org/packages/7c/4e/6c0acffd204b131ee45d3f368b45fdc5093d35aa8c6275af2e49a8aad630/doroutes-1.1.0-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:1283de66b403a07930384cfa12890313d51c79b510303b6845d75497ee4f21c2", size = 3487225, upload-time = "2026-06-04T10:06:13.734Z" },
-    { url = "https://files.pythonhosted.org/packages/fa/05/fb812f7bb1cd3e291f1e20a03dd5075be19023a51779cc7fda6a135aed77/doroutes-1.1.0-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:c564ba2c1a71d83636df5dbdb55bab1daad02c250d095ea41f18c96ced2d0c1b", size = 3660432, upload-time = "2026-06-04T10:06:15.292Z" },
-    { url = "https://files.pythonhosted.org/packages/f8/c7/ba66b740b953bddf08eab076acecd803b8a6f8910a458e3177edfb29e804/doroutes-1.1.0-cp312-cp312-win_amd64.whl", hash = "sha256:fde94a996aff6804822a4ef4ba9f1832bf8c5bd8b87134fa16ed19f12ba2847a", size = 3045451, upload-time = "2026-06-04T10:06:16.51Z" },
-]
-
-[[package]]
 name = "elvis-lvs"
 version = "0.2.1"
 source = { registry = "https://pypi.org/simple" }
@@ -3608,7 +3591,6 @@ name = "ubcpdk"
 version = "3.3.5"
 source = { editable = "." }
 dependencies = [
-    { name = "doroutes" },
     { name = "gdsfactory" },
     { name = "gdsfactoryplus" },
     { name = "gplugins", extra = ["sax", "tidy3d"] },
@@ -3627,6 +3609,7 @@ dev = [
 ]
 docs = [
     { name = "jupyter" },
+    { name = "kwasm" },
     { name = "mkdocs-material" },
     { name = "mkdocs-with-pdf" },
     { name = "mkdocstrings", extra = ["python"] },
@@ -3636,13 +3619,13 @@ docs = [
 
 [package.metadata]
 requires-dist = [
-    { name = "doroutes", specifier = "~=1.1.0" },
     { name = "gdsfactory", specifier = "~=9.45.0" },
     { name = "gdsfactoryplus" },
     { name = "gdsfactoryplus", marker = "extra == 'dev'" },
     { name = "gplugins", extras = ["sax", "tidy3d"], specifier = "~=2.1.0" },
     { name = "jsondiff" },
     { name = "jupyter", marker = "extra == 'docs'" },
+    { name = "kwasm", marker = "extra == 'docs'" },
     { name = "mkdocs-material", marker = "extra == 'docs'" },
     { name = "mkdocs-with-pdf", marker = "extra == 'docs'" },
     { name = "mkdocstrings", extras = ["python"], marker = "extra == 'docs'", specifier = ">=0.27.0" },
