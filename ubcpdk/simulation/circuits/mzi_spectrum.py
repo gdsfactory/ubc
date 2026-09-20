@@ -22,10 +22,17 @@ def mzi_spectrum(
     """Returns MZI spectrum.
 
     Args:
-        L1_um.
-        L2_um.
-        wavelength_um.
-        beta: propagation constant.
+        L1_um: length of the first MZI arm in um.
+        L2_um: length of the second MZI arm in um.
+        wavelength_um: wavelength or array of wavelengths in um.
+        beta: propagation constant. Array or callable taking
+            (wavelength_um, neff, alpha, n1, n2, n3).
+        alpha: propagation loss [micron^-1] constant.
+        neff: effective index. Float or callable taking
+            (wavelength_um, n1, n2, n3) and returning the effective index.
+        n1: effective index at the reference wavelength (1.55 um).
+        n2: first order dispersion term [1/um] of the neff expansion.
+        n3: second order dispersion term [1/um^2] of the neff expansion.
     """
     if callable(beta):
         beta = beta(wavelength_um, neff=neff, alpha=alpha, n1=n1, n2=n2, n3=n3)
