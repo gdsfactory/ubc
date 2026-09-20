@@ -20,7 +20,7 @@ dependencies = [
   "pytz"
 ]
 description = "ubcpdk pdk"
-keywords = ["python"]
+keywords = ["ebeam", "eda", "foundry", "gdsfactory", "pdk", "photonics", "process", "python", "siepic", "ubc"]
 license = { file = "LICENSE" }
 name = "ubcpdk"
 readme = "README.md"
