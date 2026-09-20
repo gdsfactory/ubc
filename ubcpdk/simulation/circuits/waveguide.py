@@ -31,6 +31,11 @@ def beta(wavelength_um=wavelength_um, alpha=1e-3, neff=neff, n1=2.4, n2=-1, n3=0
     Args:
         wavelength_um: in um.
         alpha: propagation loss [micron^-1] constant.
+        neff: effective index. Float or callable taking
+            (wavelength_um, n1, n2, n3) and returning the effective index.
+        n1: effective index at the reference wavelength (1.55 um).
+        n2: first order dispersion term [1/um] of the neff expansion.
+        n3: second order dispersion term [1/um^2] of the neff expansion.
     """
     if callable(neff):
         neff = neff(wavelength_um, n1=n1, n2=n2, n3=n3)

@@ -1,0 +1,20 @@
+name: Generate nyanlib
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: write
+
+jobs:
+  generate:
+    uses: doplaydo/pdk-ci-workflow-public/.github/workflows/generate_nyanlib.yml@474fb5dd1518a226c29b45d28123d32a9e699d79 # main
+    with:
+      script_ref: 474fb5dd1518a226c29b45d28123d32a9e699d79
+    secrets:
+      GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
+      GFP_ECR_IMAGE: ${{ secrets.GFP_ECR_IMAGE }}
+      SHARED_SERVICES_AWS_OIDC_ROLE_ARN: ${{ secrets.SHARED_SERVICES_AWS_OIDC_ROLE_ARN }}
