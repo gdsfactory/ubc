@@ -8,6 +8,11 @@ nav:
       - Components Plot: components_plot.md
       - Changelog: changelog.md
   - Tutorial:
+markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - admonition
 plugins:
   - search
   - autorefs
