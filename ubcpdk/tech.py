@@ -10,7 +10,6 @@ from collections.abc import Callable
 from functools import partial
 
 import gdsfactory as gf
-from doroutes.bundles import add_bundle_astar
 from gdsfactory.add_pins import add_pin_path
 from gdsfactory.component import Component
 from gdsfactory.cross_section import get_cross_sections
@@ -363,32 +362,12 @@ route_bundle_metal_corner = partial(
     port_type="electrical",
 )
 
-route_astar = partial(
-    add_bundle_astar,
-    layers=["WG"],
-    bend="bend_euler",
-    straight="straight",
-    grid_unit=500,
-    spacing=3,
-)
-
-route_astar_metal = partial(
-    add_bundle_astar,
-    layers=["M2_ROUTER"],
-    bend="wire_corner",
-    straight="straight_metal",
-    grid_unit=500,
-    spacing=15,
-)
-
 
 routing_strategies = dict(
     route_bundle=route_bundle,
     route_bundle_rib=route_bundle_rib,
     route_bundle_metal=route_bundle_metal,
     route_bundle_metal_corner=route_bundle_metal_corner,
-    route_astar=route_astar,
-    route_astar_metal=route_astar_metal,
 )
 
 
