@@ -13,14 +13,14 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "gdsfactory>=9.45,<9.50",
+  "gdsfactory~=9.51.0",
   "gplugins[sax,tidy3d]~=2.1.0",
   "jsondiff",
   "gdsfactoryplus",
   "pytz"
 ]
 description = "ubcpdk pdk"
-keywords = ["ebeam", "eda", "gdsfactory", "pdk", "photonics", "python", "siepic", "ubc"]
+keywords = ["ebeam", "eda", "foundry", "gdsfactory", "pdk", "photonics", "process", "python", "siepic", "ubc"]
 license = { file = "LICENSE" }
 name = "ubcpdk"
 readme = "README.md"
