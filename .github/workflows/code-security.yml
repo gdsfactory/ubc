@@ -11,19 +11,27 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   sast:
-    uses: doplaydo/infra/.github/workflows/reuseable-sast.yaml@main
-    with:
-      output-format: text
-      fail-on-findings: false
-      enable-secrets-scan: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+      - name: Run Bandit
+        continue-on-error: true
+        run: uvx --from bandit bandit -r ubcpdk -f txt
 
   sca:
-    uses: doplaydo/infra/.github/workflows/reuseable-sca.yaml@main
-    with:
-      scan-type: fs
-      scanners: vuln,misconfig,secret
-      fail-on-findings: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Run Trivy
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          exit-code: "0"
+          format: table
+          ignore-unfixed: true
+          scan-ref: .
+          scan-type: fs
+          scanners: vuln,misconfig,secret
