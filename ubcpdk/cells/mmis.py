@@ -1,4 +1,4 @@
-"""This module contains the building blocks for the CSPDK PDK."""
+"""Multimode Interferometers (MMIs)."""
 
 import gdsfactory as gf
 from gdsfactory.typings import (
