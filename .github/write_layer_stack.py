@@ -9,6 +9,9 @@ from __future__ import annotations
 import json
 import math
 
+import gdsfactory as gf
+from gdsfactory.technology import LogicalLayer
+
 from ubcpdk import PDK
 from ubcpdk.config import PATH
 
@@ -75,19 +78,20 @@ def _infer_layer_type(material, name):
 # ---------------------------------------------------------------------------
 
 
-def _gds_layer_number(layer_attr):
+def _gds_layer_tuple(layer_attr):
     if layer_attr is None:
         return None
-    inner = getattr(layer_attr, "layer", layer_attr)
-    if isinstance(inner, tuple | list) and len(inner) >= 1:
-        try:
-            return int(inner[0])
-        except (ValueError, TypeError):
-            return None
+    inner = layer_attr.layer if isinstance(layer_attr, LogicalLayer) else layer_attr
     try:
-        return int(inner)
-    except (ValueError, TypeError):
+        layer, datatype = gf.get_layer_tuple(inner)
+        return int(layer), int(datatype)
+    except (KeyError, TypeError, ValueError):
         return None
+
+
+def _gds_layer_number(layer_attr):
+    layer_tuple = _gds_layer_tuple(layer_attr)
+    return layer_tuple[0] if layer_tuple is not None else None
 
 
 def _nice_step(range_val, target_ticks=10):
@@ -180,6 +184,29 @@ def _compute_layout(layers, svg_w=550, svg_h=750):
     return real, ticks
 
 
+def _append_xs_layer(xs_layers, seen_layers, info, width):
+    identity = (
+        info["gds_tuple"],
+        info["zmin"],
+        info["thickness"],
+        float(width),
+    )
+    if identity in seen_layers:
+        return
+    seen_layers.add(identity)
+    xs_layers.append(
+        {
+            "name": info["name"],
+            "material": info["material"],
+            "zmin": round(info["zmin"], 4),
+            "zmax": round(info["zmin"] + info["thickness"], 4),
+            "thickness": round(info["thickness"], 4),
+            "width": round(float(width), 2),
+            "gds": info["gds"],
+        }
+    )
+
+
 def _extract_cross_sections(pdk, layer_stack):
     xs_dict = getattr(pdk, "cross_sections", {})
     if not xs_dict:
@@ -191,16 +218,17 @@ def _extract_cross_sections(pdk, layer_stack):
         thickness = getattr(level, "thickness", 0) or 0
         zmin = getattr(level, "zmin", 0) or 0
         material = getattr(level, "material", "") or ""
-        gds = _gds_layer_number(getattr(level, "layer", None))
+        gds_tuple = _gds_layer_tuple(getattr(level, "layer", None))
         info = {
             "name": name,
             "zmin": zmin,
             "thickness": thickness,
             "material": material,
-            "gds": gds,
+            "gds": gds_tuple[0] if gds_tuple is not None else None,
+            "gds_tuple": gds_tuple,
         }
-        if gds is not None:
-            layer_z_by_gds[gds] = info
+        if gds_tuple is not None:
+            layer_z_by_gds[gds_tuple] = info
         layer_z_by_name[name] = info
 
     layer_name_to_gds = {}
@@ -209,23 +237,22 @@ def _extract_cross_sections(pdk, layer_stack):
         try:
             for entry in layer_map:
                 lname = getattr(entry, "name", None)
-                val = getattr(entry, "value", None)
-                gds = _gds_layer_number(val)
-                if lname and gds is not None:
-                    layer_name_to_gds[lname] = gds
+                gds_tuple = _gds_layer_tuple(entry)
+                if lname and gds_tuple is not None:
+                    layer_name_to_gds[lname] = gds_tuple
         except TypeError:
             pass
 
     def resolve(layer_ref):
-        gds = _gds_layer_number(layer_ref)
-        if gds is not None and gds in layer_z_by_gds:
-            return layer_z_by_gds[gds]
+        gds_tuple = _gds_layer_tuple(layer_ref)
+        if gds_tuple is not None and gds_tuple in layer_z_by_gds:
+            return layer_z_by_gds[gds_tuple]
         if isinstance(layer_ref, str):
             if layer_ref in layer_z_by_name:
                 return layer_z_by_name[layer_ref]
-            g = layer_name_to_gds.get(layer_ref)
-            if g is not None and g in layer_z_by_gds:
-                return layer_z_by_gds[g]
+            mapped_tuple = layer_name_to_gds.get(layer_ref)
+            if mapped_tuple is not None and mapped_tuple in layer_z_by_gds:
+                return layer_z_by_gds[mapped_tuple]
         return None
 
     results = []
@@ -238,21 +265,12 @@ def _extract_cross_sections(pdk, layer_stack):
         main_layer = getattr(xs, "layer", None)
         main_width = getattr(xs, "width", None)
         xs_layers = []
+        seen_layers = set()
 
         if main_layer is not None and main_width is not None:
             info = resolve(main_layer)
             if info:
-                xs_layers.append(
-                    {
-                        "name": info["name"],
-                        "material": info["material"],
-                        "zmin": round(info["zmin"], 4),
-                        "zmax": round(info["zmin"] + info["thickness"], 4),
-                        "thickness": round(info["thickness"], 4),
-                        "width": round(float(main_width), 2),
-                        "gds": info["gds"],
-                    }
-                )
+                _append_xs_layer(xs_layers, seen_layers, info, main_width)
 
         for section in sections:
             sec_layer = getattr(section, "layer", None)
@@ -261,22 +279,36 @@ def _extract_cross_sections(pdk, layer_stack):
                 continue
             info = resolve(sec_layer)
             if info:
-                xs_layers.append(
-                    {
-                        "name": info["name"],
-                        "material": info["material"],
-                        "zmin": round(info["zmin"], 4),
-                        "zmax": round(info["zmin"] + info["thickness"], 4),
-                        "thickness": round(info["thickness"], 4),
-                        "width": round(float(sec_width), 2),
-                        "gds": info["gds"],
-                    }
-                )
+                _append_xs_layer(xs_layers, seen_layers, info, sec_width)
 
         if xs_layers:
             results.append({"name": xs_name, "layers": xs_layers})
 
     return results
+
+
+def _extract_background_layers(layer_stack):
+    """Return substrate, BOX, and cladding regions from the physical stack."""
+    backgrounds = []
+    for name, level in layer_stack.layers.items():
+        normalized_name = name.lower()
+        if not any(part in normalized_name for part in ("substrate", "box", "clad")):
+            continue
+        zmin = getattr(level, "zmin", 0) or 0
+        thickness = getattr(level, "thickness", 0) or 0
+        material = getattr(level, "material", "") or ""
+        backgrounds.append(
+            {
+                "name": name,
+                "material": material,
+                "zmin": round(zmin, 4),
+                "zmax": round(zmin + thickness, 4),
+                "thickness": round(thickness, 4),
+                "gds": _gds_layer_number(getattr(level, "layer", None)),
+                "color": _color_for_layer(material),
+            }
+        )
+    return sorted(backgrounds, key=lambda layer: layer["zmin"])
 
 
 # ---------------------------------------------------------------------------
@@ -402,15 +434,10 @@ def _render_cross_sections(cross_sections, layer_stack, svg_id, svg_w=1000, svg_
     plot_w = svg_w - margin_l - margin_r
     plot_h = svg_h - margin_t - margin_b
 
-    box_t = getattr(layer_stack, "box_thickness", 2.0) or 2.0
-    all_z = [-box_t, 0.0]
-    clad_top = 0.0
-    for name, level in layer_stack.layers.items():
-        zmin = getattr(level, "zmin", 0) or 0
-        thickness = getattr(level, "thickness", 0) or 0
-        all_z.extend([zmin, zmin + thickness])
-        if "clad" in name.lower():
-            clad_top = max(clad_top, zmin + thickness)
+    background_layers = _extract_background_layers(layer_stack)
+    all_z = []
+    for layer in background_layers:
+        all_z.extend([layer["zmin"], layer["zmax"]])
     for xs in cross_sections:
         for layer in xs["layers"]:
             all_z.extend([layer["zmin"], layer["zmax"]])
@@ -454,45 +481,19 @@ def _render_cross_sections(cross_sections, layer_stack, svg_id, svg_w=1000, svg_
         inner_w = col_w - 2 * 6.0
         center = cx + (col_w - 1.4) / 2
 
-        # Cladding background
-        cy_top = z2y(clad_top) if clad_top > 0 else z2y(z_max_g)
-        cy_bot = z2y(0)
-        parts.append(
-            f'<g data-idx="{idx}"><rect x="{cx:.1f}" y="{cy_top:.1f}" width="{col_w - 1.4:.1f}" height="{cy_bot - cy_top:.1f}" fill="#FFF8DC" opacity="0.6"/></g>'
-        )
-        all_data.append(
-            {
-                "name": "Cladding",
-                "material": "SiO2",
-                "zmin": 0,
-                "zmax": round(clad_top, 3),
-                "thickness": round(clad_top, 3),
-                "gds": None,
-            }
-        )
-        idx += 1
-
-        # Substrate background
-        sy_top = z2y(0)
-        sy_bot = z2y(-box_t)
-        parts.append(
-            f'<g data-idx="{idx}"><rect x="{cx:.1f}" y="{sy_top:.1f}" width="{col_w - 1.4:.1f}" height="{sy_bot - sy_top:.1f}" fill="#C0C0C0" opacity="0.5"/></g>'
-        )
-        all_data.append(
-            {
-                "name": "Substrate",
-                "material": "Si",
-                "zmin": round(-box_t, 3),
-                "zmax": 0,
-                "thickness": round(box_t, 3),
-                "gds": None,
-            }
-        )
-        idx += 1
+        # Background regions come directly from the physical layer stack.
+        for background in background_layers:
+            region_top = z2y(background["zmax"])
+            region_bottom = z2y(background["zmin"])
+            parts.append(
+                f'<g data-idx="{idx}"><rect x="{cx:.1f}" y="{region_top:.1f}" width="{col_w - 1.4:.1f}" height="{region_bottom - region_top:.1f}" fill="{background["color"]}" opacity="0.6"/></g>'
+            )
+            all_data.append(background)
+            idx += 1
 
         # Column borders
-        bt = min(cy_top, margin_t)
-        bb = max(sy_bot, margin_t + plot_h)
+        bt = margin_t
+        bb = margin_t + plot_h
         parts.append(
             f'<line x1="{cx:.1f}" y1="{bt:.1f}" x2="{cx:.1f}" y2="{bb:.1f}" stroke="#CCC" stroke-width="1" stroke-dasharray="3,3"/>'
         )
