@@ -1670,13 +1670,13 @@ wheels = [
 
 [[package]]
 name = "kwasm"
-version = "0.2.26"
+version = "0.3.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "typer" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ff/a9/96f5b9f3ad75a4f9d3b2e36b64df013c1105729890e7c15f3d8810636f09/kwasm-0.2.26-py3-none-any.whl", hash = "sha256:c07af2bbf27335777ad604041c4c78752bf07c21c77a685a26c0de098dc47e4a", size = 6938612, upload-time = "2026-08-20T15:42:23.961Z" },
+    { url = "https://files.pythonhosted.org/packages/61/22/5f0f8774c8577b5e941b2b1805a16b4909a0cb84a9f77b63380b5729ebbd/kwasm-0.3.1-py3-none-any.whl", hash = "sha256:4cbd66d752c577f11277a6259bdcf390462f392e1518f66ca9473363f75db13a", size = 2474589, upload-time = "2026-09-17T09:03:44.476Z" },
 ]
 
 [[package]]
