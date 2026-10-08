@@ -10,11 +10,11 @@ classifiers = [
 ]
 dependencies = [
   "gdsfactoryplus",
-  "gplugins[femwell,sax,tidy3d]~=2.1.0",
+  "gplugins[femwell,sax,tidy3d]>=2.0.1,<2.2.0",
   "meow-sim",
   "pytz",
   "scikit-learn",
-  "ubcpdk==3.3.5"
+  "ubcpdk~=3.3.4"
 ]
 description = "My ubc demo project"
 keywords = ["cornerstone", "eda", "photonics", "python", "ubc"]
