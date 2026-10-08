@@ -1,0 +1,442 @@
+exploded: ''
+camera_transform:
+  translation:
+    x: 467.84018
+    y: -130.45007
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  scale:
+    x: 2.1623807
+    y: 2.1623807
+    z: 1.0
+transforms:
+  die_template:
+    translation:
+      x: -101.00002
+      y: -103.00003
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi10x:
+    translation:
+      x: -340.00003
+      y: -177.0
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi11x:
+    translation:
+      x: -332.00003
+      y: -285.00003
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi12x:
+    translation:
+      x: -622.0001
+      y: -292.00003
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi13x:
+    translation:
+      x: -318.0
+      y: -452.0001
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi14x:
+    translation:
+      x: -869.34045
+      y: -123.54495
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi15x:
+    translation:
+      x: 692.9941
+      y: -151.23589
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi16x:
+    translation:
+      x: 701.8822
+      y: 96.993546
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi17x:
+    translation:
+      x: 703.8573
+      y: -0.9136678
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi18x:
+    translation:
+      x: 537.94507
+      y: -55.306572
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi19x:
+    translation:
+      x: 815.4532
+      y: -67.1741
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi1x:
+    translation:
+      x: -213.0003
+      y: -10.929175
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi20x:
+    translation:
+      x: 1146.3447
+      y: -42.60513
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi21x:
+    translation:
+      x: 420.51285
+      y: -102.22206
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi22x:
+    translation:
+      x: 1046.476
+      y: -126.24679
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi23x:
+    translation:
+      x: 251.5487
+      y: -164.09238
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi24x:
+    translation:
+      x: 207.10797
+      y: -253.09892
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi2x:
+    translation:
+      x: -781.3707
+      y: 352.94733
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi3x:
+    translation:
+      x: -688.8258
+      y: 346.8632
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi4x:
+    translation:
+      x: -668.93286
+      y: 174.7692
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi5x:
+    translation:
+      x: -708.7186
+      y: 29.619225
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi6x:
+    translation:
+      x: -738.0001
+      y: -261.00003
+      z: 2.0
+    rotation:
+      x: 8.742277e-08
+      y: 0.0
+      z: 0.99999994
+      w: 0.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi7x:
+    translation:
+      x: -821.315
+      y: -366.44308
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi8x:
+    translation:
+      x: -870.32806
+      y: 21.832455
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 1.0
+      z: 0.0
+      w: -4.371139e-08
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mmi9x:
+    translation:
+      x: -695.0001
+      y: -539.00006
+      z: 2.0
+    rotation:
+      x: 8.742277e-08
+      y: 0.0
+      z: 0.99999994
+      w: 0.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+sizes:
+  die_template:
+    width: 784
+    height: 404
+  mmi10x:
+    width: 100
+    height: 100
+  mmi11x:
+    width: 100
+    height: 100
+  mmi12x:
+    width: 100
+    height: 100
+  mmi13x:
+    width: 100
+    height: 100
+  mmi14x:
+    width: 100
+    height: 100
+  mmi15x:
+    width: 100
+    height: 100
+  mmi16x:
+    width: 100
+    height: 100
+  mmi17x:
+    width: 100
+    height: 100
+  mmi18x:
+    width: 100
+    height: 100
+  mmi19x:
+    width: 100
+    height: 100
+  mmi1x:
+    width: 100
+    height: 100
+  mmi20x:
+    width: 100
+    height: 100
+  mmi21x:
+    width: 100
+    height: 100
+  mmi22x:
+    width: 100
+    height: 100
+  mmi23x:
+    width: 100
+    height: 100
+  mmi24x:
+    width: 100
+    height: 100
+  mmi2x:
+    width: 100
+    height: 100
+  mmi3x:
+    width: 100
+    height: 100
+  mmi4x:
+    width: 100
+    height: 100
+  mmi5x:
+    width: 100
+    height: 100
+  mmi6x:
+    width: 100
+    height: 100
+  mmi7x:
+    width: 100
+    height: 100
+  mmi8x:
+    width: 100
+    height: 100
+  mmi9x:
+    width: 100
+    height: 100
