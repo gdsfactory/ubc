@@ -17,7 +17,7 @@ dependencies = [
   "ubcpdk~=3.3.4"
 ]
 description = "My ubc demo project"
-keywords = ["cornerstone", "eda", "photonics", "python", "ubc"]
+keywords = ["eda", "photonics", "python", "ubc"]
 license = { file = "LICENSE" }
 name = "myubc"
 optional-dependencies.dev = ["pre-commit", "ruff", "uv"]
