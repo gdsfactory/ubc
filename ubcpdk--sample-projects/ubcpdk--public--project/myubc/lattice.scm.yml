@@ -1,0 +1,112 @@
+exploded: ''
+camera_transform:
+  translation:
+    x: 209.39952
+    y: -155.14256
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  scale:
+    x: 0.5883936
+    y: 0.5883936
+    z: 1.0
+transforms:
+  mzi1:
+    translation:
+      x: 66.09802
+      y: -206.27185
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  mzi2:
+    translation:
+      x: 308.47977
+      y: -140.38861
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  o2:
+    translation:
+      x: 493.0
+      y: -126.0
+      z: 5.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  o1:
+    translation:
+      x: -69.000015
+      y: -70.0
+      z: 5.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  o3:
+    translation:
+      x: 332.00003
+      y: 29.000017
+      z: 5.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+port_configs:
+  mzi:
+    o1:
+      orientation: w
+      port_type: optical
+      index: -1.64
+    o2:
+      orientation: w
+      port_type: optical
+      index: 2.36
+    o4:
+      orientation: e
+      port_type: optical
+      index: -1.64
+    o3:
+      orientation: e
+      port_type: optical
+      index: 2.36
+sizes:
+  mzi1:
+    width: 100
+    height: 100
+  mzi2:
+    width: 100
+    height: 100
+link_paths: []

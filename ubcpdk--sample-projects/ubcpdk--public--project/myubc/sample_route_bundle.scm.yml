@@ -1,0 +1,95 @@
+exploded: ''
+camera_transform:
+  translation:
+    x: -228.08426
+    y: 125.10716
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  scale:
+    x: 1.7935437
+    y: 1.7935437
+    z: 1.0
+transforms:
+  s1:
+    translation:
+      x: -359.82816
+      y: 6.5937543
+      z: 0.1
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  r2:
+    translation:
+      x: 42.432556
+      y: 574.75415
+      z: 0.2
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  s2:
+    translation:
+      x: -373.13782
+      y: 574.7661
+      z: 0.3
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  r1:
+    translation:
+      x: 10.891449
+      y: -20.968552
+      z: 0.4
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+port_configs:
+  straight:
+    o1:
+      orientation: w
+      port_type: optical
+      index: 0.0
+    o2:
+      orientation: e
+      port_type: optical
+      index: 0.0
+array_configs:
+  s1:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0
+  r2:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0
+  s2:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0
+  r1:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0

@@ -1,8 +1,10 @@
-name: Generate nyanlib
+name: Sample Project Upload
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-  workflow_dispatch:
+    paths:
+      - '**/*--sample-projects/**'
 
 permissions:
   contents: write
@@ -10,8 +12,8 @@ permissions:
   id-token: write
 
 jobs:
-  generate:
-    uses: doplaydo/pdk-ci-workflow-public/.github/workflows/generate_nyanlib.yml@main
+  upload:
+    uses: doplaydo/pdk-ci-workflow-public/.github/workflows/sample-project-upload.yml@main
     secrets:
       GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
       GFP_ECR_IMAGE: ${{ secrets.GFP_ECR_IMAGE }}

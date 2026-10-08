@@ -1,0 +1,63 @@
+exploded: ''
+camera_transform:
+  translation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  scale:
+    x: 1.0
+    y: 1.0
+    z: 1.0
+transforms:
+  s1:
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  p1:
+    translation:
+      x: -113.47714
+      y: 127.99032
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+component_ports:
+  straight_heater_metal:
+    o2: e
+    r_e3: e
+    o1: w
+    l_e1: w
+  pad:
+    e2: n
+    e3: e
+    pad: e
+    e4: s
+    e1: w
+sizes:
+  s1:
+    width: 100
+    height: 100
+  p1:
+    width: 100
+    height: 100

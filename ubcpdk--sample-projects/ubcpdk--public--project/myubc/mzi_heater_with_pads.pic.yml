@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../build/schemas/mzi_heater_with_pads.json
+instances:
+  b3:
+    component: bend_euler
+    settings: {}
+  b1:
+    component: bend_euler
+    settings: {}
+  b2:
+    component: bend_euler
+    settings: {}
+  b4:
+    component: bend_euler
+    settings: {}
+  c1:
+    component: coupler
+    settings: {}
+  c2:
+    component: coupler
+    settings: {}
+  h:
+    component: straight_heater_metal
+    settings:
+      length: 100
+  p1:
+    component: pad
+    settings: {}
+  p2:
+    component: pad
+    settings: {}
+connections:
+  b1,o1: c1,o3
+  b2,o1: b1,o2
+  h,o1: b2,o2
+  b3,o1: h,o2
+  b4,o1: b3,o2
+  c2,o2: b4,o2
+routes:
+  btm:
+    links:
+      c2,o1: c1,o4
+    routing_strategy: route_bundle
+    settings: {}
+  my_bundle:
+    links:
+      h,l_e1: p1,e4
+      h,r_e3: p2,e4
+    routing_strategy: route_bundle
+    settings:
+      cross_section: metal_routing
+nets: []
+ports:
+  o2: c1,o2
+  o4: c2,o4
+  o3: c2,o3
+  o1: c1,o1
+  e1: h,l_e1
+  e2: h,r_e3
+placements:
+  b3:
+    mirror: true
+  b2:
+    mirror: true
+  p1:
+    dx: 7.784
+    dy: 137.71
+    rotation: 0
+    mirror: false
+  p2:
+    dx: 173.635
+    dy: 138.309
+    rotation: 0
+    mirror: false

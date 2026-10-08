@@ -1,0 +1,34 @@
+exploded: ''
+camera_transform:
+  translation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  scale:
+    x: 1.0
+    y: 1.0
+    z: 1.0
+transforms:
+  p8:
+    translation:
+      x: -66.75466
+      y: 51.899994
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+sizes:
+  p8:
+    width: 100
+    height: 100
