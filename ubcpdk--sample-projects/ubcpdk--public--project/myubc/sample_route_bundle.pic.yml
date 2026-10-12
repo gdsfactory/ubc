@@ -1,0 +1,72 @@
+instances:
+  s1:
+    component: straight
+    settings: {}
+    array:
+      columns: 1
+      rows: 3
+      column_pitch: 100
+      row_pitch: 2
+  r2:
+    component: straight
+    settings: {}
+    array:
+      columns: 1
+      rows: 3
+      column_pitch: 100
+      row_pitch: 2
+  s2:
+    component: straight
+    settings: {}
+    array:
+      columns: 1
+      rows: 3
+      column_pitch: 2
+      row_pitch: 2
+  r1:
+    component: straight
+    settings: {}
+    array:
+      columns: 1
+      rows: 3
+      column_pitch: 100
+      row_pitch: 2
+connections: {}
+routes:
+  bundle2:
+    links:
+      s1<0.0-2>,o2: r1<0.0-2>,o1
+    routing_strategy: route_bundle
+    settings: {}
+  bundle1:
+    links:
+      s2<0.0-2>,o2: r2<0.0-2>,o1
+    routing_strategy: route_bundle
+    settings: {}
+nets: []
+ports: {}
+placements:
+  s1:
+    x: 0
+    'y': 0
+    dx: -27.636
+    dy: -36.354
+    rotation: 0
+    mirror: false
+  r2:
+    x: 0
+    'y': 0
+    dx: 22.582
+    dy: -26.593
+    rotation: 0
+    mirror: false
+  s2:
+    x: 0
+    'y': 0
+    dx: -54.45162582397461
+    dy: -83.87503051757812
+  r1:
+    x: 0
+    'y': 0
+    dx: 9.981014251708984
+    dy: -99.50064849853516

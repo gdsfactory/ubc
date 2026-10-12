@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../build/schemas/mymzi.json
+instances:
+  mzi:
+    component: mzi
+    settings: {}
+connections: {}
+routes: {}
+ports: {}
+placements: {}

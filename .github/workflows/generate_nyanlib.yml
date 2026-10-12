@@ -6,14 +6,12 @@ on:
 
 permissions:
   contents: write
-  id-token: write
   pull-requests: write
+  id-token: write
 
 jobs:
   generate:
-    uses: doplaydo/pdk-ci-workflow-public/.github/workflows/generate_nyanlib.yml@474fb5dd1518a226c29b45d28123d32a9e699d79 # main
-    with:
-      script_ref: 474fb5dd1518a226c29b45d28123d32a9e699d79
+    uses: doplaydo/pdk-ci-workflow-public/.github/workflows/generate_nyanlib.yml@main
     secrets:
       GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
       GFP_ECR_IMAGE: ${{ secrets.GFP_ECR_IMAGE }}

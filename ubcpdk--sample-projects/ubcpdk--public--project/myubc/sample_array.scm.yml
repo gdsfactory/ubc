@@ -1,0 +1,36 @@
+transforms:
+  b1:
+    translation:
+      x: 212.99997
+      y: 182.00002
+      z: 3.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: -0.9999999
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  s1:
+    translation:
+      x: -102.00001
+      y: 70.00002
+      z: 2.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+component_ports:
+  bend_euler:
+    o2: n
+    o1: w
+  straight:
+    o2: e
+    o1: w

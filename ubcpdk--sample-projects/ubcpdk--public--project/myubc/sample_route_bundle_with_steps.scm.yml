@@ -1,0 +1,116 @@
+exploded: ''
+camera_transform:
+  translation:
+    x: 605.74005
+    y: 10.915588
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  scale:
+    x: 1.4205289
+    y: 1.4205289
+    z: 1.0
+transforms:
+  r2:
+    translation:
+      x: 34.083664
+      y: 584.62787
+      z: -1.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  s2:
+    translation:
+      x: -527.2833
+      y: 544.4805
+      z: -1.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  s1:
+    translation:
+      x: -458.0455
+      y: -313.97482
+      z: -1.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  r1:
+    translation:
+      x: 69.89888
+      y: 41.48207
+      z: -1.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+port_configs:
+  straight:
+    o1:
+      orientation: w
+      port_type: optical
+      index: 0.0
+    o2:
+      orientation: e
+      port_type: optical
+      index: 0.0
+array_configs:
+  s1:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0
+  r2:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0
+  s2:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0
+  r1:
+    scm_column_pitch: 120.0
+    scm_row_pitch: 120.0
+link_paths:
+  - key:
+      - s1<0.2>,o2
+      - r1<0.2>,o1
+    value:
+      - x: -269.74075
+        y: 173.28929
+      - x: -11.163605
+        y: 163.0225
+  - key:
+      - s1<0.1>,o2
+      - r1<0.1>,o1
+    value:
+      - x: -240.87347
+        y: 21.899296
+      - x: -240.87347
+        y: 21.899296
+      - x: -230.64514
+        y: 21.158493
+      - x: -63.28833
+        y: 30.239712
