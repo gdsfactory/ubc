@@ -1,0 +1,46 @@
+{
+  "c1": {
+    "type": "coupler",
+    "id": null,
+    "model": "gdsfactory.components.couplers.coupler.coupler",
+    "name": "c1",
+    "nets": {
+      "o3-4": "net1"
+    },
+    "x": -14.0,
+    "y": 3.0
+  },
+  "c2": {
+    "type": "coupler",
+    "bbox_height": 4.5,
+    "bbox_width": 40.0,
+    "bbox_xmin": -10.0,
+    "bbox_ymin": -1.882,
+    "id": null,
+    "irl_x": 110.0,
+    "irl_y": -100.368,
+    "model": "gdsfactory.components.couplers.coupler.coupler",
+    "name": "c2",
+    "nets": {
+      "o3-4": "net1"
+    },
+    "x": -8.0,
+    "y": 1.0
+  },
+  "bundle1": {
+    "type": "polyline",
+    "id": "bundle1",
+    "name": "bundle1",
+    "terminals": {
+      "start": {
+        "device": "c1",
+        "port": "o3-4"
+      },
+      "finish": {
+        "device": "c2",
+        "port": "o3-4"
+      }
+    },
+    "net": "net1"
+  }
+}

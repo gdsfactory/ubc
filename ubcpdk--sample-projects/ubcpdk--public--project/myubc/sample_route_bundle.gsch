@@ -1,0 +1,202 @@
+{
+  "s1<0.0>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": -22.636,
+    "irl_y": 36.354,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s1<0.0>",
+    "x": -7.0,
+    "y": 0.0
+  },
+  "r2<0.2>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 27.582,
+    "irl_y": 22.593,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "r2<0.2>",
+    "x": 1.0,
+    "y": 19.0
+  },
+  "s2<0.1>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": -49.45162582397461,
+    "irl_y": 81.87503051757812,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s2<0.1>",
+    "x": -7.0,
+    "y": 15.0
+  },
+  "r1<0.0>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 14.981014251708984,
+    "irl_y": 99.50064849853516,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "r1<0.0>",
+    "x": 0.0,
+    "y": 0.0
+  },
+  "r2<0.0>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 27.582,
+    "irl_y": 26.593,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "r2<0.0>",
+    "x": 5.0,
+    "y": 11.0
+  },
+  "s1<0.2>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": -22.636,
+    "irl_y": 32.354,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s1<0.2>",
+    "x": -7.0,
+    "y": 8.0
+  },
+  "s2<0.0>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": -49.45162582397461,
+    "irl_y": 83.87503051757812,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s2<0.0>",
+    "x": -3.0,
+    "y": 11.0
+  },
+  "r1<0.1>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 14.981014251708984,
+    "irl_y": 97.50064849853516,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "r1<0.1>",
+    "x": 0.0,
+    "y": 4.0
+  },
+  "r1<0.2>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 14.981014251708984,
+    "irl_y": 95.50064849853516,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "r1<0.2>",
+    "x": 1.0,
+    "y": 8.0
+  },
+  "s1<0.1>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": -22.636,
+    "irl_y": 34.354,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s1<0.1>",
+    "x": -7.0,
+    "y": 4.0
+  },
+  "bundle2": {
+    "type": "polyline",
+    "id": "bundle2",
+    "name": "bundle2",
+    "terminals": {
+      "start": {
+        "device": "s1<0.0-2>",
+        "port": "o2"
+      },
+      "finish": {
+        "device": "r1<0.0-2>",
+        "port": "o1"
+      }
+    },
+    "net": "net1"
+  },
+  "r2<0.1>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 27.582,
+    "irl_y": 24.593,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "r2<0.1>",
+    "x": 1.0,
+    "y": 15.0
+  },
+  "s2<0.2>": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": -49.45162582397461,
+    "irl_y": 79.87503051757812,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s2<0.2>",
+    "x": -7.0,
+    "y": 19.0
+  },
+  "bundle1": {
+    "type": "polyline",
+    "id": "bundle1",
+    "name": "bundle1",
+    "terminals": {
+      "start": {
+        "device": "s2<0.0-2>",
+        "port": "o2"
+      },
+      "finish": {
+        "device": "r2<0.0-2>",
+        "port": "o1"
+      }
+    },
+    "net": "net2"
+  }
+}

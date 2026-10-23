@@ -1,0 +1,16 @@
+{
+  "p8": {
+    "type": "ckt",
+    "bbox_height": 10.0,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": 0.0,
+    "id": null,
+    "irl_x": -73.94686126708984,
+    "irl_y": 56.379093170166016,
+    "model": "myubc.ports8.ports8",
+    "name": "p8",
+    "x": -1.0,
+    "y": 1.0
+  }
+}
