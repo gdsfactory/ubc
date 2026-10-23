@@ -1,0 +1,30 @@
+{
+  "wg2": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 5.0,
+    "irl_y": -0.5,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "wg2",
+    "x": 4.0,
+    "y": -0.0
+  },
+  "wg1": {
+    "type": "straight",
+    "bbox_height": 0.5,
+    "bbox_width": 10.0,
+    "bbox_xmin": 0.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 5.0,
+    "irl_y": -0.0,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "wg1",
+    "x": 0.0,
+    "y": -0.0
+  }
+}

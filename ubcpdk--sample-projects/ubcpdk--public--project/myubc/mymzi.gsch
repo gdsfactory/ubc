@@ -1,0 +1,10 @@
+{
+  "mzi": {
+    "type": "ckt",
+    "id": null,
+    "model": "gdsfactory.components.mzis.mzi.mzi",
+    "name": "mzi",
+    "x": 0.0,
+    "y": 0.0
+  }
+}
