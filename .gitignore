@@ -12,6 +12,7 @@ ubcpdk/tests/test_components.gds/gds_diff/
 .virtual_documents
 tests/ref/*.oas
 ubcpdk/gds/*.oas
+*.gsch.svg
 
 docs/components.rst
 docs/components_plot.rst
@@ -39,7 +40,7 @@ ubcpdk/gds/EBeam_Dream/*.oas
 
 # Distribution / packaging
 .Python
-build/
+build/**
 develop-eggs/
 dist/
 downloads/

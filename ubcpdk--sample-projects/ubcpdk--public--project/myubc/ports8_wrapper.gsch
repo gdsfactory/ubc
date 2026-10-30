@@ -1,16 +1,164 @@
 {
-  "p8": {
+  "ports8_wrapper:X1": {
+    "transform": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
     "type": "ckt",
-    "bbox_height": 10.0,
-    "bbox_width": 10.0,
-    "bbox_xmin": 0.0,
-    "bbox_ymin": 0.0,
-    "id": null,
-    "irl_x": -73.94686126708984,
-    "irl_y": 56.379093170166016,
+    "x": 2,
+    "y": 1,
     "model": "myubc.ports8.ports8",
-    "name": "p8",
-    "x": -1.0,
-    "y": 1.0
+    "name": "X1",
+    "nets": {
+      "o2": "net0",
+      "o1": "net1",
+      "o3": "net2",
+      "o8": "net3",
+      "o4": "net4",
+      "o7": "net5",
+      "o5": "net6",
+      "o6": "net7"
+    },
+    "irl_x": 100,
+    "irl_y": 50,
+    "bbox_width": 10,
+    "bbox_height": 10,
+    "bbox_xmin": 0,
+    "bbox_ymin": 0,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 2,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": -5,
+        "irl_ry": -2,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o3",
+        "irl_rx": -2,
+        "irl_ry": -5,
+        "orientation": 90,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o4",
+        "irl_rx": 2,
+        "irl_ry": -5,
+        "orientation": 90,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o5",
+        "irl_rx": 5,
+        "irl_ry": -2,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o6",
+        "irl_rx": 5,
+        "irl_ry": 2,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o7",
+        "irl_rx": 2,
+        "irl_ry": 5,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o8",
+        "irl_rx": -2,
+        "irl_ry": 5,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 1,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "myubc.ports8.ports8_00597a9d"
   }
 }

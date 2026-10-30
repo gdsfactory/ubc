@@ -1,10 +1,56 @@
 {
   "mzi": {
     "type": "ckt",
-    "id": null,
     "model": "gdsfactory.components.mzis.mzi.mzi",
     "name": "mzi",
-    "x": 0.0,
-    "y": 0.0
+    "x": 0,
+    "y": 0,
+    "nets": {
+      "o1": "net0",
+      "o2": "net1"
+    },
+    "irl_x": 0,
+    "irl_y": 0,
+    "bbox_width": 91.1,
+    "bbox_height": 50.75,
+    "bbox_xmin": -10,
+    "bbox_ymin": -27.875,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -45.55,
+        "irl_ry": -2.5,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 45.55,
+        "irl_ry": -2.5,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "gdsfactory.components.mzis.mzi.mzi_00597a9d"
   }
 }

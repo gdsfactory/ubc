@@ -1,30 +1,164 @@
 {
   "wg2": {
-    "type": "straight",
-    "bbox_height": 0.5,
-    "bbox_width": 10.0,
-    "bbox_xmin": 0.0,
+    "y": -1,
+    "bbox_xmin": 0,
     "bbox_ymin": -0.25,
-    "id": null,
-    "irl_x": 5.0,
-    "irl_y": -0.5,
-    "model": "gdsfactory.components.waveguides.straight.straight",
     "name": "wg2",
-    "x": 4.0,
-    "y": -0.0
+    "type": "straight",
+    "bbox_width": 10,
+    "irl_x": 13.849714307255004,
+    "bbox_height": 0.5,
+    "nets": {
+      "o1": "net0",
+      "o2": "W1"
+    },
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "x": 0,
+    "texture_key": "gdsfactory.components.waveguides.straight.straight_00597a9d",
+    "irl_y": 10.315815473211496,
+    "model": "gdsfactory.components.waveguides.straight.straight"
   },
   "wg1": {
-    "type": "straight",
-    "bbox_height": 0.5,
-    "bbox_width": 10.0,
-    "bbox_xmin": 0.0,
+    "y": 0,
+    "bbox_xmin": 0,
     "bbox_ymin": -0.25,
-    "id": null,
-    "irl_x": 5.0,
-    "irl_y": -0.0,
-    "model": "gdsfactory.components.waveguides.straight.straight",
     "name": "wg1",
-    "x": 0.0,
-    "y": -0.0
+    "type": "straight",
+    "bbox_width": 10,
+    "irl_x": 13.849714307255004,
+    "bbox_height": 0.5,
+    "nets": {
+      "o1": "net1",
+      "o2": "W1"
+    },
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "x": 0,
+    "texture_key": "gdsfactory.components.waveguides.straight.straight_00597a9d",
+    "irl_y": 10.815815473211496,
+    "model": "gdsfactory.components.waveguides.straight.straight"
+  },
+  "tooclose:W1": {
+    "type": "wire",
+    "x": 2,
+    "y": 1,
+    "rx": 0,
+    "ry": -1,
+    "variant": "d",
+    "name": "W1",
+    "net": "W1"
+  },
+  "poly_1": {
+    "name": "poly_1",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "wg2",
+        "port_name": "o2"
+      },
+      "finish": {
+        "component_id": "wg1",
+        "port_name": "o2"
+      }
+    },
+    "vertices": [
+      [
+        18.849714279174805,
+        10.315815925598145
+      ],
+      [
+        29.277217864990234,
+        10.315815925598145
+      ],
+      [
+        29.277217864990234,
+        -11.408734321594238
+      ],
+      [
+        50.624507904052734,
+        -11.408734321594238
+      ],
+      [
+        50.624507904052734,
+        10.815815925598145
+      ],
+      [
+        18.849714279174805,
+        10.815815925598145
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": null,
+    "width": 0.5,
+    "radius": 10
   }
 }
