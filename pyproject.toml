@@ -38,7 +38,7 @@ dev = [
 ]
 docs = [
   "jupyter",
-  "kwasm",
+  "kwasm==0.3.3",
   "mkdocs-material",
   "mkdocs-with-pdf",
   "nbconvert",
