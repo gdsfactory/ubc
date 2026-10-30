@@ -1,0 +1,228 @@
+{
+  "c1": {
+    "type": "coupler",
+    "model": "gdsfactory.components.couplers.coupler.coupler",
+    "name": "c1",
+    "nets": {
+      "o2": "net0",
+      "o1": "net1",
+      "o3": "W1",
+      "o4": "net3"
+    },
+    "x": -14,
+    "y": 3,
+    "irl_x": -700,
+    "irl_y": 150,
+    "bbox_width": 40,
+    "bbox_height": 4.5,
+    "bbox_xmin": -10,
+    "bbox_ymin": -1.882,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -20,
+        "irl_ry": 2,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": -20,
+        "irl_ry": -2,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o3",
+        "irl_rx": 20,
+        "irl_ry": -2,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o4",
+        "irl_rx": 20,
+        "irl_ry": 2,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "gdsfactory.components.couplers.coupler.coupler_00597a9d"
+  },
+  "c2": {
+    "y": 1,
+    "bbox_xmin": -10,
+    "bbox_ymin": -1.882,
+    "name": "c2",
+    "type": "coupler",
+    "bbox_width": 40,
+    "irl_x": -400,
+    "bbox_height": 4.5,
+    "nets": {
+      "o2": "W1",
+      "o1": "net4",
+      "o3": "net5",
+      "o4": "net6"
+    },
+    "x": -8,
+    "irl_y": 50,
+    "model": "gdsfactory.components.couplers.coupler.coupler",
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -20,
+        "irl_ry": 2,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": -20,
+        "irl_ry": -2,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o3",
+        "irl_rx": 20,
+        "irl_ry": -2,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o4",
+        "irl_rx": 20,
+        "irl_ry": 2,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "cross_section": "strip",
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "gdsfactory.components.couplers.coupler.coupler_00597a9d"
+  },
+  "couplers:W1": {
+    "type": "wire",
+    "x": -8,
+    "y": 2,
+    "rx": -4,
+    "ry": 2,
+    "variant": "hv",
+    "name": "W1",
+    "net": "W1"
+  },
+  "poly_1": {
+    "name": "poly_1",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "c1",
+        "port_name": "o3"
+      },
+      "finish": {
+        "component_id": "c2",
+        "port_name": "o2"
+      }
+    },
+    "vertices": [
+      [
+        -680,
+        148
+      ],
+      [
+        -550,
+        148
+      ],
+      [
+        -550,
+        48
+      ],
+      [
+        -420,
+        48
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": "Waveguide",
+    "width": 0.5,
+    "radius": 10
+  }
+}

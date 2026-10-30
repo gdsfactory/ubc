@@ -1,0 +1,128 @@
+{
+  "connection_1": {
+    "type": "wire",
+    "id": "connection_1",
+    "name": "pic_net1",
+    "x": -3.0,
+    "y": 2.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "net": "net1"
+  },
+  "connection_3": {
+    "type": "wire",
+    "id": "connection_3",
+    "name": "port_net_o2",
+    "x": 2.0,
+    "y": 2.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "net": "port_net_o2"
+  },
+  "r2": {
+    "type": "ring-single",
+    "bbox_height": 21.8,
+    "bbox_width": 30.0,
+    "bbox_xmin": -17.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 126.25999999999999,
+    "irl_y": -1.2729999999999997,
+    "model": "gdsfactory.components.rings.ring_single.ring_single",
+    "name": "r2",
+    "nets": {
+      "o1": "net1",
+      "o2": "port_net_o2"
+    },
+    "x": 0.0,
+    "y": -0.0
+  },
+  "r1": {
+    "type": "ring-single",
+    "bbox_height": 21.8,
+    "bbox_width": 30.0,
+    "bbox_xmin": -17.0,
+    "bbox_ymin": -0.25,
+    "id": null,
+    "irl_x": 50.439,
+    "irl_y": -35.707,
+    "model": "gdsfactory.components.rings.ring_single.ring_single",
+    "name": "r1",
+    "nets": {
+      "o1": "port_net_o1",
+      "o2": "net1"
+    },
+    "x": -5.0,
+    "y": -0.0
+  },
+  "bundle1": {
+    "type": "polyline",
+    "id": "bundle1",
+    "name": "bundle1",
+    "terminals": {
+      "start": {
+        "device": "r1",
+        "port": "o2"
+      },
+      "finish": {
+        "device": "r2",
+        "port": "o1"
+      }
+    },
+    "net": "net1"
+  },
+  "o1": {
+    "type": "port",
+    "id": null,
+    "name": "o1",
+    "x": -8.0,
+    "y": 2.0,
+    "transform": [
+      1.0,
+      0.0,
+      -0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "nets": {
+      "P": "port_net_o1"
+    },
+    "attached_port": {
+      "component_id": "r1",
+      "port_name": "o1"
+    }
+  },
+  "o2": {
+    "type": "port",
+    "id": null,
+    "name": "o2",
+    "x": 5.0,
+    "y": 2.0,
+    "transform": [
+      -1.0,
+      0.0,
+      -0.0,
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "nets": {
+      "P": "port_net_o2"
+    },
+    "attached_port": {
+      "component_id": "r2",
+      "port_name": "o2"
+    }
+  },
+  "connection_2": {
+    "type": "wire",
+    "id": "connection_2",
+    "name": "port_net_o1",
+    "x": -5.0,
+    "y": 2.0,
+    "rx": -3.0,
+    "ry": 0.0,
+    "net": "port_net_o1"
+  }
+}

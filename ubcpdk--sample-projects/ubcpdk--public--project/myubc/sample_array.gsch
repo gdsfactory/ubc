@@ -1,0 +1,73 @@
+{
+  "s1<1.0>": {
+    "type": "straight",
+    "id": null,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s1<1.0>",
+    "props": {
+      "cross_section": "strip",
+      "length": 10
+    },
+    "x": 2.0,
+    "y": 1.0
+  },
+  "s1<0.0>": {
+    "type": "straight",
+    "id": null,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s1<0.0>",
+    "props": {
+      "cross_section": "strip",
+      "length": 10
+    },
+    "x": -2.0,
+    "y": 1.0
+  },
+  "b1": {
+    "type": "ckt",
+    "id": null,
+    "model": "gdsfactory.components.bends.bend_euler.bend_euler",
+    "name": "b1",
+    "nets": {
+      "o1": "net1"
+    },
+    "props": {
+      "radius": 20
+    },
+    "transform": [
+      0.9999996000000202,
+      0.00089442707896115,
+      -0.00089442707896115,
+      0.9999996000000202,
+      0.0,
+      0.0
+    ],
+    "x": 6.0,
+    "y": 4.0
+  },
+  "connection_1": {
+    "type": "wire",
+    "id": "connection_1",
+    "name": "pic_net1",
+    "x": 6.0,
+    "y": 5.0,
+    "rx": 6.0,
+    "ry": -3.0,
+    "net": "net1"
+  },
+  "s1<2.0>": {
+    "type": "straight",
+    "id": null,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s1<2.0>",
+    "nets": {
+      "o2": "net1"
+    },
+    "props": {
+      "cross_section": "strip",
+      "length": 10
+    },
+    "x": 10.0,
+    "y": 1.0
+  }
+}
