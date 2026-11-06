@@ -1,0 +1,122 @@
+{
+  "o3": {
+    "type": "port",
+    "id": null,
+    "name": "o3",
+    "x": 7.0,
+    "y": 1.0,
+    "nets": {
+      "P": "port_net_o3"
+    },
+    "attached_port": {
+      "component_id": "mzi2",
+      "port_name": "o3"
+    }
+  },
+  "connection_1": {
+    "type": "wire",
+    "id": "connection_1",
+    "name": "port_net_o1",
+    "x": 1.0,
+    "y": -2.0,
+    "rx": -2.0,
+    "ry": 1.0,
+    "net": "port_net_o1"
+  },
+  "o2": {
+    "type": "port",
+    "id": null,
+    "name": "o2",
+    "x": 10.0,
+    "y": -3.0,
+    "nets": {
+      "P": "port_net_o2"
+    },
+    "attached_port": {
+      "component_id": "mzi2",
+      "port_name": "o4"
+    }
+  },
+  "mzi1": {
+    "type": "ckt",
+    "bbox_height": 27.875,
+    "bbox_width": 131.20000000000002,
+    "bbox_xmin": -75.60000000000001,
+    "bbox_ymin": -26.625,
+    "id": null,
+    "irl_x": -78.03699999999999,
+    "irl_y": -380.1075,
+    "model": "gdsfactory.components.mzis.mzi.mzi",
+    "name": "mzi1",
+    "nets": {
+      "o1": "port_net_o1",
+      "o3": "net1"
+    },
+    "props": {
+      "splitter": "mmi2x2"
+    },
+    "x": 1.0,
+    "y": -4.0
+  },
+  "mzi2": {
+    "type": "ckt",
+    "bbox_height": 72.875,
+    "bbox_width": 131.20000000000002,
+    "bbox_xmin": -75.60000000000001,
+    "bbox_ymin": -71.625,
+    "id": null,
+    "irl_x": 255.09500000000003,
+    "irl_y": -369.3745,
+    "model": "gdsfactory.components.mzis.mzi.mzi",
+    "name": "mzi2",
+    "nets": {
+      "o1": "net1",
+      "o3": "port_net_o3",
+      "o4": "port_net_o2"
+    },
+    "props": {
+      "delta_length": 100,
+      "splitter": "mmi2x2"
+    },
+    "x": 7.0,
+    "y": -3.0
+  },
+  "bundle": {
+    "type": "polyline",
+    "id": "bundle",
+    "name": "bundle",
+    "terminals": {
+      "start": {
+        "device": "mzi2",
+        "port": "o1"
+      },
+      "finish": {
+        "device": "mzi1",
+        "port": "o3"
+      }
+    },
+    "net": "net1"
+  },
+  "o1": {
+    "type": "port",
+    "id": null,
+    "name": "o1",
+    "x": -1.0,
+    "y": -1.0,
+    "transform": [
+      1.0,
+      0.0,
+      -0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "nets": {
+      "P": "port_net_o1"
+    },
+    "attached_port": {
+      "component_id": "mzi1",
+      "port_name": "o1"
+    }
+  }
+}

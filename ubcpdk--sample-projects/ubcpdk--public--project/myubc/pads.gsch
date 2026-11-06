@@ -1,0 +1,124 @@
+{
+  "connection_2": {
+    "type": "wire",
+    "id": "connection_2",
+    "name": "pic_net2",
+    "x": -8.0,
+    "y": 0.0,
+    "rx": 2.0,
+    "ry": 0.0,
+    "net": "net2"
+  },
+  "connection_1": {
+    "type": "wire",
+    "id": "connection_1",
+    "name": "pic_net1",
+    "x": -8.0,
+    "y": 4.0,
+    "rx": 2.0,
+    "ry": 0.0,
+    "net": "net1"
+  },
+  "p4": {
+    "type": "ckt",
+    "bbox_height": 100.0,
+    "bbox_width": 100.0,
+    "bbox_xmin": -50.0,
+    "bbox_ymin": -50.0,
+    "id": null,
+    "irl_x": 286.896,
+    "irl_y": 177.665,
+    "model": "gdsfactory.components.pads.pad.pad",
+    "name": "p4",
+    "nets": {
+      "e1": "net2"
+    },
+    "x": -6.0,
+    "y": -1.0
+  },
+  "p3": {
+    "type": "ckt",
+    "bbox_height": 100.0,
+    "bbox_width": 100.0,
+    "bbox_xmin": -50.0,
+    "bbox_ymin": -50.0,
+    "id": null,
+    "irl_x": -52.063,
+    "irl_y": 103.145,
+    "model": "gdsfactory.components.pads.pad.pad",
+    "name": "p3",
+    "nets": {
+      "e3": "net2"
+    },
+    "x": -10.0,
+    "y": -1.0
+  },
+  "p2": {
+    "type": "ckt",
+    "bbox_height": 100.0,
+    "bbox_width": 100.0,
+    "bbox_xmin": -50.0,
+    "bbox_ymin": -50.0,
+    "id": null,
+    "irl_x": 264.234,
+    "irl_y": -89.019,
+    "model": "gdsfactory.components.pads.pad.pad",
+    "name": "p2",
+    "nets": {
+      "e1": "net1"
+    },
+    "x": -6.0,
+    "y": 3.0
+  },
+  "m1": {
+    "type": "polyline",
+    "id": "m1",
+    "name": "m1",
+    "terminals": {
+      "start": {
+        "device": "p2",
+        "port": "e1"
+      },
+      "finish": {
+        "device": "p1",
+        "port": "e3"
+      }
+    },
+    "cross_section": "metal_routing",
+    "net": "net1"
+  },
+  "my_bundle": {
+    "type": "polyline",
+    "id": "my_bundle",
+    "name": "my_bundle",
+    "terminals": {
+      "start": {
+        "device": "p4",
+        "port": "e1"
+      },
+      "finish": {
+        "device": "p3",
+        "port": "e3"
+      }
+    },
+    "routing_strategy": "route_bundle_metal",
+    "net": "net2"
+  },
+  "p1": {
+    "type": "ckt",
+    "bbox_height": 100.0,
+    "bbox_width": 100.0,
+    "bbox_xmin": -50.0,
+    "bbox_ymin": -50.0,
+    "id": null,
+    "irl_x": -35.364,
+    "irl_y": -99.216,
+    "model": "gdsfactory.components.pads.pad.pad",
+    "name": "p1",
+    "nets": {
+      "e3": "net1"
+    },
+    "x": -10.0,
+    "y": 3.0
+  }
+}

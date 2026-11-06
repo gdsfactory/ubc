@@ -1,0 +1,68 @@
+{
+  "s2": {
+    "type": "straight",
+    "id": null,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s2",
+    "nets": {
+      "o1": "net2",
+      "o2": "net3"
+    },
+    "x": -12.0,
+    "y": 9.0
+  },
+  "connection_1": {
+    "type": "wire",
+    "id": "connection_1",
+    "name": "pic_net1",
+    "x": -9.0,
+    "y": 6.0,
+    "rx": -3.0,
+    "ry": 0.0,
+    "net": "net1"
+  },
+  "connection_2": {
+    "type": "wire",
+    "id": "connection_2",
+    "name": "pic_net2",
+    "x": -14.0,
+    "y": 6.0,
+    "rx": 2.0,
+    "ry": 4.0,
+    "net": "net2"
+  },
+  "s1": {
+    "type": "straight",
+    "id": null,
+    "model": "gdsfactory.components.waveguides.straight.straight",
+    "name": "s1",
+    "nets": {
+      "o1": "net2",
+      "o2": "net1"
+    },
+    "x": -14.0,
+    "y": 5.0
+  },
+  "connection_3": {
+    "type": "wire",
+    "id": "connection_3",
+    "name": "pic_net3",
+    "x": -8.0,
+    "y": 7.0,
+    "rx": -2.0,
+    "ry": 3.0,
+    "net": "net3"
+  },
+  "bend": {
+    "type": "ckt",
+    "id": null,
+    "model": "gdsfactory.components.bends.bend_euler.bend_euler",
+    "name": "bend",
+    "nets": {
+      "o1": "net1",
+      "o2": "net3"
+    },
+    "x": -9.0,
+    "y": 5.0
+  }
+}

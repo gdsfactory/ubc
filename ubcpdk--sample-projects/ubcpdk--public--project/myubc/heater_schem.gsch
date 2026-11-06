@@ -1,0 +1,57 @@
+{
+  "p1": {
+    "type": "ckt",
+    "bbox_height": 100.0,
+    "bbox_width": 100.0,
+    "bbox_xmin": -50.0,
+    "bbox_ymin": -50.0,
+    "id": null,
+    "irl_x": -37.754,
+    "irl_y": -150.198,
+    "model": "gdsfactory.components.pads.pad.pad",
+    "name": "p1",
+    "nets": {
+      "e4": "net1"
+    },
+    "x": -2.0,
+    "y": 3.0
+  },
+  "s1": {
+    "type": "ckt",
+    "id": null,
+    "model": "gdsfactory.components.waveguides.straight_heater_metal.straight_heater_metal",
+    "name": "s1",
+    "nets": {
+      "l_e1": "net1"
+    },
+    "x": 2.0,
+    "y": 0.0
+  },
+  "connection_1": {
+    "type": "wire",
+    "id": "connection_1",
+    "name": "pic_net1",
+    "x": -1.0,
+    "y": 5.0,
+    "rx": 3.0,
+    "ry": -3.0,
+    "net": "net1"
+  },
+  "my_bundle": {
+    "type": "polyline",
+    "id": "my_bundle",
+    "name": "my_bundle",
+    "terminals": {
+      "start": {
+        "device": "s1",
+        "port": "l_e1"
+      },
+      "finish": {
+        "device": "p1",
+        "port": "e4"
+      }
+    },
+    "cross_section": "metal_routing",
+    "net": "net1"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "r1": {
+    "type": "ring-single",
+    "id": null,
+    "model": "gdsfactory.components.rings.ring_single.ring_single",
+    "name": "r1",
+    "nets": {
+      "o1": "net1",
+      "o2": "net2"
+    },
+    "x": -2.0,
+    "y": 1.0
+  },
+  "connection_1": {
+    "type": "wire",
+    "id": "connection_1",
+    "name": "pic_net1",
+    "x": 3.0,
+    "y": 0.0,
+    "rx": -5.0,
+    "ry": 3.0,
+    "net": "net1"
+  },
+  "g1": {
+    "type": "ckt",
+    "id": null,
+    "model": "gdsfactory.components.grating_couplers.grating_coupler_elliptical.grating_coupler_elliptical",
+    "name": "g1",
+    "nets": {
+      "o1": "net2",
+      "o2": "port_net_o2"
+    },
+    "x": 7.0,
+    "y": 1.0
+  },
+  "o1": {
+    "type": "port",
+    "id": null,
+    "name": "o1",
+    "x": 4.0,
+    "y": -4.0,
+    "transform": [
+      0.0,
+      1.0,
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "nets": {
+      "P": "port_net_o1"
+    },
+    "attached_port": {
+      "component_id": "g2",
+      "port_name": "o2"
+    }
+  },
+  "connection_4": {
+    "type": "wire",
+    "id": "connection_4",
+    "name": "port_net_o2",
+    "x": 8.0,
+    "y": 1.0,
+    "rx": 0.0,
+    "ry": -3.0,
+    "net": "port_net_o2"
+  },
+  "g2": {
+    "type": "ckt",
+    "id": null,
+    "model": "gdsfactory.components.grating_couplers.grating_coupler_elliptical.grating_coupler_elliptical",
+    "name": "g2",
+    "nets": {
+      "o1": "net1",
+      "o2": "port_net_o1"
+    },
+    "x": 3.0,
+    "y": -1.0
+  },
+  "o2": {
+    "type": "port",
+    "id": null,
+    "name": "o2",
+    "x": 8.0,
+    "y": -2.0,
+    "transform": [
+      0.0,
+      1.0,
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "nets": {
+      "P": "port_net_o2"
+    },
+    "attached_port": {
+      "component_id": "g1",
+      "port_name": "o2"
+    }
+  },
+  "connection_2": {
+    "type": "wire",
+    "id": "connection_2",
+    "name": "pic_net2",
+    "x": 7.0,
+    "y": 2.0,
+    "rx": -7.0,
+    "ry": 1.0,
+    "net": "net2"
+  },
+  "connection_3": {
+    "type": "wire",
+    "id": "connection_3",
+    "name": "port_net_o1",
+    "x": 4.0,
+    "y": -1.0,
+    "rx": 0.0,
+    "ry": -3.0,
+    "net": "port_net_o1"
+  }
+}
