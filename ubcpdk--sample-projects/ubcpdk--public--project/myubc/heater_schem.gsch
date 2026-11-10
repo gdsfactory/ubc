@@ -1,57 +1,334 @@
 {
   "p1": {
     "type": "ckt",
-    "bbox_height": 100.0,
-    "bbox_width": 100.0,
-    "bbox_xmin": -50.0,
-    "bbox_ymin": -50.0,
-    "id": null,
     "irl_x": -37.754,
     "irl_y": -150.198,
-    "model": "gdsfactory.components.pads.pad.pad",
+    "model": "ubcpdk.cells.die_with_pads.pad",
     "name": "p1",
     "nets": {
       "e4": "net1"
     },
-    "x": -2.0,
-    "y": 3.0
+    "x": -2,
+    "y": -4,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 90,
+    "bbox_height": 90,
+    "bbox_xmin": -45,
+    "bbox_ymin": -45,
+    "ports": [
+      {
+        "name": "e1",
+        "irl_rx": -45,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 90,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "e2",
+        "irl_rx": 0,
+        "irl_ry": -45,
+        "orientation": 90,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 90,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "e3",
+        "irl_rx": 45,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 90,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "e4",
+        "irl_rx": 0,
+        "irl_ry": 45,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 90,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "pad",
+        "irl_rx": 0,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "width": 90,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.die_with_pads.pad_00597a9d"
   },
   "s1": {
     "type": "ckt",
-    "id": null,
-    "model": "gdsfactory.components.waveguides.straight_heater_metal.straight_heater_metal",
+    "model": "ubcpdk.cells.heaters.straight_heater_metal",
     "name": "s1",
     "nets": {
       "l_e1": "net1"
     },
-    "x": 2.0,
-    "y": 0.0
+    "x": 2,
+    "y": 0,
+    "irl_x": 160,
+    "irl_y": 0,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 369.8,
+    "bbox_height": 10,
+    "bbox_xmin": -24.9,
+    "bbox_ymin": -5,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -160,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 159.99999999999997,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "l_e1",
+        "irl_rx": -184.9,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "electrical",
+        "width": 10,
+        "cross_section": "metal_routing",
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "l_e2",
+        "irl_rx": -174.9,
+        "irl_ry": -5,
+        "orientation": 90,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 20,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "l_e3",
+        "irl_rx": -164.9,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "electrical",
+        "width": 10,
+        "cross_section": "metal_routing",
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "l_e4",
+        "irl_rx": -174.9,
+        "irl_ry": 5,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 20,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "r_e1",
+        "irl_rx": 164.9,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "electrical",
+        "width": 10,
+        "cross_section": "metal_routing",
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "r_e2",
+        "irl_rx": 174.9,
+        "irl_ry": -5,
+        "orientation": 90,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 20,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "r_e3",
+        "irl_rx": 184.9,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          10
+        ],
+        "port_type": "electrical",
+        "width": 10,
+        "cross_section": "metal_routing",
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      },
+      {
+        "name": "r_e4",
+        "irl_rx": 174.9,
+        "irl_ry": 5,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "electrical",
+        "width": 20,
+        "layer": [
+          12,
+          0
+        ],
+        "layer_name": "M2_ROUTER"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.heaters.straight_heater_metal_00597a9d"
+  },
+  "poly_1": {
+    "name": "poly_1",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "p1",
+        "port_name": "e4"
+      },
+      "finish": {
+        "component_id": "s1",
+        "port_name": "l_e1"
+      }
+    },
+    "vertices": [
+      [
+        -37.754,
+        -95.198
+      ],
+      [
+        -37.754,
+        -20.0
+      ],
+      [
+        -60.754,
+        -20.0
+      ],
+      [
+        -60.754,
+        0.0
+      ],
+      [
+        -24.9,
+        0.0
+      ]
+    ],
+    "cross_section": "metal_routing",
+    "layer": null,
+    "width": 10.0
   },
   "connection_1": {
     "type": "wire",
-    "id": "connection_1",
-    "name": "pic_net1",
     "x": -1.0,
-    "y": 5.0,
+    "y": 0.0,
     "rx": 3.0,
-    "ry": -3.0,
-    "net": "net1"
-  },
-  "my_bundle": {
-    "type": "polyline",
-    "id": "my_bundle",
-    "name": "my_bundle",
-    "terminals": {
-      "start": {
-        "device": "s1",
-        "port": "l_e1"
-      },
-      "finish": {
-        "device": "p1",
-        "port": "e4"
-      }
-    },
-    "cross_section": "metal_routing",
-    "net": "net1"
+    "ry": 2.0,
+    "variant": "vh"
   }
 }
