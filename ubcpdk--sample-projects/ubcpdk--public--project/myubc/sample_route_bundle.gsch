@@ -1,0 +1,902 @@
+{
+  "s1<0.0>": {
+    "type": "straight",
+    "irl_x": -22.636,
+    "irl_y": 36.354,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_1",
+    "x": 0,
+    "y": 0,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o2": "net1"
+    }
+  },
+  "r2<0.2>": {
+    "type": "straight",
+    "irl_x": 27.582,
+    "irl_y": 22.593,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_2",
+    "x": 5,
+    "y": 12,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o1": "net6"
+    }
+  },
+  "s2<0.1>": {
+    "type": "straight",
+    "irl_x": -49.452,
+    "irl_y": 81.875,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_3",
+    "x": 0,
+    "y": 10,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o2": "net5"
+    }
+  },
+  "r1<0.0>": {
+    "type": "straight",
+    "irl_x": 14.981,
+    "irl_y": 99.501,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_4",
+    "x": 5,
+    "y": 0,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o1": "net1"
+    }
+  },
+  "r2<0.0>": {
+    "type": "straight",
+    "irl_x": 27.582,
+    "irl_y": 26.593,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_5",
+    "x": 5,
+    "y": 8,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o1": "net4"
+    }
+  },
+  "s1<0.2>": {
+    "type": "straight",
+    "irl_x": -22.636,
+    "irl_y": 32.354,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_6",
+    "x": 0,
+    "y": 4,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o2": "net3"
+    }
+  },
+  "s2<0.0>": {
+    "type": "straight",
+    "irl_x": -49.452,
+    "irl_y": 83.875,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_7",
+    "x": 0,
+    "y": 8,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o2": "net4"
+    }
+  },
+  "r1<0.1>": {
+    "type": "straight",
+    "irl_x": 14.981,
+    "irl_y": 97.501,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_8",
+    "x": 5,
+    "y": 2,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o1": "net2"
+    }
+  },
+  "r1<0.2>": {
+    "type": "straight",
+    "irl_x": 14.981,
+    "irl_y": 95.501,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_9",
+    "x": 5,
+    "y": 4,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o1": "net3"
+    }
+  },
+  "s1<0.1>": {
+    "type": "straight",
+    "irl_x": -22.636,
+    "irl_y": 34.354,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_10",
+    "x": 0,
+    "y": 2,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o2": "net2"
+    }
+  },
+  "r2<0.1>": {
+    "type": "straight",
+    "irl_x": 27.582,
+    "irl_y": 24.593,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_11",
+    "x": 5,
+    "y": 10,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o1": "net5"
+    }
+  },
+  "s2<0.2>": {
+    "type": "straight",
+    "irl_x": -49.452,
+    "irl_y": 79.875,
+    "model": "ubcpdk.cells.waveguides.straight",
+    "name": "straight_12",
+    "x": 0,
+    "y": 12,
+    "irl_orientation": 0,
+    "irl_flip": false,
+    "bbox_width": 10,
+    "bbox_height": 1.5,
+    "bbox_xmin": 0,
+    "bbox_ymin": -0.75,
+    "ports": [
+      {
+        "name": "o1",
+        "irl_rx": -5,
+        "irl_ry": 0,
+        "orientation": 180,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "o2",
+        "irl_rx": 5,
+        "irl_ry": 0,
+        "orientation": 0,
+        "bendRadii": [
+          5
+        ],
+        "port_type": "optical",
+        "width": 0.5,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "ubcpdk.cells.waveguides.straight_00597a9d",
+    "nets": {
+      "o2": "net6"
+    }
+  },
+  "connection_1": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 1.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "connection_2": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 3.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "connection_3": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 5.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "connection_4": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 9.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "connection_5": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 11.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "connection_6": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 13.0,
+    "rx": 3.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "poly_1": {
+    "name": "poly_1",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "s1<0.0>",
+        "port_name": "o2"
+      },
+      "finish": {
+        "component_id": "r1<0.0>",
+        "port_name": "o1"
+      }
+    },
+    "vertices": [
+      [
+        -17.636,
+        36.354
+      ],
+      [
+        -7.636,
+        36.354
+      ],
+      [
+        -7.636,
+        99.501
+      ],
+      [
+        9.981,
+        99.501
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": "Waveguide",
+    "width": 0.5,
+    "radius": 10
+  },
+  "poly_2": {
+    "name": "poly_2",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "r2<0.2>",
+        "port_name": "o1"
+      },
+      "finish": {
+        "component_id": "s2<0.2>",
+        "port_name": "o2"
+      }
+    },
+    "vertices": [
+      [
+        22.582,
+        22.593
+      ],
+      [
+        -34.452,
+        22.593
+      ],
+      [
+        -34.452,
+        79.875
+      ],
+      [
+        -44.452,
+        79.875
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": "Waveguide",
+    "width": 0.5,
+    "radius": 10
+  },
+  "poly_3": {
+    "name": "poly_3",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "s2<0.1>",
+        "port_name": "o2"
+      },
+      "finish": {
+        "component_id": "r2<0.1>",
+        "port_name": "o1"
+      }
+    },
+    "vertices": [
+      [
+        -44.452,
+        81.875
+      ],
+      [
+        -30.952,
+        81.875
+      ],
+      [
+        -30.952,
+        24.593
+      ],
+      [
+        22.582,
+        24.593
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": "Waveguide",
+    "width": 0.5,
+    "radius": 10
+  },
+  "poly_4": {
+    "name": "poly_4",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "r2<0.0>",
+        "port_name": "o1"
+      },
+      "finish": {
+        "component_id": "s2<0.0>",
+        "port_name": "o2"
+      }
+    },
+    "vertices": [
+      [
+        22.582,
+        26.593
+      ],
+      [
+        -27.452,
+        26.593
+      ],
+      [
+        -27.452,
+        83.875
+      ],
+      [
+        -44.452,
+        83.875
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": "Waveguide",
+    "width": 0.5,
+    "radius": 10
+  },
+  "poly_5": {
+    "name": "poly_5",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "s1<0.2>",
+        "port_name": "o2"
+      },
+      "finish": {
+        "component_id": "r1<0.2>",
+        "port_name": "o1"
+      }
+    },
+    "vertices": [
+      [
+        -17.636,
+        32.354
+      ],
+      [
+        -0.636,
+        32.354
+      ],
+      [
+        -0.636,
+        95.501
+      ],
+      [
+        9.981,
+        95.501
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": "Waveguide",
+    "width": 0.5,
+    "radius": 10
+  },
+  "poly_6": {
+    "name": "poly_6",
+    "type": "polyline",
+    "terminals": {
+      "start": {
+        "component_id": "r1<0.1>",
+        "port_name": "o1"
+      },
+      "finish": {
+        "component_id": "s1<0.1>",
+        "port_name": "o2"
+      }
+    },
+    "vertices": [
+      [
+        9.981,
+        97.501
+      ],
+      [
+        -4.136,
+        97.501
+      ],
+      [
+        -4.136,
+        34.354
+      ],
+      [
+        -17.636,
+        34.354
+      ]
+    ],
+    "cross_section": "strip",
+    "layer": "Waveguide",
+    "width": 0.5,
+    "radius": 10
+  }
+}

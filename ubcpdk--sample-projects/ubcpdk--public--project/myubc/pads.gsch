@@ -1,0 +1,182 @@
+{
+  "p4": {
+    "type": "ckt",
+    "id": null,
+    "irl_x": 286.896,
+    "irl_y": 177.665,
+    "model": "ubcpdk.cells.die_with_pads.pad",
+    "name": "p4",
+    "nets": {
+      "e1": "net2"
+    },
+    "x": 4,
+    "y": 6,
+    "irl_orientation": 0.0,
+    "irl_flip": false,
+    "bbox_width": 90.0,
+    "bbox_height": 90.0,
+    "bbox_xmin": -45.0,
+    "bbox_ymin": -45.0
+  },
+  "p3": {
+    "type": "ckt",
+    "id": null,
+    "irl_x": -52.063,
+    "irl_y": 103.145,
+    "model": "ubcpdk.cells.die_with_pads.pad",
+    "name": "p3",
+    "nets": {
+      "e3": "net2"
+    },
+    "x": 0,
+    "y": 6,
+    "irl_orientation": 0.0,
+    "irl_flip": false,
+    "bbox_width": 90.0,
+    "bbox_height": 90.0,
+    "bbox_xmin": -45.0,
+    "bbox_ymin": -45.0
+  },
+  "p2": {
+    "type": "ckt",
+    "id": null,
+    "irl_x": 264.234,
+    "irl_y": -89.019,
+    "model": "ubcpdk.cells.die_with_pads.pad",
+    "name": "p2",
+    "nets": {
+      "e1": "net1"
+    },
+    "x": 4,
+    "y": 0,
+    "irl_orientation": 0.0,
+    "irl_flip": false,
+    "bbox_width": 90.0,
+    "bbox_height": 90.0,
+    "bbox_xmin": -45.0,
+    "bbox_ymin": -45.0
+  },
+  "p1": {
+    "type": "ckt",
+    "id": null,
+    "irl_x": -35.364,
+    "irl_y": -99.216,
+    "model": "ubcpdk.cells.die_with_pads.pad",
+    "name": "p1",
+    "nets": {
+      "e3": "net1"
+    },
+    "x": 0,
+    "y": 0,
+    "irl_orientation": 0.0,
+    "irl_flip": false,
+    "bbox_width": 90.0,
+    "bbox_height": 90.0,
+    "bbox_xmin": -45.0,
+    "bbox_ymin": -45.0
+  },
+  "m1": {
+    "type": "polyline",
+    "name": "m1",
+    "terminals": {
+      "start": {
+        "component_id": "p2",
+        "port_name": "e1"
+      },
+      "finish": {
+        "component_id": "p1",
+        "port_name": "e3"
+      }
+    },
+    "vertices": [
+      [
+        219.234,
+        -89.019
+      ],
+      [
+        114.435,
+        -89.019
+      ],
+      [
+        114.435,
+        -99.216
+      ],
+      [
+        9.636,
+        -99.216
+      ]
+    ],
+    "cross_section": "metal_routing",
+    "layer": null,
+    "width": 10.0,
+    "net": "net1"
+  },
+  "my_bundle": {
+    "type": "polyline",
+    "name": "my_bundle",
+    "terminals": {
+      "start": {
+        "component_id": "p4",
+        "port_name": "e1"
+      },
+      "finish": {
+        "component_id": "p3",
+        "port_name": "e3"
+      }
+    },
+    "vertices": [
+      [
+        241.896,
+        177.665
+      ],
+      [
+        117.416,
+        177.665
+      ],
+      [
+        117.416,
+        103.145
+      ],
+      [
+        -7.063,
+        103.145
+      ]
+    ],
+    "cross_section": "metal_routing",
+    "layer": null,
+    "width": 10.0,
+    "net": "net2"
+  },
+  "connection_1": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 1.0,
+    "rx": 1.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "connection_2": {
+    "type": "wire",
+    "x": 3.0,
+    "y": 1.0,
+    "rx": 1.0,
+    "ry": 1.0,
+    "variant": "vh"
+  },
+  "connection_3": {
+    "type": "wire",
+    "x": 2.0,
+    "y": 7.0,
+    "rx": 1.0,
+    "ry": 0.0,
+    "variant": "hv"
+  },
+  "connection_4": {
+    "type": "wire",
+    "x": 3.0,
+    "y": 7.0,
+    "rx": 1.0,
+    "ry": 1.0,
+    "variant": "vh"
+  }
+}

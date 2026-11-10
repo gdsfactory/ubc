@@ -1,0 +1,857 @@
+{
+  "rings": {
+    "type": "ckt",
+    "bbox_height": 1306.401,
+    "bbox_width": 1240.826,
+    "bbox_xmin": 5.047,
+    "bbox_ymin": 5.05,
+    "irl_x": 675.46,
+    "irl_y": -708.2505,
+    "model": "gdsfactory.components.containers.pack_doe.pack_doe",
+    "name": "rings",
+    "props": {
+      "do_permutations": true,
+      "doe": "ring_single",
+      "function": {
+        "function": "add_fiber_array",
+        "settings": {
+          "fanout_length": 200
+        }
+      },
+      "settings": {
+        "length_x": [
+          1,
+          2,
+          3
+        ],
+        "radius": [
+          5,
+          10,
+          20
+        ]
+      }
+    },
+    "x": 14,
+    "y": -14,
+    "ports": [
+      {
+        "name": "0_o2",
+        "irl_rx": -480.44,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "0_o1",
+        "irl_rx": -353.44000000000005,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "0_loopback1",
+        "irl_rx": -607.44,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "0_loopback2",
+        "irl_rx": -226.44,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_o2",
+        "irl_rx": -480.44,
+        "irl_ry": 290.0405,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_o1",
+        "irl_rx": -353.44000000000005,
+        "irl_ry": 290.0405,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_loopback1",
+        "irl_rx": -607.44,
+        "irl_ry": 290.0405,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_loopback2",
+        "irl_rx": -226.44,
+        "irl_ry": 290.0405,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_o2",
+        "irl_rx": -480.44,
+        "irl_ry": -44.06050000000005,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_o1",
+        "irl_rx": -353.44000000000005,
+        "irl_ry": -44.06050000000005,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_loopback1",
+        "irl_rx": -607.44,
+        "irl_ry": -44.06050000000005,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_loopback2",
+        "irl_rx": -226.44,
+        "irl_ry": -44.06050000000005,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_o2",
+        "irl_rx": -480.44,
+        "irl_ry": -378.16050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_o1",
+        "irl_rx": -353.44000000000005,
+        "irl_ry": -378.16050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_loopback1",
+        "irl_rx": -607.44,
+        "irl_ry": -378.16050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_loopback2",
+        "irl_rx": -226.44,
+        "irl_ry": -378.16050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "4_o2",
+        "irl_rx": -63.5,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "4_o1",
+        "irl_rx": 63.5,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "4_loopback1",
+        "irl_rx": -190.5,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "4_loopback2",
+        "irl_rx": 190.5,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "5_o2",
+        "irl_rx": -63.5,
+        "irl_ry": 310.04050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "5_o1",
+        "irl_rx": 63.5,
+        "irl_ry": 310.04050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "5_loopback1",
+        "irl_rx": -190.5,
+        "irl_ry": 310.04050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "5_loopback2",
+        "irl_rx": 190.5,
+        "irl_ry": 310.04050000000007,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "6_o2",
+        "irl_rx": -63.5,
+        "irl_ry": -4.060500000000047,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "6_o1",
+        "irl_rx": 63.5,
+        "irl_ry": -4.060500000000047,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "6_loopback1",
+        "irl_rx": -190.5,
+        "irl_ry": -4.060500000000047,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "6_loopback2",
+        "irl_rx": 190.5,
+        "irl_ry": -4.060500000000047,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "7_o2",
+        "irl_rx": -63.5,
+        "irl_ry": -308.16049999999996,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "7_o1",
+        "irl_rx": 63.5,
+        "irl_ry": -308.16049999999996,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "7_loopback1",
+        "irl_rx": -190.5,
+        "irl_ry": -308.16049999999996,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "7_loopback2",
+        "irl_rx": 190.5,
+        "irl_ry": -308.16049999999996,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "8_o2",
+        "irl_rx": 353.43999999999994,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "8_o1",
+        "irl_rx": 480.44000000000005,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "8_loopback1",
+        "irl_rx": 226.43999999999994,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "8_loopback2",
+        "irl_rx": 607.44,
+        "irl_ry": 624.1395,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "gdsfactory.components.containers.pack_doe.pack_doe_4da4cf68",
+    "irl_orientation": 0.0,
+    "irl_flip": false
+  },
+  "mzis": {
+    "type": "ckt",
+    "bbox_height": 159.30100000000002,
+    "bbox_width": 1657.784,
+    "bbox_xmin": 5,
+    "bbox_ymin": 5,
+    "irl_x": 1577.067,
+    "irl_y": -134.6965,
+    "model": "gdsfactory.components.containers.pack_doe.pack_doe_grid",
+    "name": "mzis",
+    "props": {
+      "do_permutations": true,
+      "doe": "mzi",
+      "function": "add_fiber_array",
+      "settings": {
+        "delta_length": [
+          10,
+          20,
+          30,
+          40
+        ]
+      },
+      "spacing": [
+        10,
+        10
+      ]
+    },
+    "x": 53,
+    "y": -3,
+    "ports": [
+      {
+        "name": "0_o1",
+        "irl_rx": -688.9190000000001,
+        "irl_ry": 43.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "0_o2",
+        "irl_rx": -561.9190000000001,
+        "irl_ry": 43.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "0_loopback1",
+        "irl_rx": -815.9190000000001,
+        "irl_ry": 43.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "0_loopback2",
+        "irl_rx": -434.91900000000004,
+        "irl_ry": 43.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_o1",
+        "irl_rx": -271.97300000000007,
+        "irl_ry": 45.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_o2",
+        "irl_rx": -144.97300000000007,
+        "irl_ry": 45.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_loopback1",
+        "irl_rx": -398.97300000000007,
+        "irl_ry": 45.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "1_loopback2",
+        "irl_rx": -17.97300000000007,
+        "irl_ry": 45.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_o1",
+        "irl_rx": 144.97299999999996,
+        "irl_ry": 48.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_o2",
+        "irl_rx": 271.97299999999996,
+        "irl_ry": 48.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_loopback1",
+        "irl_rx": 17.972999999999956,
+        "irl_ry": 48.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "2_loopback2",
+        "irl_rx": 398.97299999999996,
+        "irl_ry": 48.08950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_o1",
+        "irl_rx": 561.9189999999999,
+        "irl_ry": 50.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_o2",
+        "irl_rx": 688.9189999999999,
+        "irl_ry": 50.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_loopback1",
+        "irl_rx": 434.91899999999987,
+        "irl_ry": 50.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      },
+      {
+        "name": "3_loopback2",
+        "irl_rx": 815.9189999999999,
+        "irl_ry": 50.58950000000001,
+        "orientation": 270,
+        "bendRadii": [
+          5
+        ],
+        "width": 10,
+        "layer": [
+          1,
+          0
+        ],
+        "layer_name": "Waveguide"
+      }
+    ],
+    "texture_key": "gdsfactory.components.containers.pack_doe.pack_doe_grid_ba09b367",
+    "irl_orientation": 0.0,
+    "irl_flip": false
+  }
+}
