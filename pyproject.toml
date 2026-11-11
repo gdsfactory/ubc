@@ -142,6 +142,9 @@ name = "create & check changelog"
 src = "README.md"
 
 [[tool.tbump.file]]
+src = "docs/index.md"
+
+[[tool.tbump.file]]
 src = "pyproject.toml"
 
 [[tool.tbump.file]]
@@ -149,6 +152,10 @@ src = "ubcpdk/__init__.py"
 
 [[tool.tbump.file]]
 src = "ubcpdk/klayout/tech/pymacros/set_menus.lym"
+
+[[tool.tbump.file]]
+search = "ubcpdk=={current_version}"
+src = "ubcpdk--sample-projects/ubcpdk--public--project/pyproject.toml"
 
 [tool.tbump.git]
 message_template = "Bump to {new_version}"
