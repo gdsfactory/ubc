@@ -1,4 +1,4 @@
-# ubcpdk (SiEPIC Ebeam PDK) 3.3.4
+# ubcpdk (SiEPIC Ebeam PDK) 3.3.5
 
 The University of British Columbia's SiEPIC EBeam PDK is a 220nm SOI silicon photonics platform fabricated via electron-beam lithography, widely used in academia and multi-project-wafer runs.
 
