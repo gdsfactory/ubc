@@ -9,3 +9,9 @@ jobs:
     uses: doplaydo/pdk-ci-workflow-public/.github/workflows/test_code.yml@main
     secrets:
       GFP_API_KEY: ${{ secrets.GFP_API_KEY }}
+  coverage:
+    needs: test
+    if: ${{ !cancelled() }}
+    permissions:
+      contents: read
+    uses: doplaydo/pdk-ci-workflow-public/.github/workflows/test_coverage.yml@main
